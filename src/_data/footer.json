@@ -1,0 +1,110 @@
+{
+  "url": "/images/goodies/site/", 
+  "items": [
+    {
+      "url": "https://neocities.org",
+      "src": "neocities.gif",
+      "alt": "Neocities button that links to the official Neocities site"
+    },
+    {
+      "url": "https://zeusofthecrows.tumblr.com/post/695373316113973248/site-info-data",
+      "src": "contains-javascript.png",
+      "alt": "Button that says 'Warning: Contains Javascript!'. Links back to source"
+    },
+    {
+      "src": "www2.gif",
+      "alt": "Button that says 'World Wide Web: Connecting people since 1991"
+    },
+    {
+      "src": "bookmark.gif",
+      "alt": "Button that says 'Bookmark this page!'"
+    },
+    {
+      "url": "http://www.mabsland.com/Adoption.html",
+      "src": "Censor_PGc.gif",
+      "alt": "Rated PG button that links to Adopt-a-Panda site"
+    },
+    {
+      "url": "https://jigsaw.w3.org/css-validator/check/referer",
+      "src2": "https://jigsaw.w3.org/css-validator/images/vcss",
+      "alt": "'Valid CSS' button that links to CSS validator site"
+    },
+    {
+      "url": "http://validator.w3.org/feed/check.cgi?url=https%3A//bechnokid.neocities.org/feed.xml",
+      "src": "valid-rss-rogers.png",
+      "alt": "'Valid RSS'  button that links to RSS Feed validator site"
+    },
+    {
+      "url": "https://validator.w3.org/nu/",
+      "src": "w3html.gif",
+      "alt": "'Valid HTML' button that links to HTML validator site"
+    },
+    {
+      "src": "anybrowser2.gif",
+      "alt": "Button that says 'Viewable with any browser'"
+    },
+    {
+      "src": "bestviewed.gif",
+      "alt": "Button that says 'Best viewed with a computer monitor'"
+    },
+    {
+      "src": "nocookie.gif",
+      "alt": "Button that says 'This site is cookie-free'"
+    },
+    {
+      "src": "windows.gif",
+      "alt": "Button that says 'Made with Windows'"
+    },
+    {
+      "src": "firefox.gif",
+      "alt": "Button that says 'Tested with Firefox'"
+    },
+    {
+      "src": "got_html.gif",
+      "alt": "Button that says 'Got HTML?'"
+    },
+    {
+      "url": "https://lhfm.neocities.org/buttons.html",
+      "src": "css.png",
+      "alt": "Button that says 'CSS is awesome' that links back to the source"
+    },
+    {
+      "url": "https://plasticdino.neocities.org/",
+      "src": "queer.png",
+      "alt": "Button that says 'You're telling me a queer coded this?' that links back to the source"
+    },
+    {
+      "src": "antinft.gif",
+      "alt": "Button that says 'This site is anti-NFT'"
+    },
+    {
+      "src": "antinazi.gif",
+      "alt": "Button that says 'No Nazis, fascists, or racists allowed'"
+    },
+    {
+      "src": "whoops.gif",
+      "alt": "Button that says 'Whoops! Can't show that in a Christian manga!'"
+    },
+    {
+      "src": "hentaifree.png",
+      "alt": "Button that says 'This site is hentai-free'"
+    },
+    {
+      "src": "keep.gif",
+      "alt": "Button that says 'Keep the Web FREE'"
+    },
+    {
+      "src": "internetprivacy.gif",
+      "alt": "Button that says 'Internet privacy now!'"
+    },
+    {
+      "src": "fspeech.gif",
+      "alt": "Free speech forever!"
+    },
+    {
+      "url": "https://softheartclinic.neocities.org/",
+      "src": "hanginthere.gif",
+      "alt": "Button that says 'Hang in there!' that links back to the source"
+    }
+  ]
+}

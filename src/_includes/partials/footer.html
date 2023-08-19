@@ -1,0 +1,9 @@
+<footer>
+  <marquee scrollamount=3 onmouseover="this.stop();" onmouseout="this.start();">
+    {% for item in footer.items %}
+      {% if item.url %}<a href="{{ item.url }}">{% endif %}
+        <img src="{{ item.src2 if item.src2 else (footer.url + item.src )}}" alt=" {{ item.alt }}">
+      {% if item.url %}</a>{% endif %}
+    {% endfor %}
+  </marquee>
+</footer>

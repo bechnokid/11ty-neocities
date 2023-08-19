@@ -1,0 +1,23 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+  <main class="flex-center">
+    <article class="flex-center">
+      <section class="splash-text flex-center-hor">
+        <h1>❤ {{title}}! ❤</h1>
+        <hr>
+        <div class="splash-desc flex-center-ver">
+          {{content | safe}}
+        </div>
+        <div class="site-counter flex-center">
+          
+        </div>
+        <div class="last-update">
+
+        </div>
+      </section>
+      <section class="splash-img flex-center">
+
+      </section>
+    </article>
+  </main>
+{% endblock %}

@@ -1,0 +1,12 @@
+<nav class="sidebar">
+  <div class="menu">
+    <h2>❤ Menu ❤</h2>
+    <div class="flex-center basic-box">
+      <menu>
+        {% for item in navigation.items %}
+          <li><a href="{{ item.url }}">{{ item.text }}</a></li>
+        {% endfor %}
+      </menu>
+    </div>
+  </div>
+</nav>
