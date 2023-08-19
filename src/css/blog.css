@@ -13,11 +13,20 @@ main figcaption {
 }
 
 main hr:not(.small) {
-  margin-bottom: 0
+  margin: 20px 0 0;
 }
 
 main p {
   width: 100%
+}
+
+main h1 {
+  text-align: left;
+  line-height: 1em;
+}
+
+main h1 + p {
+  margin: 0;
 }
 
 main h2 + ul,

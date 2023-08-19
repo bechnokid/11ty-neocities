@@ -1,0 +1,15 @@
+{% extends "layouts/base.html" %}
+
+{% set pageHeaderTitle = title %}
+
+{% set pageHeaderSummary %}
+  <time datetime="{{ date | w3DateFilter}}">{{ date | dateFilter }}</time>
+{% endset %}
+
+{% block content %}
+<article>
+  {% include "partials/page-header.html" %}
+  {{ content | safe }}
+  <div class="back">❤ <span onclick="history.back()">Go back</span> ❤</div>
+</article>
+{% endblock %}
