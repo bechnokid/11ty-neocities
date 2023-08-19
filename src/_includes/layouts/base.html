@@ -17,8 +17,10 @@
   <link rel="canonical" href="{{ site.url }}">
   <link rel="preload" href="/css/main.css" as="style">
   <link rel="stylesheet" href="/css/main.css" type="text/css" media="all">
+  {% if title == "Home" %}
   <link rel="stylesheet" href="/css/home_page.css" type="text/css" media="all">
   <link rel="stylesheet" href="/css/splatnet.css" type="text/css" media="all">
+  {% endif %}
 
   <title>{{ site.name }}{% if title != null %} - {{ title }}{% endif %}</title>
 </head> 
