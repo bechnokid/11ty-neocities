@@ -3,6 +3,10 @@ module.exports = config => {
   config.addPassthroughCopy("./src/fonts/");
   config.addPassthroughCopy("./src/images/");
 
+  config.addCollection('blog', collection => {
+    return [...collection.getFilteredByGlob('./src/writing/*.html')].reverse();
+  });
+
   return {
     markdownTemplateEngine: 'njk',
     dataTemplateEngine: 'njk',
