@@ -15,8 +15,8 @@
   <meta name="twitter:dnt" content="on">
 
   <link rel="canonical" href="{{ site.url }}">
-  <link rel="preload" href="/css/main.css" as="style">
-  <link rel="stylesheet" href="/css/main.css" type="text/css" media="all">
+  <link rel="preload" href="/css/main-min.css" as="style">
+  <link rel="stylesheet" href="/css/main-min.css" type="text/css" media="all">
   {% if title == "Home" %}
     <link rel="stylesheet" href="/css/home_page.css" type="text/css" media="all">
     <link rel="stylesheet" href="/css/splatnet.css" type="text/css" media="all">
@@ -25,6 +25,15 @@
     <link rel="stylesheet" href="/css/blog.css" type="text/css" media="all">
   {% endif %}
 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  {% if glightbox %}
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+  {% endif %}
+  {% if freezeframe %}
+    <script src="https://unpkg.com/freezeframe/dist/freezeframe.min.js"></script>
+  {% endif %}
   <title>{{ site.name }}{% if title != null %} - {{ title }}{% endif %}</title>
 </head> 
 <body>
@@ -39,5 +48,17 @@
     </div>
     {% include "partials/footer.html" %}
   </div>
+  {% if glightbox %}
+    <script type="text/javascript">GLightbox({ selector: "{{ glightbox.selector }}", openEffect: "none", closeEffect: "none", moreLength: 65, keyboardNavigation: !0, touchNavigation: !0 });</script>
+  {% endif %}
+  {% if freezeframe %}
+    <script>
+      $(function() {
+        const e = new Freezeframe();
+        $("#play-gif").on("click", function(){e.start()});
+        $("#stop-gif").on("click", function(){e.stop()});
+      });
+    </script>
+  {% endif %}
 </body>
 </html>
