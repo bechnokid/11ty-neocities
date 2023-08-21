@@ -13,9 +13,6 @@
   <article>
     {% include "partials/page-header.html" %}
     {% include "partials/post-list.html" %}
-
-    {% if not tag %}
-      {% include "partials/pagination.html" %}
-    {% endif %}
+    {% include "partials/pagination.html" %}
   </article>
 {% endblock %}

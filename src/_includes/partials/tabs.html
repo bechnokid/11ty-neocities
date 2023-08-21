@@ -1,0 +1,9 @@
+<nav class="tabs">
+  <ul class="nav-tabs" role="tablist">
+    {% for item in tabItems %}
+      <li class="nav-item">
+        <a href="#{{ item | slugify }}" class="nav-link {% if loop.first %}active{% endif %}" data-toggle="tab">{{ item }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

@@ -1,0 +1,7 @@
+<div class="tab-container">
+  {% for item in tabItems %}
+    <div id="{{ item || slugify }}" class="tab-content">
+      {% include "partials/about/{{ item || slugify }}.html" %}
+    </div>
+  {% endfor %}
+</div>

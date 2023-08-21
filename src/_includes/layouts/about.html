@@ -1,0 +1,12 @@
+{% extends "layouts/base.html" %}
+
+{% set pageHeaderTitle = title %}
+{% set pageHeaderSummary = content %}
+{% set tabItems = tabs.aboutItems %}
+
+{% block content %}
+  <article>
+    {% include "partials/page-header.html" %}
+    {% include "partials/tabs.html" %}
+  </article>
+{% endblock content %}
