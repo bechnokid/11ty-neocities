@@ -1,0 +1,36 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#d65da4">
+  <meta property="og:title" content="{{ site.name }}">
+  <meta property="og:description" content="{{ site.desc }}">
+  <meta property="og:image" content="{{ site.ogImgURL }}">
+  <meta property="og:image:alt" content="Image of {{ site.name }}, a website on Neocities">
+  <meta property="og:locale" content="en_US">
+  <meta property="og_type" content="website">
+  <meta property="og:url" content="{{ site.url }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:dnt" content="on">
+
+  <link rel="canonical" href="{{ site.url }}">
+  <link rel="preload" href="/css/main-min.css" as="style">
+  <link rel="stylesheet" href="/css/main-min.css" type="text/css" media="all">
+  {% if title == "Home" %}
+    <link rel="stylesheet" href="/css/home_page.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/css/splatnet.css" type="text/css" media="all">
+  {% endif %}
+  {% if tags %}
+    <link rel="stylesheet" href="/css/blog.css" type="text/css" media="all">
+  {% endif %}
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  {% if glightbox %}
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+  {% endif %}
+  {% if freezeframe %}
+    <script src="https://unpkg.com/freezeframe/dist/freezeframe.min.js"></script>
+  {% endif %}
+  <title>{{ site.name }}{% if title != null %} - {{ title }}{% endif %}</title>
+</head> 
