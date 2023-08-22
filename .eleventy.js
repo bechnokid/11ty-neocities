@@ -4,7 +4,6 @@ const w3DateFilter = require('./src/filters/w3-date-filter.js');
 const markdownIt = require('./.markdown.js');
 
 module.exports = config => {
-  config.addPlugin(syntaxHighlight);
   config.setLibrary("md", markdownIt);
 
   config.addPassthroughCopy("./src/css/");
