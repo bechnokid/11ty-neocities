@@ -1,0 +1,17 @@
+{% extends "layouts/base.html" %}
+
+{% set pageHeaderTitle = title %}
+{% set pageHeaderSummary = content %}
+
+{% block content %}
+  <article>
+    {% include "partials/page-header.html" %}
+    <ul>
+      {% for item in collections.all | pageTypeFilter(pageType, 'tags') %}
+      <li>
+        <a href="{{ item.url }}">{{ item.data.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </article>
+{% endblock content %}

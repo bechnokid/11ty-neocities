@@ -2,11 +2,16 @@
 
 {% set pageHeaderTitle = title %}
 {% set pageHeaderSummary = content %}
-{% set tabItems = tabs.aboutItems %}
+{% set tabItems = about.profile_data.tabItems %}
 
 {% block content %}
   <article>
     {% include "partials/page-header.html" %}
     {% include "partials/tabs.html" %}
+    <div class="tab-container">
+      {% for item in collections.profile %}
+        {{ item.content | safe }}
+      {% endfor %}
+    </div>
   </article>
 {% endblock content %}

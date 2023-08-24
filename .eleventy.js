@@ -15,9 +15,20 @@ module.exports = config => {
   config.addFilter("markdownify", (markdownString) =>
     markdownIt.render(markdownString)
   );
+  config.addFilter("pageTypeFilter", function (collection, pageType) {
+    if (!pageType) return collection;
+    const filtered = collection.filter(item => item.data.tags == pageType)
+    return sortByDisplayOrder(filtered);
+  });
 
   config.addCollection('about', collection => {
-    return sortByDisplayOrder(collection.getFilteredByGlob('./src/about/*'));
+    return collection.getFilteredByGlob('./src/about/*');
+  });
+
+  config.addCollection("profile", function (collection) {
+    return collection.getFilteredByTag("profile").sort((a, b) => {
+      return a.data.order - b.data.order;
+    });
   });
 
   config.addCollection('blog', collection => {

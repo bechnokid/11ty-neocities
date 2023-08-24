@@ -1,4 +1,4 @@
-<ul class="blog-list">
+<ul class="page-list">
   {% for item in postListItems %}
   <li>
     <a href="{{ item.url }}">{{ item.data.title }}</a> - {{ item.data.date | dateFilter}}
