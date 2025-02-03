@@ -1,12 +1,17 @@
 {% extends "layouts/base.html" %}
 
 {% set pageHeaderTitle = title %}
-{% set pageHeaderSummary = summary %}
+{% set pageHeaderSummary = summary | markdownify | safe %}
+{% set pageFreezeframe = freezeframe %}
+{% set pageCSS = css %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ main.cssURL }}/{{ pageCSS or "basic" }}.css" type="text/css" media="all">
+{% endblock %}
 
 {% block content %}
-<article>
-  {% include "partials/page-header.html" %}
-  {{ content | safe }}
-</article>
-<div class="back">❤ <span onclick="history.back()">Go back</span> ❤</div>
+  <article>
+    {% include "partials/page-header.html" %}
+    {{ content | safe }}
+  </article>
 {% endblock %}

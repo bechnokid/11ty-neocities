@@ -1,0 +1,33 @@
+aside .sidebar {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+aside b {
+  display: block;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+aside li {
+  padding: .25rem 1em;
+  margin-left: 1em;
+  line-height: 1.5em;
+}
+
+aside li::marker {
+  content: "✦";
+  color: var(--text-primary);
+}
+
+aside .h2 {
+  font-size: 1.25em;
+}
+
+aside hr {
+  margin: .5rem 0 !important;
+}
+
+aside .update-content {
+  font-size: .8em;
+}

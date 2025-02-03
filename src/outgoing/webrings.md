@@ -1,0 +1,25 @@
+---
+title: Webrings
+css: 'webrings'
+summary: "**Warning:** Be cautious of any flashing colors and images when navigating away from this page."
+displayOrder: 32
+---
+
+<section class="sidebar">
+<div class="content p-3">
+<div class="row g-0">
+<div class="col d-flex flex-column align-items-center">
+{% for webring in column1 %}
+<div class="d-flex align-items-center{% if not loop.last %} mb-2{% endif %}">
+{% if webring.script %}{{ webring.script | safe }}{% else %}{% if webring.prevLink %}<a href="{{ webring.prevLink[0] }}"><img class="me-1" src="{{ imgSrc + webring.prevLink[1] }}" alt="Previous button for {{ webring.title }}"></a>{% endif %}<a href="{{ webring.index[0] }}"><img src="{{ imgSrc + webring.index[1] }}" alt="Index button for {{ webring.title }}"></a>{% if webring.nextLink %}<a href="{{ webring.nextLink[0] }}"><img class="ms-1" src="{{ imgSrc + webring.nextLink[1] }}" alt="Next button for {{ webring.title }}"></a>{% endif %}{% endif %}</div>
+{% endfor %}
+</div>
+<div class="col d-flex flex-column align-items-center p-2">
+{% for webring in column2 %}<div {% if not loop.last %}class='mb-2'{% endif %}>{{ webring.script | safe }}</div>{% endfor %}
+</div>
+<div class="col d-flex flex-column align-items-center p-2">
+{% for webring in column3 %}{{ webring.script | safe }}{% endfor %}
+</div>
+</div>
+</div>
+</section>

@@ -1,0 +1,28 @@
+{
+  "awards": {
+    "connected-softheartclinic.png": {
+      "url": "https://softheartclinic.neocities.org/subpages/awards.html",
+      "alt": "Award that reads, 'Connected. Joined a webring or circle. Your digital bonds have strengthened! Congratulations!'"
+    },
+    "extremepatience-caveofdragonflies.gif": {
+      "url": "https://www.dragonflycave.com/marquee-of-doom",
+      "alt": "Award that reads, 'The Cave of Dragonflies presents the Award of Extreme Patience to you for braving the Marquee of Doom'"
+    },
+    "gettingthere-koinuko.png": {
+      "url": "https://koinuko.pink/mygraphics/awards.html",
+      "alt": "Award that reads, 'koinuko's 'Getting There' Award. This site has reached a total of 25 followers! Congratulations!'"
+    },
+    "trial_of_fire-meganova.png": {
+      "url": "https://meganova.neocities.org/fire-trial.html",
+      "alt": "Award that reads, 'I officially defeated the Trial of Fire and got this cool PNG! Signed, Bechno Kid'"
+    },
+    "trial_of_water-meganova.png": {
+      "url": "https://meganova.neocities.org/water-trial.html",
+      "alt": "Award that reads, 'I officially defeated the Trial of Water and got this cool PNG! Signed, Bechno Kid'"
+    },
+    "trial_of_sky-meganova.png": {
+      "url": "https://meganova.neocities.org/sky-trial.html",
+      "alt": "Award that reads, 'I officially defeated the Trial of Sky and got this cool PNG! Signed, Bechno Kid'"
+    }
+  }
+}

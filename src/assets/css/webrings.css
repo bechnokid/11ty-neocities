@@ -1,0 +1,73 @@
+@import 'basic.css';
+
+#Splatnet table {
+  background-size: cover;
+  margin: 0 auto; /* Centers the widget */
+  width: 180px; /*CHANGE WIDTH OF WIDGET*/
+  height: 180px; /*CHANGE HEIGHT OF WIDGET*/
+  border: 3px outset black; /*EDIT BORDER STYLE*/
+}
+
+#Splatnet td {
+  background-color: #1c1144 !important; /*CHANGE BACKGROUND COLOR*/
+}
+
+#rightarrow{
+  height: 20px; /*< CHANGE ARROW HEIGHT!*/
+  width: 20px; /*< CHANGE ARROW WIDTH!*/
+  content: url('/assets/images/webrings/splatnet_right.png');
+}
+
+#leftarrow{
+  height: 20px; /*< CHANGE ARROW HEIGHT!*/
+  width: 20px; /*< CHANGE ARROW WIDTH!*/
+  content: url("/assets/images/webrings/splatnet_left.png")
+}
+
+#chibi {
+  width: 30px; /*< CHANGE WIDTH!*/
+  content: url("/assets/images/webrings/splatnet_icon.png");
+}
+
+#chara {
+  content: url("/assets/images/webrings/splatnet.png")
+}
+
+#splatlogo {
+  height: 25px;
+}
+
+#Splatnet table tr td {
+  padding: 13px 13px 13px;
+}
+
+#Splatnet {
+  margin: 0 auto;
+}
+
+#Splatnet .webring-prev {
+  text-align:right;
+}
+
+#Splatnet .webring-info {
+  text-align:center;
+}
+
+#Splatnet .webring-links {
+  font-size:small;
+  color: white;
+}
+
+#Splatnet .webring-links a {
+  text-decoration: none;
+}
+
+#Splatnet .webring-next {
+  margin-left: 5px;
+  text-align:right;
+}
+
+#Splatnet .webring-prev {
+  margin-right: 5px;
+  text-align:left;
+}

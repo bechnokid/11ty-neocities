@@ -1,5 +1,5 @@
 {
-  "url": "/images/goodies/site/", 
+  "url": "/assets/images/goodies/site/",
   "items": [
     {
       "url": "https://neocities.org",
@@ -9,15 +9,15 @@
     {
       "url": "https://zeusofthecrows.tumblr.com/post/695373316113973248/site-info-data",
       "src": "contains-javascript.png",
-      "alt": "Button that says 'Warning: Contains Javascript!'. Links back to source"
+      "alt": "A button that says 'Warning: Contains Javascript!'. Links back to source"
     },
     {
       "src": "www2.gif",
-      "alt": "Button that says 'World Wide Web: Connecting people since 1991"
+      "alt": "A button that says 'World Wide Web: Connecting people since 1991"
     },
     {
       "src": "bookmark.gif",
-      "alt": "Button that says 'Bookmark this page!'"
+      "alt": "A button that says 'Bookmark this page!'"
     },
     {
       "url": "http://www.mabsland.com/Adoption.html",
@@ -41,70 +41,70 @@
     },
     {
       "src": "anybrowser2.gif",
-      "alt": "Button that says 'Viewable with any browser'"
+      "alt": "A button that says 'Viewable with any browser'"
     },
     {
       "src": "bestviewed.gif",
-      "alt": "Button that says 'Best viewed with a computer monitor'"
+      "alt": "A button that says 'Best viewed with a computer monitor'"
     },
     {
       "src": "nocookie.gif",
-      "alt": "Button that says 'This site is cookie-free'"
+      "alt": "A button that says 'This site is cookie-free'"
     },
     {
       "src": "windows.gif",
-      "alt": "Button that says 'Made with Windows'"
+      "alt": "A button that says 'Made with Windows'"
     },
     {
       "src": "firefox.gif",
-      "alt": "Button that says 'Tested with Firefox'"
+      "alt": "A button that says 'Tested with Firefox'"
     },
     {
       "src": "got_html.gif",
-      "alt": "Button that says 'Got HTML?'"
+      "alt": "A button that says 'Got HTML?'"
     },
     {
       "url": "https://lhfm.neocities.org/buttons.html",
       "src": "css.png",
-      "alt": "Button that says 'CSS is awesome' that links back to the source"
+      "alt": "A button that says 'CSS is awesome' that links back to the source"
     },
     {
       "url": "https://plasticdino.neocities.org/",
       "src": "queer.png",
-      "alt": "Button that says 'You're telling me a queer coded this?' that links back to the source"
+      "alt": "A button that says 'You're telling me a queer coded this?' that links back to the source"
     },
     {
       "src": "antinft.gif",
-      "alt": "Button that says 'This site is anti-NFT'"
+      "alt": "A button that says 'This site is anti-NFT'"
     },
     {
       "src": "antinazi.gif",
-      "alt": "Button that says 'No Nazis, fascists, or racists allowed'"
+      "alt": "A button that says 'No Nazis, fascists, or racists allowed'"
     },
     {
       "src": "whoops.gif",
-      "alt": "Button that says 'Whoops! Can't show that in a Christian manga!'"
+      "alt": "A button that says 'Whoops! Can't show that in a Christian manga!'"
     },
     {
       "src": "hentaifree.png",
-      "alt": "Button that says 'This site is hentai-free'"
+      "alt": "A button that says 'This site is hentai-free'"
     },
     {
       "src": "keep.gif",
-      "alt": "Button that says 'Keep the Web FREE'"
+      "alt": "A button that says 'Keep the Web FREE'"
     },
     {
       "src": "internetprivacy.gif",
-      "alt": "Button that says 'Internet privacy now!'"
+      "alt": "A button that says 'Internet privacy now!'"
     },
     {
       "src": "fspeech.gif",
-      "alt": "Free speech forever!"
+      "alt": "A button that says 'Free speech forever!' with a picture of a blue ribbon"
     },
     {
       "url": "https://softheartclinic.neocities.org/",
       "src": "hanginthere.gif",
-      "alt": "Button that says 'Hang in there!' that links back to the source"
+      "alt": "A button that says 'Hang in there!' that links back to the source"
     }
   ]
 }

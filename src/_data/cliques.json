@@ -1,0 +1,60 @@
+{
+  "path": "/assets/images/goodies/cliques/",
+  "items": [
+    {
+      "title": "aromatic",
+      "url": "https://aromatic.wings.nu/",
+      "text": "// phở"
+    },
+    {
+      "title": "Mine!",
+      "url": "https://peachsoda.net/mine",
+      "text": "// Gilgamesh"
+    },
+    {
+      "title": "<font style=\"color:#FF0000\">r</font><font style=\"color:#FF8000\">a</font><font style=\"color:#ffc400\">i</font><font style=\"color:#008000\">n</font><font style=\"color:#0000FF\">b</font><font style=\"color:#8000FF\">o</font><font style=\"color:#800080\">w</font>",
+      "url": "https://cliqued.wings.nu/",
+      "text": "&#x1F308;&nbsp;<font style=\"color:#07be91\">Mint Green</font>"
+    },
+    {
+      "title": "LINKED !",
+      "url": "https://macaque.neocities.org/trickyfox/",
+      "img": "linked.png",
+      "imgAlt": "A sprite of a chain link",
+      "text": "Miss Kobayashi"
+    },
+    {
+      "title": "my jam!!",
+      "url": "https://cliqued.wings.nu/",
+      "img": "jam.png",
+      "imgAlt": "A sprite of a jar of pink jam",
+      "text": "Chaotic Love Revolution"
+    }
+  ],
+  "buttons": [
+    {
+      "title": "Final Fantasy Moogle Adoption Clique",
+      "name": "moogle",
+      "tooltip": "I ♥ moogles // Kupo, kupo! Moogle Adoption Clique",
+      "url": "https://midnight-cloud.net/clique/moogle/",
+      "img": "moogle.gif",
+      "imgAlt": "Sprite of a moogle"
+    },
+    {
+      "title": "I Choose You!",
+      "name": "chiyu",
+      "tooltip": "I choose you! :: CHI-YU",
+      "url": "https://pkmn.caelestis.nu/",
+      "img": "i-choose-you.gif",
+      "imgAlt": "Sprite of the pokemon Chi-Yu"
+    },
+    {
+      "title": "Adopt a Boba",
+      "name": "boba",
+      "tooltip": "Taro Milk Tea :: Adopt a Boba",
+      "url": "https://pixelrevival.xyz/boba/",
+      "img": "boba.gif",
+      "imgAlt": "Sprite of cup of taro milk tea with boba"
+    }
+  ]
+}

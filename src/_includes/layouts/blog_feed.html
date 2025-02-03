@@ -4,15 +4,31 @@
 {% set pageHeaderSummary = content %}
 {% set postListItems = pagination.items %}
 
-{% if tag %}
-  {% set postListItems = collections[tag] %}
-  {% set pageHeaderTitle = 'Blog posts filed under "' + tag + '"' %}
-{% endif %}
+{% block css %}
+  <link rel="stylesheet" href="{{ main.cssURL }}/blog.css" type="text/css" media="all">
+{% endblock css %}
 
 {% block content %}
   <article>
     {% include "partials/page-header.html" %}
-    {% include "partials/post-list.html" %}
+    {% if title == 'Microblog' %}
+      <div class='microblog basic-box'>
+        {% for entry in postListItems %}
+          <p><b>{{ entry.date | monthDayYear }}</b> | {{ entry.mood }}</p>
+          <p>{{ entry.content }}</p>
+          {% if loop.index != loop.length %}
+            <hr class="small">
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% else %}
+      {% for item in postListItems %}
+      <div class="blog row py-1">
+        <div class="col-8"><a href="{{ item.url }}">{{ item.data.title }}</a></div>
+        <div class="col-4">{{ item.data.date | monthDayYear }}</div>
+      </div>
+      {% endfor %}
+    {% endif %}
     {% include "partials/pagination.html" %}
   </article>
 {% endblock %}

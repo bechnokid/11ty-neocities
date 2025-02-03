@@ -1,0 +1,53 @@
+{
+  "imgSrc": "/assets/images/webrings/",
+  "column1": [
+    {
+      "title": "NeoCreatives",
+      "index": [ "http://neocreatives.byethost5.com/", "neocreatives.png"]
+    },
+    {
+      "title": "Cuddler",
+      "index": ["https://cuddler-webring.netlify.app", "cuddler.png"],
+      "prevLink": [ "https://cuddler-webring.netlify.app/bechnokid/previous", "cuddler_left.gif"],
+      "nextLink": [ "https://cuddler-webring.netlify.app/bechnokid/next", "cuddler_right.gif" ]
+    },
+    {
+      "title": "Queer Coded",
+      "index": ["https://cuddler-webring.netlify.app", "queercoded.png"],
+      "prevLink": [ "https://cuddler-webring.netlify.app/bechnokid/previous", "queercoded_left.png"],
+      "nextLink": [ "https://cuddler-webring.netlify.app/bechnokid/next", "queercoded_right.png" ]
+    },
+    {
+      "title": "Ladies of the Link",
+      "index": ["https://ladiesofthelinks.neocities.org/", "ladiesofthelink.gif"],
+      "prevLink": [ "https://webri.ng/webring/ladiesofthelinks/previous?via=https://bechnokid.neocities.org", "ladiesofthelink_left.gif"],
+      "nextLink": [ "https://webri.ng/webring/ladiesofthelinks/next?via=https://bechnokid.neocities.org", "ladiesofthelink_right.gif" ]
+    },
+    {
+      "title": "Acing the Internet",
+      "index": ["https://acingtheinternet.netlify.app", "ace.png"],
+      "prevLink": [ "https://acingtheinternet.netlify.app/bechnokid/previous", "ace_left.gif"],
+      "nextLink": [ "https://acingtheinternet.netlify.app/bechnokid/next", "ace_right.gif" ]
+    },
+    {
+      "title": "Re:source",
+      "script": "<div id=\"resourceRing\"></div><script type=\"text/javascript\" src=\"/assets/javascript/webrings/re_source.js\"></script>"
+    }
+  ],
+  "column2": [
+    {
+      "title": "WiiRing",
+      "script": "<div style=\"width: 150px;\"><script src=\"https://jeith.com/assets/webring/wii-ring.js\"></script><wii-ring site=\"https://bechnokid.neocities.org\"></wii-ring></div>"
+    },
+    {
+      "title": "Self-Insert",
+      "script": "<div id=\"selfinsertwebring\"><script src=\"/assets/javascript/webrings/selfinsert.js\"></script></div>"
+    }
+  ],
+  "column3": [
+    {
+      "title": "Splatnet",
+      "script": "<div id='Splatnet'><script type=\"text/javascript\" src=\"https://boothworldindustries.neocities.org/WR/Splatnet/onionring-variables.js\"></script><script type=\"text/javascript\" src=\"/assets/javascript/webrings/splatnet.js\"></script></div>"
+    }
+  ]
+}

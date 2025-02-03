@@ -1,1 +1,1 @@
-{ "layout": "layouts/blog_post.html", "tags": "blog" }
+{ "layout": "layouts/blog_post.html", "tags": "blog", "imgLink": "/assets/images/blog/" }

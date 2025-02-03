@@ -2,15 +2,22 @@
 
 {% set pageHeaderTitle = title %}
 {% set pageHeaderSummary = content %}
+{% set pageCollection = pagination.items %}
 
 {% block content %}
   <article>
     {% include "partials/page-header.html" %}
     <ul>
-      {% for item in collections.all | pageTypeFilter(pageType, 'tags') %}
-      <li>
-        <a href="{{ item.url }}">{{ item.data.title }}</a>
-      </li>
+      {% for item in pageCollection | sortCollectionByDisplayOrder %}
+      <dl>
+        <dt class="h3">
+          <a href="{{ item.url }}">{{ item.data.title }}</a>
+          {% if item.data.warning %}
+          <span class="text-muted">(Warning: Flashing graphics)</span>
+          {% endif %}
+        </dt>
+        <dd>{{ item.data.description | markdownify | safe }}</dd>
+      </dl>
       {% endfor %}
     </ul>
   </article>

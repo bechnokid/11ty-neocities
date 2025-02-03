@@ -1,27 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% include "partials/head.html" %}
+  <head>
+    {% include "partials/head.html" %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    {% if glightbox %}
+      <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+    {% endif %}
+    {% if freezeframe %}
+      <script src="https://unpkg.com/freezeframe/dist/freezeframe.min.js"></script>
+    {% endif %}
+    {% if prism %}
+      <script src="{{ main.jsURL }}/prism.js"></script>
+      <link rel="stylesheet" href="{{ main.cssURL }}/prism.css">
+    {% endif %}
+    <script src="https://kit.fontawesome.com/2afcf0d7d7.js" crossorigin="anonymous"></script>
+    {% block css %}<link rel="stylesheet" href="{{ main.cssURL }}/bechno.css" type="text/css" media="all">{% endblock css %}
+    <title>{{ main.name }}{% if title != null %} - {{ title }}{% endif %}</title>
+  </head>
 <body>
-  <div class="container">
-    <a href="/home" aria-label="{{ site.name }} - home"><header class="header"></header></a>
-    <div class="content">
+  <details class="burger">
+    <summary class="py-2 text-background">Menu</summary>
+    <nav>
       {% include "partials/navigation.html" %}
-      <main id="main-content" tabindex="-1">{% block content %}{% endblock %}</main>
-      {% if title == "Home" %}
-        {% include "partials/updates.html" %}
-      {% endif %}
+    </nav>
+  </details>
+  <div class="container-fluid d-flex justify-content-center">
+    <details class="burger">
+      <summary class="d-flex align-items-center px-2 py-3">Menu</summary>
+      <nav>
+        {% include "partials/navigation.html" %}
+      </nav>
+    </details>
+    <div class="page bg-body">
+      <a href="/home/">
+        <header class="bg-body"></header>
+      </a>
+      <div class="bg-body main">
+        <div class="row g-0">
+          <nav id="nav-main" class="col-lg-2">{% include "partials/navigation.html" %}</nav>
+          <main class="col py-3 px-4" tabindex="-1">{% block content %}{% endblock %}</main>
+          {% if title == "Home" %}
+            <aside class="col-lg-2">
+              {% include "partials/homepage/updates.html" %}
+            </aside>
+          {% endif %}
+        </div>
+      </div>
+      <footer class="bg-footer text-center py-1">
+        <p class="m-0">Powered by Neocities, 11ty, and Github. Maintained by <b>Bechno Kid</b> since 2022.<br>Please do not edit or reupload any artwork from this site.</p>
+      </footer>
     </div>
-    {% include "partials/footer.html" %}
   </div>
-  {% if glightbox %}
-    <script type="text/javascript">GLightbox({ selector: "{{ glightbox.selector }}", openEffect: "none", closeEffect: "none", moreLength: 65, keyboardNavigation: !0, touchNavigation: !0 });</script>
-  {% endif %}
   {% if freezeframe %}
     <script>
       $(function() {
-        const e = new Freezeframe();
-        $("#play-gif").on("click", function(){e.start()});
-        $("#stop-gif").on("click", function(){e.stop()});
+        const e = new Freezeframe({ trigger: !1, responsive: !1 });
+        $(".play-gif").on("click", function(){e.start()});
+        $(".stop-gif").on("click", function(){e.stop()});
       });
     </script>
   {% endif %}

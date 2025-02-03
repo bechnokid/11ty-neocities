@@ -1,9 +1,0 @@
-{% for item in tabItems %}
-  <input type="radio" name="tabs" id="{{ item | slugify }}" class="radio" {% if loop.first %}checked{% endif %}>
-{% endfor %}
-<nav class="tabs" role="tablist">
-  {% for item in tabItems %}
-    {% set itemSlug = item | slugify %}
-    <label class="tab" id="{{ itemSlug }}-tab" for="{{ itemSlug }}">{{ item }}</label>
-  {% endfor %}
-</nav>

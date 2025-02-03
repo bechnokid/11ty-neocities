@@ -1,0 +1,24 @@
+{% extends "layouts/base.html" %}
+
+{% set pageHeaderTitle = title %}
+{% set pageHeaderSummary = content %}
+{% set pageTabItems = tabItems %}
+{% set pageTabContent = pagination.items %}
+
+{% if pageCSS %}
+  {% block css %}
+    <link rel="stylesheet" href="{{ main.cssURL }}/{{ pageCSS }}" type="text/css" media="all">
+  {% endblock css %}
+{% endif %}
+
+{% block content %}
+  <article>
+    {% include "partials/page-header.html" %}
+    <div class="tab-container">
+      {% include "partials/tabs.html" %}
+      {% for item in pageTabContent %}
+        <div class="tab-content" id="{{ item.data.title }}">{{ item.content | safe }}</div>
+      {% endfor %}
+    </div>
+  </article>
+{% endblock content %}

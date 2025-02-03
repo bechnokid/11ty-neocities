@@ -1,0 +1,18 @@
+@import "bechno.css";
+@import "updates.css";
+
+.intro-links {
+  font-family: 'Dyslexic';
+  color: var(--text-primary);
+  margin-bottom: 2rem !important;
+}
+
+.intro-links a {
+  color: var(--text-secondary);
+}
+
+.status .content p {
+  font-size: .85em;
+  max-height: 150px;
+  overflow: auto;
+}

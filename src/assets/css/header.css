@@ -1,0 +1,25 @@
+header {
+  margin-top: -5px;
+  position: fixed;
+  height: 150px;
+  width: min(990px, 100%);
+  background: var(--footer) var(--header-img) no-repeat center center;
+  background-size: cover;
+  z-index: 99;
+  border-top: 5px solid var(--content-border);
+  border-bottom: 5px solid var(--content-border)
+}
+
+a header:hover {
+  cursor: pointer;
+  border-bottom: 5px solid var(--link)
+}
+
+@media only screen and (max-width:1000px) {
+  header {
+    height: 100px;
+    position: unset;
+    margin-bottom: 0;
+    border: none
+  }
+}

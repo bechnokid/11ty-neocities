@@ -1,0 +1,76 @@
+{
+  "imgLink": "/assets/images/links/",
+  "altText": "Link button for ",
+  "netizenLinks": {
+    "antikrist": { "domain": "neocities.org", "desc": "AntiKrist", "type": "gif", "freezeframe": true },
+    "arlita": { "domain": "neocities.org", "desc": "arlita's internet page", "type": "gif" },
+    "artwork": { "domain": "neocities.org", "desc": "Artwork", "type": "gif", "freezeframe": true },
+    "astralestella": { "domain": "neocities.org", "desc": "Astrale Stella & Co", "type": "png" },
+    "bytemoth": { "domain": "neocities.org", "desc": "Bytemoth's Brook", "type": "png" },
+    "cinnamuff": { "domain": "space", "type": "png", "desc": "Cinnamuff's Galaxy" },
+    "cloudcover": { "domain": "neocities.org", "desc": "Cloud Cover", "type": "png" },
+    "dannarchy": { "domain": "com", "desc": "Dannarchy", "type": "gif", "freezeframe": true },
+    "daximus": { "domain": "site", "type": "gif", "freezeframe": true },
+    "doctordizzy": { "domain": "neocities.org", "desc": "Dizzy's Bunny Hell", "type": "png" },
+    "foggybear42": { "domain": "neocities.org", "desc": "FoggyBear", "type": "gif", "freezeframe": true },
+    "humanfinny": { "domain": "neocities.org", "desc": "The Human Finny", "type": "gif", "freezeframe": true },
+    "jade-everstone": { "domain": "neocities.org", "desc": "Jade Everstone", "type": "png" },
+    "jeith": { "domain": "neocities.org", "type": "jpg" },
+    "keysklubhouse": { "domain": "com", "desc": "Key's Klubhouse", "type": "png" },
+    "kookoioi": { "domain": "neocities.org", "type": "png" },
+    "l-chan": { "domain": "neocities.org", "desc": "L-Chan's Website", "type": "png" },
+    "lapislabel": { "domain": "net", "type": "gif", "desc": "Lapis Label", "freezeframe": true },
+    "lazer-bunny": { "domain": "neocities.org", "type": "gif", "freezeframe": true, "desc": "Lazer Bunny's Website" },
+    "lhfm": { "domain": "neocities.org", "type": "png", "desc": "LHFM" },
+    "linwood": { "domain": "neocities.org", "type": "png", "desc": "Linwood" },
+    "lizardmandan": { "domain": "neocities.org", "type": "gif", "freezeframe": true },
+    "lugaw": { "domain": "gay", "type": "png", "desc": "Lugaw.gay" },
+    "makoenergy": { "domain": "neocities.org", "type": "png", "desc": "MakoEnergy.com" },
+    "mizuki": { "domain": "world", "type": "gif", "desc": "Mizuki's World", "freezeframe": true },
+    "myblace": { "domain": "neocities.org", "type": "png", "desc": "My Blace" },
+    "mystsaphyr": { "domain": "me", "type": "gif", "freezeframe": true, "desc": "MystSaphyr" },
+    "nickle4apickle": { "domain": "neocities.org", "type": "gif", "desc": "Nickle's Faves" },
+    "piranhebula": { "domain": "neocities.org", "type": "gif", "freezeframe": true, "desc": "Piranhebula" },
+    "pklucky": { "domain": "neocities.org", "type": "gif", "freezeframe": true, "desc": "PKLucky's Beachside Lounge" },
+    "playmoar": { "domain": "neocities.org", "type": "gif", "desc": "SNK PLAYMOAR" },
+    "punkwasp": { "domain": "neocities.org", "type": "png", "desc": "Wasp Next" },
+    "qrunchysnaq": { "domain": "neocities.org", "type": "gif", "freezeframe": true, "desc": "QrunchySnaq" },
+    "sanguineroyal": { "domain": "neocities.org", "type": "gif", "freezeframe": 1, "desc": "Sanguine Royal" },
+    "seafare": { "domain": "neocities.org", "type": "png", "desc": "Seafare" },
+    "skykristal": { "domain": "art", "type": "png", "desc": "SkyKristal" },
+    "space-bar": { "domain": "neocities.org", "type": "gif", "desc": "The Space Bar", "freezeframe": true },
+    "theabsoluterealm": { "domain": "com", "type": "gif", "desc": "The Absolute Realm" },
+    "themby": { "domain": "neocities.org", "type": "png", "desc": "Themby" },
+    "valycenegative": { "domain": "it", "type": "gif", "desc": "ValyceNegative.it" }
+  },
+  "resourceLinks": {
+    "kaomoji.ru/en": {
+      "name": "Kaomoji: Japanese Emoticons",
+      "desc": "A large repository of adorable/kawaii text-based emoticons"
+    },
+    "torcado.com/cleanEdge/": {
+      "name": "cleanEdge",
+      "desc": "A tool to scale and rotate pixel art while still retaining clean edges"
+    },
+    "waifu2x.udp.jp/": {
+      "name": "waifu2x",
+      "desc": "A tool to upscale artwork that is otherwise pixelate or has too many JPG artifacts"
+    },
+    "ezgif.com/": {
+      "name": "Ezgif.com",
+      "desc": "A browser tool that allows users to do basic functions similar to art programs out there without actually downloading an art program. Includes resizing, cropping, animating GIFs, etc."
+    },
+    "neonaut.neocities.org/brain/image-compression.html": {
+      "name": "Neonaut: Become a Compression Sorcerer",
+      "desc": "A wonderful tutorial that provides tips on how to compress images so that they still look nice but don't take 500 years to load."
+    },
+    "htmlsymbols.xyz": {
+      "name": "HTML Symbols",
+      "desc": "A repository of all (or at least most) HTML symbols that exist."
+    },
+    "justtherecipe.com/": {
+      "name": "Just The Recipe",
+      "desc": "A website that takes links of any recipe and removes all of the fluff and only leaves the recipe. Useful for when chefs force readers to scroll through 20+ pages just to get to the recipe."
+    }
+  }
+}

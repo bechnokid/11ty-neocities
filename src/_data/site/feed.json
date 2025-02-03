@@ -1,0 +1,35 @@
+{
+  "items": [
+    {
+      "date": "2025-02-01",
+      "content": [
+        "Finally finished setting up new layout for my art"
+      ]
+    },
+    {
+      "date": "2025-01-16",
+      "content": [
+        "Revamped sitemap"
+      ]
+    },
+    {
+      "date": "2024-12-28",
+      "content": [
+        "Moved webrings to its own page",
+        "Updated shrines"
+      ]
+    },
+    {
+      "date": "2024-11-3",
+      "content": [
+        "Did a rehaul on navigation"
+      ]
+    },
+    {
+      "date": "2023-10-9",
+      "content": [
+        "Started using Eleventy to help code this site!"
+      ]
+    }
+  ]
+}

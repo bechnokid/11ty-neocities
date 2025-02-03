@@ -1,0 +1,24 @@
+{% set gardenImage = image.src %}
+{% set gardenImgAlt = image.alt %}
+{% set lastUpdated = site.feed.items[0].date | monDayYear %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "partials/head.html" %}
+    <link rel="stylesheet" href="{{ main.cssURL }}/webgarden.css" type="text/css" media="all">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>{{ main.name }}{% if title != null %} - {{ title }}{% endif %}</title>
+  </head>
+<body>
+  <main class="garden-pot bg-body border-body">
+    <h1>Bechno Kid's Hideout!</h1>
+    <hr>
+    {{content | safe}}
+    <a title='Click to enter!' href="/home/"><img src="{{ gardenImage }}" alt="{{ gardenImgAlt }}"></a>
+    <div class="last-update">
+      <p>Last updated: {{ lastUpdated }}</p>
+    </div>
+  </main>
+</body>
+</html>

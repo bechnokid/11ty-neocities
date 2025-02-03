@@ -1,0 +1,23 @@
+{% set pageCSS = "shrines/" + css %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block css %}<link rel="stylesheet" href="{{ main.cssURL }}/{{ pageCSS or "shrine" }}.css" type="text/css" media="all">{% endblock css %}
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+  <title>{{ main.name }}{% if title != null %} - {{ title }}{% endif %}</title>
+</head>
+<body>
+  <div class="container-fluid h-100 d-flex justify-content-center align-items-center">
+    <div class="content border rounded p-4">
+      {% block content %}
+      <main>
+        {{ content | safe }}
+      </main>
+      {% endblock %}
+    </div>
+  </div>
+</body>
+</html>

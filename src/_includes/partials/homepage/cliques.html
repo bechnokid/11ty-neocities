@@ -1,0 +1,25 @@
+<div class="row g-0">
+  <div class="sidebar">
+    <div class="content">
+      <div class="h2 bg-footer p-2">Cliques</div>
+      <div class="row g-0">
+        <div class="col-lg-6 col-12 d-flex flex-column align-items-center justify-content-center pb-3 p-lg-2 order-lg-1 order-2">
+          {% for clique in cliques.items %}
+          <div class="d-flex align-items-center {% if not loop.last %}mb-1{% endif %}"><a href="{{ clique.url }}">{{ clique.title | safe }}</a>{% if clique.img %}<img class="mx-2" src="{{ cliques.path + clique.img }}" alt="{{ clique.imgAlt }}">{% else %}&nbsp;{% endif %} {{ clique.text | safe }}</div>
+          {% endfor %}
+        </div>
+        <div class="col-lg-6 col-12 justify-content-center p-3 p-lg-2 order-lg-2 order-1">
+          <div class="d-flex justify-content-center align-items-baseline">
+          {% for clique in cliques.buttons %}
+            <a href="{{ clique.url }}"><img class="mx-1 clique-{{ clique.name }}" src="{{ cliques.path + clique.img }}" alt="{{ clique.imgAlt + " for the '" + clique.title + "' clique" }}" title="{{ clique.tooltip }}"></a>
+          {% endfor %}
+          </div>
+          <div class="d-flex flex-column align-items-center">
+            <a href="https://exvius.aelysia.net/"><img src="{{ cliques.path}}x-gilgamesh.png" alt="Sprite of Gilgamesh"></a>
+            <span style="font-size:.8em">Protected by Gilgamesh!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

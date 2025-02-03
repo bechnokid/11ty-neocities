@@ -1,15 +1,18 @@
 {% extends "layouts/base.html" %}
 
 {% set pageHeaderTitle = title %}
-
 {% set pageHeaderSummary %}
-  <time datetime="{{ date | w3DateFilter}}">{{ date | dateFilter }}</time>
+  <time datetime="{{ date | w3DateFilter}}">{{ date | dayOfMonth }}</time>
 {% endset %}
 
+{% block css %}
+  <link rel="stylesheet" href="{{ main.cssURL }}/blog.css" type="text/css" media="all">
+{% endblock css %}
+
 {% block content %}
-<article>
-  {% include "partials/page-header.html" %}
-  {{ content | safe }}
-  <div class="back">❤ <span onclick="history.back()">Go back</span> ❤</div>
-</article>
+  <article>
+    {% include "partials/page-header.html" %}
+    {{ content | safe }}
+  </article>
+  {% include "partials/go-back.html" %}
 {% endblock %}

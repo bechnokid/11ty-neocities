@@ -1,47 +1,93 @@
-const sortByDisplayOrder = require('./src/utils/sort-by-display-order.js');
-const dateFilter = require('./src/filters/date-filter.js');
-const w3DateFilter = require('./src/filters/w3-date-filter.js');
-const markdownIt = require('./.markdown.js');
+const rssPlugin = require('@11ty/eleventy-plugin-rss');
+const lightningCSS = require("@11tyrocks/eleventy-plugin-lightningcss");
+const htmlmin = require("html-minifier-terser");
+
+const {
+  cssmin,
+  date,
+  dayOfMonth,
+  monthDayYear,
+  monDayYear,
+  fromNow,
+  w3DateFilter,
+  markdownify,
+  sortCollectionByDisplayOrder,
+} = require('./config/filters');
+
+const {
+  getAllWritingPages,
+  getAllBlogPosts,
+  getGalleryImages
+} = require('./config/collections');
+
+const {
+  simpleGallery,
+  figure
+} = require('./config/shortcodes');
+
+const markdownLib = require('./config/plugins/markdown');
+
+const TEMPLATE_ENGINE = 'njk';
 
 module.exports = config => {
-  config.setLibrary("md", markdownIt);
+  config.addPassthroughCopy('./src/assets/images/');
+  config.addPassthroughCopy('./src/assets/fonts/');
+  config.addPassthroughCopy('./src/assets/css/');
+  config.addPassthroughCopy('./src/assets/javascript/');
 
-  config.addPassthroughCopy("./src/css/");
-  config.addPassthroughCopy("./src/fonts/");
-  config.addPassthroughCopy("./src/images/");
+  // Shortcodes
+  config.addShortcode('simpleGallery', simpleGallery);
 
-  config.addFilter('dateFilter', dateFilter);
+  // Paired shortcodes
+  config.addPairedShortcode('figure', figure);
+
+  // Transform
+  config.addTransform("htmlmin", function (content) {
+		if ((this.page.outputPath || "").endsWith(".html")) {
+			let minified = htmlmin.minify(content, {
+				useShortDoctype: true,
+				removeComments: true,
+				collapseWhitespace: true,
+			});
+
+			return minified;
+		}
+
+		// If not an HTML output, return content as-is
+		return content;
+	});
+
+  // Filters
+  config.addFilter('date', date);
+  config.addFilter('dayOfMonth', dayOfMonth);
+  config.addFilter('monthDayYear', monthDayYear);
+  config.addFilter('monDayYear', monDayYear);
+  config.addFilter('fromNow', fromNow);
   config.addFilter('w3DateFilter', w3DateFilter);
-  config.addFilter("markdownify", (markdownString) =>
-    markdownIt.render(markdownString)
-  );
-  config.addFilter("pageTypeFilter", function (collection, pageType) {
-    if (!pageType) return collection;
-    const filtered = collection.filter(item => item.data.tags == pageType)
-    return sortByDisplayOrder(filtered);
-  });
+  config.addFilter("markdownify", markdownify);
+  config.addFilter('sortCollectionByDisplayOrder', sortCollectionByDisplayOrder);
+  config.addFilter("cssmin", cssmin);
 
-  config.addCollection('about', collection => {
-    return collection.getFilteredByGlob('./src/about/*');
-  });
+  // Collections
+  config.addCollection('writing', getAllWritingPages);
+  config.addCollection('blog', getAllBlogPosts);
+  config.addCollection("galleryImages", getGalleryImages);
 
-  config.addCollection("profile", function (collection) {
-    return collection.getFilteredByTag("profile").sort((a, b) => {
-      return a.data.order - b.data.order;
-    });
-  });
+  // Plugins
+  config.addPlugin(rssPlugin);
+  config.addPlugin(lightningCSS);
 
-  config.addCollection('blog', collection => {
-    return [...collection.getFilteredByGlob('./src/blog/*')].reverse();
-  });
+  config.setLibrary('md', markdownLib);
 
   return {
-    markdownTemplateEngine: 'njk',
-    dataTemplateEngine: 'njk',
-    htmlTemplateEngine: 'njk',
+    markdownTemplateEngine: TEMPLATE_ENGINE,
+    dataTemplateEngine: TEMPLATE_ENGINE,
+    htmlTemplateEngine: TEMPLATE_ENGINE,
     dir: {
       input: 'src',
-      output: 'dist'
+      output: 'dist',
+      includes: '_includes',
+      assets: 'assets',
     }
   }
 }

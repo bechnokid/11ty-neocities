@@ -1,0 +1,17 @@
+{
+  "name": "Bechno Kid's Hideout",
+  "url": "https://bechnokid.neocities.org",
+  "cssURL": "/assets/css",
+  "jsURL": "/assets/javascript",
+  "desc": "Art, blog, resources, and more?!",
+  "ogImgURL": "https://bechnokid.neocities.org/images/og_image.png",
+  "feed": [
+    {
+      "date": "2024-10-9",
+      "content": [
+        "Started using Eleventy to help code this site!",
+        "Removed the marquee in the footer"
+      ]
+    }
+  ]
+}

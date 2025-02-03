@@ -1,0 +1,45 @@
+@import "bechno.css";
+
+h2 {
+  background: var(--bg-footer);
+  padding: .5rem;
+  margin-bottom: .5rem;
+}
+
+section > section {
+  margin: 1.5rem 0;
+}
+
+section > *:not(h2):not(.sidebar):not(figure) {
+  margin-left: .5rem !important;
+}
+
+section + section {
+  margin-bottom: 1rem;
+}
+
+section ul,
+section ol {
+  margin: .75rem 0 1em;
+  padding-left: 1.25rem;
+}
+
+section li > p {
+  margin: 0
+}
+
+section ul li,
+section ol li {
+  margin: .25rem .75rem;
+  padding-left: .5rem;
+}
+
+section ol li::marker {
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+section ul li::marker {
+  content: "❤";
+  color: var(--text-primary);
+}

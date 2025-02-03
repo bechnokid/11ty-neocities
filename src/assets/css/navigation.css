@@ -1,0 +1,81 @@
+nav .h2 {
+  font-size: 1.25em;
+}
+
+nav .sidebar {
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-secondary);
+}
+
+nav a:hover {
+  text-decoration: underline
+}
+
+nav .skip-link {
+  position: absolute;
+  margin-left: 2rem;
+  z-index: -99;
+}
+
+nav .skip-link:focus {
+  position: relative;
+  z-index: 99;
+}
+
+ul.nav-links {
+  margin: 0;
+}
+
+details.burger {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+}
+
+details.burger[open] {
+  background: var(--bg-overlay);
+}
+
+details.burger summary {
+  list-style-type: none;
+  cursor: pointer;
+  background: var(--bg-img-color);
+  color: var(--bg-img-color);
+}
+
+details.burger summary::before {
+  content: "☰";
+  font-size: 2.5em;
+  color: var(--text-primary);
+}
+
+details.burger[open] summary::before {
+  content: '×';
+  font-size: 3em;
+}
+
+details.burger nav {
+  height: calc(100vh - 50px);
+  width: 200px;
+  overflow-y: auto;
+}
+
+@media screen and (max-width: 600px) {
+  #nav-main {
+    display: none;
+  }
+
+  details.burger {
+    display: block;
+  }
+
+  .page {
+    margin-top: 3.25rem;
+  }
+}

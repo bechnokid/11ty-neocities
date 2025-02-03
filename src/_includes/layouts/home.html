@@ -1,6 +1,31 @@
 {% extends "layouts/base.html" %}
-<article>
-  {% block content %}
+{% block css %}
+  <link rel="stylesheet" href="{{ main.cssURL }}/home.css" type="text/css" media="all">
+{% endblock css %}
+{% block content %}
+  <div class="content">
     {{ content | safe }}
-  {% endblock %}
-</article>
+    <div class="h3 intro-links text-center mt-4">
+      <a href="/feed.xml">RSS Feed</a><span class="mx-2">✦</span><a href="/faq">FAQ</a><span class="mx-2">✦</span><a href="https://bechnokid.123guestbook.com/">Guestbook</a>
+    </div>
+    <hr>
+    <section class="row g-0 mb-3">
+      <div class="col sidebar me-2">
+        <div class="h2 p-2">Link Me!</div>
+        <div class="content p-2 text-center">
+          <p>Link me if you'd like! I would ask not to hotlink and to save the image in your own browser, but that's up to you. :3</p>
+          <img class="mt-2" src="/assets/images/button.png" alt="Page button for Bechno Kid's Hideout">
+        </div>
+      </div>
+      <div class="status col sidebar ms-2">
+        <div class="h2 p-2">Latest Status</div>
+        <div class="content p-2">
+          {% set status = microblog.microblog[0] %}
+          <div class="mb-1"><b>{{ status.date | fromNow | capitalize }}</b> || Mood: {{ status.mood }}</div>
+          <p>{{ status.content | safe }}</p>
+        </div>
+      </div>
+    </section>
+    {% include "partials/homepage/cliques.html" %}
+  </div>
+{% endblock %}

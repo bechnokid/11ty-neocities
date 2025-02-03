@@ -1,39 +1,8 @@
 {
-  "items": [
-    {
-      "text": "About",
-      "url": "/about",
-      "new": false
-    },
-    {
-      "text": "My Art",
-      "url": "/artwork",
-      "new": false
-    },
-    {
-      "text": "Writing",
-      "url": "/writing", 
-      "new": false
-    },
-    {
-      "text": "Goodies",
-      "url": "/goodies",
-      "new": false
-    },
-    {
-      "text": "Resources",
-      "url": "/resources",
-      "new": false
-    },
-    {
-      "text": "Links",
-      "url": "/links",
-      "new": false
-    },
-    {
-      "text": "Sitemap",
-      "url": "/sitemap",
-      "new": false
-    }
+  "tags": [
+    "main",
+    "content",
+    "goods",
+    "outgoing"
   ]
 }

@@ -1,0 +1,28 @@
+@import "bechno.css";
+
+figure {
+  float: left;
+  padding: 1em;
+  margin: 0 2em 1em 0;
+  width: 225px;
+  border: 2px solid var(--border-sidebar);
+  text-align: center;
+  background-color: var(--bg-sidebar);
+}
+
+figure img {
+  margin-bottom: .7em;
+}
+
+figcaption {
+  font-size: .8em;
+}
+
+.geek-code {
+  font-family: 'Lucida Console'
+}
+
+.fanlistings {
+  max-height: 250px;
+  overflow: auto;
+}

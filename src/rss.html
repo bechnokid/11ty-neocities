@@ -1,0 +1,24 @@
+---
+title: Latest Updates at Bechno Kid's Hideout
+summary: A feed of the latest updates at Bechno Kid's personal website
+permalink: 'feed.xml'
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ title }}</title>
+    <link>{{ main.url }}</link>
+    <atom:link href="{{ permalink | absoluteUrl(metadata.url) }}" rel="self" type="application/rss+xml" />
+    <description>{{ main.desc }}</description>
+    <language>en-us</language>
+    {% for item in site.feed.items %}
+    <item>
+      <title>{{ item.date | dayOfMonth }}</title>
+      <link>{{ main.url }}/home</link>
+      <description><![CDATA[{{ item.content }}]]></description>
+      <pubDate>{{ item.date | date | dateToRfc822 }}</pubDate>
+    </item>
+    {% endfor %}
+  </channel>
+</rss>

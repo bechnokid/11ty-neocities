@@ -1,0 +1,16 @@
+<div class="sidebar">
+  <div class="h2 text-center p-1">❤ Updates ❤</div>
+  <div class="update-content p-2">
+    {% for update in site.feed.items %}
+    <b>{{ update.date | monDayYear }}</b>
+    <ul>
+      {% for item in update.content %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+      {% if loop.index != loop.length %}
+      <hr class="small">
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
