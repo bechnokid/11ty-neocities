@@ -85,7 +85,7 @@ module.exports = config => {
     htmlTemplateEngine: TEMPLATE_ENGINE,
     dir: {
       input: 'src',
-      output: 'dist',
+      output: 'public',
       includes: '_includes',
       assets: 'assets',
     }

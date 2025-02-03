@@ -12,5 +12,5 @@ Thumbs.db
 
 # Node modules and output
 node_modules
-dist
+public
 src/assets/css/*-min.css
