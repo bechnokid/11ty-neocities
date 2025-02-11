@@ -3,31 +3,31 @@
   "column1": [
     {
       "title": "NeoCreatives",
-      "index": [ "http://neocreatives.byethost5.com/", "neocreatives.png"]
+      "index": { "src": "neocreatives.png", "link": "http://neocreatives.byethost5.com/" }
     },
     {
       "title": "Cuddler",
-      "index": ["https://cuddler-webring.netlify.app", "cuddler.png"],
-      "prevLink": [ "https://cuddler-webring.netlify.app/bechnokid/previous", "cuddler_left.gif"],
-      "nextLink": [ "https://cuddler-webring.netlify.app/bechnokid/next", "cuddler_right.gif" ]
+      "index": { "src": "cuddler.png", "link": "https://cuddler-webring.netlify.app" },
+      "prevLink": { "src": "cuddler_left.gif", "link": "https://cuddler-webring.netlify.app/bechnokid/previous" },
+      "nextLink": { "src": "cuddler_right.gif", "link": "https://cuddler-webring.netlify.app/bechnokid/next" }
     },
     {
       "title": "Queer Coded",
-      "index": ["https://cuddler-webring.netlify.app", "queercoded.png"],
-      "prevLink": [ "https://cuddler-webring.netlify.app/bechnokid/previous", "queercoded_left.png"],
-      "nextLink": [ "https://cuddler-webring.netlify.app/bechnokid/next", "queercoded_right.png" ]
+      "index": { "src": "queercoded.png", "link": "https://cuddler-webring.netlify.app" },
+      "prevLink": { "src": "queercoded_left.png", "link": "https://cuddler-webring.netlify.app/bechnokid/previous" },
+      "nextLink": { "src": "queercoded_right.png", "link": "https://cuddler-webring.netlify.app/bechnokid/next" }
     },
     {
       "title": "Ladies of the Link",
-      "index": ["https://ladiesofthelinks.neocities.org/", "ladiesofthelink.gif"],
-      "prevLink": [ "https://webri.ng/webring/ladiesofthelinks/previous?via=https://bechnokid.neocities.org", "ladiesofthelink_left.gif"],
-      "nextLink": [ "https://webri.ng/webring/ladiesofthelinks/next?via=https://bechnokid.neocities.org", "ladiesofthelink_right.gif" ]
+      "index": { "src": "ladiesofthelink.gif", "link": "https://ladiesofthelinks.neocities.org/" },
+      "prevLink": { "src": "ladiesofthelink_left.gif", "link": "https://webri.ng/webring/ladiesofthelinks/previous?via=https://bechnokid.neocities.org" },
+      "nextLink": { "src": "ladiesofthelink_right.gif", "link": "https://webri.ng/webring/ladiesofthelinks/next?via=https://bechnokid.neocities.org" }
     },
     {
       "title": "Acing the Internet",
-      "index": ["https://acingtheinternet.netlify.app", "ace.png"],
-      "prevLink": [ "https://acingtheinternet.netlify.app/bechnokid/previous", "ace_left.gif"],
-      "nextLink": [ "https://acingtheinternet.netlify.app/bechnokid/next", "ace_right.gif" ]
+      "index": { "src": "ace.png", "link": "https://acingtheinternet.netlify.app" },
+      "prevLink": { "src": "ace_left.gif", "link": "https://acingtheinternet.netlify.app/bechnokid/previous" },
+      "nextLink": { "src": "ace_right.gif", "link": "https://acingtheinternet.netlify.app/bechnokid/next" }
     },
     {
       "title": "Re:source",

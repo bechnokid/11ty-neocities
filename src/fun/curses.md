@@ -8,5 +8,5 @@ summary: Once upon a time, a voice actor named P.M Seymour created a [video](htt
 <button class="go-to-heck button mb-2">I hope...</button>
 <div class='sidebar'>
 <div class="content p-3"><p class="random">May the curses begin!</p></div>
-<script>m=[{% for curse in curses %}"{{ curse }}",{% endfor %}];var c = m.slice(0);function randomPull(){ var randomIndex=Math.floor(Math.random() * c.length); $(".random").html(c[randomIndex]); c.splice(randomIndex, 1);}$(".go-to-heck").on("click", function(){ if (c.length < 1){ c=m.slice(0)}; randomPull();});</script>
+<script>m={{ curses.items }};var c = m.slice(0);function randomPull(){ var randomIndex=Math.floor(Math.random() * c.length); $(".random").html(c[randomIndex]); c.splice(randomIndex, 1);}$(".go-to-heck").on("click", function(){ if (c.length < 1){ c=m.slice(0)}; randomPull();});</script>
 </div>

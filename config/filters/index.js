@@ -30,7 +30,7 @@ const monDayYear = value => {
 
 // Formats time into "time ago"
 const fromNow = value => {
-  return `${formatDistanceToNow( value, { addSuffix: true } )}`;
+  return `${formatDistanceToNow( value + '-05:00', { addSuffix: true } )}`;
 }
 
 // Formats date into ISO format

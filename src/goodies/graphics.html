@@ -1,0 +1,57 @@
+---
+title: Graphics
+displayOrder: 1
+description: A hoard of all the pretty graphics that I personally enjoy.
+freezeframe: true
+altLinkText: '. Clicking on the image leads to the source'
+---
+
+<style>
+  main .content {
+    max-height: 400px;
+    overflow-y: auto;
+  }
+
+  .content > * {
+    margin: .25rem;
+  }
+
+  .btns > * {
+    height: 31px;
+  }
+</style>
+
+{% set goodiesArr = goodies.graphics %}
+{% set typesArr = ['web_badges', 'buttons', 'blinkies', 'stamps'] %}
+
+<h2>Graphics I Collected</h2>
+<section class="mb-4">
+  {% for type in typesArr %}
+  {% set array = goodiesArr[type].collection %}
+  {% details goodiesArr[type].title, { class: 'mt-3', summaryClass: 'h3 details', open: array.open } %}
+  {% galleryBox {contentClass: 'justify-content-center align-items-center' + (' freezeframe' if type == "blinkies" else '' )} %}
+    {% for item in array.items %}
+      <img {{ "class=freezeframe" if item.freezeframe }} src="{{ goodiesArr[type].imgSrc + item.src }}" alt="{{ item.alt }}">
+    {% endfor %}
+  {% endgalleryBox %}
+  {% enddetails %}
+  {% endfor %}
+</section>
+
+<h2>Graphics I Made</h2>
+<section>
+  {% for type in typesArr %}
+  {% set array = goodiesArr[type].mine %}
+  {% if array %}
+    {% details goodiesArr[type].title, { class: 'mt-3', summaryClass: 'h3 details', open: array.open } %}
+      {% galleryBox {contentClass: 'justify-content-center align-items-center' + (' freezeframe' if type == "blinkies" else '' )} %}
+        {% for item in array.items %}
+          {% if item.url %}<a href="{{ item.url }}">{% endif %}
+          <img {{ "class=freezeframe" if item.freezeframe }} src="{{ goodiesArr[type].imgSrc + item.src }}" alt="{{ item.alt }}">
+          {% if item.url %}</a>{% endif %}
+        {% endfor %}
+      {% endgalleryBox %}
+    {% enddetails %}
+  {% endif %}
+  {% endfor %}
+</section>

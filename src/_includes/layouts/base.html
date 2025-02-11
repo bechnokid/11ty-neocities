@@ -39,7 +39,7 @@
       <div class="bg-body main">
         <div class="row g-0">
           <nav id="nav-main" class="col-lg-2">{% include "partials/navigation.html" %}</nav>
-          <main class="col py-3 px-4" tabindex="-1">{% block content %}{% endblock %}</main>
+          <main id="main-content" class="col py-3 px-4" tabindex="-1">{% block content %}{% endblock %}</main>
           {% if title == "Home" %}
             <aside class="col-lg-2">
               {% include "partials/homepage/updates.html" %}

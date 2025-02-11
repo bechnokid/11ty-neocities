@@ -15,14 +15,16 @@ const {
 } = require('./config/filters');
 
 const {
-  getAllWritingPages,
-  getAllBlogPosts,
-  getGalleryImages
+  writingPages,
+  blogPosts,
+  galleryImages
 } = require('./config/collections');
 
 const {
   simpleGallery,
-  figure
+  figure,
+  details,
+  galleryBox
 } = require('./config/shortcodes');
 
 const markdownLib = require('./config/plugins/markdown');
@@ -40,6 +42,8 @@ module.exports = config => {
 
   // Paired shortcodes
   config.addPairedShortcode('figure', figure);
+  config.addPairedShortcode('details', details);
+  config.addPairedShortcode('galleryBox', galleryBox);
 
   // Transform
   config.addTransform("htmlmin", function (content) {
@@ -69,9 +73,9 @@ module.exports = config => {
   config.addFilter("cssmin", cssmin);
 
   // Collections
-  config.addCollection('writing', getAllWritingPages);
-  config.addCollection('blog', getAllBlogPosts);
-  config.addCollection("galleryImages", getGalleryImages);
+  config.addCollection('writing', writingPages);
+  config.addCollection('blog', blogPosts);
+  config.addCollection("galleryImages", galleryImages);
 
   // Plugins
   config.addPlugin(rssPlugin);

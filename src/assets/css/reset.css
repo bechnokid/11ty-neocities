@@ -126,6 +126,14 @@ ul {
   border: 1px solid silver;
 }
 
+.text-sm {
+  font-size: .9em;
+}
+
+.text-xs {
+  font-size: .8em;
+}
+
 .text-center {
   text-align: center !important;
 }

@@ -22,11 +22,9 @@ Here are some sites whose webmasters are friends, affiliates, or people who I th
 
 If you already added my button to your site, let me know and I'll add you here!
 
-<div class='sidebar mb-4'>
-<div class='content d-flex flex-wrap justify-content-center align-items-center p-3'>
+{% galleryBox { sidebarClass: 'mb-4', contentClass: 'justify-content-center align-items-center' } %}
 {% for key, value in netizenLinks %}<a href='https://{{ key }}.{{ value.domain }}' class='button-link m-1'><img src='{{ imgLink + key }}.{{ value.type }}' alt='{% if value.desc %}{{ altText + value.desc }}{% else %}{{ altText + key }}{% endif %}'{{ " class=freezeframe" if value.freezeframe }}></a>{% endfor %}
-</div>
-</div>
+{% endgalleryBox %}
 
 ## Resources
 

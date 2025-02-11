@@ -43,9 +43,10 @@ I have a BS degree in Computer Science and somehow managed to land in the top 20
 <div class='sidebar'>
 
 ## Fanlistings I Joined
+{% set array = site.fanlistings %}
 
 <div class='content fanlistings p-3 d-flex justify-content-center flex-wrap'>
-{% simpleGallery '/assets/images/about/fanlistings/', site.fanlistings %}
+{% for item in array.items %}<a href='{{ item.link }}' class='m-1' ><img src='{{ array.imgSrc + item.src }}' alt='{{ item.alt }}'></a>{% endfor %}
 </div>
 
 </div>

@@ -1,12 +1,12 @@
-const getAllWritingPages = collection => {
+const writingPages = collection => {
   return collection.getFilteredByTag("writing");
 }
 
-const getAllBlogPosts = collection => {
+const blogPosts = collection => {
   return [...collection.getFilteredByGlob('./src/blog/*.md')].reverse();
 }
 
-const getGalleryImages = collection => {
+const galleryImages = collection => {
   const galleries = collection.getAll()[0].data.galleries.data;
   let galleryImages = [];
 
@@ -23,7 +23,7 @@ const getGalleryImages = collection => {
 }
 
 module.exports = {
-  getAllWritingPages,
-  getAllBlogPosts,
-  getGalleryImages
+  writingPages,
+  blogPosts,
+  galleryImages
 }

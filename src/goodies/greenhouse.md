@@ -35,6 +35,6 @@ If you think my site is cool, perhaps you can raise your own pot and help it gro
 
 Here is my pot collection! Any pots that are broken need to be put away until they can hopefully regrow!
 
-<div class='sidebar mb-3 greenhouse'><div class='content d-flex flex-wrap justify-content-center align-items-center p-3'>
+{% galleryBox { sidebarClass: 'mb-3 greenhouse', contentClass: 'justify-content-center align-items-center' } %}
 {% for pot in gardenLinks %}<div><iframe src={{ pot }} scrolling="no" loading="lazy"></iframe></div>{% endfor %}
-</div></div>
+{% endgalleryBox %}

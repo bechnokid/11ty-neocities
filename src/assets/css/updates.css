@@ -1,8 +1,3 @@
-aside .sidebar {
-  max-height: 400px;
-  overflow-y: auto;
-}
-
 aside b {
   display: block;
   color: var(--text-secondary);
@@ -29,5 +24,15 @@ aside hr {
 }
 
 aside .update-content {
+  max-height: 400px;
+  overflow-y: auto;
   font-size: .8em;
+}
+
+@media (max-width: 576px) {
+  aside .update-content hr,
+  aside .update-content b:not(:first-of-type),
+  aside .update-content ul:not(:first-of-type) {
+    display: none;
+  }
 }
