@@ -1,6 +1,13 @@
 {
   "items": [
     {
+      "date": "2025-03-07",
+      "content": [
+        "Fixed some errors in FreezeframeJS tutorial",
+        "Removed PrismJS and made all code blocks pure CSS"
+      ]
+    },
+    {
       "date": "2025-01-16",
       "content": [
         "Revamped sitemap"

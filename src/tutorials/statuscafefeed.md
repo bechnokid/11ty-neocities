@@ -2,21 +2,19 @@
 title: Creating a Feed Reader from StatusCafe
 displayOrder: 4
 description: A tutorial on how to create a feed reader directly from [StatusCafe](https://status.cafe/).
-prism: true
+code: true
 ---
 ## 0) Introduction
 
-While I may not use StatusCafe anymore, I'm sure there are many who already have an account on that site, and perhaps want to make a microblog out of it to put in their own site. It is possible to modify the CSS in your StatusCafe account and then put it in an iframe, but creating a feed reader allows for more customization, if needed.
+While I may not use StatusCafe anymore, I'm sure there are many who already have an account on that site, and perhaps want to make a microblog out of it to put in their own site.
+
+It is possible to modify the CSS in your StatusCafe account and then put it in an iframe, but creating a feed reader allows for more customization, if needed.
 
 ## 1) Obtaining StatusCafe's Feed
 
 You can get your StatusCafe feed from the URL below. All you would need to do is replace `YOUR_STATUSCAFE_USERNAME` with your StatusCafe username.
 
-```html
-https://status.cafe/users/YOUR_STATUSCAFE_USERNAME.atom
-```
-
-**Example**: https://status.cafe/users/bechnokid.atom
+**https://<i></i>status<i></i>.cafe/users/YOUR_STATUSCAFE_USERNAME.atom**
 
 ## 2) Creating the HTML Element
 
@@ -24,9 +22,7 @@ Somewhere in your HTML code, create an element where the Feed Reader will be. Th
 
 According to the HTML standard, since there will be only one feed reader, I'll be giving it an id attribute called `feed-reader`.
 
-```html
-<div id='feed-reader'></div>
-```
+<pre><code class='css-code'>&lt;<span class="selector">div</span> <span class="attribute">id</span>=<span class="attr-value">&apos;feed-reader&apos;</span>&gt;&lt;/<span class="selector">div</span>&gt;</code></pre>
 
 ## 3) Making the Script
 
@@ -36,29 +32,24 @@ Make sure that the script is in a `<script>` tag is below the HTML element you c
 
 I usually like to put the `<script>` tag right above the `</body>` tag, as shown below:
 
-```html
-<html>
-  <head></head>
-  <body>
-    ...
-    ...
-    <script></script> <-- Right here.
-  </body>
-</html>
-```
+<pre><code class='css-code'>&lt;<span class="selector">html</span>&gt;
+  &lt;<span class="selector">head</span>&gt;&lt;/<span class="selector">head</span>&gt;
+  &lt;<span class="selector">body</span>&gt;
+    <span class="comment">&lt;!-- CODE GOES HERE --&gt;</span>
+    &lt;<span class="selector">script</span>&gt;&lt;/<span class="selector">script</span>&gt; <span class="comment">&lt;-- Right here.</span>
+  &lt;/<span class="selector">body</span>&gt;
+&lt;/<span class="selector">html</span>&gt;</code></pre>
 
 Put the following code into the `<script>` tag:
 
-```js
-const feedURL = 'https://status.cafe/users/[YOUR_STATUSCAFE_USERNAME].atom';
+<pre><code class='css-code'><span class="attribute">const</span> feedURL = <span class="attr-value">&apos;https://status.cafe/users/[YOUR_STATUSCAFE_USERNAME].atom&apos;</span>;
 
-fetch(feedURL)
-  .then(response => response.text())
-  .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
-  .then(data => {
-    const entries = data.querySelectorAll("entry")
-  });
-```
+<span class="selector">fetch</span>(feedURL)
+  .<span class="selector">then</span>(response =&gt; response.text())
+  .<span class="selector">then</span>(str =&gt; <span class="attribute">new</span> window.<span class="selector">DOMParser</span>().<span class="selector">parseFromString</span>(str, <span class="attr-value">&quot;text/xml&quot;</span>))
+  .<span class="selector">then</span>(data =&gt; {
+    <span class="attribute">const</span> entries = data.<span class="selector">querySelectorAll</span>(<span class="attr-value">&quot;entry&quot;</span>)
+  });</code></pre>
 
 What this code is doing is converting the feed into XML, which Javascript can then extract the feed's data. The script then takes all of the posts you created in StatusCafe and stores them into the `entries` variable.
 
@@ -69,15 +60,13 @@ The way how StatusCafe sets up their feeds makes things a little difficult, and 
 
 Underneath `const entries = data.querySelectorAll("entry")`, add the following:
 
-```js
-let html = ``;
+<pre><code class='css-code'><span class="attribute">let</span> html = <span class="attr-value">``</span>;
 
-entries.forEach(el => {
-  let title = el.querySelector("title").innerHTML.slice(0, NUMBER_OF_CHARACTERS).trim();
-  let content = el.querySelector("content").textContent.trim();
-  let dateString = el.querySelector("published").innerHTML.slice(0,10);
-});
-```
+entries.<span class="selector">forEach</span>(el =&gt; {
+  <span class="attribute">let</span> title = el.<span class="selector">querySelector</span>(<span class="attr-value">&quot;title&quot;</span>).innerHTML.<span class="selector">slice</span>(<span class="selector">0</span>, <span class="attr-value">NUMBER_OF_CHARACTERS</span>).<span class="selector">trim</span>();
+  <span class="attribute">let</span> content = el.<span class="selector">querySelector</span>(<span class="attr-value">&quot;content&quot;</span>).textContent.<span class="selector">trim</span>();
+  <span class="attribute">let</span> dateString = el.<span class="selector">querySelector</span>(<span class="attr-value">&quot;published&quot;</span>).innerHTML.<span class="selector">slice</span>(<span class="selector">0</span>,<span class="selector">10</span>);
+});</code></pre>
 
 This loop takes the data from each StatusCafe post and splits them into different variables that we can put into the "html" variable later on. I'll explain each one.
 
@@ -94,20 +83,16 @@ This part requires the most customization as it entirely depends on how you want
 
 Add the following underneath `let dateString = el.querySelector("published").innerHTML.slice(0,10)`:
 
-```js
-html += `
-  <p>${title} - ${dateString}</p>
-  <p>${content}</p>
-`;
-```
+<pre><code class='css-code'>html += <span class='attr-value'>`
+  &lt;p&gt;</span>${title} - ${dateString}<span class='attr-value'>`&lt;/p&gt;
+  &lt;p&gt;</span>${content}<span class='attr-value'>`&lt;/p&gt;
+`</span>;</code></pre>
 
 This sets up the HTML of one of your posts, putting your username and the date on line line, and then the status on the next line.
 
 Then, place the following outside the `entries.forEach()` loop:
 
-```js
-document.getElementById("feed-reader").innerHTML = html;
-```
+<pre><code class='css-code'><span class="attr-value">document</span>.<span class="selector">getElementById</span>(<span class="attr-value">"feed-reader"</span>).innerHTML = html;</code></pre>
 
 This line will look for the HTML element with the id attribute `feed reader` and fill it with the data stored in the `html` variable.
 
@@ -115,36 +100,34 @@ This line will look for the HTML element with the id attribute `feed reader` and
 
 The finished HTML should look something like this:
 
-```html
-<html>
-  <head></head>
-  <body>
-    <div id='feed-reader'></div>
-    <script>
-      const feedURL = 'https://status.cafe/users/[YOUR_STATUSCAFE_USERNAME].atom';
+<pre><code class='css-code'>&lt;<span class="selector">html</span>&gt;
+  &lt;<span class="selector">head</span>&gt;&lt;/<span class="selector">head</span>&gt;
+  &lt;<span class="selector">body</span>&gt;
+    &lt;<span class="selector">div</span> <span class="attribute">id</span>=<span class="attr-value">&apos;feed-reader&apos;</span>&gt;&lt;/<span class="selector">div</span>&gt;
+    &lt;<span class="selector">script</span>&gt;
+      <span class="attribute">const</span> feedURL = <span class="attr-value">&apos;https://status.cafe/users/[YOUR_STATUSCAFE_USERNAME].atom&apos;</span>
 
-      fetch(feedURL)
-        .then(response => response.text())
-        .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
-        .then(data => {
-          const entries = data.querySelectorAll("entry");
-          let html = ``;
+      <span class="selector">fetch</span>(feedURL)
+        .<span class="selector">then</span>(response =&gt; response.<span class="selector">text</span>())
+        .<span class="selector">then</span>(str =&gt; <span class="attribute">new</span> <span class="attr-value">window</span>.<span class="selector">DOMParser</span>().<span class="selector">parseFromString</span>(str, <span class="attr-value">&quot;text/xml&quot;</span>)
+        .<span class="selector">then</span>(data =&gt; {
+          <span class="attribute">const</span> entries = data.<span class="selector">querySelectorAll</span>(<span class="attr-value">&quot;entry&quot;</span>;
+          <span class="attribute">let</span> html = <span class="attr-value">``</span>;
 
-          entries.forEach(el => {
-            let title = el.querySelector("title").innerHTML.slice(0, NUMBER_OF_CHARACTERS).trim();
-            let content = el.querySelector("content").textContent.trim();
-            let dateString = el.querySelector("published").innerHTML.slice(0,10);
-            html += `
-              <p>${title} - ${dateString}</p>
-              <p>${content}</p>
-            `;
+          entries.<span class="selector">forEach</span>(el =&gt; {
+            <span class="attribute">let</span> title = el.<span class="selector">querySelector</span>(<span class="attr-value">&quot;title&quot;</span>.innerHTML.<span class="selector">slice</span>(<span class="selector">0</span>, <span class="attr-value">NUMBER_OF_CHARACTERS</span>).trim();
+            <span class="attribute">let</span> content = el.<span class="selector">querySelector</span>(<span class="attr-value">&quot;content&quot;</span>.textContent.<span class="selector">trim</span>();
+            <span class="attribute">let</span> dateString = el.<span class="selector">querySelector</span>(<span class="attr-value">&quot;published&quot;</span>.innerHTML.<span class="selector">slice</span>(<span class="selector">0</span>,<span class="selector">10</span>);
+            html += <span class='attr-value'>`
+              &lt;p&gt;</span>${title} - ${dateString}<span class='attr-value'>&lt;/p&gt;
+              &lt;p&gt;</span>${content}<span class='attr-value'>&lt;/p&gt;
+            `</span>;
           })
-          document.getElementById("feed-reader").innerHTML = html;
+          <span class="attr-value">document</span>.<span class="selector">getElementById</span>(<span class="attr-value">&quot;feed-reader&quot;</span>.innerHTML = html;
         })
-    </script>
-  </body>
-</html>
-```
+    &lt;/<span class="selector">script</span>&gt;
+  &lt;/<span class="selector">body</span>&gt;
+&lt;/<span class="selector">html</span>&gt;</code></pre>
 
 Again, be sure to replace `YOUR_STATUSCAFE_USERNAME` with your StatusCafe username and `NUMBER_OF_CHARACTERS` with the number of characters in your StatusCafe username (+ 3 if you want to include the emoji).
 
@@ -166,19 +149,17 @@ First, make the following changes:
 
 Applying the changes will change the loop into something like the following:
 
-```js
-for (i = 0; i < STATUS_LIMIT; i++) {
-  let title = entries[i].querySelector("title").innerHTML.slice(0, NUMBER_OF_CHARACTERS).trim();
-  let content = entries[i].querySelector("content").textContent.trim();
-  let dateString = entries[i].querySelector("published").innerHTML.slice(0,10);
-  html += `
+<pre><code class='css-code'><span class="attribute">for</span> (i = <span class="selector">0</span>; i &lt; <span class="attr-value">STATUS_LIMIT</span>; i++) {
+  <span class="attribute">let</span> title = entries[i].<span class="selector">querySelector</span>(<span class="attr-value">&quot;title&quot;</span>).innerHTML.<span class="selector">slice</span>(0, <span class="attr-value">NUMBER_OF_CHARACTERS</span>).<span class="selector">trim</span>();
+  <span class="attribute">let</span> content = entries[i].<span class="selector">querySelector</span>(<span class="attr-value">&quot;content&quot;</span>).textContent.<span class="selector">trim</span>();
+  <span class="attribute">let</span> dateString = entries[i].<span class="selector">querySelector</span>(<span class="attr-value">&quot;published&quot;</span>).innerHTML.<span class="selector">slice</span>(<span class="selector">0</span>,<span class="selector">10</span>);
+  html += <span class="attr-value">`</span>
     ${title} - ${dateString}
     ${content}
-  `;
+  <span class="attr-value">`</span>;
 }
-html += `<p><a href='https://status.cafe/users/bechnokid'>See more at StatusCafe</a></p>`;
-document.getElementById("feed-reader").innerHTML = html;
-```
+html += <span class="attr-value">`&lt;p&gt;&lt;a href=&apos;https://status.cafe/users/bechnokid&apos;&gt;See more at StatusCafe&lt;/a&gt;&lt;/p&gt;`</span>;
+<span class="attr-value">document</span>.<span class="selector">getElementById</span>(<span class="attr-value">&quot;feed-reader&quot;</span>).innerHTML = html;</code></pre>
 
 You might have noticed that there is a new variable now: `STATUS_LIMIT`. This can be changed to the number of posts you want the feed reader to generate.
 

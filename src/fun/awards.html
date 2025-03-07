@@ -13,6 +13,6 @@ summary: Hopefully one day, a webmaster will find my site cool enough to give an
 </style>
 {% galleryBox { contentClass: 'justify-content-center align-items-center' } %}
 {% for item in items %}
-[![{{ item.alt }}]({{ imgSrc + item.src }})]({{ item.url }})
+  <a href="{{ item.url }}"><img src="{{ imgSrc + item.src }}" alt="{{ item.alt }}"></a>
 {% endfor %}
 {% endgalleryBox %}

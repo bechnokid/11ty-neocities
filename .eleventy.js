@@ -8,7 +8,6 @@ const {
   dayOfMonth,
   monthDayYear,
   monDayYear,
-  fromNow,
   w3DateFilter,
   markdownify,
   sortCollectionByDisplayOrder,
@@ -22,6 +21,7 @@ const {
 
 const {
   simpleGallery,
+  icon,
   figure,
   details,
   galleryBox
@@ -39,6 +39,7 @@ module.exports = config => {
 
   // Shortcodes
   config.addShortcode('simpleGallery', simpleGallery);
+  config.addShortcode('icon', icon);
 
   // Paired shortcodes
   config.addPairedShortcode('figure', figure);
@@ -66,7 +67,6 @@ module.exports = config => {
   config.addFilter('dayOfMonth', dayOfMonth);
   config.addFilter('monthDayYear', monthDayYear);
   config.addFilter('monDayYear', monDayYear);
-  config.addFilter('fromNow', fromNow);
   config.addFilter('w3DateFilter', w3DateFilter);
   config.addFilter("markdownify", markdownify);
   config.addFilter('sortCollectionByDisplayOrder', sortCollectionByDisplayOrder);

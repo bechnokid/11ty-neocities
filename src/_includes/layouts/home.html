@@ -9,20 +9,24 @@
       <a href="/feed.xml">RSS Feed</a><span class="mx-2">✦</span><a href="/faq">FAQ</a><span class="mx-2">✦</span><a href="https://bechnokid.123guestbook.com/">Guestbook</a>
     </div>
     <hr>
-    <section class="row g-0 mb-3">
-      <div class="col sidebar me-2">
-        <div class="h2 p-2">Link Me!</div>
-        <div class="content p-2 text-center">
-          <p>Link me if you'd like! I would ask not to hotlink and to save the image in your own browser, but that's up to you. :3</p>
-          <img class="mt-2" src="/assets/images/button.png" alt="Page button for Bechno Kid's Hideout">
+    <section class="row g-3 mb-3">
+      <div class="col-lg-6 order-lg-1 order-2">
+        <div class="sidebar h-100">
+          <div class="h2 p-2">Link Me!</div>
+          <div class="content p-2 text-center">
+            <p>Link me if you'd like! I would ask to save the image in your own browser, but that's up to you. :3</p>
+            <img class="mt-2" src="/assets/images/button.png" alt="Page button for Bechno Kid's Hideout">
+          </div>
         </div>
       </div>
-      <div class="status col sidebar ms-2">
-        <div class="h2 p-2">Latest Status</div>
-        <div class="content p-2">
-          {% set status = microblog.microblog[0] %}
-          <div class="mb-1"><b>{{ status.date | fromNow | capitalize }}</b> || Mood: {{ status.mood }}</div>
-          <p>{{ status.content | safe }}</p>
+      <div class="status col-lg-6 order-lg-2 order-1 mb-3 mb-lg-0">
+        <div class="sidebar h-100">
+          <div class="h2 p-2">Latest Status</div>
+          <div class="content p-2">
+            {% set status = microblog.microblog[0] %}
+            <div class="mb-1"><b>{{ status.date | monthDayYear }}</b> || Mood: {{ status.mood }}</div>
+            <p>{{ status.content | safe }}</p>
+          </div>
         </div>
       </div>
     </section>

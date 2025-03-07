@@ -19,7 +19,7 @@ Despite the slow connection and other inconveniences, I still look at those time
 
 I mostly lurked around forums until I came across deviantART--I'm sorry, DeviantArt, it's history from there. In terms of social media sites, I joined the following in this order: MySpace → LiveJournal → Twitter → Tumblr.
 
-I had my own website at some point, but it became to expensive to keep the domain so it was taken down. You can find some pieces of it from the only [snapshot taken in 22 April 2005](https://web.archive.org/web/20050422174630/http://bechnokid.com/). It's nice looking back on it.
+I had my own website at some point when I was a young teen, but I wasn't updating it enough to justify paying for the domain, so it was taken down. You can find some pieces of it from the only [snapshot taken in 22 April 2005](https://web.archive.org/web/20050422174630/http://bechnokid.com/). It's nice looking back on it.
 
 I mostly stayed on social media and made a Carrd at some point, but something still felt missing until I came across [Psshaw's Tumblr post about Neocities](https://bechnokid.tumblr.com/post/689228683142119424). I can't remember if I had heard of Neocities before, but I definitely heard of *Geocities*. The fact that making a site was completely free was enough to fully convince me to make this site on July 2022.
 

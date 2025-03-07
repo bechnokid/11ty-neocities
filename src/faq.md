@@ -10,6 +10,10 @@ displayOrder: 3
 ---
 
 <style>
+  dl {
+    margin-top: 1rem;
+  }
+  
   dt {
     color: var(--text-secondary);
   }

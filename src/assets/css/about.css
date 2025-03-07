@@ -19,7 +19,7 @@ figcaption {
 }
 
 .geek-code {
-  font-family: 'Lucida Console'
+  background: unset !important;
 }
 
 .fanlistings {

@@ -2,6 +2,11 @@
   "altText": "Layout for ",
   "layouts": [
     {
+      "date": "Feb 2025",
+      "desc": "Switching to a static site generator while also fixing some stuff! I'm getting close to making this perfect! I still need to upload some artwork, though...",
+      "img": "2025-02.jpg"
+    },
+    {
       "date": "May 2023",
       "desc": "Finally made a layout for the home page that I'm happy with! I also made some subtle changes for the headers throughout the site for a bit more consistency!",
       "img": "2023-05.png"

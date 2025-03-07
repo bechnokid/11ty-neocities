@@ -3,7 +3,7 @@ title: Greenhouse / Webgarden
 displayOrder: 4
 description: Little pots that show a sneak peek of the websites they're based on.
 summary: A concept created by [Miss Moss](https://missmoss.neocities.org/webgardens/index.html)! It is, as she quotes, *"a fun way to see new content from your favorite websites"*. This particular greenhouse has pots that I personally think are super cool.
-prism: true
+code: true
 warning: true
 ---
 <style>
@@ -27,9 +27,7 @@ If you think my site is cool, perhaps you can raise your own pot and help it gro
   <iframe src='/webgarden.html' scrolling='no' loading='lazy'></iframe>
 </div>
 
-````html
-<iframe src="https://bechnokid.neocities.org/webgarden.html" style="border:none"></iframe>
-````
+<pre><code class='css-code'>&lt;<span class="selector">iframe</span> <span class="attribute">src</span>=<span class="attr-value">&quot;https://bechnokid.neocities.org/webgarden.html&quot;</span> <span class="attribute">style</span>=<span class="attr-value">&quot;border:none&quot;</span>&gt;&lt;/<span class="selector">iframe</span>&gt;</code></pre>
 
 ## Greenhouse
 

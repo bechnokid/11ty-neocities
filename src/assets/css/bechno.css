@@ -7,6 +7,8 @@
 }
 
 :root {
+  --scroll-bar: #e48aa7;
+  --scroll-bg: #fccdd7;
   --bg-img: url(/assets/images/bg.jpg);
   --bg-img-color: #DE9DB1;
   --bg-overlay: rgb(222, 157, 177, 0.8);
@@ -16,8 +18,10 @@
   --bg-footer: #fccdd7;
   --border-body: #ffe8ec;
   --border-sidebar: #edb2c6;
+  --scroll-bg: #fccdd7;
+  --scroll-tab: #e48aa7;
   --text-body: #460827;
-  --text-muted: #835c70;
+  --text-muted: #805f6f;
   --text-primary: #a50e5a;
   --text-secondary: #7122aa;
   --text-link: #d60076;
@@ -31,7 +35,7 @@
 
 html,
 body {
-  scrollbar-color: var(--text-primary) var(--bg-footer);
+  scrollbar-color: var(--scroll-tab) var(--scroll-bg);
 }
 
 ::-webkit-scrollbar {
@@ -39,11 +43,11 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: var(--bg-footer)
+  background-color: var(--scroll-bg)
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--text-primary);
+  background-color: var(--scroll-tab);
 }
 
 body {
@@ -63,6 +67,7 @@ h5, .h5,
 h6, .h6 {
   font-family: 'Dyslexic', Georgia, serif;
   font-weight: 400;
+  margin: 1rem 0;
 }
 
 h1, .h1,
@@ -75,13 +80,6 @@ h2, .h2,
 h4, .h4,
 h6, .h6 {
   color: var(--text-primary);
-}
-
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6 {
-  margin-bottom: .5em;
 }
 
 a {
@@ -140,7 +138,7 @@ dd ol li::marker {
 }
 
 hr {
-  margin: 2em 0;
+  margin: 1em 0;
   border: none;
   border-top: 2px solid var(--border-sidebar);
   color: var(--bg-primary);
@@ -197,6 +195,12 @@ h3,
 h4,
 .h4 {
   font-size: 1.15em;
+}
+
+blockquote {
+  margin: 1rem 0 0 1.5rem;
+  padding-left: 1rem;
+  border-left: 4px solid var(--bg-primary);
 }
 
 button {
@@ -258,6 +262,14 @@ th, td {
   border: 1px solid var(--border-sidebar) !important;
 }
 
+.border-primary {
+  border: 1px solid var(--text-primary);
+}
+
+.border-2 {
+  border-width: 2px !important;
+}
+
 .text-img-bg {
   color: var(--bg-img-color) !important;
 }
@@ -296,15 +308,29 @@ th, td {
   border-bottom: 5px solid var(--bg-body);
 }
 
+.sidebar h1,
+.sidebar .h1,
+.sidebar h2,
+.sidebar .h2,
+.sidebar h3,
+.sidebar .h3,
+.sidebar h4,
+.sidebar .h4,
+.sidebar h5,
+.sidebar .h5,
+.sidebar h6,
+.sidebar .h6 {
+  background-color: var(--bg-footer);
+  margin: 0 !important;
+}
+
 .sidebar {
   background-color: var(--bg-sidebar) !important;
   border: 1px solid var(--border-sidebar) !important;
 }
 
-.sidebar .h2,
-.sidebar h2,
 summary.details.h2 {
-  background-color: var(--bg-footer);
+  margin-bottom: 0;
 }
 
 .sidebar h2,
@@ -328,6 +354,10 @@ summary.details.h3:hover {
   text-decoration: underline var(--text-secondary) 2px;
 }
 
+summary.details:focus-visible {
+  padding: .4rem;
+}
+
 a.hidden-link {
   color: unset !important;
   text-decoration: none !important;
@@ -342,4 +372,10 @@ a.hidden-link {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
+}
+
+@media screen and (max-width: 999px) {
+  .page {
+    max-width: 90vw;
+  }
 }

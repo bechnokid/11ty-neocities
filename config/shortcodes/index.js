@@ -18,6 +18,10 @@ const simpleGallery = function(collectionArr) {
   return galleryCode;
 }
 
+const icon = function(value) {
+  return `<i class='fa fa-${value}'></i>`;
+}
+
 // Paired
 const details = function (children, title = "", options = {}) {
   let resultsArray =  ['<details', '>', children, '</details>'];
@@ -85,6 +89,7 @@ const galleryBox = function(children, options = {}) {
 
 module.exports = {
   simpleGallery,
+  icon,
   figure,
   details,
   galleryBox

@@ -18,7 +18,7 @@ displayOrder: 5
     object-position: top center;
   }
 </style>
-
+{% set altText = site.layout_archive.altText %}
 {% for l in site.layout_archive.layouts %}
 ## {{ l.date }}
 

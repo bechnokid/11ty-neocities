@@ -2,10 +2,11 @@
 {% if pagination.href.next or pagination.href.previous %}
   <nav class="pagination" aria-label="Pagination links">
     {% if pagination.href.previous %}
-      <a href="{{ pagination.href.previous }}{{ paginationAnchor }}" data-direction="backwards"><span>{{ paginationPrevText if paginationPrevText else 'Previous' }}</span></a>
+      <a href="{{ pagination.href.previous }}{{ paginationAnchor }}" data-direction="backwards">{% icon 'arrow-left' %}<span class="ms-2">{{ paginationPrevText if paginationPrevText else 'Previous' }}</span></a>
     {% endif %}
+    {{ "❤" if pagination.href.previous and pagination.href.next }}
     {% if pagination.href.next %}
-      <a href="{{ pagination.href.next }}{{ paginationAnchor }}" data-direction="forwards"><span>{{ paginationNextText if paginationNextText else 'Next' }}</span></a>
+      <a href="{{ pagination.href.next }}{{ paginationAnchor }}" data-direction="forwards"><span class="me-2">{{ paginationNextText if paginationNextText else 'Next' }}</span>{% icon 'arrow-right' %}</a>
     {% endif %}
   </nav>
 {% endif %}

@@ -721,12 +721,14 @@
       {
         "src": "poogie-love-big.gif",
         "alt": "An animated stamp of a scene from Monster Hunter of a hunter petting a Poogie wearing a watermelon suit",
-        "url": "https://deviantart.com/view/524774833"
+        "url": "https://deviantart.com/view/524774833",
+        "freezeframe": true
       },
       {
         "src": "pink-water-big.gif",
         "alt": "An animated stamp with several heart decorations and an image of a pink ocean",
-        "url": "https://deviantart.com/view/746751581"
+        "url": "https://deviantart.com/view/746751581",
+        "freezeframe": true
       },
       {
         "src": "petty_drama.gif",
@@ -758,7 +760,8 @@
       {
         "src": "cherry-blossoms-big-746088159.gif",
         "alt": "A large animated stamp of cherry blossoms fluttering in the wind",
-        "url": "https://deviantart.com/view/746088159"
+        "url": "https://deviantart.com/view/746088159",
+        "freezeframe": true
       },
       {
         "src": "black_cats-big-155258054.gif",

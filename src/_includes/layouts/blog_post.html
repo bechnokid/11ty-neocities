@@ -12,7 +12,7 @@
 {% block content %}
   <article>
     {% include "partials/page-header.html" %}
-    {{ content | safe }}
+    <div class="my-4">{{ content | safe }}</div>
   </article>
   {% include "partials/go-back.html" %}
 {% endblock %}

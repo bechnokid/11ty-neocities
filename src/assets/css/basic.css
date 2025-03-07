@@ -6,11 +6,7 @@ h2 {
   margin-bottom: .5rem;
 }
 
-section > section {
-  margin: 1.5rem 0;
-}
-
-section > *:not(h2):not(.sidebar):not(figure) {
+section > *:not(h2):not(.sidebar):not(figure):not(blockquote) {
   margin-left: .5rem !important;
 }
 
@@ -28,18 +24,18 @@ section li > p {
   margin: 0
 }
 
-section ul li,
-section ol li {
+main ul li,
+main ol li {
   margin: .25rem .75rem;
   padding-left: .5rem;
 }
 
-section ol li::marker {
+main ol li::marker {
   font-weight: bold;
   color: var(--text-primary);
 }
 
-section ul li::marker {
+main ul li::marker {
   content: "❤";
   color: var(--text-primary);
 }

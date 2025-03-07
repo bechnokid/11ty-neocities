@@ -28,11 +28,6 @@ const monDayYear = value => {
   return `${format(value, 'PP')}`;
 }
 
-// Formats time into "time ago"
-const fromNow = value => {
-  return `${formatDistanceToNow( value + '-05:00', { addSuffix: true } )}`;
-}
-
 // Formats date into ISO format
 const w3DateFilter = value => {
   const dateObject = new Date(value);
@@ -58,7 +53,6 @@ module.exports = {
   dayOfMonth,
   monthDayYear,
   monDayYear,
-  fromNow,
   w3DateFilter,
   markdownify,
   sortCollectionByDisplayOrder,
