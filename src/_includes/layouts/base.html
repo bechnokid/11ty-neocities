@@ -3,13 +3,7 @@
   <head>
     {% include "partials/head.html" %}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    {% if glightbox %}
-      <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
-    {% endif %}
-    {% if freezeframe %}
-      <script src="https://unpkg.com/freezeframe/dist/freezeframe.min.js"></script>
-    {% endif %}
+    {% if freezeframe %}<script src="https://unpkg.com/freezeframe/dist/freezeframe.min.js"></script>{% endif %}
     {% if code %}<link rel="stylesheet" href="{{ main.cssURL }}/highlight.css">{% endif %}
     <script src="https://kit.fontawesome.com/2afcf0d7d7.js" crossorigin="anonymous"></script>
     {% block css %}<link rel="stylesheet" href="{{ main.cssURL }}/bechno.css" type="text/css" media="all">{% endblock css %}
@@ -24,7 +18,7 @@
   </details>
   <div class="container-fluid d-flex justify-content-center">
     <details class="burger">
-      <summary class="d-flex align-items-center px-2 py-3">Menu</summary>
+      <summary class="burger-summary d-flex align-items-center px-2 py-3">Menu</summary>
       <nav>
         {% include "partials/navigation.html" %}
       </nav>

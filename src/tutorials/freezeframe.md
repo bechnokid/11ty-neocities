@@ -1,5 +1,6 @@
 ---
 title: Implementing FreezeframeJS
+shortTitle: freezeframeJS
 displayOrder: 2
 description: A tutorial on how to implement [Freezeframe.js](https://github.com/ctrl-freaks/freezeframe.js/), a library that can "freeze" animated GIFs.
 code: true

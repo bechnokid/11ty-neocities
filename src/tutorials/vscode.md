@@ -1,5 +1,6 @@
 ---
 title: Using VSCode for Neocities
+shortTitle: VSCode
 displayOrder: 3
 description: A tutorial on how to use VSCode to help make developing Neocities sites a little easier.
 code: true

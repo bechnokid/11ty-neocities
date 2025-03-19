@@ -1,5 +1,6 @@
 ---
 title: Artwork
+wip: true
 pagination:
   data: collections.gallery
   size: 10
@@ -7,7 +8,7 @@ layout: "layouts/basic.html"
 tags:
   - nav
   - content
-pageType: gallery
+listType: gallery
 summary: DeviantArt sucks now, so I'm putting my artwork here :')
 displayOrder: 11
 ---

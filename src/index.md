@@ -5,7 +5,9 @@ image:
   src: /assets/images/splash.png
   alt: Splash image for Bechno Kid's Hideout that links to the home page
 displayOrder: 1
-tags: 'main'
+tags:
+  - main
+  - noNav
 ---
 
 Welcome!

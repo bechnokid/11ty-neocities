@@ -1,5 +1,6 @@
 ---
 title: Creating a Feed Reader from StatusCafe
+shortTitle: StatusCafe Feed
 displayOrder: 4
 description: A tutorial on how to create a feed reader directly from [StatusCafe](https://status.cafe/).
 code: true

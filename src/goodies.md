@@ -1,7 +1,7 @@
 ---
-title: 'Goodies'
+title: 'Collection'
 layout: 'layouts/page_landing.html'
-pageType: 'goodies'
+listType: 'goodies'
 pagination:
   data: collections.goodies
   size: 10

@@ -8,7 +8,7 @@ description: I'm no cook, but here are some recipes I've personally enjoyed!
 </style>
 
 <details open>
-<summary class='h2 details'>Takotaki (grilled octopus balls)</summary>
+<summary class='h2 details bg-footer p-2'>Takotaki (grilled octopus balls)</summary>
 <div class='sidebar'>
 
 <div class='content px-3 pt-3'>

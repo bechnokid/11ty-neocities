@@ -4,7 +4,7 @@ displayOrder: 1
 layout: 'layouts/blog_feed.html'
 pagination:
   data: collections.blog
-  size: 20
+  size: 15
 permalink: 'writing/blog/{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber }}{% endif %}/index.html'
 paginationPrevText: 'Newer posts'
 paginationNextText: 'Older posts'

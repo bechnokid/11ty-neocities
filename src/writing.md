@@ -1,7 +1,7 @@
 ---
 title: 'Writing'
 layout: 'layouts/page_landing.html'
-pageType: 'writing'
+listType: 'writing'
 pagination:
   data: collections.writing
   size: 10

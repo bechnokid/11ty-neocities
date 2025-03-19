@@ -3,7 +3,7 @@ pagination:
   data: galleries.data
   size: 1
   alias: gallery
-pageType: artwork
+listType: artwork
 tags: gallery
 layout: 'layouts/basic.html'
 css: art

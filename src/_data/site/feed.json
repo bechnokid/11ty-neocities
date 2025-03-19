@@ -1,5 +1,21 @@
 {
+  "template": {
+    "date": "YYYY-MM-DD",
+      "content": [
+        ""
+      ]
+  },
   "items": [
+    {
+      "date": "2025-03-19",
+        "content": [
+          "New <a href='/blog/20250318/'>journal entry</a>",
+          "Updated navigation",
+          "Moved pages around",
+          "Reverted \"Curses List\" back to \"Curses Generator\"",
+          "Updated 404 page"
+        ]
+    },
     {
       "date": "2025-03-07",
       "content": [

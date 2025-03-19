@@ -1,5 +1,6 @@
 ---
 title: The Rainbow Bridge
+shortTitle: Rainbow Bridge
 displayOrder: 1
 description: Dedicated to the small friends in my life.
 imgSrc: 'shrines/rainbow/'

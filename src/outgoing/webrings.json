@@ -13,9 +13,9 @@
     },
     {
       "title": "Queer Coded",
-      "index": { "src": "queercoded.png", "link": "https://cuddler-webring.netlify.app" },
-      "prevLink": { "src": "queercoded_left.png", "link": "https://cuddler-webring.netlify.app/bechnokid/previous" },
-      "nextLink": { "src": "queercoded_right.png", "link": "https://cuddler-webring.netlify.app/bechnokid/next" }
+      "index": { "src": "queercoded.png", "link": "https://neptune.monster/webring/" },
+      "prevLink": { "src": "queercoded_left.png", "link": "https://neptune.monster/webring/22.html" },
+      "nextLink": { "src": "queercoded_right.png", "link": "https://neptune.monster/webring/24.html" }
     },
     {
       "title": "Ladies of the Link",

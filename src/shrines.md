@@ -1,7 +1,7 @@
 ---
 title: 'Shrines'
 layout: 'layouts/page_landing.html'
-pageType: 'shrines'
+listType: 'shrines'
 pagination:
   data: collections.shrines
   size: 10

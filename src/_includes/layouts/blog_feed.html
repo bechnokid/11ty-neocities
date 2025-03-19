@@ -1,7 +1,7 @@
 {% extends "layouts/base.html" %}
 
 {% set pageHeaderTitle = title %}
-{% set pageHeaderSummary = content %}
+{% set pageHeaderSummary = content | safe %}
 {% set postListItems = pagination.items %}
 
 {% block css %}

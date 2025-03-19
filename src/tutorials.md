@@ -1,7 +1,7 @@
 ---
 title: 'Tutorials'
 layout: 'layouts/page_landing.html'
-pageType: 'tutorials'
+listType: 'tutorials'
 pagination:
   data: collections.tutorials
   size: 10

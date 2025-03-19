@@ -1,5 +1,32 @@
 @import "bootstrap-grid.css";
 
+@font-face {
+  font-family: 'Dyslexic';
+  src: url(/assets/fonts/OpenDyslexic-Regular.otf)
+}
+
+:root {
+  --scroll-bar: #e48aa7;
+  --scroll-bg: #fccdd7;
+  --bg-img: url(/assets/images/bg.jpg);
+  --bg-img-color: #DE9DB1;
+  --bg-overlay: rgb(222, 157, 177, 0.8);
+  --bg-primary: #e48aa7;
+  --bg-body: #ffe8ec;
+  --bg-sidebar: #fff6f9;
+  --bg-footer: #fccdd7;
+  --border-body: #ffe8ec;
+  --border-sidebar: #edb2c6;
+  --scroll-bg: #fccdd7;
+  --scroll-tab: #e48aa7;
+  --text-body: #460827;
+  --text-muted: #805f6f;
+  --text-primary: #a50e5a;
+  --text-secondary: #7122aa;
+  --text-link: #d60076;
+  --header-img: url(/assets/images/header.jpg);
+}
+
 *,
 *::before,
 *::after {
@@ -154,6 +181,10 @@ ul {
   text-align: center !important;
 }
 
+.text-right {
+  text-align: right !important;
+}
+
 .font-weight-bold {
   font-weight: bold !important;
 }
@@ -171,4 +202,16 @@ ul {
 .figure-center {
   margin-right: auto;
   margin-left: auto;
+}
+
+.position-relative {
+  position: relative !important;
+}
+
+.position-absolute {
+  position: absolute !important;
+}
+
+.position-fixed {
+  position: fixed !important;
 }

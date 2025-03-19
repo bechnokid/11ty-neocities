@@ -1,25 +1,37 @@
+{% macro navSection(section, name = null) %}
+<li>
+  <div class="px-2 py-1 h2">{{ (name or section) | title }}</div>
+  <ul class="ms-3 me-2 my-1">
+    {% for link in collections[section] %}
+      {% if link.data.wip %}
+        <li class="text-muted">{{ link.data.title }} (WIP)</li>
+      {% elif link.data.listType %}
+        <li><details>
+          <summary class="text-secondary">{{ link.data.title }}</summary>
+          <ul class="ms-3">
+            {% for subLink in collections[link.data.listType] %}
+              <li><a href="{{ subLink.page.url }}">{{ subLink.data.shortTitle or subLink.data.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </details></li>
+      {% elif "noNav" not in link.data.tags %}
+        <li><a href="{{ link.page.url }}">{{ link.data.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</li>
+{% endmacro %}
+
 <div class="sidebar">
   <ul>
     <li><a href="#main-content" class="skip-link">Main Content</a></li>
     <li><a href="#footer" class="skip-link">Footer</a></li>
   </ul>
   <ul class="nav-links">
-    {% for section in ['main', 'content', 'goods', 'outgoing'] %}
-    <li>
-      <div class="px-2 py-1 h2">{{ "Odds & Ends" if section == "goods" else section | title }}</div>
-      <ul class="ms-4 my-1">
-        {% for link in collections[section] %}
-          {% if link.data.title != 'Welcome' %}
-            {% if link.data.title == 'Artwork' %}
-        <li class='text-muted'>{{ link.data.title }} (WIP)</li>
-            {% else %}
-        <li><a href="{{ link.page.url }}">{{ link.data.title }}</a></li>
-            {% endif %}
-          {% endif %}
-        {% endfor %}
-      </ul>
-    </li>
-    {% endfor %}
+    {{ navSection('main') }}
+    {{ navSection('content') }}
+    {{ navSection('goods', 'Fun Stuff') }}
+    {{ navSection('outgoing') }}
   </ul>
 </div>
 {% if pageFreezeframe %}

@@ -8,9 +8,6 @@ pre code.css-code {
   border: 2px solid var(--bg-primary);
 }
 
-code.css-code {
-  padding: 3px 5px
-}
 /*!
   Theme: StackOverflow Light
   Description: Light theme as used on stackoverflow.com

@@ -5,7 +5,7 @@
     <b>{{ update.date | monDayYear }}</b>
     <ul>
       {% for item in update.content %}
-      <li>{{ item }}</li>
+      <li>{{ item | safe }}</li>
       {% endfor %}
     </ul>
       {% if loop.index != loop.length %}
