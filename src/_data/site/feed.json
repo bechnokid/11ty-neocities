@@ -1,5 +1,6 @@
 {
-  "template": {
+  "template":
+  {
     "date": "YYYY-MM-DD",
       "content": [
         ""
@@ -7,9 +8,21 @@
   },
   "items": [
     {
+      "date": "2025-03-22",
+        "content": [
+          "New <a href='/writing/blog/'>journal entry</a>",
+          "Updated <a href='/about'>about</a> page.",
+          "Added two cliques",
+          "Added a <a href='/goodies/greenhouse/'>webgarden</a>",
+          "Added a couple of <a href='/goodies/adopts'>adopts</a>",
+          "Added a <a href='/outgoing/links'>link</a>",
+          "Added two <a href='/outgoing/webrings'>webrings</a>"
+        ]
+    },
+    {
       "date": "2025-03-19",
         "content": [
-          "New <a href='/blog/20250318/'>journal entry</a>",
+          "New <a href='/writing/blog/'>journal entry</a>",
           "Updated navigation",
           "Moved pages around",
           "Reverted \"Curses List\" back to \"Curses Generator\"",

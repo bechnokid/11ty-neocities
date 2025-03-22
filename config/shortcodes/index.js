@@ -1,23 +1,5 @@
 const markdownLib = require('../plugins/markdown');
 
-const simpleGallery = function(collectionArr) {
-  let galleryCode = ``;
-  for (let item in collectionArr.items) {
-    let imgSrc = collectionArr.imgSrc + item.src;
-    let frzCls = (item.freezeframe) ? "freezeframe" : "";
-
-    let imgCode = [`<img class="${frzCls}" src="${imgSrc}" alt="${item.alt}" loading="lazy">`];
-
-    if (item.url) {
-      imgCode.unshift(`<a href='${item.url}'>`);
-      imgCode.push(`</a>`);
-    }
-    galleryCode += imgCode.join('');
-  }
-
-  return galleryCode;
-}
-
 const icon = function(value) {
   return `<i class='fa fa-${value}'></i>`;
 }
@@ -77,10 +59,20 @@ const figure = function(children, src, options = {}) {
 }
 
 const galleryBox = function(children, options = {}) {
-  let resultsArray = ['<div class="sidebar', '"', '>', '<div class="content d-flex flex-wrap p-3', '"', '>', children, '</div></div>'];
+  let mainContent = children;
+  if (options.markdown){
+    if (options.markdown.inline) {
+      mainContent = markdownLib.renderInline(children.trim());
+    } else {
+      mainContent = markdownLib.render(children.trim());
+    }
+  }
+
+  let resultsArray = ['<div class="sidebar', '"', '>', '<div class="content d-flex flex-wrap p-3', '"', '>', mainContent, '</div></div>'];
 
   if (options) {
     if (options.contentClass) resultsArray.splice(4, 0, " " + options.contentClass);
+    if (options.boxTitle) resultsArray.splice(3, 0, `<h2>${options.boxTitle}</h2>`)
     if (options.sidebarClass) resultsArray.splice(1, 0, " " + options.sidebarClass);
 
     return resultsArray.flat().join('');
@@ -88,7 +80,6 @@ const galleryBox = function(children, options = {}) {
 }
 
 module.exports = {
-  simpleGallery,
   icon,
   figure,
   details,

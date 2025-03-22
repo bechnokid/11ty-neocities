@@ -5,7 +5,10 @@
       <div class="row g-0">
         <div class="col-lg-6 col-12 d-flex flex-column align-items-center justify-content-center pb-3 p-lg-2 order-lg-1 order-2">
           {% for clique in cliques.items %}
-          <div class="d-flex align-items-center {% if not loop.last %}mb-1{% endif %}"><a href="{{ clique.url }}">{{ clique.title | safe }}</a>{% if clique.img %}<img class="mx-2" src="{{ cliques.path + clique.img }}" alt="{{ clique.imgAlt }}">{% else %}&nbsp;{% endif %} {{ clique.text | safe }}</div>
+          <div class="d-flex align-items-center {% if not loop.last %}mb-1{% endif %}">
+            <a href="{{ clique.url }}">{{ clique.title | safe }}</a>
+            {% if clique.img %}<img class="mx-2" src="{{ cliques.path + clique.img }}" alt="{{ clique.imgAlt }}">{% elif clique.centerIcon %}<span class='mx-2'>{{ clique.centerIcon }}</span>{% else %}&nbsp;{% endif %} {{ clique.text | safe }}
+          </div>
           {% endfor %}
         </div>
         <div class="col-lg-6 col-12 justify-content-center p-3 p-lg-2 order-lg-2 order-1">

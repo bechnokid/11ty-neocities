@@ -2,30 +2,30 @@
 
 #Splatnet table {
   background-size: cover;
-  margin: 0 auto; /* Centers the widget */
-  width: 180px; /*CHANGE WIDTH OF WIDGET*/
-  height: 180px; /*CHANGE HEIGHT OF WIDGET*/
-  border: 3px outset black; /*EDIT BORDER STYLE*/
+  margin: 0 auto;
+  width: 180px;
+  height: 180px;
+  border: 3px outset black;
 }
 
 #Splatnet td {
-  background-color: #1c1144 !important; /*CHANGE BACKGROUND COLOR*/
+  background-color: #1c1144 !important;
 }
 
-#rightarrow{
-  height: 20px; /*< CHANGE ARROW HEIGHT!*/
-  width: 20px; /*< CHANGE ARROW WIDTH!*/
+#rightarrow {
+  height: 20px;
+  width: 20px;
   content: url('/assets/images/webrings/splatnet_right.png');
 }
 
-#leftarrow{
-  height: 20px; /*< CHANGE ARROW HEIGHT!*/
-  width: 20px; /*< CHANGE ARROW WIDTH!*/
+#leftarrow {
+  height: 20px;
+  width: 20px;
   content: url("/assets/images/webrings/splatnet_left.png")
 }
 
 #chibi {
-  width: 30px; /*< CHANGE WIDTH!*/
+  width: 30px;
   content: url("/assets/images/webrings/splatnet_icon.png");
 }
 
@@ -46,15 +46,15 @@
 }
 
 #Splatnet .webring-prev {
-  text-align:right;
+  text-align: right;
 }
 
 #Splatnet .webring-info {
-  text-align:center;
+  text-align: center;
 }
 
 #Splatnet .webring-links {
-  font-size:small;
+  font-size: small;
   color: white;
 }
 
@@ -64,10 +64,41 @@
 
 #Splatnet .webring-next {
   margin-left: 5px;
-  text-align:right;
+  text-align: right;
 }
 
 #Splatnet .webring-prev {
   margin-right: 5px;
-  text-align:left;
+  text-align: left;
+}
+
+#jelly-world {
+  text-align: center;
+  font-family: Arial;
+  width: 150px;
+  border: 3px dotted orange;
+  background: url('/assets/images/webrings/jw_bg.png');
+}
+
+#jelly-world * {
+  color: initial;
+}
+
+#jelly-world a {
+  color: #da6200;
+  font-weight: bold;
+}
+
+#jelly-world .row>* {
+  padding: 0;
+}
+
+#jelly-world .img {
+  background: #fff;
+  height: 80px;
+  width: 80px;
+}
+
+#jelly-world img {
+  object-fit: contain;
 }

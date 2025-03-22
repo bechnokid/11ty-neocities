@@ -19,6 +19,8 @@ freezeframe: true
   }
 </style>
 
+{% set imgLink = goodies.pixel_clubs.imgLink %}
+
 {% macro cliqueSection(cliqueName) %}
 {% set cliqueArray = goodies.pixel_clubs.items[cliqueName] %}
 {% if cliqueArray %}

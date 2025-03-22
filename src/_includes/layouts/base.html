@@ -6,6 +6,7 @@
     {% if freezeframe %}<script src="https://unpkg.com/freezeframe/dist/freezeframe.min.js"></script>{% endif %}
     {% if code %}<link rel="stylesheet" href="{{ main.cssURL }}/highlight.css">{% endif %}
     <script src="https://kit.fontawesome.com/2afcf0d7d7.js" crossorigin="anonymous"></script>
+    <script src="{{ main.jsURL }}/script.js" crossorigin="anonymous"></script>
     {% block css %}<link rel="stylesheet" href="{{ main.cssURL }}/bechno.css" type="text/css" media="all">{% endblock css %}
     <title>{{ main.name }}{% if title != null %} - {{ title }}{% endif %}</title>
   </head>

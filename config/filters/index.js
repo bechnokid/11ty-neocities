@@ -1,4 +1,4 @@
-const { format, formatDistanceToNow } = require('date-fns');
+const { format } = require('date-fns');
 const markdownLib = require('../plugins/markdown');
 const CleanCSS = require("clean-css");
 

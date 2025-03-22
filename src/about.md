@@ -12,21 +12,19 @@ displayOrder: 2
   **"The ticket to the future is always open."**<br>- Rem Saverem, Trigun
 {% endfigure %}
 
+<div class='row'>
+
 Hi, I'm **Bechno Kid** (she/her), the head honcho of this hideout.
 
 You can call me **"Bechno"** or even just **"Bec"**. You can call me "Kid", but I don't recommend it unless you're older than me!
 
-I'm a full-time software developer in her 30s who enjoys drawing on the side and tends to yap for hours about her interests. I like coffee, tea, and almost any caffeinated drink out there except for carbonated energy drinks.
+I'm a full-time software developer born in the early '90s who enjoys drawing on the side and tends to yap for hours about her interests. I like coffee, tea, and almost any caffeinated drink out there except for carbonated energy drinks.
 
 I may code as a career, but I am no means an expert at all. I frequently look up StackOverflow when I need help with my code, even at work. Regardless, I do enjoy learning new things every day!
 
-I decided to create a personal site at the behest of a Tumblr user who was encouraging others to not rely so much on social media and start creating their own personal sites. As someone who had always admired Geocities users in her youth, I thought this was a perfect opportunity to brush off my HTML/CSS skills.
+I have a Bachelor's degree in Computer Science and somehow managed to land in the top 20% of my graduating class. People will say that I am a hard-working student, but all I can remember from my college days was utter confusion. I'm not even sure how I even landed my current job, but at least I'm making money doing what I love!
 
-My **hobbies** include drawing, collecting virtual pets (primarily Tamagotchi and Digital Monsters), playing video games, and crocheting. I'm trying to get back into playing piano like I used to!
-
-I'm a casual gamer, and some of my **favorite video game series** include Monster Hunter, Animal Crossing, Splatoon, Final Fantasy, Crash Bandicoot, and Kirby.
-
-I have a BS degree in Computer Science and somehow managed to land in the top 20% of my graduating class. People will say that I am a hard-working student, but all I can remember from my college days was utter confusion.
+</div>
 
 <pre><code class='css-code my-0'><span class='font-weight-bold'>-----BEGIN GEEK CODE-----</span>
   Version: 3.12
@@ -36,13 +34,44 @@ I have a BS degree in Computer Science and somehow managed to land in the top 20
 
 **[More about Geek Code](https://web.archive.org/web/20090220181018/http://geekcode.com/geek.html)** {.text-right .mt-1 .mb-4}
 
-<div class='sidebar'>
+<div class='row d-flex flex-wrap mb-4'>
+<div class='col row'>
+<div class='col'>
+{% galleryBox { markdown: true, boxTitle: "Other Facts", sidebarClass: 'h-100' } %}
+- Aquarius ({% icon 'sun' %}), Taurus ({% icon 'moon' %}), Gemini ({% icon 'arrow-up' %})
+- INTJ...I think.
+- Viet-American (can't speak the language)
+- Catholic and gay {% icon 'cross' %}🏳️‍🌈
+{% endgalleryBox %}
+</div>
+</div>
+<div class='col row'>
+<div class='col'>
+{% galleryBox { markdown: true, boxTitle: "Likes", sidebarClass: 'h-100' } %}
+- Drawing
+- Crocheting
+- Rice
+- Bún bò Huế
+- This shape {% icon 'arrow-right' %} <span style='font-size: 2em'>🍖</span> "Mmm...so tasty!"
+{% endgalleryBox %}
+</div>
+</div>
+<div class='col row'>
+<div class='col'>
+{% galleryBox { markdown: true, boxTitle: "Media I Like", sidebarClass: 'h-100' } %}
+- **Monster Hunter**
+- Tamagotchi
+- Digimon
+- Kill la Kill
+- Trigun
+- Demon Slayer
+{% endgalleryBox %}
+</div>
+</div>
+</div>
 
-## Fanlistings I Joined
+
 {% set array = site.fanlistings %}
-
-<div class='content fanlistings p-3 d-flex justify-content-center flex-wrap'>
-{% for item in array.items %}<a href='{{ item.link }}' class='m-1' ><img src='{{ array.imgSrc + item.src }}' alt='{{ item.alt }}'></a>{% endfor %}
-</div>
-
-</div>
+{% galleryBox { markdown: { inline: true } , boxTitle: "Fanlistings I Joined", contentClass: 'fanlistings justify-content-center'} %}
+{% for item in array.items %}[![{{ item.alt }}]({{ array.imgSrc + item.src }})]({{ item.link }}){.m-1}{% endfor %}
+{% endgalleryBox %}

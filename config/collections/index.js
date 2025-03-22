@@ -3,7 +3,7 @@ const writingPages = collection => {
 }
 
 const blogPosts = collection => {
-  return [...collection.getFilteredByGlob('./src/blog/*.md')].reverse();
+  return collection.getFilteredByTag('blog').reverse();
 }
 
 const galleryImages = collection => {

@@ -3,35 +3,78 @@
   "column1": [
     {
       "title": "NeoCreatives",
-      "index": { "src": "neocreatives.png", "link": "http://neocreatives.byethost5.com/" }
+      "index": {
+        "src": "neocreatives.png",
+        "link": "http://neocreatives.byethost5.com/"
+      }
     },
     {
       "title": "Cuddler",
-      "index": { "src": "cuddler.png", "link": "https://cuddler-webring.netlify.app" },
-      "prevLink": { "src": "cuddler_left.gif", "link": "https://cuddler-webring.netlify.app/bechnokid/previous" },
-      "nextLink": { "src": "cuddler_right.gif", "link": "https://cuddler-webring.netlify.app/bechnokid/next" }
+      "index": {
+        "src": "cuddler.png",
+        "link": "https://cuddler-webring.netlify.app"
+      },
+      "prevLink": {
+        "src": "cuddler_left.gif",
+        "link": "https://cuddler-webring.netlify.app/bechnokid/previous"
+      },
+      "nextLink": {
+        "src": "cuddler_right.gif",
+        "link": "https://cuddler-webring.netlify.app/bechnokid/next"
+      }
     },
     {
       "title": "Queer Coded",
-      "index": { "src": "queercoded.png", "link": "https://neptune.monster/webring/" },
-      "prevLink": { "src": "queercoded_left.png", "link": "https://neptune.monster/webring/22.html" },
-      "nextLink": { "src": "queercoded_right.png", "link": "https://neptune.monster/webring/24.html" }
+      "index": {
+        "src": "queercoded.png",
+        "link": "https://neptune.monster/webring/"
+      },
+      "prevLink": {
+        "src": "queercoded_left.png",
+        "link": "https://neptune.monster/webring/22.html"
+      },
+      "nextLink": {
+        "src": "queercoded_right.png",
+        "link": "https://neptune.monster/webring/24.html"
+      }
     },
     {
       "title": "Ladies of the Link",
-      "index": { "src": "ladiesofthelink.gif", "link": "https://ladiesofthelinks.neocities.org/" },
-      "prevLink": { "src": "ladiesofthelink_left.gif", "link": "https://webri.ng/webring/ladiesofthelinks/previous?via=https://bechnokid.neocities.org" },
-      "nextLink": { "src": "ladiesofthelink_right.gif", "link": "https://webri.ng/webring/ladiesofthelinks/next?via=https://bechnokid.neocities.org" }
+      "index": {
+        "src": "ladiesofthelink.gif",
+        "link": "https://ladiesofthelinks.neocities.org/"
+      },
+      "prevLink": {
+        "src": "ladiesofthelink_left.gif",
+        "link": "https://webri.ng/webring/ladiesofthelinks/previous?via=https://bechnokid.neocities.org"
+      },
+      "nextLink": {
+        "src": "ladiesofthelink_right.gif",
+        "link": "https://webri.ng/webring/ladiesofthelinks/next?via=https://bechnokid.neocities.org"
+      }
     },
     {
       "title": "Acing the Internet",
-      "index": { "src": "ace.png", "link": "https://acingtheinternet.netlify.app" },
-      "prevLink": { "src": "ace_left.gif", "link": "https://acingtheinternet.netlify.app/bechnokid/previous" },
-      "nextLink": { "src": "ace_right.gif", "link": "https://acingtheinternet.netlify.app/bechnokid/next" }
+      "index": {
+        "src": "ace.png",
+        "link": "https://acingtheinternet.netlify.app"
+      },
+      "prevLink": {
+        "src": "ace_left.gif",
+        "link": "https://acingtheinternet.netlify.app/bechnokid/previous"
+      },
+      "nextLink": {
+        "src": "ace_right.gif",
+        "link": "https://acingtheinternet.netlify.app/bechnokid/next"
+      }
     },
     {
       "title": "Re:source",
       "script": "<div id=\"resourceRing\"></div><script type=\"text/javascript\" src=\"/assets/javascript/webrings/re_source.js\"></script>"
+    },
+    {
+      "title": "GOD DAMN IT KRIS, WHERE THE FUCK ARE WE",
+      "script": "<div id='gfdkris'><script type='text/javascript' src='https://fabstarotcorner.neocities.org/webring/onionring-variables.js'></script><script type='text/javascript' src='https://fabstarotcorner.neocities.org/webring/onionring-widget.js'></script></div>"
     }
   ],
   "column2": [

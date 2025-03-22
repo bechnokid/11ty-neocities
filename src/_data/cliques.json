@@ -29,6 +29,18 @@
       "img": "jam.png",
       "imgAlt": "A sprite of a jar of pink jam",
       "text": "Chaotic Love Revolution"
+    },
+    {
+      "title": "sanrio lvr",
+      "centerIcon": "♡",
+      "url": "https://jubiland.neocities.org/cliques#sanrioluvr",
+      "text": "Big Challenges"
+    },
+    {
+      "title": "flowering",
+      "centerIcon": "//",
+      "url": "theflowering.neocities.org",
+      "text": "hydrangea <a href='https://www.deviantart.com/crystalcrowned/art/817644582'><img class='ms-1' src='/assets/images/goodies/cliques/hydrangea-crystalcrowned.png' alt='Pixel of a pink hydrangea in bloom'></a>"
     }
   ],
   "buttons": [

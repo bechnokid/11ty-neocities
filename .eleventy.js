@@ -20,7 +20,6 @@ const {
 } = require('./config/collections');
 
 const {
-  simpleGallery,
   icon,
   figure,
   details,
@@ -38,7 +37,6 @@ module.exports = config => {
   config.addPassthroughCopy('./src/assets/javascript/');
 
   // Shortcodes
-  config.addShortcode('simpleGallery', simpleGallery);
   config.addShortcode('icon', icon);
 
   // Paired shortcodes

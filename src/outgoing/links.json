@@ -30,6 +30,7 @@
     "myblace": { "domain": "neocities.org", "type": "png", "desc": "My Blace" },
     "mystsaphyr": { "domain": "me", "type": "gif", "freezeframe": true, "desc": "MystSaphyr" },
     "nickle4apickle": { "domain": "neocities.org", "type": "gif", "desc": "Nickle's Faves" },
+    "nomnomnami": { "domain": "com", "type": "gif", "desc": "NomnomNami", "freezeframe": true },
     "piranhebula": { "domain": "neocities.org", "type": "gif", "freezeframe": true, "desc": "Piranhebula" },
     "pklucky": { "domain": "neocities.org", "type": "gif", "freezeframe": true, "desc": "PKLucky's Beachside Lounge" },
     "playmoar": { "domain": "neocities.org", "type": "gif", "desc": "SNK PLAYMOAR" },
@@ -43,34 +44,41 @@
     "themby": { "domain": "neocities.org", "type": "png", "desc": "Themby" },
     "valycenegative": { "domain": "it", "type": "gif", "desc": "ValyceNegative.it" }
   },
-  "resourceLinks": {
-    "kaomoji.ru/en": {
+  "resourceLinks": [
+    {
+      "url": "https://kaomoji.ru/en",
       "name": "Kaomoji: Japanese Emoticons",
       "desc": "A large repository of adorable/kawaii text-based emoticons"
     },
-    "torcado.com/cleanEdge/": {
+    {
+      "url": "https://torcado.com/cleanEdge/",
       "name": "cleanEdge",
       "desc": "A tool to scale and rotate pixel art while still retaining clean edges"
     },
-    "waifu2x.udp.jp/": {
+    {
+      "url": "https://waifu2x.udp.jp/",
       "name": "waifu2x",
       "desc": "A tool to upscale artwork that is otherwise pixelate or has too many JPG artifacts"
     },
-    "ezgif.com/": {
+    {
+      "url": "https://ezgif.com/",
       "name": "Ezgif.com",
       "desc": "A browser tool that allows users to do basic functions similar to art programs out there without actually downloading an art program. Includes resizing, cropping, animating GIFs, etc."
     },
-    "neonaut.neocities.org/brain/image-compression.html": {
+    {
+      "url": "https://neonaut.neocities.org/brain/image-compression.html",
       "name": "Neonaut: Become a Compression Sorcerer",
       "desc": "A wonderful tutorial that provides tips on how to compress images so that they still look nice but don't take 500 years to load."
     },
-    "htmlsymbols.xyz": {
+    {
+      "url": "https://htmlsymbols.xyz",
       "name": "HTML Symbols",
       "desc": "A repository of all (or at least most) HTML symbols that exist."
     },
-    "justtherecipe.com/": {
+    {
+      "url": "https://justtherecipe.com/",
       "name": "Just The Recipe",
       "desc": "A website that takes links of any recipe and removes all of the fluff and only leaves the recipe. Useful for when chefs force readers to scroll through 20+ pages just to get to the recipe."
     }
-  }
+  ]
 }

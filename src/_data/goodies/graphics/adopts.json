@@ -1,16 +1,11 @@
 {
   "imgSrc": "/assets/images/goodies/adopts/",
+  "template": {
+    "src": "",
+    "alt": "",
+    "url": ""
+  },
   "toybox": [
-    {
-      "src": "mim-yellow.png",
-      "alt": "Image of a yellow Capsule Mimchine",
-      "url": "https://clownfredzone.neocities.org/capsulepets.html"
-    },
-    {
-      "src": "bdog-rose.png",
-      "alt": "Image of a rose-colored balloon dog",
-      "url": "https://clownfredzone.neocities.org/capsulepets.html"
-    },
     {
       "src": "wee-strange.gif",
       "alt": "Small pixel sprite of Doctor Strange",
@@ -96,6 +91,31 @@
   ],
   "adoptables": [
     {
+      "src": "CTNY-saguaro.png",
+      "alt": "Pixel image of a Saguaro Cactiny",
+      "url": "https://clownfred.zone/webpets"
+    },
+    {
+      "src": "MIM-yellow.png",
+      "alt": "Pixel image of a Yellow Capsule Mimchine",
+      "url": "https://clownfred.zone/webpets"
+    },
+    {
+      "src": "BDOG-pink.png",
+      "alt": "Pixel image of a Pink Balloon Dog",
+      "url": "https://clownfred.zone/webpets"
+    },
+    {
+      "src": "clown_asexual.png",
+      "alt": "Pixel image of a clown with the colors of the asexual flag",
+      "url": "https://clownfred.zone/prideclowns"
+    },
+    {
+      "src": "clown_demigirl.png",
+      "alt": "Pixel image of a clown with the colors of the demigirl flag",
+      "url": "https://clownfred.zone/prideclowns"
+    },
+    {
       "src": "emopup.png",
       "alt": "An emo pup with a pink and white color scheme",
       "url": "https://www.lovetiny.art/"
@@ -116,14 +136,14 @@
       "url": "https://cinnamuff.neocities.org/kerpuffle.html"
     },
     {
-      "src": "chatt.png",
-      "alt": "Image of a custom Chatt with colors that resemble Pikachu's",
-      "url": "https://neonriser.neocities.org/adopt"
-    },
-    {
       "src": "Amanita_muscaria.png",
       "alt": "Image of an amanita muscaria, a species of mushroom",
       "url": "https://shroom.ink/decay/adopt-a-shroom/"
+    },
+    {
+      "src": "chatt.png",
+      "alt": "Image of a custom Chatt with colors that resemble Pikachu's",
+      "url": "https://neonriser.neocities.org/adopt"
     }
   ]
 }
