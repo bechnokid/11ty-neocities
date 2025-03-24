@@ -16,7 +16,7 @@ eleventyExcludeFromCollections: true
     <item>
       <title>{{ item.date | dayOfMonth }}</title>
       <link>{{ main.url }}/home</link>
-      <description><![CDATA[{{ item.content }}]]></description>
+      <description><![CDATA[{{ item.content | toHtmlList | safe }}]]></description>
       <pubDate>{{ item.date | date | dateToRfc822 }}</pubDate>
     </item>
     {% endfor %}

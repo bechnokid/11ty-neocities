@@ -8,6 +8,14 @@
   },
   "items": [
     {
+      "date": "2025-03-24",
+        "content": [
+          "New splash image",
+          "Added 5 <a href='/outgoing/webrings'>webrings</a>",
+          "Fixed RSS feed"
+        ]
+    },
+    {
       "date": "2025-03-22",
         "content": [
           "New <a href='/writing/blog/'>journal entry</a>",

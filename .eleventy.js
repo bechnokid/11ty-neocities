@@ -11,6 +11,7 @@ const {
   w3DateFilter,
   markdownify,
   sortCollectionByDisplayOrder,
+  toHtmlList
 } = require('./config/filters');
 
 const {
@@ -68,6 +69,7 @@ module.exports = config => {
   config.addFilter('w3DateFilter', w3DateFilter);
   config.addFilter("markdownify", markdownify);
   config.addFilter('sortCollectionByDisplayOrder', sortCollectionByDisplayOrder);
+  config.addFilter('toHtmlList', toHtmlList);
   config.addFilter("cssmin", cssmin);
 
   // Collections

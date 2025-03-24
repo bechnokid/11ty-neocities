@@ -1,11 +1,7 @@
 @import "bechno.css";
 
-h1 {
-  font-size: 1.5em;
-}
-
 .content {
-  max-width: 800px;
+  max-width: 1000px;
   border: 2px solid var(--text-primary);
 }
 

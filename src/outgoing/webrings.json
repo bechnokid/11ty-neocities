@@ -73,8 +73,16 @@
       "script": "<div id=\"resourceRing\"></div><script type=\"text/javascript\" src=\"/assets/javascript/webrings/re_source.js\"></script>"
     },
     {
+      "title": "Rayman Ring",
+      "script": "<a href='https://lapislabel.net'><img src='https://i.imgur.com/Fmm3jck.png' style='width:38px;height:38px;'></a><a href='https://edgyrabbid.neocities.org/Raymanring.HTML'><img src='https://i.imgur.com/Lxkrbb7.png'></a><a href='https://edgyrabbid.neocities.org/'><img src='https://i.imgur.com/okejMzJ.png' style='width:38px;height:38px;'></a>"
+    },
+    {
       "title": "GOD DAMN IT KRIS, WHERE THE FUCK ARE WE",
       "script": "<div id='gfdkris'><script type='text/javascript' src='https://fabstarotcorner.neocities.org/webring/onionring-variables.js'></script><script type='text/javascript' src='https://fabstarotcorner.neocities.org/webring/onionring-widget.js'></script></div>"
+    },
+    {
+      "title": "Artists Making the Internet Gay Again Ring",
+      "script": "<div id='amiga'><script type='text/javascript' src='https://nicois.gay/amiga/onionring-variables.js'></script><script type='text/javascript' src='https://nicois.gay/amiga/onionring-widget.js'></script></div>"
     }
   ],
   "column2": [
@@ -85,12 +93,24 @@
     {
       "title": "Self-Insert",
       "script": "<div id=\"selfinsertwebring\"><script src=\"/assets/javascript/webrings/selfinsert.js\"></script></div>"
+    },
+    {
+      "title": "Doodle Ring",
+      "script": "<div id='doodlering'><script type='text/javascript' src='https://evehibi.nekoweb.org/doodlering/onionring-variables.js'></script><script type='text/javascript' src='https://evehibi.nekoweb.org/doodlering/onionring-widget.js'></script><link rel='stylesheet' href='https://evehibi.nekoweb.org/doodlering/onionring.css'></div>"
+    },
+    {
+      "title": "Tropical Rice Bowl Webring",
+      "script": "<script src='https://astracelestine.nekoweb.org/webring/tropical-rice-bowl/widget.js'></script>"
     }
   ],
   "column3": [
     {
       "title": "Splatnet",
       "script": "<div id='Splatnet'><script type=\"text/javascript\" src=\"https://boothworldindustries.neocities.org/WR/Splatnet/onionring-variables.js\"></script><script type=\"text/javascript\" src=\"/assets/javascript/webrings/splatnet.js\"></script></div>"
+    },
+    {
+      "title": "Kingdom Hearts Webring",
+      "script": "<div id='khwr'><script type='text/javascript' src='https://traversetown.neocities.org/khwr/onionring-variables.js'></script><script type='text/javascript' src='https://traversetown.neocities.org/khwr/onionring-widget.js'></script><link rel='stylesheet' href='https://traversetown.neocities.org/khwr/onionring.css'></div>"
     }
   ]
 }
