@@ -1,13 +1,16 @@
 {
-  "microblogTemplate": [
-    {
-      "date": "YYYY-MM-DD",
-      "mood": "",
-      "content": ""
-    },
-    {}
-  ],
+  "microblogTemplate":
+  {
+    "date": "YYYY-MM-DD",
+    "mood": "",
+    "content": ""
+  },
   "microblog": [
+    {
+      "date": "2025-03-31",
+      "mood": "🌸",
+      "content": "There are a lot of cherry blossom trees that bloomed at my workplace! Man, those petals look so yummy..."
+    },
     {
       "date": "2025-03-13",
       "mood": "🤞",

@@ -13,9 +13,9 @@
 <body>
   <main class="container-fluid d-flex justify-content-center align-items-center h-100">
     <div class="content bg-body">
-      <div class="row d-flex g-0">
-        <div class="col-lg-6 order-lg-0 order-1 p-lg-5 pt-0 pb-4 px-4 text-center d-flex flex-column justify-content-center splash-desc">
-          <h1>❤ {{ main.name }}! ❤</h1>
+      <div class="row d-flex g-0 p-4">
+        <div class="col-lg-6 p-lg-5 pt-0 pb-4 px-4 order-lg-0 order-1 text-center d-flex flex-column justify-content-center splash-desc">
+          <h1>{{ main.name }}</h1>
           <hr>
           <div class="px-2">
             {{ content | safe }}
@@ -28,7 +28,7 @@
             <p>Last updated: {{ lastUpdated }}</p>
           </div>
         </div>
-        <div class="col-lg-6 d-flex align-items-center order-lg-1 order-0 p-4">
+        <div class="col-lg-6 d-flex justify-content-center align-items-center order-lg-1 order-0">
           <a href="/home/"><img src="{{ splashImage }}" alt="{{ splashImgAlt }}"></a>
         </div>
       </div>

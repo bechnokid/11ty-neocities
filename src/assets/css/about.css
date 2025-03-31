@@ -22,8 +22,3 @@ figcaption {
 .geek-code {
   background: unset !important;
 }
-
-.fanlistings {
-  max-height: 250px;
-  overflow: auto;
-}

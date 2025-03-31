@@ -3,24 +3,36 @@ title: Webrings
 css: 'webrings'
 summary: "**Warning:** Be cautious of any flashing colors and images when navigating away from this page."
 displayOrder: 32
+debug: false
 ---
+{% if debug %}<script type='text/javascript' src='/assets/javascript/debug_webrings.js'></script>{% endif %}
+<script type='text/javascript' src='/assets/javascript/webrings.js'></script>
 
 {% macro createWebringCol (arr) %}
-{% for webring in arr %}
-<div class="d-flex align-items-center{{ " mb-2" if not loop.last }}">
-  {% if webring.script %}
-    {{ webring.script | safe }}
-  {% else %}
-    {% if webring.prevLink %}
-      <a href="{{ webring.prevLink.link }}"><img class="me-1" src="{{ imgSrc + webring.prevLink.src }}" alt="Previous button for {{ webring.title }}"></a>
+  {% for webring in arr %}
+   {% if not webring.notJoined %}
+    <div class="d-flex align-items-center{{ " mb-2" if not loop.last }}">
+      {% if webring.widget %}
+        {% if debug and webring.debugWidget %}
+          {{ webring.debugWidget | safe }}
+        {% else %}
+          {{ webring.widget | safe }}
+        {% endif %}
+      {% else %}
+        {% if webring.prevLink %}
+        <a href="{{ webring.prevLink.link }}"><img class="me-1" src="{{ imgSrc + webring.prevLink.src }}"
+            alt="Previous button for {{ webring.title }}"></a>
+        {% endif %}
+        <a href="{{ webring.index.link }}"><img src="{{ imgSrc + webring.index.src }}"
+            alt="Index button for {{ webring.title }}"></a>
+        {% if webring.nextLink %}
+        <a href="{{ webring.nextLink.link }}"><img class="ms-1" src="{{ imgSrc + webring.nextLink.src }}"
+            alt="Next button for {{ webring.title }}"></a>
+        {% endif %}
       {% endif %}
-      <a href="{{ webring.index.link }}"><img src="{{ imgSrc + webring.index.src }}" alt="Index button for {{ webring.title }}"></a>
-      {% if webring.nextLink %}
-      <a href="{{ webring.nextLink.link }}"><img class="ms-1" src="{{ imgSrc + webring.nextLink.src }}" alt="Next button for {{ webring.title }}"></a>
-    {% endif %}
-  {% endif %}
-</div>
-{% endfor %}
+    </div>
+   {% endif %}
+  {% endfor %}
 {% endmacro %}
 
 <section class="sidebar">
@@ -34,16 +46,6 @@ displayOrder: 32
       </div>
       <div class="col d-flex flex-column align-items-center p-2">
         {{ createWebringCol(column3) }}
-        <div id="jelly-world" class="p-3 mt-2">
-          <div class="title">
-            <a href="https://bechnokid.neocities.org/home">Bechno Kid</a> has bonded with<br><b>Jelly Well-Done Steak!</b>
-          </div>
-          <div class="d-flex justify-content-center">
-            <div class="img my-2">
-              <a href="https://jellyworld.neocities.org/"><img src="/assets/images/webrings/jw_steak.png" title='Mmm...so tasty!' alt="A jelly based on the Well-Done Steak from the Monster Hunter game franchise"></a>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>

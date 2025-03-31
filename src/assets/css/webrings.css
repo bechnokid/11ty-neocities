@@ -1,11 +1,28 @@
 @import 'basic.css';
 
+/* Reset table styles*/
+table {
+  font-size: .8em;
+}
+
+tr {
+  background-color: initial !important;
+}
+
+#trb {
+  height: initial;
+  font-size: .8em;
+  border: 1px solid var(--border-sidebar);
+  padding: 0 .75rem;
+}
+
 #Splatnet table {
   background-size: cover;
   margin: 0 auto;
   width: 180px;
   height: 180px;
   border: 3px outset black;
+  color: #fff;
 }
 
 #Splatnet td {
@@ -15,7 +32,7 @@
 #rightarrow {
   height: 20px;
   width: 20px;
-  content: url('/assets/images/webrings/splatnet_right.png');
+  content: url('/assets/images/webrings/splatnet_right.png')
 }
 
 #leftarrow {
@@ -26,7 +43,7 @@
 
 #chibi {
   width: 30px;
-  content: url("/assets/images/webrings/splatnet_icon.png");
+  content: url("/assets/images/webrings/splatnet_icon.png")
 }
 
 #chara {
@@ -101,4 +118,25 @@
 
 #jelly-world img {
   object-fit: contain;
+}
+
+#khwr table {
+  background-image: url('/assets/images/webrings/kh_auronbg.png');
+  margin: 0 auto;
+  /* centers the widget */
+  border: 2px ridge #fc8476;
+}
+
+#khwr table tr td {
+  padding: 15px;
+  /* creates some space between the links and text inside the widget */
+}
+
+#khwr a {
+  color: black;
+  text-shadow: 1px 1px 0 white;
+}
+
+#resourceRing img {
+  margin-bottom: -5px;
 }

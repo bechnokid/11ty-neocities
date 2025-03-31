@@ -69,9 +69,3 @@ I have a Bachelor's degree in Computer Science and somehow managed to land in th
 </div>
 </div>
 </div>
-
-
-{% set array = site.fanlistings %}
-{% galleryBox { markdown: { inline: true } , boxTitle: "Fanlistings I Joined", contentClass: 'fanlistings justify-content-center'} %}
-{% for item in array.items %}[![{{ item.alt }}]({{ array.imgSrc + item.src }})]({{ item.link }}){.m-1}{% endfor %}
-{% endgalleryBox %}

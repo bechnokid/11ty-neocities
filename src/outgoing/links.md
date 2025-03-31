@@ -7,6 +7,11 @@ displayOrder: 31
   td {
     padding: 1em
   }
+
+  .fanlistings {
+    max-height: 250px;
+    overflow: auto;
+  }
 </style>
 
 ## Fellow Netizens
@@ -16,6 +21,14 @@ displayOrder: 31
 
 {% galleryBox { markdown: { inline: true }, sidebarClass: 'mb-4', contentClass: 'justify-content-center align-items-center' } %}
 {% for key, value in netizenLinks %}[![{{ (altText + value.desc) if value.desc else (altText + key) }}]({{ imgLink + key }}.{{ value.type }}){{ "{.freezeframe}" if value.freezeframe }}](https://{{ key }}.{{ value.domain }}){.button-link .m-1}{% endfor %}
+{% endgalleryBox %}
+
+{% set array = site.fanlistings %}
+
+## Fanlistings I Joined
+
+{% galleryBox { markdown: { inline: true }, contentClass: 'fanlistings justify-content-center'} %}
+{% for item in array.items %}[![{{ item.alt }}]({{ array.imgSrc + item.src }})]({{ item.link }}){.m-1}{% endfor %}
 {% endgalleryBox %}
 
 ## Resources

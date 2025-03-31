@@ -2,11 +2,20 @@
   "template":
   {
     "date": "YYYY-MM-DD",
-      "content": [
-        ""
-      ]
+    "content": [
+      ""
+    ]
   },
   "items": [
+    {
+      "date": "2025-03-31",
+        "content": [
+          "Cleaned up webrings page",
+          "Moved fanlistings to links page",
+          "New guestbook",
+          "Link button is now hot-linkable"
+        ]
+    },
     {
       "date": "2025-03-24",
         "content": [

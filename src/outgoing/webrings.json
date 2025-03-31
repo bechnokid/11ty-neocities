@@ -70,47 +70,50 @@
     },
     {
       "title": "Re:source",
-      "script": "<div id=\"resourceRing\"></div><script type=\"text/javascript\" src=\"/assets/javascript/webrings/re_source.js\"></script>"
+      "widget": "<script>renderWebring('resourceRing', true)</script>"
     },
     {
       "title": "Rayman Ring",
-      "script": "<a href='https://lapislabel.net'><img src='https://i.imgur.com/Fmm3jck.png' style='width:38px;height:38px;'></a><a href='https://edgyrabbid.neocities.org/Raymanring.HTML'><img src='https://i.imgur.com/Lxkrbb7.png'></a><a href='https://edgyrabbid.neocities.org/'><img src='https://i.imgur.com/okejMzJ.png' style='width:38px;height:38px;'></a>"
+      "widget": "<a href='https://lapislabel.net'><img src='https://i.imgur.com/Fmm3jck.png' style='width:38px;height:38px;'></a><a href='https://edgyrabbid.neocities.org/Raymanring.HTML'><img src='https://i.imgur.com/Lxkrbb7.png'></a><a href='https://edgyrabbid.neocities.org/'><img src='https://i.imgur.com/okejMzJ.png' style='width:38px;height:38px;'></a>"
     },
     {
-      "title": "GOD DAMN IT KRIS, WHERE THE FUCK ARE WE",
-      "script": "<div id='gfdkris'><script type='text/javascript' src='https://fabstarotcorner.neocities.org/webring/onionring-variables.js'></script><script type='text/javascript' src='https://fabstarotcorner.neocities.org/webring/onionring-widget.js'></script></div>"
+      "title": "Tropical Rice Bowl Webring",
+      "widget": "<div id='trb'><script src='https://astracelestine.nekoweb.org/webring/tropical-rice-bowl/widget.js'></script></div>",
+      "debugWidget": "<script>sites = undefined;renderWebring('tropicalRiceBowl')</script>"
     },
     {
       "title": "Artists Making the Internet Gay Again Ring",
-      "script": "<div id='amiga'><script type='text/javascript' src='https://nicois.gay/amiga/onionring-variables.js'></script><script type='text/javascript' src='https://nicois.gay/amiga/onionring-widget.js'></script></div>"
+      "widget": "<div id='amiga'><script type='text/javascript' src='https://nicois.gay/amiga/onionring-variables.js'></script><script type='text/javascript' src='https://nicois.gay/amiga/onionring-widget.js'></script></div>"
     }
   ],
   "column2": [
     {
       "title": "WiiRing",
-      "script": "<div style=\"width: 150px;\"><script src=\"https://jeith.com/assets/webring/wii-ring.js\"></script><wii-ring site=\"https://bechnokid.neocities.org\"></wii-ring></div>"
+      "widget": "<div style='width: 150px;'><script src='https://jeith.com/assets/webring/wii-ring.js'></script><wii-ring site='https://bechnokid.neocities.org'></wii-ring></div>"
     },
     {
       "title": "Self-Insert",
-      "script": "<div id=\"selfinsertwebring\"><script src=\"/assets/javascript/webrings/selfinsert.js\"></script></div>"
+      "widget": "<div id='selfinsertwebring'><script src='/assets/javascript/webrings/selfinsert.js'></script></div>"
     },
     {
       "title": "Doodle Ring",
-      "script": "<div id='doodlering'><script type='text/javascript' src='https://evehibi.nekoweb.org/doodlering/onionring-variables.js'></script><script type='text/javascript' src='https://evehibi.nekoweb.org/doodlering/onionring-widget.js'></script><link rel='stylesheet' href='https://evehibi.nekoweb.org/doodlering/onionring.css'></div>"
-    },
-    {
-      "title": "Tropical Rice Bowl Webring",
-      "script": "<script src='https://astracelestine.nekoweb.org/webring/tropical-rice-bowl/widget.js'></script>"
+      "widget": "<div id='doodlering'><script type='text/javascript' src='https://evehibi.nekoweb.org/doodlering/onionring-variables.js'></script><script type='text/javascript' src='https://evehibi.nekoweb.org/doodlering/onionring-widget.js'></script><link rel='stylesheet' href='https://evehibi.nekoweb.org/doodlering/onionring.css'></div>"
     }
   ],
   "column3": [
     {
-      "title": "Splatnet",
-      "script": "<div id='Splatnet'><script type=\"text/javascript\" src=\"https://boothworldindustries.neocities.org/WR/Splatnet/onionring-variables.js\"></script><script type=\"text/javascript\" src=\"/assets/javascript/webrings/splatnet.js\"></script></div>"
+      "title": "Kingdom Hearts Webring",
+      "widget": "<div id='khwr'><script type='text/javascript' src='https://traversetown.neocities.org/khwr/onionring-variables.js'></script><script type='text/javascript' src='https://traversetown.neocities.org/khwr/onionring-widget.js'></script></div>",
+      "debugWidget": "<script type='text/javascript' src='https://traversetown.neocities.org/khwr/onionring-variables.js'></script><script>renderWebring('kingdomHearts')</script>"
     },
     {
-      "title": "Kingdom Hearts Webring",
-      "script": "<div id='khwr'><script type='text/javascript' src='https://traversetown.neocities.org/khwr/onionring-variables.js'></script><script type='text/javascript' src='https://traversetown.neocities.org/khwr/onionring-widget.js'></script><link rel='stylesheet' href='https://traversetown.neocities.org/khwr/onionring.css'></div>"
+      "title": "Jelly World",
+      "widget": "<div id='jelly-world' class='p-3 mt-2'><div class='title'><a href='https://bechnokid.neocities.org/home'>Bechno Kid</a> has bonded with<br><b>Jelly Well-Done Steak!</b></div><div class='d-flex justify-content-center'><div class='img my-2'><a href='https://jellyworld.neocities.org/'><img src='/assets/images/webrings/jw_steak.png' title='Mmm...so tasty!' alt='A jelly based on the Well-Done Steak from the Monster Hunter game franchise'></a></div></div></div>"
+    },
+    {
+      "title": "GOD DAMN IT KRIS, WHERE THE FUCK ARE WE",
+      "widget": "<div id='gfdkris'><script type='text/javascript' src='https://fabstarotcorner.neocities.org/webring/onionring-variables.js'></script><script type='text/javascript' src='https://fabstarotcorner.neocities.org/webring/onionring-widget.js'></script></div>",
+      "debugWidget": "<script type='text/javascript' src='https://fabstarotcorner.neocities.org/webring/onionring-variables.js'></script><script>renderWebring('gfdKris')</script>"
     }
   ]
 }
