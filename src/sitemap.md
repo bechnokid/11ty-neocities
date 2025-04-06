@@ -19,15 +19,15 @@ displayOrder: 6
   {% if link.data.wip %}
 ### {{ link.data.title }} (WIP){.text-muted}
   {% elif link.data.listType %}
-### {{ link.data.title }}
+### {{ link.data.shortTitle if link.data.useShortTitle else link.data.title }}
     {% for subLink in collections[link.data.listType] | sortCollectionByDisplayOrder %}
-- [{{ subLink.data.title }}]({{ subLink.url }})
+- [{{ subLink.data.shortTitle if subLink.data.useShortTitle else subLink.data.title }}]({{ subLink.url }})
       {% if loop.last %}
 <hr class='small'>
       {% endif %}
     {% endfor %}
   {% else %}
-- [{{ link.data.title }}]({{ link.url }})
+- [{{ link.data.shortTitle if link.data.useShortTitle else link.data.title }}]({{ link.url }})
   {% endif %}
 {% endfor %}
 {% endmacro %}

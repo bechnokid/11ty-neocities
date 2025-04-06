@@ -1,6 +1,7 @@
 const rssPlugin = require('@11ty/eleventy-plugin-rss');
 const lightningCSS = require("@11tyrocks/eleventy-plugin-lightningcss");
 const htmlmin = require("html-minifier-terser");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 const {
   cssmin,
@@ -10,18 +11,19 @@ const {
   monDayYear,
   w3DateFilter,
   markdownify,
+  markdownifyInline,
   sortCollectionByDisplayOrder,
   toHtmlList
 } = require('./config/filters');
 
 const {
   writingPages,
-  blogPosts,
-  galleryImages
+  blogPosts
 } = require('./config/collections');
 
 const {
   icon,
+  freezeframeButtons,
   figure,
   details,
   galleryBox
@@ -39,6 +41,7 @@ module.exports = config => {
 
   // Shortcodes
   config.addShortcode('icon', icon);
+  config.addShortcode('freezeframeButtons', freezeframeButtons);
 
   // Paired shortcodes
   config.addPairedShortcode('figure', figure);
@@ -68,6 +71,7 @@ module.exports = config => {
   config.addFilter('monDayYear', monDayYear);
   config.addFilter('w3DateFilter', w3DateFilter);
   config.addFilter("markdownify", markdownify);
+  config.addFilter("markdownifyInline", markdownifyInline);
   config.addFilter('sortCollectionByDisplayOrder', sortCollectionByDisplayOrder);
   config.addFilter('toHtmlList', toHtmlList);
   config.addFilter("cssmin", cssmin);
@@ -75,11 +79,11 @@ module.exports = config => {
   // Collections
   config.addCollection('writing', writingPages);
   config.addCollection('blog', blogPosts);
-  config.addCollection("galleryImages", galleryImages);
 
   // Plugins
   config.addPlugin(rssPlugin);
   config.addPlugin(lightningCSS);
+  config.addPlugin(syntaxHighlight);
 
   config.setLibrary('md', markdownLib);
 

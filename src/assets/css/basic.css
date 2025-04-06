@@ -1,6 +1,6 @@
 @import "bechno.css";
 
-h2 {
+h2, .h2 {
   background: var(--bg-footer);
   padding: .5rem;
   margin-bottom: .5rem;
@@ -38,4 +38,10 @@ main ol li::marker {
 main ul li::marker {
   content: "❤";
   color: var(--text-primary);
+}
+
+main ul li ul li::marker {
+  content: "♡";
+  color: var(--text-primary);
+  font-size: 1.25em;
 }

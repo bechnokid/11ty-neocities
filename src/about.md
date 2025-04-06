@@ -6,13 +6,12 @@ tags:
   - nav
   - main
 displayOrder: 2
+prism: true
 ---
 
-{% figure "profile.jpg", { noLink: true, alt: "Profile image of Bechno Kid holding a mug shaped like a Maxim Tomato from the Kirby franchise"} %}
-  **"The ticket to the future is always open."**<br>- Rem Saverem, Trigun
-{% endfigure %}
+<style>img.meat { width: 25px }</style>
 
-<div class='row'>
+{% figure "profile.jpg", { noLink: true, alt: "Bechno Kid holding a mug shaped like a Maxim Tomato from the Kirby franchise"} %}**"The ticket to the future is always open."**<br>- Rem Saverem, Trigun{% endfigure %}
 
 Hi, I'm **Bechno Kid** (she/her), the head honcho of this hideout.
 
@@ -24,40 +23,35 @@ I may code as a career, but I am no means an expert at all. I frequently look up
 
 I have a Bachelor's degree in Computer Science and somehow managed to land in the top 20% of my graduating class. People will say that I am a hard-working student, but all I can remember from my college days was utter confusion. I'm not even sure how I even landed my current job, but at least I'm making money doing what I love!
 
-</div>
-
-<pre><code class='css-code my-0'><span class='font-weight-bold'>-----BEGIN GEEK CODE-----</span>
+```git
+-----BEGIN GEEK CODE-----
   Version: 3.12
   GCS/O>AT d s-: a@ C++ U? P !L E? W++>+++ N? o? K- w$ O? !M V?
   PS++ PE+ Y+ PGP? !t 5? X?@ R@ tv+ b- DI>+ D@ G e++ h-- r+++ z-
-<span class='font-weight-bold'>-----END GEEK CODE-----</span></code></pre>
+-----END GEEK CODE-----
+```
 
 **[More about Geek Code](https://web.archive.org/web/20090220181018/http://geekcode.com/geek.html)** {.text-right .mt-1 .mb-4}
 
-<div class='row d-flex flex-wrap mb-4'>
-<div class='col row'>
-<div class='col'>
+<div class='row d-flex flex-wrap justify-content-center mb-4 mb-lg-0'>
+<div class='col-12 col-lg-4 mb-3 mb-lg-0'>
 {% galleryBox { markdown: true, boxTitle: "Other Facts", sidebarClass: 'h-100' } %}
-- Aquarius ({% icon 'sun' %}), Taurus ({% icon 'moon' %}), Gemini ({% icon 'arrow-up' %})
+- ♒︎ ({% icon 'sun' %}), ♉︎ ({% icon 'moon' %}), ♊︎ ({% icon 'arrow-up' %})
 - INTJ...I think.
 - Viet-American (can't speak the language)
 - Catholic and gay {% icon 'cross' %}🏳️‍🌈
 {% endgalleryBox %}
 </div>
-</div>
-<div class='col row'>
-<div class='col'>
+<div class='col-12 col-lg-4 mb-3 mb-lg-0'>
 {% galleryBox { markdown: true, boxTitle: "Likes", sidebarClass: 'h-100' } %}
 - Drawing
 - Crocheting
 - Rice
 - Bún bò Huế
-- This shape {% icon 'arrow-right' %} <span style='font-size: 2em'>🍖</span> "Mmm...so tasty!"
+- This shape {% icon 'arrow-right' %} {% icon 'meat', { alt: 'Meat on a bone' } %} "Mmm...so tasty!"
 {% endgalleryBox %}
 </div>
-</div>
-<div class='col row'>
-<div class='col'>
+<div class='col-12 col-lg-4'>
 {% galleryBox { markdown: true, boxTitle: "Media I Like", sidebarClass: 'h-100' } %}
 - **Monster Hunter**
 - Tamagotchi
@@ -66,6 +60,5 @@ I have a Bachelor's degree in Computer Science and somehow managed to land in th
 - Trigun
 - Demon Slayer
 {% endgalleryBox %}
-</div>
 </div>
 </div>

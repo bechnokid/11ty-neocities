@@ -11,7 +11,7 @@ const markdownLib = markdownIt({
   // Automatically hyperlinking inline links
   linkify: true,
   // Renders typography
-  typographer: true
+  typographer: false
 })
 .use(markdownItHeaderSections)
 .use(markdownItAttrs)

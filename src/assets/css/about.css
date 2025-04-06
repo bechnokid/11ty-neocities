@@ -1,5 +1,4 @@
 @import "basic.css";
-@import "highlight.css";
 
 figure {
   float: left;
@@ -11,14 +10,17 @@ figure {
   background-color: var(--bg-sidebar);
 }
 
-figure img {
-  margin-bottom: .7em;
-}
-
 figcaption {
   font-size: .8em;
 }
 
 .geek-code {
   background: unset !important;
+}
+
+@media screen and (max-width: 999px) {
+  figure {
+    float: unset;
+    margin: 0 auto;
+  }
 }

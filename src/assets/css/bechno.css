@@ -174,9 +174,11 @@ blockquote {
   margin: 1rem 0 0 1.5rem;
   padding-left: 1rem;
   border-left: 4px solid var(--bg-primary);
+  color: var(--text-secondary);
 }
 
-button {
+button,
+.button {
   background-color: var(--bg-footer);
   color: var(--text-link);
   border: 1px solid var(--text-link);
@@ -185,7 +187,8 @@ button {
   font-weight: bold;
 }
 
-button:hover {
+button:hover,
+.button:hover {
   cursor: pointer;
   background-color: var(--bg-body);
   color: var(--text-primary);
@@ -225,6 +228,10 @@ th, td {
 
 .bg-body {
   background-color: var(--bg-body) !important;
+}
+
+.bg-sidebar {
+  background-color: var(--bg-sidebar) !important;
 }
 
 .bg-footer {
@@ -341,6 +348,14 @@ a.hidden-link {
 
 @media screen and (max-width: 999px) {
   .page {
-    max-width: 90vw;
+    max-width: calc(100% - 10px);
+  }
+
+  header {
+    height: 100px;
+  }
+
+  dd {
+    margin: 0 0 1em 2em;
   }
 }

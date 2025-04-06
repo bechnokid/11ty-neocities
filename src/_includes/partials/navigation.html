@@ -14,7 +14,7 @@
             {% endfor %}
           </ul>
         </details></li>
-      {% elif "noNav" not in link.data.tags %}
+      {% elif "nav" in link.data.tags %}
         <li><a href="{{ link.page.url }}">{{ link.data.title }}</a></li>
       {% endif %}
     {% endfor %}

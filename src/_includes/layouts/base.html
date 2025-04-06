@@ -2,12 +2,13 @@
 <html lang="en">
   <head>
     {% include "partials/head.html" %}
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
     {% if freezeframe %}<script src="https://unpkg.com/freezeframe/dist/freezeframe.min.js"></script>{% endif %}
     {% if code %}<link rel="stylesheet" href="{{ main.cssURL }}/highlight.css">{% endif %}
     <script src="https://kit.fontawesome.com/2afcf0d7d7.js" crossorigin="anonymous"></script>
     <script src="{{ main.jsURL }}/script.js" crossorigin="anonymous"></script>
     {% block css %}<link rel="stylesheet" href="{{ main.cssURL }}/bechno.css" type="text/css" media="all">{% endblock css %}
+    {% if prism %}<link rel="stylesheet" href="{{ main.cssURL }}/prismJS.css" type="text/css" media="all">{% endif %}
     <title>{{ main.name }}{% if title != null %} - {{ title }}{% endif %}</title>
   </head>
 <body>
@@ -17,7 +18,7 @@
       {% include "partials/navigation.html" %}
     </nav>
   </details>
-  <div class="container-fluid d-flex justify-content-center">
+  <div class="container-fluid d-flex justify-content-center p-0">
     <details class="burger">
       <summary class="burger-summary d-flex align-items-center px-2 py-3">Menu</summary>
       <nav>
@@ -31,7 +32,7 @@
       <div class="bg-body main">
         <div class="row g-0">
           <nav id="nav-main" class="col-lg-2">{% include "partials/navigation.html" %}</nav>
-          <main id="main-content" class="col{{ "-lg-10" if title != "Home" }} py-3 px-4" tabindex="-1">{% block content %}{% endblock %}</main>
+          <main id="main-content" class="col{{ "-lg-10" if title != "Home" }} px-2 py-lg-3 px-lg-4" tabindex="-1">{% block content %}{% endblock %}</main>
           {% if title == "Home" %}
             <aside class="col-lg-2">
               {% include "partials/homepage/updates.html" %}
@@ -39,7 +40,7 @@
           {% endif %}
         </div>
       </div>
-      <footer class="bg-footer text-center py-1">
+      <footer class="bg-footer text-center p-1 px-lg-0">
         <p class="m-0">Powered by Neocities, 11ty, and Github. Maintained by <b>Bechno Kid</b> since 2022.<br>Please do not edit or reupload any artwork from this site.</p>
       </footer>
     </div>

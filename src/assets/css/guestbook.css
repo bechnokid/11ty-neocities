@@ -1,0 +1,20 @@
+@import 'basic.css';
+
+.guestbook-input-field {
+  border: 1px solid var(--bg-primary);
+}
+
+.guestbook-msg-field {
+  resize: vertical;
+  height: 150px;
+}
+
+.guestbook-msg-container {
+  font-size: .85em;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.guestbook-msg-header p {
+  margin: 0;
+}

@@ -8,6 +8,15 @@
   },
   "items": [
     {
+      "date": "2025-04-06",
+      "content": [
+        "New journal entry",
+        "New guestbook once again lol",
+        "Cleaned up some pages",
+        "Added credits to links page"
+      ]
+    },
+    {
       "date": "2025-03-31",
         "content": [
           "Cleaned up webrings page",
@@ -45,7 +54,9 @@
           "Reverted \"Curses List\" back to \"Curses Generator\"",
           "Updated 404 page"
         ]
-    },
+    }
+  ],
+  "oldItems": [
     {
       "date": "2025-03-07",
       "content": [

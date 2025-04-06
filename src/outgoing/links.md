@@ -34,3 +34,11 @@ displayOrder: 31
 ## Resources
 
 <table>{% for item in resourceLinks %}<tr><td><a href='{{ item.url }}'>{{ item.name }}</a></td><td class='td-desc'>{{ item.desc }}</td></tr>{% endfor %}</table>
+
+## Made Possible By
+
+- [Rina Cat's Domain](http://web.archive.org/web/20041206135411/rinacat.com/main.html) (inspiration)
+- [Eleventy](https://11ty.dev) (static site generator)
+- [Bret Comnes](https://github.com/marketplace/actions/deploy-to-neocities) (deploy-to-neocities GitHub action)
+- [Avi Aryan](https://github.com/PrismJS/prism-themes/blob/master/themes/prism-ghcolors.css) (GH Colors PrismJS theme with slight edits)
+- **Viewers like you!**

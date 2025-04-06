@@ -13,14 +13,14 @@ displayOrder: 3
   dl {
     margin-top: 1rem;
   }
-  
+
   dt {
     color: var(--text-secondary);
   }
 </style>
 
 {% for section in site.faq.items %}
-## {{ section.name }}
+## {{ section.name }}{.{{ section.name | slugify }}}
 {% for item in section.questions %}
 {{ item.q }}
 : {{ item.a | safe }}

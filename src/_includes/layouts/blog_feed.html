@@ -24,7 +24,7 @@
     {% else %}
       {% for item in postListItems %}
       <div class="blog row py-1">
-        <div class="col-8"><a href="{{ item.url }}">{{ item.data.title }}</a></div>
+        <div class="col-8"><a href="{{ item.url }}">{{ item.data.title | markdownifyInline | safe }}</a></div>
         <div class="col-4">{{ item.data.date | monthDayYear }}</div>
       </div>
       {% endfor %}

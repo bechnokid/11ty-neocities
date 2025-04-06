@@ -44,6 +44,11 @@ const markdownify = value => {
   return markdownLib.render(value);
 }
 
+const markdownifyInline = value => {
+  if (value == null) value = "";
+  return markdownLib.renderInline(value);
+}
+
 // Sorts collections by displayOrder
 const sortCollectionByDisplayOrder = collection => {
   return collection.sort((a, b) =>
@@ -81,6 +86,7 @@ module.exports = {
   monDayYear,
   w3DateFilter,
   markdownify,
+  markdownifyInline,
   sortCollectionByDisplayOrder,
   toHtmlList
 }

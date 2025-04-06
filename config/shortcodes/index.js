@@ -1,7 +1,25 @@
 const markdownLib = require('../plugins/markdown');
 
-const icon = function(value) {
-  return `<i class='fa fa-${value}'></i>`;
+const freezeframeButtons = function(options = {}) {
+  let resultsArray = [
+    '<div',
+      '>',
+      `<button class='button play-gif me-1'>Play GIFs</button>`,
+      `<button class='button stop-gif'>Stop GIFs</button>`,
+    '</div>'
+  ]
+  if (options.cls) resultsArray.splice(1, 0, ` class='${options.cls}'`)
+  return resultsArray.flat().join('')
+}
+
+const icon = function(value, options = {}) {
+  let iconVal = `<i class='fa fa-${value}'></i>`;
+  if (value == 'meat') {
+    let iconArr = [`<img class='meat svg' src='/assets/images/meat.svg'`, `>`];
+    if (options.alt) iconArr.splice(1, 0, ` alt='${options.alt}'`)
+    iconVal = iconArr.flat().join('');
+  }
+  return iconVal;
 }
 
 // Paired
@@ -38,7 +56,14 @@ const figure = function(children, src, options = {}) {
     if (options.bg) {
       resultsArray.splice(2, 0, `<div class='figure-div' style='background-image: url(${imgSrc})'></div>`)
     } else {
-      resultsArray.splice(2, 0, `<img src="${imgSrc}" alt="${options.alt}">`)
+      let imgArr = [
+        `<img src="${imgSrc}"`,
+        '>'
+      ]
+      if (options.imgCls) imgArr.splice(imgArr.length - 1, 0, ` class="${options.imgCls}"`)
+      if (options.alt) imgArr.splice(imgArr.length - 1, 0, ` alt="${options.alt}"`)
+
+      resultsArray.splice(2, 0, imgArr.flat().join(''))
     }
 
     if (options.noLink != true) {
@@ -81,6 +106,7 @@ const galleryBox = function(children, options = {}) {
 
 module.exports = {
   icon,
+  freezeframeButtons,
   figure,
   details,
   galleryBox

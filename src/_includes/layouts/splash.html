@@ -35,7 +35,19 @@
     </div>
   </main>
   <script>
-    var t=new XMLHttpRequest(); (t.onreadystatechange=function (){ if (4==this.readyState && 200==this.status){ var e=JSON.parse(this.responseText).info.views.toString().split(""), t=""; for (r=0; r < e.length; r++) t +=`<img src="/assets/images/counter/c_` + e[r] + `.png" alt="Image for the number ` + r + `">`; document.getElementById("hitcount").innerHTML=t;}}), t.open("GET", "https://weirdscifi.ratiosemper.com/neocities.php?sitename=bechnokid", !0), t.send();
+    let username = 'bechnokid';
+    $.getJSON({
+      url: 'https://weirdscifi.ratiosemper.com/neocities.php?sitename=bechnokid',
+      success: function(response) {
+        let viewsArray = response.info.views.toString().split('');
+        let resultHtml = '';
+        if (viewsArray.length < 6) {
+          for (i = 0; i < (6 - viewsArray.length); i++) resultHtml += "<img src='/assets/images/counter/c_0.png'>"
+        }
+        for (i = 0; i < viewsArray.length; i++) resultHtml += `<img src='/assets/images/counter/c_${viewsArray[i]}.png'>`
+        $('#hitcount').html(resultHtml);
+      }
+    })
   </script>
 </body>
 </html>

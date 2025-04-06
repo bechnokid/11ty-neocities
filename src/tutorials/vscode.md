@@ -3,7 +3,7 @@ title: Using VSCode for Neocities
 shortTitle: VSCode
 displayOrder: 3
 description: A tutorial on how to use VSCode to help make developing Neocities sites a little easier.
-code: true
+prism: true
 ---
 ## 0) Introduction
 
@@ -35,12 +35,14 @@ I would link the entire documentation for VSCode, but I imagine it would be over
 
 The JSON file that I will provide below allows HTML tags to be automatically renamed and closed, changes the tab size to 2 spaces, and trims any trailing whitespace:
 
-<pre><code class='css-code'>{
-  <span class="attribute">"editor.tabSize"</span>: <span class="selector">2</span>,
-  <span class="attribute">"editor.linkedEditing"</span>: <span class="attribute">true</span>,
-  <span class="attribute">"files.trimTrailingWhitespace"</span>: <span class="attribute">true</span>,
-  <span class="attribute">"editor.wordWrap"</span>: <span class="attr-value">"on"</span>,
-}</code></pre>
+```json
+{
+  "editor.tabSize": 2,
+  "editor.linkedEditing": true,
+  "files.trimTrailingWhitespace": true,
+  "editor.wordWrap": "on",
+}
+```
 
 ## 3) Saving Neocities Files to Hard Drive
 
