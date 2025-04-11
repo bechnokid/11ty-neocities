@@ -2,40 +2,34 @@
 <li>
   <div class="px-2 py-1 h2">{{ (name or section) | title }}</div>
   <ul class="ms-3 me-2 my-1">
-    {% for link in collections[section] %}
+    {% for link in collections[section] | sortCollectionByDisplayOrder %}
       {% if link.data.wip %}
         <li class="text-muted">{{ link.data.title }} (WIP)</li>
-      {% elif link.data.listType %}
+      {% elif link.data.subList %}
         <li><details>
           <summary class="text-secondary">{{ link.data.title }}</summary>
           <ul class="ms-3">
-            {% for subLink in collections[link.data.listType] %}
+            {% for subLink in link.data.pagination.items %}
               <li><a href="{{ subLink.page.url }}">{{ subLink.data.shortTitle or subLink.data.title }}</a></li>
             {% endfor %}
           </ul>
         </details></li>
       {% elif "nav" in link.data.tags %}
-        <li><a href="{{ link.page.url }}">{{ link.data.title }}</a></li>
+        <li class="nav-link-item"><a href="{{ link.page.url }}">{{ link.data.shortTitle or link.data.title }}</a></li>
       {% endif %}
     {% endfor %}
   </ul>
 </li>
 {% endmacro %}
 
-<div class="sidebar">
-  <ul>
-    <li><a href="#main-content" class="skip-link">Main Content</a></li>
-    <li><a href="#footer" class="skip-link">Footer</a></li>
-  </ul>
-  <ul class="nav-links">
-    {{ navSection('main') }}
-    {{ navSection('content') }}
-    {{ navSection('goods', 'Fun Stuff') }}
-    {{ navSection('outgoing') }}
-  </ul>
-</div>
-{% if pageFreezeframe %}
-  <div class="mt-2 d-flex justify-content-center align-items-center">
-    <button type="button" class="play-gif button me-1">Play GIFs</button><button type="button" class="stop-gif button">Stop GIFs</button>
-  </div>
-{% endif %}
+<ul>
+  <li><a href="#main-content" class="skip-link">Main Content</a></li>
+  <li><a href="#footer" class="skip-link">Footer</a></li>
+</ul>
+<ul class="nav-links">
+  {{ navSection('main') }}
+  {{ navSection('content') }}
+  {{ navSection('resources') }}
+  {{ navSection('fun')}}
+  {{ navSection('outgoing') }}
+</ul>

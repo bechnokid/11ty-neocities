@@ -8,6 +8,15 @@
   },
   "items": [
     {
+      "date": "2025-04-12",
+      "content": [
+        "Added dark mode",
+        "Updated header",
+        "Added new link, webring, and some cliques",
+        "Fixed some broken links"
+      ]
+    },
+    {
       "date": "2025-04-06",
       "content": [
         "New journal entry",
@@ -44,7 +53,9 @@
           "Added a <a href='/outgoing/links'>link</a>",
           "Added two <a href='/outgoing/webrings'>webrings</a>"
         ]
-    },
+    }
+  ],
+  "oldItems": [
     {
       "date": "2025-03-19",
         "content": [
@@ -54,9 +65,7 @@
           "Reverted \"Curses List\" back to \"Curses Generator\"",
           "Updated 404 page"
         ]
-    }
-  ],
-  "oldItems": [
+    },
     {
       "date": "2025-03-07",
       "content": [

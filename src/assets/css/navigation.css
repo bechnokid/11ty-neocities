@@ -1,10 +1,19 @@
-nav details li::marker {
-  content: "-";
+nav details li::marker,
+ul.nav-links li.nav-link-item::before {
+  content: "✦";
   color: var(--text-secondary);
+}
+
+nav details {
+  margin-left: .25rem;
 }
 
 nav details li {
   padding-left: .5rem;
+}
+
+nav details summary::marker {
+  color: var(--text-link);
 }
 
 nav details summary:hover {
@@ -30,7 +39,7 @@ nav a:hover {
 
 nav .skip-link {
   position: absolute;
-  margin-left: 2rem;
+  margin: .25rem;
   z-index: -99;
 }
 
@@ -41,6 +50,15 @@ nav .skip-link:focus {
 
 ul.nav-links {
   margin: 0;
+}
+
+ul.nav-links li.nav-link-item::before {
+  margin-right: .5rem;
+}
+
+ul.nav-links li.nav-link-item {
+  margin-left: .5rem;
+  text-indent: -.5rem;
 }
 
 details.burger {

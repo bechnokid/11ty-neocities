@@ -36,12 +36,21 @@ main ol li::marker {
 }
 
 main ul li::marker {
-  content: "❤";
-  color: var(--text-primary);
+  content: "✦";
+  color: var(--text-secondary);
 }
 
 main ul li ul li::marker {
-  content: "♡";
-  color: var(--text-primary);
+  content: "✧";
+  color: var(--text-secondary);
   font-size: 1.25em;
+}
+
+.fanlistings {
+  max-height: 250px;
+  overflow: auto;
+}
+
+.resources td {
+  padding: 1em;
 }

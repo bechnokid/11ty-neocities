@@ -7,25 +7,12 @@ summary: A concept created by [Miss Moss](https://missmoss.neocities.org/webgard
 prism: true
 warning: true
 ---
-<style>
-  iframe {
-    width: 250px;
-    height: 250px;
-    border: 0;
-    margin: 1em
-  }
 
-  .greenhouse {
-    max-height: 500px;
-    overflow-y: auto
-  }
-</style>
-
-## My Pot {.test}
+## My Pot
 
 If you think my site is cool, perhaps you can raise your own pot and help it grow?
 <div class='d-flex justify-content-center'>
-  <iframe src='/webgarden.html' scrolling='no' loading='lazy'></iframe>
+  <iframe class='webgarden-pot' src='/webgarden.html' scrolling='no' loading='lazy'></iframe>
 </div>
 
 ```html

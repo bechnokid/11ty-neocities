@@ -134,3 +134,16 @@ tr {
 #self-insert-webring b {
   color: unset;
 }
+
+#amiga table,
+#amiga table * {
+  border: 0 !important;
+}
+
+#amiga .webring-info {
+  text-align: center;
+}
+
+#amiga br {
+  display: none;
+}

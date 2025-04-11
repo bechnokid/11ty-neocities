@@ -3,7 +3,7 @@
 {% set lastUpdated = site.feed.items[0].date | monDayYear %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     {% include "partials/head.html" %}
     <link rel="stylesheet" href="{{ main.cssURL }}/splash.css" type="text/css" media="all">
@@ -12,24 +12,27 @@
   </head>
 <body>
   <main class="container-fluid d-flex justify-content-center align-items-center h-100">
-    <div class="content bg-body">
-      <div class="row d-flex g-0 p-4">
-        <div class="col-lg-6 p-lg-5 pt-0 pb-4 px-4 order-lg-0 order-1 text-center d-flex flex-column justify-content-center splash-desc">
-          <h1>{{ main.name }}</h1>
-          <hr>
-          <div class="px-2">
-            {{ content | safe }}
+    <div id="splash-container" class="position-relative">
+      {% include 'partials/theme-switcher.html' %}
+      <div class="content bg-body">
+        <div class="row d-flex g-0 p-4">
+          <div class="col-lg-6 p-lg-5 pt-0 pb-4 px-4 order-lg-0 order-1 text-center d-flex flex-column justify-content-center splash-desc">
+            <h1>{{ main.name }}</h1>
+            <hr>
+            <div class="px-2">
+              {{ content | safe }}
+            </div>
+            <a class="font-weight-bold mb-4 mt-2" href="/home/">ENTER HERE</a>
+            <div>
+              <img src="/assets/images/counter/L.png" alt="Image for the left side of the counter"><span id="hitcount"></span><img src="/assets/images/counter/R.png" alt="Image for the right side of the counter">
+            </div>
+            <div class="last-update">
+              <p>Last updated: {{ lastUpdated }}</p>
+            </div>
           </div>
-          <a class="font-weight-bold mb-4 mt-2" href="/home/">ENTER HERE</a>
-          <div>
-            <img src="/assets/images/counter/L.png" alt="Image for the left side of the counter"><span id="hitcount"></span><img src="/assets/images/counter/R.png" alt="Image for the right side of the counter">
+          <div class="col-lg-6 d-flex justify-content-center align-items-center order-lg-1 order-0">
+            <a href="/home/"><img src="{{ splashImage }}" alt="{{ splashImgAlt }}"></a>
           </div>
-          <div class="last-update">
-            <p>Last updated: {{ lastUpdated }}</p>
-          </div>
-        </div>
-        <div class="col-lg-6 d-flex justify-content-center align-items-center order-lg-1 order-0">
-          <a href="/home/"><img src="{{ splashImage }}" alt="{{ splashImgAlt }}"></a>
         </div>
       </div>
     </div>

@@ -4,7 +4,6 @@ displayOrder: 2
 description: Little creatures that I found from other sites that I decided to adopt.
 freezeframe: true
 ---
-<style>.adopts > * {max-width:150px;margin:0 .25rem}</style>
 {% set array = goodies.graphics.adopts %}
 {% set imgLink = array.imgSrc %}
 

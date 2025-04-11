@@ -89,6 +89,11 @@
   ],
   "column2": [
     {
+      "title": "Artists Making the Internet Gay",
+      "widget": "<div id='amiga'><script type='text/javascript' src='https://nicois.gay/amiga/onionring-variables.js'></script><script type='text/javascript' src='https://nicois.gay/amiga/onionring-widget.js'></script></div>",
+      "debugWidget": "<div id='amiga'><script type='text/javascript' src='https://nicois.gay/amiga/onionring-variables.js'></script><script>renderWebring('amiga')</script></div>"
+    },
+    {
       "title": "WiiRing",
       "widget": "<div style='width: 150px;'><script src='https://jeith.com/assets/webring/wii-ring.js'></script><wii-ring site='https://bechnokid.neocities.org'></wii-ring></div>"
     },

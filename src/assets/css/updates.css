@@ -12,7 +12,7 @@ aside li {
 
 aside li::marker {
   content: "✦";
-  color: var(--text-primary);
+  color: var(--text-secondary);
 }
 
 aside .h2 {

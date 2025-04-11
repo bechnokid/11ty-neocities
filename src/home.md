@@ -11,6 +11,6 @@ Hello and welcome to **Bechno Kid's Hideout!**
 
 This is a little nook where a software programmer can live her childhood dream as a webmaster.
 
-I mostly post artwork, but you can find some other goodies here, too!
+I don't have my artwork up yet, but hopefully soon! In the meantime, I have other goodies here!
 
-Feel free to checkout the menu, or visit the [sitemap](/sitemap/)! Please enjoy your stay! :D
+Feel free to check out the menu, or visit the [sitemap](/sitemap/)! Please enjoy your stay! :D

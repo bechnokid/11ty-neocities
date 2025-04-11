@@ -1,0 +1,41 @@
+@import "basic.css";
+
+.adopts > * {
+  max-width: 150px;
+  margin: 0 .25rem;
+}
+
+.awards.content > * {
+  margin: .25rem;
+  max-width: 300px;
+}
+
+.graphics.content {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.graphics.content > * {
+  margin: .25rem
+}
+
+.greenhouse iframe,
+iframe.webgarden-pot {
+  width: 250px;
+    height: 250px;
+    border: 0;
+    margin: 1em;
+}
+
+.sidebar.greenhouse {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.cliques.content > * {
+  margin: 0 .25rem;
+}
+
+.yys-table {
+  font-size: .85em;
+}

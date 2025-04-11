@@ -2,9 +2,15 @@
 
 .content {
   max-width: 800px;
-  border: 2px solid var(--text-primary);
+  border: 2px solid var(--bg-primary);
 }
 
 .last-update {
   font-size: .85em;
+}
+
+@media screen and (max-width: 999px) {
+  #splash-container #theme-switcher-container {
+    top: -3rem;
+  }
 }

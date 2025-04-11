@@ -42,22 +42,93 @@ figcaption {
   margin-bottom: 1rem;
 }
 
-.blog-gallery > * {
+.blog-gallery>* {
   margin: .25rem;
 }
 
-.blog-gallery > figure {
+.blog-gallery>figure {
   width: 200px;
 }
 
-.blog-gallery > .landscape {
+.blog-gallery>.landscape {
   width: 300px;
 }
 
-.blog-gallery > .bg-center .figure-div {
+.blog-gallery>.bg-center .figure-div {
   background-position: center !important;
 }
 
 .blog.row:hover {
   background-color: var(--bg-footer);
+}
+
+figure.dr-strange {
+  width: unset;
+  max-width: 350px !important;
+}
+
+.candy figure {
+  width: 150px;
+}
+
+.candy img {
+  height: 100px;
+}
+
+.rilla-box {
+  width: 240px;
+  height: 320px;
+  border: 1px solid #fccdda;
+  background-color: #ffffff;
+}
+
+.rilla-box .carousel {
+  height: 150px;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.rilla-box .carousel-item {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+.valentines:hover {
+  cursor: pointer;
+}
+
+.triangle-up {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 70px solid var(--bg-footer);
+}
+
+.triangle-up p {
+  width: 70px !important;
+  margin-left: -2.15rem;
+  margin-top: 2rem;
+  font-size: .8em;
+  line-height: 1.25em;
+}
+
+map:hover {
+  cursor: pointer;
+}
+
+img.hank {
+  width: 400px;
+}
+
+img.meat {
+  width: 30px;
+}
+
+textarea.key-map {
+  float: left;
+  width: 300px;
+  height: 230px;
+  font-size: small;
+  margin-right: 20px
 }

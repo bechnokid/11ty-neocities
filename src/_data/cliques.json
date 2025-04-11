@@ -4,24 +4,12 @@
     {
       "title": "aromatic",
       "url": "https://aromatic.wings.nu/",
-      "text": "// phở"
+      "text": "// bánh bò"
     },
     {
-      "title": "Mine!",
-      "url": "https://peachsoda.net/mine",
-      "text": "// Gilgamesh"
-    },
-    {
-      "title": "<font style=\"color:#FF0000\">r</font><font style=\"color:#FF8000\">a</font><font style=\"color:#ffc400\">i</font><font style=\"color:#008000\">n</font><font style=\"color:#0000FF\">b</font><font style=\"color:#8000FF\">o</font><font style=\"color:#800080\">w</font>",
+      "title": "<font class='rainbow red'>r</font><font class='rainbow orange'>a</font><font class='rainbow yellow'>i</font><font class='rainbow green'>n</font><font class='rainbow blue'>b</font><font class='rainbow indigo'>o</font><font class='rainbow purple'>w</font>",
       "url": "https://cliqued.wings.nu/",
-      "text": "&#x1F308;&nbsp;<font style=\"color:#07be91\">Mint Green</font>"
-    },
-    {
-      "title": "LINKED !",
-      "url": "https://ballonlea.net/trickyfox/",
-      "img": "linked.png",
-      "imgAlt": "A sprite of a chain link",
-      "text": "Miss Kobayashi"
+      "text": "&#x1F308;&nbsp;<font class='rainbow fav'>Mint Green</font>"
     },
     {
       "title": "my jam!!",
@@ -37,9 +25,21 @@
       "text": "Big Challenges"
     },
     {
+      "title": "What's Your Type?",
+      "centerIcon": "::",
+      "url": "https://web.archive.org/web/20160101164734/http://pkmn.zeruda.org/clique",
+      "text": "Psychic / Bug"
+    },
+    {
+      "title": "Mine!",
+      "centerIcon": "//",
+      "url": "https://cliques.windsprite.nu/mine/",
+      "text": "Gilgamesh (FF)"
+    },
+    {
       "title": "flowering",
       "centerIcon": "//",
-      "url": "theflowering.neocities.org",
+      "url": "https://theflowering.neocities.org",
       "text": "hydrangea <a href='https://www.deviantart.com/crystalcrowned/art/817644582'><img class='ms-1' src='/assets/images/goodies/cliques/hydrangea-crystalcrowned.png' alt='Pixel of a pink hydrangea in bloom'></a>"
     }
   ],

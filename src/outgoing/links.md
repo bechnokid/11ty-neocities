@@ -2,25 +2,17 @@
 title: Links
 freezeframe: true
 displayOrder: 31
+permalink: '/links/index.html'
 ---
-<style>
-  td {
-    padding: 1em
-  }
-
-  .fanlistings {
-    max-height: 250px;
-    overflow: auto;
-  }
-</style>
 
 ## Fellow Netizens
 
-<p>Here are some sites whose webmasters are friends, affiliates, or people who I think are just cool in general!</p>
-<p>If you already added my button to your site, let me know and I'll add you here!</p>
+Here are some sites whose webmasters are friends, affiliates, or people who I think are just cool in general!
+
+If you already added my button to your site, let me know and I'll add you here!
 
 {% galleryBox { markdown: { inline: true }, sidebarClass: 'mb-4', contentClass: 'justify-content-center align-items-center' } %}
-{% for key, value in netizenLinks %}[![{{ (altText + value.desc) if value.desc else (altText + key) }}]({{ imgLink + key }}.{{ value.type }}){{ "{.freezeframe}" if value.freezeframe }}](https://{{ key }}.{{ value.domain }}){.button-link .m-1}{% endfor %}
+{% for link in netizenLinks %}[![{{ (altText + link.desc) if link.desc else (altText + link.name) }}]({{ imgLink + link.name }}.{{ link.type }}){{ "{.freezeframe}" if link.freezeframe }}](https://{{ link.name }}.{{ link.domain }}){.button-link .m-1}{% endfor %}
 {% endgalleryBox %}
 
 {% set array = site.fanlistings %}
@@ -33,12 +25,10 @@ displayOrder: 31
 
 ## Resources
 
-<table>{% for item in resourceLinks %}<tr><td><a href='{{ item.url }}'>{{ item.name }}</a></td><td class='td-desc'>{{ item.desc }}</td></tr>{% endfor %}</table>
+<table class='resources'>{% for item in resourceLinks %}<tr><td><a href='{{ item.url }}'>{{ item.name }}</a></td><td class='td-desc'>{{ item.desc }}</td></tr>{% endfor %}</table>
 
 ## Made Possible By
 
-- [Rina Cat's Domain](http://web.archive.org/web/20041206135411/rinacat.com/main.html) (inspiration)
-- [Eleventy](https://11ty.dev) (static site generator)
-- [Bret Comnes](https://github.com/marketplace/actions/deploy-to-neocities) (deploy-to-neocities GitHub action)
-- [Avi Aryan](https://github.com/PrismJS/prism-themes/blob/master/themes/prism-ghcolors.css) (GH Colors PrismJS theme with slight edits)
-- **Viewers like you!**
+{% for link in credits %}
+- {% if link.url %}[{% endif %}{{ link.name | markdownifyInline | safe }}{% if link.url %}]( {{ link.url }}){% endif %}{% if link.desc %} ({{ link.desc }}){% endif %}
+{% endfor %}

@@ -5,26 +5,48 @@
   src: url(/assets/fonts/OpenDyslexic-Regular.otf)
 }
 
-:root {
-  --scroll-bar: #e48aa7;
-  --scroll-bg: #fccdd7;
+[data-theme="light"] {
   --bg-img: url(/assets/images/bg.jpg);
+  --header-img: url(/assets/images/header.jpg);
   --bg-img-color: #DE9DB1;
-  --bg-overlay: rgb(222, 157, 177, 0.8);
+  --bg-overlay: #de9db1cc;
   --bg-primary: #e48aa7;
   --bg-body: #ffe8ec;
   --bg-sidebar: #fff6f9;
   --bg-footer: #fccdd7;
-  --border-body: #ffe8ec;
-  --border-sidebar: #edb2c6;
-  --scroll-bg: #fccdd7;
-  --scroll-tab: #e48aa7;
+  --bg-code: var(--bg-footer);
+  --border-body: var(--bg-body);
+  --border-sidebar: var(--bg-primary);
+  --scroll-bg: var(--bg-footer);
+  --scroll-tab: var(--bg-primary);
   --text-body: #460827;
   --text-muted: #805f6f;
   --text-primary: #a50e5a;
   --text-secondary: #7122aa;
   --text-link: #d60076;
-  --header-img: url(/assets/images/header.jpg);
+  --text-shadow: #a50e5a6c;
+}
+
+[data-theme="dark"] {
+  --bg-img: url(/assets/images/bg_dark.jpg);
+  --header-img: url(/assets/images/header_dark.jpg);
+  --bg-img-color: #53353e;
+  --bg-overlay: #4f1c2ccc;
+  --bg-primary: #28162b;
+  --bg-body: #4D2F51;
+  --bg-sidebar: #6f476a;
+  --bg-footer: #38213c;
+  --bg-code: var(--bg-footer);
+  --border-body: var(--bg-body);
+  --border-sidebar: var(--bg-primary);
+  --scroll-bg: var(--bg-footer);
+  --scroll-tab: var(--bg-body);
+  --text-body: #fff;
+  --text-muted: #805f6f;
+  --text-primary: #FDCDD9;
+  --text-secondary: var(--text-body);
+  --text-link: #ffb5d7;
+  --text-shadow: #FDCDD96c;
 }
 
 *,
@@ -175,6 +197,10 @@ ul {
 
 .text-xs {
   font-size: .8em;
+}
+
+.text-underline {
+  text-decoration: underline !important;
 }
 
 .text-center {

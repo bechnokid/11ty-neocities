@@ -1,43 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    {% include "partials/head.html" %}
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
-    {% if freezeframe %}<script src="https://unpkg.com/freezeframe/dist/freezeframe.min.js"></script>{% endif %}
-    {% if code %}<link rel="stylesheet" href="{{ main.cssURL }}/highlight.css">{% endif %}
-    <script src="https://kit.fontawesome.com/2afcf0d7d7.js" crossorigin="anonymous"></script>
-    <script src="{{ main.jsURL }}/script.js" crossorigin="anonymous"></script>
-    {% block css %}<link rel="stylesheet" href="{{ main.cssURL }}/bechno.css" type="text/css" media="all">{% endblock css %}
-    {% if prism %}<link rel="stylesheet" href="{{ main.cssURL }}/prismJS.css" type="text/css" media="all">{% endif %}
-    <title>{{ main.name }}{% if title != null %} - {{ title }}{% endif %}</title>
-  </head>
+<html lang="en" data-theme="light">
+<head>
+  {% include "partials/head.html" %}
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+  {% if freezeframe %}<script src="{{ main.jsURL }}/freezeframe.js"></script>{% endif %}
+  {% if code %}<link rel="stylesheet" href="{{ main.cssURL }}/highlight.css">{% endif %}
+  <script src="https://kit.fontawesome.com/2afcf0d7d7.js" crossorigin="anonymous"></script>
+  <script src="{{ main.jsURL }}/script.js" crossorigin="anonymous"></script>
+  {% block css %}<link rel="stylesheet" href="{{ main.cssURL }}/bechno.css" type="text/css" media="all">{% endblock css %}
+  {% if prism %}<link rel="stylesheet" href="{{ main.cssURL }}/prismJS.css" type="text/css" media="all" id="prismJS">{% endif %}
+  <title>{{ main.name }}{% if title != null %} - {{ title }}{% endif %}</title>
+</head>
 <body>
   <details class="burger">
-    <summary class="py-2 text-background">Menu</summary>
-    <nav>
-      {% include "partials/navigation.html" %}
-    </nav>
+    <summary class="py-2 text-background" aria-label="Open Navigation Menu"></summary>
   </details>
   <div class="container-fluid d-flex justify-content-center p-0">
     <details class="burger">
-      <summary class="burger-summary d-flex align-items-center px-2 py-3">Menu</summary>
-      <nav>
-        {% include "partials/navigation.html" %}
-      </nav>
+      <summary class="burger-summary d-flex align-items-center px-2 py-3" aria-label="Navigation Menu"></summary>
+      <nav><div class="sidebar">{% include "partials/navigation.html" %}</div></nav>
     </details>
     <div class="page bg-body">
-      <a href="/home/">
-        <header class="bg-body"></header>
-      </a>
+      <a href="/home"><header class="bg-body"></header></a>
       <div class="bg-body main">
         <div class="row g-0">
-          <nav id="nav-main" class="col-lg-2">{% include "partials/navigation.html" %}</nav>
-          <main id="main-content" class="col{{ "-lg-10" if title != "Home" }} px-2 py-lg-3 px-lg-4" tabindex="-1">{% block content %}{% endblock %}</main>
-          {% if title == "Home" %}
-            <aside class="col-lg-2">
-              {% include "partials/homepage/updates.html" %}
-            </aside>
-          {% endif %}
+          <nav id="nav-main" class="col-lg-2">
+            <div class="sidebar">{% include "partials/navigation.html" %}</div>
+            {% if freezeframe %}{% include 'partials/freezeframe-buttons.html' %}{% endif %}
+          </nav>
+          <main id="main-content" class="col{{ " -lg-10" if title !="Home" }} px-2 py-lg-3 px-lg-4 position-relative" tabindex="-1">
+            {% include 'partials/theme-switcher.html' %}
+            {% block content %}{% endblock %}
+          </main>
+          {% if title == "Home" %}<aside class="col-lg-2 px-2 px-lg-0 my-3 my-lg-0">{% include "partials/homepage/updates.html" %}</aside>{% endif %}
         </div>
       </div>
       <footer class="bg-footer text-center p-1 px-lg-0">
@@ -46,13 +41,13 @@
     </div>
   </div>
   {% if freezeframe %}
-    <script>
-      $(function() {
-        const e = new Freezeframe({ trigger: false, responsive: false });
-        $(".play-gif").on("click", function(){ e.start() });
-        $(".stop-gif").on("click", function(){ e.stop() });
-      });
-    </script>
+  <script>
+    $(function () {
+      const e = new Freezeframe({ trigger: false, responsive: false });
+      $(".play-gif").on("click", function () { e.start() });
+      $(".stop-gif").on("click", function () { e.stop() });
+    });
+  </script>
   {% endif %}
 </body>
 </html>

@@ -16,3 +16,67 @@
   max-height: 150px;
   overflow: auto;
 }
+
+[data-theme="light"] .rainbow.red{
+  color: #d20f39;
+}
+
+[data-theme="light"] .rainbow.orange{
+  color: #fe640b;
+}
+
+[data-theme="light"] .rainbow.yellow{
+  color: #df8e1d;
+}
+
+[data-theme="light"] .rainbow.green{
+  color: #40a02b;
+}
+
+[data-theme="light"] .rainbow.blue{
+  color: #1e66f5;
+}
+
+[data-theme="light"] .rainbow.indigo{
+  color: #7287fd;
+}
+
+[data-theme="light"] .rainbow.purple{
+  color: #8839ef;
+}
+
+[data-theme="light"] .rainbow.fav {
+  color: #07be91;
+}
+
+[data-theme="dark"] .rainbow.red{
+  color: #f38ba8;
+}
+
+[data-theme="dark"] .rainbow.orange{
+  color: #fab387;
+}
+
+[data-theme="dark"] .rainbow.yellow{
+  color: #f9e2af;
+}
+
+[data-theme="dark"] .rainbow.green{
+  color: #a6e3a1;
+}
+
+[data-theme="dark"] .rainbow.blue{
+  color: #89b4fa;
+}
+
+[data-theme="dark"] .rainbow.indigo{
+  color: #b4befe;
+}
+
+[data-theme="dark"] .rainbow.purple{
+  color: #cba6f7;
+}
+
+[data-theme="dark"] .rainbow.fav {
+  color: #7afbe6;
+}
