@@ -1,6 +1,7 @@
 ---
 title: Writing
 subList: writing
+layout: 'layouts/page-landing.html'
 pagination:
   data: collections.writing
   size: 10

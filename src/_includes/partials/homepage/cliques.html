@@ -12,15 +12,20 @@
           {% endfor %}
         </div>
         <div class="col-lg-6 col-12 justify-content-center p-3 p-lg-2 order-lg-2 order-1">
-          <div class="d-flex justify-content-center align-items-baseline">
-          {% for clique in cliques.buttons %}
-            <a href="{{ clique.url }}"><img class="mx-1 clique-{{ clique.name }}" src="{{ cliques.path + clique.img }}" alt="{{ clique.imgAlt + " for the '" + clique.title + "' clique" }}" title="{{ clique.tooltip }}"></a>
+          {% for row in cliques.buttons %}
+          <div class="row">
+            <div class="col d-flex flex-wrap justify-content-center align-items-baseline">
+              {% for clique in row %}
+                {% if clique.tooltip %}<div class="tooltip">{% endif %}
+                  <a href="{{ clique.url }}"{% if clique.tooltip %} aria-describedby="clique-{{ clique.cls }}"{% endif %}><img class="mx-1" src="{{ cliques.path + clique.img }}" alt="{{ clique.alt + " for the \"" + clique.title + "\" clique" }}"></a>
+                {% if clique.tooltip %}
+                  <div id="clique-{{ clique.cls }}" class="tooltip-content" role="tooltip">{{ clique.tooltip }}</div>
+                </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
           {% endfor %}
-          </div>
-          <div class="d-flex flex-column align-items-center">
-            <a href="https://exvius.aelysia.net/"><img src="{{ cliques.path}}x-gilgamesh.png" alt="Sprite of Gilgamesh"></a>
-            <span class="text-xs">Protected by Gilgamesh!</span>
-          </div>
         </div>
       </div>
     </div>

@@ -1,127 +1,505 @@
 {
   "imgLink": "/assets/images/links/",
   "altText": "Link button for ",
-  "netizenLinks": [
-    { "name": "antikrist", "domain": "neocities.org", "desc": "AntiKrist", "type": "gif", "freezeframe": true },
-    { "name": "arlita", "domain": "neocities.org", "desc": "arlita's internet page", "type": "gif" },
-    { "name": "artwork", "domain": "neocities.org", "desc": "Artwork", "type": "gif", "freezeframe": true },
-    { "name": "astralestella", "domain": "neocities.org", "desc": "Astrale Stella & Co", "type": "png" },
-    { "name": "bytemoth", "domain": "neocities.org", "desc": "Bytemoth's Brook", "type": "png" },
-    { "name": "cinnamuff", "domain": "space", "type": "png", "desc": "Cinnamuff's Galaxy" },
-    { "name": "cloudcover", "domain": "neocities.org", "desc": "Cloud Cover", "type": "png" },
-    { "name": "dannarchy", "domain": "com", "desc": "Dannarchy", "type": "gif", "freezeframe": true },
-    { "name": "daximus", "domain": "site", "type": "gif", "freezeframe": true },
-    { "name": "doctordizzy", "domain": "neocities.org", "desc": "Dizzy's Bunny Hell", "type": "png" },
-    { "name": "foggybear42", "domain": "neocities.org", "desc": "FoggyBear", "type": "gif", "freezeframe": true },
-    { "name": "humanfinny", "domain": "neocities.org", "desc": "The Human Finny", "type": "gif", "freezeframe": true },
-    { "name": "jade-everstone", "domain": "neocities.org", "desc": "Jade Everstone", "type": "png" },
-    { "name": "jeith", "domain": "neocities.org", "type": "jpg" },
-    { "name": "keysklubhouse", "domain": "com", "desc": "Key's Klubhouse", "type": "png" },
-    { "name": "kookoioi", "domain": "neocities.org", "type": "png" },
-    { "name": "l-chan", "domain": "neocities.org", "desc": "L-Chan's Website", "type": "png" },
-    { "name": "lapislabel", "domain": "net", "type": "gif", "desc": "Lapis Label", "freezeframe": true },
-    { "name": "lazer-bunny", "domain": "neocities.org", "type": "gif", "freezeframe": true, "desc": "Lazer Bunny's Website" },
-    { "name": "lhfm", "domain": "neocities.org", "type": "png", "desc": "LHFM" },
-    { "name": "linwood", "domain": "neocities.org", "type": "png", "desc": "Linwood" },
-    { "name": "lizardmandan", "domain": "neocities.org", "type": "gif", "freezeframe": true },
-    { "name": "lugaw", "domain": "gay", "type": "png", "desc": "Lugaw.gay" },
-    { "name": "makoenergy", "domain": "neocities.org", "type": "png", "desc": "MakoEnergy.com" },
-    { "name": "mizuki", "domain": "world", "type": "gif", "desc": "Mizuki's World", "freezeframe": true },
-    { "name": "myblace", "domain": "neocities.org", "type": "png", "desc": "My Blace" },
-    { "name": "mystsaphyr", "domain": "me", "type": "gif", "freezeframe": true, "desc": "MystSaphyr" },
-    { "name": "nickle4apickle", "domain": "neocities.org", "type": "gif", "desc": "Nickle's Faves" },
-    { "name": "nomnomnami", "domain": "com", "type": "gif", "desc": "NomnomNami", "freezeframe": true },
-    { "name": "piranhebula", "domain": "neocities.org", "type": "gif", "freezeframe": true, "desc": "Piranhebula" },
-    { "name": "pklucky", "domain": "neocities.org", "type": "gif", "freezeframe": true, "desc": "PKLucky's Beachside Lounge" },
-    { "name": "playmoar", "domain": "neocities.org", "type": "gif", "desc": "SNK PLAYMOAR" },
-    { "name": "punkwasp", "domain": "neocities.org", "type": "png", "desc": "Wasp Next" },
-    { "name": "qrunchysnaq", "domain": "neocities.org", "type": "gif", "freezeframe": true, "desc": "QrunchySnaq" },
-    { "name": "sanguineroyal", "domain": "neocities.org", "type": "gif", "freezeframe": 1, "desc": "Sanguine Royal" },
-    { "name": "seafare", "domain": "neocities.org", "type": "png", "desc": "Seafare" },
-    { "name": "skykristal", "domain": "art", "type": "png", "desc": "SkyKristal" },
-    { "name": "space-bar", "domain": "neocities.org", "type": "gif", "desc": "The Space Bar", "freezeframe": true },
-    { "name": "theabsoluterealm", "domain": "com", "type": "gif", "desc": "The Absolute Realm" },
-    { "name": "themby", "domain": "neocities.org", "type": "png", "desc": "Themby" },
-    { "name": "valycenegative", "domain": "it", "type": "gif", "desc": "ValyceNegative.it" },
-    { "name": "wings", "domain": "nu", "type": "png", "desc": "WiNGS.nu" }
+  "netizens": [
+    { "name": "AntiKrist", "link": "https://antikrist.lol", "src": "antikrist.gif", "freezeframe": true },
+    { "name": "arlita's internet page", "link": "https://arlita.neocities.org", "src": "arlita.gif" },
+    { "name": "Artwork", "link": "https://artwork.neocities.org", "src": "artwork.gif", "freezeframe": true },
+    { "name": "Astrale Stella & Co", "link": "https://astralestella.neocities.org", "src": "astralestella.png" },
+    { "name": "Bytemoth's Brook", "link": "https://bytemoth.neocities.org", "src": "bytemoth.png" },
+    { "name": "Cinnamuff's Galaxy", "link": "https://cinnamuff.space", "src": "cinnamuff.png" },
+    { "name": "Cloud Cover", "link": "https://cloudcover.neocities.org", "src": "cloudcover.png" },
+    { "name": "Dannarchy", "link": "https://dannarchy.com", "src": "dannarchy.gif", "freezeframe": true },
+    { "name": "daximus", "link": "https://daximus.neocities.org", "src": "daximus.gif", "freezeframe": true },
+    { "name": "Captain's Undersea Blog", "link": "https://captdedeyes.com", "src": "captdedeyes.png" },
+    { "name": "Comfort's Bedroom", "link": "https://comfort.kayla.care", "src": "comfort.gif", "freezeframe": true },
+    { "name": "Dizzy's Bunny Hell", "link": "https://doctordizzy.space", "src": "doctordizzy.png" },
+    { "name": "FoggyBear", "link": "https://foggybear42.neocities.org", "src": "foggybear42.gif", "freezeframe": true },
+    { "name": "The Human Finny", "link": "https://humanfinny.neocities.org", "src": "humanfinny.gif", "freezeframe": true },
+    { "name": "Jade Everstone", "link": "https://jadeeverstone.com", "src": "jadeeverstone.png" },
+    { "name": "jeith!", "link": "https://jeith.com", "src": "jeith.jpg" },
+    { "name": "Key's Klubhouse", "link": "https://keysklubhouse.com", "src": "keysklubhouse.png" },
+    { "name": "SPAAAAAAAAAACE", "link": "https://kookoioi.neocities.org", "src": "kookoioi.png" },
+    { "name": "L-Chan's Website", "link": "https://l-chan.neocities.org", "src": "l-chan.png" },
+    { "name": "Lapis Label", "link": "https://lapislabel.net", "src": "lapislabel.gif", "freezeframe": true },
+    { "name": "Lazer Bunny's Website", "link": "https://lazer-bunny.neocities.org", "src": "lazer-bunny.gif", "freezeframe": true },
+    { "name": "LHFM", "link": "https://lhfm.neocities.org", "src": "lhfm.png" },
+    { "name": "Linwood", "link": "https://linwood.neocities.org", "src": "linwood.png" },
+    { "name": "lizardmandan", "link": "https://lizardmandan.neocities.org", "src": "lizardmandan.gif", "freezeframe": true },
+    { "name": "Lost Letters", "link": "https://lostletters.neocities.org", "src": "lostletters.gif", "freezeframe": true },
+    { "name": "Lugaw.gay", "link": "https://lugaw.gay", "src": "lugaw.png" },
+    { "name": "MakoEnergy.com", "link": "https://makoenergy.neocities.org", "src": "makoenergy.png" },
+    { "name": "Mizuki's World", "link": "https://mizuki.world", "src": "mizuki.gif", "freezeframe": true },
+    { "name": "My Blace", "link": "https://myblace.neocities.org", "src": "myblace.png" },
+    { "name": "MystSaphyr", "link": "https://mystsaphyr.art", "src": "mystsaphyr.gif", "freezeframe": true },
+    { "name": "Nickle's Faves", "link": "https://nickle4apickle.neocities.org", "src": "nickle4apickle.gif" },
+    { "name": "NomnomNami", "link": "https://nomnomnami.com", "src": "nomnomnami.gif", "freezeframe": true },
+    { "name": "Nostalgic", "link": "https://nostalgic.com", "src": "nostalgic.gif" },
+    { "name": "Piranhebula", "link": "https://piranhebula.neocities.org", "src": "piranhebula.gif", "freezeframe": true },
+    { "name": "PKLucky's Beachside Lounge", "link": "https://pklucky.neocities.org", "src": "pklucky.gif", "freezeframe": true },
+    { "name": "Puruland", "link": "https://purupurple.neocities.org", "src": "purupurple.png" },
+    { "name": "SNK PLAYMOAR", "link": "https://playmoar.neocities.org", "src": "playmoar.gif" },
+    { "name": "Wasp Nest", "link": "https://punkwasp.neocities.org", "src": "punkwasp.png" },
+    { "name": "QrunchySnaq", "link": "https://qrunchysnaq.neocities.org", "src": "qrunchysnaq.gif", "freezeframe": true },
+    { "name": "Random Pixels", "link": "http://digistar.db-destiny.net/rpixels/", "src": "random-pixels.gif", "freezeframe": true },
+    { "name": "Sanguine Royal", "link": "https://sanguineroyal.neocities.org", "src": "sanguineroyal.gif", "freezeframe": true },
+    { "name": "Seafare", "link": "https://seafare.neocities.org", "src": "seafare.png" },
+    { "name": "SkyKristal", "link": "https://skykristal.art", "src": "skykristal.png" },
+    { "name": "The Space Bar", "link": "https://space-bar.neocities.org", "src": "space-bar.gif", "freezeframe": true },
+    { "name": "Strawberry Gashes", "link": "https://strawberry-gashes.neocities.org/", "src": "strawberry-gashes.gif" },
+    { "name": "The Absolute Realm", "link": "https://theabsoluterealm.com", "src": "theabsoluterealm.gif" },
+    { "name": "Themby", "link": "https://themby.neocities.org", "src": "themby.png" },
+    { "name": "ValyceNegative.it", "link": "https://valycenegative.it", "src": "valycenegative.gif" },
+    { "name": "WiNGS.nu", "link": "https://wings.nu", "src": "wings.png" }
   ],
-  "resourceLinks": [
+  "fanlistings": [
     {
-      "url": "https://kaomoji.ru/en",
+      "link": "http://daria.ravenbeauty.net/",
+      "src": "daria.png",
+      "alt": "Daria fanlisting button"
+    },
+    {
+      "link": "https://boundless-realms.com/invaderzim/",
+      "src": "fan_iz.png",
+      "alt": "Invader Zim fanlisting button"
+    },
+    {
+      "link": "https://rikafire.fanimated.net/recess/index.php",
+      "src": "recess.png",
+      "alt": "Recess TV Show fanlisting button"
+    },
+    {
+      "link": "https://movies.sweetbrat.cc/dsmm/",
+      "src": "dsmm.png",
+      "alt": "Doctor Strange in the Multiverse of Madness movie fanlisting button"
+    },
+    {
+      "link": "https://10-31.net/jenn/meangirls/",
+      "src": "mean_girls.png",
+      "alt": "Mean Girls movie fanlisting button"
+    },
+    {
+      "link": "https://movies.sweetbrat.cc/doctor_strange",
+      "src": "doctor_strange.png",
+      "alt": "Doctor Strange (2016) movie fanlisting button"
+    },
+    {
+      "link": "https://love.cordy.nu/bones/",
+      "src": "bones.gif",
+      "alt": "Bones TV show fanlisting button"
+    },
+    {
+      "link": "https://fightingspirit.seaincense.com/",
+      "src": "jjba.png",
+      "alt": "JoJo's Bizarre Adventure fanlisting button"
+    },
+    {
+      "link": "https://michiru.org/spyxfamily/",
+      "src": "spyxfamily.png",
+      "alt": "SPYXFAMILY fanlisting button"
+    },
+    {
+      "link": "https://fan.enamour.nu/trigun/",
+      "src": "trigun.png",
+      "alt": "TRIGUN fanlisting button"
+    },
+    {
+      "link": "https://rikafire.fanimated.net/tamers/",
+      "src": "digimontamers.png",
+      "alt": "Digimon Tamers fanlisting button"
+    },
+    {
+      "link": "https://hagaren.org/",
+      "src": "fma.gif",
+      "alt": "Fullmetal Alchemist fanlisting button"
+    },
+    {
+      "link": "http://rhythm-emotion.net/sonic/index.php",
+      "src": "sonic_series.png",
+      "alt": "Sonic series fanlisting button"
+    },
+    {
+      "link": "https://pkmn.redcrown.net/hoenn/",
+      "src": "oras.png",
+      "alt": "Pokémon Ruby and Sapphire fanlisting button"
+    },
+    {
+      "link": "http://firaga.org/ffx/join.php",
+      "src": "ffx.png",
+      "alt": "Final Fantasy X fanlisting button"
+    },
+    {
+      "link": "http://fan.warmer-climate.net/portal2/",
+      "src": "portal2.png",
+      "alt": "Portal 2 fanlisting button"
+    },
+    {
+      "link": "https://fan.robotess.net/programming",
+      "src": "programming.jpeg",
+      "alt": "Programming fanlisting button"
+    },
+    {
+      "link": "https://www.ladyrose.buruma.net/3ds/",
+      "src": "3ds.png",
+      "alt": "Nintendo 3DS fanlisting button"
+    },
+    {
+      "link": "http://fan.greenhype.net/gbasp/join.php",
+      "src": "gbasp.gif",
+      "alt": "Game Boy Advance SP fanlisting button"
+    },
+    {
+      "link": "http://fan.greenhype.net/switch/",
+      "src": "switch.png",
+      "alt": "Nintendo Switch fanlisting button"
+    },
+    {
+      "link": "https://www.ladyrose.buruma.net/gamecube/",
+      "src": "gc.jpg",
+      "alt": "Nintendo Gamecube fanlisting button"
+    },
+    {
+      "link": "https://moudoku.com/strange/index.php",
+      "src": "drstrange.png",
+      "alt": "MCU Doctor Strange fanlisting button"
+    },
+    {
+      "link": "https://naiad.nu/doc/",
+      "src": "docbrown.jpg",
+      "alt": "Doc Brown from Back to the Future fanlisting button"
+    },
+    {
+      "link": "https://fan.glast-heim.net/davy/",
+      "src": "davy_jones.png",
+      "alt": "Davy Jones from Disney's Pirates of the Caribbean fanlisting button"
+    },
+    {
+      "link": "https://www.celes.net/luigi/",
+      "src": "luigi.gif",
+      "alt": "Luigi from the Mario Bros. series fanlisting button"
+    },
+    {
+      "link": "https://hellokitty.i-heart-you.net/",
+      "src": "hello_kitty.gif",
+      "alt": "Hello Kitty fanlisting button"
+    },
+    {
+      "link": "http://nosastra.com/cactuar/",
+      "src": "cactuars.jpg",
+      "alt": "Cactuar from the Final Fantasy series fanlisting button"
+    },
+    {
+      "link": "precious-memory",
+      "src": "clam_chowder.gif",
+      "alt": "Clam chowder fanlisting button"
+    },
+    {
+      "link": "http://fan.greenhype.net/thaiicedtea/",
+      "src": "thai_iced_tea.png",
+      "alt": "Thai iced tea fanlisting button"
+    },
+    {
+      "link": "http://fan.winterlantern.net/willows/",
+      "src": "willow_trees.png",
+      "alt": "Willow trees fanlisting button"
+    },
+    {
+      "link": "http://nosastra.com/galaxies/",
+      "src": "galaxies.png",
+      "alt": "Galaxies fanlisting button"
+    },
+    {
+      "link": "http://love.in-blue-rain.org/auroras/",
+      "src": "auroras.png",
+      "alt": "Aurora borealis fanlisting button"
+    },
+    {
+      "link": "https://berries.fanfreak.net/",
+      "src": "berries.png",
+      "alt": "Berries fanlisting button"
+    },
+    {
+      "link": "http://in-blue-rain.org/heart/",
+      "src": "bleeding_heart.png",
+      "alt": "Bleeding heart flowers fanlisting button"
+    },
+    {
+      "link": "https://love.strongisfighting.org/apples/",
+      "src": "apples.png",
+      "alt": "Apples fanlisting button"
+    },
+    {
+      "link": "https://10-31.net/megan/cottoncandy/",
+      "src": "cotton_candy.png",
+      "alt": "Cotton candy fanlisting button"
+    },
+    {
+      "link": "https://prettylies.net/snow/",
+      "src": "snow.png",
+      "alt": "Snow fanlisting button"
+    },
+    {
+      "link": "https://mikh.net/snowmen/",
+      "src": "snowmen.gif",
+      "alt": "Snowmen fanlisting button"
+    },
+    {
+      "link": "https://10-31.net/megan/dippindots/",
+      "src": "dippin_dots.gif",
+      "alt": "Dippin' Dots fanlisting button"
+    },
+    {
+      "link": "https://constellations.fanfreak.net/",
+      "src": "constellations.png",
+      "alt": "Constellations fanlisting button"
+    },
+    {
+      "link": "http://fanique.altervista.org/emoticons/",
+      "src": "emoticons.png",
+      "alt": "Emoticons fanlisting button"
+    },
+    {
+      "link": "http://www.ladyrose.buruma.net/weirdal",
+      "src": "weird_al.gif",
+      "alt": "Weird Al Yankovic fanlisting button"
+    },
+    {
+      "link": "https://precious-memory.net/betty/index.php",
+      "src": "betty_white.gif",
+      "alt": "Betty White fanlisting button"
+    },
+    {
+      "link": "http://fan.haltfate.org/nendoroid",
+      "src": "nendoroid.png",
+      "alt": "Nendoroid fanlisting button"
+    },
+    {
+      "link": "https://10-31.net/halloween/index.php",
+      "src": "halloween.png",
+      "alt": "Halloween fanlisting button"
+    },
+    {
+      "link": "https://10-31.net/megan/valentines/index.php",
+      "src": "valentines.png",
+      "alt": "Valentine's Day fanlisting button"
+    },
+    {
+      "link": "http://in-blue-rain.org/thetube/",
+      "src": "the_tube.png",
+      "alt": "London's underground subway (the Tube) fanlisting button"
+    },
+    {
+      "link": "https://candles.fanfreak.net/",
+      "src": "scented_candles.png",
+      "alt": "Scented candles fanlisting button"
+    },
+    {
+      "link": "https://10-31.net/chelsea/beds/",
+      "src": "beds.png",
+      "alt": "Beds fanlisting button"
+    },
+    {
+      "link": "https://10-31.net/megan/fanlistings/",
+      "src": "joining_fanlistings.png",
+      "alt": "Joining fanlistings fanlisting button"
+    },
+    {
+      "link": "https://fans.thislove.nu/aquariums/",
+      "src": "aquariums.png",
+      "alt": "Aquariums fanlisting button"
+    },
+    {
+      "link": "https://precious-memory.net/nature/hydrangea/",
+      "src": "hydrangea.gif",
+      "alt": "Hydrangeas fanlisting button"
+    },
+    {
+      "link": "https://precious-memory.net/blankets/",
+      "src": "blankets.gif",
+      "alt": "Blankets fanlisting button"
+    },
+    {
+      "link": "https://rhythm-emotion.net/chopsticks/",
+      "src": "chopsticks.png",
+      "alt": "Chopsticks fanlisting button"
+    },
+    {
+      "link": "https://fans.thislove.nu/css/",
+      "src": "css.jpg",
+      "alt": "CSS fanlisting button"
+    },
+    {
+      "link": "https://salmon.fanfreak.net/",
+      "src": "salmon.png",
+      "alt": "Salmon fanlisting button"
+    },
+    {
+      "link": "https://rhythm-emotion.net/fries/",
+      "src": "mcfries.png",
+      "alt": "McDonald's french fries fanlisting button"
+    },
+    {
+      "link": "https://fanlistings.nickifaulk.com/skulls/",
+      "src": "skulls.png",
+      "alt": "Skulls fanlisting button"
+    },
+    {
+      "link": "https://moudoku.com/abandoned/",
+      "src": "abandoned-sites.png",
+      "alt": "Abandoned sites fanlisting button"
+    },
+    {
+      "link": "https://glitterskies.org/voiceactors/",
+      "src": "voice_actors.png",
+      "alt": "Voice actors fanlisting button"
+    },
+    {
+      "link": "https://gryffindors.com/love/",
+      "src": "love.gif",
+      "alt": "Love fanlisting button"
+    },
+    {
+      "link": "https://boundless-realms.com/disneyland/",
+      "src": "disneyland.jpg",
+      "alt": "Disneyland fanlisting button"
+    },
+    {
+      "link": "https://162candles.com/strangerthings/",
+      "src": "stranger_things.png",
+      "alt": "Stranger Things fanlisting button"
+    },
+    {
+      "link": "https://pokemon.i-heart-you.net/plushies/",
+      "src": "pokemon_plushes.gif",
+      "alt": "Pokémon plushes fanlisting button"
+    },
+    {
+      "link": "http://yandere.nu/soul/",
+      "src": "souleater.png",
+      "alt": "Soul Eater fanlisting button"
+    },
+    {
+      "link": "http://fan.ravenbeauty.net/funko/",
+      "src": "funko.png",
+      "alt": "Funko Pop fanlisting button"
+    },
+    {
+      "link": "https://gryffindors.com/sarina/hugs/",
+      "src": "hugs.png",
+      "alt": "Hugs fanlisting button"
+    },
+    {
+      "link": "https://10-31.net/fans/hh/",
+      "src": "haunted_houses.png",
+      "alt": "Haunted houses fanlisting button"
+    },
+    {
+      "link": "https://precious-memory.net/disneyworld/",
+      "src": "disney_world.gif",
+      "alt": "Walt Disney World fanlisting button"
+    },
+    {
+      "link": "http://fan.still-breathing.com/cinemas/",
+      "src": "cinemas.gif",
+      "alt": "Cinemas fanlisting button"
+    },
+    {
+      "link": "http://fan.still-breathing.com/museums/",
+      "src": "museums.png",
+      "alt": "Museums fanlisting button"
+    },
+    {
+      "link": "http://winterseve.altervista.org/winter/",
+      "src": "winter.png",
+      "alt": "Winter fanlisting button"
+    },
+    {
+      "link": "http://www.dreamsaddict.com/fan_of/penpals/",
+      "src": "penpals.jpg",
+      "alt": "Pen pals fanlisting button"
+    },
+    {
+      "link": "http://zelda.shattered-memories.org/continuum/",
+      "src": "ocarina_of_time.png",
+      "alt": "Ocarina of Time fanlisting button"
+    },
+    {
+      "link": "http://coffeegirl.altervista.org/coffee/",
+      "src": "coffee.png",
+      "alt": "Coffee fanlisting button"
+    }
+  ],
+  "resources": [
+    {
+      "link": "https://kaomoji.ru/en",
       "name": "Kaomoji: Japanese Emoticons",
-      "desc": "A large repository of adorable/kawaii text-based emoticons"
+      "desc": "A large repository of adorable/kawaii text-based emoticons."
     },
     {
-      "url": "https://torcado.com/cleanEdge/",
+      "link": "https://torcado.com/cleanEdge/",
       "name": "cleanEdge",
-      "desc": "A tool to scale and rotate pixel art while still retaining clean edges"
+      "desc": "A tool to scale and rotate pixel art while still retaining clean edges."
     },
     {
-      "url": "https://waifu2x.udp.jp/",
+      "link": "https://waifu2x.udp.jp/",
       "name": "waifu2x",
-      "desc": "A tool to upscale artwork that is otherwise pixelate or has too many JPG artifacts"
+      "desc": "A tool to upscale artwork that is otherwise pixelate or has too many JPG artifacts."
     },
     {
-      "url": "https://ezgif.com/",
+      "link": "https://ezgif.com/",
       "name": "Ezgif.com",
       "desc": "A browser tool that allows users to do basic functions similar to art programs out there without actually downloading an art program. Includes resizing, cropping, animating GIFs, etc."
     },
     {
-      "url": "https://neonaut.neocities.org/brain/image-compression.html",
+      "link": "https://neonaut.neocities.org/brain/image-compression.html",
       "name": "Neonaut: Become a Compression Sorcerer",
       "desc": "A wonderful tutorial that provides tips on how to compress images so that they still look nice but don't take 500 years to load."
     },
     {
-      "url": "https://htmlsymbols.xyz",
+      "link": "https://htmlsymbols.xyz",
       "name": "HTML Symbols",
       "desc": "A repository of all (or at least most) HTML symbols that exist."
     },
     {
-      "url": "https://justtherecipe.com/",
+      "link": "https://justtherecipe.com/",
       "name": "Just The Recipe",
       "desc": "A website that takes links of any recipe and removes all of the fluff and only leaves the recipe. Useful for when chefs force readers to scroll through 20+ pages just to get to the recipe."
     }
   ],
-  "creditTemplate":
-  {
-    "name": "",
-    "url": "",
-    "desc": ""
-  },
   "credits": [
     {
       "name": "Rina Cat's Domain",
-      "url": "http://web.archive.org/web/20041206135411/rinacat.com/main.html",
+      "link": "http://web.archive.org/web/20041206135411/rinacat.com/main.html",
       "desc": "inspiration"
     },
     {
       "name": "Eleventy",
-      "url": "https://11ty.dev",
+      "link": "https://11ty.dev",
       "desc": "static site generator"
     },
     {
       "name": "Catppuccin",
-      "url": "https://catppuccin.com/",
+      "link": "https://catppuccin.com/",
       "desc": "colors for the Rainbow clique"
     },
     {
       "name": "Bret Comnes",
-      "url": "https://github.com/marketplace/actions/deploy-to-neocities",
+      "link": "https://github.com/marketplace/actions/deploy-to-neocities",
       "desc": "deploy-to-neocities GitHub action"
     },
     {
       "name": "Salma Alam-Naylor",
-      "url": "https://dev.to/whitep4nth3r/the-best-lightdark-mode-theme-toggle-in-javascript-368f",
+      "link": "https://dev.to/whitep4nth3r/the-best-lightdark-mode-theme-toggle-in-javascript-368f",
       "desc": "Light/dark mode toggle code inspiration"
     },
     {
       "name": "Avi Aryan",
-      "url": "https://github.com/PrismJS/prism-themes/blob/master/themes/prism-ghcolors.css",
+      "link": "https://github.com/PrismJS/prism-themes/blob/master/themes/prism-ghcolors.css",
       "desc": "GH Colors PrismJS theme with slight edits -light mode-"
     },
     {
       "name": "Jared Jones and Simon Jespersen",
-      "url": "https://github.com/PrismJS/prism-themes/blob/master/themes/prism-laserwave.css",
+      "link": "https://github.com/PrismJS/prism-themes/blob/master/themes/prism-laserwave.css",
       "desc": "Laserwave PrismJS theme -dark mode-"
     },
     { "name": "**Viewers like you!**" }

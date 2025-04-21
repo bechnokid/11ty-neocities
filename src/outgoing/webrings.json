@@ -42,7 +42,7 @@
       "title": "Ladies of the Link",
       "index": {
         "src": "ladiesofthelink.gif",
-        "link": "https://ladiesofthelinks.neocities.org/"
+        "link": "https://ladiesofthe.link/"
       },
       "prevLink": {
         "src": "ladiesofthelink_left.gif",
@@ -110,7 +110,7 @@
     },
     {
       "title": "Jelly World",
-      "widget": "<div id='jelly-world' class='p-3 mt-2'><div class='title'><a href='https://bechnokid.neocities.org/home'>Bechno Kid</a> has bonded with<br><b>Jelly Well-Done Steak!</b></div><div class='d-flex justify-content-center'><div class='img my-2'><a href='https://jellyworld.neocities.org/'><img src='/assets/images/webrings/jw_steak.png' title='Mmm...so tasty!' alt='A jelly based on the Well-Done Steak from the Monster Hunter game franchise'></a></div></div></div>"
+      "widget": "<div id='jelly-world' class='p-3 mt-2'><div class='title'><a href='https://bechnokid.neocities.org/home/'>Bechno Kid</a> has bonded with<br><b>Jelly Well-Done Steak!</b></div><div class='d-flex justify-content-center'><div class='img my-2'><a href='https://jellyworld.neocities.org/'><img src='/assets/images/webrings/jw_steak.png' title='Mmm...so tasty!' alt='A jelly based on the Well-Done Steak from the Monster Hunter game franchise'></a></div></div></div>"
     }
   ]
 }

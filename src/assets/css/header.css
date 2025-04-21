@@ -11,6 +11,6 @@ a header:hover {
 
 @media only screen and (max-width:1000px) {
   header {
-    height: 100px;
+    height: 80px;
   }
 }

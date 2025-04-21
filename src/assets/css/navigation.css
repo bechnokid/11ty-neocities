@@ -1,15 +1,11 @@
-nav details li::marker,
-ul.nav-links li.nav-link-item::before {
+nav li.nav-link-item::marker {
   content: "✦";
   color: var(--text-secondary);
 }
 
-nav details {
-  margin-left: .25rem;
-}
-
-nav details li {
+nav li.nav-link-item {
   padding-left: .5rem;
+  margin-left: .5rem;
 }
 
 nav details summary::marker {
@@ -48,19 +44,6 @@ nav .skip-link:focus {
   z-index: 99;
 }
 
-ul.nav-links {
-  margin: 0;
-}
-
-ul.nav-links li.nav-link-item::before {
-  margin-right: .5rem;
-}
-
-ul.nav-links li.nav-link-item {
-  margin-left: .5rem;
-  text-indent: -.5rem;
-}
-
 details.burger {
   display: none;
   position: fixed;
@@ -76,7 +59,7 @@ details.burger summary.burger-summary {
   list-style-type: none;
   cursor: pointer;
   background: var(--bg-img-color);
-  color: var(--bg-img-color);
+  color: transparent;
 }
 
 details.burger summary.burger-summary::before {
@@ -92,13 +75,25 @@ details.burger[open] summary.burger-summary::before {
 
 details.burger nav {
   height: calc(100vh - 50px);
-  width: 200px;
+  width: 300px;
   overflow-y: auto;
+}
+
+li.mobile {
+  display: none;
 }
 
 @media screen and (max-width: 999px) {
   #nav-main {
     display: none;
+  }
+
+  li.desktop {
+    display: none;
+  }
+
+  li.mobile {
+    display: revert;
   }
 
   details.burger {

@@ -5,11 +5,12 @@ displayOrder: 4
 description: A tutorial on how to create a feed reader directly from [StatusCafe](https://status.cafe/).
 prism: true
 ---
-## 0) Introduction
 
 While I may not use StatusCafe anymore, I'm sure there are many who already have an account on that site, and perhaps want to make a microblog out of it to put in their own site.
 
 It is possible to modify the CSS in your StatusCafe account and then put it in an iframe, but creating a feed reader allows for more customization, if needed.
+
+**Note:** Creating this feed reader requires Javascript.
 
 ## 1) Obtaining StatusCafe's Feed
 
@@ -73,7 +74,7 @@ let html = ``;
 entries.forEach(el => {
   let title = el.querySelector("title").innerHTML.slice(0, NUMBER_OF_CHARACTERS).trim();
   let content = el.querySelector("content").textContent.trim();
-  let dateString = el.querySelector("published").innerHTML.slice(0,10);
+  let dateString = el.querySelector("published").innerHTML.slice(0, 10);
 });
 ```
 
@@ -99,7 +100,7 @@ html += `
 `;
 ```
 
-This sets up the HTML of one of your posts, putting your username and the date on line line, and then the status on the next line.
+This sets up the HTML of one of your posts, putting your username and the date on the first line, and then the status on the next line.
 
 Then, place the following outside the `entries.forEach()` loop:
 
@@ -123,21 +124,21 @@ The finished HTML should look something like this:
 
       fetch(feedURL)
         .then(response => response.text())
-        .then(str => new window.DOMParser().parseFromString(str, "text/xml")
+        .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
         .then(data => {
-          const entries = data.querySelectorAll("entry";
+          const entries = data.querySelectorAll("entry");
           let html = ``;
 
           entries.forEach(el => {
-            let title = el.querySelector("title".innerHTML.slice(0, NUMBER_OF_CHARACTERS).trim();
-            let content = el.querySelector("content".textContent.trim();
-            let dateString = el.querySelector("published".innerHTML.slice(0,10);
+            let title = el.querySelector("title").innerHTML.slice(0, NUMBER_OF_CHARACTERS).trim();
+            let content = el.querySelector("content").textContent.trim();
+            let dateString = el.querySelector("published").innerHTML.slice(0, 10);
             html += `
               <p>${title} - ${dateString}</p>
               <p>${content}</p>
             `;
           })
-          document.getElementById("feed-reader".innerHTML = html;
+          document.getElementById("feed-reader").innerHTML = html;
         })
     </script>
   </body>

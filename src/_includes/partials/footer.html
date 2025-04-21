@@ -1,0 +1,9 @@
+<footer class="bg-footer text-center p-1 px-lg-0">
+  <p class="my-1">Powered by Neocities, 11ty, and Github. Maintained by <b>Bechno Kid</b> since 2022.<br>Please do not edit or reupload any artwork from this site.</p>
+  <div class="footer-btns">
+    {% set footer = site.footer %}
+    {% for item in footer.items %}
+      <a href="{{ item.url }}" class="mx-1"><img src="{{ footer.imgSrc + item.src }}" alt="{{ item.alt }}"></a>
+    {% endfor %}
+  </div>
+</footer>

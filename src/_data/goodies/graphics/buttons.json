@@ -1,281 +1,250 @@
 {
   "imgSrc": "/assets/images/goodies/site/",
   "title": "88 x 31 Buttons",
+  "template":
+  {
+    "src": "",
+    "alt": ""
+  },
   "collection": {
-    "items" : [
-    {
-      "src": "youmad.gif",
-      "alt": "An animated button of Popuko and Pipimi from Pop Team Epic. Popuko punches Pipimi and then asks, 'Are you mad?' Pipimi replies with, 'Nope <3'",
-      "freezeframe": true
-    },
-    {
-      "src": "y2k.gif",
-      "alt": "A button with flashing text that reads, 'I survived Y2K'",
-      "freezeframe": true
-    },
-    {
-      "src": "windows-xp.gif",
-      "alt": "A button that resembles the top window bar from Windows XP",
-      "url": "https://zeusofthecrows.tumblr.com/post/709307184195010560"
-    },
-    {
-      "src": "tumblrpocalypse.png",
-      "alt": "A button that reads 'I survived the 2018 Tumblr Apocalypse",
-      "url": "https://eggramen.neocities.org/creations/edits/buttons"
-    },
-    {
-      "src": "submas.gif",
-      "alt": "An animated button of the Subway Bosses from the Pokemon franchise. On the left is Ingo with his Hisuian Sneasel and on the right is Emmet with his Galvantula. The text above them reads, 'Submas'",
-      "url": "https://wormsagainstnuclearkillers.tumblr.com/post/682046269607280640",
-      "freezeframe": true
-    },
-    {
-      "src": "splatoon3.png",
-      "alt": "A button with the logo from Splatoon 3. There are yellow and purple ink splats in the background",
-      "url": "https://lollich0p.tumblr.com/tagged/88x31"
-    },
-    {
-      "src": "splatoon2.png",
-      "alt": "A button with the logo from Splatoon 2. There are pink and green ink splats in the background",
-      "url": "https://lollich0p.tumblr.com/tagged/88x31"
-    },
-    {
-      "src": "splatoon.png",
-      "alt": "A button with the logo from the first Splatoon game. There are orange and blue ink splats in the background",
-      "url": "https://lollich0p.tumblr.com/tagged/88x31"
-    },
-    {
-      "src": "spamton.gif",
-      "alt": "A flashing button with a small image of Spamton from Deltarune with background text alternating between 'KROMER' and '$ $'",
-      "freezeframe": true
-    },
-    {
-      "src": "sonicadventure.gif",
-      "alt": "A button of Sonic the Hedgehog with the text 'Sonic Adventure' at the bottom"
-    },
-    {
-      "src": "salmon-run.png",
-      "alt": "An orange button with the black logo of Grizzco from Splatoon",
-      "url": "https://lollich0p.tumblr.com/tagged/88x31"
-    },
-    {
-      "src": "SA2BATTLE.png",
-      "alt": "A button that depicts the logo from Sonic Adventure 2 Battle. Behind the logo are Sonic the Hedgehog and Shadow the Hedgehog"
-    },
-    {
-      "src": "rewind.gif",
-      "alt": "An animated button that depicts an image of a grassy field against a blue sky reminiscent of the Windows XP wallpaper with the text REW above it. The button has a static-y filter",
-      "url": "https://zeusofthecrows.tumblr.com/post/695189042788253696",
-      "freezeframe": true
-    },
-    {
-      "src": "portal.png",
-      "alt": "A button that reads 'Portal' with the game's logo on the side of a person walkthough through a blue and orange portal",
-      "url": "https://lollich0p.tumblr.com/post/696392936364130304/some-88x31-portal-buttons"
-    },
-    {
-      "src": "pokemon.gif",
-      "alt": "An animated button that shows the Pokemon logo with Pikachu running on the side",
-      "freezeframe": true
-    },
-    {
-      "src": "owlhouse.png",
-      "alt": "A button that has the logo from 'The Owl House' with an image of Luz Noceda",
-      "url": "https://monsterrobotics.neocities.org/about"
-    },
-    {
-      "src": "octoexpansion.png",
-      "alt": "A button with an Octoling from the Splatoon 2 Octo Expansion",
-      "url": "https://monsterrobotics.neocities.org/about"
-    },
-    {
-      "src": "not-alone.gif",
-      "alt": "An animated button that reads, 'I know it's dark. I'm scared too. Is it ok if I walk with you? You don't have to walk alone",
-      "url": "http://lu.tiny-universes.net/index2.html",
-      "freezeframe": true
-    },
-    {
-      "src": "no_bad_hair_days.png",
-      "alt": "A button that reads 'There are no bad hair days on the Internet'. On the side is an image of a smiling computer",
-      "url": "https://deviantart.com/view/682431234"
-    },
-    {
-      "src": "nichijou.gif",
-      "alt": "An animated button of a scene from Nichijou with a masked high schoool student chasing after a distressed Mio",
-      "url": "https://zanarkand.neocities.org/withlove.html",
-      "freezeframe": true
-    },
-    {
-      "src": "naptime.png",
-      "alt": "A button that reads 'I need a nap now!' with an icon with three Z's"
-    },
-    {
-      "src": "mask-now.png",
-      "alt": "A button that reads 'Hey you! Wear a mask now!'",
-      "url": "https://yourdevilfriends.art/freebies.html"
-    },
-    {
-      "src": "lovable.gif",
-      "alt": "An animated button that scrolls through multiple lines that say 'lovable'",
-      "freezeframe": true
-    },
-    {
-      "src": "krisbtn.png",
-      "alt": "A button with Susie and Kris from Deltarune. Susie's dialogue reads 'kris where tf are we'"
-    },
-    {
-      "src": "krak-on.png",
-      "alt": "A button with the Krak-on brand logo from the Splatoon franchise",
-      "url": "https://lollich0p.tumblr.com/tagged/88x31"
-    },
-    {
-      "src": "kingdomhearts.png",
-      "alt": "A button that reads 'Kingdom Hearts' with the Kingdom Hearts logo on the side",
-      "url": "https://monsterrobotics.neocities.org/about"
-    },
-    {
-      "src": "keyboard.gif",
-      "alt": "An animated button that consists of keys from a keyboard",
-      "url": "https://zeusofthecrows.tumblr.com/post/709503504879878144",
-      "freezeframe": true
-    },
-    {
-      "src": "jojo-micro-bar.png",
-      "alt": "A button with a pixelated version of the logo from Jojo's Bizarre Adventure"
-    },
-    {
-      "src": "jesus.png",
-      "alt": "A button that reads 'Jesus kissed men...', followed by a heart. On the side is a golden cross",
-      "url": "https://yourdevilfriends.art/freebies.html"
-    },
-    {
-      "src": "hello_kitty.gif",
-      "alt": "An animated button that reads 'Hello Kitty'. It has a spinning flower and an image of Hello Kitty on the side",
-      "freezeframe": true
-    },
-    {
-      "src": "graphicdesign.png",
-      "alt": "A button that reads 'Graphic design is my passion' with an image of a frog"
-    },
-    {
-      "src": "gay.gif",
-      "alt": "A button that reads 'You were diagnosed with GAY' with a small picture of Dr. Mario on the side"
-    },
-    {
-      "src": "gay-rights.png",
-      "alt": "A button that consists of the rainbow flag",
-      "url": "https://zeusofthecrows.tumblr.com/post/709307184195010560"
-    },
-    {
-      "src": "friendship.png",
-      "alt": "A button that reads 'Believe in the radical power of friendship'",
-      "url": "http://lu.tiny-universes.net/index2.html"
-    },
-    {
-      "src": "foreveronline.gif",
-      "alt": "An animated button that reads 'Forever Online'",
-      "freezeframe": true
-    },
-    {
-      "src": "dontyouhate.gif",
-      "alt": "An animated button with scrolling text that reads 'Don't you hate it when you're reading a page, and then some' before it is cut off with smaller text that reads 'This content is for subscribers only :)' The text then reads 'Paywalls gatekeep knowledge'",
-      "freezeframe": true
-    },
-    {
-      "src": "css-is-difficult.png",
-      "alt": "A button that reads 'CSS is difficult' with an image of the CSS logo on the side. The text is aligned in a way that goes beyond the boundaries of a box outlined in red",
-      "url": "https://zeusofthecrows.tumblr.com/post/709503504879878144/slightly-website-y-buttons"
-    },
-    {
-      "src": "computer.png",
-      "alt": "A button that reads 'I like computer' in all caps with a pixel image of a computer"
-    },
-    {
-      "src": "companion-cube.gif",
-      "alt": "An animated button that reads 'Companion Cube' in bouncing, capital letters with an image of a Companion Cube from the Portal games",
-      "url": "https://lollich0p.tumblr.com/post/696392936364130304/some-88x31-portal-buttons",
-      "freezeframe": true
-    },
-    {
-      "src": "chill_pill.gif",
-      "alt": "A button that reads 'Take a chill pill'. The words 'chill pill' are inside a pink and blue pill.",
-      "url": "https://anlucas.neocities.org/GifFiles.html"
-    },
-    {
-      "src": "caramelldansen.gif",
-      "alt": "An animated GIF of two girls dancing the Caramelldansen dance",
-      "freezeframe": true
-    },
-    {
-      "src": "calneca.gif",
-      "alt": "A flashing image of Calne Ca",
-      "url": "https://plasticdino.neocities.org/graphics",
-      "freezeframe": true
-    },
-    {
-      "src": "buttonsnow.gif",
-      "alt": "A button that reads 'Buttons Now!'",
-      "freezeframe": true
-    },
-    {
-      "src": "albutton.png",
-      "alt": "A button that reads 'Yankovic Now!' with an image of Weird Al Yankovic"
-    },
-    {
-      "src": "ac-button-drift.gif",
-      "alt": "A button that reads 'Drift Now!' with an image of Drift from Animal Crossing",
-      "url": "https://omfg.neocities.org/ac/buttons"
-    },
-    {
-      "src": "ac-button-henry.gif",
-      "alt": "A button that reads 'Henry Now!' with an image of Henry from Animal Crossing",
-      "url": "https://omfg.neocities.org/ac/buttons"
-    },
-    {
-      "src": "ac-button-jeremiah.gif",
-      "alt": "A button that reads 'Jeremiah Now!' with an image of Jeremiah from Animal Crossing",
-      "url": "https://omfg.neocities.org/ac/buttons"
-    },
-    {
-      "src": "ac-button-lily.gif",
-      "alt": "A button that reads 'Lily Now!' with an image of Lily from Animal Crossing",
-      "url": "https://omfg.neocities.org/ac/buttons"
-    },
-    {
-      "src": "ac-button-puddles.gif",
-      "alt": "A button that reads 'Puddles Now!' with an image of Puddles from Animal Crossing",
-      "url": "https://omfg.neocities.org/ac/buttons"
-    },
-    {
-      "src": "ac-button-raddle.gif",
-      "alt": "A button that reads 'Raddle Now!' with an image of Raddle from Animal Crossing",
-      "url": "https://omfg.neocities.org/ac/buttons"
-    },
-    {
-      "src": "ac-button-wartjr.gif",
-      "alt": "A button that reads 'Wart Jr. Now!' with an image of Wart Jr. from Animal Crossing",
-      "url": "https://omfg.neocities.org/ac/buttons"
-    },
-    {
-      "src": "ac-button-diva.gif",
-      "alt": "A button that reads 'Diva Now!' with an image of Diva from Animal Crossing",
-      "url": "https://omfg.neocities.org/ac/buttons"
-    },
-    {
-      "src": "ac-button-costeau.gif",
-      "alt": "A button that reads 'Cousteau Now!' with an image of Cousteau from Animal Crossing",
-      "url": "https://omfg.neocities.org/ac/buttons"
-    },
-    {
-      "src": "ac-button-camofrog.gif",
-      "alt": "A button that reads 'Camofrog Now!' with an image of Camofrog from Animal Crossing",
-      "url": "https://omfg.neocities.org/ac/buttons"
-    },
-    {
-      "src": "ac-button-bells.gif",
-      "alt": "A button that reads 'Bells Now!' with an image of a bag of Bells from Animal Crossing",
-      "url": "https://omfg.neocities.org/ac/buttons"}
-  ]
+    "items": [
+      {
+        "src": "ai-theft.gif",
+        "alt": "A button that says, \"AI is theft, not art!\", with the letters \"AI\" crossed out.",
+        "freezeframe": true
+      },
+      {
+        "src": "no-hotlinks.png",
+        "alt": "A button that says, \"Campaign against hotlinks!\" with an image of a chain link on fire being crossed out.",
+        "freezeframe": true
+      },
+      {
+        "src": "righttorepair.png",
+        "alt": "A blue button that says in white text, \"I support the right to repair\" with an image of a hand holding a wrench next to it."
+      },
+      {
+        "src": "transrights.png",
+        "alt": "A button that says \"Trans rights now!\" with an image of the transgender flag next to it."
+      },
+      {
+        "src": "antinft.gif",
+        "alt": "A button that says, \"This is an Anti-NFT site\" with an crossed-out image of a server and an NFT on fire."
+      },
+      {
+        "src": "antinazi.gif",
+        "alt": "A button that says, \"No Nazi, no fascism, no racism\" with an image of the swastika crossed out."
+      },
+      {
+        "src": "gay-rights.png",
+        "alt": "A button that consists of the rainbow flag",
+        "url": "https://zeusofthecrows.tumblr.com/post/709307184195010560"
+      },
+      {
+        "src": "2020SUCKS.png",
+        "alt": "A dark button with white text that reads, \"social distancing survivor 2020\"."
+      },
+      {
+        "src": "blockads.gif",
+        "alt": "A blue button with text that reads, \"Blocking ads is blocking spyware. Blocking ads is blocking annoyances. Blocking ads is blocking malware. Don't want your ads blocked? Then stop being creepying, annoying, and malicious.\""
+      },
+      {
+        "src": "youmad.gif",
+        "alt": "An animated button of Popuko and Pipimi from Pop Team Epic. Popuko punches Pipimi and then asks, 'Are you mad?' Pipimi replies with, 'Nope <3'",
+        "freezeframe": true
+      },
+      {
+        "src": "y2k.gif",
+        "alt": "A button with flashing text that reads, 'I survived Y2K'",
+        "freezeframe": true
+      },
+      {
+        "src": "windows-xp.gif",
+        "alt": "A button that resembles the top window bar from Windows XP",
+        "url": "https://zeusofthecrows.tumblr.com/post/709307184195010560"
+      },
+      {
+        "src": "tumblrpocalypse.png",
+        "alt": "A button that reads 'I survived the 2018 Tumblr Apocalypse",
+        "url": "https://eggramen.neocities.org/creations/edits/buttons"
+      },
+      {
+        "src": "salmon-run.png",
+        "alt": "An orange button with the black logo of Grizzco from Splatoon",
+        "url": "https://lollich0p.tumblr.com/tagged/88x31"
+      },
+      {
+        "src": "SA2BATTLE.png",
+        "alt": "A button that depicts the logo from Sonic Adventure 2 Battle. Behind the logo are Sonic the Hedgehog and Shadow the Hedgehog"
+      },
+      {
+        "src": "rewind.gif",
+        "alt": "An animated button that depicts an image of a grassy field against a blue sky reminiscent of the Windows XP wallpaper with the text REW above it. The button has a static-y filter",
+        "url": "https://zeusofthecrows.tumblr.com/post/695189042788253696",
+        "freezeframe": true
+      },
+      {
+        "src": "pokemon.gif",
+        "alt": "An animated button that shows the Pokemon logo with Pikachu running on the side",
+        "freezeframe": true
+      },
+      {
+        "src": "not-alone.gif",
+        "alt": "An animated button that reads, 'I know it's dark. I'm scared too. Is it ok if I walk with you? You don't have to walk alone",
+        "url": "http://lu.tiny-universes.net/index2.html",
+        "freezeframe": true
+      },
+      {
+        "src": "no_bad_hair_days.png",
+        "alt": "A button that reads 'There are no bad hair days on the Internet'. On the side is an image of a smiling computer",
+        "url": "https://deviantart.com/view/682431234"
+      },
+      {
+        "src": "nichijou.gif",
+        "alt": "An animated button of a scene from Nichijou with a masked high schoool student chasing after a distressed Mio",
+        "url": "https://zanarkand.neocities.org/withlove",
+        "freezeframe": true
+      },
+      {
+        "src": "naptime.png",
+        "alt": "A button that reads 'I need a nap now!' with an icon with three Z's"
+      },
+      {
+        "src": "lovable.gif",
+        "alt": "An animated button that scrolls through multiple lines that say 'lovable'",
+        "freezeframe": true
+      },
+      {
+        "src": "krisbtn.png",
+        "alt": "A button with Susie and Kris from Deltarune. Susie's dialogue reads 'kris where tf are we'"
+      },
+      {
+        "src": "krak-on.png",
+        "alt": "A button with the Krak-on brand logo from the Splatoon franchise",
+        "url": "https://lollich0p.tumblr.com/tagged/88x31"
+      },
+      {
+        "src": "keyboard.gif",
+        "alt": "An animated button that consists of keys from a keyboard",
+        "url": "https://zeusofthecrows.tumblr.com/post/709503504879878144",
+        "freezeframe": true
+      },
+      {
+        "src": "jojo-micro-bar.png",
+        "alt": "A button with a pixelated version of the logo from Jojo's Bizarre Adventure"
+      },
+      {
+        "src": "hello_kitty.gif",
+        "alt": "An animated button that reads 'Hello Kitty'. It has a spinning flower and an image of Hello Kitty on the side",
+        "freezeframe": true
+      },
+      {
+        "src": "graphicdesign.png",
+        "alt": "A button that reads 'Graphic design is my passion' with an image of a frog"
+      },
+      {
+        "src": "gay.gif",
+        "alt": "A button that reads 'You were diagnosed with GAY' with a small picture of Dr. Mario on the side"
+      },
+      {
+        "src": "friendship.png",
+        "alt": "A button that reads 'Believe in the radical power of friendship'",
+        "url": "http://lu.tiny-universes.net/index2.html"
+      },
+      {
+        "src": "foreveronline.gif",
+        "alt": "An animated button that reads 'Forever Online'",
+        "freezeframe": true
+      },
+      {
+        "src": "dontyouhate.gif",
+        "alt": "An animated button with scrolling text that reads 'Don't you hate it when you're reading a page, and then some' before it is cut off with smaller text that reads 'This content is for subscribers only :)' The text then reads 'Paywalls gatekeep knowledge'",
+        "freezeframe": true
+      },
+      {
+        "src": "css-is-difficult.png",
+        "alt": "A button that reads 'CSS is difficult' with an image of the CSS logo on the side. The text is aligned in a way that goes beyond the boundaries of a box outlined in red",
+        "url": "https://zeusofthecrows.tumblr.com/post/709503504879878144/slightly-website-y-buttons"
+      },
+      {
+        "src": "computer.png",
+        "alt": "A button that reads 'I like computer' in all caps with a pixel image of a computer"
+      },
+      {
+        "src": "chill_pill.gif",
+        "alt": "A button that reads 'Take a chill pill'. The words 'chill pill' are inside a pink and blue pill.",
+        "url": "https://anlucas.neocities.org/GifFiles"
+      },
+      {
+        "src": "caramelldansen.gif",
+        "alt": "An animated GIF of two girls dancing the Caramelldansen dance",
+        "freezeframe": true
+      },
+      {
+        "src": "calneca.gif",
+        "alt": "A flashing image of Calne Ca",
+        "url": "https://plasticdino.net/graphics",
+        "freezeframe": true
+      },
+      {
+        "src": "albutton.png",
+        "alt": "A button that reads 'Yankovic Now!' with an image of Weird Al Yankovic"
+      },
+      {
+        "src": "ac-button-drift.gif",
+        "alt": "A button that reads 'Drift Now!' with an image of Drift from Animal Crossing",
+        "url": "https://omfg.neocities.org/ac/buttons"
+      },
+      {
+        "src": "ac-button-henry.gif",
+        "alt": "A button that reads 'Henry Now!' with an image of Henry from Animal Crossing",
+        "url": "https://omfg.neocities.org/ac/buttons"
+      },
+      {
+        "src": "ac-button-jeremiah.gif",
+        "alt": "A button that reads 'Jeremiah Now!' with an image of Jeremiah from Animal Crossing",
+        "url": "https://omfg.neocities.org/ac/buttons"
+      },
+      {
+        "src": "ac-button-lily.gif",
+        "alt": "A button that reads 'Lily Now!' with an image of Lily from Animal Crossing",
+        "url": "https://omfg.neocities.org/ac/buttons"
+      },
+      {
+        "src": "ac-button-puddles.gif",
+        "alt": "A button that reads 'Puddles Now!' with an image of Puddles from Animal Crossing",
+        "url": "https://omfg.neocities.org/ac/buttons"
+      },
+      {
+        "src": "ac-button-raddle.gif",
+        "alt": "A button that reads 'Raddle Now!' with an image of Raddle from Animal Crossing",
+        "url": "https://omfg.neocities.org/ac/buttons"
+      },
+      {
+        "src": "ac-button-wartjr.gif",
+        "alt": "A button that reads 'Wart Jr. Now!' with an image of Wart Jr. from Animal Crossing",
+        "url": "https://omfg.neocities.org/ac/buttons"
+      },
+      {
+        "src": "ac-button-diva.gif",
+        "alt": "A button that reads 'Diva Now!' with an image of Diva from Animal Crossing",
+        "url": "https://omfg.neocities.org/ac/buttons"
+      },
+      {
+        "src": "ac-button-costeau.gif",
+        "alt": "A button that reads 'Cousteau Now!' with an image of Cousteau from Animal Crossing",
+        "url": "https://omfg.neocities.org/ac/buttons"
+      },
+      {
+        "src": "ac-button-camofrog.gif",
+        "alt": "A button that reads 'Camofrog Now!' with an image of Camofrog from Animal Crossing",
+        "url": "https://omfg.neocities.org/ac/buttons"
+      },
+      {
+        "src": "ac-button-bells.gif",
+        "alt": "A button that reads 'Bells Now!' with an image of a bag of Bells from Animal Crossing",
+        "url": "https://omfg.neocities.org/ac/buttons"
+      }
+    ]
   },
   "mine": {
     "open": true,

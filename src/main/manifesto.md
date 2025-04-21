@@ -3,6 +3,7 @@ title: Manifesto
 summary: "This page serves as a reminder to myself of the site's main purpose!"
 displayOrder: 4
 permalink: '/manifesto/index.html'
+tags: nav
 ---
 
 ## My History with the Web
@@ -43,14 +44,14 @@ The site will not encourage the entire removal of social media.
 ## Links
 ### Others' Manifestos
 
-1. [Internet Manifesto](https://sadgrl.online/cyberspace/internet-manifesto.html) - by Sadgrl
-1. [My Manifesto](https://l-chan.neocities.org/manifesto.html) - by L-chan
+1. [Internet Manifesto](https://goblin-heart.net/sadgrl/cyberspace/internet-manifesto) - by Sadgrl
+1. [My Manifesto](https://l-chan.neocities.org/manifesto) - by L-chan
 1. [The "Old" Web: What Have We Lost?](https://purplehello98.neocities.org/articles/oldweb/) - by PurpleHello98
-1. [So, Why a Personal Website?](https://gildedware.neocities.org/manifesto.html) - by Gildedware
+1. [So, Why a Personal Website?](https://gildedware.net/manifesto) - by Gildedware
 
 ### Good Reads
 
 The following articles gave me a well-needed gut-punch and serve as inspiration for this personal site. Whether or not I'm succeeding is debatable, but they're fantastic articles, regardless!
 
-1. [Neocities and a Lack of Passion](http://archives.somnolescent.net/web/mari_nc2/essays/passion.html) - by Mariteaux
-1. [Nostalgia is Bullshit](https://wings.nu/nostalgia/) - by Rin September
+1. [Neocities and a Lack of Passion](https://archives.somnolescent.net/web/mari_nc2/essays/passion.html) - by Mariteaux
+1. [Nostalgia is Bullshit](https://wings.nu/nostalgia/) - by Kirryn

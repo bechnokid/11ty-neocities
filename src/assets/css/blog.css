@@ -82,15 +82,8 @@ figure.dr-strange {
   background-color: #ffffff;
 }
 
-.rilla-box .carousel {
+.rilla-box .carousel-column {
   height: 150px;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-}
-
-.rilla-box .carousel-item {
-  flex-shrink: 0;
-  scroll-snap-align: start;
 }
 
 .valentines:hover {

@@ -2,6 +2,7 @@ const rssPlugin = require('@11ty/eleventy-plugin-rss');
 const lightningCSS = require("@11tyrocks/eleventy-plugin-lightningcss");
 const htmlmin = require("html-minifier-terser");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const brokenLinksPlugin = require("eleventy-plugin-broken-links");
 
 const {
   cssmin,
@@ -23,6 +24,8 @@ const {
 
 const {
   icon,
+  img,
+  imgWithLink,
   freezeframeButtons,
   figure,
   details,
@@ -33,7 +36,9 @@ const markdownLib = require('./config/plugins/markdown');
 
 const TEMPLATE_ENGINE = 'njk';
 
-module.exports = config => {
+module.exports = async function(config){
+  const { IdAttributePlugin } = await import("@11ty/eleventy");
+
   config.addPassthroughCopy('./src/assets/images/');
   config.addPassthroughCopy('./src/assets/fonts/');
   config.addPassthroughCopy('./src/assets/css/');
@@ -41,6 +46,8 @@ module.exports = config => {
 
   // Shortcodes
   config.addShortcode('icon', icon);
+  config.addShortcode('img', img);
+  config.addShortcode('imgWithLink', imgWithLink);
   config.addShortcode('freezeframeButtons', freezeframeButtons);
 
   // Paired shortcodes
@@ -50,19 +57,19 @@ module.exports = config => {
 
   // Transform
   config.addTransform("htmlmin", function (content) {
-		if ((this.page.outputPath || "").endsWith(".html")) {
-			let minified = htmlmin.minify(content, {
-				useShortDoctype: true,
-				removeComments: true,
-				collapseWhitespace: true,
-			});
+    if ((this.page.outputPath || "").endsWith(".html")) {
+      let minified = htmlmin.minify(content, {
+        useShortDoctype: true,
+        removeComments: true,
+        collapseWhitespace: true,
+      });
 
-			return minified;
-		}
+      return minified;
+    }
 
-		// If not an HTML output, return content as-is
-		return content;
-	});
+    // If not an HTML output, return content as-is
+    return content;
+  });
 
   // Filters
   config.addFilter('date', date);
@@ -84,6 +91,8 @@ module.exports = config => {
   config.addPlugin(rssPlugin);
   config.addPlugin(lightningCSS);
   config.addPlugin(syntaxHighlight);
+  config.addPlugin(IdAttributePlugin);
+  //config.addPlugin(brokenLinksPlugin, { excludeUrls: ["https://deviantart.com/view/*", "https://www.youtube.com/watch?"] });
 
   config.setLibrary('md', markdownLib);
 

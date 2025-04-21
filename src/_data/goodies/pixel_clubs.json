@@ -5,7 +5,8 @@
       "title": "Kindness Rocks Pixel Project",
       "owner": {
         "name": "PixelRevival",
-        "link": "https://pixelrevival.xyz/kindnessrocks/"
+        "link": "https://web.archive.org/web/20250313203718/https://pixelrevival.xyz/kindnessrocks/",
+        "archived": true
       },
       "altText": "A painted rock of ",
       "collection": {
@@ -16,7 +17,7 @@
           { "src": "bechnokid_steak.png", "desc": "Well-Done Steak from the Monster Hunter games"},
           { "src": "mossforestdollz.gif", "desc": "a flowery pattern", "link": "https://mossforestdollz.neocities.org/cliques"},
           { "src": "artwork.gif", "desc": "a soot sprite with several candies", "link": "https://artwork.neocities.org/cliques"},
-          { "src": "darylsun.png", "desc": "various paint splatters. The rock itself is blue", "link": "https://blog.darylsun.page/cliques"},
+          { "src": "darylsun.png", "desc": "various paint splatters. The rock itself is blue", "link": "https://blog.darylsun.page/joined/cliques"},
           { "src": "divergentrays.png", "desc": "a butterfly with pink wings with a heart above it", "link": "https://divergentrays.com/rock"}
         ]
       }
@@ -149,8 +150,8 @@
         "items": [
           { "src": "bk_felyne.png", "desc": "A green and yellow can that has a Felyne and a Potion from Monster Hunter" },
           { "src": "fizzsea.png", "link": "https://fizzsea.neocities.org/", "desc": "An orange Ramune glass bottle with the logo \"fizzsea\" printed on it. Sitting next to it is half of an  orange with a smile on its face." },
-          { "src": "bloopywoopy.png", "link": "https://bloopywoopy.neocities.org/cool-stuff/collections", "desc": "A bottle of water with a label that reads, \"Water\"" },
-          { "src": "flowercentral.png", "link": "https://flowercentral.neocities.org/", "desc": "A bottle of peach-colored Sunkist." },
+          { "src": "bloopywoopy.png", "link": "https://bloopywoopy.neocities.org/cool-stuff/collections/", "desc": "A bottle of water with a label that reads, \"Water\"" },
+          { "src": "flowercentral.png", "link": "https://flowercentral.art/", "desc": "A bottle of peach-colored Sunkist." },
           { "src": "insqueeration.webp", "link": "https://insqueeration.neocities.org/pixels", "desc": "A transparent can of a rainbow-colored drink" },
           { "src": "percevalprintpress.png", "link": "https://percevalprintpress.neocities.org/", "desc": "A bottle of glue with a label that reads, \"Paste\"" },
           { "src": "spaceshanty.png", "link": "https://thespaceshanty.neocities.org/Cliques/", "desc": "A bottle of a purple-colored drink with a green label" },

@@ -7,8 +7,6 @@ prism: true
 ---
 <script src="{{ main.jsURL }}/freezeframe.js"></script>
 
-## 0) Introduction
-
 One of the greatest challenges for a web designer is creating a site that is accessible to those with disabilities. It's one thing to create responsive sites and provide alt text for screen readers, but I noticed a lot of Neocities users' sites are lacking one of the most important aspects: **avoiding seizure-inducing images**.
 
 As much as I do enjoy flashing images (blinkies, pixels, rainbow backgrounds, etc.), I've seen a lot of sites with so much blinking and flashing that I can't browse their site for very long without my eyes hurting. If my eyes hurt from browsing some sites, then I can't imagine what it must be like for those who are prone to seizures.
@@ -185,8 +183,7 @@ To prevent this, you can put this block of code in your CSS stylesheet.
 ```css
 /* Remove all transitions from Freezeframe elements */
 a .ff-image,
-a .ff-canvas.ff-canvas-ready
- {
+a .ff-canvas.ff-canvas-ready {
   transition: none !important;
   -o-transition: none !important;
   -moz-transition: none !important;
@@ -197,8 +194,7 @@ a .ff-canvas.ff-canvas-ready
 
 a:hover img,
 a:hover .ff-image,
-a:hover .ff-canvas.ff-canvas-ready
- {
+a:hover .ff-canvas.ff-canvas-ready {
   opacity: .5 !important;
 }
 
@@ -243,7 +239,7 @@ I also recommend having this code in your main stylesheet.
 
 I sadly have no explanation for this block of code except, "-shrugs- it works!"
 
-## 6) Closing Thoughts { #{{ "6) Closing Thoughts" | slugify}} }
+## 6) Closing Thoughts
 
 Hopefully this tutorial helps anyone who wishes to make their site a little more accessible. If you have any questions, don't be afraid to send an email to <bechnokid@yahoo.com>. I'll do my best to answer any questions you might have!
 

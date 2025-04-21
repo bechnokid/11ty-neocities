@@ -9,20 +9,34 @@ tags:
 displayOrder: 100
 ---
 
-<button class="go-to-heck button mb-2">I hope...</button>
-<div class='sidebar curses'>
-  <div class="content p-3"><p class="random">May the curses begin!</p></div>
-  <script>
-    let m = {{ site.curses.items | dump | safe }};
-    let c = m.slice(0);
-    $(".go-to-heck").on("click", function() {
-      if (c.length < 1) c = m.slice(0);
-      randomPull();
-    });
-    function randomPull() {
-      let randomIndex = getRandomIndex(c);
-      $(".random").html(c[randomIndex]);
-      c.splice(randomIndex, 1);
-    }
-  </script>
+<div class="js-required">
+  <button class="go-to-heck button mb-2">I hope...</button>
+  <div class='sidebar curses'>
+    <div class="content p-3"><p class="random">May the curses begin!</p></div>
+    <script>
+      let m = {{ curses | dump | safe }};
+      let c = m.slice(0);
+      $(".go-to-heck").on("click", function() {
+        if (c.length < 1) c = m.slice(0);
+        randomPull();
+      });
+      function randomPull() {
+        let randomIndex = getRandomIndex(c);
+        $(".random").html(c[randomIndex]);
+        c.splice(randomIndex, 1);
+      }
+    </script>
+  </div>
 </div>
+<noscript>
+  <p>I hope...</p>
+  <div class="sidebar curses">
+    <div class="content p-3 carousel-column h-100">
+      {% for item in curses %}
+        <div class="carousel-item py-4 my-4 d-flex align-items-center">
+          <div class="carousel-content">{{ item | safe }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</noscript>

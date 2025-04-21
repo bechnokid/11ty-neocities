@@ -1,8 +1,8 @@
 ---
-title: Pixel Clubs/Cliques
-shortTitle: Cliques
+title: Pixel Clubs
+shortTitle: Pixel Clubs
 displayOrder: 3
-description: Various pixel clubs/cliques that I have joined with my own pixel art.
+description: Various pixel clubs that I have joined with my own pixel art.
 freezeframe: true
 ---
 
@@ -13,7 +13,7 @@ freezeframe: true
 {% if cliqueArray %}
 <section>
   <h2 id="{{ cliqueName }}">{{ cliqueArray.title }}</h2>
-  <p>Created by <a href="{{ cliqueArray.owner.link }}">{{ cliqueArray.owner.name }}</a>!</p>
+  <p>Created by <a href="{{ cliqueArray.owner.link }}">{{ cliqueArray.owner.name }}</a>!{% if cliqueArray.owner.archived %} (archived){% endif %}</p>
   {% for arrayName in ["mine", "collection"] %}
     {% if cliqueArray[arrayName] %}
       {% if cliqueName == "yys" %}

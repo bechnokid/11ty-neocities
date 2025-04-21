@@ -54,3 +54,7 @@ main ul li ul li::marker {
 .resources td {
   padding: 1em;
 }
+
+.curses.sidebar {
+  height: 120px;
+}

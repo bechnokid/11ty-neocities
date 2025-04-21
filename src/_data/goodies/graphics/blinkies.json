@@ -6,12 +6,12 @@
     {
       "src": "wear-your-mask.gif",
       "alt": "A white blinkie with a border of red and green dots. The text reads, 'Wear. Your. Mask'",
-      "url": "https://keysklubhouse.neocities.org/blinkies"
+      "url": "https://keysklubhouse.com/goodies/blinkies"
     },
     {
       "src": "ukraine.gif",
       "alt": "A blinkie with a border of blue and yellow dots. The Ukraine flag is in the background and the text alternates between, 'Stand with Ukraine' and 'Слава Україні!' which is Ukrainian for 'Glory to Ukraine'",
-      "url": "https://keysklubhouse.neocities.org/blinkies"
+      "url": "https://keysklubhouse.com/goodies/blinkies"
     },
     {
       "src": "triggers.gif",
@@ -21,7 +21,7 @@
     {
       "src": "stop-smoking.gif",
       "alt": "A blinkie with a border of red and white dots. There is a cigarette in the background and text that reads, 'Please stop smoking' followed by a black skull",
-      "url": "https://keysklubhouse.neocities.org/blinkies"
+      "url": "https://keysklubhouse.com/goodies/blinkies"
     },
     {
       "src": "respect.gif",
@@ -53,21 +53,10 @@
     {
       "src": "abortionrights.gif",
       "alt": "A pink blinkie with red text that reads, 'You can't ban abortion. You can only ban SAFE abortions'",
-      "url": "https://keysklubhouse.neocities.org/blinkies"},
+      "url": "https://keysklubhouse.com/goodies/blinkies"},
     {
-      "src": "dedfish-fan.gif",
-      "alt": "A black blinkie with a border of dots that alternate between red and green. There is an image of Dedfish from Splatoon 2: Octo Expansion and text that alternates between red and green and reads, 'Dedfish fan'",
-      "url": "https://cephalonheadquarters.tumblr.com/post/722336705743650816"
-    },
-    {
-      "src": "omega-3-fan.gif",
-      "alt": "A black blinkie with a border of green and orange dots. There is a neon logo of a Salmonid from the Splatoon franchise, a logo of the fictional Omega-3 band, and text that reads, 'Omega-3 fan",
-      "url": "https://cephalonheadquarters.tumblr.com/post/722336705743650816"
-    },
-    {
-      "src": "off-the-hook-fan.gif",
-      "alt": "A black blinkie with a border of pink and green dots. There is an image of Pearl and Marina from Off the Hook, a fictional band from the Splatoon franchise. The text reads 'Off the Hook fan'",
-      "url": "https://cephalonheadquarters.tumblr.com/post/722336705743650816"
+      "src": "chiikawa.gif",
+      "alt": "Chiikawa with white text next to it that says, \"Chiikawa!\""
     },
     {
       "src": "grizz-fan.gif",
@@ -84,19 +73,6 @@
       "alt": "A dark green blinkie with a dark green border of orange and white dots. There is an image of a Salmonid and a Power Egg from the Splatoon franchise and text that reads, 'I don't get paid enough for this'",
       "url": "https://cephalonheadquarters.tumblr.com/post/722360322539880448"
     },
-    {
-      "src": "sea-cucumber-reaction.gif",
-      "alt": "A blue blinkie with a dark blue border of pink and blue dots. there is an image of C.Q. Cumber from Splatoon 2: Octo Expansion and text that reads, 'sea cucumber reaction'",
-      "url": "https://cephalonheadquarters.tumblr.com/post/722360322539880448"
-    },
-    {
-      "src": "youcrackmeup.gif",
-      "alt": "A dark blue blinkie with a border of blue and yellow dots. There is an image of smiley face cracked in the middle and text that reads, 'You crack me up!'"
-    },
-    {
-      "src": "xmaslove.gif",
-      "alt": "A red blinkie with a border of green and blue lights. There is a christmas star and a christmas tree with presents on both ends of the blinkie, and the text alternates between red, blue, and green and reads, 'I love Christmas'"
-  },
     {
       "src": "vaporwave-802778949.gif",
       "alt": "A pink, blue, and purple gradient blinkie with a pink, blue, and purple border of black and white dots. The text reads, 'Vaporwave'",
@@ -115,18 +91,9 @@
       "alt": "A black blinkie with a white border of black dots. The text reads, 'Typos who needs bakspase!' with the last word being 'backspace' but mispelled. The cursor then deletes the word 'bakspase'."
     },
     {
-      "src": "tri-slosher.gif",
-      "alt": "A black blinkie with a border of yellow dots. There are images of Splatoon 3's Tri-Slosher and text that reads, 'Tri-Slosher User'",
-      "url": "https://idolwormz.tumblr.com/post/705373809053696000"
-    },
-    {
       "src": "too-much-water.gif",
       "alt": "A blinkie with a water tiles from Pokemon Ruby, Sapphire, and Emerald as the background. The text reads, '7.8/10 too much water' as a reference to an infamous IGN review",
       "url": "https://awnowimsad.tumblr.com/post/704073899883773952"
-    },
-    {
-      "src": "time.gif",
-      "alt": "A pastel purple blinkie with a dark purple border of white and purple dots. There is a clock on one side of the blinkie and text that reads, 'I need more time!'"
     },
     {
       "src": "thrift.gif",
@@ -137,38 +104,9 @@
       "alt": "A yellow blinkie with a gold border of black and white dots. There is a smiley face on the side and text that reads, 'Thank you'"
     },
     {
-      "src": "teamwhite.gif",
-      "alt": "A beige blinkie with an orange border of green and white dots. There is artwork of a chunk of white chocolate from the February 2023 Splatfest in Splatoon 3 to celebrate Valentine's Day. There is blue text outlined in a white glow that reads, 'Team White!'",
-      "url": "https://implalazz.tumblr.com/tagged/splatfest"
-    },
-    {
-      "src": "teamfire.gif",
-      "alt": "An orange blinkie with a red border of dark red and white dots. There is artwork representing the Fire type in the Pokemon franchise from the November 2022 Splatfest in Splatoon 3 to celebrate the release of Pokemon Scarlet and Violet. The text reads, 'Team Fire!'",
-      "url": "https://implalazz.tumblr.com/tagged/splatfest"
-    },
-    {
-      "src": "team-sour.gif",
-      "alt": "A neon yellow blinkie with a dark yellow border of green and yellow dots. There is artwork of a whole lemon and a slice of a lemon from the January 2023 Splatfest in Splatoon 3. The text is outlined in green and reads, 'Team Sour!'",
-      "url": "https://implalazz.tumblr.com/tagged/splatfest"
-    },
-    {
       "src": "team-power.gif",
       "alt": "A red blinkie with a dark red border of red and white dots. There is artwork of Din's crest to represent the Triforce of Power from the May 2023 Splatfest in Splatoon 3 to celebrate the release of The Legend of Zelda: Tears of the Kingdom. The text is outlined in a pale pink glow and reads, 'Team Power!'",
       "url": "https://implalazz.tumblr.com/tagged/splatfest"
-    },
-    {
-      "src": "team-gear.gif",
-      "alt": "A purple blinkie with a dark purple border of green and yellow dots. There is artwork of a lantern and shovel from the September 2022 Splatfest in Splatoon 3. The text reads 'Team Gear!'",
-      "url": "https://implalazz.tumblr.com/tagged/splatfest"
-    },
-    {
-      "src": "team-bigfoot.gif",
-      "alt": "A brown blinkie with a brown border of orange and blue dots. There is artwork of Bigfoot from the April 2023 Splatfest in Splatoon 3. The text is outlined in a blue glow and reads, 'Team Bigfoot!'",
-      "url": "https://implalazz.tumblr.com/tagged/splatfest"
-    },
-    {
-      "src": "sweet.gif",
-      "alt": "A pink and white gradient blinkie with a white border of pink dots. There are several pink hearts and text that reads, 'Sweet!'"
     },
     {
       "src": "squinting.gif",
@@ -184,10 +122,6 @@
       "alt": "A pastel blue blinkie with a purple border of white, blue, and black dots. There is an image of a computer and two emojis. The orange emoji is hugging the yellow emoji, while the yellow emoji is blushing. the text reads, 'I'm so glad we clicked'"
     },
     {
-      "src": "snow.webp",
-      "alt": "A cyan blinkie with a dark blue border of cyan dots. There are snowflakes on both ends of the blinkie and text that flashes between blue and dark blue that reads, 'I love SNOW!!!!!'"
-    },
-    {
       "src": "sleep.gif",
       "alt": "A black blinkie with a yellow border of black dots. There is text that reads in capital letters, 'I need sleep!'"
     },
@@ -197,17 +131,9 @@
       "url": "https://pawpr1nc3.tumblr.com/post/701370517578563584"
     },
     {
-      "src": "sendingyoumylove.gif",
-      "alt": "A pastel pink blinkie with a pink border of blue and pink dots. There is an envelope with a heart on it and the text reads, 'Sending you my love'"
-    },
-    {
       "src": "science-827414222.gif",
       "alt": "A dark green blinkie with a border of green dots. There are two flasks filled with green liquid on both ends of the blinkie with text that reads in capital letters, 'Science!'",
       "url": "https://deviantart.com/view/827414222"
-    },
-    {
-      "src": "romantic.gif",
-      "alt": "A pink blinkie with a dark pink border of black and white dots. There is a rose on one end of the blinkie and text that reads, 'Romantic at heart'"
     },
     {
       "src": "rofllmao.gif",
@@ -232,20 +158,12 @@
       "alt": "A brown and tan gradient blinkie with a border of white dots. There is an image of the planet Pluto and text that reads, 'I believe in you, Pluto'"
     },
     {
-      "src": "pink.gif",
-      "alt": "A pastel pink blinkie with an intricate design in the background and a pink border of white and pale pink dots. The text reads in capital letters, 'Pink addict'"
-    },
-    {
       "src": "perish.gif",
       "alt": "A red blinkie with a border of black and red dots. There is an image of former President Obama's eyes glowing with malicious intent and text that reads in capital letters, 'Then perish'"
     },
     {
       "src": "peach.gif",
       "alt": "A pastel orange blinkie with an orange border of green dots. There is an image of a peach and text that reads, 'just peachy'"
-    },
-    {
-      "src": "peace_and_quiet.gif",
-      "alt": "A pastel grey blinkie with a grey border of white dots. There is an image of the moon and several stars and text that reads, 'peace and quiet'"
     },
     {
       "src": "ouchie.webp",
@@ -264,10 +182,6 @@
       "alt": "A pastel orange blinkie with a brown border of black and white dots. There are pixel cats on both ends of the blinkie and text that reads in capital letters, 'Y'know like...nya?'"
     },
     {
-      "src": "night-person.gif",
-      "alt": "A black blinkie with a border of white and grey dashes. There are images of skyscrapers on both ends of the blinkie, with text that reads, 'night person'"
-    },
-    {
       "src": "nap.gif",
       "alt": "A white blinkie with a border of purple, blue, and orange dots. The text's color alternates between purple, blue, and orange and reads, 'When in doubt, take a nap!'"
     },
@@ -282,40 +196,17 @@
       "url": "https://bedazzling-blinkiez.tumblr.com/post/699202538905436160/"
     },
     {
-      "src": "mudkip.gif",
-      "alt": "A pastel blue blinkie with a blue border of dark blue and orange dots. There is an animated image of Mudkip from the Pokemon franchise on the side and text that reads in capital letters, 'I love Mudkip!!!'",
-      "url": "https://awnowimsad.tumblr.com/post/704073899883773952"
-    },
-    {
       "src": "mad-scientist.gif",
       "alt": "A neon pink blinkie with a mint green clouds on both ends of the blinkie. There is an image of a scientist obscured in black save for their swirling glasses and large grin. The text reads in capital letters, 'Mad scientist'",
       "url": "https://muchomago.tumblr.com/post/696312717347291136"
-    },
-    {
-      "src": "lovealways.gif",
-      "alt": "A pink blinkie with a border of pink and white dots. There is an image of a heart with wings on the side and text that reads, 'Love Always'"
-    },
-    {
-      "src": "kuchipatchi.gif",
-      "alt": "A yellow-green blinkie with a green border of pale green and yellow dots. There is an image of Kuchipatchi from the Tamagotchi franchise on the side and the text reads, 'Kuchipatchi!!!'",
-      "url": "https://transbro.tumblr.com/post/692050110455087105/"
     },
     {
       "src": "junkie.gif",
       "alt": "A green and white gradient blinkie with a black border of green, white, and grey dots. The flashing red and green text reads in capital letters, 'HTML junkie'"
     },
     {
-      "src": "jinkies.gif",
-      "alt": "A red blinkie with a dark red border of red and white dots. There is an image of Velma Dinkle from the Scooby-Doo series on one side and text that reads, 'Jinkies!!! It's blinkies!"
-    },
-    {
       "src": "isupportdrawinginclass.gif",
       "alt": "A white blinkie with a grey and white gradient border of red and white dots. There is an image of a pencil and text that reads, 'I support drawing in class'"
-    },
-    {
-      "src": "introvert.gif",
-      "alt": "A pastel purple blinkie with a mint gree border of purple and white dots. The text is surrounded by white pixel hearts and reads in capital letters, 'Introvert'",
-      "url": "https://pinkukingdom.neocities.org/blinkies.html"
     },
     {
       "src": "inigo_montoya.gif",
@@ -326,25 +217,8 @@
       "alt": "A black blinkie with a grey border of black and red dots. There are is a rose on both ends of the blinkie and yellow text that reads in capital letters"
     },
     {
-      "src": "iloveanime.gif",
-      "alt": "A pastel purple blinkie with a purple border of black and pastel purple dots. There is a star on one end of the blinkie and a heart on the other. The white text reads in all capital letters, 'I love anime!' The word 'love' is replaced by '<3'"
-    },
-    {
-      "src": "icecream.gif",
-      "alt": "A pink blinkie with a border of black dots. There is a chocolate ice cream bar on the left side of the blinkie and text that reads, 'I love ice cream'. The word 'love' is replaced by a red heart"
-    },
-    {
-      "src": "i-miss-my-wife.gif",
-      "alt": "A pastel orange blinkie with an orange border of white dots. The text that appears reads, 'I miss my wife, Tails. I miss her a lot. I'll be back' as a reference to the Sonic Adventure 2 Fandub",
-      "url": "https://awnowimsad.tumblr.com/post/696767178361487360"
-    },
-    {
       "src": "i-love-winter.webp",
       "alt": "A pastel blue blinkie with a dark blue border of black and white dots. There are snowflakes on opposite ends of the blinkie and blue text that reads in capital letters, 'I love winter'. The word 'love' is replaced by a blinking blue heart"
-    },
-    {
-      "src": "i-love-pink.webp",
-      "alt": "A pastel pink blinkie with a pink border of pink and white dots. The dark pink text reads in all capital letters, 'I love pink'"
     },
     {
       "src": "i-love-pink.gif",
@@ -353,10 +227,6 @@
     {
       "src": "hugs.gif",
       "alt": "A pastel red blinkie with a red border of pink and green dots. There is an image of smilies in various colors hugging each other, and text that reads, 'Hugs...not drugs'"
-    },
-    {
-      "src": "hello_kitty2.gif",
-      "alt": "A pink blinkie with a dark pink border of red and white dots. There is an image of Kitty from the Hello Kitty franchise on the right side. There is text surrounded by pixel hearts that reads, 'Hello Kitty'"
     },
     {
       "src": "hello_kitty.gif",
@@ -369,10 +239,6 @@
     {
       "src": "hate-laundry.webp",
       "alt": "A dark blue blinkie with a border of blue and white dots. There is an image of a washing machine on the side and text that reads, 'I hate doing laundry'"
-    },
-    {
-      "src": "graphics.gif",
-      "alt": "A black blinkie that has a white border with yellow and brown dots. There are two images of a paintbrush and a paint bucket and text that reads, 'Addicted to Graphics'"
     },
     {
       "src": "gotta-go-fast.gif",
@@ -390,11 +256,6 @@
     {
       "src": "gdikris.gif",
       "alt": "A blinkie with Kris and Suzie from Deltarune that has a border of white dots. Suzie is gesturing at Kris and the text between them reads 'god dammit kris where the hell are we'"
-    },
-    {
-      "src": "fuecoco.gif",
-      "alt": "A pastel yellow blinkie that has a red border with black and yellow dots. There is an image of Fuecoco from Pokemon Scarlet and Violet and text that reads 'Fuecoco'",
-      "url": "https://awnowimsad.tumblr.com/post/699918975010799616"
     },
     {
       "src": "enjoy-life.gif",
@@ -443,7 +304,7 @@
     {
       "src": "caddicarus.gif",
       "alt": "A purple blinkie with a border of white and pink dots; text reads in capital letters, 'Caddicarus'; and an image of Jim Caddick on the side",
-      "url": "https://aloftmelevar.neocities.org/webgraphics"
+      "url": "https://aloftmelevar.com/mels-place/webgraphics"
     },
     {
       "src": "blogsweetblog.gif",

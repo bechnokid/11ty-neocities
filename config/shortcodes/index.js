@@ -22,6 +22,32 @@ const icon = function(value, options = {}) {
   return iconVal;
 }
 
+const img = function(value, options = {}) {
+  // <img src='' alt='' class=''>
+  let resultsArray = [`<img src='${value}'`, `>`];
+  if (options.alt) resultsArray.splice(resultsArray.length - 1, 0, ` alt='${options.alt}'`);
+  if (options.cls) resultsArray.splice(resultsArray.length - 1, 0, ` class='${options.alt}'`);
+  return resultsArray.flat().join('');
+}
+
+const imgWithLink = function(imgUrl, linkUrl, options = {}) {
+  // <a href=''><img src='' alt='' class=''></a>
+  // [![IMG_ALT_TEXT](IMG_SRC)](LINK)
+  let resultsArray = [`<a href=${linkUrl}`, `>`, `<img src='${imgUrl}'`, `></a>`];
+  if (options.markdown){
+    resultsArray = [`[`,`![${options.alt}](${imgUrl})`, `](${linkUrl})`];
+    if (options.imgCls !== undefined && options.imgCls.length > 0 ){
+      resultsArray.splice(resultsArray.length - 1, 0, `{.${options.imgCls.split(' ').join(' .')}}`);
+    }
+    if (options.cls) resultsArray.push(`{.${options.cls.split(' ').join(' .')}}`);
+  } else {
+    if (options.cls) resultsArray.splice(1, 0, ` class='${options.cls}'`);
+    if (options.imgCls) resultsArray.splice(resultsArray.length - 1, 0, ` class='${options.imgCls}'`);
+    if (options.alt) resultsArray.splice(1, 0, ` alt='${options.alt}'`);
+  }
+  return resultsArray.flat().join('');
+}
+
 // Paired
 const details = function (children, title = "", options = {}) {
   let resultsArray =  ['<details', '>', children, '</details>'];
@@ -106,6 +132,8 @@ const galleryBox = function(children, options = {}) {
 
 module.exports = {
   icon,
+  img,
+  imgWithLink,
   freezeframeButtons,
   figure,
   details,

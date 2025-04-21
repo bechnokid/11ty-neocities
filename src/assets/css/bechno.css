@@ -362,7 +362,7 @@ a.hidden-link {
   height: 1px;
   width: 1px;
   overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
+  visibility: hidden;
 }
 
 #switcher-label {
@@ -383,7 +383,39 @@ a.hidden-link {
   text-shadow: 0 0 5px var(--text-shadow);
 }
 
+.tooltip {
+  position: relative;
+}
+
+.tooltip-content {
+  width: max-content;
+  line-height: 1.25em;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 99;
+  top: 0px;
+	left: 50%;
+	transform: translate(-50%, calc(-100% - .25rem));
+  font-size: .8em;
+  padding: .5rem;
+  text-align: center;
+  background-color: var(--bg-sidebar);
+  border: 1px solid var(--border-sidebar);
+}
+
+.tooltip:hover .tooltip-content,
+.tooltip:focus-visible .tooltip-content {
+  opacity: 1;
+  visibility: visible;
+}
+
 @media screen and (max-width: 999px) {
+  body {
+    font-size: 1em;
+    line-height: 1.7em;
+  }
+
   .page {
     max-width: calc(100% - 10px);
   }

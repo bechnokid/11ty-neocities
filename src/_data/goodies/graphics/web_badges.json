@@ -9,21 +9,8 @@
         "alt": "A grey web badge with a sprite of the White Mage from Final Fantasy with text that reads, 'White Mage'"
       },
       {
-        "src": "windows.png",
-        "alt": "A dark blue web badge with an image of an outdated Windows logo and text that reads, 'Windows'"
-      },
-      {
         "src": "winter.gif",
         "alt": "A white and dark blue web badge with an image of a snowman and text that reads, 'Winter'"
-      },
-      {
-        "src": "zelda.png",
-        "alt": "A grey and dark blue web badge with a sprite of Link and text that reads, 'Zelda'"
-      },
-      {
-        "src": "sonic.gif",
-        "alt": "A blue and grey web badge with an animated sprite of Sonic running and text that reads, 'Sonic'",
-        "freezeframe": true
       },
       {
         "src": "squareenix.gif",
@@ -82,14 +69,6 @@
         "alt": "A black web badge with stripes with the colors of the pansexual flag, and text that reads, 'Pan'"
       },
       {
-        "src": "lgbt_gay.png",
-        "alt": "A black web badge with stripes with the colors of the LGBT flag, and text that reads, 'Gay'"
-      },
-      {
-        "src": "hottopic.gif",
-        "alt": "A black and red web badge with an image of a black skull and crossbones, and text outlined in red that reads, 'Hot Topic'"
-      },
-      {
         "src": "lgbt_ace.png",
         "alt": "A black web badge with stripes with the colors of the asexual flag, and text that reads, 'Asexual'"
       },
@@ -98,16 +77,8 @@
         "alt": "A purple web badge with an image of an anime girl's eyes, and text that reads, 'I love anime'. 'Love' is replaced by a white heart"
       },
       {
-        "src": "homo.gif",
-        "alt": "A grey web badge with an image of the gay rainbow flag and text that reads, 'homo'"
-      },
-      {
         "src": "hellokitty.gif",
         "alt": "A red and pink web badge with an image of Kitty from the Hello Kitty franchise, and text that reads, 'Love Hello Kitty'. 'Love' is replaced by a white pixel heart"
-      },
-      {
-        "src": "gumbo.gif",
-        "alt": "A brown web badge with an image of a closed pot, and text that reads, 'Mmm gumbo'"
       },
       {
         "src": "goldfish.gif",
@@ -126,14 +97,6 @@
         "alt": "A blue web badge with an outdated image of the Firefox logo, and text that reads, 'Firefox'"
       },
       {
-        "src": "february.gif",
-        "alt": "A red web badge with a white and red border,  an image of a gemstone, and text that reads, 'February'"
-      },
-      {
-        "src": "earthl.png",
-        "alt": "A green web badge with an image of the planet Earth, and text that reads, 'Love Earth', with the word 'love' being replaced by a white heart"
-      },
-      {
         "src": "coffeepowered.gif",
         "alt": "A brown and black web badge with a brown and white border and text that reads, 'Coffee powered'"
       },
@@ -142,28 +105,12 @@
         "alt": "A white web badge with an image of a cheeseburger and text that reads, 'Cheezburger', a misspelling of 'Cheeseburger'"
       },
       {
-        "src": "coffeeaddict.png",
-        "alt": "A black and grey web badge with text that reads, 'Coffee addict'"
-      },
-      {
-        "src": "candyaddict.png",
-        "alt": "An orange and yellow web badge with text that reads, 'Candy addict'"
-      },
-      {
-        "src": "benandjerrys.gif",
-        "alt": "A black web badge with a yellow border with an image of a cow and the Ben & Jerry's logo"
-      },
-      {
         "src": "badinlatin.png",
         "alt": "A black and purple web badge with text that reads, 'Bad in Latin'"
       },
       {
         "src": "autumn.gif",
         "alt": "A brown web badge with an orange border, an image of a maple leaf, and text that reads, 'Autumn'"
-      },
-      {
-        "src": "asexual.png",
-        "alt": "A grey web badge with an outdated symbol for asexuality, and text that reads, 'Asexual'"
       },
       {
         "src": "aquarius.gif",

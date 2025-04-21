@@ -17,13 +17,14 @@
       <div class="content bg-body">
         <div class="row d-flex g-0 p-4">
           <div class="col-lg-6 p-lg-5 pt-0 pb-4 px-4 order-lg-0 order-1 text-center d-flex flex-column justify-content-center splash-desc">
+            {% include 'partials/js-disabled.html' %}
             <h1>{{ main.name }}</h1>
             <hr>
             <div class="px-2">
               {{ content | safe }}
             </div>
             <a class="font-weight-bold mb-4 mt-2" href="/home/">ENTER HERE</a>
-            <div>
+            <div class="js-required">
               <img src="/assets/images/counter/L.png" alt="Image for the left side of the counter"><span id="hitcount"></span><img src="/assets/images/counter/R.png" alt="Image for the right side of the counter">
             </div>
             <div class="last-update">

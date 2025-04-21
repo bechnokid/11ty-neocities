@@ -11,14 +11,12 @@
     <title>{{ main.name }}{% if title != null %} - {{ title }}{% endif %}</title>
   </head>
 <body>
-  <main class="garden-pot bg-body border-body">
-    <h1>Bechno Kid's Hideout!</h1>
-    <hr>
-    {{content | safe}}
-    <a title='Click to enter!' href="/home/"><img src="{{ gardenImage }}" alt="{{ gardenImgAlt }}"></a>
-    <div class="last-update">
-      <p>Last updated: {{ lastUpdated }}</p>
-    </div>
+  <main class="garden-pot bg-body m-3 p-3 text-xs">
+    <span class="h1 m-0 text-lg">Bechno Kid's Hideout!</span>
+    <hr class="my-2">
+    {{ content | safe }}
+    <div class="mt-1 text-center"><a title='Click to enter!' href="/home/"><img src="{{ gardenImage }}" alt="{{ gardenImgAlt }}"></a></div>
+    <div class="last-update text-muted"><p>Last updated: {{ lastUpdated }}</p></div>
   </main>
 </body>
 </html>

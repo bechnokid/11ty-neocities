@@ -3,6 +3,7 @@ title: 'About Me'
 displayOrder: 2
 prism: true
 permalink: '/about/index.html'
+tags: nav
 ---
 
 {% figure "profile.jpg", { noLink: true, alt: "Bechno Kid holding a mug shaped like a Maxim Tomato from the Kirby franchise"} %}**"The ticket to the future is always open."**<br>- Rem Saverem, Trigun{% endfigure %}
@@ -15,7 +16,7 @@ I'm a full-time software developer born in the early '90s who enjoys drawing on 
 
 I may code as a career, but I am no means an expert at all. I frequently look up StackOverflow when I need help with my code, even at work. Regardless, I do enjoy learning new things every day!
 
-I have a Bachelor's degree in Computer Science and somehow managed to land in the top 20% of my graduating class. People will say that I am a hard-working student, but all I can remember from my college days was utter confusion. I'm not even sure how I even landed my current job, but at least I'm making money doing what I love!
+I have a Bachelor's degree in Computer Science and somehow managed to land in the top 20% of my graduating class. People will say that I was a hard-working student, but all I can remember from my college days was utter confusion. I'm not even sure how I even landed my current job, but at least I'm making money doing what I love!
 
 ```git
 -----BEGIN GEEK CODE-----

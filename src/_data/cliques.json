@@ -1,15 +1,35 @@
 {
   "path": "/assets/images/goodies/cliques/",
+  "textTemplate": [
+    {
+      "title": "",
+      "centerIcon": "",
+      "img": "",
+      "imgAlt": "",
+      "url": "",
+      "text": ""
+    },
+    {
+      "title": "",
+      "centerIcon": "",
+      "img": "",
+      "imgAlt": "",
+      "url": "",
+      "text": ""
+    }
+  ],
   "items": [
     {
       "title": "aromatic",
+      "centerIcon": "//",
       "url": "https://aromatic.wings.nu/",
-      "text": "// bánh bò"
+      "text": "bánh bò"
     },
     {
-      "title": "<font class='rainbow red'>r</font><font class='rainbow orange'>a</font><font class='rainbow yellow'>i</font><font class='rainbow green'>n</font><font class='rainbow blue'>b</font><font class='rainbow indigo'>o</font><font class='rainbow purple'>w</font>",
+      "title": "<span class='rainbow clique'>rainbow</span>",
+      "centerIcon": "🌈",
       "url": "https://cliqued.wings.nu/",
-      "text": "&#x1F308;&nbsp;<font class='rainbow fav'>Mint Green</font>"
+      "text": "<span class='rainbow fav'>Mint Green</span>"
     },
     {
       "title": "my jam!!",
@@ -43,30 +63,113 @@
       "text": "hydrangea <a href='https://www.deviantart.com/crystalcrowned/art/817644582'><img class='ms-1' src='/assets/images/goodies/cliques/hydrangea-crystalcrowned.png' alt='Pixel of a pink hydrangea in bloom'></a>"
     }
   ],
-  "buttons": [
+  "template":[
     {
-      "title": "Final Fantasy Moogle Adoption Clique",
-      "name": "moogle",
-      "tooltip": "I ♥ moogles // Kupo, kupo! Moogle Adoption Clique",
-      "url": "https://midnight-cloud.net/clique/moogle/",
-      "img": "moogle.gif",
-      "imgAlt": "Sprite of a moogle"
+      "title": "",
+      "cls": "",
+      "tooltip": "",
+      "url": "",
+      "img": "",
+      "alt": ""
     },
     {
-      "title": "I Choose You!",
-      "name": "chiyu",
-      "tooltip": "I choose you! :: CHI-YU",
-      "url": "https://pkmn.caelestis.nu/",
-      "img": "i-choose-you.gif",
-      "imgAlt": "Sprite of the pokemon Chi-Yu"
-    },
-    {
-      "title": "Adopt a Boba",
-      "name": "boba",
-      "tooltip": "Taro Milk Tea :: Adopt a Boba",
-      "url": "https://pixelrevival.xyz/boba/",
-      "img": "boba.gif",
-      "imgAlt": "Sprite of cup of taro milk tea with boba"
+      "title": "",
+      "cls": "",
+      "tooltip": "",
+      "url": "",
+      "img": "",
+      "alt": ""
     }
+  ],
+  "buttons": [
+    [
+      {
+        "title": "Dearest",
+        "tooltip": "OTP: Ryuuko Matoi and Senketsu",
+        "cls": "dearest-otp",
+        "url": "https://dearest.snow-heart.net",
+        "img": "otp_dearest.png",
+        "alt": "A pink button with hearts on the side and text that says,\"OTP Dearest\""
+      },
+      {
+        "title": "Caffeine NATION",
+        "tooltip": "Light roast with French vanilla (or Irish creme) creamer",
+        "cls": "caffeine-nation",
+        "url": "https://caffeinated.wings.nu/index.php",
+        "img": "caffeine-nation.png",
+        "alt": "A button that says, \"Caffeine NATION\""
+      },
+      {
+        "title": "Astrology",
+        "url": "https://dust.kuchiki.net/",
+        "img": "aquarius.gif",
+        "alt": "A button with a star and text that says, \"Aquarius\""
+      },
+      {
+        "title": "Anime Genres",
+        "url": "https://dust.kuchiki.net/",
+        "img": "shoujo.gif",
+        "alt": "A pink button with a floating heart and text that says, \"Shoujo\""
+      },
+      {
+        "title": "Adopt-a-Censor Panda",
+        "cls": "censor-panda",
+        "tooltip": "This site contains slightly offensive material, such as minimal swearing and mature themes.",
+        "url": "https://www.mabsland.com/Adoption.html",
+        "img": "censor-panda.png",
+        "alt": "Fa Teen"
+      }
+    ],
+    [
+      {
+        "title": "Pretty Guardians",
+        "tooltip": "Under the protection of Mercury",
+        "cls": "mercury",
+        "url": "https://sailorcrystal.net/guardians/code.php",
+        "img": "mercury.png",
+        "alt": "Sprite of Sailor Mercury"
+      },
+      {
+        "title": "Final Fantasy Moogle Adoption Clique",
+        "cls": "moogle",
+        "tooltip": "I ♥ moogles // Kupo, kupo! Moogle Adoption Clique",
+        "url": "https://midnight-cloud.net/clique/moogle/",
+        "img": "moogle.gif",
+        "imgAlt": "A moogle"
+      },
+      {
+        "title": "I Choose You!",
+        "cls": "i-choose-you",
+        "tooltip": "I choose you! :: CHI-YU",
+        "url": "https://pkmn.caelestis.nu/",
+        "img": "i-choose-you.gif",
+        "imgAlt": "The pokemon Chi-Yu"
+      },
+      {
+        "title": "Adopt a Boba",
+        "cls": "adopt-a-boba",
+        "tooltip": "Taro Milk Tea :: Adopt a Boba",
+        "url": "https://web.archive.org/web/20250407201106/https://pixelrevival.xyz/boba/",
+        "img": "boba.gif",
+        "imgAlt": "A cup of taro milk tea with boba"
+      }
+    ],
+    [
+      {
+        "title": "exvius",
+        "cls": "exvius",
+        "tooltip": "Protected by Gilgamesh!",
+        "url": "https://exvius.aelysia.net/",
+        "img": "x-gilgamesh.png",
+        "alt": "Gilgamesh as he appears in Final Fantasy Brave Exvius"
+      },
+      {
+        "title": "Grand Summoning",
+        "tooltip": "Grand Summoning :: Yojimbo",
+        "url": "https://deathbusters.org/aeon/",
+        "img": "yojimbo.png",
+        "alt": "Yojimbo as he appears in Final Fantasy Brave Exvius"
+      }
+    ]
   ]
 }

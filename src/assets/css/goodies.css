@@ -1,8 +1,11 @@
 @import "basic.css";
 
-.adopts > * {
+.adopts.mine p {
+  margin: 0;
+}
+
+.adopts.other > * {
   max-width: 150px;
-  margin: 0 .25rem;
 }
 
 .awards.content > * {

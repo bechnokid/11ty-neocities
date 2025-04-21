@@ -17,7 +17,7 @@ altLinkText: '. Clicking on the image leads to the source'
   {% galleryBox { contentClass: 'justify-content-center align-items-center graphics' + (' freezeframe' if type == "blinkies" else '' ) } %}
     {% for item in array.items %}
       {% if item.url %}<a href="{{ item.url }}">{% endif %}
-      <img {{ "class=freezeframe" if item.freezeframe }} src="{{ goodiesArr[type].imgSrc + item.src }}" alt="{{ item.alt }}">
+      <div><img {{ "class=freezeframe" if item.freezeframe }} src="{{ goodiesArr[type].imgSrc + item.src }}" alt="{{ item.alt }}"></div>
       {% if item.url %}</a>{% endif %}
     {% endfor %}
   {% endgalleryBox %}

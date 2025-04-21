@@ -30,8 +30,8 @@
 [data-theme="dark"] {
   --bg-img: url(/assets/images/bg_dark.jpg);
   --header-img: url(/assets/images/header_dark.jpg);
-  --bg-img-color: #53353e;
-  --bg-overlay: #4f1c2ccc;
+  --bg-img-color: #391b3d;
+  --bg-overlay: #391b3dcc;
   --bg-primary: #28162b;
   --bg-body: #4D2F51;
   --bg-sidebar: #6f476a;
@@ -176,27 +176,27 @@ ul {
 }
 
 .text-xxl {
-  font-size: 1.75em;
+  font-size: 1.75em !important;
 }
 
 .text-xl {
-  font-size: 1.5em;
+  font-size: 1.5em !important;
 }
 
 .text-lg {
-  font-size: 1.25em;
+  font-size: 1.25em !important;
 }
 
 .text-md {
-  font-size: 1.1em;
+  font-size: 1.1em !important;
 }
 
 .text-sm {
-  font-size: .9em;
+  font-size: .9em !important;
 }
 
 .text-xs {
-  font-size: .8em;
+  font-size: .8em !important;
 }
 
 .text-underline {
@@ -240,4 +240,27 @@ ul {
 
 .position-fixed {
   position: fixed !important;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel-column {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.carousel-item {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+.carousel-column .carousel-item,
+.carousel-column .carousel-content {
+  height: 100%;
 }

@@ -4,6 +4,7 @@ summary: I've seen a few people do this and I thought it was a pretty neat idea!
 imgLink: '/assets/images/about/archive/'
 displayOrder: 5
 permalink: '/layout-archive/index.html'
+tags: nav
 ---
 
 {% set altText = site.layout_archive.altText %}

@@ -11,7 +11,7 @@
   {% if prism %}<link rel="stylesheet" href="{{ main.cssURL }}/prismJS.css" type="text/css" media="all" id="prismJS">{% endif %}
   <title>{{ main.name }}{% if title != null %} - {{ title }}{% endif %}</title>
 </head>
-<body>
+<body class='position-relative'>
   <details class="burger">
     <summary class="py-2 text-background" aria-label="Open Navigation Menu"></summary>
   </details>
@@ -23,6 +23,7 @@
     <div class="page bg-body">
       <a href="/home"><header class="bg-body"></header></a>
       <div class="bg-body main">
+        {% include 'partials/js-disabled.html' %}
         <div class="row g-0">
           <nav id="nav-main" class="col-lg-2">
             <div class="sidebar">{% include "partials/navigation.html" %}</div>
@@ -35,9 +36,7 @@
           {% if title == "Home" %}<aside class="col-lg-2 px-2 px-lg-0 my-3 my-lg-0">{% include "partials/homepage/updates.html" %}</aside>{% endif %}
         </div>
       </div>
-      <footer class="bg-footer text-center p-1 px-lg-0">
-        <p class="m-0">Powered by Neocities, 11ty, and Github. Maintained by <b>Bechno Kid</b> since 2022.<br>Please do not edit or reupload any artwork from this site.</p>
-      </footer>
+      {% include 'partials/footer.html' %}
     </div>
   </div>
   {% if freezeframe %}

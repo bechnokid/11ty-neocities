@@ -1,0 +1,37 @@
+---
+title: Adopts
+displayOrder: 2
+description: Little creatures that I found from other sites that I decided to adopt.
+---
+{% set array = goodies.graphics.adopts %}
+
+<h2>Made by Me</h2>
+{% set imgLink = array.imgSrc + '/mine/' %}
+
+{% galleryBox { sidebarClass: 'mb-4 adopts mine', contentClass: 'flex-column' } %}
+{% for row in array.mine %}
+<p>{{ row.name }}</p>
+<div class='d-flex{% if row.cls %} {{ row.cls }}{% endif %}'>
+  {% for item in row.items %}
+    {% if item.tooltip %}<div class="tooltip">{% endif %}
+      {% img imgLink + item.src, { alt: item.alt } %}
+    {% if item.tooltip %}
+      <div class="tooltip-content" role="tooltip">{{ item.tooltip }}</div>
+    </div>
+    {% endif %}
+  {% endfor %}
+</div>
+{% endfor %}
+{% endgalleryBox %}
+
+{% set imgLink = array.imgSrc %}
+<h2>Adopted</h2>
+{% galleryBox %}
+  {% for row in array.adopted %}
+  <div class="row w-100{{ " mb-4" if not loop.last }}">
+    <div class="col d-flex flex-wrap justify-content-center{% if row.cls %} {{ row.cls }}{% endif %}">
+      {% for item in row.items %}{% imgWithLink imgLink + item.src, item.url, { alt: item.alt, cls: 'mx-1' } %}{% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+{% endgalleryBox %}

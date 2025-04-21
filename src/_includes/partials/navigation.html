@@ -1,21 +1,24 @@
 {% macro navSection(section, name = null) %}
 <li>
   <div class="px-2 py-1 h2">{{ (name or section) | title }}</div>
-  <ul class="ms-3 me-2 my-1">
+  <ul class="ms-4 ms-lg-3 my-1">
     {% for link in collections[section] | sortCollectionByDisplayOrder %}
       {% if link.data.wip %}
         <li class="text-muted">{{ link.data.title }} (WIP)</li>
       {% elif link.data.subList %}
-        <li><details>
+        <li class="desktop"><details>
           <summary class="text-secondary">{{ link.data.title }}</summary>
           <ul class="ms-3">
             {% for subLink in link.data.pagination.items %}
-              <li><a href="{{ subLink.page.url }}">{{ subLink.data.shortTitle or subLink.data.title }}</a></li>
+              <li class="nav-link-item"><a href="{{ subLink.page.url }}">{{ subLink.data.shortTitle or subLink.data.title }}</a></li>
             {% endfor %}
           </ul>
         </details></li>
+        {% for subLink in link.data.pagination.items %}
+          <li class="mobile nav-link-item"><a href="{{ subLink.page.url }}">{{ subLink.data.shortTitle or subLink.data.title }}</a></li>
+        {% endfor %}
       {% elif "nav" in link.data.tags %}
-        <li class="nav-link-item"><a href="{{ link.page.url }}">{{ link.data.shortTitle or link.data.title }}</a></li>
+        <li class="nav-link-item{% if link.data.navTag %} {{ link.data.navTag }}{% endif %}"><a href="{{ link.page.url }}">{{ link.data.shortTitle or link.data.title }}</a></li>
       {% endif %}
     {% endfor %}
   </ul>

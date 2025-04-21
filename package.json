@@ -1,6 +1,6 @@
 {
   "name": "11ty-neocities",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "main": "index.js",
   "scripts": {
     "start": "npx eleventy --serve"
@@ -9,9 +9,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@toycode/markdown-it-class": "^1.2.4",
+    "eleventy-plugin-broken-links": "^2.2.1",
     "markdown-it-implicit-figures": "^0.12.0",
     "markdown-it-sup": "^1.0.0"
   },

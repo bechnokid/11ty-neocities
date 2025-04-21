@@ -12,23 +12,23 @@ Here are some sites whose webmasters are friends, affiliates, or people who I th
 If you already added my button to your site, let me know and I'll add you here!
 
 {% galleryBox { markdown: { inline: true }, sidebarClass: 'mb-4', contentClass: 'justify-content-center align-items-center' } %}
-{% for link in netizenLinks %}[![{{ (altText + link.desc) if link.desc else (altText + link.name) }}]({{ imgLink + link.name }}.{{ link.type }}){{ "{.freezeframe}" if link.freezeframe }}](https://{{ link.name }}.{{ link.domain }}){.button-link .m-1}{% endfor %}
+{% for item in netizens %}{% imgWithLink imgLink + item.src, item.link, { markdown: true, alt: altText + item.name, cls: 'mx-1', imgCls: 'freezeframe' if item.freezeframe } %}{% endfor %}
 {% endgalleryBox %}
 
 {% set array = site.fanlistings %}
 
 ## Fanlistings I Joined
-
+{% set assetLink = '/assets/images/about/fanlistings/' %}
 {% galleryBox { markdown: { inline: true }, contentClass: 'fanlistings justify-content-center'} %}
-{% for item in array.items %}[![{{ item.alt }}]({{ array.imgSrc + item.src }})]({{ item.link }}){.m-1}{% endfor %}
+{% for item in fanlistings %}{% imgWithLink assetLink + item.src, item.link, { markdown: true, alt: item.alt, cls: 'mx-1' } %}{% endfor %}
 {% endgalleryBox %}
 
 ## Resources
 
-<table class='resources'>{% for item in resourceLinks %}<tr><td><a href='{{ item.url }}'>{{ item.name }}</a></td><td class='td-desc'>{{ item.desc }}</td></tr>{% endfor %}</table>
+<table class='resources'>{% for item in resources %}<tr><td><a href='{{ item.url }}'>{{ item.name }}</a></td><td class='td-desc'>{{ item.desc }}</td></tr>{% endfor %}</table>
 
 ## Made Possible By
 
 {% for link in credits %}
-- {% if link.url %}[{% endif %}{{ link.name | markdownifyInline | safe }}{% if link.url %}]( {{ link.url }}){% endif %}{% if link.desc %} ({{ link.desc }}){% endif %}
+- {% if link.link %}[{% endif %}{{ link.name | markdownifyInline | safe }}{% if link.link %}]( {{ link.link }}){% endif %}{% if link.desc %} ({{ link.desc }}){% endif %}
 {% endfor %}

@@ -1,42 +1,22 @@
 @import 'bechno.css';
 
 .garden-pot {
-  padding: 1em;
-  margin: 15px;
-  width: 220px;
-  height: 220px;
-  text-align: center
-}
-
-.garden-pot h1 {
-  font-variant: none;
-  font-size: 1.25em;
-  margin: 0;
-}
-
-.garden-pot hr {
-  margin: 1em 0 0;
-  height: 15px;
+  height: 218px;
 }
 
 .garden-pot p {
-  font-size: .85em;
-  margin: .5em 0;
+  font-size: .8em;
+  text-align: center;
+  margin: 0;
 }
 
 .garden-pot img {
   width: 60%;
-  margin: .75em 0 0;
   animation: becDefault 2s steps(2) infinite;
 }
 
 .garden-pot img:hover {
   animation: becSpin .8s linear infinite normal
-}
-
-.last-update p {
-  font-size: .8em;
-  color: var(--muted)
 }
 
 @keyframes becDefault {

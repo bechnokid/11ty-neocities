@@ -1,13 +1,12 @@
 ---
 title: 'Welcome'
+shortTitle: 'Splash page'
 layout: 'layouts/splash.html'
 image:
   src: /assets/images/splash.png
   alt: Splash image for Bechno Kid's Hideout that links to the home page
 displayOrder: 1
-tags:
-  - main
-  - noNav
+tags: main
 ---
 
 Welcome!
