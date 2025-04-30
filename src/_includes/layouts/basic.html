@@ -6,11 +6,11 @@
 {% set pageCSS = css %}
 
 {% block css %}
-<link rel="stylesheet" href="{{ main.cssURL }}/{{ pageCSS or "basic" }}.css" type="text/css" media="all">
+<link rel="stylesheet" href="{{ meta.cssURL }}/{{ pageCSS or "basic" }}.css" type="text/css" media="all">
 {% endblock %}
 
 {% block content %}
-  <article>
+  <article class="mb-lg-0 mb-2">
     {% include "partials/page-header.html" %}
     <div class="mt-4">{{ content | safe }}</div>
   </article>

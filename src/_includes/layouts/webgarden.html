@@ -3,12 +3,11 @@
 {% set lastUpdated = site.feed.items[0].date | monDayYear %}
 
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang={{ meta.lang }} data-theme="light">
   <head>
     {% include "partials/head.html" %}
-    <link rel="stylesheet" href="{{ main.cssURL }}/webgarden.css" type="text/css" media="all">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <title>{{ main.name }}{% if title != null %} - {{ title }}{% endif %}</title>
+    <link rel="stylesheet" href="{{ meta.cssURL }}/webgarden.css" type="text/css" media="all">
+    <title>{{ meta.name }}{% if title != null %} - {{ title }}{% endif %}</title>
   </head>
 <body>
   <main class="garden-pot bg-body m-3 p-3 text-xs">

@@ -11,7 +11,7 @@
 
 .guestbook-msg-container {
   font-size: .85em;
-  max-height: 300px;
+  max-height: 400px;
   overflow-y: auto;
 }
 

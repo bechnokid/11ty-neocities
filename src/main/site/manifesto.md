@@ -1,9 +1,8 @@
 ---
 title: Manifesto
 summary: "This page serves as a reminder to myself of the site's main purpose!"
-displayOrder: 4
+displayOrder:
 permalink: '/manifesto/index.html'
-tags: nav
 ---
 
 ## My History with the Web
@@ -26,20 +25,20 @@ I couldn't be happier and prouder of this small side project. :')
 
 The first version of this manifesto was more or less an exact copy of what others have said, "Corporate websites bad, personal websites good!" This statement is still something I abide by, but I would like to update this manifesto and further explain the goals of this website.
 
-This site will primarily serve as an archive for artwork I have created over the span of 20+ years.{.mt-3}
-: It will take a while to upload everything, and I certainly don't have a quarter of the pencil sketches that are left behind on the other side of the country, but my intention is to inspire younger artists to continue drawing. I have seen a distressing trend of younger artists being pressured to be on the same level as a professional, which is not only unrealistic but also extremely damaging to their psyche.
+- **This site will primarily serve as an archive for artwork I have created over the span of 20+ years.**
+  - It will take a while to upload everything, and I certainly don't have a quarter of the pencil sketches that are left behind on the other side of the country, but my intention is to inspire younger artists to continue drawing. I have seen a distressing trend of younger artists being pressured to be on the same level as a professional, which is not only unrealistic but also extremely damaging to their psyche.
 
-This site will also never be removed, unless Neocities itself goes down, nor will it remove any art.
-: Even if I find my art to be "old and cringey", I believe it's important to keep old art as a way to not only gauge one's progress, but also to remind others that no artist starts out perfect. The only art that will not be archived here are pieces that have been deemed harmful.
+- **This site will also never be removed, unless Neocities itself goes down, nor will it remove any art.**
+  - Even if I find my art to be "old and cringey", I believe it's important to keep old art as a way to not only gauge one's progress, but also to remind others that no artist starts out perfect. The only art that will not be archived here are pieces that have been deemed harmful.
 
-This site will not be used to make any money.
-: This site will not or ever have any ads unless it is to promote other personal websites (for free, mind you). While I do take commissions, the time that they are open is very few and far in-between as I already have a full-time job.
+- **This site will not be used to make any money.**
+  - This site will not or ever have any ads unless it is to promote other personal websites (for free, mind you). While I do take commissions, the time that they are open is very few and far in-between as I already have a full-time job.
 
-This site will not be used to promote hate, harassment, or discrimination of any kind.
-: This one sounds pretty self-explanatory, but in this day and age, it's become common for self-righteous users to have a twisted sense of justice and send death threats to those with views that don't align with theirs.
+- **This site will not be used to promote hate, harassment, or discrimination of any kind.**
+  - This one sounds pretty self-explanatory, but in this day and age, it's become common for self-righteous users to have a twisted sense of justice and send death threats to those with views that don't align with theirs.
 
-The site will not encourage the entire removal of social media.
-: For better or worse, social media allows others to communicate and form bonds just like they would outside the web. In fact, social media was how I met my wife and husband. Instead, this site will advocate for better ways of using these platforms, such as taking the time to respond to posts instead of just "liking" them.
+- **This site will not encourage the entire removal of social media.**
+  - For better or worse, social media allows others to communicate and form bonds just like they would outside the web. In fact, social media was how I met my wife and husband. Instead, this site will advocate for better ways of using these platforms, such as taking the time to respond to posts instead of just "liking" them.
 
 ## Links
 ### Others' Manifestos

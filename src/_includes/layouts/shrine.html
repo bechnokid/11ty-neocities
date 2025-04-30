@@ -1,17 +1,17 @@
 {% set pageCSS = "shrines/" + css %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={{ meta.lang }}>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="{{ eleventy.generator }}">
-  {% block css %}<link rel="stylesheet" href="{{ main.cssURL }}/{{ pageCSS or "shrine" }}.css" type="text/css" media="all">{% endblock css %}
+  {% block css %}<link rel="stylesheet" href="{{ meta.cssURL }}/{{ pageCSS or "shrine" }}.css" type="text/css" media="all">{% endblock css %}
   <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-  <title>{{ main.name }}{% if title != null %} - {{ title }}{% endif %}</title>
+  <title>{{ meta.name }}{% if title != null %} - {{ title }}{% endif %}</title>
 </head>
 <body>
-  <div class="container-fluid h-100 d-flex justify-content-center align-items-center">
+  <div class="container-fluid d-flex justify-content-center align-items-center p-0">
     <div class="content border rounded p-4">
       {% block content %}
       <main>

@@ -5,7 +5,8 @@ displayOrder: 4
 description: Little pots that show a sneak peek of the websites they're based on.
 summary: A concept created by [Miss Moss](https://webgardens.neocities.org/)! It is, as she quotes, *"a fun way to see new content from your favorite websites"*. This particular greenhouse has pots that I personally think are super cool.
 prism: true
-warning: true
+flashing: true
+navTag: 'js-required'
 ---
 
 ## My Pot

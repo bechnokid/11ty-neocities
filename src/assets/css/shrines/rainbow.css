@@ -23,6 +23,10 @@ h1 {
   margin-bottom: .5rem;
 }
 
+.container-fluid {
+  height: 100%;
+}
+
 .content {
   max-width: 800px;
   background-color: #fff;
@@ -45,4 +49,10 @@ h1 {
 
 .avalypuff figure {
   background-color: #fff;
+}
+
+@media screen and (max-width: 999px) {
+  .container-fluid {
+    height: revert;
+  }
 }

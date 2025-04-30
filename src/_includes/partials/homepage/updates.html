@@ -1,11 +1,11 @@
 <div class="sidebar">
   <div class="h2 text-center p-1">❤ Updates ❤</div>
   <div class="update-content p-2">
-    {% for update in site.feed.items %}
+    {% for update in site.feed.items | limit(3) %}
     <b>{{ update.date | monDayYear }}</b>
     <ul>
       {% for item in update.content %}
-      <li>{{ item | safe }}</li>
+      <li>{{ item | markdownifyInline | safe }}</li>
       {% endfor %}
     </ul>
       {% if loop.index != loop.length %}

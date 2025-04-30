@@ -4,8 +4,9 @@ shortTitle: FreezeframeJS Tutorial
 displayOrder: 2
 description: A tutorial on how to implement [Freezeframe.js](https://github.com/ctrl-freaks/freezeframe.js/), a library that can "freeze" animated GIFs.
 prism: true
+redirect_from: [/tutorials/freezeframe, /resources/tut_freezeframe]
 ---
-<script src="{{ main.jsURL }}/freezeframe.js"></script>
+<script src="{{ meta.jsURL }}/freezeframe.js"></script>
 
 One of the greatest challenges for a web designer is creating a site that is accessible to those with disabilities. It's one thing to create responsive sites and provide alt text for screen readers, but I noticed a lot of Neocities users' sites are lacking one of the most important aspects: **avoiding seizure-inducing images**.
 
@@ -103,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 #### JQuery
 
 ```js
-$(function() {
+$(document).ready(function() {
   new Freezeframe();
 });
 ```
@@ -136,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 #### JQuery
 
 ```js
-$(function() {
+$(document).ready(function() {
   const e = new Freezeframe();
   $("#play-gif").on("click", function(){ e.start() });
   $("#stop-gif").on("click", function(){ e.stop() });
@@ -159,7 +160,7 @@ So, you should have something like the following:
 
 </div>
 <script>
-  $(function() {
+  $(document).ready(function() {
     const e = new Freezeframe({ trigger: false, responsive: false });
     $("#play-gif").on("click", function(){ e.start() });
     $("#stop-gif").on("click", function(){ e.stop() });

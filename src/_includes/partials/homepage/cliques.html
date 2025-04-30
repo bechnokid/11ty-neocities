@@ -1,31 +1,41 @@
+{% macro textClique (leftText, centerIcon, url, rightText) %}
+<a href="{{ url }}">{{ leftText | safe }}</a>{% if img %}<img class="mx-2" src="{{ cliques.path + img }}" aria-hidden="true">{% elif centerIcon %}<span class='mx-2'>{{ centerIcon }}</span>{% else %}&nbsp;{% endif %} {{ rightText | safe }}
+{% endmacro %}
+
 <div class="row g-0">
   <div class="sidebar">
     <div class="h2 bg-footer p-2">Cliques</div>
     <div class="content">
       <div class="row g-0">
         <div class="col-lg-6 col-12 d-flex flex-column align-items-center justify-content-center pb-3 p-lg-2 order-lg-1 order-2">
-          {% for clique in cliques.items %}
+          {% for clique in cliques.col1 %}
           <div class="d-flex align-items-center {% if not loop.last %}mb-1{% endif %}">
-            <a href="{{ clique.url }}">{{ clique.title | safe }}</a>
-            {% if clique.img %}<img class="mx-2" src="{{ cliques.path + clique.img }}" alt="{{ clique.imgAlt }}">{% elif clique.centerIcon %}<span class='mx-2'>{{ clique.centerIcon }}</span>{% else %}&nbsp;{% endif %} {{ clique.text | safe }}
+            {{ textClique (clique.leftText, clique.centerIcon, clique.url, clique.rightText) }}
           </div>
           {% endfor %}
         </div>
         <div class="col-lg-6 col-12 justify-content-center p-3 p-lg-2 order-lg-2 order-1">
-          {% for row in cliques.buttons %}
-          <div class="row">
-            <div class="col d-flex flex-wrap justify-content-center align-items-baseline">
-              {% for clique in row %}
-                {% if clique.tooltip %}<div class="tooltip">{% endif %}
-                  <a href="{{ clique.url }}"{% if clique.tooltip %} aria-describedby="clique-{{ clique.cls }}"{% endif %}><img class="mx-1" src="{{ cliques.path + clique.img }}" alt="{{ clique.alt + " for the \"" + clique.title + "\" clique" }}"></a>
-                {% if clique.tooltip %}
-                  <div id="clique-{{ clique.cls }}" class="tooltip-content" role="tooltip">{{ clique.tooltip }}</div>
-                </div>
-                {% endif %}
-              {% endfor %}
+          <div class="desktop-only">
+            {% for row in cliques.col2 %}
+            <div class="row">
+              <div class="col d-flex flex-wrap justify-content-center align-items-baseline">
+                {% for clique in row %}
+                  {% if clique.tooltip %}<div class="tooltip">{% endif %}
+                    <a href="{{ clique.url }}"{% if clique.tooltip %} aria-describedby="clique-{{ clique.cls }}"{% endif %}><img class="mx-1" src="{{ cliques.path + clique.img }}" alt="{{ clique.alt + " for the \"" + clique.title + "\" clique" }}"></a>
+                  {% if clique.tooltip %}
+                    <div id="clique-{{ clique.cls }}" class="tooltip-content" role="tooltip">{{ clique.tooltip }}</div>
+                  </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
             </div>
+            {% endfor %}
           </div>
-          {% endfor %}
+          <div class="mobile-only">
+            {% for clique in cliques.col2_mobile %}
+              <div class="d-flex justify-content-center align-items-center{{ " mb-1" if not loop.last }}">{{ textClique (clique.leftText, clique.centerIcon, clique.url, clique.rightText) }}</div>
+            {% endfor %}
+          </div>
         </div>
       </div>
     </div>

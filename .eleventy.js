@@ -14,7 +14,8 @@ const {
   markdownify,
   markdownifyInline,
   sortCollectionByDisplayOrder,
-  toHtmlList
+  toHtmlList,
+  limit
 } = require('./config/filters');
 
 const {
@@ -36,27 +37,27 @@ const markdownLib = require('./config/plugins/markdown');
 
 const TEMPLATE_ENGINE = 'njk';
 
-module.exports = async function(config){
+module.exports = async function(eleventyConfig){
   const { IdAttributePlugin } = await import("@11ty/eleventy");
 
-  config.addPassthroughCopy('./src/assets/images/');
-  config.addPassthroughCopy('./src/assets/fonts/');
-  config.addPassthroughCopy('./src/assets/css/');
-  config.addPassthroughCopy('./src/assets/javascript/');
+  eleventyConfig.addPassthroughCopy('./src/assets/images/');
+  eleventyConfig.addPassthroughCopy('./src/assets/fonts/');
+  eleventyConfig.addPassthroughCopy('./src/assets/css/');
+  eleventyConfig.addPassthroughCopy('./src/assets/javascript/');
 
   // Shortcodes
-  config.addShortcode('icon', icon);
-  config.addShortcode('img', img);
-  config.addShortcode('imgWithLink', imgWithLink);
-  config.addShortcode('freezeframeButtons', freezeframeButtons);
+  eleventyConfig.addShortcode('icon', icon);
+  eleventyConfig.addShortcode('img', img);
+  eleventyConfig.addShortcode('imgWithLink', imgWithLink);
+  eleventyConfig.addShortcode('freezeframeButtons', freezeframeButtons);
 
   // Paired shortcodes
-  config.addPairedShortcode('figure', figure);
-  config.addPairedShortcode('details', details);
-  config.addPairedShortcode('galleryBox', galleryBox);
+  eleventyConfig.addPairedShortcode('figure', figure);
+  eleventyConfig.addPairedShortcode('details', details);
+  eleventyConfig.addPairedShortcode('galleryBox', galleryBox);
 
   // Transform
-  config.addTransform("htmlmin", function (content) {
+  eleventyConfig.addTransform("htmlmin", function (content) {
     if ((this.page.outputPath || "").endsWith(".html")) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
@@ -72,29 +73,30 @@ module.exports = async function(config){
   });
 
   // Filters
-  config.addFilter('date', date);
-  config.addFilter('dayOfMonth', dayOfMonth);
-  config.addFilter('monthDayYear', monthDayYear);
-  config.addFilter('monDayYear', monDayYear);
-  config.addFilter('w3DateFilter', w3DateFilter);
-  config.addFilter("markdownify", markdownify);
-  config.addFilter("markdownifyInline", markdownifyInline);
-  config.addFilter('sortCollectionByDisplayOrder', sortCollectionByDisplayOrder);
-  config.addFilter('toHtmlList', toHtmlList);
-  config.addFilter("cssmin", cssmin);
+  eleventyConfig.addFilter('date', date);
+  eleventyConfig.addFilter('dayOfMonth', dayOfMonth);
+  eleventyConfig.addFilter('monthDayYear', monthDayYear);
+  eleventyConfig.addFilter('monDayYear', monDayYear);
+  eleventyConfig.addFilter('w3DateFilter', w3DateFilter);
+  eleventyConfig.addFilter("markdownify", markdownify);
+  eleventyConfig.addFilter("markdownifyInline", markdownifyInline);
+  eleventyConfig.addFilter('sortCollectionByDisplayOrder', sortCollectionByDisplayOrder);
+  eleventyConfig.addFilter('toHtmlList', toHtmlList);
+  eleventyConfig.addNunjucksFilter('limit', limit);
+  eleventyConfig.addFilter("cssmin", cssmin);
 
   // Collections
-  config.addCollection('writing', writingPages);
-  config.addCollection('blog', blogPosts);
+  eleventyConfig.addCollection('writing', writingPages);
+  eleventyConfig.addCollection('blog', blogPosts);
 
   // Plugins
-  config.addPlugin(rssPlugin);
-  config.addPlugin(lightningCSS);
-  config.addPlugin(syntaxHighlight);
-  config.addPlugin(IdAttributePlugin);
-  //config.addPlugin(brokenLinksPlugin, { excludeUrls: ["https://deviantart.com/view/*", "https://www.youtube.com/watch?"] });
+  eleventyConfig.addPlugin(rssPlugin);
+  eleventyConfig.addPlugin(lightningCSS);
+  eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(IdAttributePlugin);
+  //eleventyConfig.addPlugin(brokenLinksPlugin, { excludeUrls: ["https://deviantart.com/view/*", "https://www.youtube.com/watch?"] });
 
-  config.setLibrary('md', markdownLib);
+  eleventyConfig.setLibrary('md', markdownLib);
 
   return {
     markdownTemplateEngine: TEMPLATE_ENGINE,

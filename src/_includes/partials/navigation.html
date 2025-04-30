@@ -1,24 +1,36 @@
+{% macro navLink(linkUrl, linkTitle, options = { cls: "", flashing: false }) %}
+<li class="nav-link-item{{ (" " + options.cls) if options.cls }}"><a href="{{ linkUrl }}">{{ linkTitle }}</a> {% if options.flashing == true %}{% icon 'alert-triangle' %}{% endif %}</li>
+{% endmacro %}
+
 {% macro navSection(section, name = null) %}
 <li>
   <div class="px-2 py-1 h2">{{ (name or section) | title }}</div>
-  <ul class="ms-4 ms-lg-3 my-1">
+  <ul class="section-list ms-4 ms-lg-3 my-1">
     {% for link in collections[section] | sortCollectionByDisplayOrder %}
       {% if link.data.wip %}
         <li class="text-muted">{{ link.data.title }} (WIP)</li>
       {% elif link.data.subList %}
-        <li class="desktop"><details>
-          <summary class="text-secondary">{{ link.data.title }}</summary>
-          <ul class="ms-3">
+        <li class="desktop">
+          <details>
+            <summary class="text-secondary">{{ link.data.title }}</summary>
+            <ul class="ms-2">
+              {% for subLink in link.data.pagination.items %}
+                {{ navLink(subLink.page.url, subLink.data.shortTitle or subLink.data.title, { cls: subLink.data.navTag , flashing: subLink.data.freezeframe or subLink.data.flashing }) }}
+              {% endfor %}
+            </ul>
+          </details>
+        </li>
+        <li class="mobile nav-link-item section-title">{{ link.data.title }}
+          <ul>
             {% for subLink in link.data.pagination.items %}
-              <li class="nav-link-item"><a href="{{ subLink.page.url }}">{{ subLink.data.shortTitle or subLink.data.title }}</a></li>
+              {{ navLink(subLink.page.url, subLink.data.shortTitle or subLink.data.title, { cls: subLink.data.navTag + " mobile" , flashing: subLink.data.freezeframe or subLink.data.flashing}) }}
             {% endfor %}
           </ul>
-        </details></li>
-        {% for subLink in link.data.pagination.items %}
-          <li class="mobile nav-link-item"><a href="{{ subLink.page.url }}">{{ subLink.data.shortTitle or subLink.data.title }}</a></li>
-        {% endfor %}
-      {% elif "nav" in link.data.tags %}
-        <li class="nav-link-item{% if link.data.navTag %} {{ link.data.navTag }}{% endif %}"><a href="{{ link.page.url }}">{{ link.data.shortTitle or link.data.title }}</a></li>
+        </li>
+      {% elif "nav" in link.data.tags and not "hideFromHome" in link.data.tags %}
+        {{ navLink(link.page.url, link.data.shortTitle or link.data.title, { cls: link.data.navTag, flashing: link.data.freezeframe or link.data.flashing }) }}
+      {% elif "hideFromHome" in link.data.tags and title != "Home" %}
+        {{ navLink(link.page.url, link.data.shortTitle or link.data.title, { cls: link.data.navTag, flashing: link.data.freezeframe or link.data.flashing }) }}
       {% endif %}
     {% endfor %}
   </ul>
@@ -27,7 +39,6 @@
 
 <ul>
   <li><a href="#main-content" class="skip-link">Main Content</a></li>
-  <li><a href="#footer" class="skip-link">Footer</a></li>
 </ul>
 <ul class="nav-links">
   {{ navSection('main') }}

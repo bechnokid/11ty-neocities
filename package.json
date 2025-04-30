@@ -3,7 +3,7 @@
   "version": "3.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "npx eleventy --serve"
+    "start": "bun x @11ty/eleventy --serve"
   },
   "keywords": [],
   "author": "",
@@ -74,6 +74,7 @@
     "extend-shallow": "^2.0.1",
     "fast-glob": "^3.3.1",
     "fastq": "^1.15.0",
+    "feather-icons-css": "^1.2.0",
     "filelist": "^1.0.4",
     "fill-range": "^7.0.1",
     "finalhandler": "^1.2.0",

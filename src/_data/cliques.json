@@ -1,87 +1,70 @@
 {
   "path": "/assets/images/goodies/cliques/",
-  "textTemplate": [
+  "templates": {
+    "text":
     {
-      "title": "",
+      "leftText": "",
       "centerIcon": "",
       "img": "",
       "imgAlt": "",
       "url": "",
-      "text": ""
+      "rightText": ""
     },
-    {
+    "button": {
       "title": "",
-      "centerIcon": "",
-      "img": "",
-      "imgAlt": "",
+      "cls": "",
+      "tooltip": "",
       "url": "",
-      "text": ""
+      "img": "",
+      "alt": ""
     }
-  ],
-  "items": [
+  },
+  "col1": [
     {
-      "title": "aromatic",
+      "leftText": "aromatic",
       "centerIcon": "//",
       "url": "https://aromatic.wings.nu/",
-      "text": "bánh bò"
+      "rightText": "bánh bò"
     },
     {
-      "title": "<span class='rainbow clique'>rainbow</span>",
+      "leftText": "<span class='rainbow clique'>rainbow</span>",
       "centerIcon": "🌈",
       "url": "https://cliqued.wings.nu/",
-      "text": "<span class='rainbow fav'>Mint Green</span>"
+      "rightText": "<span class='rainbow fav'>Mint Green</span>"
     },
     {
-      "title": "my jam!!",
+      "leftText": "my jam!!",
       "url": "https://cliqued.wings.nu/",
       "img": "jam.png",
       "imgAlt": "A sprite of a jar of pink jam",
-      "text": "Chaotic Love Revolution"
+      "rightText": "Chaotic Love Revolution"
     },
     {
-      "title": "sanrio lvr",
+      "leftText": "sanrio lvr",
       "centerIcon": "♡",
       "url": "https://jubiland.neocities.org/cliques#sanrioluvr",
-      "text": "Big Challenges"
+      "rightText": "Big Challenges"
     },
     {
-      "title": "What's Your Type?",
+      "leftText": "What's Your Type?",
       "centerIcon": "::",
       "url": "https://web.archive.org/web/20160101164734/http://pkmn.zeruda.org/clique",
-      "text": "Psychic / Bug"
+      "rightText": "Psychic / Bug"
     },
     {
-      "title": "Mine!",
+      "leftText": "Mine!",
       "centerIcon": "//",
       "url": "https://cliques.windsprite.nu/mine/",
-      "text": "Gilgamesh (FF)"
+      "rightText": "Gilgamesh (FF)"
     },
     {
-      "title": "flowering",
+      "leftText": "flowering",
       "centerIcon": "//",
       "url": "https://theflowering.neocities.org",
-      "text": "hydrangea <a href='https://www.deviantart.com/crystalcrowned/art/817644582'><img class='ms-1' src='/assets/images/goodies/cliques/hydrangea-crystalcrowned.png' alt='Pixel of a pink hydrangea in bloom'></a>"
+      "rightText": "hydrangea <a href='https://www.deviantart.com/crystalcrowned/art/817644582'><img class='ms-1' src='/assets/images/goodies/cliques/hydrangea-crystalcrowned.png' alt='Pixel of a pink hydrangea in bloom'></a>"
     }
   ],
-  "template":[
-    {
-      "title": "",
-      "cls": "",
-      "tooltip": "",
-      "url": "",
-      "img": "",
-      "alt": ""
-    },
-    {
-      "title": "",
-      "cls": "",
-      "tooltip": "",
-      "url": "",
-      "img": "",
-      "alt": ""
-    }
-  ],
-  "buttons": [
+  "col2": [
     [
       {
         "title": "Dearest",
@@ -110,14 +93,6 @@
         "url": "https://dust.kuchiki.net/",
         "img": "shoujo.gif",
         "alt": "A pink button with a floating heart and text that says, \"Shoujo\""
-      },
-      {
-        "title": "Adopt-a-Censor Panda",
-        "cls": "censor-panda",
-        "tooltip": "This site contains slightly offensive material, such as minimal swearing and mature themes.",
-        "url": "https://www.mabsland.com/Adoption.html",
-        "img": "censor-panda.png",
-        "alt": "Fa Teen"
       }
     ],
     [
@@ -125,7 +100,7 @@
         "title": "Pretty Guardians",
         "tooltip": "Under the protection of Mercury",
         "cls": "mercury",
-        "url": "https://sailorcrystal.net/guardians/code.php",
+        "url": "https://sailorcrystal.net/guardians/",
         "img": "mercury.png",
         "alt": "Sprite of Sailor Mercury"
       },
@@ -171,5 +146,49 @@
         "alt": "Yojimbo as he appears in Final Fantasy Brave Exvius"
       }
     ]
+  ],
+  "col2_mobile": [
+    {
+      "leftText": "OTP",
+      "centerIcon": "::",
+      "url": "http://dearest.snow-heart.net/",
+      "rightText": "Ryuuko Matoi & Senketsu"
+    },
+    {
+      "leftText": "caffeineNATION",
+      "centerIcon": "☕︎",
+      "url": "https://caffeinated.wings.nu/",
+      "rightText": "Light roast with creamer"
+    },
+    {
+      "leftText": "celestial divine",
+      "centerIcon": "//",
+      "url": "https://dust.kuchiki.net/",
+      "rightText": "aquarius"
+    },
+    {
+      "leftText": "i love anime",
+      "centerIcon": "//",
+      "url": "https://dust.kuchiki.net/",
+      "rightText": "shoujo"
+    },
+    {
+      "leftText": "I Choose You!",
+      "centerIcon": "|",
+      "url": "https://pkmn.caelestis.nu",
+      "rightText": "CHI-YU"
+    },
+    {
+      "leftText": "Exvius",
+      "centerIcon": "//",
+      "url": "https://exvius.aelysia.net",
+      "rightText": "Gilgamesh"
+    },
+    {
+      "leftText": "Grand Summoning",
+      "centerIcon": "::",
+      "url": "https://deathbusters.org/aeon/",
+      "rightText": "Yojimbo"
+    }
   ]
 }

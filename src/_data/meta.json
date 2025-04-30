@@ -1,0 +1,14 @@
+{
+  "name": "Bechno Kid's Hideout",
+  "url": "https://bechnokid.neocities.org",
+  "cssURL": "/assets/css",
+  "jsURL": "/assets/javascript",
+  "imgUrl": "/assets/images/",
+  "desc": "The personal website of a beet disguised as a software engineer. Contains art, ramblings, and other things?",
+  "ogImgURL": "https://bechnokid.neocities.org/images/og_image.png",
+  "lang": "en-US",
+  "author": {
+    "name": "Bechno Kid",
+    "email": "bechnokid@yahoo.com"
+  }
+}

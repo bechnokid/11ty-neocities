@@ -13,7 +13,7 @@ const freezeframeButtons = function(options = {}) {
 }
 
 const icon = function(value, options = {}) {
-  let iconVal = `<i class='fa fa-${value}'></i>`;
+  let iconVal = `<i class='ft-${value}'></i>`;
   if (value == 'meat') {
     let iconArr = [`<img class='meat svg' src='/assets/images/meat.svg'`, `>`];
     if (options.alt) iconArr.splice(1, 0, ` alt='${options.alt}'`)
@@ -22,9 +22,22 @@ const icon = function(value, options = {}) {
   return iconVal;
 }
 
-const img = function(value, options = {}) {
+const img = function(imgUrl, options = {}) {
   // <img src='' alt='' class=''>
-  let resultsArray = [`<img src='${value}'`, `>`];
+  let resultsArray = [`<img src='${imgUrl}'`, `>`];
+  if (options.markdown) {
+    if (options.alt === undefined){
+      return "No alt text provided";
+    } else {
+      resultsArray = `![${options.alt}](${imgUrl})`
+      if (options.cls) resultsArray += ` { .${options.cls} }`;
+      if (options.markdown.inline) {
+        return markdownLib.renderInline(resultsArray)
+      } else {
+        return resultsArray;
+      }
+    }
+  }
   if (options.alt) resultsArray.splice(resultsArray.length - 1, 0, ` alt='${options.alt}'`);
   if (options.cls) resultsArray.splice(resultsArray.length - 1, 0, ` class='${options.alt}'`);
   return resultsArray.flat().join('');

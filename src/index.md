@@ -11,4 +11,6 @@ tags: main
 
 Welcome!
 
+This website is **PG-13** for minimal swearing and some mature themes. Please proceed with caution.
+
 This website is mobile-friendly, but works best on a desktop at 1920 x 1080 with Javascript enabled.

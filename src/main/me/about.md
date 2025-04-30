@@ -1,9 +1,8 @@
 ---
-title: 'About Me'
-displayOrder: 2
+title: 'The Web Beet'
+displayOrder: 1
 prism: true
 permalink: '/about/index.html'
-tags: nav
 ---
 
 {% figure "profile.jpg", { noLink: true, alt: "Bechno Kid holding a mug shaped like a Maxim Tomato from the Kirby franchise"} %}**"The ticket to the future is always open."**<br>- Rem Saverem, Trigun{% endfigure %}
@@ -31,10 +30,11 @@ I have a Bachelor's degree in Computer Science and somehow managed to land in th
 <div class='about-info row d-flex flex-wrap justify-content-center mb-4 mb-lg-0'>
 <div class='col-12 col-lg-4 mb-3 mb-lg-0'>
 {% galleryBox { markdown: true, boxTitle: "Other Facts", sidebarClass: 'h-100' } %}
-- ♒︎ ({% icon 'sun' %}), ♉︎ ({% icon 'moon' %}), ♊︎ ({% icon 'arrow-up' %})
+- ♒︎ (☀️), ♉︎ (🌒), ♊︎ (⬆️)
 - INTJ...I think.
 - Viet-American (can't speak the language)
-- Catholic and gay {% icon 'cross' %}🏳️‍🌈
+- Catholic and gay ✝️🏳️‍🌈
+- In a closed polyamorous marriage
 {% endgalleryBox %}
 </div>
 <div class='col-12 col-lg-4 mb-3 mb-lg-0'>
@@ -57,3 +57,19 @@ I have a Bachelor's degree in Computer Science and somehow managed to land in th
 {% endgalleryBox %}
 </div>
 </div>
+
+{% for key, value in favorites %}
+## {{ value.title }}
+
+<div class='d-flex flex-wrap justify-content-lg-between justify-content-center px-lg-5 px-0 text-center text-xs favs'>
+{% for item in value.items %}
+<div class='sidebar m-lg-0 m-2'>
+
+![{{ item.name }}]({{ imgPath + item.img }})
+
+{{ item.name }}
+
+</div>
+{% endfor %}
+</div>
+{% endfor %}

@@ -5,14 +5,14 @@
 {% set postListItems = pagination.items %}
 
 {% block css %}
-  <link rel="stylesheet" href="{{ main.cssURL }}/blog.css" type="text/css" media="all">
+  <link rel="stylesheet" href="{{ meta.cssURL }}/blog.css" type="text/css" media="all">
 {% endblock css %}
 
 {% block content %}
   <article>
     {% include "partials/page-header.html" %}
     {% if title == 'Microblog' %}
-      <div class='microblog basic-box'>
+      <div class='microblog sidebar px-3'>
         {% for entry in postListItems %}
           <p><b>{{ entry.date | monthDayYear }}</b> | {{ entry.mood }}</p>
           <p>{{ entry.content }}</p>
@@ -24,8 +24,8 @@
     {% else %}
       {% for item in postListItems %}
       <div class="blog row py-1">
-        <div class="col-8"><a href="{{ item.url }}">{{ item.data.title | markdownifyInline | safe }}</a></div>
-        <div class="col-4">{{ item.data.date | monthDayYear }}</div>
+        <div class="col-lg-8 col-7"><a href="{{ item.url }}">{{ item.data.title | markdownifyInline | safe }}</a></div>
+        <div class="col-lg-4 col-5">{{ item.data.date | monthDayYear }}</div>
       </div>
       {% endfor %}
     {% endif %}

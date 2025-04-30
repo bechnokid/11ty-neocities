@@ -82,7 +82,10 @@ This loop takes the data from each StatusCafe post and splits them into differen
 
 - **title** - Displays your StatusCafe username along with the emoji picked when creating the post. Note the `NUMBER_OF_CHARACTERS` shown in the code block. This number should be equal to the number of characters in your username. However, if you want to include the emoji associated with the status, just add 3 to the number of characters in your username.
   - For example, my username "bechnokid" contains 9 characters. If I wanted to include the emoji, I would replace `NUMBER_OF_CHARACTERS` with 9 + 3, which would be 12.
-  - The final line would then be: `let title = el.querySelector("title").innerHTML.slice(0, 12).trim()`
+  - The final line would then be the following:
+```js
+let title = el.querySelector("title").innerHTML.slice(0, 12).trim()
+```
 - **content** - Displays the full status. Self-explanatory.
 - **dateString** - This is optional, but this displays the date when the status was posted. It will also display the full date instead of the "...days ago" that StatusCafe displays.
 

@@ -42,19 +42,19 @@ figcaption {
   margin-bottom: 1rem;
 }
 
-.blog-gallery>* {
+.blog-gallery > * {
   margin: .25rem;
 }
 
-.blog-gallery>figure {
+.blog-gallery > figure {
   width: 200px;
 }
 
-.blog-gallery>.landscape {
+.blog-gallery > .landscape {
   width: 300px;
 }
 
-.blog-gallery>.bg-center .figure-div {
+.blog-gallery > .bg-center .figure-div {
   background-position: center !important;
 }
 

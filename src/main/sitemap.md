@@ -1,9 +1,10 @@
 ---
 title: 'Sitemap'
 summary: Lost? Hopefully, this sitemap will help you navigate to where you want to go!
-displayOrder: 6
+displayOrder: 4
 permalink: '/sitemap/index.html'
-tags: nav
+hide: true
+tags: main
 ---
 
 {% macro collectionList(section, name = null) %}

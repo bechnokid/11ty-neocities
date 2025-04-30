@@ -9,7 +9,15 @@
   font-size: .85em;
 }
 
+.container-fluid {
+  height: 100%
+}
+
 @media screen and (max-width: 999px) {
+  .container-fluid {
+    height: revert;
+  }
+
   #splash-container #theme-switcher-container {
     top: -3rem;
   }

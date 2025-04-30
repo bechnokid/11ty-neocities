@@ -1,5 +1,13 @@
 @import "basic.css";
 
+.favs .sidebar {
+  padding: .5rem;
+}
+
+.favs p {
+  margin: 0;
+}
+
 figure {
   float: left;
   padding: 1em;
@@ -18,12 +26,13 @@ figcaption {
   width: 1.75rem;
 }
 
-.faq dl {
-  margin-top: 1rem;
+.faq .question > p {
+  color: var(--text-primary);
+  font-weight: bold;
 }
 
-.faq dt {
-  color: var(--text-secondary);
+.faq ul {
+  padding-left: .5rem;
 }
 
 section.sitemap {

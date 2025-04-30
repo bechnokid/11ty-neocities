@@ -8,6 +8,14 @@
   },
   "items": [
     {
+      "date": "2025-04-30",
+      "content": [
+        "Brought back [/now](/now) page",
+        "Added [accessibility statement](/accessibility)",
+        "Other minor updates to site. If you don't notice them, that's a good thing!"
+      ]
+    },
+    {
       "date": "2025-04-20",
       "content": [
         "New journal entry",
@@ -43,7 +51,9 @@
           "New guestbook",
           "Link button is now hot-linkable"
         ]
-    },
+    }
+  ],
+  "oldItems": [
     {
       "date": "2025-03-24",
         "content": [
@@ -63,9 +73,7 @@
           "Added a <a href='/outgoing/links'>link</a>",
           "Added two <a href='/outgoing/webrings'>webrings</a>"
         ]
-    }
-  ],
-  "oldItems": [
+    },
     {
       "date": "2025-03-19",
         "content": [

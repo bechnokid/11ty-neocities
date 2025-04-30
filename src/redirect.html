@@ -1,0 +1,53 @@
+---js
+{
+  title: "Redirecting...",
+  pagination: {
+    data: "collections.all",
+    size: 1,
+    alias: "redirect",
+    before: function (data) {
+      return data.reduce((redirects, page) => {
+        if (Array.isArray(page.data.redirect_from)) {
+          for (let url of page.data.redirect_from) {
+            redirects.push({ to: page.url, from: url });
+          }
+        } else if (typeof page.data.redirect_from === 'string') {
+          redirects.push({ to: page.url, from: page.data.redirect_from });
+        }
+        return redirects;
+      }, []);
+    },
+    addAllPagesToCollections: false,
+  },
+  redirectUrl: "{{ redirect.to }}",
+  permalink: "{{ redirect.from }}/index.html",
+  eleventyExcludeFromCollections: true,
+}
+---
+<!DOCTYPE html>
+<html lang="{{ meta.lang }}" data-theme="light">
+<head>
+  {% include 'partials/head.html' %}
+  <script src="{{ meta.jsURL }}/bechnoQuery.js"></script>
+  <script src="{{ meta.jsURL }}/theme-switcher.js"></script>
+  <link rel="stylesheet" href="{{ meta.cssURL }}/redirect.css" type="text/css" media="all">
+  <title>Redirecting...</title>
+</head>
+<body>
+  <div class="container-fluid d-flex justify-content-center align-items-center">
+    <div class="content position-relative">
+      <img class="border border-2" src="/assets/images/redirect.png" alt="Redirecting image">
+      <div class="text-box position-absolute h-100 w-100">
+        <div class="row g-0 h-100 p-4">
+          <div class="col-6 offset-6 d-flex justify-content-center align-items-center">
+            <div class="text-content text-center">
+              <h1>Redirecting...</h1>
+              <p class="mt-0 mt-lg-2"><a href="{{ redirect.to | url }}">Click here if you're not redirected.</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

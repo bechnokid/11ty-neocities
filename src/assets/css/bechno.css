@@ -60,8 +60,20 @@ a {
   color: var(--text-link);
 }
 
+a svg {
+  fill: var(--text-link);
+}
+
+a:hover svg {
+  border-bottom: 1px solid var(--text-link);
+}
+
 a:focus {
-  color: var(--text-primary)
+  color: var(--text-primary);
+}
+
+a:focus svg {
+  color: var(--text-primary);
 }
 
 a:hover img,
@@ -136,11 +148,19 @@ hr.small {
 }
 
 hr.small::after {
-  content: none
+  content: none;
 }
 
 footer {
   font-size: .8em;
+}
+
+footer .rss-link svg {
+  transform: translate(-2px, 3px);
+}
+
+footer .rss-link:hover svg {
+  opacity: .75;
 }
 
 h1,
@@ -389,14 +409,14 @@ a.hidden-link {
 
 .tooltip-content {
   width: max-content;
+  max-width: 200px;
   line-height: 1.25em;
   position: absolute;
   opacity: 0;
   visibility: hidden;
   z-index: 99;
   top: 0px;
-	left: 50%;
-	transform: translate(-50%, calc(-100% - .25rem));
+  transform: translate(10%, calc(-100% - .25rem));
   font-size: .8em;
   padding: .5rem;
   text-align: center;
@@ -410,10 +430,33 @@ a.hidden-link {
   visibility: visible;
 }
 
+.ft-alert-triangle {
+  color: var(--text-link);
+}
+
+.freezeframe-btns {
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-body);
+  z-index: 99;
+}
+
+.mobile-only {
+  display: none;
+}
+
 @media screen and (max-width: 999px) {
   body {
     font-size: 1em;
     line-height: 1.7em;
+  }
+
+  .freezeframe-btns {
+    top: 3.7rem;
+  }
+
+  .freezeframe-btns button {
+    font-size: 1rem;
   }
 
   .page {
@@ -422,5 +465,13 @@ a.hidden-link {
 
   dd {
     margin: 0 0 1em 2em;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: revert;
   }
 }

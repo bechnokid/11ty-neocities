@@ -3,6 +3,7 @@ title: Links
 freezeframe: true
 displayOrder: 31
 permalink: '/links/index.html'
+flashing: true
 ---
 
 ## Fellow Netizens

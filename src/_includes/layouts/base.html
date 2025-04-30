@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang={{ meta.lang }} data-theme="light">
 <head>
   {% include "partials/head.html" %}
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
-  {% if freezeframe %}<script src="{{ main.jsURL }}/freezeframe.js"></script>{% endif %}
-  {% if code %}<link rel="stylesheet" href="{{ main.cssURL }}/highlight.css">{% endif %}
-  <script src="https://kit.fontawesome.com/2afcf0d7d7.js" crossorigin="anonymous"></script>
-  <script src="{{ main.jsURL }}/script.js" crossorigin="anonymous"></script>
-  {% block css %}<link rel="stylesheet" href="{{ main.cssURL }}/bechno.css" type="text/css" media="all">{% endblock css %}
-  {% if prism %}<link rel="stylesheet" href="{{ main.cssURL }}/prismJS.css" type="text/css" media="all" id="prismJS">{% endif %}
-  <title>{{ main.name }}{% if title != null %} - {{ title }}{% endif %}</title>
+  <script src="{{ meta.jsURL }}/bechnoQuery.js"></script>
+  {% if freezeframe %}<script src="{{ meta.jsURL }}/freezeframe.js"></script>{% endif %}
+  {% if code %}<link rel="stylesheet" href="{{ meta.cssURL }}/highlight.css">{% endif %}
+  <script src="{{ meta.jsURL }}/script.js" crossorigin="anonymous"></script>
+  {% block css %}<link rel="stylesheet" href="{{ meta.cssURL }}/bechno.css" type="text/css" media="all">{% endblock css %}
+  {% if prism %}<link rel="stylesheet" href="{{ meta.cssURL }}/prismJS.css" type="text/css" media="all" id="prismJS">{% endif %}
+  <title>{{ meta.name }}{% if title != null %} - {{ title }}{% endif %}</title>
 </head>
 <body class='position-relative'>
   <details class="burger">
@@ -18,7 +17,7 @@
   <div class="container-fluid d-flex justify-content-center p-0">
     <details class="burger">
       <summary class="burger-summary d-flex align-items-center px-2 py-3" aria-label="Navigation Menu"></summary>
-      <nav><div class="sidebar">{% include "partials/navigation.html" %}</div></nav>
+      <nav><div class="sidebar pb-2 pb-lg-0">{% include "partials/navigation.html" %}</div></nav>
     </details>
     <div class="page bg-body">
       <a href="/home"><header class="bg-body"></header></a>
@@ -27,7 +26,6 @@
         <div class="row g-0">
           <nav id="nav-main" class="col-lg-2">
             <div class="sidebar">{% include "partials/navigation.html" %}</div>
-            {% if freezeframe %}{% include 'partials/freezeframe-buttons.html' %}{% endif %}
           </nav>
           <main id="main-content" class="col{{ " -lg-10" if title !="Home" }} px-2 py-lg-3 px-lg-4 position-relative" tabindex="-1">
             {% include 'partials/theme-switcher.html' %}
@@ -41,7 +39,7 @@
   </div>
   {% if freezeframe %}
   <script>
-    $(function () {
+    $(document).ready(function () {
       const e = new Freezeframe({ trigger: false, responsive: false });
       $(".play-gif").on("click", function () { e.start() });
       $(".stop-gif").on("click", function () { e.stop() });

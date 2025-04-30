@@ -5,8 +5,8 @@ aside b {
 }
 
 aside li {
-  padding: .25rem 1em;
-  margin-left: 1em;
+  padding: .25rem .5rem;
+  margin-left: .75em;
   line-height: 1.5em;
 }
 

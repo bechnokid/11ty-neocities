@@ -61,12 +61,12 @@ const toHtmlList = value => {
   if (value.length > 1) {
     let resultArr = ['<ul>'];
     for (let item of value) {
-      resultArr.push(`<li>${item}</li>`);
+      resultArr.push(`<li>${markdownLib.renderInline(item)}</li>`);
     }
     resultArr.push('</ul>');
     result = resultArr.join('');
   } else {
-    result = value;
+    result = markdownLib.renderInline(value);
   }
   return result;
 }
@@ -76,6 +76,10 @@ function parseDate (value, timeValue = null) {
   if (timeValue) timeStr = timeValue;
   let dateStr = `${value} ${timeStr}`;
   return new Date(dateStr);
+}
+
+function limit (arr, limit) {
+  return arr.slice(0, limit);
 }
 
 module.exports = {
@@ -88,5 +92,6 @@ module.exports = {
   markdownify,
   markdownifyInline,
   sortCollectionByDisplayOrder,
-  toHtmlList
+  toHtmlList,
+  limit
 }
