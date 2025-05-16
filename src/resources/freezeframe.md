@@ -4,9 +4,10 @@ shortTitle: FreezeframeJS Tutorial
 displayOrder: 2
 description: A tutorial on how to implement [Freezeframe.js](https://github.com/ctrl-freaks/freezeframe.js/), a library that can "freeze" animated GIFs.
 prism: true
+requiresJS: true
 redirect_from: [/tutorials/freezeframe, /resources/tut_freezeframe]
 ---
-<script src="{{ meta.jsURL }}/freezeframe.js"></script>
+<script src="{{ meta.jsUrl }}/freezeframe.js"></script>
 
 One of the greatest challenges for a web designer is creating a site that is accessible to those with disabilities. It's one thing to create responsive sites and provide alt text for screen readers, but I noticed a lot of Neocities users' sites are lacking one of the most important aspects: **avoiding seizure-inducing images**.
 

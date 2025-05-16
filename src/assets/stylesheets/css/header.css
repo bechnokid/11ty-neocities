@@ -1,0 +1,16 @@
+.page header {
+  height: 150px;
+  background-image: var(--header-img);
+  background-size:cover;
+  background-position: center;
+}
+
+.page a header:hover {
+  border-bottom: 5px solid var(--text-primary);
+}
+
+@media only screen and (max-width:1000px) {
+  .page header {
+    height: 83px;
+  }
+}

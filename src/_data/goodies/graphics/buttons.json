@@ -10,8 +10,7 @@
     "items": [
       {
         "src": "ai-theft.gif",
-        "alt": "A button that says, \"AI is theft, not art!\", with the letters \"AI\" crossed out.",
-        "freezeframe": true
+        "alt": "A button that says, \"AI is theft, not art!\", with the letters \"AI\" crossed out."
       },
       {
         "src": "no-hotlinks.png",
@@ -157,8 +156,7 @@
       },
       {
         "src": "dontyouhate.gif",
-        "alt": "An animated button with scrolling text that reads 'Don't you hate it when you're reading a page, and then some' before it is cut off with smaller text that reads 'This content is for subscribers only :)' The text then reads 'Paywalls gatekeep knowledge'",
-        "freezeframe": true
+        "alt": "An animated button with scrolling text that reads 'Don't you hate it when you're reading a page, and then some' before it is cut off with smaller text that reads 'This content is for subscribers only :)' The text then reads 'Paywalls gatekeep knowledge'"
       },
       {
         "src": "css-is-difficult.png",

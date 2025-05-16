@@ -10,6 +10,7 @@ paginationPrevText: 'Newer posts'
 paginationNextText: 'Older posts'
 paginationAnchor: '#post-list'
 description: Not unlike a diary or journal, longer entries can be found here.
+noScroll: true
 ---
 
 There will be times where I just want to keep rambling about things I've experienced, good or bad! Hopefully, mostly good!

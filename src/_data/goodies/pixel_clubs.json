@@ -80,6 +80,9 @@
           { "src": "bechnokid_steak.png", "desc": "a pattern based on a Felyne from the Monster Hunter games. There is a Well-Done Steak in the tea cup." },
           { "src": "lostletters.png", "desc": "an octopus bathing in it. The cup is blue and shaped like an onsen", "link": "https://lostletters.neocities.org/afternoontea/" },
           { "src": "floral-tears.png", "desc": "two scoops of mint chocolate chip ice cream. The cup is white with a green leaf pattern", "link": "https://floral-tears.neocities.org/adoptables" },
+          { "src": "sleepymoss.gif", "desc": "some clovers in it. The cup is pink with white polka dots", "link": "https://sleepymoss.neocities.org" },
+          { "src": "sakuradreams.gif", "desc": "Jiji from Kikis Delivery Service in it. The cup is white with a red ribbon.", "link": "https://sakuradreams.neocities.org" },
+          { "src": "mouthsweets.png", "desc": "a ribbon wrapped around the handle. The cup is pink and mint", "link": "https://mouthsweets.neocities.org/" },
           { "src": "artwork.gif", "desc": "Korilakkuma and Rilakkuma sitting in it", "link": "https://artwork.neocities.org/cliques" }
         ]
       }
@@ -103,6 +106,7 @@
       },
       "collection": {
         "title": "Shopping Cart",
+        "open": true,
         "columnNames": ["item", "description", "purchased from"],
         "rows": [
           { "src": "vencake.png", "alt": "a hamburger", "desc": "Hamburger",  "name": "Vencake", "link": "https://vencake.neocities.org/shoppe" },
@@ -156,6 +160,26 @@
           { "src": "percevalprintpress.png", "link": "https://percevalprintpress.neocities.org/", "desc": "A bottle of glue with a label that reads, \"Paste\"" },
           { "src": "spaceshanty.png", "link": "https://thespaceshanty.neocities.org/Cliques/", "desc": "A bottle of a purple-colored drink with a green label" },
           { "src": "artwork.png", "link": "https://artwork.neocities.org/cliques", "desc": "A milk carton that looks like Korilakkuma with text that reads \"strawberry o'lait\" in Japanese." }
+        ]
+      }
+    },
+    "jarjam": {
+      "title": "Jar Jams",
+      "owner": {
+        "name": "Blissnet",
+        "link": "https://blissnet.neocities.org/toybox/JJ"
+      },
+      "altText": "A jar ",
+      "collection": {
+        "title": "My Pantry",
+        "open": true,
+        "items": [
+          { "src": "bechnokid_potion.png", "desc": "that is shaped like a potion bottle from Monster Hunter" },
+          { "src": "blissnet_jam.png", "desc": "of strawberry jam", "link": "https://blissnet.neocities.org/toybox/JJ"},
+          { "src": "blissnet_lonlonmilk.png", "desc": "of Lon Lon Milk from the Legend of Zelda", "link": "https://blissnet.neocities.org/toybox/JJ" },
+          { "src": "artwork.gif", "desc": "with a soot sprite and some konpeito inside", "link": "https://artwork.neocities.org/" },
+          { "src": "keysklubhouse.gif", "desc": "with a rainbow inside", "link": "https://keysklubhouse.com/" },
+          { "src": "sakuradreams.png", "desc": "of honey with a picture of a bee on the label", "link": "https://sakuradreams.neocities.org/" }
         ]
       }
     }

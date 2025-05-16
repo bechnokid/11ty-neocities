@@ -4,13 +4,14 @@ shortTitle: 'Accessibility'
 displayOrder: 1
 prism: true
 permalink: '/accessibility/index.html'
+noScroll: true
 ---
 
 I used to be one of those "don't be a phone chump, use a desktop" chumps, mainly because I thought that having a mobile-friendly site meant that it had to look generic and "corporate".
 
 I realized that this didn't need to be the case after coming across some other indie web developers' fun sites. So, I wanted to challenge myself in making my personal site fun AND accessible.
 
-## Bechno Kid's Hideout should have the following:
+## This site should have the following:
 
 - Mobile-responsive layouts throughout the site
 - Toggles for light and dark mode
@@ -28,4 +29,4 @@ I realized that this didn't need to be the case after coming across some other i
   - Even with JS disabled, warnings will be implemented for flashing and blinking GIFs
 - **Absolutely no autoplay**
 
-This site will frequently be tested in multiple sizes and resolutions. I might still miss some things, but I will do my best to fix them if pointed out, so don't be afraid to let me know via [email](mailto:bechnokid@yahoo.com)!
+This site will frequently be tested in multiple sizes and resolutions. I might still miss some things, but I will do my best to fix them if pointed out, so don't be afraid to let me know via email via [bechnokid@yahoo.com](mailto:bechnokid@yahoo.com)!

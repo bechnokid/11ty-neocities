@@ -1,14 +1,28 @@
 {
-  "template":
-  {
-    "date": "YYYY-MM-DD",
-    "content": [
-      ""
-    ]
-  },
+  "template":[
+    {
+      "date": "YYYY-MM-DD",
+      "content": [
+        ""
+      ],
+      "summary": ""
+    }
+  ],
   "items": [
     {
+      "date": "2025-05-16",
+      "content": [
+        "New [shrine](/shrines/gilgamesh)",
+        "New buttons",
+        "Added a [pixel club](/goodies/pixel_clubs) and [links](/links)",
+        "Updated microblog and latest status widget",
+        "[RSS feed](/feed.xml) now looks pretty :3"
+      ],
+      "summary": "<p>Lots of new updates this time around!</p><p><strong>Major updates:</strong></p><ul><li>Added a brand new [shrine](/shrines/gilgamesh) dedicated to one of my favorite Final Fantasy characters!</li><li>New button! There are also buttons available in 32x32 and 200x40.</li><li>My RSS feed now looks super fancy, making it easier to read without a feed reader. It looks a little weird in Firefox, but that's a problem for another day lol</li><li>Microblog and &quot;Latest Status&quot; widget have now been placed by StatusCafe to allow myself to make quick status updates without misleading others into thinking I made a huge update on the site. XD;;</li><li>Added a button that allows users to scroll to the top of the page. Yes, it is pure CSS. :3</li><li>Added a [pixel club](/goodies/pixel_clubs) and some [links](/links)!</li></ul><p><strong>Minor updates:</strong></p><ul><li>Changed the RSS feed icon to its original orange</li><li>Updated the example code in Status Cafe feed reader tutorial to be a bit more robust</li><li>Moved fanlistings and webrings into one page called \"Joined\"</li></ul>"
+    },
+    {
       "date": "2025-04-30",
+      "summary": "Hi there! I decided to bring back the [/now](/now) page.\n\nThere is also an [accessibility statement](/accessibility)! I really want to make it clear that I'm trying to make my website as accessible as possible! It won't be perfect, but at least my site works on mobile!",
       "content": [
         "Brought back [/now](/now) page",
         "Added [accessibility statement](/accessibility)",
@@ -17,6 +31,7 @@
     },
     {
       "date": "2025-04-20",
+      "summary": "Tons of new stuff and fixes this time around! There were also several big mistakes in the example code in the StatusFeed reader tutorial but are now fixed thanks to an email I got :)",
       "content": [
         "New journal entry",
         "Made some of my own adopts",
@@ -27,6 +42,7 @@
     },
     {
       "date": "2025-04-12",
+      "summary": "Bechno Kid's Hideout has finally joined the dark side and implemented a toggle for dark mode! It's unfortunately not available if Javascript is disabled...\n\nPerhaps one day, I'll figure out a CSS-only light/dark toggle!",
       "content": [
         "Added dark mode",
         "Updated header",

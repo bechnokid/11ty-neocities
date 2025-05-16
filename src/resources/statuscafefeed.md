@@ -4,13 +4,15 @@ shortTitle: StatusCafe Feed Tutorial
 displayOrder: 4
 description: A tutorial on how to create a feed reader directly from [StatusCafe](https://status.cafe/).
 prism: true
+requiresJS: true
+redirect_from: [/resources/tut_statuscafefeed]
 ---
 
 While I may not use StatusCafe anymore, I'm sure there are many who already have an account on that site, and perhaps want to make a microblog out of it to put in their own site.
 
 It is possible to modify the CSS in your StatusCafe account and then put it in an iframe, but creating a feed reader allows for more customization, if needed.
 
-**Note:** Creating this feed reader requires Javascript.
+If you'd like to [skip straight to the source code](#finished-html), I got you!
 
 ## 1) Obtaining StatusCafe's Feed
 
@@ -69,17 +71,19 @@ The way how StatusCafe sets up their feeds makes things a little difficult, and 
 Underneath `const entries = data.querySelectorAll("entry")`, add the following:
 
 ```js
-let html = ``;
-
-entries.forEach(el => {
-  let title = el.querySelector("title").innerHTML.slice(0, NUMBER_OF_CHARACTERS).trim();
-  let content = el.querySelector("content").textContent.trim();
-  let dateString = el.querySelector("published").innerHTML.slice(0, 10);
-});
+let html = `<p>No statuses yet.</p>`;
+if (entries.length > 1){
+  entries.forEach(el => {
+    let title = el.querySelector("title").innerHTML.slice(0, NUMBER_OF_CHARACTERS).trim();
+    let content = el.querySelector("content").textContent.trim();
+    let dateString = el.querySelector("published").innerHTML.slice(0, 10);
+  });
+}
 ```
 
 This loop takes the data from each StatusCafe post and splits them into different variables that we can put into the "html" variable later on. I'll explain each one.
 
+- **html** - The HTML that will display all of your data from StatusCafe. You'll notice that it says that you don't have any statuses by default. This will only show if you don't have any posts in your StatusCafe. Otherwise, it will change.
 - **title** - Displays your StatusCafe username along with the emoji picked when creating the post. Note the `NUMBER_OF_CHARACTERS` shown in the code block. This number should be equal to the number of characters in your username. However, if you want to include the emoji associated with the status, just add 3 to the number of characters in your username.
   - For example, my username "bechnokid" contains 9 characters. If I wanted to include the emoji, I would replace `NUMBER_OF_CHARACTERS` with 9 + 3, which would be 12.
   - The final line would then be the following:
@@ -113,7 +117,7 @@ document.getElementById("feed-reader").innerHTML = html;
 
 This line will look for the HTML element with the id attribute `feed reader` and fill it with the data stored in the `html` variable.
 
-## 6) The Finished HTML
+## 6) The Finished HTML { #finished-html }
 
 The finished HTML should look something like this:
 
@@ -130,17 +134,18 @@ The finished HTML should look something like this:
         .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
         .then(data => {
           const entries = data.querySelectorAll("entry");
-          let html = ``;
-
-          entries.forEach(el => {
-            let title = el.querySelector("title").innerHTML.slice(0, NUMBER_OF_CHARACTERS).trim();
-            let content = el.querySelector("content").textContent.trim();
-            let dateString = el.querySelector("published").innerHTML.slice(0, 10);
-            html += `
-              <p>${title} - ${dateString}</p>
-              <p>${content}</p>
-            `;
-          })
+          let html = (entries.length < 1) ? `<p>No statuses yet.</p>`: '';
+          if (entries.length > 1){
+            entries.forEach(el => {
+              let title = el.querySelector("title").innerHTML.slice(0, NUMBER_OF_CHARACTERS).trim();
+              let content = el.querySelector("content").textContent.trim();
+              let dateString = el.querySelector("published").innerHTML.slice(0, 10);
+              html += `
+                <p>${title} - ${dateString}</p>
+                <p>${content}</p>
+              `;
+            });
+          }
           document.getElementById("feed-reader").innerHTML = html;
         })
     </script>
@@ -154,7 +159,9 @@ Again, be sure to replace `YOUR_STATUSCAFE_USERNAME` with your StatusCafe userna
 
 Using the script above, your feed reader should look something like the following (without any formatting):
 
-<div id="feed-reader" style="max-height:300px;overflow-y:auto;border:1px solid var(--bg-primary)"></div>
+(Example feed is from [m15o](https://status.cafe/users/m15o), the main developer of StatusCafe)
+
+<div id="feed-reader"></div>
 
 ## 8) Shortening the Reader (optional)
 
@@ -186,7 +193,7 @@ You might have noticed that there is a new variable now: `STATUS_LIMIT`. This ca
 
 If we change this number to 3, the feed reader will generate 3 posts, resulting in the following:
 
-<div id="feed-reader2" style="border:1px solid var(--bg-primary);margin-top:1em">
+<div id="feed-reader2"></div>
 
 ## 9) Closing Thoughts
 
@@ -194,4 +201,4 @@ Thank you for reading this tutorial! Like I said previously, it is entirely poss
 
 If you come across any issues or mistakes with this tutorial, feel free to email me at [bechnokid@yahoo.com!](mailto:bechnokid@yahoo.com)
 
-<script>const feedURL = 'https://status.cafe/users/bechnokid.atom';fetch(feedURL).then(response => response.text()).then(str => new window.DOMParser().parseFromString(str, "text/xml")).then(data => {const entries = data.querySelectorAll("entry");let html = ``;let title, content, dateString = ``;entries.forEach(el => {title = el.querySelector("title").innerHTML.slice(0, 12).trim();content = el.querySelector("content").textContent.trim();dateString = el.querySelector("published").innerHTML.slice(0,10);html += `<p>${title} - ${dateString}<p><p>${content}</p>`;});let html2 = ``;for (i = 0; i < 3; i++) {title = entries[i].querySelector("title").innerHTML.slice(0, 12).trim();content = entries[i].querySelector("content").textContent.trim();dateString = entries[i].querySelector("published").innerHTML.slice(0,10);html2 += `<p>${title} - ${dateString}<p><p>${content}</p>`;}html2 += `<p><a href='https://status.cafe/users/bechnokid'>See more at StatusCafe</a></p>`;document.getElementById("feed-reader").innerHTML = html;document.getElementById("feed-reader2").innerHTML = html2;})</script>
+<script src="{{ meta.jsUrl }}/status-feed-example.js"></script>

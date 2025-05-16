@@ -1,0 +1,276 @@
+@import "../reset.css";
+
+@font-face {
+  font-family: 'Antara Distance';
+  src: url(/assets/fonts/AntaraDistance.otf);
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: .8em;
+  background: linear-gradient(to bottom, #9d618c 0%, #9d618c 25%, #75496a 100%);
+	background-size: 100%;
+	background-repeat: no-repeat;
+  line-height: 1.5em;
+  color: #25234A;
+}
+
+header {
+  margin-top: 8rem;
+  margin-bottom: 6rem;
+  text-align: center;
+  height: 357px;
+  background-color: #75496a;
+  z-index: 99;
+}
+
+header img {
+  margin-top: -7.1rem;
+}
+
+hr {
+  margin: 1rem 0;
+  border: 0;
+  border-top: 2px dotted #75496a;
+}
+
+.toc {
+  text-align: center;
+  padding: 0 .75rem 0 .75rem;
+}
+
+.toc ol {
+  list-style-type: none;
+}
+
+.home {
+  padding: 0 .75rem;
+}
+
+a,
+details summary {
+  color: #9a0045;
+}
+
+.desktop-nav .toc a,
+.desktop-nav .home a,
+.mobile-nav {
+  border: 1px solid #3B2F55;
+  border-radius: .5rem;
+  background-color: #f6dff0;
+}
+
+.mobile-nav {
+  display: none;
+  margin: .5rem 0;
+  font-size: 1.25em;
+}
+
+.mobile-nav summary {
+  font-weight: bold;
+}
+
+.mobile-nav li {
+  margin: .5rem 0;
+}
+
+.desktop-nav .toc a,
+.desktop-nav .home a {
+  display: block;
+  font-weight: bold;
+  text-decoration: none;
+  width: 100%;
+  padding: 1rem;
+}
+
+.toc a:hover,
+.home a:hover {
+  background-color: #cea4c3;
+}
+
+.toc a {
+  margin-bottom: 1rem;
+}
+
+.container-fluid {
+  margin-top: -4rem;
+}
+
+.content {
+  width: 1000px;
+}
+
+.content h1 {
+  font-size: 6em;
+  font-style: italic;
+  font-weight: normal;
+  font-family: 'Antara Distance';
+  color: #f6dff0;
+}
+
+.mobile-nav + .row {
+  margin-top: 2.5rem;
+}
+
+main {
+  border: 1px solid #3B2F55;
+  border-radius: 1rem;
+  background-color: #f6dff0;
+}
+
+h2,
+h3 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #9a0045;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+blockquote {
+  position: relative;
+  border-left: 2px solid #75496a;
+  background-color: #fdf5fb;
+}
+
+blockquote::before {
+  content: "\201C";
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 5em;
+  position: absolute;
+  left: 1rem;
+  top: 2rem;
+  color: #9a0045;
+  opacity: .5;
+}
+
+main ul {
+  margin: 1rem 0 1rem 1.25rem;
+}
+
+main li {
+  padding-left: .75rem;
+}
+
+main li::marker {
+  content: "♦"
+}
+
+main li:not(:last-child) {
+  margin-bottom: .25rem;
+}
+
+main a:hover img {
+  opacity: .5;
+}
+
+.siduri-img,
+.gallery img {
+  height: 250px;
+  width: 250px;
+  border: 2px solid #75496a;
+}
+
+.siduri-img {
+  overflow: hidden;
+  float: left;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+}
+
+.siduri-bio p {
+  margin: 0;
+}
+
+.siduri-bio strong {
+  color: #9a0045;
+}
+
+.gallery img {
+  object-fit: cover;
+}
+
+.gallery > * {
+  margin: 0 .5rem;
+}
+
+.wrong-gilgamesh img {
+  height: 500px;
+  width: 500px;
+  object-fit: cover;
+}
+
+.back-to-top {
+  position: absolute;
+  top: 100vh;
+  right: 1rem;
+  bottom: 1rem;
+  width: 3em;
+  pointer-events: none;
+}
+
+.back-to-top a {
+  position: fixed;
+  position: sticky;
+  padding: .5rem;
+  pointer-events: all;
+  top: calc(100vh - 4rem);
+  border: 1px solid #75496a;
+  border-radius: .5rem;
+  font-size: 2em;
+  text-decoration: none;
+  background-color: #fdf5fb;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    height: unset;
+    background-color: unset;
+    margin-bottom: 3rem;
+  }
+
+  .mobile-nav {
+    display: block;
+  }
+
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .content h1 {
+    font-weight: bold;
+    font-size: 2em;
+    font-style: unset;
+    text-align: center;
+    line-height: .8em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  .row {
+    margin-top: 0 !important;
+  }
+
+  .gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery > * {
+    margin: .5rem 0;
+  }
+
+  .wrong-gilgamesh img {
+    height: unset;
+    width: unset;
+  }
+
+  .back-to-top {
+    right: 2rem;
+  }
+}

@@ -4,6 +4,7 @@ shortTitle: VSCode Tutorial
 displayOrder: 3
 description: A tutorial on how to use VSCode to help make developing Neocities sites a little easier.
 prism: true
+redirect_from: [/blog/2022_08_22]
 ---
 ## 0) Introduction
 

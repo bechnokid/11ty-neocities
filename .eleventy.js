@@ -3,6 +3,7 @@ const lightningCSS = require("@11tyrocks/eleventy-plugin-lightningcss");
 const htmlmin = require("html-minifier-terser");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const brokenLinksPlugin = require("eleventy-plugin-broken-links");
+const pluginTOC = require('eleventy-plugin-toc');
 
 const {
   cssmin,
@@ -15,7 +16,8 @@ const {
   markdownifyInline,
   sortCollectionByDisplayOrder,
   toHtmlList,
-  limit
+  limit,
+  useCode,
 } = require('./config/filters');
 
 const {
@@ -25,12 +27,14 @@ const {
 
 const {
   icon,
+  emoticon,
   img,
   imgWithLink,
   freezeframeButtons,
   figure,
   details,
-  galleryBox
+  galleryBox,
+  convertToCode
 } = require('./config/shortcodes');
 
 const markdownLib = require('./config/plugins/markdown');
@@ -42,11 +46,12 @@ module.exports = async function(eleventyConfig){
 
   eleventyConfig.addPassthroughCopy('./src/assets/images/');
   eleventyConfig.addPassthroughCopy('./src/assets/fonts/');
-  eleventyConfig.addPassthroughCopy('./src/assets/css/');
+  eleventyConfig.addPassthroughCopy('./src/assets/stylesheets/');
   eleventyConfig.addPassthroughCopy('./src/assets/javascript/');
 
   // Shortcodes
   eleventyConfig.addShortcode('icon', icon);
+  eleventyConfig.addShortcode('emoticon', emoticon);
   eleventyConfig.addShortcode('img', img);
   eleventyConfig.addShortcode('imgWithLink', imgWithLink);
   eleventyConfig.addShortcode('freezeframeButtons', freezeframeButtons);
@@ -55,6 +60,7 @@ module.exports = async function(eleventyConfig){
   eleventyConfig.addPairedShortcode('figure', figure);
   eleventyConfig.addPairedShortcode('details', details);
   eleventyConfig.addPairedShortcode('galleryBox', galleryBox);
+  eleventyConfig.addPairedShortcode('convertToCode', convertToCode);
 
   // Transform
   eleventyConfig.addTransform("htmlmin", function (content) {
@@ -82,6 +88,7 @@ module.exports = async function(eleventyConfig){
   eleventyConfig.addFilter("markdownifyInline", markdownifyInline);
   eleventyConfig.addFilter('sortCollectionByDisplayOrder', sortCollectionByDisplayOrder);
   eleventyConfig.addFilter('toHtmlList', toHtmlList);
+  eleventyConfig.addFilter('useCode', useCode);
   eleventyConfig.addNunjucksFilter('limit', limit);
   eleventyConfig.addFilter("cssmin", cssmin);
 
@@ -94,6 +101,9 @@ module.exports = async function(eleventyConfig){
   eleventyConfig.addPlugin(lightningCSS);
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(IdAttributePlugin);
+  eleventyConfig.addPlugin(pluginTOC, {
+    tags: ['h2']
+  });
   //eleventyConfig.addPlugin(brokenLinksPlugin, { excludeUrls: ["https://deviantart.com/view/*", "https://www.youtube.com/watch?"] });
 
   eleventyConfig.setLibrary('md', markdownLib);

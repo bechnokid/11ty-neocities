@@ -16,14 +16,6 @@ If you already added my button to your site, let me know and I'll add you here!
 {% for item in netizens %}{% imgWithLink imgLink + item.src, item.link, { markdown: true, alt: altText + item.name, cls: 'mx-1', imgCls: 'freezeframe' if item.freezeframe } %}{% endfor %}
 {% endgalleryBox %}
 
-{% set array = site.fanlistings %}
-
-## Fanlistings I Joined
-{% set assetLink = '/assets/images/about/fanlistings/' %}
-{% galleryBox { markdown: { inline: true }, contentClass: 'fanlistings justify-content-center'} %}
-{% for item in fanlistings %}{% imgWithLink assetLink + item.src, item.link, { markdown: true, alt: item.alt, cls: 'mx-1' } %}{% endfor %}
-{% endgalleryBox %}
-
 ## Resources
 
 <table class='resources'>{% for item in resources %}<tr><td><a href='{{ item.url }}'>{{ item.name }}</a></td><td class='td-desc'>{{ item.desc }}</td></tr>{% endfor %}</table>

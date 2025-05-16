@@ -1,5 +1,4 @@
 ---
-title: Greenhouse / Webgarden
 shortTitle: Webgarden
 displayOrder: 4
 description: Little pots that show a sneak peek of the websites they're based on.
@@ -7,6 +6,7 @@ summary: A concept created by [Miss Moss](https://webgardens.neocities.org/)! It
 prism: true
 flashing: true
 navTag: 'js-required'
+permalink: '/goodies/webgarden/index.html'
 ---
 
 ## My Pot

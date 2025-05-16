@@ -1,0 +1,48 @@
+@import "basic.css";
+@import "updates.css";
+
+.intro-links {
+  font-family: 'Dyslexic';
+  color: var(--text-primary);
+  margin-bottom: 2rem !important;
+}
+
+.intro-links a {
+  color: var(--text-secondary);
+}
+
+.status .content p {
+  font-size: .85em;
+  max-height: 150px;
+  overflow: auto;
+}
+
+[data-theme="light"] .rainbow.clique {
+  background: linear-gradient(to right, #d20f39, #fe640b, #df8e1d, #40a02b, #1e66f5, #7287fd, #8839ef);
+  background-clip: text;
+  color: transparent;
+}
+
+[data-theme="light"] .rainbow.fav {
+  color: #07be91;
+}
+
+[data-theme="dark"] .rainbow.clique {
+  background: linear-gradient(to right, #f38ba8, #fab387, #f9e2af, #a6e3a1, #89b4fa, #b4befe, #cba6f7);
+  background-clip: text;
+  color: transparent;
+}
+
+[data-theme="dark"] .rainbow.fav {
+  color: #7afbe6;
+}
+
+.status-text {
+  font-size: .8rem;
+  line-height: 1.5em;
+}
+
+.status iframe {
+  width: 100%;
+  height: 100px;
+}

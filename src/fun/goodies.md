@@ -8,6 +8,7 @@ pagination:
 tags:
   - fun
 displayOrder: 21
+permalink: '/goodies/index.html'
 ---
 
 Fun web stuff will go here, from various blinkies to stickers! Note that many images do not belong to me, and will be properly sourced/linked!

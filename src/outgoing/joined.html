@@ -1,0 +1,63 @@
+---
+title: Places I've Joined
+shortTitle: Joined
+css: 'joined'
+summary: "**Warning:** Be cautious of any flashing colors and images when navigating away from this page."
+displayOrder: 32
+permalink: '/joined/index.html'
+debug: false
+requiresJS: true
+---
+{% if debug %}<script type='text/javascript' src='/assets/javascript/debug_webrings.js'></script>{% endif %}
+<script type='text/javascript' src='/assets/javascript/webrings.js'></script>
+
+{% macro createWebringCol (arr) %}
+  {% for webring in arr %}
+   {% if not webring.notJoined %}
+    <div class="d-flex align-items-center{{ " mb-2" if not loop.last }}">
+      {% if webring.widget %}
+        {% if debug and webring.debugWidget %}
+          {{ webring.debugWidget | safe }}
+        {% else %}
+          {{ webring.widget | safe }}
+        {% endif %}
+      {% else %}
+        {% if webring.prevLink %}
+        <a href="{{ webring.prevLink.link }}"><img class="me-1" src="{{ imgSrc + webring.prevLink.src }}"
+            alt="Previous button for {{ webring.title }}"></a>
+        {% endif %}
+        <a href="{{ webring.index.link }}"><img src="{{ imgSrc + webring.index.src }}"
+            alt="Index button for {{ webring.title }}"></a>
+        {% if webring.nextLink %}
+        <a href="{{ webring.nextLink.link }}"><img class="ms-1" src="{{ imgSrc + webring.nextLink.src }}"
+            alt="Next button for {{ webring.title }}"></a>
+        {% endif %}
+      {% endif %}
+    </div>
+   {% endif %}
+  {% endfor %}
+{% endmacro %}
+
+{% galleryBox { boxTitle: "Webrings", sidebarClass: "mb-4" } %}
+<div class="row g-0">
+  {% for webringCol in webrings %}
+    <div class="col-12 col-lg-4 d-flex flex-column align-items-center px-2">
+      {{ createWebringCol(webringCol) }}
+    </div>
+  {% endfor %}
+</div>
+{% endgalleryBox %}
+
+{% set assetLink = '/assets/images/about/fanlistings/' %}
+{% galleryBox { boxTitle: "Fanlistings", contentClass: 'fanlistings justify-content-center pt-0'} %}
+<div class="row g-0">
+  {% for key, value in fanlistings %}
+  <div class="col-12 col-lg-6">
+      <h3>{{ key | title }}</h3>
+      {% for item in value %}
+        {% imgWithLink assetLink + item.src, item.link, { alt: item.alt + " fanlisting button", cls: 'mx-1' } %}
+      {% endfor %}
+    </div>
+  {% endfor %}
+</div>
+{% endgalleryBox %}

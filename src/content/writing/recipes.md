@@ -3,6 +3,7 @@ title: 'Recipes'
 displayOrder: 3
 description: I'm no cook, but here are some recipes I've personally enjoyed!
 permalink: '/writing/recipes/index.html'
+noScroll: true
 ---
 
 <details open>

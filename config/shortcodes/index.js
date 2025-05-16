@@ -1,4 +1,5 @@
 const markdownLib = require('../plugins/markdown');
+const chars = require('../variables.js');
 
 const freezeframeButtons = function(options = {}) {
   let resultsArray = [
@@ -13,13 +14,20 @@ const freezeframeButtons = function(options = {}) {
 }
 
 const icon = function(value, options = {}) {
-  let iconVal = `<i class='ft-${value}'></i>`;
+  let iconVal = [`<i class='ft-${value}`, `'></i>`]
   if (value == 'meat') {
     let iconArr = [`<img class='meat svg' src='/assets/images/meat.svg'`, `>`];
     if (options.alt) iconArr.splice(1, 0, ` alt='${options.alt}'`)
     iconVal = iconArr.flat().join('');
+  } else {
+    if (options.cls) iconVal.splice(1, 0, ` ${options.cls}`);
+    iconVal = iconVal.flat().join('');
   }
   return iconVal;
+}
+
+const emoticon = function(value) {
+  return `<img class='emoticon' src='/assets/images/blog/emoticon/${value}.svg' aria-hidden='true'>`
 }
 
 const img = function(imgUrl, options = {}) {
@@ -39,7 +47,8 @@ const img = function(imgUrl, options = {}) {
     }
   }
   if (options.alt) resultsArray.splice(resultsArray.length - 1, 0, ` alt='${options.alt}'`);
-  if (options.cls) resultsArray.splice(resultsArray.length - 1, 0, ` class='${options.alt}'`);
+  if (options.cls) resultsArray.splice(resultsArray.length - 1, 0, ` class='${options.cls}'`);
+  if (options.hidden) resultsArray.splice(resultsArray.length - 1, 0, ` aria-hidden='true'`);
   return resultsArray.flat().join('');
 }
 
@@ -143,12 +152,25 @@ const galleryBox = function(children, options = {}) {
   }
 }
 
+const convertToCode = function(children){
+  let content = children;
+  content = content.replace(/[a-zA-Z]/g, m => isLowerCase(m) ? chars[m] : chars[m.toLowerCase()].toUpperCase());
+  return content;
+}
+
+// helper functions
+function isLowerCase(str) {
+  return str === str.toLowerCase() && str !== str.toUpperCase();
+}
+
 module.exports = {
   icon,
+  emoticon,
   img,
   imgWithLink,
   freezeframeButtons,
   figure,
   details,
-  galleryBox
+  galleryBox,
+  convertToCode,
 }

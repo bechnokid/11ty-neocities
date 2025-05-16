@@ -3,16 +3,19 @@
 {% set pageHeaderTitle = title | markdownifyInline | safe %}
 {% set pageHeaderSummary %}
   <time datetime="{{ date | w3DateFilter}}">{{ date | dayOfMonth }}</time>
+  {% if encode %}<p><strong>NOTE</strong>: The following journal entry is written in an undecipherable code.</p>{% endif %}
 {% endset %}
 
 {% block css %}
-  <link rel="stylesheet" href="{{ meta.cssURL }}/blog.css" type="text/css" media="all">
+  <link rel="stylesheet" href="{{ meta.cssUrl }}/blog.css" type="text/css" media="all">
 {% endblock css %}
 
 {% block content %}
   <article>
     {% include "partials/page-header.html" %}
-    <div class="my-4">{{ content | safe }}</div>
+    <div class="my-4 blog">
+      {{ content | safe }}
+    </div>
   </article>
   {% include "partials/go-back.html" %}
 {% endblock %}

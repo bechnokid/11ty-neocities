@@ -15,7 +15,7 @@
             <summary class="text-secondary">{{ link.data.title }}</summary>
             <ul class="ms-2">
               {% for subLink in link.data.pagination.items %}
-                {{ navLink(subLink.page.url, subLink.data.shortTitle or subLink.data.title, { cls: subLink.data.navTag , flashing: subLink.data.freezeframe or subLink.data.flashing }) }}
+                {{ navLink(subLink.page.url, subLink.data.shortTitle or subLink.data.title, { cls: subLink.data.navTag or "" , flashing: subLink.data.freezeframe or subLink.data.flashing }) }}
               {% endfor %}
             </ul>
           </details>

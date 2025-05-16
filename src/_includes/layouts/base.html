@@ -2,12 +2,13 @@
 <html lang={{ meta.lang }} data-theme="light">
 <head>
   {% include "partials/head.html" %}
-  <script src="{{ meta.jsURL }}/bechnoQuery.js"></script>
-  {% if freezeframe %}<script src="{{ meta.jsURL }}/freezeframe.js"></script>{% endif %}
-  {% if code %}<link rel="stylesheet" href="{{ meta.cssURL }}/highlight.css">{% endif %}
-  <script src="{{ meta.jsURL }}/script.js" crossorigin="anonymous"></script>
-  {% block css %}<link rel="stylesheet" href="{{ meta.cssURL }}/bechno.css" type="text/css" media="all">{% endblock css %}
-  {% if prism %}<link rel="stylesheet" href="{{ meta.cssURL }}/prismJS.css" type="text/css" media="all" id="prismJS">{% endif %}
+  <script src="{{ meta.jsUrl }}/bechnoQuery.js"></script>
+  {% if freezeframe %}<script src="{{ meta.jsUrl }}/freezeframe.js"></script>{% endif %}
+  {% if code %}<link rel="stylesheet" href="{{ meta.cssUrl }}/highlight.css">{% endif %}
+  <script src="{{ meta.jsUrl }}/script.js" crossorigin="anonymous"></script>
+  {% block css %}<link rel="stylesheet" href="{{ meta.cssUrl }}/bechno.css" type="text/css" media="all">{% endblock css %}
+  <noscript><link rel="stylesheet" href="{{ meta.cssUrl }}/no-script.css" type="text/css" media="all"></noscript>
+  {% if prism %}<link rel="stylesheet" href="{{ meta.cssUrl }}/prismJS.css" type="text/css" media="all" id="prismJS">{% endif %}
   <title>{{ meta.name }}{% if title != null %} - {{ title }}{% endif %}</title>
 </head>
 <body class='position-relative'>
@@ -22,14 +23,14 @@
     <div class="page bg-body">
       <a href="/home"><header class="bg-body"></header></a>
       <div class="bg-body main">
-        {% include 'partials/js-disabled.html' %}
         <div class="row g-0">
           <nav id="nav-main" class="col-lg-2">
             <div class="sidebar">{% include "partials/navigation.html" %}</div>
           </nav>
-          <main id="main-content" class="col{{ " -lg-10" if title !="Home" }} px-2 py-lg-3 px-lg-4 position-relative" tabindex="-1">
+          <main id="main-content" class="col{{ "-lg-10" if title !="Home" }} px-2 py-lg-3 px-lg-4 position-relative" tabindex="-1">
             {% include 'partials/theme-switcher.html' %}
             {% block content %}{% endblock %}
+            <div class="back-to-top{% if noScroll %} mobile-only{% endif %}"><a href="#" aria-label="Scroll to Top">{% icon 'arrow-up' %}</a></div>
           </main>
           {% if title == "Home" %}<aside class="col-lg-2 px-2 px-lg-0 my-3 my-lg-0">{% include "partials/homepage/updates.html" %}</aside>{% endif %}
         </div>

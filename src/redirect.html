@@ -28,20 +28,20 @@
 <html lang="{{ meta.lang }}" data-theme="light">
 <head>
   {% include 'partials/head.html' %}
-  <script src="{{ meta.jsURL }}/bechnoQuery.js"></script>
-  <script src="{{ meta.jsURL }}/theme-switcher.js"></script>
-  <link rel="stylesheet" href="{{ meta.cssURL }}/redirect.css" type="text/css" media="all">
+  <script src="{{ meta.jsUrl }}/bechnoQuery.js"></script>
+  <script src="{{ meta.jsUrl }}/theme-switcher.js"></script>
+  <link rel="stylesheet" href="{{ meta.cssUrl }}/redirect.css" type="text/css" media="all">
   <title>Redirecting...</title>
 </head>
 <body>
   <div class="container-fluid d-flex justify-content-center align-items-center">
     <div class="content position-relative">
-      <img class="border border-2" src="/assets/images/redirect.png" alt="Redirecting image">
+      <img class="border-sidebar border-2" src="/assets/images/redirect.png" alt="Redirecting image">
       <div class="text-box position-absolute h-100 w-100">
         <div class="row g-0 h-100 p-4">
           <div class="col-6 offset-6 d-flex justify-content-center align-items-center">
             <div class="text-content text-center">
-              <h1>Redirecting...</h1>
+              <h1 class="m-0">Redirecting...</h1>
               <p class="mt-0 mt-lg-2"><a href="{{ redirect.to | url }}">Click here if you're not redirected.</a></p>
             </div>
           </div>

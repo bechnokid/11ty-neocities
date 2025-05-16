@@ -2,8 +2,11 @@
 {% if pageHeaderSummary %}
   <p>{{ pageHeaderSummary | safe }}</p>
 {% endif %}
+{% if pageRequiresJS %}
+  <p><b>Note:</b> This page requires Javascript.</p>
+{% endif %}
 {% if pageFreezeframe %}
-  <p><b>Warning:</b> When clicking on any graphics with sources, please be cautious of any flashing images when you navigate away from this page.</p>
+  <p><strong>Warning:</strong> When clicking on any graphics with sources, please be cautious of any flashing images when you navigate away from this page.</p>
   {% include 'partials/freezeframe-buttons.html' %}
 {% endif %}
 <hr>

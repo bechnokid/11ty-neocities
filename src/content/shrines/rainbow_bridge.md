@@ -1,7 +1,8 @@
 ---
 title: The Rainbow Bridge
 shortTitle: Rainbow Bridge
-displayOrder: 1
+layout: 'layouts/shrines/rainbow_bridge.html'
+displayOrder: 2
 description: Dedicated to the small friends in my life.
 imgSrc: 'shrines/rainbow/'
 css: 'rainbow'

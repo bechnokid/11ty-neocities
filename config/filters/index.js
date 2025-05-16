@@ -1,7 +1,7 @@
 const { format } = require('date-fns');
-const { tz } = require('@date-fns/tz');
 const markdownLib = require('../plugins/markdown');
 const CleanCSS = require("clean-css");
+const chars = require('../variables.js');
 
 // Minifies CSS
 const cssmin = code => {
@@ -41,12 +41,12 @@ const w3DateFilter = value => {
 // Converts any string into Markdown
 const markdownify = value => {
   if (value == null) value = "";
-  return markdownLib.render(value);
+  return markdownLib.render(value.trim());
 }
 
 const markdownifyInline = value => {
   if (value == null) value = "";
-  return markdownLib.renderInline(value);
+  return markdownLib.renderInline(value.trim());
 }
 
 // Sorts collections by displayOrder
@@ -71,6 +71,15 @@ const toHtmlList = value => {
   return result;
 }
 
+function limit (arr, limit) {
+  return arr.slice(0, limit);
+}
+
+function useCode(value) {
+  return value.replace(/[a-zA-Z]/g, m => isLowerCase(m) ? chars[m] : chars[m.toLowerCase()].toUpperCase());
+}
+
+// helper methods
 function parseDate (value, timeValue = null) {
   let timeStr = "00:00";
   if (timeValue) timeStr = timeValue;
@@ -78,8 +87,8 @@ function parseDate (value, timeValue = null) {
   return new Date(dateStr);
 }
 
-function limit (arr, limit) {
-  return arr.slice(0, limit);
+function isLowerCase(str) {
+  return str === str.toLowerCase() && str !== str.toUpperCase();
 }
 
 module.exports = {
@@ -93,5 +102,6 @@ module.exports = {
   markdownifyInline,
   sortCollectionByDisplayOrder,
   toHtmlList,
+  useCode,
   limit
 }
