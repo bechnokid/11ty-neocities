@@ -11,19 +11,22 @@
         <li class="text-muted">{{ link.data.title }} (WIP)</li>
       {% elif link.data.subList %}
         <li class="desktop">
-          <details>
+          {% set sublinkItems = link.data.pagination.items | getPageLinks %}
+          <details{{ " open" if page.url in sublinkItems }}>
             <summary class="text-secondary">{{ link.data.title }}</summary>
             <ul class="ms-2">
-              {% for subLink in link.data.pagination.items %}
-                {{ navLink(subLink.page.url, subLink.data.shortTitle or subLink.data.title, { cls: subLink.data.navTag or "" , flashing: subLink.data.freezeframe or subLink.data.flashing }) }}
+              {% for sublink in link.data.pagination.items %}
+                {% set sublinkCls = sublink.data.navTag or "" %}
+                {{ navLink(sublink.page.url, sublink.data.shortTitle or sublink.data.title, { cls: sublinkCls , flashing: sublink.data.freezeframe or sublink.data.flashing }) }}
               {% endfor %}
             </ul>
           </details>
         </li>
         <li class="mobile nav-link-item section-title">{{ link.data.title }}
           <ul>
-            {% for subLink in link.data.pagination.items %}
-              {{ navLink(subLink.page.url, subLink.data.shortTitle or subLink.data.title, { cls: subLink.data.navTag + " mobile" , flashing: subLink.data.freezeframe or subLink.data.flashing}) }}
+            {% for sublink in link.data.pagination.items %}
+              {% set sublinkCls = sublink.data.navTag or "" %}
+              {{ navLink(sublink.page.url, sublink.data.shortTitle or sublink.data.title, { cls: sublinkCls + " mobile" , flashing: sublink.data.freezeframe or sublink.data.flashing}) }}
             {% endfor %}
           </ul>
         </li>

@@ -1,12 +1,11 @@
 ---
-title: 'Welcome'
-shortTitle: 'Splash page'
+title: 'Splash page'
 displayOrder: 1
 tags: main
 ---
 {% set splashImage = '/assets/images/splash.png' %}
 {% set splashImgAlt = "Splash image for Bechno Kid's Hideout that links to the home page" %}
-{% set lastUpdated = site.feed.items[0].date | monDayYear %}
+{% set lastUpdated = collections.rssFeed[0].data.date | monDayYear %}
 {% set contentBlock %}
 Welcome!
 
@@ -21,7 +20,7 @@ This website is mobile-friendly, but works best on a desktop at 1920 x 1080 with
     <noscript><link rel="stylesheet" href="{{ meta.cssUrl }}/no-script.css" type="text/css" media="all"></noscript>
     <link rel="stylesheet" href="{{ meta.cssUrl }}/splash.css" type="text/css" media="all">
     <script src="{{ meta.jsUrl }}/bechnoQuery.js"></script>
-    <title>{{ meta.name }}{% if title != null %} - {{ title }}{% endif %}</title>
+    <title>{{ meta.name }}</title>
   </head>
 <body>
   <main class="container-fluid d-flex justify-content-center align-items-center">

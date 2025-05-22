@@ -38,7 +38,7 @@ requiresJS: true
   {% endfor %}
 {% endmacro %}
 
-{% galleryBox { boxTitle: "Webrings", sidebarClass: "mb-4" } %}
+{% galleryBox { boxTitle: "Webrings", sidebarClass: "mb-4", contentClass: "overflow-y-auto webrings" } %}
 <div class="row g-0">
   {% for webringCol in webrings %}
     <div class="col-12 col-lg-4 d-flex flex-column align-items-center px-2">

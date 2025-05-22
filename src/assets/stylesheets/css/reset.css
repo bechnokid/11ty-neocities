@@ -262,6 +262,10 @@ ul {
   overflow-y: auto !important;
 }
 
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
 .carousel {
   display: flex;
   overflow-x: scroll;

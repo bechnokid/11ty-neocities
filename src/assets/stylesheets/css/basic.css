@@ -81,3 +81,19 @@ main ul li ul li::marker {
 noscript .sidebar.curses {
   height: 120px;
 }
+
+.no-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 88px;
+  height: 31px;
+  background-color: var(--bg-footer);
+  border: 1px dashed var(--text-link);
+  text-decoration: none;
+}
+
+.no-button-container:hover {
+  border-style: solid;
+  text-decoration: underline;
+}

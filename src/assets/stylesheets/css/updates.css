@@ -29,9 +29,13 @@ aside .update-content {
   font-size: .8em;
 }
 
+#timer .timer-img {
+  width: 100px;
+}
+
 @media screen and (max-width: 999px) {
   aside .update-content hr,
-  aside .update-content b:not(:first-of-type),
+  aside .update-content strong:not(:first-of-type),
   aside .update-content ul:not(:first-of-type) {
     display: none;
   }

@@ -77,7 +77,7 @@ ul li:not(:last-child) {
     font-size: 1em;
     line-height: 1.7em;
   }
-  
+
   #web-feed .container-wrapper {
     height: revert;
   }

@@ -1,16 +1,23 @@
 <div class="sidebar">
   <div class="h2 text-center p-1">❤ Updates ❤</div>
   <div class="update-content p-2">
-    {% for update in site.feed.items | limit(3) %}
-    <strong>{{ update.date | monDayYear }}</strong>
-    <ul>
-      {% for item in update.content %}
-      <li>{{ item | markdownifyInline | safe }}</li>
-      {% endfor %}
-    </ul>
+    {% set feedItems = collections.rssFeed | reverse %}
+    {% for update in feedItems | limit(3) %}
+      <strong>{{ update.data.date | monDayYear }}</strong>
+      <ul>
+        {% for item in update.data.updateContent %}
+        <li>{{ item | markdownifyInline | safe }}</li>
+        {% endfor %}
+      </ul>
       {% if loop.index != loop.length %}
       <hr class="small">
       {% endif %}
     {% endfor %}
   </div>
 </div>
+<div id="timer" class="sidebar mt-2 p-2 text-xs text-center">
+  {% img meta.imgUrl + "/burning_spice.png", { cls: "timer-img", alt: "Burning Spice Cookie from Cookie Run: Kingdom"} %}
+  <p class="m-0 js-required"><span class="timer-days">0</span> days since I<br>started looking for <strong>Burning Spice Cookie</strong></p>
+  <noscript><p class="m-0">Looking for <strong>Burning Spice Cookie</strong> since May 12th, 2025</p></noscript>
+</div>
+<script src="{{ meta.jsUrl}}/cookie-run-timer.js"></script>

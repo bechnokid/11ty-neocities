@@ -1,40 +1,22 @@
 const rssPlugin = require('@11ty/eleventy-plugin-rss');
-const lightningCSS = require("@11tyrocks/eleventy-plugin-lightningcss");
 const htmlmin = require("html-minifier-terser");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const brokenLinksPlugin = require("eleventy-plugin-broken-links");
 const pluginTOC = require('eleventy-plugin-toc');
 
 const {
-  cssmin,
-  date,
-  dayOfMonth,
-  monthDayYear,
-  monDayYear,
-  w3DateFilter,
-  markdownify,
-  markdownifyInline,
-  sortCollectionByDisplayOrder,
-  toHtmlList,
-  limit,
-  useCode,
+  date, dayOfMonth, monthDayYear, monDayYear, w3DateFilter,
+  markdownify, markdownifyInline, sortCollectionByDisplayOrder,
+  toHtmlList, limit, useCode, getPageLinks
 } = require('./config/filters');
 
 const {
-  writingPages,
-  blogPosts
+  writingPages, blogPosts
 } = require('./config/collections');
 
 const {
-  icon,
-  emoticon,
-  img,
-  imgWithLink,
-  freezeframeButtons,
-  figure,
-  details,
-  galleryBox,
-  convertToCode
+  icon, emoticon, emote, img, imgWithLink, freezeframeButtons,
+  figure, details, galleryBox, convertToCode
 } = require('./config/shortcodes');
 
 const markdownLib = require('./config/plugins/markdown');
@@ -52,6 +34,7 @@ module.exports = async function(eleventyConfig){
   // Shortcodes
   eleventyConfig.addShortcode('icon', icon);
   eleventyConfig.addShortcode('emoticon', emoticon);
+  eleventyConfig.addShortcode('emote', emote);
   eleventyConfig.addShortcode('img', img);
   eleventyConfig.addShortcode('imgWithLink', imgWithLink);
   eleventyConfig.addShortcode('freezeframeButtons', freezeframeButtons);
@@ -87,10 +70,9 @@ module.exports = async function(eleventyConfig){
   eleventyConfig.addFilter("markdownify", markdownify);
   eleventyConfig.addFilter("markdownifyInline", markdownifyInline);
   eleventyConfig.addFilter('sortCollectionByDisplayOrder', sortCollectionByDisplayOrder);
-  eleventyConfig.addFilter('toHtmlList', toHtmlList);
+  eleventyConfig.addFilter('getPageLinks', getPageLinks);
   eleventyConfig.addFilter('useCode', useCode);
   eleventyConfig.addNunjucksFilter('limit', limit);
-  eleventyConfig.addFilter("cssmin", cssmin);
 
   // Collections
   eleventyConfig.addCollection('writing', writingPages);
@@ -98,7 +80,6 @@ module.exports = async function(eleventyConfig){
 
   // Plugins
   eleventyConfig.addPlugin(rssPlugin);
-  eleventyConfig.addPlugin(lightningCSS);
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(IdAttributePlugin);
   eleventyConfig.addPlugin(pluginTOC, {

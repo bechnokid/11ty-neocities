@@ -446,6 +446,10 @@ a.hidden-link {
   width: 3.5em;
 }
 
+.inline-img {
+  vertical-align: top;
+}
+
 .back-to-top {
   position: absolute;
   top: 100vh;

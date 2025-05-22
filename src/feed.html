@@ -6,24 +6,25 @@ displayOrder: 5
 tags: main
 ---
 <?xml version="1.0" encoding="utf-8"?>
+{% set feedItems = collections.rssFeed %}
 <?xml-stylesheet href="{{ meta.stylesheetsUrl }}/styles.xslt" type="text/xml"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ meta.lang }}">
   <title>{{ meta.name }} - Web Feed</title>
   <link href="{{ meta.url }}/feed.xml" rel="self" type="application/atom+xml" />
   <subtitle>{{ summary }}</subtitle>
-  <updated>{{ site.feed.items[0].date | date | dateToRfc3339 }}</updated>
+  <updated>{{ feedItems[0].data.date | date | dateToRfc3339 }}</updated>
   <id>{{ meta.url }}/feed.xml</id>
   <author>
     <name>{{ meta.name }}</name>
     <uri>{{ meta.url }}</uri>
   </author>
-  {% for item in site.feed.items %}
+  {% for item in feedItems | reverse %}
   <entry>
-    <title>{{ item.date | monDayYear }} </title>
+    <title>{{ item.data.date | monDayYear }} </title>
     <link href="{{ meta.url }}/home"/>
-    <updated>{{ item.date | date | dateToRfc3339 }}</updated>
+    <updated>{{ item.data.date | date | dateToRfc3339 }}</updated>
     <id>{{ meta.url }}/home</id>
-    <content type="html">{{ item.summary | markdownifyInline | nl2br | renderTransforms }}</content>
+    <content type="html">{{ item.content | renderTransforms }}</content>
   </entry>
   {% endfor %}
 </feed>

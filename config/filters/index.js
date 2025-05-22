@@ -1,12 +1,6 @@
 const { format } = require('date-fns');
 const markdownLib = require('../plugins/markdown');
-const CleanCSS = require("clean-css");
 const chars = require('../variables.js');
-
-// Minifies CSS
-const cssmin = code => {
-  return new CleanCSS({}).minify(code).styles;
-}
 
 // Converts date string into Date object
 const date = value => {
@@ -56,27 +50,17 @@ const sortCollectionByDisplayOrder = collection => {
   );
 }
 
-const toHtmlList = value => {
-  let result = "Could not find content."
-  if (value.length > 1) {
-    let resultArr = ['<ul>'];
-    for (let item of value) {
-      resultArr.push(`<li>${markdownLib.renderInline(item)}</li>`);
-    }
-    resultArr.push('</ul>');
-    result = resultArr.join('');
-  } else {
-    result = markdownLib.renderInline(value);
-  }
-  return result;
-}
-
 function limit (arr, limit) {
   return arr.slice(0, limit);
 }
 
 function useCode(value) {
   return value.replace(/[a-zA-Z]/g, m => isLowerCase(m) ? chars[m] : chars[m.toLowerCase()].toUpperCase());
+}
+
+const getPageLinks = value => {
+  let resultArray = value.map( item => item.page.url )
+  return resultArray;
 }
 
 // helper methods
@@ -92,7 +76,6 @@ function isLowerCase(str) {
 }
 
 module.exports = {
-  cssmin,
   date,
   dayOfMonth,
   monthDayYear,
@@ -101,7 +84,7 @@ module.exports = {
   markdownify,
   markdownifyInline,
   sortCollectionByDisplayOrder,
-  toHtmlList,
+  getPageLinks,
   useCode,
   limit
 }

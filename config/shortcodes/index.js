@@ -27,7 +27,11 @@ const icon = function(value, options = {}) {
 }
 
 const emoticon = function(value) {
-  return `<img class='emoticon' src='/assets/images/blog/emoticon/${value}.svg' aria-hidden='true'>`
+  return `<img class='emoticon' src='/assets/images/blog/emoticon/${value}.svg' aria-hidden='true'>`;
+}
+
+const emote = value => {
+  return `<img class='inline-img' src='/assets/images/blog/emoticon/emote_${value}.gif' aria-hidden='true'>`;
 }
 
 const img = function(imgUrl, options = {}) {
@@ -166,6 +170,7 @@ function isLowerCase(str) {
 module.exports = {
   icon,
   emoticon,
+  emote,
   img,
   imgWithLink,
   freezeframeButtons,

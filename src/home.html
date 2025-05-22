@@ -11,9 +11,9 @@ noScroll: true
 {% set contentBlock %}
 Hello and welcome to **Bechno Kid's Hideout!**
 
-This is a little nook where a software programmer can live her childhood dream as a webmaster.
+This is a little nook where a software programmer can live her childhood dream as a webmaster. I don't have my artwork up yet, but hopefully soon! In the meantime, I have other goodies here! Otherwise, please enjoy your stay! :D
 
-I don't have my artwork up yet, but hopefully soon! In the meantime, I have other goodies here! Otherwise, please enjoy your stay! :D
+Webrings and fanlistings can be found in [/joined](/joined)!
 
 **Note**: Pages labeled with {% icon 'alert-triangle' %} will have blinking/flashing graphics when first loading or if you have Javascript disabled.
 {% endset %}
@@ -26,14 +26,14 @@ I don't have my artwork up yet, but hopefully soon! In the meantime, I have othe
     <hr>
     <div class="status-row row g-lg-3 mb-3">
       <div class="status col-lg-7 mb-3 mb-lg-0">
-        <div class="sidebar h-100">
+        <div class="sidebar h-100 overflow-hidden">
           <div class="h2 p-2">Latest Status</div>
           {% set status = microblog.microblog[0] %}
           <div id="latest-status" class="js-required status-container d-flex">
           </div>
           <noscript>
             <div class='px-2'>
-              <iframe scrolling='no' src="https://status.cafe/users/bechnokid" frameborder="0"></iframe>
+              <iframe scrolling="no" src="https://status.cafe/users/bechnokid" frameborder="0"></iframe>
             </div>
           </noscript>
         </div>

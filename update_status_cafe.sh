@@ -9,8 +9,8 @@ encoded_text=$(printf "%s" "$text" | jq -sRr '@uri' | sed 's/%20/+/g')
 encoded_emoji=$(printf "%s" "$emoji" | jq -sRr '@uri')
 
 size=${#encoded_text}
-if [ $size -gt 140 ]; then
-  echo "Text has to be less than 140 characters"
+if [ $size -gt 160 ]; then
+  echo "Text has to be less than 160 characters"
 else
   curl 'https://status.cafe/add' \
     -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7' \

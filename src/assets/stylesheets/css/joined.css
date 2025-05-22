@@ -9,6 +9,10 @@ tr {
   background-color: initial !important;
 }
 
+.webrings {
+  max-height: 600px
+}
+
 /* Jelly World */
 
 #jelly-world {

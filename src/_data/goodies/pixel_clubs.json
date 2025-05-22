@@ -95,7 +95,7 @@
       },
       "altText": "A small pixel of ",
       "mine": {
-        "title": "My Shoppe",
+        "title": "Shoppe",
         "open": true,
         "columnNames": ["item", "description"],
         "rows": [
@@ -149,7 +149,7 @@
         "link": "https://fizzsea.neocities.org/extra/fizzyvendor"
       },
       "collection": {
-        "title": "My Cooler",
+        "title": "Cooler",
         "open": true,
         "items": [
           { "src": "bk_felyne.png", "desc": "A green and yellow can that has a Felyne and a Potion from Monster Hunter" },
@@ -171,8 +171,9 @@
       },
       "altText": "A jar ",
       "collection": {
-        "title": "My Pantry",
+        "title": "Pantry",
         "open": true,
+        "alignItems": "baseline",
         "items": [
           { "src": "bechnokid_potion.png", "desc": "that is shaped like a potion bottle from Monster Hunter" },
           { "src": "blissnet_jam.png", "desc": "of strawberry jam", "link": "https://blissnet.neocities.org/toybox/JJ"},
