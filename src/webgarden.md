@@ -8,7 +8,8 @@ art, blog, resources, and more?!
 {% endset %}
 {% set gardenImage = '/assets/images/webgarden_head.png' %}
 {% set gardenImgAlt = 'Image of Bechno Kid for her webgarden pot' %}
-{% set lastUpdated = collections.rssFeed[0].data.date | monDayYear %}
+{% set feedItems = collections.rssFeed | reverse %}
+{% set lastUpdated = feedItems[0].data.date | monDayYear %}
 <!DOCTYPE html>
 <html lang={{ meta.lang }} data-theme="light">
   <head>

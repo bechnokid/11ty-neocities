@@ -1,0 +1,30 @@
+<section>
+  {% set objetPath = goodies.pixel_clubs.items.objets %}
+  {% set objetLink = goodies.pixel_clubs.imgLink + "objets" %}
+  {% set objetAlt = objetPath.altText %}
+  <h2>Objets</h2>
+  <p>Created by <a href="{{ objetPath.owner.link }}">{{ objetPath.owner.name }}</a>!</p>
+  <div class="row">
+    <div class="col-lg-6 col-12 position-relative">
+      <img src="{{ objetLink }}/box.png" alt="" aria-hidden="true">
+      <div class="objets row-1 position-absolute">
+        {% for item in objetPath.mine.row1 %}
+          <img src="{{ objetLink }}/{{ item.src }}" alt="{{ objetAlt + item.alt }}">
+        {% endfor %}
+      </div>
+      <div class="objets row-2 position-absolute">
+        {% for item in objetPath.mine.row2 %}
+          <img src="{{ objetLink }}/{{ item.src }}" alt="{{ objetAlt + item.alt }}">
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-lg-6 col-12">
+      <p class="objets-collect-text m-0 mb-1 text-xs text-center">Objets I Collected</p>
+      <div class="objets-collect-container d-flex flex-wrap justify-content-center align-items-baseline p-3">
+        {% for item in objetPath.collection %}
+          <a href="{{ item.link }}" class="mx-1"><img src="{{ objetLink }}/{{ item.src }}" alt="{{ objetAlt + item.alt }}"></a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

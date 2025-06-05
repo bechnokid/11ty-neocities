@@ -27,11 +27,11 @@ const icon = function(value, options = {}) {
 }
 
 const emoticon = function(value) {
-  return `<img class='emoticon' src='/assets/images/blog/emoticon/${value}.svg' aria-hidden='true'>`;
+  return `<img class='emoticon' src='/assets/images/blog/emoticon/${value}.svg' aria-hidden='true' alt=''>`;
 }
 
 const emote = value => {
-  return `<img class='inline-img' src='/assets/images/blog/emoticon/emote_${value}.gif' aria-hidden='true'>`;
+  return `<img class='inline-img' src='/assets/images/blog/emoticon/emote_${value}.png' aria-hidden='true' alt=''>`;
 }
 
 const img = function(imgUrl, options = {}) {

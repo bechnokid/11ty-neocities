@@ -1,9 +1,13 @@
+---
+permalink: '/writing/blog/{{ date }}.html'
+---
 {% extends "layouts/base.html" %}
 
 {% set pageHeaderTitle = title | markdownifyInline | safe %}
 {% set pageHeaderSummary %}
-  <time datetime="{{ date | w3DateFilter}}">{{ date | dayOfMonth }}</time>
+  <time class="text-primary" datetime="{{ date | w3DateFilter}}">{{ date | dayOfMonth }}</time>
   {% if encode %}<p><strong>NOTE</strong>: The following journal entry is written in an undecipherable code.</p>{% endif %}
+  {% if summary %}<p>{{ summary | markdownifyInline | safe }}</p>{% endif %}
 {% endset %}
 
 {% block css %}

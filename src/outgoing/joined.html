@@ -49,15 +49,13 @@ requiresJS: true
 {% endgalleryBox %}
 
 {% set assetLink = '/assets/images/about/fanlistings/' %}
-{% galleryBox { boxTitle: "Fanlistings", contentClass: 'fanlistings justify-content-center pt-0'} %}
-<div class="row g-0">
-  {% for key, value in fanlistings %}
-  <div class="col-12 col-lg-6">
-      <h3>{{ key | title }}</h3>
-      {% for item in value %}
-        {% imgWithLink assetLink + item.src, item.link, { alt: item.alt + " fanlisting button", cls: 'mx-1' } %}
-      {% endfor %}
-    </div>
-  {% endfor %}
-</div>
+{% galleryBox { boxTitle: "Fanlistings", contentClass: 'fanlistings pt-0'} %}
+{% for key, value in fanlistings %}
+  <div class="w-100">
+    <h3>{{ key | title }}</h3>
+    {% for item in value %}
+      {% imgWithLink assetLink + item.src, item.link, { alt: item.alt + " fanlisting button", cls: 'mx-1' } %}
+    {% endfor %}
+  </div>
+{% endfor %}
 {% endgalleryBox %}

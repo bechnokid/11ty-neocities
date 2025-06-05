@@ -5,7 +5,7 @@ prism: true
 permalink: '/about/index.html'
 ---
 
-{% figure "profile.jpg", { noLink: true, alt: "Bechno Kid holding a mug shaped like a Maxim Tomato from the Kirby franchise"} %}**"The ticket to the future is always open."**<br>- Rem Saverem, Trigun{% endfigure %}
+{% figure "profile.jpg", { noLink: true, alt: "Bechno Kid holding a mug shaped like a Maxim Tomato from the Kirby franchise"} %}{% endfigure %}
 
 Hi, I'm **Bechno Kid** (she/her), the head honcho of this hideout.
 

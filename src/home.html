@@ -17,23 +17,25 @@ Webrings and fanlistings can be found in [/joined](/joined)!
 
 **Note**: Pages labeled with {% icon 'alert-triangle' %} will have blinking/flashing graphics when first loading or if you have Javascript disabled.
 {% endset %}
+<h1 class="m-0 text-xxl">“The ticket to the future is always open!”</h1>
+<hr class="small">
 <script src="{{ meta.jsUrl }}/microblog.js"></script>
   <div class="content">
     {{ contentBlock | markdownify | safe }}
     <div class="h3 intro-links text-center mt-4">
       <a href="/sitemap">Sitemap</a><span class="mx-2">✦</span><a href="/feed.xml">RSS Feed</a><span class="mx-2">✦</span><a href="/guestbook">Guestbook</a>
     </div>
-    <hr>
     <div class="status-row row g-lg-3 mb-3">
       <div class="status col-lg-7 mb-3 mb-lg-0">
         <div class="sidebar h-100 overflow-hidden">
           <div class="h2 p-2">Latest Status</div>
           {% set status = microblog.microblog[0] %}
-          <div id="latest-status" class="js-required status-container d-flex">
+          <div id="status-cafe" class="js-required status-container d-flex">
+            <div class="p-5 w-100 text-center">Loading...</div>
           </div>
           <noscript>
             <div class='px-2'>
-              <iframe scrolling="no" src="https://status.cafe/users/bechnokid" frameborder="0"></iframe>
+              <iframe src="https://status.cafe/users/bechnokid"></iframe>
             </div>
           </noscript>
         </div>

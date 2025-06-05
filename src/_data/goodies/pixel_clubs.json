@@ -5,8 +5,7 @@
       "title": "Kindness Rocks Pixel Project",
       "owner": {
         "name": "PixelRevival",
-        "link": "https://web.archive.org/web/20250313203718/https://pixelrevival.xyz/kindnessrocks/",
-        "archived": true
+        "link": "https://pixelrevival.xyz/kindnessrocks/"
       },
       "altText": "A painted rock of ",
       "collection": {
@@ -183,6 +182,80 @@
           { "src": "sakuradreams.png", "desc": "of honey with a picture of a bee on the label", "link": "https://sakuradreams.neocities.org/" }
         ]
       }
+    },
+    "objets": {
+      "altText": "32x32 sprite of ",
+      "owner": {
+        "name": "Pastel Hell",
+        "link": "https://milkteamoon.net/objets/"
+      },
+      "mine": {
+        "row1" : [
+          {
+            "src": "meat.png",
+            "alt": "a Well-Done Steak from Monster Hunter"
+          },
+          {
+            "src": "maskutchi.png",
+            "alt": "a white and purple Maskutchi from Tamagotchi"
+          },
+          {
+            "src": "maskutchi2.png",
+            "alt": "a black and blue Maskutchi from Tamagotchi"
+          }
+        ],
+        "row2": [
+          {
+            "src": "tamagotchi.png",
+            "alt": "a blue and yellow Tamagotchi P1 device"
+          },
+          {
+            "src": "tamagotchi-orange.png",
+            "alt": "an orange and yellow Tamagotchi P1 device"
+          },
+          {
+            "src": "tamagotchi-pink.png",
+            "alt": "an pink and green Tamagotchi P1 device with blue buttons"
+          }
+        ]
+      },
+      "collection": [
+        {
+          "src": "pastelhell.png",
+          "link": "https://pastelhello.com/objets",
+          "alt": ""
+        },
+        {
+          "src": "artwork.gif",
+          "link": "https://artwork.neocities.org/cliques",
+          "alt": ""
+        },
+        {
+          "src": "floral-tears.png",
+          "link": "https://floral-tears.neocities.org/",
+          "alt": ""
+        },
+        {
+          "src": "humanfinny.png",
+          "link": "https://humanfinny.neocities.org/",
+          "alt": ""
+        },
+        {
+          "src": "keysklubhouse.png",
+          "link": "https://keysklubhouse.neocities.org/",
+          "alt": ""
+        },
+        {
+          "src": "mizunotic.gif",
+          "link": "https://mizunotic.neocities.org/",
+          "alt": ""
+        },
+        {
+          "src": "sugarbunniiee.png",
+          "link": "https://sugarbunniiee.nekoweb.org",
+          "alt": ""
+        }
+      ]
     }
   }
 }

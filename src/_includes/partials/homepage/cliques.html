@@ -1,5 +1,5 @@
 {% macro textClique (leftText, centerIcon, url, rightText) %}
-<a href="{{ url }}">{{ leftText | safe }}</a>{% if img %}<img class="mx-2" src="{{ cliques.path + img }}" aria-hidden="true">{% elif centerIcon %}<span class='mx-2'>{{ centerIcon }}</span>{% else %}&nbsp;{% endif %} {{ rightText | safe }}
+<a href="{{ url }}">{{ leftText | safe }}</a>{% if img %}<img class="mx-2" src="{{ cliques.path + img }}" aria-hidden="true" alt="">{% elif centerIcon %}<span class='mx-2'>{{ centerIcon }}</span>{% else %}&nbsp;{% endif %} {{ rightText | safe }}
 {% endmacro %}
 
 <div class="row g-0">
