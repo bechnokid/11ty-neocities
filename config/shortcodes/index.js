@@ -16,7 +16,7 @@ const freezeframeButtons = function(options = {}) {
 const icon = function(value, options = {}) {
   let iconVal = [`<i class='ft-${value}`, `'></i>`]
   if (value == 'meat') {
-    let iconArr = [`<img class='meat svg' src='/assets/images/meat.svg'`, `>`];
+    let iconArr = [`<img src='/assets/images/meat.png'`, `>`];
     if (options.alt) iconArr.splice(1, 0, ` alt='${options.alt}'`)
     iconVal = iconArr.flat().join('');
   } else {
@@ -105,8 +105,9 @@ const figure = function(children, src, options = {}) {
   if (options) {
     if (options.figCaptionCls) resultsArray.splice(3, 0, ` class='${options.figCaptionCls}'`);
 
+    // Make image into a div background
     if (options.bg) {
-      resultsArray.splice(2, 0, `<div class='figure-div' style='background-image: url(${imgSrc})'></div>`)
+      resultsArray.splice(2, 0, `<div class='figure-div ${options.imgCls}' style='background-image: url(${imgSrc})'></div>`)
     } else {
       let imgArr = [
         `<img src="${imgSrc}"`,
@@ -118,6 +119,7 @@ const figure = function(children, src, options = {}) {
       resultsArray.splice(2, 0, imgArr.flat().join(''))
     }
 
+    // Do not make link to full image
     if (options.noLink != true) {
       let imgLink = imgSrc;
       if (options.imgLink) imgLink = options.imgLink;

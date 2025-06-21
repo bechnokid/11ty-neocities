@@ -1,5 +1,6 @@
 {
   "imgSrc": "/assets/images/goodies/adopts/",
+  "toAdd": [ ],
   "template":
   {
     "src": "",
@@ -76,10 +77,25 @@
       ]
     }
   ],
+  "interactive": [
+    { "name": "Lil&apos; Guy", "src": "https://tamanotchi.world/i/3706", "url": "https://tamanotchi.world/i/3706", "alt": "Lil Guy from TamaNOTchi" },
+    { "name": "Nibblet", "src": "https://wobble.town/visit/1155/wobble.gif", "url": "https://wobble.town/visit/1155", "alt": "Nibblet from Wobble Town" }
+  ],
   "adopted": [
     {
       "cls": "align-items-baseline",
       "items": [
+        {
+          "src": "auron2.gif",
+          "alt": "Auron as he appears in Kingdom Hearts II",
+          "url": "http://sweetskingdom.web.fc2.com/dot_icon/index.html"
+        },
+        {
+          "src": "https://i.imgur.com/LzZrTi7.png",
+          "alt": "The titular unicorn from \"The Last Unicorn\"",
+          "url": "https://vampirevalentine.neocities.org/",
+          "ogLink": true
+        },
         {
           "src": "vash.gif",
           "alt": "Kuroneko-sama and Vash the Stampede from Trigun. Vash is holding a sign that reads, \"Will work for donuts\"",
@@ -99,6 +115,16 @@
           "src": "kururu.gif",
           "alt": "Kururu from Keroro Gunso",
           "url": "http://www.sailorenergy.net/AnimeGIFs/TRSEIMGKawaiiAnimesS.html"
+        },
+        {
+          "src": "beelzebumon2.gif",
+          "alt": "Beelzemon from Digimon Tamers",
+          "url": "http://digistar.db-destiny.net/rpixels/index2.html"
+        },
+        {
+          "src": "dukemon2.gif",
+          "alt": "Gallantmon from Digimon Tamers",
+          "url": "http://digistar.db-destiny.net/rpixels/index2.html"
         },
         {
           "src": "wee-strange.gif",
@@ -161,14 +187,14 @@
           "url": "http://www1.tcnet.ne.jp/t-emori/poke/aikon.htm"
         },
         {
-          "src": "dukemon2.gif",
-          "alt": "Gallantmon from Digimon Tamers",
-          "url": "http://digistar.db-destiny.net/rpixels/index2.html"
+          "src": "sbmilkcarton.gif",
+          "alt": "A pink milk carton with a smiling face",
+          "url": "https://soda.bake-neko.net/PixelAdoptables.html"
         },
         {
-          "src": "beelzebumon2.gif",
-          "alt": "Beelzemon from Digimon Tamers",
-          "url": "http://digistar.db-destiny.net/rpixels/index2.html"
+          "src": "hannaritofu_pink.gif",
+          "alt": "A pink Hannari Tofu",
+          "url": "https://soda.bake-neko.net/PixelAdoptables.html"
         }
       ]
     },

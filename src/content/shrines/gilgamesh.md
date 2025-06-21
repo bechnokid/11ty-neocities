@@ -82,7 +82,7 @@ In Rebirth, Gilgamesh speaks in a flowery, almost archaic manner, probably a ref
 
 I don't know if it's the same with other writers, but I know it takes me hours to be able to write poems, and for him to just easily improvise and write such thought-provoking pieces in seconds is amazing!! It really adds a level of depth to his character, and I love it!
 
-If it sounds like that he is lot cooler than he is and that he's not the same idiotic Gilgamesh, then I'm here to correct you! He's still very much a silly man with nary a thought in that tiny brain of his! As I have mentioned before in his first encounter with Cloud, his iconic goofiness did not go away in Rebirth. There is also an especially funny scene during the party's final fight with him, but I don't want to spoil it here! [Watch it for yourself!](https://www.youtube.com/watch?v=ed6irqLdhog) (volume warning)
+If it sounds like that he is lot cooler than he is and that he's not the same idiotic Gilgamesh, then I'm here to correct you! He's still very much a silly man with nary a thought in that tiny brain of his! As I have mentioned before in his first encounter with Cloud, his iconic goofiness is still present in Rebirth any time he has appeared. There is also an especially funny scene during the party's final fight with him, but I don't want to spoil it here! [Watch it for yourself!](https://www.youtube.com/watch?v=ed6irqLdhog) (volume warning)
 
 I can definitely say that Rebirth managed to achieve a perfect balance between making Gilgamesh funny and terrifying. It makes me a little sad that he might never return to a future FF7R game seeing as how there was a definite end to his boss fight, but a beet can dream!
 
@@ -90,7 +90,7 @@ I can definitely say that Rebirth managed to achieve a perfect balance between m
 
 ## Yume
 
-I had a few OCxCanon ships, but I admit that it wasn't really until 2019 where I finally embraced my "cringe, but free" nature. I didn't show them a lot, and I only had a few headcanons for him until May 2024. I declared that I wanted to make an OC to ship with Gilgamesh, and over time she's become one of my most beloved fan OCs!
+I had a few OCxCanon ships, but I admit that it wasn't really until 2019 where I finally embraced my "cringe, but free" nature. In May 2024, I declared that I wanted to make an OC to ship with Gilgamesh, and over time she's become one of my most beloved fan OCs!
 
 [![Reference for Siduri Neemon](/assets/images/shrines/gilgamesh/siduri.png)](/assets/images/shrines/gilgamesh/siduri.png) {.siduri-img}
 
