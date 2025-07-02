@@ -1,7 +1,7 @@
 ---
 title: Web Feed Preview...of Doom!
 permalink: '/assets/stylesheets/styles.xslt'
-limit: 6
+limit: 3
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -12,6 +12,7 @@ Hi! **This is a web feed,** also known as an RSS or Atom feed. You can **subscri
 
 Visit [About Feeds](https://aboutfeeds.com) to learn more about feeds and to get started with newsreaders and subscribing. It's completely free!
 {% endset %}
+{% set postLimit = limit + 1 %}
   <xsl:output method="html" encoding="utf-8" doctype-system="about:legacy-compat"/>
   <xsl:template match="/">
     <html xmlns="http://www.w3.org/1999/xhtml" lang="{{ meta.lang }}" data-theme="light">
@@ -33,7 +34,7 @@ Visit [About Feeds](https://aboutfeeds.com) to learn more about feeds and to get
               <div class="about-feed mx-3 my-4 px-3 py-1">{{ aboutFeed | markdownify | safe }}</div>
             </header>
             <h2>Recent Updates</h2>
-            <xsl:for-each select="/atom:feed/atom:entry[position() &lt; {{ limit }}]">
+            <xsl:for-each select="/atom:feed/atom:entry[position() &lt; {{ postLimit }}]">
               <div class="ps-2 mb-0">
                 <p class="mb-2">
                   <a>
@@ -47,7 +48,7 @@ Visit [About Feeds](https://aboutfeeds.com) to learn more about feeds and to get
                   <xsl:apply-templates select="atom:content"/>
                 </xsl:if>
               </div>
-              <xsl:if test="position() != {{ limit - 1 }}">
+              <xsl:if test="position() != {{ postLimit - 1 }}">
                 <hr class="small"/>
               </xsl:if>
             </xsl:for-each>

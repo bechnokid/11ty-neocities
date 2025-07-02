@@ -12,8 +12,8 @@ Here are some sites whose webmasters are friends, affiliates, or people who I th
 
 If you already added my button to your site, let me know and I'll add you here!
 
-{% galleryBox { markdown: { inline: true }, sidebarClass: 'mb-4', contentClass: 'justify-content-center align-items-center' } %}
-{% for item in netizens %}{% if item.noBtn %}<a class="no-button-container" href="{{ item.link }}"><div>{{ item.name }}</div></a>{% else %}{% imgWithLink imgLink + item.src, item.link, { markdown: true, alt: altText + item.name, cls: 'mx-1', imgCls: 'freezeframe' if item.freezeframe } %}{% endif %}{% endfor %}{% endgalleryBox %}
+{% galleryBox { markdown: { inline: true }, sidebarClass: 'mb-4', contentClass: 'netizens justify-content-center align-items-center' } %}
+{% for item in netizens %}{% if item.noBtn %}<a class="no-button-container text-xs" href="{{ item.link }}"><div>{{ item.name }}</div></a>{% else %}{% imgWithLink imgLink + item.src, item.link, { markdown: true, alt: altText + item.name, cls: 'mx-1', imgCls: 'freezeframe' if item.freezeframe } %}{% endif %}{% endfor %}{% endgalleryBox %}
 
 ## Resources
 

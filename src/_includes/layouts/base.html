@@ -22,12 +22,12 @@
     </details>
     <div class="page bg-body">
       <a href="/home"><header class="bg-body"></header></a>
-      <div class="bg-body main">
+      <div class="bg-body main desktop">
         <div class="row g-0">
           <nav id="nav-main" class="col-lg-2">
             <div class="sidebar">{% include "partials/navigation.html" %}</div>
           </nav>
-          <main id="main-content" class="col{{ "-lg-10" if title !="Home" }} px-2 py-lg-3 px-lg-4 position-relative" tabindex="-1">
+          <main id="main-content" class="offset-lg-2 col{{ "-lg-10" if title !="Home" }} px-2 px-lg-4 py-lg-3 position-relative" tabindex="-1">
             {% include 'partials/theme-switcher.html' %}
             {% block content %}{% endblock %}
             <div class="back-to-top{% if noScroll %} mobile-only{% endif %}"><a href="#" aria-label="Scroll to Top">{% icon 'arrow-up' %}</a></div>

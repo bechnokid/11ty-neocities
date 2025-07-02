@@ -1,4 +1,5 @@
 ---
+title: Webgarden
 shortTitle: Webgarden
 displayOrder: 4
 description: Little pots that show a sneak peek of the websites they're based on.

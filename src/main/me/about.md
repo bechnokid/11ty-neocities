@@ -5,7 +5,7 @@ prism: true
 permalink: '/about/index.html'
 ---
 
-{% figure "profile.jpg", { noLink: true, alt: "Bechno Kid holding a mug shaped like a Maxim Tomato from the Kirby franchise"} %}{% endfigure %}
+{% figure "profile.png", { noLink: true, alt: "Bechno Kid", class: 'about-figure' } %}{% endfigure %}
 
 Hi, I'm **Bechno Kid** (she/her), the head honcho of this hideout.
 

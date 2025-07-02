@@ -7,24 +7,29 @@ description: A [now](https://nownownow.com/about) page that describes what Bechn
 summary: What's Bechno Kid been up to?
 ---
 
-**Last updated:** June 21st, 2025
+**Last updated:** July 3rd, 2025
 
 ## What am I up to?
 
-- Getting back into crocheting!
-- Stressing about my job for the first time in years. I won't get too much into detail, but the past month or so hasn't been entirely fun...
+- Trying to de-stress and relax! This month has not had a great start so far, and without revealing too much about my life, I'm not looking forward to what this and next month will hold...
+- Sleeping a lot! Some minor health issues came up (no doubt because of the stress I've been dealing with so far), so I'm working on taking it easy and giving myself breaks.
+- [Art Fight](https://artfight.net/) has started! I haven't done any artwork yet, but that will change this coming 3-day weekend! Go Team Crystals!
+  - A guilty pleasure of mine has been reading the [Art Fight Drama & Confessions](https://artfightdramaconfessions.tumblr.com/) blog on Tumblr. I shouldn't be reading too many of the negative posts there or else I'll end up spiraling! xDD
 
 ## Playing
 - [Monster Hunter Wilds](https://www.monsterhunter.com/wilds/en-us/)
-  - Just waiting for Title Update 2!
-  - Trying to collect all of the size crowns for every monster! It's always fun, but some monsters are really hard to find crowns for some reason??
+  - ***TITLE UPDATE 2 IS HERE!!!*** I've been having a blast so far!
+  - Layered Weapons are finally here! It seems Heavy Bowguns continue to get the short end of the stick because there's a bug that prevents me from seeing some of the older weapons to layer my current bowgun with despite having fully upgraded all of the cool ones I've seen! That's ok, though!
+  - Normally, I don't really get all of the hype behind builds that focus on Spread ammo, but OH MAN Seregios's HBG is so, SO GOOD!! This build might be the first build that's made me enjoy using Spread ammo! xDD
 - [Cookie Run Kingdom](https://play.google.com/store/apps/details?id=com.devsisters.ck&hl=en-US&pli=1)
-  - It's fun and keeps me busy for a while, but I'm not a huge fan of the story, and I haven't found myself liking any of the other characters besides Burning Spice Cookie lol
-  - I might write a review on this someday!
+  - I pulled Burning Spice Cookie again while pulling for a Legendary-class cookie! I'm so happy!
 
 ## Watching
-- Videos related to MediEvil. I recently found out about the news of the [film adaptation being cancelled](https://medievil.wiki/w/MediEvil_(PlayStation_Productions)), and I'm just grieving at the moment...
+- YouTube videos about mechanical keyboards, including:
+  - ASMR or sound tests with "creamy" switches
+  - Reviews on several mechanical keyboards
+  - Reviews on switches for hotswappable keyboards
 
 ## Listening to
-- FRENCHGRL - [Let's Vibe](https://song.link/y/1r6wxcvv7Sw)
-- Mariya Takeuchi - [Have a Good Time Here](https://song.link/y/W7fPvPO4ecs)
+- Ayase / YOASOBI - [幽霊東京 (Ghost City Tokyo)](https://song.link/y/DtBoAqkIJzI)
+- Jamie Paige - [BIRDBRAIN (w/ OK Glass) feat. Kasane Teto](https://song.link/y/0iVlSNpq8i8)

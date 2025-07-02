@@ -38,18 +38,8 @@ requiresJS: true
   {% endfor %}
 {% endmacro %}
 
-{% galleryBox { boxTitle: "Webrings", sidebarClass: "mb-4", contentClass: "overflow-y-auto webrings" } %}
-<div class="row g-0">
-  {% for webringCol in webrings %}
-    <div class="col-12 col-lg-4 d-flex flex-column align-items-center px-2">
-      {{ createWebringCol(webringCol) }}
-    </div>
-  {% endfor %}
-</div>
-{% endgalleryBox %}
-
 {% set assetLink = '/assets/images/about/fanlistings/' %}
-{% galleryBox { boxTitle: "Fanlistings", contentClass: 'fanlistings pt-0'} %}
+{% galleryBox { boxTitle: "Fanlistings", sidebarClass: "mb-4", contentClass: 'fanlistings pt-0'} %}
 {% for key, value in fanlistings %}
   <div class="w-100">
     <h3>{{ key | title }}</h3>
@@ -58,4 +48,14 @@ requiresJS: true
     {% endfor %}
   </div>
 {% endfor %}
+{% endgalleryBox %}
+
+{% galleryBox { boxTitle: "Webrings", contentClass: "overflow-y-auto webrings" } %}
+<div class="row g-0">
+  {% for webringCol in webrings %}
+    <div class="col-12 col-lg-4 d-flex flex-column align-items-center px-2">
+      {{ createWebringCol(webringCol) }}
+    </div>
+  {% endfor %}
+</div>
 {% endgalleryBox %}
