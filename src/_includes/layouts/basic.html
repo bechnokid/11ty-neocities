@@ -3,7 +3,8 @@
 {% set pageHeaderTitle = title %}
 {% set pageHeaderSummary = summary | markdownify | safe %}
 {% set pageFreezeframe = freezeframe %}
-{% set pageRequiresJS = requiresJS %}
+{% set pageRequiresJS = JSrequired %}
+{% set outgoingPageWarning = hasLinks %}
 {% set pageCSS = css %}
 
 {% block css %}

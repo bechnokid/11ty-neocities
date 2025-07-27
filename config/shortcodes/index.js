@@ -1,32 +1,19 @@
 const markdownLib = require('../plugins/markdown');
 const chars = require('../variables.js');
 
-const freezeframeButtons = function(options = {}) {
-  let resultsArray = [
-    '<div',
-      '>',
-      `<button class='button play-gif me-1'>Play GIFs</button>`,
-      `<button class='button stop-gif'>Stop GIFs</button>`,
-    '</div>'
-  ]
-  if (options.cls) resultsArray.splice(1, 0, ` class='${options.cls}'`)
-  return resultsArray.flat().join('')
-}
-
-const icon = function(value, options = {}) {
-  let iconVal = [`<i class='ft-${value}`, `'></i>`]
+const icon = function (value, options = {}) {
+  let iconCls = '';
   if (value == 'meat') {
-    let iconArr = [`<img src='/assets/images/meat.png'`, `>`];
-    if (options.alt) iconArr.splice(1, 0, ` alt='${options.alt}'`)
-    iconVal = iconArr.flat().join('');
+    const iconAlt = (options.alt) ? ` alt="${options.alt}"` : '';
+    if (options.cls) iconCls = ` class='${options.cls}'`;
+    return `<img src='/assets/images/meat.png'${iconAlt}${iconCls}>`;
   } else {
-    if (options.cls) iconVal.splice(1, 0, ` ${options.cls}`);
-    iconVal = iconVal.flat().join('');
+    if (options.cls) iconCls = ` ${options.cls}`;
+    return `<i class='ft-${value}${iconCls}'></i>`
   }
-  return iconVal;
 }
 
-const emoticon = function(value) {
+const emoticon = function (value) {
   return `<img class='emoticon' src='/assets/images/blog/emoticon/${value}.svg' aria-hidden='true' alt=''>`;
 }
 
@@ -34,131 +21,131 @@ const emote = value => {
   return `<img class='inline-img' src='/assets/images/blog/emoticon/emote_${value}.png' aria-hidden='true' alt=''>`;
 }
 
-const img = function(imgUrl, options = {}) {
-  // <img src='' alt='' class=''>
-  let resultsArray = [`<img src='${imgUrl}'`, `>`];
-  if (options.markdown) {
-    if (options.alt === undefined){
-      return "No alt text provided";
-    } else {
-      resultsArray = `![${options.alt}](${imgUrl})`
-      if (options.cls) resultsArray += ` { .${options.cls} }`;
-      if (options.markdown.inline) {
-        return markdownLib.renderInline(resultsArray)
-      } else {
-        return resultsArray;
-      }
-    }
+const link = function (url, content, options = {}) {
+  let linkCls = '';
+  const ariaDesc = (options.ariaDesc) ? ` aria-describedby="${options.ariaDesc}"` : '';
+  if (options.markdown && ariaDesc == '') {
+    if (options.cls) linkCls = `{${options.cls.split(' ').map((x) => `.${x}`).join(' ')}}`;
+    return `[${content}](${url})${linkCls}`
+  } else {
+    if (options.cls) linkCls = ` class='${options.cls}'`;
+    return `<a href='${url}'${linkCls}${ariaDesc}>${content}</a>`;
   }
-  if (options.alt) resultsArray.splice(resultsArray.length - 1, 0, ` alt='${options.alt}'`);
-  if (options.cls) resultsArray.splice(resultsArray.length - 1, 0, ` class='${options.cls}'`);
-  if (options.hidden) resultsArray.splice(resultsArray.length - 1, 0, ` aria-hidden='true'`);
-  return resultsArray.flat().join('');
 }
 
-const imgWithLink = function(imgUrl, linkUrl, options = {}) {
-  // <a href=''><img src='' alt='' class=''></a>
-  // [![IMG_ALT_TEXT](IMG_SRC)](LINK)
-  let resultsArray = [`<a href=${linkUrl}`, `>`, `<img src='${imgUrl}'`, `></a>`];
-  if (options.markdown){
-    resultsArray = [`[`,`![${options.alt}](${imgUrl})`, `](${linkUrl})`];
-    if (options.imgCls !== undefined && options.imgCls.length > 0 ){
-      resultsArray.splice(resultsArray.length - 1, 0, `{.${options.imgCls.split(' ').join(' .')}}`);
-    }
-    if (options.cls) resultsArray.push(`{.${options.cls.split(' ').join(' .')}}`);
+const img = function (src, options = {}) {
+  let clsArr = [];
+  if (options.freezeframe) clsArr.push('freezeframe');
+
+  let imgCls = "";
+  let imgAlt = (options.alt) ? options.alt : "";
+  const ariaDesc = (options.ariaDesc) ? ` aria-describedby="${options.ariaDesc}"` : '';
+
+  if (options.markdown && ariaDesc == '') {
+    if (options.cls) clsArr.push(options.cls.split(' '));
+    if (clsArr.length > 0) imgCls = `{${clsArr.flat().map((x) => `.${x}`).join(' ')}}`;
+    return `![${imgAlt}](${src})${imgCls}`;
   } else {
-    if (options.cls) resultsArray.splice(1, 0, ` class='${options.cls}'`);
-    if (options.imgCls) resultsArray.splice(resultsArray.length - 1, 0, ` class='${options.imgCls}'`);
-    if (options.alt) resultsArray.splice(1, 0, ` alt='${options.alt}'`);
+    if (options.cls) clsArr.push(options.cls.split(' '));
+    if (clsArr.length > 0) imgCls = ` class='${clsArr.flat().join(' ')}'`
+    return `<img src='${src}' alt="${imgAlt}"${imgCls}${ariaDesc}>`;
   }
-  return resultsArray.flat().join('');
+}
+
+const imgWithLink = function (src, url, options = {}) {
+  let clsArr = [];
+  if (options.freezeframe) clsArr.push('freezeframe');
+
+  let imgCls = "";
+  let imgAlt = (options.alt) ? options.alt : "";
+  let linkCls = '';
+  const ariaDesc = (options.ariaDesc) ? ` aria-describedby="${options.ariaDesc}"` : '';
+
+  if (options.markdown && ariaDesc == '') {
+    if (options.imgCls) clsArr.push(options.imgCls.split(' '));
+    if (clsArr.length > 0) imgCls = `{${clsArr.flat().map((x) => `.${x}`).join(' ')}}`;
+    if (options.linkCls) linkCls = `{${options.linkCls.split(' ').map((x) => `.${x}`).join(' ')}}`;
+    return `[![${imgAlt}](${src})${imgCls}](${url})${linkCls}`;
+  } else {
+    if (options.imgCls) clsArr.push(options.imgCls);
+    if (clsArr.length > 0) imgCls = ` class='${clsArr.join(' ')}'`;
+    if (options.linkCls) linkCls = ` class=${options.linkCls}`;
+    return `<a href='${url}'${linkCls}${ariaDesc}><img src='${src}' alt="${imgAlt}"${imgCls}></a>`;
+  }
 }
 
 // Paired
-const details = function (children, title = "", options = {}) {
-  let resultsArray =  ['<details', '>', children, '</details>'];
-  if (title != "") {
-    let summaryArr = ['<summary', '>', `${title}</summary>`];
-    if (options) {
-      let summaryClass = (options.summaryClass) ? ` class='${options.summaryClass}'` : '';
-      let summaryStyle = (options.summaryStyle) ? ` style='${options.summaryStyle}'` : '';
-      summaryArr.splice(1, 0, summaryClass + summaryStyle);
-    }
-    resultsArray.splice(2, 0, summaryArr);
+const tooltip = function(children, params) {
+  let mainContent = ''
+  if (params.src && params.url) {
+    mainContent = imgWithLink(params.src, params.url, params);
+  } else if (params.src && !params.url) {
+    mainContent = img(params.src, params);
+  } else {
+    mainContent = link(params.url, params);
   }
-
-  if (options) {
-    let detailsClass = (options.class) ? ` class='${options.class}'` : '';
-    let detailsStyle = (options.detailsStyle) ? ` style='${options.detailsStyle}'` : '';
-    resultsArray.splice(1, 0, detailsClass + detailsStyle)
-
-    if (options.open == true) resultsArray.splice(1, 0, ' open');
-  }
-  return resultsArray.flat().join('');
+  return `<div class='tooltip'>${mainContent}<div id='${params.tooltipId}' class='tooltip-content' role='tooltip'>${children}</div></div>`
 }
 
-const figure = function(children, src, options = {}) {
-  const imgSrc = src.includes('http') ? src : (this.ctx.imgLink == null ? ('/assets/images/' + src) : (this.ctx.imgLink + src));
-  const caption = markdownLib.render(children.trim());
-
-  let resultsArray = ['<figure', '>', '<figcaption', '>', `${caption}</figcaption></figure>`];
-  if (options) {
-    if (options.figCaptionCls) resultsArray.splice(3, 0, ` class='${options.figCaptionCls}'`);
-
-    // Make image into a div background
-    if (options.bg) {
-      resultsArray.splice(2, 0, `<div class='figure-div ${options.imgCls}' style='background-image: url(${imgSrc})'></div>`)
-    } else {
-      let imgArr = [
-        `<img src="${imgSrc}"`,
-        '>'
-      ]
-      if (options.imgCls) imgArr.splice(imgArr.length - 1, 0, ` class="${options.imgCls}"`)
-      if (options.alt) imgArr.splice(imgArr.length - 1, 0, ` alt="${options.alt}"`)
-
-      resultsArray.splice(2, 0, imgArr.flat().join(''))
-    }
-
-    // Do not make link to full image
-    if (options.noLink != true) {
-      let imgLink = imgSrc;
-      if (options.imgLink) imgLink = options.imgLink;
-
-      resultsArray.splice(3, 0, `</a>`)
-      resultsArray.splice(2, 0, `<a href='${imgLink}'>`)
-    }
-
-    let figureClass = (options.class) ? ` class='${options.class}'` : '';
-    let figureStyle = (options.style) ? ` style='${options.style}'` : '';
-
-    resultsArray.splice(1, 0, figureClass + figureStyle)
+const details = function (children, params) {
+  let summary = '';
+  if (params.title) {
+    const summaryCls = (params.summaryCls) ? ` class='${params.summaryCls}'` : '';
+    const summaryStyle = (params.summaryStyle) ? ` style='${params.summaryStyle}'` : '';
+    summary = `<summary${summaryCls}${summaryStyle}>${params.title}</summary>`;
   }
 
-  return resultsArray.join('');
+  const detailsCls = (params.class) ? ` class='${params.class}'` : '';
+  const detailsStyle = (params.detailsStyle) ? ` style='${params.detailsStyle}'` : '';
+  const detailsOpen = (params.open) ? ` open` : '';
+  return `<details${detailsCls}${detailsStyle}${detailsOpen}>${summary}${children}</details>`;
 }
 
-const galleryBox = function(children, options = {}) {
+const figure = function (children, src, options = {}) {
+  const imgSrc = (src.includes('http') || src.includes('/assets/images')) ? src : `/assets/images/${src}`;
+
+  let imgStr = '';
+  let imgCls = ''
+  let imgAlt = '';
+
+  if (options.bg) {
+    if (options.imgCls) imgCls = ` ${options.imgCls}`;
+    imgStr = `<div class='figure-div${imgCls}' style='background-image: url(${imgSrc})'></div>`;
+  } else {
+    if (options.imgCls) imgCls = ` class='${options.imgCls}`;
+    if (options.alt) imgAlt = ` alt="${options.alt}"`;
+    imgStr = `<img src='${imgSrc}'${imgAlt}${imgCls}>`
+  }
+
+  if (options.noLink != true) {
+    const imgLink = (options.imgLink) ? options.imgLink : imgSrc;
+    imgStr = `<a href='${imgLink}'>${imgStr}</a>`;
+  }
+
+  const figureCls = (options.cls) ? ` class='${options.cls}` : '';
+  const figureStyle = (options.style) ? ` style='${options.style}'` : '';
+  const caption = (options.noMarkdown) ? children : markdownLib.render(children.trim());
+  const figcaptionCls = (options.figcaptionCls) ? ` class='${options.figcaptionCls}` : '';
+  return `<figure${figureCls}${figureStyle}>${imgStr}<figcaption${figcaptionCls}>${caption}</figcaption></figure>`;
+}
+
+const galleryBox = function (children, params = {}) {
   let mainContent = children;
-  if (options.markdown){
-    if (options.markdown.inline) {
-      mainContent = markdownLib.renderInline(children.trim());
-    } else {
-      mainContent = markdownLib.render(children.trim());
+  let title = (params.title) ? `<h2>${params.title}</h2>` : '';
+  let mainCls = (params.cls) ? ` ${params.cls}` : '';
+  let subCls = (params.subCls) ? ` ${params.subCls}` : '';
+
+  if (params.markdown) {
+    if (params.title == "Likes") {
+      console.log('debug');
     }
+    mainContent = (params.markdown.inline) ? markdownLib.renderInline(children.trim()) : markdownLib.render(children.trim());
   }
 
-  let resultsArray = ['<div class="sidebar', '"', '>', '<div class="content d-flex flex-wrap p-3', '"', '>', mainContent, '</div></div>'];
-
-  if (options) {
-    if (options.contentClass) resultsArray.splice(4, 0, " " + options.contentClass);
-    if (options.boxTitle) resultsArray.splice(3, 0, `<h2>${options.boxTitle}</h2>`)
-    if (options.sidebarClass) resultsArray.splice(1, 0, " " + options.sidebarClass);
-
-    return resultsArray.flat().join('');
-  }
+  return `<div class='sidebar${mainCls}'>${title}<div class='content d-flex flex-wrap p-3${subCls}'>${mainContent}</div></div>`;
 }
 
-const convertToCode = function(children){
+const convertToCode = function (children) {
   let content = children;
   content = content.replace(/[a-zA-Z]/g, m => isLowerCase(m) ? chars[m] : chars[m.toLowerCase()].toUpperCase());
   return content;
@@ -174,8 +161,9 @@ module.exports = {
   emoticon,
   emote,
   img,
+  link,
   imgWithLink,
-  freezeframeButtons,
+  tooltip,
   figure,
   details,
   galleryBox,

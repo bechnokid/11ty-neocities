@@ -7,16 +7,14 @@ permalink: 'writing/microblog/index.html'
 description: Smaller entries that describe how I'm feeling or what I'm doing in the moment.
 summary: Thoughts and ramblings that are otherwise too small to make into a blog post!
 noScroll: true
+navTag: 'js-required'
 ---
 <script src="{{ meta.jsUrl }}/microblog.js"></script>
 <article>
-  <div id='status-cafe' class='js-required sidebar px-3 py-2'>
-    <p>Loading microblog...</p>
-  </div>
-  <noscript>
-    <div class='sidebar px-3'>
-      <iframe src="https://status.cafe/users/bechnokid" frameborder="0"></iframe>
+  <div class="status-cafe-container js-required">
+    <div id='status-cafe' class='js-required sidebar px-3 py-2'>
+      <p>Loading microblog...</p>
     </div>
-  </noscript>
-  <div><p class="font-weight-bold text-right">Hosted on <a href="https://status.cafe/">Status Cafe</a></p></div>
+    <div><p class="font-weight-bold text-right">Hosted on <a href="https://status.cafe/users/bechnokid">Status Cafe</a></p></div>
+  </div>
 </article>

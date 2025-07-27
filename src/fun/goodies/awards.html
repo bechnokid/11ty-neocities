@@ -6,9 +6,10 @@ displayOrder: 1
 noScroll: true
 permalink: '/goodies/awards/index.html'
 ---
-
 {% set awards = goodies.graphics.awards.items %}
 {% set imgSrc = goodies.graphics.awards.imgSrc %}
-{% galleryBox { markdown: { inline: true }, contentClass: 'justify-content-center align-items-center awards' } %}
-{% for item in awards %}[![{{ item.alt }}]({{ imgSrc + item.src }}){{ "{.freezeframe}" if item.freezeframe }}]({{ item.url }}){% endfor %}
+{% galleryBox { markdown: { inline: true }, subCls: 'justify-content-center align-items-center awards' } %}
+  {% for item in awards %}
+    {% imgWithLink imgSrc + item.src, item.url, { alt: item.alt, freezeframe: true } %}
+  {% endfor %}
 {% endgalleryBox %}

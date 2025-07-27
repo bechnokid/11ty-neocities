@@ -1,5 +1,4 @@
-{
-  "gardenLinks": [
+export default [
     "https://keysklubhouse.neocities.org/webgarden.html",
     "https://blissnet.neocities.org/Webgarden.html",
     "https://lu.tiny-universes.net/webgarden/webgarden.html",
@@ -31,4 +30,3 @@
     "https://blake.earth/webgarden",
     "https://sakuradreams.neocities.org/Pages/webgarden"
   ]
-}

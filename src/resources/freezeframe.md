@@ -4,8 +4,8 @@ shortTitle: FreezeframeJS Tutorial
 displayOrder: 2
 description: A tutorial on how to implement [Freezeframe.js](https://github.com/ctrl-freaks/freezeframe.js/), a library that can "freeze" animated GIFs.
 prism: true
-requiresJS: true
 redirect_from: [/tutorials/freezeframe, /resources/tut_freezeframe]
+summary: "**NOTE:** The examples will not work if JavaScript is disabled."
 ---
 <script src="{{ meta.jsUrl }}/freezeframe.js"></script>
 

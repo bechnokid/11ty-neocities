@@ -4,15 +4,15 @@ shortTitle: StatusCafe Feed Tutorial
 displayOrder: 4
 description: A tutorial on how to create a feed reader directly from [StatusCafe](https://status.cafe/).
 prism: true
-requiresJS: true
+summary: "**NOTE:** The examples will not work if JavaScript is disabled."
 redirect_from: [/resources/tut_statuscafefeed]
 ---
 
-While I may not use StatusCafe anymore, I'm sure there are many who already have an account on that site, and perhaps want to make a microblog out of it to put in their own site.
+StatusCafe is great, so here's a tutorial on how to make a microblog out of it to put on your own site!
 
 It is possible to modify the CSS in your StatusCafe account and then put it in an iframe, but creating a feed reader allows for more customization, if needed.
 
-If you'd like to [skip straight to the source code](#finished-html), I got you!
+If you'd like, you can also [skip straight to the source code](#finished-html)!
 
 ## 1) Obtaining StatusCafe's Feed
 
@@ -185,7 +185,7 @@ for (i = 0; i < STATUS_LIMIT; i++) {
     ${content}
   `;
 }
-html += `<p><a href='https://status.cafe/users/bechnokid'>See more at StatusCafe</a></p>`;
+html += `<p><a href='https://status.cafe/users/m15o'>See more at StatusCafe</a></p>`;
 document.getElementById("feed-reader").innerHTML = html;
 ```
 

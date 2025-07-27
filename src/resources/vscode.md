@@ -8,7 +8,7 @@ redirect_from: [/blog/2022_08_22]
 ---
 ## 0) Introduction
 
-As Neocities user gutz (now [strawberry-gashes](https://strawberry-gashes.gensoukai.net/v2/)) has said in the past:
+As Neocities user gutz (now [strawberry-gashes](https://strawberry-gashes.neocities.org)) has said in the past:
 
 > i imagine this is a problem that happens to neocities users: you edit your page in the built-in web editor, hit save, then go to the page to see the changes. par for the course. the only problem is... suddenly you've got 10,000 "hits" on your neocities stats. you know bc you've been tinkering and refreshing your own pages to get everything juuuust right that those numbers aren't accurate. "that me -_-" this can also happen with general web counters, depending on how your counter counts visitors orz
 >

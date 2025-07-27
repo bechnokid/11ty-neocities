@@ -1,10 +1,20 @@
 <footer class="bg-footer text-center p-1 px-lg-0">
-  <p class="m-0 my-1 text-lg d-flex flex-wrap justify-content-center align-items-center"><a class="mx-2" href="/sitemap">Sitemap</a> | <a class="mx-2" href="/guestbook">Guestbook</a> | <a class="mx-2" href="https://github.com/bechnokid/neocities">Github</a> | <a class="mx-2 d-flex" class="rss-link ms-1" href="/feed.xml">{% img meta.imgUrl + '/rss.svg', { cls: 'img-svg', alt: "RSS icon that leads to RSS feed" } %}</a></p>
+  {% set footer = site.footer %}
+  <p class="m-0 my-1 text-lg d-flex flex-wrap justify-content-center align-items-center">
+    {% for item in footer.links %}
+      <a class="px-2{% if not loop.last%} link-border{% endif %} {{ item.cls }}" href="{{ item.url }}">
+        {% if item.img %}
+          <img src="{{ meta.imgUrl }}/{{item.img}}" alt="{{ item.alt }}" class="{{ item.imgCls }}">
+        {% else %}
+          {{ item.name }}
+        {% endif %}
+      </a>
+    {% endfor %}
+  </p>
   <p class="m-0">© Bechno Kid 2022 - 20XX</p>
   <p class="m-0">Please do not edit or reupload any artwork from this site.</p>
   <div class="footer-btns mt-2">
-    {% set footer = site.footer %}
-    {% for item in footer.items %}
+    {% for item in footer.buttons %}
       <a href="{{ item.url }}" class="mx-1"><img src="{{ footer.imgSrc + item.src }}" alt="{{ item.alt }}"></a>
     {% endfor %}
   </div>

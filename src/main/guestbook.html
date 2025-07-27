@@ -2,22 +2,28 @@
 title: Guestbook
 css: 'guestbook'
 summary: Sign my guestbook if you'd like! Huge thanks to [Meadow](https://guestbooks.meadow.cafe) for the code!
-displayOrder: 6
+displayOrder: 5
 permalink: '/guestbook/index.html'
 tags: main
 ---
-
 <script src="/assets/javascript/guestbook.js"></script>
-<div id="guestbook">
+<noscript>
+  Javascript is disabled. Please enable it to send and view messages in the guestbook.
+</noscript>
+<div id="guestbook" class="js-required">
   <div class="guestbooks___guestbook-form-container">
     <form id="guestbooks___guestbook-form" class="d-flex flex-column">
-      <input type="text" name="name" id="name" class="guestbook-input-field bg-sidebar px-2 py-1 mb-2" placeholder="Name" required>
-      <input type="url" name="website" id="website" placeholder="Website (optional)" class="guestbook-input-field bg-sidebar px-2 py-1 mb-2">
-      <textarea name="text" id="text" class="guestbook-msg-field guestbook-input-field bg-sidebar px-2 py-1 mb-4" placeholder="Say something nice? (plain text only, please!)" required></textarea>
+      <input type="text" name="name" id="name" class="guestbook-input-field bg-sidebar px-2 py-1 mb-2"
+        placeholder="Name" required>
+      <input type="url" name="website" id="website" placeholder="Website (optional)"
+        class="guestbook-input-field bg-sidebar px-2 py-1 mb-2">
+      <textarea name="text" id="text" class="guestbook-msg-field guestbook-input-field bg-sidebar px-2 py-1 mb-4"
+        placeholder="Say something nice? (plain text only, please!)" required></textarea>
       <div id="guestbooks___challenge-answer-container">
         <div class="guestbooks___input-container">
           <label for="challengeQuestionAnswer" class="mb-1">What is 5 + 3?</label>
-          <input type="text" class="px-2 py-1 mb-4 guestbook-input-field bg-sidebar" name="challengeQuestionAnswer" id="challengeQuestionAnswer" required>
+          <input type="text" class="px-2 py-1 mb-4 guestbook-input-field bg-sidebar" name="challengeQuestionAnswer"
+            id="challengeQuestionAnswer" required>
         </div>
       </div>
       <div id="guestbook-submit-button">
@@ -29,8 +35,8 @@ tags: main
   <div class="guestbook-messages">
     <hr class="small">
     <h2>Messages</h2>
-    {% galleryBox { sidebarClass: 'guestbook-msg-container', contentClass: 'flex-column' } %}
-      <p>Loading...</p>
+    {% galleryBox { cls: 'guestbook-msg-container', subCls: 'flex-column' } %}
+    <p>Loading...</p>
     {% endgalleryBox %}
   </div>
 </div>

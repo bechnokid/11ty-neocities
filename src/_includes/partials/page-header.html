@@ -1,8 +1,8 @@
 <h1>{{ pageHeaderTitle }}</h1>
 {% if pageHeaderSummary != "" %}<p>{{ pageHeaderSummary | safe }}</p>{% endif %}
 {% if pageRequiresJS %}<p><b>Note:</b> This page requires Javascript.</p>{% endif %}
-{% if pageFreezeframe %}
-  <p class="mb-0"><strong>Warning:</strong> When clicking on any graphics with sources, please be cautious of any flashing images when you navigate away from this page.</p>
-  {% include 'partials/freezeframe-buttons.html' %}
+{% if outgoingPageWarning %}
+<p class="mb-0"><strong>Warning:</strong> When clicking on any graphics with sources, please be cautious of any flashing images when you navigate away from this page.</p>
 {% endif %}
-<hr>
+{% if pageFreezeframe %}{% include 'partials/freezeframe-buttons.html' %}{% endif %}
+<hr class="mb-2 mt-3">

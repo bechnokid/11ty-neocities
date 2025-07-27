@@ -7,7 +7,7 @@ pagination:
   size: 10
 tags:
   - fun
-displayOrder: 21
+displayOrder: 3
 permalink: '/goodies/index.html'
 ---
 

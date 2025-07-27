@@ -6,16 +6,16 @@ summary: Once upon a time, a voice actor named P.M Seymour created a [video](htt
 tags:
   - nav
   - fun
-displayOrder: 100
+displayOrder: 1
 noScroll: true
 permalink: '/curses/index.html'
 ---
 <div class="js-required">
-  <button class="go-to-heck button mb-2">I hope...</button>
+  <button class="go-to-heck button mb-4">I hope...</button>
   <div class='sidebar curses'>
     <div class="content p-3"><p class="random">May the curses begin!</p></div>
     <script>
-      let m = {{ curses | dump | safe }};
+      let m = {{ goodies.curses | dump | safe }};
       let c = m.slice(0);
       $(".go-to-heck").on("click", function() {
         if (c.length < 1) c = m.slice(0);
@@ -34,7 +34,7 @@ permalink: '/curses/index.html'
   <p>I hope...</p>
   <div class="sidebar curses">
     <div class="content p-3 carousel-column h-100">
-      {% for item in curses %}
+      {% for item in goodies.curses %}
         <div class="carousel-item py-4 my-4 d-flex align-items-center">
           <div class="carousel-content">{{ item | safe }}</div>
         </div>

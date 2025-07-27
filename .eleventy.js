@@ -15,8 +15,8 @@ const {
 } = require('./config/collections');
 
 const {
-  icon, emoticon, emote, img, imgWithLink, freezeframeButtons,
-  figure, details, galleryBox, convertToCode
+  icon, emoticon, emote, img, link, imgWithLink,
+  tooltip, figure, details, galleryBox, convertToCode
 } = require('./config/shortcodes');
 
 const markdownLib = require('./config/plugins/markdown');
@@ -36,11 +36,12 @@ module.exports = async function(eleventyConfig){
   eleventyConfig.addShortcode('emoticon', emoticon);
   eleventyConfig.addShortcode('emote', emote);
   eleventyConfig.addShortcode('img', img);
+  eleventyConfig.addShortcode('link', link);
   eleventyConfig.addShortcode('imgWithLink', imgWithLink);
-  eleventyConfig.addShortcode('freezeframeButtons', freezeframeButtons);
 
   // Paired shortcodes
   eleventyConfig.addPairedShortcode('figure', figure);
+  eleventyConfig.addPairedShortcode('tooltip', tooltip);
   eleventyConfig.addPairedShortcode('details', details);
   eleventyConfig.addPairedShortcode('galleryBox', galleryBox);
   eleventyConfig.addPairedShortcode('convertToCode', convertToCode);

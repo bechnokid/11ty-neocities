@@ -17,7 +17,7 @@
             <ul class="ms-2">
               {% for sublink in link.data.pagination.items %}
                 {% set sublinkCls = sublink.data.navTag or "" %}
-                {{ navLink(sublink.page.url, sublink.data.shortTitle or sublink.data.title, { cls: sublinkCls , flashing: sublink.data.freezeframe or sublink.data.flashing }) }}
+                {{ navLink(sublink.page.url, sublink.data.shortTitle or sublink.data.title, { cls: sublinkCls , flashing: sublink.data.flashing }) }}
               {% endfor %}
             </ul>
           </details>
@@ -26,13 +26,11 @@
           <ul>
             {% for sublink in link.data.pagination.items %}
               {% set sublinkCls = sublink.data.navTag or "" %}
-              {{ navLink(sublink.page.url, sublink.data.shortTitle or sublink.data.title, { cls: sublinkCls + " mobile" , flashing: sublink.data.freezeframe or sublink.data.flashing}) }}
+              {{ navLink(sublink.page.url, sublink.data.shortTitle or sublink.data.title, { cls: sublinkCls + " mobile" , flashing: sublink.data.flashing}) }}
             {% endfor %}
           </ul>
         </li>
-      {% elif "nav" in link.data.tags and not "hideFromHome" in link.data.tags %}
-        {{ navLink(link.page.url, link.data.shortTitle or link.data.title, { cls: link.data.navTag, flashing: link.data.freezeframe or link.data.flashing }) }}
-      {% elif "hideFromHome" in link.data.tags and title != "Home" %}
+      {% elif "nav" in link.data.tags %}
         {{ navLink(link.page.url, link.data.shortTitle or link.data.title, { cls: link.data.navTag, flashing: link.data.freezeframe or link.data.flashing }) }}
       {% endif %}
     {% endfor %}

@@ -1,0 +1,194 @@
+export default {
+  path: "/assets/images/goodies/cliques/",
+  templates: {
+    text:
+    {
+      leftText: "",
+      centerIcon: "",
+      img: "",
+      imgAlt: "",
+      url: "",
+      rightText: ""
+    },
+    button: {
+      title: "",
+      cls: "",
+      tooltip: "",
+      url: "",
+      img: "",
+      alt: ""
+    }
+  },
+  col1: [
+    {
+      leftText: "aromatic",
+      centerIcon: "//",
+      url: "https://aromatic.wings.nu/",
+      rightText: "bánh bò"
+    },
+    {
+      leftText: "<span class='rainbow clique'>rainbow</span>",
+      centerIcon: "🌈",
+      url: "https://cliqued.wings.nu/",
+      rightText: "<span class='rainbow fav'>Mint Green</span>"
+    },
+    {
+      leftText: "my jam!!",
+      url: "https://cliqued.wings.nu/",
+      img: "jam.png",
+      imgAlt: "A sprite of a jar of pink jam",
+      rightText: "Chaotic Love Revolution"
+    },
+    {
+      leftText: "sanrio lvr",
+      centerIcon: "♡",
+      url: "https://jubiland.neocities.org/cliques#sanrioluvr",
+      rightText: "Big Challenges"
+    },
+    {
+      leftText: "What's Your Type?",
+      centerIcon: "::",
+      url: "https://web.archive.org/web/20160101164734/http://pkmn.zeruda.org/clique",
+      rightText: "Psychic / Bug"
+    },
+    {
+      leftText: "Mine!",
+      centerIcon: "//",
+      url: "https://cliques.windsprite.nu/mine/",
+      rightText: "Gilgamesh (FF)"
+    },
+    {
+      leftText: "flowering",
+      centerIcon: "//",
+      url: "https://theflowering.neocities.org",
+      rightText: "hydrangea <a href='http://jbrr.fc2web.com/material.html'><img class='ms-1 inline-img' src='/assets/images/goodies/cliques/hydrangea.gif' aria-hidden='true' alt=''></a>"
+    }
+  ],
+  col2: [
+    [
+      {
+        title: "Dearest",
+        tooltip: "OTP: Ryuuko Matoi and Senketsu",
+        cls: "dearest-otp",
+        url: "https://dearest.snow-heart.net",
+        img: "otp_dearest.png",
+        alt: "A pink button with hearts on the side and text that says, 'OTP Dearest'"
+      },
+      {
+        title: "Caffeine NATION",
+        tooltip: "Light roast with French vanilla (or Irish creme) creamer",
+        cls: "caffeine-nation",
+        url: "https://caffeinated.wings.nu/index.php",
+        img: "caffeine-nation.png",
+        alt: "A button that says, 'Caffeine NATION'"
+      },
+      {
+        title: "Astrology",
+        url: "https://dust.kuchiki.net/",
+        img: "aquarius.gif",
+        alt: "A button with a star and text that says, 'Aquarius'"
+      },
+      {
+        title: "Anime Genres",
+        url: "https://dust.kuchiki.net/",
+        img: "shoujo.gif",
+        alt: "A pink button with a floating heart and text that says, 'Shoujo'"
+      }
+    ],
+    [
+      {
+        title: "Pretty Guardians",
+        tooltip: "Under the protection of Mercury",
+        cls: "mercury",
+        url: "https://sailorcrystal.net/guardians/",
+        img: "mercury.png",
+        alt: "Sprite of Sailor Mercury"
+      },
+      {
+        title: "Final Fantasy Moogle Adoption Clique",
+        cls: "moogle",
+        tooltip: "I ♥ moogles // Kupo, kupo! Moogle Adoption Clique",
+        url: "https://midnight-cloud.net/clique/moogle/",
+        img: "moogle.gif",
+        imgAlt: "A moogle"
+      },
+      {
+        title: "I Choose You!",
+        cls: "i-choose-you",
+        tooltip: "I choose you! :: CHI-YU",
+        url: "https://pkmn.caelestis.nu/",
+        img: "i-choose-you.gif",
+        imgAlt: "The pokemon Chi-Yu"
+      },
+      {
+        title: "Adopt a Boba",
+        cls: "adopt-a-boba",
+        tooltip: "Taro Milk Tea :: Adopt a Boba",
+        url: "https://web.archive.org/web/20250407201106/https://pixelrevival.xyz/boba/",
+        img: "boba.gif",
+        imgAlt: "A cup of taro milk tea with boba"
+      }
+    ],
+    [
+      {
+        title: "exvius",
+        cls: "exvius",
+        tooltip: "Protected by Gilgamesh!",
+        url: "https://exvius.aelysia.net/",
+        img: "x-gilgamesh.png",
+        alt: "Gilgamesh as he appears in Final Fantasy Brave Exvius"
+      },
+      {
+        title: "Grand Summoning",
+        tooltip: "Grand Summoning :: Yojimbo",
+        url: "https://deathbusters.org/aeon/",
+        img: "yojimbo.png",
+        alt: "Yojimbo as he appears in Final Fantasy Brave Exvius"
+      }
+    ]
+  ],
+  col2_mobile: [
+    {
+      leftText: "OTP",
+      centerIcon: "::",
+      url: "http://dearest.snow-heart.net/",
+      rightText: "Ryuuko Matoi & Senketsu"
+    },
+    {
+      leftText: "caffeineNATION",
+      centerIcon: "☕︎",
+      url: "https://caffeinated.wings.nu/",
+      rightText: "Light roast with creamer"
+    },
+    {
+      leftText: "celestial divine",
+      centerIcon: "//",
+      url: "https://dust.kuchiki.net/",
+      rightText: "aquarius"
+    },
+    {
+      leftText: "i love anime",
+      centerIcon: "//",
+      url: "https://dust.kuchiki.net/",
+      rightText: "shoujo"
+    },
+    {
+      leftText: "I Choose You!",
+      centerIcon: "|",
+      url: "https://pkmn.caelestis.nu",
+      rightText: "CHI-YU"
+    },
+    {
+      leftText: "Exvius",
+      centerIcon: "//",
+      url: "https://exvius.aelysia.net",
+      rightText: "Gilgamesh"
+    },
+    {
+      leftText: "Grand Summoning",
+      centerIcon: "::",
+      url: "https://deathbusters.org/aeon/",
+      rightText: "Yojimbo"
+    }
+  ]
+}

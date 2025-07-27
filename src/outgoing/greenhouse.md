@@ -1,13 +1,14 @@
 ---
 title: Webgarden
 shortTitle: Webgarden
-displayOrder: 4
+displayOrder: 3
 description: Little pots that show a sneak peek of the websites they're based on.
 summary: A concept created by [Miss Moss](https://webgardens.neocities.org/)! It is, as she quotes, *"a fun way to see new content from your favorite websites"*. This particular greenhouse has pots that I personally think are super cool.
+navTag: 'js-required'
+permalink: '/outgoing/webgarden/index.html'
 prism: true
 flashing: true
-navTag: 'js-required'
-permalink: '/goodies/webgarden/index.html'
+hasLinks: true
 ---
 
 ## My Pot
@@ -25,6 +26,6 @@ If you think my site is cool, perhaps you can raise your own pot and help it gro
 
 Here is my pot collection! Any pots that are broken need to be put away until they can hopefully regrow!
 
-{% galleryBox { sidebarClass: 'greenhouse', contentClass: 'justify-content-center align-items-center' } %}
-{% for pot in goodies.greenhouse.gardenLinks | reverse %}<div><iframe src={{ pot }} scrolling="no" loading="lazy"></iframe></div>{% endfor %}
+{% galleryBox { cls: 'greenhouse', subCls: 'justify-content-center align-items-center' } %}
+{% for pot in outgoing.greenhouse | reverse %}<div><iframe src={{ pot }} scrolling="no" loading="lazy"></iframe></div>{% endfor %}
 {% endgalleryBox %}

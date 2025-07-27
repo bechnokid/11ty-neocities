@@ -46,7 +46,7 @@ const markdownifyInline = value => {
 // Sorts collections by displayOrder
 const sortCollectionByDisplayOrder = collection => {
   return collection.sort((a, b) =>
-    Number(a.data.displayOrder) > Number(b.data.displayOrder) ? 1 : -1
+    a.data.displayOrder - b.data.displayOrder
   );
 }
 

@@ -2,9 +2,11 @@
 title: Graphics
 displayOrder: 1
 description: A hoard of all the pretty graphics that I personally enjoy.
-freezeframe: true
 altLinkText: '. Clicking on the image leads to the source'
 permalink: '/goodies/graphics/index.html'
+freezeframe: true
+hasLinks: true
+flashing: true
 ---
 
 {% set goodiesArr = goodies.graphics %}
@@ -14,14 +16,14 @@ permalink: '/goodies/graphics/index.html'
 <section class="mb-4">
   {% for type in typesArr %}
   {% set array = goodiesArr[type].collection %}
-  {% details goodiesArr[type].title, { class: 'mt-3', summaryClass: 'h3 details', open: array.open } %}
-  {% galleryBox { contentClass: 'justify-content-center align-items-center graphics' + (' freezeframe' if type == "blinkies" else '' ) } %}
-    {% for item in array.items %}
-      {% if item.url %}<a href="{{ item.url }}">{% endif %}
-      <div><img {{ "class=freezeframe" if item.freezeframe }} src="{{ goodiesArr[type].imgSrc + item.src }}" alt="{{ item.alt }}"></div>
-      {% if item.url %}</a>{% endif %}
-    {% endfor %}
-  {% endgalleryBox %}
+  {% details { title: goodiesArr[type].title, cls: 'mt-3', summaryCls: 'h3 details', open: array.open } %}
+    {% galleryBox { subCls: 'justify-content-center align-items-center graphics' + (' freezeframe' if type == "blinkies" else '' ) } %}
+      {% for item in array.items %}
+        {% if item.url %}<a href="{{ item.url }}">{% endif %}
+        <div><img {{ "class=freezeframe" if item.freezeframe }} src="{{ goodiesArr[type].imgSrc + item.src }}" alt="{{ item.alt }}"></div>
+        {% if item.url %}</a>{% endif %}
+      {% endfor %}
+    {% endgalleryBox %}
   {% enddetails %}
   {% endfor %}
 </section>
@@ -32,10 +34,10 @@ permalink: '/goodies/graphics/index.html'
   {% for type in typesArr %}
   {% set array = goodiesArr[type].mine %}
   {% if array %}
-    {% details goodiesArr[type].title, { class: 'mt-3', summaryClass: 'h3 details', open: array.open } %}
-      {% galleryBox {contentClass: 'justify-content-center align-items-center graphics' + (' freezeframe' if type == "blinkies" else '' )} %}
+    {% details { title: goodiesArr[type].title, cls: 'mt-3', summaryCls: 'h3 details', open: array.open } %}
+      {% galleryBox { subCls: 'justify-content-center align-items-center graphics' + (' freezeframe' if type == "blinkies" else '' ) } %}
         {% for item in array.items %}
-          <img {{ "class=freezeframe" if item.freezeframe }} src="{{ goodiesArr[type].imgSrc + item.src }}" alt="{{ item.alt }}">
+          {% img goodiesArr[type].imgSrc + item.src, { alt: item.alt, freezeframe: item.freezeframe } %}
         {% endfor %}
       {% endgalleryBox %}
     {% enddetails %}

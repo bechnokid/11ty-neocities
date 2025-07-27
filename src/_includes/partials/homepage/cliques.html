@@ -20,11 +20,12 @@
             <div class="row">
               <div class="col d-flex flex-wrap justify-content-center align-items-baseline">
                 {% for clique in row %}
-                  {% if clique.tooltip %}<div class="tooltip">{% endif %}
-                    <a href="{{ clique.url }}"{% if clique.tooltip %} aria-describedby="clique-{{ clique.cls }}"{% endif %}><img class="mx-1" src="{{ cliques.path + clique.img }}" alt="{{ clique.alt + " for the \"" + clique.title + "\" clique" }}"></a>
+                  {% set altText = clique.alt + " for the '" + clique.title + "' clique"%}
+                  {% set cliqueSrc = cliques.path + clique.img %}
                   {% if clique.tooltip %}
-                    <div id="clique-{{ clique.cls }}" class="tooltip-content" role="tooltip">{{ clique.tooltip }}</div>
-                  </div>
+                    {% tooltip { tooltipId: "clique-" + clique.cls, url: clique.url, src: cliques.path + clique.img, alt: altText, imgCls: 'mx-1' } %}{{ clique.tooltip }}{% endtooltip %}
+                  {% else %}
+                    {% imgWithLink cliqueSrc, clique.url, { alt: altText, imgCls: 'mx-1' } %}
                   {% endif %}
                 {% endfor %}
               </div>

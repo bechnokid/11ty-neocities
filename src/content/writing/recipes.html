@@ -5,13 +5,7 @@ description: I'm no cook, but here are some recipes I've personally enjoyed!
 permalink: '/writing/recipes/index.html'
 noScroll: true
 ---
-
-<details open>
-<summary class='h2 details bg-footer p-2'>Takotaki (grilled octopus balls)</summary>
-<div class='sidebar'>
-
-<div class='content px-3 pt-3'>
-
+{% set contentBlock %}
 A classic Japanese snack, this recipe is slightly modified to taste less fishy.
 
 Please keep in mind that the majority of the ingredients can only be found in Japanese grocery stores or Asian supermarkets. This particular recipe I'm writing here is missing ingredients from "traditional" takoyaki recipes, but hey, it's still pretty good!
@@ -54,8 +48,12 @@ Please keep in mind that the majority of the ingredients can only be found in Ja
 1. Squeeze the okonomi sauce onto the balls, and then the mayonnaise.
 1. Wait for the takoyaki to cool down.
 1. CONSUME, and enjoy!
+{% endset %}
 
-</div>
-
-</div>
-</details>
+{% details { title: 'Takoyaki (grilled octopus balls)', open: true, summaryCls: 'h2 details bg-footer p-2' } %}
+  <div class="sidebar">
+    <div class="content px-3">
+      {{ contentBlock | markdownify | safe}}
+    </div>
+  </div>
+{% enddetails %}

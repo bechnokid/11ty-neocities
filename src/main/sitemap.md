@@ -1,12 +1,11 @@
 ---
 title: 'Sitemap'
 summary: Lost? Hopefully, this sitemap will help you navigate to where you want to go!
-displayOrder: 4
+displayOrder: 3
 permalink: '/sitemap/index.html'
 hide: true
 tags: main
 ---
-
 {% macro collectionList(section, name = null) %}
 ## {{ (name or section) | title }} {.sitemap}
 {% for link in collections[section] | sortCollectionByDisplayOrder %}
@@ -14,14 +13,11 @@ tags: main
 ### {{ link.data.title }} (WIP){.text-muted}
   {% elif link.data.subList %}
 ### {{ link.data.shortTitle or link.data.title }}
-    {% for subLink in link.data.pagination.items | sortCollectionByDisplayOrder %}
-- [{{ subLink.data.shortTitle or subLink.data.title }}]({{ subLink.url }})
+    {% for sublink in link.data.pagination.items | sortCollectionByDisplayOrder %}
+- {% link sublink.url, sublink.data.shortTitle or sublink.data.title, { cls: sublink.data.navTag } %} {% if sublink.data.flashing == true %} {% icon 'alert-triangle' %}{% endif %}
     {% endfor %}
-      {% if not loop.last %}
-<hr class='small'>
-      {% endif %}
   {% else %}
-- [{{ link.data.shortTitle or link.data.title }}]({{ link.url }})
+- [{{ link.data.shortTitle or link.data.title }}]({{ link.url }}){% if link.data.navTag %}{.{{link.data.navTag}}}{% endif %}{% if link.data.flashing == true %} {% icon 'alert-triangle' %}{% endif %}
   {% endif %}
 {% endfor %}
 {% endmacro %}

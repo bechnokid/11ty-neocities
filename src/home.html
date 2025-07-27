@@ -5,7 +5,7 @@ css: home
 tags:
   - nav
   - main
-displayOrder: 1
+displayOrder: 2
 noScroll: true
 ---
 {% set contentBlock %}
@@ -23,7 +23,9 @@ Webrings and fanlistings can be found in [/joined](/joined)!
   <div class="content">
     {{ contentBlock | markdownify | safe }}
     <div class="h3 intro-links text-center mt-4">
-      <a href="/sitemap">Sitemap</a><span class="mx-2">✦</span><a href="/feed.xml">RSS Feed</a><span class="mx-2">✦</span><a href="/guestbook">Guestbook</a>
+      {% for link in meta.introLinks %}
+        {% link link.url, link.name %}{% if not loop.last %}<span class="mx-2">✦</span>{% endif %}
+      {% endfor %}
     </div>
     <div class="status-row row g-lg-3 mb-3">
       <div class="status col-lg-7 mb-3 mb-lg-0">
@@ -34,9 +36,7 @@ Webrings and fanlistings can be found in [/joined](/joined)!
             <div class="p-5 w-100 text-center">Loading...</div>
           </div>
           <noscript>
-            <div class='px-2'>
-              <iframe src="https://status.cafe/users/bechnokid"></iframe>
-            </div>
+            <p class="p-4 text-center">Find me over at <a href="https://status.cafe/users/bechnokid">Status Cafe</a>!</p>
           </noscript>
         </div>
       </div>
@@ -45,7 +45,7 @@ Webrings and fanlistings can be found in [/joined](/joined)!
         <div class="h2 p-2">Link Me!</div>
           <div class="content p-2 text-center d-flex flex-column">
             <p class="my-1">Feel free to hotlink!</p>
-            <div>{% for button in meta.buttons %}<img class='mx-1' src="{{ button.src }}" alt="{{ button.alt }} button for Bechno Kid's Hideout">{% endfor %}</div>
+            <div>{% for button in meta.buttons %}{% img button.src, { imgCls: 'mx-1', alt: button.alt + " button for Bechno Kid's hideout"} %}{% endfor %}</div>
           </div>
         </div>
       </div>

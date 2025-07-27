@@ -1,0 +1,374 @@
+export default {
+  imgSrc: "/assets/images/goodies/blinkies/",
+  title: "Blinkies",
+  collection: {
+    items: [
+    {
+      src: "wear-your-mask.gif",
+      alt: "A white blinkie with a border of red and green dots. The text reads, 'Wear. Your. Mask'",
+      url: "https://keysklubhouse.com/goodies/blinkies"
+    },
+    {
+      src: "ukraine.gif",
+      alt: "A blinkie with a border of blue and yellow dots. The Ukraine flag is in the background and the text alternates between, 'Stand with Ukraine' and 'Слава Україні!' which is Ukrainian for 'Glory to Ukraine'",
+      url: "https://keysklubhouse.com/goodies/blinkies"
+    },
+    {
+      src: "triggers.gif",
+      alt: "A black blinkie with a dark blue border of yellow and blue dots. The background has several warning icons and the text reads, 'Don't share your triggers publicly oh my god!",
+      url: "https://bedazzling-blinkiez.tumblr.com/post/699202538905436160/"
+    },
+    {
+      src: "stop-smoking.gif",
+      alt: "A blinkie with a border of red and white dots. There is a cigarette in the background and text that reads, 'Please stop smoking' followed by a black skull",
+      url: "https://keysklubhouse.com/goodies/blinkies"
+    },
+    {
+      src: "respect.gif",
+      alt: "A pastel green blinkie with a border of black and white dots. There are flowers on both ends of the blinkie and text that reads, 'respect others'"
+    },
+    {
+      src: "practice-safe-sex.gif",
+      alt: "A dark red blinkie with a white border of red and grey dots. There is an image of a condom and text that reads, 'Practice safe sex'"
+    },
+    {
+      src: "equality.gif",
+      alt: "A blinkie with a purple gradient and a border of black, pink, and white dots. The text is in between the feminine and masculine insignias and reads 'Demand EQUALITY'",
+      url: "https://yupthatsme.neocities.org/blinkies"
+    },
+    {
+      src: "drink-water.gif",
+      alt: "A turquoise blinkie with a border of black and white dots. The text is surrounded by water bottles and reads, 'Drink Water'",
+      url: "https://awnowimsad.tumblr.com/post/694670498301444096"
+    },
+    {
+      src: "dowhatmakesyouhappy.gif",
+      alt: "A pastel yellow blinkie with various birds. There is rainbow text that reads in all capital letters, 'Do what makes you happy'",
+      url: "https://squirrelspace.tumblr.com/post/708852825415909376"
+    },
+    {
+      src: "abuse.gif",
+      alt: "A white blinkie with a border of blue dots. The text reads 'Child Abuse Prevention' with an image of a blue ribbon on the side"
+    },
+    {
+      src: "abortionrights.gif",
+      alt: "A pink blinkie with red text that reads, 'You can't ban abortion. You can only ban SAFE abortions'",
+      url: "https://keysklubhouse.com/goodies/blinkies"},
+    {
+      src: "chiikawa.gif",
+      alt: "Chiikawa with white text next to it that says, \"Chiikawa!\""
+    },
+    {
+      src: "grizz-fan.gif",
+      alt: "A purple blinkie with a multi-colored border of pink and purple dots. There is an image of Mr. Grizz from the Splatoon franchise on the side and text that reads, 'Grizz fan'",
+      url: "https://cephalonheadquarters.tumblr.com/post/722336705743650816"
+    },
+    {
+      src: "i-like-fish.gif",
+      alt: "A blinkie with a border of cyan dots. The background is an underwater setting with various aquatic plants and text that reads, 'I like fish'",
+      url: "https://www.tumblr.com/qiekz/722528844711641088"
+    },
+    {
+      src: "low-wage.gif",
+      alt: "A dark green blinkie with a dark green border of orange and white dots. There is an image of a Salmonid and a Power Egg from the Splatoon franchise and text that reads, 'I don't get paid enough for this'",
+      url: "https://cephalonheadquarters.tumblr.com/post/722360322539880448"
+    },
+    {
+      src: "vaporwave-802778949.gif",
+      alt: "A pink, blue, and purple gradient blinkie with a pink, blue, and purple border of black and white dots. The text reads, 'Vaporwave'",
+      url: "https://deviantart.com/view/802778949"
+    },
+    {
+      src: "vaccinated.gif",
+      alt: "A black blinkie with a border of red and white dots. There are green pixel hearts and text that reads, 'Vaccinated'"
+    },
+    {
+      src: "universal-love.gif",
+      alt: "A light pink blinkie with a pink border of black and white dots. There are pixel hearts and text that reads, 'Love is universal'"
+    },
+    {
+      src: "typos.gif",
+      alt: "A black blinkie with a white border of black dots. The text reads, 'Typos who needs bakspase!' with the last word being 'backspace' but mispelled. The cursor then deletes the word 'bakspase'."
+    },
+    {
+      src: "too-much-water.gif",
+      alt: "A blinkie with a water tiles from Pokemon Ruby, Sapphire, and Emerald as the background. The text reads, '7.8/10 too much water' as a reference to an infamous IGN review",
+      url: "https://awnowimsad.tumblr.com/post/704073899883773952"
+    },
+    {
+      src: "thrift.gif",
+      alt: "A yellow blinkie with a border of red and yellow dots. The text reads, 'I love thrift stores' with 'love' being replaced by a red heart"
+    },
+    {
+      src: "thankyou.gif",
+      alt: "A yellow blinkie with a gold border of black and white dots. There is a smiley face on the side and text that reads, 'Thank you'"
+    },
+    {
+      src: "team-power.gif",
+      alt: "A red blinkie with a dark red border of red and white dots. There is artwork of Din's crest to represent the Triforce of Power from the May 2023 Splatfest in Splatoon 3 to celebrate the release of The Legend of Zelda: Tears of the Kingdom. The text is outlined in a pale pink glow and reads, 'Team Power!'",
+      url: "https://implalazz.tumblr.com/tagged/splatfest"
+    },
+    {
+      src: "squinting.gif",
+      alt: "A dark grey blinkie with a black border of red and white dots. The text reads, 'Even though this is just a stupid blinky, you are still squinting to read it'"
+    },
+    {
+      src: "soup_enjoyer.gif",
+      alt: "A black blinkie with a border of orange and white dots. The text reads in capital letters, 'Soup enjoyer'",
+      url: "https://deviantart.com/view/933598096"
+    },
+    {
+      src: "so-glad-we-clicked.webp",
+      alt: "A pastel blue blinkie with a purple border of white, blue, and black dots. There is an image of a computer and two emojis. The orange emoji is hugging the yellow emoji, while the yellow emoji is blushing. the text reads, 'I'm so glad we clicked'"
+    },
+    {
+      src: "sleep.gif",
+      alt: "A black blinkie with a yellow border of black dots. There is text that reads in capital letters, 'I need sleep!'"
+    },
+    {
+      src: "silly-star.gif",
+      alt: "A purple and indigo gradient blinkie with many colorful stars and sparkles. There is a smiling rainbow star on one end of the blinkie and text that reads in capital letters, 'Silly!!'",
+      url: "https://pawpr1nc3.tumblr.com/post/701370517578563584"
+    },
+    {
+      src: "science-827414222.gif",
+      alt: "A dark green blinkie with a border of green dots. There are two flasks filled with green liquid on both ends of the blinkie with text that reads in capital letters, 'Science!'",
+      url: "https://deviantart.com/view/827414222"
+    },
+    {
+      src: "rofllmao.gif",
+      alt: "A pastel blue blinkie with a blue border of white and light blue dots. There are smiling emojis on both ends of the blinkie and text that reads, 'ROFLMAO'",
+      url: "https://web.archive.org/web/20090831003112/http://geocities.com/crazifleebs05/blinkies.html"
+    },
+    {
+      src: "rewind-889829725.gif",
+      alt: "A black blinkie with a border of yellow and white dots. There is an image of a VHS tape and text that alternates between yellow and white that reads, 'be kind...REWIND!'",
+      url: "https://deviantart.com/view/889829725"
+    },
+    {
+      src: "pumpkin.gif",
+      alt: "An orange and yellow gradient blinkie with a black border orange and yellow dots. There are pumpkins on both ends of the blinkie and text that reads, 'Pumpkin Time'"
+    },
+    {
+      src: "programmer.gif",
+      alt: "A black blinkie with a border of grey and white dots. The green text reads, 'Programmer'"
+    },
+    {
+      src: "pluto.gif",
+      alt: "A brown and tan gradient blinkie with a border of white dots. There is an image of the planet Pluto and text that reads, 'I believe in you, Pluto'"
+    },
+    {
+      src: "perish.gif",
+      alt: "A red blinkie with a border of black and red dots. There is an image of former President Obama's eyes glowing with malicious intent and text that reads in capital letters, 'Then perish'"
+    },
+    {
+      src: "peach.gif",
+      alt: "A pastel orange blinkie with an orange border of green dots. There is an image of a peach and text that reads, 'just peachy'"
+    },
+    {
+      src: "ouchie.webp",
+      alt: "A beige blinkie with a tan border of red and white dots. There is an image of bandage and text flashing in red and black that reads, 'Ouchie!'"
+    },
+    {
+      src: "oreo.gif",
+      alt: "A dark blue blinkie with a border of blue and white dots. There is a logo from the Oreo cookies on one side of the blinkie, and a stack of several Oreo cookies on the other"
+    },
+    {
+      src: "ohworm.gif",
+      alt: "A white blinkie with a blue border of white dots. There is an image of a colorful plush worm crawling and rainbow text that reads, 'Oh worm'"
+    },
+    {
+      src: "nya.gif",
+      alt: "A pastel orange blinkie with a brown border of black and white dots. There are pixel cats on both ends of the blinkie and text that reads in capital letters, 'Y'know like...nya?'"
+    },
+    {
+      src: "nap.gif",
+      alt: "A white blinkie with a border of purple, blue, and orange dots. The text's color alternates between purple, blue, and orange and reads, 'When in doubt, take a nap!'"
+    },
+    {
+      src: "mysteryskulls.gif",
+      alt: "A dark purple blinkie with a colored border that alternates between pink, red, yellow, and blue. There is an animated image of the Mystery Skulls team from the Mystery Skulls Animated series walking on one end of the blinkie and text that reads in capital letters, 'Mystery Skulls'",
+      url: "https://n0ikado.tumblr.com/post/709015619702489088"
+    },
+    {
+      src: "mug-collector.gif",
+      alt: "A green blinkie with a dark green border of black and white dots. The text is surrounded by images of mugs and reads, 'Mug collector'",
+      url: "https://bedazzling-blinkiez.tumblr.com/post/699202538905436160/"
+    },
+    {
+      src: "mad-scientist.gif",
+      alt: "A neon pink blinkie with a mint green clouds on both ends of the blinkie. There is an image of a scientist obscured in black save for their swirling glasses and large grin. The text reads in capital letters, 'Mad scientist'",
+      url: "https://muchomago.tumblr.com/post/696312717347291136"
+    },
+    {
+      src: "junkie.gif",
+      alt: "A green and white gradient blinkie with a black border of green, white, and grey dots. The flashing red and green text reads in capital letters, 'HTML junkie'"
+    },
+    {
+      src: "isupportdrawinginclass.gif",
+      alt: "A white blinkie with a grey and white gradient border of red and white dots. There is an image of a pencil and text that reads, 'I support drawing in class'"
+    },
+    {
+      src: "inigo_montoya.gif",
+      alt: "A dark puple blinkie with a purple border of white dots. There is an image of Inigo Montoya from the movie 'Princess Bridge' and pastel yellow text that reads, 'You killed my father. Prepare to die!'"
+    },
+    {
+      src: "iloveroses.gif",
+      alt: "A black blinkie with a grey border of black and red dots. There are is a rose on both ends of the blinkie and yellow text that reads in capital letters"
+    },
+    {
+      src: "i-love-winter.webp",
+      alt: "A pastel blue blinkie with a dark blue border of black and white dots. There are snowflakes on opposite ends of the blinkie and blue text that reads in capital letters, 'I love winter'. The word 'love' is replaced by a blinking blue heart"
+    },
+    {
+      src: "i-love-pink.gif",
+      alt: "A pink blinkie with a dark pink border of black and white dots. There are pixel hearts surrounding white text that reads, 'Pink! I love pink!' The word 'love' is replaced by a blinking pixel heart"
+    },
+    {
+      src: "hugs.gif",
+      alt: "A pastel red blinkie with a red border of pink and green dots. There is an image of smilies in various colors hugging each other, and text that reads, 'Hugs...not drugs'"
+    },
+    {
+      src: "hello_kitty.gif",
+      alt: "A pink blinkie with a border of red and white dots. There is an image of Kitty from the Hello Kitty franchise on the side with cursive text that reads, 'Hello Kitty'"
+    },
+    {
+      src: "hearts.webp",
+      alt: "A red blinkie with a red border of black and white dots. There is a row of blinking hearts that take up the width of the blinkie."
+    },
+    {
+      src: "hate-laundry.webp",
+      alt: "A dark blue blinkie with a border of blue and white dots. There is an image of a washing machine on the side and text that reads, 'I hate doing laundry'"
+    },
+    {
+      src: "gotta-go-fast.gif",
+      alt: "A green-striped blinkie that has a black border with red and white dots. There is an image of Sonic the Hedgehog on the side and text that reads in capital letters, 'Gotta go fast!'",
+      url: "https://mechaengineer.tumblr.com/post/688533359135227904"
+    },
+    {
+      src: "goldfishin.gif",
+      alt: "A blue blinkie that has an orange border with black and white dots. There is a pixel image of a Goldfish cracker and text that reads, 'Gone GOLD fishin'!'"
+    },
+    {
+      src: "ghostbusters.gif",
+      alt: "A black blinkie with a border of white and red dots based on the movie 'Ghostbusters'. There is an image of the Ghostbusters' logo and text that reads 'Ghostbusters'"
+    },
+    {
+      src: "gdikris.gif",
+      alt: "A blinkie with Kris and Suzie from Deltarune that has a border of white dots. Suzie is gesturing at Kris and the text between them reads 'god dammit kris where the hell are we'"
+    },
+    {
+      src: "enjoy-life.gif",
+      alt: "A pastel yellow blinkie that has a border with black and orange dots. The text is surrounded by daisies and reads, 'Enjoy life to its fullest'"
+    },
+    {
+      src: "donteatcrayons.gif",
+      alt: "A pastel pink blinkie that has a border with pastel pink and dark pink dots. The text reads, 'don't eat crayons' with an image of a pink crayon on the side",
+      url: "https://raining-starss.neocities.org/stampcollection"
+    },
+    {
+      src: "dont_label_me.gif",
+      alt: "A white blinkie that has a red border with black dots. The red text reads in all capital letters, 'Don't Label Me'. On the side is a barcode"
+    },
+    {
+      src: "dialup.gif",
+      alt: "A pastel green blinkie that has a black border with green and yellow dots. The text reads 'Dial-Up SUCKS!'. On the side is an image of two computers connected to a telephone"
+    },
+    {
+      src: "ctrl-alt-del.gif",
+      alt: "A purple blinkie that has a border with white dots. The text reads, 'Ctrl + Alt + Del' that correlate to the keys 'Control', 'Alt', and 'Delete' on a desktop keyboard. Images of a red circle with a white X and a yellow triangle with a black '!' flash"
+    },
+    {
+      src: "crustacean-931429040.gif",
+      alt: "A black blinkie that has a border of red and white dots. The text reads in capital letters, 'crustacean', followed by two crab icons",
+      url: "https://deviantart.com/view/931429040"
+    },
+    {
+      src: "coolbeans.gif",
+      alt: "A pastel yellow blinkie that has a pink border with pink and blue dots. The text is surrounded by pink and blue jellybeans and reads, 'Cool beans'",
+      url: "https://raining-starss.neocities.org/stampcollection"
+    },
+    {
+      src: "computer-geek.webp",
+      alt: "A blinkie with an orange gradient with a green dashed border and an image of a cartoon man on a computer. The text reads, '100% computer geek'"
+    },
+    {
+      src: "coffee.gif",
+      alt: "An orange blinkie that has a black border with orange and white dots. There is an image of a white mug of coffee and text that reads, 'I NEED coffee!'. The word 'need' has a blinking glow affect around it"
+    },
+    {
+      src: "cecilsweep.gif",
+      alt: "A blinkie with an orange and purple gradient background; a border with white, black, and red dots; and purple text that reads in all capital letters, 'I voted' in reference to the official Tumblr Sexyman Tournament. The image on the left side is a golden crown with the Tumblr logo and the image on the left side is a blinking purple eye. Clickin on the blinkie leads to the source",
+      url: "https://planetbass.tumblr.com/post/707820807423967232/"
+    },
+    {
+      src: "caddicarus.gif",
+      alt: "A purple blinkie with a border of white and pink dots; text reads in capital letters, 'Caddicarus'; and an image of Jim Caddick on the side",
+      url: "https://aloftmelevar.com/mels-place/webgraphics"
+    },
+    {
+      src: "blogsweetblog.gif",
+      alt: "A pastel pink blog with a dark pink border with flashing black and white dots. There are two pink pixel hearts, and in between the hearts is pink text that reads in capital letters, 'Blog Sweet Blog'"
+    },
+    {
+      src: "blinkie-blonkie.gif",
+      alt: "A white blinkie with a pink glittery border, with pink text that reads in capital letters, 'Blinkie Blonkie'",
+      url: "https://scungledfiles.tumblr.com/post/699406444756434944"
+    },
+    {
+      src: "back-to-the-future.gif",
+      alt: "A blinkie with an orange dashed border, based on the movie 'Back to the Future'. The text has the movie's logo, and there is an image of Marty McFly on the left side"
+    },
+    {
+      src: "attractedtoshinyobjects.gif",
+      alt: "A blinkie with a purple and pink striped gradient, a purple and white dotted border, and white text that reads, 'Attracted to shiny objects'."
+    },
+    {
+      src: "artist.gif",
+      alt: "A black blinkie with a red and white dashed border with rainbow text that reads in capital letters, 'Artist'. The text is surrounded by a comedy mask, an artist's pasteltte, some rainbow paint splatters, and two white music notes"
+    },
+    {
+      src: "antique.gif",
+      alt: "A black blinkie with a white dashed border and white text that reads, 'I love antiques', with 'love' being replaced with a pink heart"
+    },
+    {
+      src: "404.gif",
+      alt: "A white blinkie with a black border with white and red dots. The text reads 'ERROR 404 Blinkie not found'"}
+  ]
+  },
+  mine: {
+    items: [
+      {
+        src: "blinkie-strange-sprite.gif",
+        alt: "A pale blue blinkie with a dark blue border of red and yellow dots. There is an image of Doctor Strange on the side and the text reads in capital letters, 'Doctor Strange'"
+      },
+      {
+        src: "wifehubby.gif",
+        alt: "A black blinkie with a border of white dashes. The text reads, 'I love my wife + husband', with the word 'love' replaced by a beating red heart"
+      },
+      {
+        src: "tummy-ache-survivor.gif",
+        alt: "A black blinkie with a multi-colored border of black and white dots. The text reads, 'tummy ache survivor'"
+      },
+      {
+        src: "pinkiepie.gif",
+        alt: "A pastel pink blinkie with a pink border of blue and yellow dots. There is an image of Pinkie Pie from My Little Pony: Friendship is Magic and text that reads, 'okey dokey lokey artichokey!'"
+      },
+      {
+        src: "caffeine.gif",
+        alt: "A brown blinkie with a border of white and taupe dots, and text that reads in capital letters, 'Caffeine!!!'"
+      },
+      {
+        src: "bootleg-girl.gif",
+        alt: "A blinkie with the demigirl flag in the background. There are grey, white, and pink dots that border the blinkie. The text reads in all capital letters, 'Bootleg girl'"
+      },
+      {
+        src: "all-ace-no-grace.gif",
+        alt: "A blinkie with the asexual flag in the background. There are black, grey, white, and purple dots that border the blinkie. The text reads in all capital letters, 'All ace, no grace"
+      },
+      {
+        src: "2spoopy4me.gif",
+        alt: "A purple blinkie with a haunted house with glowing windows and moon above it and a black cat surrounded by stars. The text reads '2spoopy4me'"}
+    ]
+  }
+}

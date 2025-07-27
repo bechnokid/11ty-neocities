@@ -4,78 +4,34 @@ shortTitle: Pixel Clubs
 displayOrder: 3
 description: Various pixel clubs that I have joined with my own pixel art.
 permalink: '/goodies/pixel_clubs/index.html'
+freezeframe: true
+hasLinks: true
 ---
-
-{% set imgLink = goodies.pixel_clubs.imgLink %}
+{% from 'components/pixel_clubs/macros.html' import
+  basicClique as clique,
+  cdwClique as cdw,
+  yysClique as yys %}
+{% set imgLink = '/assets/images/goodies/cliques/' %}
 
 {% macro cliqueSection(cliqueName) %}
-{% set cliqueArray = goodies.pixel_clubs.items[cliqueName] %}
-{% if cliqueArray %}
-<section>
-  <h2 id="{{ cliqueName }}">{{ cliqueArray.title }}</h2>
-  <p>Created by <a href="{{ cliqueArray.owner.link }}">{{ cliqueArray.owner.name }}</a>!{% if cliqueArray.owner.archived %} (archived){% endif %}</p>
-  {% for arrayName in ["mine", "collection"] %}
-    {% if cliqueArray[arrayName] %}
-      {% if cliqueName == "yys" %}
-        {{ yysClique(cliqueArray[arrayName], cliqueName + '/', cliqueArray.altText) }}
-      {% elif cliqueName == 'cdw' %}
-        {{ cdwClique(cliqueArray[arrayName], cliqueName + '/', cliqueArray.altText) }}
-      {% else %}
-        {{ basicClique(cliqueArray[arrayName], cliqueName + '/', cliqueArray.altText) }}
+  {% set cliqueArray = goodies.pixel_clubs.items[cliqueName] %}
+  {% if cliqueArray %}
+  <section>
+    <h2 id="{{ cliqueName }}">{{ cliqueArray.title }}</h2>
+    <p>Created by <a href="{{ cliqueArray.owner.link }}">{{ cliqueArray.owner.name }}</a>!{% if cliqueArray.owner.archived %} (archived){% endif %}</p>
+    {% for arrayName in ["mine", "collection"] %}
+      {% if cliqueArray[arrayName] %}
+        {% if cliqueName == "yys" %}
+          {{ yys(cliqueArray[arrayName], imgLink + cliqueName + '/', cliqueArray.altText) }}
+        {% elif cliqueName == 'cdw' %}
+          {{ cdw(cliqueArray[arrayName], imgLink + cliqueName + '/', cliqueArray.altText) }}
+        {% else %}
+          {{ clique(cliqueArray[arrayName], imgLink + cliqueName + '/', cliqueArray.altText) }}
+        {% endif %}
       {% endif %}
-    {% endif %}
-  {% endfor %}
-</section>
-{% endif %}
-{% endmacro %}
-
-{% macro basicClique(array, location, altText) %}
-{% details array.title, { class: 'mt-3 mb-4', summaryClass: 'h3 details', open: array.open } %}
-{% galleryBox { contentClass: 'justify-content-center cliques' + ( (" align-items-" + array.alignItems) if array.alignItems else " align-items-center") } %}
-  {% for item in array.items %}
-    {% if item.link %}<a href="{{ item.link }}">{% endif %}
-    <img src="{{ imgLink + location + item.src}}" alt="{{ (altText + item.desc) if altText else item.desc }}"{% if item.freezeframe %} class="freezeframe"{% endif %}>
-    {% if item.link %}</a>{% endif %}
-  {% endfor %}
-{% endgalleryBox %}
-{% enddetails %}
-{% endmacro %}
-
-{% macro cdwClique(array, location, altText) %}
-{% details array.title, { class: 'mt-3 mb-4', summaryClass: 'h3 details', open: array.open } %}
-{% galleryBox { contentClass: 'justify-content-center align-items-center cliques' } %}
-  {% for item in array.items %}
-    {% figure location + item.src, { class: 'm-1', alt: item.desc, figCaptionCls: 'text-center', noLink: (false if item.link else true), imgLink: item.link } %}
-      <a href='{{ item.playlist }}'><button type="button" class="rounded-5 text-xs"><i class="fa fa-play"></i> Play</button></a>
-    {% endfigure %}
-  {% endfor %}
-{% endgalleryBox %}
-{% enddetails %}
-{% endmacro %}
-
-{% macro yysClique(array, location, altText) %}
-{% details array.title, { class: 'mt-3 mb-4', summaryClass: 'h3 details', open: array.open } %}
-<table class="yys-table">
-  <thead>
-    <tr>
-      {% for name in array.columnNames %}
-      <th>{{ name | title }}</th>
-      {% endfor %}
-    </tr>
-  </thead>
-  <tbody>
-    {% for row in array.rows %}
-    <tr>
-      <td class='item text-center'><img {{'class=freezeframe' if row.freezeframe }} src="{{ imgLink + location + row.src }}" alt="{{ (altText + row.alt) if altText else row.alt }}"></td>
-      <td>{{ row.desc }}</td>
-      {% if row.link %}
-      <td><a href="{{ row.link }}">{{ row.name }}</a></td>
-      {% endif %}
-    </tr>
     {% endfor %}
-  </tbody>
-</table>
-{% enddetails %}
+  </section>
+  {% endif %}
 {% endmacro %}
 
 <div class="row">
