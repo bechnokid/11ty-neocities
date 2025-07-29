@@ -122,7 +122,7 @@ const figure = function (children, src, options = {}) {
     imgStr = `<a href='${imgLink}'>${imgStr}</a>`;
   }
 
-  const figureCls = (options.cls) ? ` class='${options.cls}` : '';
+  const figureCls = (options.cls) ? ` class='${options.cls}'` : '';
   const figureStyle = (options.style) ? ` style='${options.style}'` : '';
   const caption = (options.noMarkdown) ? children : markdownLib.render(children.trim());
   const figcaptionCls = (options.figcaptionCls) ? ` class='${options.figcaptionCls}` : '';
@@ -136,9 +136,6 @@ const galleryBox = function (children, params = {}) {
   let subCls = (params.subCls) ? ` ${params.subCls}` : '';
 
   if (params.markdown) {
-    if (params.title == "Likes") {
-      console.log('debug');
-    }
     mainContent = (params.markdown.inline) ? markdownLib.renderInline(children.trim()) : markdownLib.render(children.trim());
   }
 

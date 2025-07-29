@@ -17,7 +17,7 @@ I was never a pet person, so I never knew about the concept of the "Rainbow Brid
 
 ## Ava "Avalypuff"
 
-{% figure imgSrc + "ava.jpg", { alt: "Ava on a checkered quilt, looking at the camera with her paws crossed", class: 'figure-right mt-3 rounded p-2' } %}
+{% figure imgSrc + "ava.jpg", { alt: "Ava on a checkered quilt, looking at the camera with her paws crossed", cls: 'figure-right mt-3 rounded p-2' } %}
 Ava on a checkered quilt, looking at the camera with her paws crossed
 {% endfigure %}
 

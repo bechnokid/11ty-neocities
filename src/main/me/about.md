@@ -5,7 +5,7 @@ prism: true
 permalink: '/about/index.html'
 ---
 {% from 'components/about/macros.html' import flagViet, flagUS, flagPride %}
-{% figure "profile.png", { noLink: true, alt: "Bechno Kid", class: 'about-figure' } %}{% endfigure %}
+{% figure "profile.png", { noLink: true, alt: "Bechno Kid", cls: 'about-figure' } %}{% endfigure %}
 
 Hi, I'm **Bechno Kid** (she/her), the head honcho of this hideout.
 
