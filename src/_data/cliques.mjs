@@ -12,7 +12,7 @@ export default {
     },
     button: {
       title: "",
-      cls: "",
+      id: "",
       tooltip: "",
       url: "",
       img: "",
@@ -69,44 +69,90 @@ export default {
       {
         title: "Dearest",
         tooltip: "OTP: Ryuuko Matoi and Senketsu",
-        cls: "dearest-otp",
+        id: "dearest-otp",
         url: "https://dearest.snow-heart.net",
         img: "otp_dearest.png",
-        alt: "A pink button with hearts on the side and text that says, 'OTP Dearest'"
+        alt: "A pink button with hearts on the side and text that says, 'OTP Dearest'",
+        mobile: {
+          leftText: "OTP",
+          centerIcon: "::",
+          rightText: "Ryuuko Matoi & Senketsu"
+        }
       },
       {
         title: "Caffeine NATION",
         tooltip: "Light roast with French vanilla (or Irish creme) creamer",
-        cls: "caffeine-nation",
+        id: "caffeine-nation",
         url: "https://caffeinated.wings.nu/index.php",
         img: "caffeine-nation.png",
-        alt: "A button that says, 'Caffeine NATION'"
+        alt: "A button that says, 'Caffeine NATION'",
+        mobile: {
+          leftText: "caffeineNATION",
+          centerIcon: "☕︎",
+          rightText: "Light roast with creamer"
+        }
       },
       {
         title: "Astrology",
         url: "https://dust.kuchiki.net/",
         img: "aquarius.gif",
-        alt: "A button with a star and text that says, 'Aquarius'"
+        alt: "A button with a star and text that says, 'Aquarius'",
+        mobile: {
+          leftText: "celestial divine",
+          centerIcon: "//",
+          rightText: "aquarius"
+        }
       },
       {
         title: "Anime Genres",
         url: "https://dust.kuchiki.net/",
         img: "shoujo.gif",
-        alt: "A pink button with a floating heart and text that says, 'Shoujo'"
+        alt: "A pink button with a floating heart and text that says, 'Shoujo'",
+        mobile: {
+          leftText: "i love anime",
+          centerIcon: "//",
+          rightText: "shoujo"
+        }
+      },
+      {
+        title: "Barbieland",
+        id: 'barbieland',
+        tooltip: 'This Barbie is a Monster Hunter!',
+        url: "https://fan.sanguineroyal.com/cli/barbieland/",
+        img: "barbieland.gif",
+        alt: "A white button with pink text that says, \"Barbieland\" with the Barbie logo on the side",
+        mobile: {
+          leftText: "Barbieland",
+          centerIcon: "::",
+          rightText: "This Barbie is a Monster Hunter!"
+        }
+      },
+      {
+        title: "Miasma",
+        tooltip: "Fav fictional villain: Christine from Stephen King's Christine",
+        id: 'miasma',
+        url: "https://miasma.dual-weekend.com/",
+        img: 'miasma.gif',
+        alt: 'White and purple text that reads, \"miasma\"',
+        mobile: {
+          leftText: 'miasma',
+          centerIcon: '::',
+          rightText: "Christine from Stephen King's \"Christine\""
+        }
       }
     ],
     [
       {
         title: "Pretty Guardians",
         tooltip: "Under the protection of Mercury",
-        cls: "mercury",
+        id: "mercury",
         url: "https://sailorcrystal.net/guardians/",
         img: "mercury.png",
         alt: "Sprite of Sailor Mercury"
       },
       {
         title: "Final Fantasy Moogle Adoption Clique",
-        cls: "moogle",
+        id: "moogle",
         tooltip: "I ♥ moogles // Kupo, kupo! Moogle Adoption Clique",
         url: "https://midnight-cloud.net/clique/moogle/",
         img: "moogle.gif",
@@ -114,15 +160,20 @@ export default {
       },
       {
         title: "I Choose You!",
-        cls: "i-choose-you",
+        id: "i-choose-you",
         tooltip: "I choose you! :: CHI-YU",
         url: "https://pkmn.caelestis.nu/",
         img: "i-choose-you.gif",
-        imgAlt: "The pokemon Chi-Yu"
+        imgAlt: "The pokemon Chi-Yu",
+        mobile: {
+          leftText: "I Choose You!",
+          centerIcon: "|",
+          rightText: "CHI-YU"
+        }
       },
       {
         title: "Adopt a Boba",
-        cls: "adopt-a-boba",
+        id: "adopt-a-boba",
         tooltip: "Taro Milk Tea :: Adopt a Boba",
         url: "https://web.archive.org/web/20250407201106/https://pixelrevival.xyz/boba/",
         img: "boba.gif",
@@ -132,63 +183,30 @@ export default {
     [
       {
         title: "exvius",
-        cls: "exvius",
+        id: "exvius",
         tooltip: "Protected by Gilgamesh!",
         url: "https://exvius.aelysia.net/",
         img: "x-gilgamesh.png",
-        alt: "Gilgamesh as he appears in Final Fantasy Brave Exvius"
+        alt: "Gilgamesh as he appears in Final Fantasy Brave Exvius",
+        mobile: {
+          leftText: "Exvius",
+          centerIcon: "//",
+          rightText: "Gilgamesh"
+        }
       },
       {
         title: "Grand Summoning",
+        id: 'grand-summoning',
         tooltip: "Grand Summoning :: Yojimbo",
         url: "https://deathbusters.org/aeon/",
         img: "yojimbo.png",
-        alt: "Yojimbo as he appears in Final Fantasy Brave Exvius"
+        alt: "Yojimbo as he appears in Final Fantasy Brave Exvius",
+        mobile: {
+          leftText: "Grand Summoning",
+          centerIcon: "::",
+          rightText: "Yojimbo"
+        }
       }
     ]
-  ],
-  col2_mobile: [
-    {
-      leftText: "OTP",
-      centerIcon: "::",
-      url: "http://dearest.snow-heart.net/",
-      rightText: "Ryuuko Matoi & Senketsu"
-    },
-    {
-      leftText: "caffeineNATION",
-      centerIcon: "☕︎",
-      url: "https://caffeinated.wings.nu/",
-      rightText: "Light roast with creamer"
-    },
-    {
-      leftText: "celestial divine",
-      centerIcon: "//",
-      url: "https://dust.kuchiki.net/",
-      rightText: "aquarius"
-    },
-    {
-      leftText: "i love anime",
-      centerIcon: "//",
-      url: "https://dust.kuchiki.net/",
-      rightText: "shoujo"
-    },
-    {
-      leftText: "I Choose You!",
-      centerIcon: "|",
-      url: "https://pkmn.caelestis.nu",
-      rightText: "CHI-YU"
-    },
-    {
-      leftText: "Exvius",
-      centerIcon: "//",
-      url: "https://exvius.aelysia.net",
-      rightText: "Gilgamesh"
-    },
-    {
-      leftText: "Grand Summoning",
-      centerIcon: "::",
-      url: "https://deathbusters.org/aeon/",
-      rightText: "Yojimbo"
-    }
   ]
 }

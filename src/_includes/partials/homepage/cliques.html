@@ -23,7 +23,7 @@
                   {% set altText = clique.alt + " for the '" + clique.title + "' clique"%}
                   {% set cliqueSrc = cliques.path + clique.img %}
                   {% if clique.tooltip %}
-                    {% tooltip { tooltipId: "clique-" + clique.cls, url: clique.url, src: cliques.path + clique.img, alt: altText, imgCls: 'mx-1' } %}{{ clique.tooltip }}{% endtooltip %}
+                    {% tooltip { tooltipId: "clique-" + clique.id, url: clique.url, src: cliques.path + clique.img, alt: altText, imgCls: 'mx-1' } %}{{ clique.tooltip }}{% endtooltip %}
                   {% else %}
                     {% imgWithLink cliqueSrc, clique.url, { alt: altText, imgCls: 'mx-1' } %}
                   {% endif %}
@@ -33,8 +33,13 @@
             {% endfor %}
           </div>
           <div class="mobile-only">
-            {% for clique in cliques.col2_mobile %}
-              <div class="d-flex justify-content-center align-items-center{{ " mb-1" if not loop.last }}">{{ textClique (clique.leftText, clique.centerIcon, clique.url, clique.rightText) }}</div>
+            {% for row in cliques.col2 %}
+              {% for clique in row %}
+                {% if clique.mobile %}
+                  {% set mobile = clique.mobile %}
+                  <div class="d-flex justify-content-center align-items-center{{ " mb-1" if not loop.last }}">{{ textClique (mobile.leftText, mobile.centerIcon, clique.url, mobile.rightText) }}</div>
+                {% endif %}
+              {% endfor %}
             {% endfor %}
           </div>
         </div>

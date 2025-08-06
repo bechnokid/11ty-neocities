@@ -1,0 +1,537 @@
+---
+title: DeviantART 2005-2006
+shortTitle: deviantART '06
+displayOrder: 1
+summary: Unable to loosen my nostalgia goggles, I thought I'd recreate the 2005-2006 layout for DeviantART in ~~all~~ most of its glory!
+prism: true
+tags: statusCafeTheme
+freezeframe: true
+flashing: true
+---
+{% from 'components/resources/macros.html' import varTable %}
+{% set previewImg = '/assets/images/resources/statuscafe_da2006.png' %}
+{% figure previewImg, { cls: 'figure-center theme-preview text-sm', alt: 'Preview image for the deviantART 2006 theme for Status Cafe' } %}
+Preview (Yes, this really is StatusCafe!)
+{% endfigure %}
+{% convertToHtml %}
+This is the first Status Cafe theme I ever created! I got a few compliments on it, so I thought I'd share it with whoever would like to relive the old days of DeviantART!
+
+I might do the other iterations of the site if I have the inspiration to do so, but I hope you enjoy this one! If you are having issues of any kind or notice any errors in the code, please feel free to email me at **bechnokid[at]yahoo&period;com!**
+
+**NOTE:** This theme is sadly not 100% mobile-friendly due to some limitations while trying to make the theme as close to the original as possible.
+
+## Terms of Service(?)
+
+There is a credit block within the HTML code that I would like to be kept there, but that's completely up to you if you want to leave it there or not! The original deviantART theme isn't mine, by any means!! Other than adding a few of my own touches, I'm not the original theme designer!
+
+All I ask is that you don't claim that you made it all on your own!
+
+I also highly recommend saving the image links (found in the HTML and CSS code) on your own server! It's unlikely that I'll move or delete the image links, but better safe than sorry!
+{% endconvertToHtml %}
+
+{% details { title: "HTML (click to show/hide code)", summaryCls: "details h2" } %}
+{% convertToHtml %}
+The below HTML code can be copy and pasted directly into the "About" section.
+
+```html
+<div class='deviant-banner'>
+  <div class='deviant-container'>
+    <div id='deviant-main-header' class='deviant-header'>
+      <img class='pfp' src='[PROFILE_PICTURE]' alt="Profile picture">
+      <h2 class='m-0'>[USERNAME_SYMBOL][USERNAME]</h2>
+      <p class='m-0 mb-4'>[USER_TAGLINE]</p>
+    </div>
+    <div class='deviant-cols'>
+      <section>
+        <ul id='deviant-attributes'>
+          <li>is a <strong>[NOUN]</strong></li>
+          <li>is <strong>[GENDER]</strong></li>
+          <li>is a deviant since <strong>[ACCOUNT_DATE]</strong></li>
+          <li>is subscribed until <strong>[SUBSCRIPTION_DEADLINE]</strong></li>
+          <li>has <a href='https://status.cafe' class='font-weight-normal'>[PAGEVIEW_NUMBER] pageviews</a></li>
+          <li>is located in <strong>[COUNTRY]</strong></li>
+          <li>is currently <img src="[STATUS_IMG]" alt="[STATUS_ALT]" title="[STATUS_TOOLTIP]"></li>
+          <li>is a Discord user; [DISCORD_USERNAME]
+        </ul>
+      </section>
+      <section id='deviant-links' class='text-center'>
+        <a class="site-btn" href="[WEBSITE_BTN_LINK]"><img src="[WEBSITE_BTN_IMG]" alt="[WEBSITE_BTN_ALT TEXT]"></a>
+        <p>[<a href='[WEBSITE]'>Website</a>]</p>
+        <p>[<a href='[EMAIL]'>Email</a>]</p>
+      </section>
+      <section>
+        <ul id='deviant-stats' class='text-right'>
+          <li>Status: <strong class='deviant-status'>[DEVIANT USER STATUS]</strong></li>
+          <li>Deviations: <strong>0</strong></li>
+          <li>Scraps: <strong>0</strong></li>
+          <li>Deviation Comments: <strong>0</strong></li>
+          <li>Deviant Comments: <strong>0</strong></li>
+          <li>Deviant Comments Received: <strong>0</strong></li>
+          <li>News Comments: <strong>0</strong></li>
+          <li>Forum Posts: <strong>0</strong></li>
+          <li>Journal Entries: <strong>0</strong></li>
+          <li>Shouts: <strong>0</strong></li>
+          <li>Favourites: <strong>0</strong></li>
+        </ul>
+        <p class='text-right mt-2'><a href='https://status.cafe'>View Full Gallery Stats</a></p>
+      </section>
+    </div>
+  </div>
+</div>
+<div id='deviant-about'>
+  <div class='deviant-container'>
+    <div class='deviant-header'>
+      <h2 class='m-0 text-center'><span class="me-1"><img src=https://i.ibb.co/V0gdKc4j/general.gif' alt=''></span>Devious Information</h2>
+    </div>
+    <div class='id-image text-center'>
+      <img src='[DEVIANT_ID_IMG]' alt='[DEVIANT_ID_ALT_TEXT]'>
+    </div>
+    <ul id='deviant-list' class='deviant-info'>
+      <li><strong>Current Age: </strong>foo</li>
+      <li><strong>Current Residence: </strong>bar</li>
+      <li><strong>Interests: </strong>foo</li>
+      <li><strong>Favourite movie: </strong>bar</li>
+      <li><strong>Favourite band or musician: </strong>foo</li>
+      <li><strong>Favourite photographer: </strong>bar</li>
+      <li><strong>Favourite genre of music: </strong>foo</li>
+      <li><strong>Favourite poet or writer: </strong>bar</li>
+      <li><strong>Favourite style or digital art: </strong>foo</li>
+      <li><strong>Operating System: </strong>bar</li>
+      <li><strong>MP3 player of choice: </strong>foo</li>
+      <li><strong>Shell of choice: </strong>bar</li>
+      <li><strong>Skin of choice: </strong>foo</li>
+      <li><strong>Wallpaper of choice: </strong>bar</li>
+      <li><strong>Favourite game: </strong>foo</li>
+      <li><strong>Favourite gaming platform: </strong>bar</li>
+      <li><strong>Favourite cartoon character: </strong>foo</li>
+      <li><strong>Tools of the Trade: </strong>bar</li>
+    </ul>
+  </div>
+  <!-- CREDIT BLOCK -->
+  <div class='deviant-container'>
+    <div class='deviant-header'>
+      <h2 class='m-0 text-center'><span class='me-1'><img src='https://i.ibb.co/Zpg6zT8K/faq.gif' alt=''></span>Credits</h2>
+    </div>
+    <ul class='deviant-info'>
+      <li><strong>Theme: </strong><a class='font-weight-normal' href='https://bechnokid.neocities.org'>*BechnoKid</a></li>
+      <li><strong>Tiny coffee cup: </strong><a class='font-weight-normal' href='https://www.deviantart.com/dri-bee/art/Tiny-Coffee-472320286'>~Dri-Bee</a></li>
+      <li><strong>Other icons and original layout: </strong><a class='font-weight-normal' href='https://www.webdesignmuseum.org/gallery/deviantart-in-2005'>DeviantART</a>
+      </ul>
+    </div>
+  </div>
+  <!-- END CREDIT BLOCK -->
+```
+{% endconvertToHtml %}
+{% enddetails %}
+
+{% convertToHtml %}
+Below is a list of variables in the HTML code that you can change, provided with descriptions of their original function.
+
+Since this is just a theme, you can change the variables however you'd like. :3
+{% endconvertToHtml %}
+
+{% details { title: "#deviant-main-header", summaryCls: "details h3"} %}
+{{ varTable(headerVars) }}
+{% enddetails %}
+
+{% details { title: "#deviant-attributes", summaryCls: "details h3" } %}
+{{ varTable(attrs) }}
+{% enddetails %}
+
+{% details { title: "#deviant-links", summaryCls: "details h3" } %}
+{{ varTable(links) }}
+{% enddetails %}
+
+{% details { title: "#deviant-stats", summaryCls: "details h3" } %}
+{{ varTable(stats) }}
+<p>The other numbers in this list can be changed to what ever you'd like. For authenticity's sake, numbers have a comma, e.g. 1,000. </p>
+{% enddetails %}
+
+{% details { title: "#deviant-about", summaryCls: "details h3" } %}
+{{ varTable(info) }}
+{% enddetails %}
+
+{% details { title: "deviantART Emoticons", summaryCls: 'details h3' } %}
+<p>Before emojis became standardized, users often used emoticons such as ^_^ or GIFs provided by the dA staff. Here is a list of what users would have used to describe what they were currently feeling.</p>
+
+<table class="text-sm">
+  {% for row in emoticons %}
+    <tr>
+      {% for item in row %}
+        {% set itemLetter = item.src | first %}
+        {% set itemSrc = "https://e.deviantart.net/emoticons/" + itemLetter + "/" + item.src + ".gif" %}
+        <td>{% img itemSrc, { freezeframe: item.freezeframe } %}</td>
+        <td>{{ (item.name or item.src) | title }}</td>
+      {% endfor %}
+    </tr>
+  {% endfor %}
+</table>
+{% enddetails %}
+
+{% details { title: "CSS (click to show/hide code)", summaryCls: "details h2"} %}
+{% convertToHtml %}
+**IMPORTANT:** Remember to put the below CSS code in a `<style>` tag in the "About" section!
+
+```css
+:root {
+  --bg-primary: #a7afa7;
+  --border-box: #4a584a;
+  --bg-box: #BBC2BB;
+  --bg-nav: #88938D;
+  --bg-header-box: #88938D;
+  --link-primary: #3B4A4A;
+  --link-nav: #DAE4DA;
+  --text-nav: #B6C0B6;
+}
+
+.cols > section:first-child > h2,
+.cols > section:first-child > p,
+dt.about,
+.email,
+.homepage,
+a[href="/users/[STATUS_CAFE_USERNAME].atom"],
+.status:nth-child(n+9) {
+  display: none;
+}
+
+body {
+  max-width: 1028px;
+  background-color: var(--bg-primary);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: .7em;
+  color: #000;
+}
+
+body::before {
+  content: url(https://i.ibb.co/Gf7F6LqQ/da-logo.png);
+}
+
+* {
+  margin: 0;
+  padding: 0
+}
+
+.cols {
+  grid-template-columns: 1fr 1.2fr;
+  grid-gap: 1em;
+}
+
+header {
+  padding: .25rem;
+  margin-top: -2px;
+  margin-bottom: .5rem;
+  color: var(--text-nav);
+  background: var(--bg-nav);
+  border: 1px solid var(--border-box);
+  border-radius: .4em;
+  letter-spacing: .1em;
+}
+
+header a {
+  color: var(--link-nav);
+  font-weight: normal;
+  text-transform: capitalize;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav > a {
+  display: inline-flex;
+  align-items: center;
+}
+
+nav > *:not(:last-child) {
+  border-right: 1px solid var(--text-nav);
+  padding: 0 .5rem 0 .25rem;
+}
+
+nav > a:first-child {
+  font-weight: bold;
+}
+
+nav a[href*="/users"] {
+  color: #2B3A3A;
+  margin: 0 .5rem 0 .25rem;
+}
+
+nav a[href="/register"] {
+  margin: 0 .5rem 0 .25rem;
+}
+
+a[href="/"]:before {
+  content: url(https://i.ibb.co/bRmhWwm0/cafe.png);
+  margin-right: .25rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+a[href="https://forum.status.cafe"]:before {
+  content: url(https://i.ibb.co/pjsFD1j6/forum.gif);
+  margin-right: .25rem;
+}
+
+a[href="/settings"]:before {
+  content: url(https://i.ibb.co/VWP7LZX5/services.gif);
+  margin-right: .25rem;
+}
+
+h2 {
+  font-family: "Trebuchet MS", "Arial", "Verdana", sans-serif;
+  font-size: 1.7em;
+  letter-spacing: .15em;
+}
+
+a {
+  color: var(--link-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.m-0 {
+  margin: 0 !important;
+}
+
+.my-1 {
+  margin: .25rem 0;
+}
+
+.mb-4 {
+  margin-bottom: 1rem !important;
+}
+
+.mt-1 {
+  margin-top: .25rem !important;
+}
+
+.mt-2 {
+  margin-top: .5rem !important;
+}
+
+.me-1 {
+  margin-right: .25rem !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.font-weight-normal {
+  font-weight: normal !important;
+}
+
+.about {
+  position: relative;
+}
+
+.deviant-banner {
+  width: 1028px;
+  position: absolute;
+}
+
+.deviant-container {
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-box);
+  background: var(--bg-box);
+}
+
+.deviant-header {
+  background: var(--bg-header-box);
+  padding: .5rem;
+  border-bottom: 1px solid var(--border-box);
+}
+
+.deviant-content {
+  padding: .25rem;
+}
+
+.deviant-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1em;
+  padding: .5rem .25rem;
+}
+
+#deviant-attributes {
+  padding-left: 1rem;
+  list-style-type: circle;
+}
+
+#deviant-attributes img {
+  vertical-align: middle;
+}
+
+#deviant-stats {
+  list-style-type: none;
+}
+
+#deviant-stats strong {
+  display: inline-block;
+  min-width: 6ex;
+  white-space: nowrap;
+}
+
+.pageviews {
+  color: var(--link-primary);
+}
+
+#deviant-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#deviant-links p {
+  margin: 0;
+}
+
+#deviant-links a {
+  font-weight: normal;
+}
+
+.fake-stats {
+  color: var(--link-primary);
+}
+
+#deviant-about {
+  position: absolute;
+  top: 265px;
+  width: 100%;
+}
+
+.pfp {
+  float: right;
+}
+
+#id-image {
+  padding: .5rem;
+  border-bottom: 1px solid var(--border-box);
+}
+
+#id-image img {
+  max-width: 100%;
+}
+
+.deviant-info {
+  list-style-type: none;
+}
+
+.deviant-info li{
+  padding: .25rem;
+}
+
+.deviant-info li:nth-child(even) {
+  background: #B0B6B0;
+}
+
+.cols > section:last-child {
+  margin-top: 276px;
+}
+
+.cols > section:last-child h2 {
+  margin-bottom: 1rem;
+  padding: .25rem;
+  background: var(--bg-header-box);
+  border: 1px solid var(--border-box);
+  text-align: center;
+}
+
+.cols > section:last-child h2:before {
+  content: url(https://i.ibb.co/0RQVDNw1/comment.gif);
+  margin-right: .25rem;
+}
+
+.status {
+  border: 1px solid var(--border-box);
+  background: var(--bg-box);
+}
+
+.status-username:before {
+  content: "Deviant: ";
+  font-weight: bold;
+}
+
+.status-username {
+  border-bottom: 1px solid var(--border-box);
+  background: var(--bg-header-box);
+  padding: .5rem;
+  letter-spacing: .1em;
+  margin: 0;
+  font-size: 1.02em;
+}
+
+.status-username a {
+  font-weight: normal;
+}
+
+.status-username a:before {
+  content: "[USERNAME_SYMBOL]";
+  color: #000;
+  text-decoration: none !important;
+}
+
+.status-username a:hover::before,
+.status-username a:hover::after {
+  text-decoration: none !important;
+}
+
+.status-username a:after {
+  white-space: pre-wrap;
+  content: "\ATime:";
+  font-weight: bold;
+  color: #000;
+  text-decoration: none !important;
+}
+
+.status-content {
+  margin: 0;
+  padding: .5rem;
+}
+
+.status-content:after {
+  content: "\A\A--\A[SIGNATURE]";
+  white-space: pre-wrap;
+}
+```
+{% endconvertToHtml %}
+{% enddetails %}
+
+{% details { title: "Variables", summaryCls: "details h3"} %}
+{% convertToHtml %}
+Below is a list of variables in the CSS code that you *should* change!
+{% endconvertToHtml %}
+
+<table class="text-sm">
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  {% for item in cssVars %}
+    <tr>
+      <td><strong>{{ item.name }}</strong></td>
+      {% set itemBlock %}
+        <p>{{ (item.desc or "Self-explanatory!") | markdownifyInline | safe }}</p>
+        {% if item.list %}
+          <div class="table-list mb-3">
+            <ul>
+              {% for li in item.list %}
+                <li>{{ li | markdownifyInline | safe }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      {% endset %}
+      <td>{{ itemBlock | safe }}</td>
+    </tr>
+  {% endfor %}
+</table>
+{% enddetails %}

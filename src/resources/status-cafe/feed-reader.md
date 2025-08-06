@@ -1,11 +1,12 @@
 ---
 title: Creating a Feed Reader from StatusCafe
-shortTitle: StatusCafe Feed Tutorial
-displayOrder: 4
-description: A tutorial on how to create a feed reader directly from [StatusCafe](https://status.cafe/).
+shortTitle: Feed Tutorial
+displayOrder: 1
+description: A tutorial on how to create a feed reader directly from [StatusCafe](https://status.cafe/) to apply to your website.
 prism: true
 summary: "**NOTE:** The examples will not work if JavaScript is disabled."
-redirect_from: [/resources/tut_statuscafefeed]
+redirectFrom: [/resources/tut_statuscafefeed, /resources/statuscafefeed]
+tags: statusCafe
 ---
 
 StatusCafe is great, so here's a tutorial on how to make a microblog out of it to put on your own site!
@@ -61,7 +62,7 @@ fetch(feedURL)
   });
 ```
 
-What this code is doing is converting the feed into XML, which Javascript can then extract the feed's data. The script then takes all of the posts you created in StatusCafe and stores them into the `entries` variable.
+What this code is doing is converting the feed into XML, which JavaScript can then extract the feed's data. The script then takes all of the posts you created in StatusCafe and stores them into the `entries` variable.
 
 ## 4) Preparing the Data
 This section will show how to prepare the data of your StatusCafe posts using the stored feed data.

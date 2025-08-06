@@ -7,6 +7,7 @@ description: Dedicated to Gilgamesh, the dimension-hopping bladesman from the Fi
 imgSrc: shrines/gilgamesh/
 css: gilgamesh
 permalink: 'shrines/gilgamesh/index.html'
+imgPath: '/assets/images/shrines/gilgamesh/'
 ---
 
 > Enough expository banter! Now we fight like men, and ladies, and ladies who dress like men! For Gilgamesh, it's *morphing time!* {.mx-lg-4 .mb-lg-4 .mt-lg-3 .ps-5 .pe-3 .py-3}
@@ -19,6 +20,10 @@ Hello, and welcome to **"The Interdimensional Rift"**, a shrine dedicated to the
 - It will contain unmarked spoilers for a few Final Fantasy games that he appears in, specifically FFV and FFVII Rebirth. **You've been warned!**
 
 ----
+
+{% figure imgPath + 'the-legend.png', { cls: 'figure-center', alt: "Gilgamesh as he appears in Final Fantasy V" } %}
+The legend.
+{% endfigure %}
 
 ## Intro
 
@@ -35,6 +40,10 @@ Defeating him rewards the player the ability to summon him in battle and additio
 Although he has departed from the world of Final Fantasy VII, time will only tell if he appears in a future game. With that being said, I really hope he plays a part in the third game of the FFVII Remake trilogy!! T_T
 
 -----
+
+{% figure imgPath + 'first-meeting.png', { cls: 'figure-right', alt: "Gilgamesh accidentally summoned by Sephiroth" } %}
+The most handsome man ever. Oh, and there's Sephiroth, too, I guess.
+{% endfigure %}
 
 ## About
 
@@ -53,6 +62,10 @@ I was completely dumbfounded (and so was Cloud)!! Here was this large and intimi
 It was love at first sight, and I grew to love him even more as I started to play Rebirth and did more obsessive research on him. Gilgamesh fits a type of character that I have always enjoyed: someone who is very silly and a bit of an idiot but is also someone who you should *never* underestimate.
 
 -----
+
+{% figure imgPath + "babygirl.png", { cls: 'figure-right mb-4' } %}
+Pondering the ~~orb~~ sword
+{% endfigure %}
 
 ## Why Gilgamesh?
 
@@ -85,6 +98,10 @@ I don't know if it's the same with other writers, but I know it takes me hours t
 If it sounds like that he is lot cooler than he is and that he's not the same idiotic Gilgamesh, then I'm here to correct you! He's still very much a silly man with nary a thought in that tiny brain of his! As I have mentioned before in his first encounter with Cloud, his iconic goofiness is still present in Rebirth any time he has appeared. There is also an especially funny scene during the party's final fight with him, but I don't want to spoil it here! [Watch it for yourself!](https://www.youtube.com/watch?v=ed6irqLdhog) (volume warning)
 
 I can definitely say that Rebirth managed to achieve a perfect balance between making Gilgamesh funny and terrifying. It makes me a little sad that he might never return to a future FF7R game seeing as how there was a definite end to his boss fight, but a beet can dream!
+
+{% figure imgPath + 'meowmeow.png', { cls: 'figure-center', style: 'max-width: 500px' } %}
+The babygirl. The meow meow. The skrunkly. The--
+{% endfigure %}
 
 -----
 

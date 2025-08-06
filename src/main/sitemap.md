@@ -16,7 +16,7 @@ tags: main
     {% for sublink in link.data.pagination.items | sortCollectionByDisplayOrder %}
 - {% link sublink.url, sublink.data.shortTitle or sublink.data.title, { cls: sublink.data.navTag } %} {% if sublink.data.flashing == true %} {% icon 'alert-triangle' %}{% endif %}
     {% endfor %}
-  {% else %}
+  {% elif link.data.title != 'Sitemap' %}
 - [{{ link.data.shortTitle or link.data.title }}]({{ link.url }}){% if link.data.navTag %}{.{{link.data.navTag}}}{% endif %}{% if link.data.flashing == true %} {% icon 'alert-triangle' %}{% endif %}
   {% endif %}
 {% endfor %}

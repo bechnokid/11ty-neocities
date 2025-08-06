@@ -43,7 +43,7 @@ export default {
           { src: "the-322nd-void.png", desc: "a cherry tied by a ribbon", link: "https://the-322nd-void.neocities.org/art" },
           { src: "vampirevalentine.png", desc: "a four-eyed calico cat", link: "https://vampirevalentine.neocities.org/" },
           { src: "wasongo.png", desc: "a toucan", link: "https://wasongo.art/you?z=/sticker" },
-          { src: "xmenfan2001.png", desc: "letters that read 'BAMF'!", link: "https://xmenfan2001.neocities.org/stickerclub" },
+          { src: "xmenfan2001.png", desc: "letters that read \"BAMF\"!", link: "https://xmenfan2001.neocities.org/stickerclub" },
           { src: "mikaorangeart.png", desc: "the ouroburos", link: "https://mikaorangeart.neocities.org/webcliques" },
           { src: "mizuki.png", desc: "a pink and blue pill", link: "https://mizuki.world/collection" },
           { src: "pastelhello.gif", desc: "a pink Tamagotchi Angel", link: "https://pastelhello.com/" },
@@ -136,10 +136,10 @@ export default {
         title: "CD Collection",
         open: true,
         items: [
-          { src: "bechnokid_onemoretime.png", desc: "Britney Spear's '...Baby One More Time' album", playlist: "https://youtube.com/playlist?list=OLAK5uy_kSwJwbDKMMgruIaQ585WXWclKbaI2DmX8&si=2StyxYeMoXVdDyyI" },
-          { src: "pklucky_cycleofremorse.png", desc: "the 'Cycle of Remorse Mood Mix [2023]' by PK Lucky", link: "https://pklucky.neocities.org", playlist: "https://www.youtube.com/playlist?list=PLSpUyxMrwKqMDO_hmS7IgppY4l2Z3D1A6" },
-          { src: "finny_90sgirlrock.png", desc: "'Finny's 90's Girl Rock Volume 1 [2023]' by the human finny", link: "https://humanfinny.neocities.org", playlist: "https://www.youtube.com/playlist?list=PLVHUFWHuSE_JdeRh4tGL6KepNbvV_YMnu" },
-          { src: "tubedfruit_90spunk.jpg", desc: "'TubedFruit's AZ 90s Hardcore Punk Mix [2023]' by TubedFruit", link: "https://toothachesplinter.neocities.org", playlist: "https://www.youtube.com/playlist?list=PLIBqbVUh0UvgsR_ImP6g5S5CRx7k70nPi" }
+          { src: "bechnokid_onemoretime.png", desc: "Britney Spear's \"...Baby One More Time\" album", playlist: "https://youtube.com/playlist?list=OLAK5uy_kSwJwbDKMMgruIaQ585WXWclKbaI2DmX8&si=2StyxYeMoXVdDyyI" },
+          { src: "pklucky_cycleofremorse.png", desc: "the \"Cycle of Remorse Mood Mix [2023]\" by PK Lucky", link: "https://pklucky.neocities.org", playlist: "https://www.youtube.com/playlist?list=PLSpUyxMrwKqMDO_hmS7IgppY4l2Z3D1A6" },
+          { src: "finny_90sgirlrock.png", desc: "\"Finny's 90's Girl Rock Volume 1 [2023]\" by the human finny", link: "https://humanfinny.neocities.org", playlist: "https://www.youtube.com/playlist?list=PLVHUFWHuSE_JdeRh4tGL6KepNbvV_YMnu" },
+          { src: "tubedfruit_90spunk.jpg", desc: "\"TubedFruit's AZ 90s Hardcore Punk Mix [2023]\" by TubedFruit", link: "https://toothachesplinter.neocities.org", playlist: "https://www.youtube.com/playlist?list=PLIBqbVUh0UvgsR_ImP6g5S5CRx7k70nPi" }
         ]
       }
     },
@@ -155,12 +155,12 @@ export default {
         items: [
           { src: "bk_felyne.png", desc: "A green and yellow can that has a Felyne and a Potion from Monster Hunter" },
           { src: "fizzsea.png", link: "https://fizzsea.neocities.org/", desc: "An orange Ramune glass bottle with the logo fizzsea printed on it. Sitting next to it is half of an  orange with a smile on its face." },
-          { src: "bloopywoopy.png", link: "https://bloopywoopy.neocities.org/cool-stuff/collections/", desc: "A bottle of water with a label that reads, 'Water'" },
+          { src: "bloopywoopy.png", link: "https://bloopywoopy.neocities.org/cool-stuff/collections/", desc: "A bottle of water with a label that reads, \"Water\"" },
           { src: "flowercentral.png", link: "https://flowercentral.art/", desc: "A bottle of peach-colored Sunkist." },
           { src: "insqueeration.webp", link: "https://insqueeration.neocities.org/pixels", desc: "A transparent can of a rainbow-colored drink" },
-          { src: "percevalprintpress.png", link: "https://percevalprintpress.neocities.org/", desc: "A bottle of glue with a label that reads, 'Paste'" },
+          { src: "percevalprintpress.png", link: "https://percevalprintpress.neocities.org/", desc: "A bottle of glue with a label that reads, \"Paste\"" },
           { src: "spaceshanty.png", link: "https://thespaceshanty.neocities.org/Cliques/", desc: "A bottle of a purple-colored drink with a green label" },
-          { src: "artwork.png", link: "https://artwork.neocities.org/cliques", desc: "A milk carton that looks like Korilakkuma with text that reads 'strawberry o'lait' in Japanese." }
+          { src: "artwork.png", link: "https://artwork.neocities.org/cliques", desc: "A milk carton that looks like Korilakkuma with text that reads \"strawberry o'lait\" in Japanese." }
         ]
       }
     },

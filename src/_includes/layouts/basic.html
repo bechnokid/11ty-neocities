@@ -3,7 +3,6 @@
 {% set pageHeaderTitle = title %}
 {% set pageHeaderSummary = summary | markdownify | safe %}
 {% set pageFreezeframe = freezeframe %}
-{% set pageRequiresJS = JSrequired %}
 {% set outgoingPageWarning = hasLinks %}
 {% set pageCSS = css %}
 
@@ -14,6 +13,6 @@
 {% block content %}
   <article class="mb-lg-0 mb-2">
     {% if title != "Home" %}{% include "partials/page-header.html" %}{% endif %}
-    <div class="{{ "mt-4" if title != "Home" else "mt-2"}}">{{ content | safe }}</div>
+    {{ content | safe }}
   </article>
 {% endblock %}

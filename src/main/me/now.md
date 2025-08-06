@@ -5,31 +5,24 @@ displayOrder: 2
 permalink: '/now/index.html'
 description: A [now](https://nownownow.com/about) page that describes what Bechno Kid is up to.
 summary: What's Bechno Kid been up to?
+noScroll: true
 ---
 
-**Last updated:** July 3rd, 2025
+**Last updated:** August 6th, 2025
 
 ## What am I up to?
 
-- Trying to de-stress and relax! This month has not had a great start so far, and without revealing too much about my life, I'm not looking forward to what this and next month will hold...
-- Sleeping a lot! Some minor health issues came up (no doubt because of the stress I've been dealing with so far), so I'm working on taking it easy and giving myself breaks.
-- [Art Fight](https://artfight.net/) has started! I haven't done any artwork yet, but that will change this coming 3-day weekend! Go Team Crystals!
-  - A guilty pleasure of mine has been reading the [Art Fight Drama & Confessions](https://artfightdramaconfessions.tumblr.com/) blog on Tumblr. I shouldn't be reading too many of the negative posts there or else I'll end up spiraling! xDD
+- Due to some...things going on at my work that are out of my control, I am temporarily working from home! I've been enjoying it so far, but I don't want to get too used to this lifestyle! {% emote 'embarrassed' %} I need to make sure I get enough sun and that I am diligent in any sort of workout routine!
+- I learned how to make the perfect hard-boiled eggs, thanks to Sam! They're so good!! With how expensive eggs have become, they've become a nice treat to have every now and then.
 
 ## Playing
 - [Monster Hunter Wilds](https://www.monsterhunter.com/wilds/en-us/)
-  - ***TITLE UPDATE 2 IS HERE!!!*** I've been having a blast so far!
-  - Layered Weapons are finally here! It seems Heavy Bowguns continue to get the short end of the stick because there's a bug that prevents me from seeing some of the older weapons to layer my current bowgun with despite having fully upgraded all of the cool ones I've seen! That's ok, though!
-  - Normally, I don't really get all of the hype behind builds that focus on Spread ammo, but OH MAN Seregios's HBG is so, SO GOOD!! This build might be the first build that's made me enjoy using Spread ammo! xDD
-- [Cookie Run Kingdom](https://play.google.com/store/apps/details?id=com.devsisters.ck&hl=en-US&pli=1)
-  - I pulled Burning Spice Cookie again while pulling for a Legendary-class cookie! I'm so happy!
+  - Participating in the Flamefete Festival has been so fun!! Sam and I are still looking for miniature crowns for Rey Dau and Gore Magala, as well as both large and mini crowns for Lagiacrus! They've been really difficult to find despite it being exponentially easier to find crowns in this game!
 
 ## Watching
-- YouTube videos about mechanical keyboards, including:
-  - ASMR or sound tests with "creamy" switches
-  - Reviews on several mechanical keyboards
-  - Reviews on switches for hotswappable keyboards
+- King of the Hill, Season 14
+- Dandadan, Season 2
 
 ## Listening to
-- Ayase / YOASOBI - [幽霊東京 (Ghost City Tokyo)](https://song.link/y/DtBoAqkIJzI)
-- Jamie Paige - [BIRDBRAIN (w/ OK Glass) feat. Kasane Teto](https://song.link/y/0iVlSNpq8i8)
+- Various artists - [[1 hour] Battle at the Big Bridge](https://www.youtube.com/watch?v=jI2DDEGO9ek)
+- Yoshinori Nakuamura - [Battle at the Big Bridge #SQkawaii Sounds](https://song.link/y/SsVU-YrRavw)

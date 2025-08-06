@@ -1,0 +1,21 @@
+{% macro varTable (arr) %}
+<table class="text-sm">
+  {% for item in arr %}
+  <tr>
+    <td><strong>{{ item.name }}</strong></td>
+    <td>
+      {{ (item.desc or "Self-explanatory!") | markdownify | safe }}
+      {% if item.list %}
+        <div class="table-list mb-3">
+          <ul>
+            {% for li in item.list %}
+              <li>{{ li | markdownifyInline | safe }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endmacro %}

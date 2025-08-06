@@ -1,1 +1,1 @@
-{ "layout": "layouts/basic.html", "tags": ["resources", "nav"], "css": "basic" }
+{ "layout": "layouts/basic.html", "css": "resources" }

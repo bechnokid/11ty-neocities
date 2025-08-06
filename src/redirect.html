@@ -7,12 +7,12 @@
     alias: "redirect",
     before: function (data) {
       return data.reduce((redirects, page) => {
-        if (Array.isArray(page.data.redirect_from)) {
-          for (let url of page.data.redirect_from) {
+        if (Array.isArray(page.data.redirectFrom)) {
+          for (let url of page.data.redirectFrom) {
             redirects.push({ to: page.url, from: url });
           }
-        } else if (typeof page.data.redirect_from === 'string') {
-          redirects.push({ to: page.url, from: page.data.redirect_from });
+        } else if (typeof page.data.redirectFrom === 'string') {
+          redirects.push({ to: page.url, from: page.data.redirectFrom });
         }
         return redirects;
       }, []);

@@ -48,12 +48,12 @@ export default {
       },
       {
         src: "youmad.gif",
-        alt: "An animated button of Popuko and Pipimi from Pop Team Epic. Popuko punches Pipimi and then asks, 'Are you mad?' Pipimi replies with, 'Nope <3'",
+        alt: "An animated button of Popuko and Pipimi from Pop Team Epic. Popuko punches Pipimi and then asks, \"Are you mad?\" Pipimi replies with, \"Nope <3\"",
         freezeframe: true
       },
       {
         src: "y2k.gif",
-        alt: "A button with flashing text that reads, 'I survived Y2K'",
+        alt: "A button with flashing text that reads, \"I survived Y2K\"",
         freezeframe: true
       },
       {
@@ -63,7 +63,7 @@ export default {
       },
       {
         src: "tumblrpocalypse.png",
-        alt: "A button that reads 'I survived the 2018 Tumblr Apocalypse",
+        alt: "A button that reads \"I survived the 2018 Tumblr Apocalypse\"",
         url: "https://eggramen.neocities.org/creations/edits/buttons"
       },
       {
@@ -88,13 +88,13 @@ export default {
       },
       {
         src: "not-alone.gif",
-        alt: "An animated button that reads, 'I know it's dark. I'm scared too. Is it ok if I walk with you? You don't have to walk alone",
+        alt: "An animated button that reads, \"I know it's dark. I'm scared too. Is it ok if I walk with you? You don't have to walk alone\"",
         url: "http://lu.tiny-universes.net/index2.html",
         freezeframe: true
       },
       {
         src: "no_bad_hair_days.png",
-        alt: "A button that reads 'There are no bad hair days on the Internet'. On the side is an image of a smiling computer",
+        alt: "A button that reads \"There are no bad hair days on the Internet\". On the side is an image of a smiling computer",
         url: "https://deviantart.com/view/682431234"
       },
       {
@@ -105,16 +105,16 @@ export default {
       },
       {
         src: "naptime.png",
-        alt: "A button that reads 'I need a nap now!' with an icon with three Z's"
+        alt: "A button that reads \"I need a nap now!\" with an icon with three Z's"
       },
       {
         src: "lovable.gif",
-        alt: "An animated button that scrolls through multiple lines that say 'lovable'",
+        alt: "An animated button that scrolls through multiple lines that say \"lovable\"",
         freezeframe: true
       },
       {
         src: "krisbtn.png",
-        alt: "A button with Susie and Kris from Deltarune. Susie's dialogue reads 'kris where tf are we'"
+        alt: "A button with Susie and Kris from Deltarune. Susie's dialogue reads \"kris where tf are we\""
       },
       {
         src: "krak-on.png",
@@ -133,43 +133,43 @@ export default {
       },
       {
         src: "hello_kitty.gif",
-        alt: "An animated button that reads 'Hello Kitty'. It has a spinning flower and an image of Hello Kitty on the side",
+        alt: "An animated button that reads \"Hello Kitty\". It has a spinning flower and an image of Hello Kitty on the side",
         freezeframe: true
       },
       {
         src: "graphicdesign.png",
-        alt: "A button that reads 'Graphic design is my passion' with an image of a frog"
+        alt: "A button that reads \"Graphic design is my passion\" with an image of a frog"
       },
       {
         src: "gay.gif",
-        alt: "A button that reads 'You were diagnosed with GAY' with a small picture of Dr. Mario on the side"
+        alt: "A button that reads \"You were diagnosed with GAY\" with a small picture of Dr. Mario on the side"
       },
       {
         src: "friendship.png",
-        alt: "A button that reads 'Believe in the radical power of friendship'",
+        alt: "A button that reads \"Believe in the radical power of friendship\"",
         url: "http://lu.tiny-universes.net/index2.html"
       },
       {
         src: "foreveronline.gif",
-        alt: "An animated button that reads 'Forever Online'",
+        alt: "An animated button that reads \"Forever Online\"",
         freezeframe: true
       },
       {
         src: "dontyouhate.gif",
-        alt: "An animated button with scrolling text that reads 'Don't you hate it when you're reading a page, and then some' before it is cut off with smaller text that reads 'This content is for subscribers only :)' The text then reads 'Paywalls gatekeep knowledge'"
+        alt: "An animated button with scrolling text that reads \"Don't you hate it when you're reading a page, and then some\" before it is cut off with smaller text that reads \"This content is for subscribers only :)\" The text then reads \"Paywalls gatekeep knowledge\""
       },
       {
         src: "css-is-difficult.png",
-        alt: "A button that reads 'CSS is difficult' with an image of the CSS logo on the side. The text is aligned in a way that goes beyond the boundaries of a box outlined in red",
+        alt: "A button that reads \"CSS is difficult\" with an image of the CSS logo on the side. The text is aligned in a way that goes beyond the boundaries of a box outlined in red",
         url: "https://zeusofthecrows.tumblr.com/post/709503504879878144/slightly-website-y-buttons"
       },
       {
         src: "computer.png",
-        alt: "A button that reads 'I like computer' in all caps with a pixel image of a computer"
+        alt: "A button that reads \"I like computer\" in all caps with a pixel image of a computer"
       },
       {
         src: "chill_pill.gif",
-        alt: "A button that reads 'Take a chill pill'. The words 'chill pill' are inside a pink and blue pill.",
+        alt: "A button that reads \"Take a chill pill\". The words \"chill pill\" are inside a pink and blue pill.",
         url: "https://anlucas.neocities.org/GifFiles"
       },
       {
@@ -185,61 +185,61 @@ export default {
       },
       {
         src: "albutton.png",
-        alt: "A button that reads 'Yankovic Now!' with an image of Weird Al Yankovic"
+        alt: "A button that reads \"Yankovic Now!\" with an image of Weird Al Yankovic"
       },
       {
         src: "ac-button-drift.gif",
-        alt: "A button that reads 'Drift Now!' with an image of Drift from Animal Crossing",
+        alt: "A button that reads \"Drift Now!\" with an image of Drift from Animal Crossing",
         url: "https://omfg.neocities.org/ac/buttons"
       },
       {
         src: "ac-button-henry.gif",
-        alt: "A button that reads 'Henry Now!' with an image of Henry from Animal Crossing",
+        alt: "A button that reads \"Henry Now!\" with an image of Henry from Animal Crossing",
         url: "https://omfg.neocities.org/ac/buttons"
       },
       {
         src: "ac-button-jeremiah.gif",
-        alt: "A button that reads 'Jeremiah Now!' with an image of Jeremiah from Animal Crossing",
+        alt: "A button that reads \"Jeremiah Now!\" with an image of Jeremiah from Animal Crossing",
         url: "https://omfg.neocities.org/ac/buttons"
       },
       {
         src: "ac-button-lily.gif",
-        alt: "A button that reads 'Lily Now!' with an image of Lily from Animal Crossing",
+        alt: "A button that reads \"Lily Now!\" with an image of Lily from Animal Crossing",
         url: "https://omfg.neocities.org/ac/buttons"
       },
       {
         src: "ac-button-puddles.gif",
-        alt: "A button that reads 'Puddles Now!' with an image of Puddles from Animal Crossing",
+        alt: "A button that reads \"Puddles Now!\" with an image of Puddles from Animal Crossing",
         url: "https://omfg.neocities.org/ac/buttons"
       },
       {
         src: "ac-button-raddle.gif",
-        alt: "A button that reads 'Raddle Now!' with an image of Raddle from Animal Crossing",
+        alt: "A button that reads \"Raddle Now!\" with an image of Raddle from Animal Crossing",
         url: "https://omfg.neocities.org/ac/buttons"
       },
       {
         src: "ac-button-wartjr.gif",
-        alt: "A button that reads 'Wart Jr. Now!' with an image of Wart Jr. from Animal Crossing",
+        alt: "A button that reads \"Wart Jr. Now!\" with an image of Wart Jr. from Animal Crossing",
         url: "https://omfg.neocities.org/ac/buttons"
       },
       {
         src: "ac-button-diva.gif",
-        alt: "A button that reads 'Diva Now!' with an image of Diva from Animal Crossing",
+        alt: "A button that reads \"Diva Now!\" with an image of Diva from Animal Crossing",
         url: "https://omfg.neocities.org/ac/buttons"
       },
       {
         src: "ac-button-costeau.gif",
-        alt: "A button that reads 'Cousteau Now!' with an image of Cousteau from Animal Crossing",
+        alt: "A button that reads \"Cousteau Now!\" with an image of Cousteau from Animal Crossing",
         url: "https://omfg.neocities.org/ac/buttons"
       },
       {
         src: "ac-button-camofrog.gif",
-        alt: "A button that reads 'Camofrog Now!' with an image of Camofrog from Animal Crossing",
+        alt: "A button that reads \"Camofrog Now!\" with an image of Camofrog from Animal Crossing",
         url: "https://omfg.neocities.org/ac/buttons"
       },
       {
         src: "ac-button-bells.gif",
-        alt: "A button that reads 'Bells Now!' with an image of a bag of Bells from Animal Crossing",
+        alt: "A button that reads \"Bells Now!\" with an image of a bag of Bells from Animal Crossing",
         url: "https://omfg.neocities.org/ac/buttons"
       }
     ]
@@ -254,13 +254,13 @@ export default {
       },
       {
         src: "mh_shara_rap.gif",
-        alt: "An animated button from TerminalMontage's 'Something about Monster Hunter World' of Shara Ishvalda, a monster from Monster Hunter World. The monster has tattooed arms and is making rapping gestures",
+        alt: "An animated button from TerminalMontage's \"Something about Monster Hunter World\" of Shara Ishvalda, a monster from Monster Hunter World. The monster has tattooed arms and is making rapping gestures",
         url: "https://www.youtube.com/watch?v=0XiFiYPxEQY&",
         freezeframe: true
       },
       {
         src: "mh_monsterhunter_now.png",
-        alt: "A button that reads 'Monster Hunter Now!' with an image of the Hunter's Guild crest on the side"
+        alt: "A button that reads \"Monster Hunter Now!\" with an image of the Hunter's Guild crest on the side"
       },
       {
         src: "mh_mmm_sotasty.gif",
@@ -279,18 +279,18 @@ export default {
       },
       {
         src: "mh_lea.gif",
-        alt: "An animated button of Lea from Monster Hunter World. She is removing a cooked piece of meat and is pleased at its smell. There is white text that reads, 'Lea' with a heart next to it",
+        alt: "An animated button of Lea from Monster Hunter World. She is removing a cooked piece of meat and is pleased at its smell. There is white text that reads, \"Lea\" with a heart next to it",
         freezeframe: true
       },
       {
         src: "mh_handler2.gif",
-        alt: "An animated button of the Handler from Monster Hunter World. She removes her goggles and then smiles at the hunter (who is offscreen). There is white text that reads 'Handler' with a heart next to it",
+        alt: "An animated button of the Handler from Monster Hunter World. She removes her goggles and then smiles at the hunter (who is offscreen). There is white text that reads \"Handler\" with a heart next to it",
         url: "https://mikaeled.tumblr.com/tagged/monster%20hunter%20world",
         freezeframe: true
       },
       {
         src: "mh_hander_tada.gif",
-        alt: "An animated button of the Handler from Monster Hunter World. She is making a victorious gesture and bold text appears from behind her. The text reads, 'TA-DA'",
+        alt: "An animated button of the Handler from Monster Hunter World. She is making a victorious gesture and bold text appears from behind her. The text reads, \"TA-DA\"",
         freezeframe: true
       },
       {
@@ -313,13 +313,13 @@ export default {
       },
       {
         src: "mh_birdup.gif",
-        alt: "An animated button from TerminalMontage's 'Something about Monster Hunter World' zooming in on Kulu-Ya-Ku, a monster from Monster Hunter World. The text reads, 'Bird up' in all capital letters",
+        alt: "An animated button from TerminalMontage's \"Something about Monster Hunter World\" zooming in on Kulu-Ya-Ku, a monster from Monster Hunter World. The text reads, \"Bird up\" in all capital letters",
         url: "https://www.youtube.com/watch?v=0XiFiYPxEQY&",
         freezeframe: true
       },
       {
         src: "mh_aiden.gif",
-        alt: "An animated button of Aiden from Monster Hunter World. There is white text that reads 'Aiden' with a heart next to it",
+        alt: "An animated button of Aiden from Monster Hunter World. There is white text that reads \"Aiden\" with a heart next to it",
         freezeframe: true
       }
     ]

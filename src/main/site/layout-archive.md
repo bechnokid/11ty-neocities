@@ -12,6 +12,6 @@ permalink: '/layout-archive/index.html'
 
 {{ l.desc | markdownify | safe }}
 
-[![{{ altText + l.date }}]({{ imgLink + l.img }}){.layout {{ ".mb-4" if not loop.last }}}]({{ imgLink + l.img }})
+[![{{ altText + l.date }}]({{ imgLink + l.img }}){.preview-img {{ ".mb-4" if not loop.last }}}]({{ imgLink + l.img }})
 
 {% endfor %}

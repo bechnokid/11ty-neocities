@@ -4,8 +4,11 @@ shortTitle: FreezeframeJS Tutorial
 displayOrder: 2
 description: A tutorial on how to implement [Freezeframe.js](https://github.com/ctrl-freaks/freezeframe.js/), a library that can "freeze" animated GIFs.
 prism: true
-redirect_from: [/tutorials/freezeframe, /resources/tut_freezeframe]
+redirectFrom: [/tutorials/freezeframe, /resources/tut_freezeframe]
 summary: "**NOTE:** The examples will not work if JavaScript is disabled."
+tags:
+  - resources
+  - nav
 ---
 <script src="{{ meta.jsUrl }}/freezeframe.js"></script>
 
@@ -20,7 +23,7 @@ With this library, animated GIFs are paused and can be enabled again by clicking
 It's an amazing library and it's saved me from a lot of eyestrain while debugging the graphics page. The instructions are pretty easy to follow, but I'd like to share my method of implementing this library to my Neocities site. I hope you find this helpful!
 
 **Disclaimers:**
-- This tutorial will show examples for both [JQuery](https://www.w3schools.com/jquery/default.asp) and [Javascript](https://www.w3schools.com/js/default.asp), in which you can use either one or the other, but not both. While I prefer JQuery, both have its advantages and disadvantages, so it's up to you to look into both and see what you prefer. :)
+- This tutorial will show examples for both [JQuery](https://www.w3schools.com/jquery/default.asp) and [JavaScript](https://www.w3schools.com/js/default.asp), in which you can use either one or the other, but not both. While I prefer JQuery, both have its advantages and disadvantages, so it's up to you to look into both and see what you prefer. :)
 - Other webmasters have found wonderful alternatives to this library, which can be found in Vance's site at the [bottom of the page](#6-closing-thoughts). I recommend taking a look at their tutorial and other tips on making your site more accessible.
 
 ## 1) Installation
@@ -94,7 +97,7 @@ If you intend on using the script in multiple HTML files, then you can put `new 
 
 The following code would likely go into your `index.js` file.
 
-#### Javascript
+#### JavaScript
 
 ```js
 document.addEventListener("DOMContentLoaded", function(event) {
@@ -125,7 +128,7 @@ In HTML, create the buttons and label them appropriately so the script can locat
 
 Then, go to the script you put `new Freezeframe();` and change it into the following:
 
-#### Javascript
+#### JavaScript
 
 ```js
 document.addEventListener("DOMContentLoaded", function(event) {

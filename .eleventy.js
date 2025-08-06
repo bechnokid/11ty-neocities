@@ -7,16 +7,17 @@ const pluginTOC = require('eleventy-plugin-toc');
 const {
   date, dayOfMonth, monthDayYear, monDayYear, w3DateFilter,
   markdownify, markdownifyInline, sortCollectionByDisplayOrder,
-  toHtmlList, limit, useCode, getPageLinks
+  limit, useCode, getPageLinks
 } = require('./config/filters');
 
 const {
-  writingPages, blogPosts
+  writingPages, blogPosts, statusCafeThemes
 } = require('./config/collections');
 
 const {
   icon, emoticon, emote, img, link, imgWithLink,
-  tooltip, figure, details, galleryBox, convertToCode
+  tooltip, figure, details, galleryBox, convertToHtml,
+  convertToCode
 } = require('./config/shortcodes');
 
 const markdownLib = require('./config/plugins/markdown');
@@ -44,6 +45,7 @@ module.exports = async function(eleventyConfig){
   eleventyConfig.addPairedShortcode('tooltip', tooltip);
   eleventyConfig.addPairedShortcode('details', details);
   eleventyConfig.addPairedShortcode('galleryBox', galleryBox);
+  eleventyConfig.addPairedShortcode('convertToHtml', convertToHtml);
   eleventyConfig.addPairedShortcode('convertToCode', convertToCode);
 
   // Transform
@@ -78,6 +80,7 @@ module.exports = async function(eleventyConfig){
   // Collections
   eleventyConfig.addCollection('writing', writingPages);
   eleventyConfig.addCollection('blog', blogPosts);
+  eleventyConfig.addCollection('statusCafeThemes', statusCafeThemes);
 
   // Plugins
   eleventyConfig.addPlugin(rssPlugin);

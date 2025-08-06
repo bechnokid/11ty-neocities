@@ -23,7 +23,7 @@ I realized that this didn't need to be the case after coming across some other i
 - Semantic HTML
 - Pages that can be navigated via a keyboard
 	- This includes a link to skip to the main content
-- Javascript usage will be kept to a minimum
+- JavaScript usage will be kept to a minimum
   - Whatever page that uses JS will be noted
   - Pages that rely entirely on JS will be hidden if the user has JS disabled
 - Animated GIFs that can be paused via buttons (this requires JS)

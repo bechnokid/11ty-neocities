@@ -2,27 +2,25 @@
 title: Links
 displayOrder: 1
 permalink: '/links/index.html'
-summary: "**Warning:** Be cautious of any flashing colors and images when navigating away from this page."
 freezeframe: true
 hasLinks: true
 flashing: true
 ---
 {% set imgPath = "/assets/images/links/" %}
-{% set contentBlock %}
-Here are some sites whose webmasters are friends, affiliates, or people who I think are just cool in general!
-
-If you already added my button to your site, let me know and I'll add you here!
-{% endset %}
 
 <h2>Fellow Netizens</h2>
 
-{{ contentBlock | markdownify | safe }}
+{% convertToHtml %}
+Here are some sites whose webmasters are friends, affiliates, or people who I think are just cool in general!
+
+If you already added my button to your site, let me know and I'll add you here!
+{% endconvertToHtml %}
 
 {% galleryBox { cls: 'mb-4', subCls: 'netizens justify-content-center align-items-center' } %}
 {% for item in outgoing.links.netizens %}
   {% if item.noBtn %}
-    <a class="no-button-container text-xs" href="{{ item.url  }}">
-      <div>{{ item.name }}</div>
+    <a class="no-button-container text-xs" href="{{ item.url }}">
+      <span>{{ item.name }}</span>
     </a>
   {% else %}
     {% imgWithLink imgPath + item.src, item.url , { alt: outgoing.links.altText + item.name, linkCls: 'm-1 link-btn', freezeframe: true } %}

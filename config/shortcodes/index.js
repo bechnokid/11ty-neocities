@@ -7,6 +7,8 @@ const icon = function (value, options = {}) {
     const iconAlt = (options.alt) ? ` alt="${options.alt}"` : '';
     if (options.cls) iconCls = ` class='${options.cls}'`;
     return `<img src='/assets/images/meat.png'${iconAlt}${iconCls}>`;
+  } else if (value == 'new') {
+    return `<img src='/assets/images/new.gif' alt=''>`;
   } else {
     if (options.cls) iconCls = ` ${options.cls}`;
     return `<i class='ft-${value}${iconCls}'></i>`
@@ -38,7 +40,7 @@ const img = function (src, options = {}) {
   if (options.freezeframe) clsArr.push('freezeframe');
 
   let imgCls = "";
-  let imgAlt = (options.alt) ? options.alt : "";
+  const imgAlt = (options.alt) ? options.alt.replace(/"/g, "&quot;") : "";
   const ariaDesc = (options.ariaDesc) ? ` aria-describedby="${options.ariaDesc}"` : '';
 
   if (options.markdown && ariaDesc == '') {
@@ -57,7 +59,7 @@ const imgWithLink = function (src, url, options = {}) {
   if (options.freezeframe) clsArr.push('freezeframe');
 
   let imgCls = "";
-  let imgAlt = (options.alt) ? options.alt : "";
+  let imgAlt = (options.alt) ? options.alt.replace(/"/g, "&quot;") : "";
   let linkCls = '';
   const ariaDesc = (options.ariaDesc) ? ` aria-describedby="${options.ariaDesc}"` : '';
 
@@ -69,14 +71,14 @@ const imgWithLink = function (src, url, options = {}) {
   } else {
     if (options.imgCls) clsArr.push(options.imgCls);
     if (clsArr.length > 0) imgCls = ` class='${clsArr.join(' ')}'`;
-    if (options.linkCls) linkCls = ` class=${options.linkCls}`;
+    if (options.linkCls) linkCls = ` class='${options.linkCls}'`;
     return `<a href='${url}'${linkCls}${ariaDesc}><img src='${src}' alt="${imgAlt}"${imgCls}></a>`;
   }
 }
 
 // Paired
 const tooltip = function(children, params) {
-  let mainContent = ''
+  let mainContent = '';
   if (params.src && params.url) {
     mainContent = imgWithLink(params.src, params.url, params);
   } else if (params.src && !params.url) {
@@ -106,15 +108,14 @@ const figure = function (children, src, options = {}) {
 
   let imgStr = '';
   let imgCls = ''
-  let imgAlt = '';
+  const imgAlt = (options.alt) ? options.alt.replace(/"/g, "&quot;") : "";
 
   if (options.bg) {
     if (options.imgCls) imgCls = ` ${options.imgCls}`;
     imgStr = `<div class='figure-div${imgCls}' style='background-image: url(${imgSrc})'></div>`;
   } else {
     if (options.imgCls) imgCls = ` class='${options.imgCls}`;
-    if (options.alt) imgAlt = ` alt="${options.alt}"`;
-    imgStr = `<img src='${imgSrc}'${imgAlt}${imgCls}>`
+    imgStr = `<img src='${imgSrc}' alt="${imgAlt}"${imgCls}>`
   }
 
   if (options.noLink != true) {
@@ -148,6 +149,10 @@ const convertToCode = function (children) {
   return content;
 }
 
+const convertToHtml = function(children) {
+  return markdownLib.render(children.trim());
+}
+
 // helper functions
 function isLowerCase(str) {
   return str === str.toLowerCase() && str !== str.toUpperCase();
@@ -164,5 +169,6 @@ module.exports = {
   figure,
   details,
   galleryBox,
+  convertToHtml,
   convertToCode,
 }

@@ -86,11 +86,6 @@ export default {
       cls: "align-items-baseline",
       items: [
         {
-          src: "chao.gif",
-          alt: "A Normal adult Chao from Sonic Adventure",
-          url: "https://qrunchy.space/foryou.html"
-        },
-        {
           src: "auron2.gif",
           alt: "Auron as he appears in Kingdom Hearts II",
           url: "http://sweetskingdom.web.fc2.com/dot_icon/index.html"
@@ -102,13 +97,13 @@ export default {
         },
         {
           src: "https://i.imgur.com/LzZrTi7.png",
-          alt: "The titular unicorn from 'The Last Unicorn'",
+          alt: "The titular unicorn from \"The Last Unicorn\"",
           url: "https://vampirevalentine.neocities.org/",
           ogLink: true
         },
         {
           src: "vash.gif",
-          alt: "Kuroneko-sama and Vash the Stampede from Trigun. Vash is holding a sign that reads, 'Will work for donuts'",
+          alt: "Kuroneko-sama and Vash the Stampede from Trigun. Vash is holding a sign that reads, \"Will work for donuts\"",
           url: "http://www.sailorenergy.net/AnimeGIFs/TRSEIMGKawaiiAnimesT.html"
         },
         {
@@ -209,7 +204,7 @@ export default {
       ]
     },
     {
-      cls: "adopts other",
+      cls: "adopts other align-items-baseline",
       items: [
         {
           src: "CTNY-saguaro.png",
@@ -255,7 +250,12 @@ export default {
           src: "chatt.png",
           alt: "custom Chatt that resembles Pikachu",
           url: "https://neonriser.neocities.org/adopt"
-        }
+        },
+        {
+          src: "chao.gif",
+          alt: "A Normal adult Chao from Sonic Adventure",
+          url: "https://qrunchy.space/foryou.html"
+        },
       ]
     }
   ]
