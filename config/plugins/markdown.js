@@ -8,9 +8,9 @@ const markdownLib = markdownIt({
   // Use of HTML tags in Markdown
   html: true,
   // Conversion of \n to <br>
-  breaks: false,
+  breaks: true,
   // Automatically hyperlinking inline links
-  linkify: true,
+  linkify: false,
   // Renders typography
   typographer: false
 })

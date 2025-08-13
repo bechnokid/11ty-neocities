@@ -5,9 +5,9 @@ displayOrder: 3
 permalink: '/faq/index.html'
 ---
 
-{% for section in site.faq.items %}
+{%- for section in site.faq.items %}
 ## {{ section.name }}{.{{ section.name | slugify }} .faq}
-{% for item in section.questions %}
+{%- for item in section.questions %}
 - {{ item.q }} {.question }
   - {{ item.a | markdownifyInline | safe }} {.answer}
 {% endfor %}

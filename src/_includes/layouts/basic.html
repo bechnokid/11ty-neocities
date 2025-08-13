@@ -1,7 +1,7 @@
 {% extends "layouts/base.html" %}
 
 {% set pageHeaderTitle = title %}
-{% set pageHeaderSummary = summary | markdownify | safe %}
+{% set pageHeaderSummary = summary | markdownifyInline | safe %}
 {% set pageFreezeframe = freezeframe %}
 {% set outgoingPageWarning = hasLinks %}
 {% set pageCSS = css %}

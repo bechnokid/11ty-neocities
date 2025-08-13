@@ -1,6 +1,6 @@
 {% macro varTable (arr) %}
 <table class="text-sm">
-  {% for item in arr %}
+  {%- for item in arr %}
   <tr>
     <td><strong>{{ item.name }}</strong></td>
     <td>
@@ -8,7 +8,7 @@
       {% if item.list %}
         <div class="table-list mb-3">
           <ul>
-            {% for li in item.list %}
+            {%- for li in item.list %}
               <li>{{ li | markdownifyInline | safe }}</li>
             {% endfor %}
           </ul>

@@ -9,7 +9,7 @@ permalink: '/goodies/awards/index.html'
 {% set awards = goodies.graphics.awards.items %}
 {% set imgSrc = goodies.graphics.awards.imgSrc %}
 {% galleryBox { markdown: { inline: true }, subCls: 'justify-content-center align-items-center awards' } %}
-  {% for item in awards %}
+  {%- for item in awards %}
     {% imgWithLink imgSrc + item.src, item.url, { alt: item.alt, freezeframe: true } %}
   {% endfor %}
 {% endgalleryBox %}

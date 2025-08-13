@@ -8,7 +8,7 @@
   <article>
     {% include "partials/page-header.html" %}
     <ul>
-      {% for item in pageCollection | sortCollectionByDisplayOrder %}
+      {%- for item in pageCollection | sortCollectionByDisplayOrder %}
       <dl>
         <dt class="h3">
           <a href="{{ item.url }}">{{ item.data.title }}</a>

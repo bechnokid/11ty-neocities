@@ -6,11 +6,10 @@ description: Various themes that you can use on your Status Cafe profile page!
 summary: Status Cafe's customization is pretty limited, which has made it a super fun challenge for me to come up with themes! I'm no web designer, but I hope you'll like these or use as inspiration for your own themes!
 tags: statusCafe
 noScroll: true
-new: true
 ---
 <div class="row">
   <div class="col-6">
-    {% for item in collections.statusCafeThemes %}
+    {%- for item in collections.statusCafeThemes %}
       <section class="theme-link">
         <h2>{{ item.data.title }}</h2>
         <div class="theme-link-content row g-0">

@@ -7,51 +7,70 @@ displayOrder: 2
 permalink: '/joined/index.html'
 debug: false
 ---
-{% if debug %}<script type='text/javascript' src='/assets/javascript/debug_webrings.js'></script>{% endif %}
-<script type='text/javascript' src='/assets/javascript/webrings.js'></script>
-{% set imgPath = "/assets/images/webrings/" %}
-{% macro createWebringCol (arr) %}
-  {% for webring in arr %}
-   {% if not webring.notJoined %}
-    <div class="d-flex align-items-center{{ " mb-2" if not loop.last }}">
-      {% if webring.widget %}
-        {% if debug and webring.debugWidget %}
-          {{ webring.debugWidget | safe }}
-        {% else %}
-          {{ webring.widget | safe }}
-        {% endif %}
-      {% else %}
-        {% if webring.prevLink %}
-          {% imgWithLink imgPath + webring.prevLink.src, webring.prevLInk.link, { imgCls: 'me-1', alt: "Previous button for " + webring.title } %}
-        {% endif %}
-        {% imgWithLink imgPath + webring.index.src, webring.index.link, { alt: "Index button for " + webring.title } %}
-        {% if webring.nextLink %}
-          {% imgWithLink imgPath + webring.nextLink.src, webring.nextLink.link, { imgCls: 'ms-1', alt: "Next button for " + webring.title } %}
-        {% endif %}
-      {% endif %}
-    </div>
-   {% endif %}
-  {% endfor %}
-{% endmacro %}
+{% import 'components/joined/macros.html' as webrings %}
 
 {% set assetLink = '/assets/images/about/fanlistings/' %}
 {% galleryBox { title: "Fanlistings", cls: "mb-4", subCls: 'fanlistings pt-0'} %}
-{% for key, value in outgoing.joined.fanlistings %}
+{%- for key, value in outgoing.joined.fanlistings %}
   <div class="w-100">
     <h3>{{ key | title }}</h3>
-    {% for item in value %}
-      {% imgWithLink assetLink + item.src, item.link, { alt: item.alt + " fanlisting button", linkCls: 'mx-1' } %}
+    {%- for item in value %}
+      {% imgWithLink assetLink + item.src, item.url, { alt: item.alt + " fanlisting button", linkCls: 'mx-1' } %}
     {% endfor %}
   </div>
 {% endfor %}
 {% endgalleryBox %}
 
-{% galleryBox { title: "Webrings", cls: 'js-required', subCls: "overflow-y-auto webrings" } %}
-<div class="row g-0">
-  {% for webringCol in outgoing.joined.webrings %}
-    <div class="col-12 col-lg-4 d-flex flex-column align-items-center px-2">
-      {{ createWebringCol(webringCol) }}
-    </div>
-  {% endfor %}
+{% galleryBox { title: "Webrings", subCls: "overflow-y-auto webrings justify-content-center" } %}
+<div class="row g-0 w-100 js-required">
+  <div class="col-12 col-lg-4">
+    {# {{ webrings.WEBRINGNAME(debug = false) }} For debugging #}
+    {{ webrings.basic(outgoing.joined.neocreatives) }}
+    {{ webrings.basic(outgoing.joined.cuddler) }}
+    {{ webrings.basic(outgoing.joined.rayman) }}
+    {{ webrings.resource() }}
+    {{ webrings.basic(outgoing.joined.queercoded) }}
+    {{ webrings.basic(outgoing.joined.ladies) }}
+    {{ webrings.basic(outgoing.joined.acing) }}
+    {{ webrings.tropical(debug = false) }}
+    {{ webrings.gfdkris(debug = false) }}
+    {{ webrings.cookierun(debug = false) }}
+  </div>
+  <div class="col-12 col-lg-4">
+    {{ webrings.amiga(debug = false) }}
+    {{ webrings.wii() }} {# Does not need debugging #}
+    {{ webrings.selfInsert() }} {# Does not need debugging #}
+    {{ webrings.persona(debug = false) }}
+  </div>
+  <div class="col-12 col-lg-4">
+    {{ webrings.kingdomHearts(debug = false) }}
+    {{ webrings.doodle(debug = false) }}
+    {{ webrings.jelly() }} {# Does not need debugging #}
+  </div>
 </div>
+<noscript>
+  <div id="webring-btn-container" class="d-flex flex-wrap align-items-center justify-content-center">
+    {{ webrings.basic(outgoing.joined.neocreatives) }}
+    {{ webrings.basic(outgoing.joined.cuddler) }}
+    {%- for button in outgoing.joined.webringBtns %}
+      {% imgWithLink "/assets/images/webrings/" + button.src, button.url, { alt: "Button for the &quot;" + button.name + "&quot; webring"} %}
+    {% endfor %}
+  </div>
+  <div class="webring-widget-container mt-4">
+    <div class="row">
+      <div class="col-12 col-lg-4 d-flex flex-wrap justify-content-center">
+        {{ webrings.basic(outgoing.joined.rayman) }}
+        {{ webrings.basic(outgoing.joined.queercoded) }}
+        {{ webrings.basic(outgoing.joined.ladies) }}
+        {{ webrings.basic(outgoing.joined.acing) }}
+      </div>
+      <div class="col-12 col-lg-4">
+        {{ webrings.selfInsert() }}
+      </div>
+      <div class="col-12 col-lg-4">
+        {{ webrings.jelly() }}
+      </div>
+    </div>
+  </div>
+</noscript>
 {% endgalleryBox %}

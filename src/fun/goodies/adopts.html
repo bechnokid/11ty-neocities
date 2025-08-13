@@ -11,10 +11,10 @@ hasLinks: true
 {% set imgLink = array.imgSrc + '/mine/' %}
 
 {% galleryBox { cls: 'adopts mine', subCls: 'flex-column' } %}
-{% for row in array.mine %}
+{%- for row in array.mine %}
 <p>{{ row.name }}</p>
 <div class='d-flex{% if row.cls %} {{ row.cls }}{% endif %}'>
-  {% for item in row.items %}
+  {%- for item in row.items %}
     {% if item.tooltip %}<div class="tooltip">{% endif %}
       {% img imgLink + item.src, { alt: item.alt } %}
     {% if item.tooltip %}
@@ -30,7 +30,7 @@ hasLinks: true
 {% galleryBox %}
   <p class="mt-0">Click on any one of these pets to feed them!</p>
   <div class="w-100 d-flex">
-    {% for item in array.interactive %}
+    {%- for item in array.interactive %}
       <div class="pet-click border-sidebar bg-body p-3 text-center rounded-4 mx-2">
         {% imgWithLink item.src, item.url, { alt: item.alt } %}
         <p class="m-0">{{ item.name | safe }}</p>
@@ -42,10 +42,10 @@ hasLinks: true
 {% set imgLink = array.imgSrc %}
 <h2>Adopted</h2>
 {% galleryBox %}
-  {% for row in array.adopted %}
+  {%- for row in array.adopted %}
   <div class="row g-0 w-100{{ " mb-4" if not loop.last }}">
     <div class="col d-flex flex-wrap justify-content-center{% if row.cls %} {{ row.cls }}{% endif %}">
-      {% for item in row.items %}
+      {%- for item in row.items %}
         {% if item.ogLink %}
           {% set imgPath = item.src %}
         {% else %}

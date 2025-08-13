@@ -17,7 +17,7 @@ If you already added my button to your site, let me know and I'll add you here!
 {% endconvertToHtml %}
 
 {% galleryBox { cls: 'mb-4', subCls: 'netizens justify-content-center align-items-center' } %}
-{% for item in outgoing.links.netizens %}
+{%- for item in outgoing.links.netizens %}
   {% if item.noBtn %}
     <a class="no-button-container text-xs" href="{{ item.url }}">
       <span>{{ item.name }}</span>
@@ -31,7 +31,7 @@ If you already added my button to your site, let me know and I'll add you here!
 <h2>Favorite Resources</h2>
 
 <table class='resources'>
-  {% for item in outgoing.links.resources %}
+  {%- for item in outgoing.links.resources %}
     <tr>
       <td><a href='{{ item.url  }}'>{{ item.name }}</a></td>
       <td class='td-desc'>{{ item.desc }}</td>
@@ -42,7 +42,7 @@ If you already added my button to your site, let me know and I'll add you here!
 <h2>Made Possible By</h2>
 
 <ul>
-  {% for link in outgoing.links.credits %}
+  {%- for link in outgoing.links.credits %}
   <li>
     {% if link.url %}
       {% link link.url, (link.name | markdownifyInline | safe) %}

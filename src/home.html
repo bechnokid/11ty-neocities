@@ -17,13 +17,11 @@ Webrings and fanlistings can be found in [/joined](/joined)!
 
 **Note**: Pages labeled with {% icon 'alert-triangle' %} will have blinking/flashing graphics when first loading or if you have JavaScript disabled.
 {% endset %}
-<h1 class="m-0 text-xxl">“The ticket to the future is always open!”</h1>
-<hr class="small">
 <script src="{{ meta.jsUrl }}/microblog.js"></script>
   <div class="content">
     {{ contentBlock | markdownify | safe }}
     <div class="h3 intro-links text-center mt-4">
-      {% for link in meta.introLinks %}
+      {%- for link in meta.introLinks %}
         {% link link.url, link.name %}{% if not loop.last %}<span class="mx-2">✦</span>{% endif %}
       {% endfor %}
     </div>
@@ -45,7 +43,7 @@ Webrings and fanlistings can be found in [/joined](/joined)!
         <div class="h2 p-2">Link Me!</div>
           <div class="content p-2 text-center d-flex flex-column">
             <p class="my-1">Feel free to hotlink!</p>
-            <div>{% for button in meta.buttons %}{% img button.src, { cls: 'mx-1', alt: button.alt + " button for Bechno Kid's hideout"} %}{% endfor %}</div>
+            <div>{%- for button in meta.buttons %}{% img button.src, { cls: 'mx-1', alt: button.alt + " button for Bechno Kid's hideout"} %}{% endfor %}</div>
           </div>
         </div>
       </div>

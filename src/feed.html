@@ -18,7 +18,7 @@ tags: main
     <name>{{ meta.name }}</name>
     <uri>{{ meta.url }}</uri>
   </author>
-  {% for item in feedItems | reverse %}
+  {%- for item in feedItems | reverse %}
   <entry>
     <title>{{ item.data.date | monDayYear }} </title>
     <link href="{{ meta.url }}/home"/>

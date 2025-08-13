@@ -57,11 +57,12 @@ I have a Bachelor's degree in Computer Science and somehow managed to land in th
 </div>
 </div>
 
-{% for key, value in about.favorites %}
+{%- for key, value in about.favorites %}
+
 ## {{ value.title }}
 
 <div class='d-flex flex-wrap justify-content-lg-between justify-content-center px-lg-5 px-0 text-center text-xs favs'>
-{% for item in value.items %}
+{%- for item in value.items %}
 <div class='sidebar m-lg-0 m-2'>
 
 ![{{ item.name }}]({{ about.path + item.img }})

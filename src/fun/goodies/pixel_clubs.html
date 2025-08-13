@@ -19,7 +19,7 @@ hasLinks: true
   <section>
     <h2 id="{{ cliqueName }}">{{ cliqueArray.title }}</h2>
     <p>Created by <a href="{{ cliqueArray.owner.link }}">{{ cliqueArray.owner.name }}</a>!{% if cliqueArray.owner.archived %} (archived){% endif %}</p>
-    {% for arrayName in ["mine", "collection"] %}
+    {%- for arrayName in ["mine", "collection"] %}
       {% if cliqueArray[arrayName] %}
         {% if cliqueName == "yys" %}
           {{ yys(cliqueArray[arrayName], imgLink + cliqueName + '/', cliqueArray.altText) }}

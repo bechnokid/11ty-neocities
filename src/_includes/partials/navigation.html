@@ -6,7 +6,7 @@
 <li>
   <div class="px-2 py-1 h2">{{ (name or section) | title }}</div>
   <ul class="section-list ms-4 ms-lg-3 my-1">
-    {% for link in collections[section] | sortCollectionByDisplayOrder %}
+    {%- for link in collections[section] | sortCollectionByDisplayOrder %}
       {% if link.data.wip %}
         <li class="text-muted">{{ link.data.title }} (WIP)</li>
       {% elif link.data.subList %}
@@ -15,7 +15,7 @@
           <details{{ " open" if page.url in sublinkItems }}>
             <summary class="text-secondary">{{ link.data.title }}</summary>
             <ul class="ms-2">
-              {% for sublink in link.data.pagination.items %}
+              {%- for sublink in link.data.pagination.items %}
                 {% set sublinkCls = sublink.data.navTag or "" %}
                 {{ navLink(sublink.page.url, sublink.data.shortTitle or sublink.data.title, { cls: sublinkCls , flashing: sublink.data.flashing, new: sublink.data.new }) }}
               {% endfor %}
@@ -24,7 +24,7 @@
         </li>
         <li class="mobile nav-link-item section-title">{{ link.data.title }}
           <ul>
-            {% for sublink in link.data.pagination.items %}
+            {%- for sublink in link.data.pagination.items %}
               {% set sublinkCls = sublink.data.navTag or "" %}
               {{ navLink(sublink.page.url, sublink.data.shortTitle or sublink.data.title, { cls: sublinkCls + " mobile" , flashing: sublink.data.flashing, new: sublink.data.new }) }}
             {% endfor %}

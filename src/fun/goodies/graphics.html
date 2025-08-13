@@ -14,11 +14,11 @@ flashing: true
 
 <h2>Graphics I Collected</h2>
 <section class="mb-4">
-  {% for type in typesArr %}
+  {%- for type in typesArr %}
   {% set array = goodiesArr[type].collection %}
   {% details { title: goodiesArr[type].title, cls: 'mt-3', summaryCls: 'h3 details', open: array.open } %}
     {% galleryBox { subCls: 'justify-content-center align-items-center graphics' + (' freezeframe' if type == "blinkies" else '' ) } %}
-      {% for item in array.items %}
+      {%- for item in array.items %}
         {% if item.url %}<a href="{{ item.url }}">{% endif %}
         <div><img {{ "class=freezeframe" if item.freezeframe }} src="{{ goodiesArr[type].imgSrc + item.src }}" alt="{{ item.alt }}"></div>
         {% if item.url %}</a>{% endif %}
@@ -31,12 +31,12 @@ flashing: true
 <h2>Graphics I Made</h2>
 <section>
   <p>No need to credit me for these! Use them however and wherever you'd like!</p>
-  {% for type in typesArr %}
+  {%- for type in typesArr %}
   {% set array = goodiesArr[type].mine %}
   {% if array %}
     {% details { title: goodiesArr[type].title, cls: 'mt-3', summaryCls: 'h3 details', open: array.open } %}
       {% galleryBox { subCls: 'justify-content-center align-items-center graphics' + (' freezeframe' if type == "blinkies" else '' ) } %}
-        {% for item in array.items %}
+        {%- for item in array.items %}
           {% img goodiesArr[type].imgSrc + item.src, { alt: item.alt, freezeframe: item.freezeframe } %}
         {% endfor %}
       {% endgalleryBox %}

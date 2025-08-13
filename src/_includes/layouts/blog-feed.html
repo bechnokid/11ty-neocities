@@ -1,7 +1,7 @@
 {% extends "layouts/base.html" %}
 
 {% set pageHeaderTitle = title %}
-{% set pageHeaderSummary = content | safe %}
+{% set pageHeaderSummary = content | markdownifyInline | safe %}
 {% set postListItems = pagination.items %}
 
 {% block css %}
@@ -13,7 +13,7 @@
     {% include "partials/page-header.html" %}
     {% if title == 'Microblog' %}
       <div id='microblog' class='sidebar px-3'>
-        {% for entry in postListItems %}
+        {%- for entry in postListItems %}
           <p class="d-flex align-items-center">{% if entry.mood %}{% emoticon entry.mood %}{% else %}{% emoticon 'normal' %}{% endif %}<strong>{{ entry.date | monthDayYear }}</strong></p>
           <p>{{ entry.content | markdownifyInline | safe }}</p>
           {% if loop.index != loop.length %}
@@ -22,7 +22,7 @@
         {% endfor %}
       </div>
     {% else %}
-      {% for item in postListItems %}
+      {%- for item in postListItems %}
       <div class="blog row py-1">
         <div class="col-lg-8 col-7"><a href="{{ item.url }}">
           {{ item.data.title | markdownifyInline | safe }}

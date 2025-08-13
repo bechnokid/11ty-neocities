@@ -2,10 +2,10 @@
   <div class="h2 text-center p-1">❤ Updates ❤</div>
   <div class="update-content p-2">
     {% set feedItems = collections.rssFeed | reverse %}
-    {% for update in feedItems | limit(4) %}
+    {%- for update in feedItems | limit(4) %}
       <strong>{{ update.data.date | monDayYear }}</strong>
       <ul>
-        {% for item in update.data.updateContent %}
+        {%- for item in update.data.updateContent %}
         <li>{{ item | markdownifyInline | safe }}</li>
         {% endfor %}
       </ul>

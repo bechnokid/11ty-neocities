@@ -155,9 +155,9 @@ Since this is just a theme, you can change the variables however you'd like. :3
 <p>Before emojis became standardized, users often used emoticons such as ^_^ or GIFs provided by the dA staff. Here is a list of what users would have used to describe what they were currently feeling.</p>
 
 <table class="text-sm">
-  {% for row in emoticons %}
+  {%- for row in emoticons %}
     <tr>
-      {% for item in row %}
+      {%- for item in row %}
         {% set itemLetter = item.src | first %}
         {% set itemSrc = "https://e.deviantart.net/emoticons/" + itemLetter + "/" + item.src + ".gif" %}
         <td>{% img itemSrc, { freezeframe: item.freezeframe } %}</td>
@@ -515,7 +515,7 @@ Below is a list of variables in the CSS code that you *should* change!
     <th>Name</th>
     <th>Description</th>
   </tr>
-  {% for item in cssVars %}
+  {%- for item in cssVars %}
     <tr>
       <td><strong>{{ item.name }}</strong></td>
       {% set itemBlock %}
@@ -523,7 +523,7 @@ Below is a list of variables in the CSS code that you *should* change!
         {% if item.list %}
           <div class="table-list mb-3">
             <ul>
-              {% for li in item.list %}
+              {%- for li in item.list %}
                 <li>{{ li | markdownifyInline | safe }}</li>
               {% endfor %}
             </ul>
