@@ -22,7 +22,7 @@ debug: false
 {% endgalleryBox %}
 
 {% galleryBox { title: "Webrings", subCls: "overflow-y-auto webrings justify-content-center" } %}
-{# {{ webrings.WEBRINGNAME(debug = false) }} For debugging #}
+{# {{ webrings.WEBRINGNAME(debug = true) }} For debugging #}
 <div class="small-webrings js-required d-flex flex-wrap align-items-center justify-content-center mb-4">
   {{ webrings.basic(outgoing.joined.neocreatives) }}
   {{ webrings.basic(outgoing.joined.cuddler) }}
@@ -30,25 +30,25 @@ debug: false
   {{ webrings.basic(outgoing.joined.acing) }}
   {{ webrings.basic(outgoing.joined.ladies) }}
   {{ webrings.basic(outgoing.joined.queercoded) }}
-  {{ webrings.tropical(debug = false) }}
+  {{ webrings.tropical(debug = true) }}
 </div>
 <div class="row g-0 w-100 js-required">
   <div class="col-12 col-lg-4">
     {{ webrings.resource(debug = false) }}
     {{ webrings.egg() }}
-    {{ webrings.gfdkris(debug = false) }}
-    {{ webrings.amiga(debug = false) }}
-    {{ webrings.cookierun(debug = false) }}
+    {{ webrings.gfdkris(debug = true) }}
+    {{ webrings.amiga(debug = true) }}
+    {{ webrings.cookierun(debug = true) }}
   </div>
   <div class="col-12 col-lg-4">
     {{ webrings.wol(debug = false) }}
     {{ webrings.wii() }}
-    {{ webrings.doodle(debug = false) }}
+    {{ webrings.doodle(debug = true) }}
     {{ webrings.selfInsert() }}
   </div>
   <div class="col-12 col-lg-4">
-    {{ webrings.persona(debug = false) }}
-    {{ webrings.kingdomHearts(debug = false) }}
+    {{ webrings.persona(debug = true) }}
+    {{ webrings.kingdomHearts(debug = true) }}
     {{ webrings.jelly() }}
   </div>
 </div>
@@ -78,3 +78,43 @@ debug: false
   </div>
 </noscript>
 {% endgalleryBox %}
+<script>
+  const pendingWebrings = [
+    { id: 'resourceRing', name: 'Re:source Ring', url: 'https://pixelsafari.neocities.org/webring' },
+    { id: 'wolwebring', name: 'Warriors of Light webring', url: 'https://wolwebring.neocities.org' },
+    { id: 'eggring', name: 'Eggring', url: 'https://eggring.neocities.org' },
+  ]
+
+  $(document).ready(function() {
+    eggring.buildWidget();
+
+    for (let w of pendingWebrings) {
+      let ring = $(`#${w.id}`);
+      let ringId = w.id;
+      let ringName = w.name;
+      let ringUrl = w.url;
+
+      if (ringId == 'resourceRing' || ringId == 'eggring') {
+        let oldText = '';
+        let newText = '';
+        if (ringId == 'resourceRing') {
+          oldText = '<br>';
+          newText = ' '
+        } else {
+          oldText = 'the The',
+          newText = 'the'
+        }
+        ring.html(ring.html().replace(oldText, newText));
+      }
+
+      if (ring.html().includes('waiting') || ring.html().includes('yet') || ring.html().includes("isn't")) {
+        if (ringId == 'eggring') {
+          ring.html("<p class='m-0'>" + ring.html().replace(ringName, `<a href='${ringUrl}'>${ringName}</a>`) + "</p>")
+        } else {
+          ring.html(ring.html().replace(ringName, `<a href='${ringUrl}'>${ringName}</a>`));
+        }
+        ring.toggleClass('waiting');
+      }
+    }
+  });
+</script>

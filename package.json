@@ -3,7 +3,7 @@
   "version": "3.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "bun x @11ty/eleventy --serve",
+    "start": "bun x @11ty/eleventy --serve --quiet",
     "build": "bun x @11ty/eleventy"
   },
   "keywords": [],

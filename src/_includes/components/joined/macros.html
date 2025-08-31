@@ -1,25 +1,4 @@
 {% set imgPath = "/assets/images/webrings/" %}
-{% macro fixWidget(id, name = '', link = '') %}
-  <script>
-    webring = $('#{{ id }}')
-    webringId = '{{ id }}'
-    webringName = '{{ name }}'
-    webringLink = '{{ link }}'
-
-    if (webringId == 'resourceRing') {
-      webring.html(webring.html().replace('<br>', ' '));
-    } else if (webringId == 'gfdkris') {
-      webring.html(webring.html().replace('webring webring', 'webring'));
-    } else if (webringId == 'eggring') {
-      webring.html(webring.html().replace('the The', 'the'));
-    }
-
-    if (webring.html().includes('waiting') || webring.html().includes("yet") || webring.html().includes("isn't")) {
-      webring.html(webring.html().replace(webringName, `<a href='${webringLink}'>${webringName}</a>`))
-      webring.toggleClass('waiting');
-    }
-  </script>
-{% endmacro %}
 
 {% macro basic(webring) %}
   <div class="webring">
@@ -48,7 +27,6 @@
   {% else %}
     <div id="resourceRing"></div>
     <script type="text/javascript" src="{{ webringUrl }}/resourcering.js"></script>
-    {{ fixWidget('resourceRing', 'Re:source Ring', webringUrl) }}
   {% endif %}
 {% endmacro %}
 
@@ -173,7 +151,6 @@
     <div id='gfdkris'>
       <script type='text/javascript' src='{{ webringUrl }}/onionring-variables.js'></script><script type='text/javascript' src='{{ webringUrl }}/onionring-widget.js'></script>
     </div>
-    {{ fixWidget('gfdkris', 'GFDKWTFAW webring', webringUrl)}}
   {% endif %}
 {% endmacro %}
 
@@ -227,7 +204,6 @@
   <div id='amiga'>
     <script type='text/javascript' src='{{ webringUrl }}/onionring-variables.js'></script><script type='text/javascript' src='{{ webringUrl }}/onionring-widget.js'></script>
   </div>
-  {{ fixWidget('amiga', 'Artists Making the Internet Gay Again webring', webringUrl )}}
 {% endif %}
 {% endmacro %}
 
@@ -276,7 +252,6 @@
     </div>
   {% else %}
     <div id='p-ring'><script type='text/javascript' src='{{ webringUrl }}/onionring-variables.js'></script><script type='text/javascript' src='{{ webringUrl }}/onionring-widget.js'></script></div>
-    {{ fixWidget('p-ring', 'persona ring', webringUrl)}}
   {% endif %}
 {% endmacro %}
 
@@ -334,7 +309,6 @@
     <link rel='stylesheet' href='{{ webringUrl }}/onionring.css'>
   {% else %}
     <div id='doodlering'><script type='text/javascript' src='{{ webringUrl }}/onionring-variables.js'></script><script type='text/javascript' src='{{ webringUrl }}/onionring-widget.js'></script><link rel='stylesheet' href='{{ webringUrl }}/onionring.css'></div>
-    {{ fixWidget('doodlering', 'doodlering', webringUrl) }}
   {% endif %}
 {% endmacro %}
 
@@ -359,14 +333,12 @@
     </div>
   {% else %}
     <div id='wolwebring'><script type="text/javascript" src="{{ webringUrl }}/onionring-variables.js"></script><script type="text/javascript" src="{{ webringUrl }}/onionring-widget.js"></script></div>
-    {{ fixWidget('wolwebring', 'Warriors of Light webring', webringUrl )}}
   {% endif %}
 {% endmacro %}
 
 {% macro egg() %}
  {% set webringUrl = 'https://eggring.neocities.org' %}
- <script src="{{ webringUrl }}/js/hatring.js"></script><script src="{{ webringUrl }}/js/eggring-config.js"></script>
- <script>window.onload = function() { eggring.buildWidget(); }</script>
  <div id="eggring" class="d-flex flex-column align-items-center p-2"></div>
- {{ fixWidget ('eggring', "Eggring", webringUrl)}}
+ <script src="{{ webringUrl }}/js/hatring.js"></script><script src="{{ webringUrl }}/js/eggring-config.js"></script>
+ <script></script>
 {% endmacro %}

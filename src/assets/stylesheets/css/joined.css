@@ -278,6 +278,10 @@ div.waiting > div {
 }
 
 /* Egg webring */
+#eggring.waiting a {
+  font-weight: bold;
+}
+
 #eggring {
   background-color: white;
   border-radius: 5px;
