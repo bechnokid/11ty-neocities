@@ -86,7 +86,17 @@ export default {
       src: 'persona.png',
       name: 'Persona Ring',
       url: 'https://silly-beanz.neocities.org/personaring/home'
-    }
+    },
+    {
+      src: 'wol.png',
+      name: 'Warriors of Light Ring',
+      url: 'https://wolwebring.neocities.org'
+    },
+    {
+      src: 'egg.png',
+      name: 'Egg Ring',
+      url: 'https://eggring.neocities.org'
+    },
   ],
   fanlistings: {
     characters: [
@@ -94,8 +104,6 @@ export default {
       { url: "https://fan.glast-heim.net/davy/", src: "davy_jones.png", alt: "Davy Jones from Pirates of the Caribbean" },
       { url: "https://www.celes.net/luigi/", src: "luigi.gif", alt: "Luigi from the Mario Bros. series" },
       { url: "https://hellokitty.i-heart-you.net/", src: "hello_kitty.gif", alt: "Hello Kitty" },
-      { url: "http://nosastra.com/cactuar/", src: "cactuars.jpg", alt: "Cactuar from the Final Fantasy series" },
-      { url: "https://moudoku.com/strange/index.php", src: "drstrange.png", alt: "MCU Doctor Strange" }
     ],
     media: [
       { url: "http://daria.ravenbeauty.net/", src: "daria.png", alt: "Daria" },
@@ -105,18 +113,16 @@ export default {
       { url: "https://10-31.net/jenn/meangirls/", src: "mean_girls.png", alt: "Mean Girls movie" },
       { url: "https://movies.sweetbrat.cc/doctor_strange", src: "doctor_strange.png", alt: "Doctor Strange (2016) movie" },
       { url: "https://love.cordy.nu/bones/", src: "bones.gif", alt: "Bones TV show" },
-      { url: "https://fightingspirit.seaincense.com/", src: "jjba.png", alt: "JoJos Bizarre Adventure" },
       { url: "https://michiru.org/spyxfamily/", src: "spyxfamily.png", alt: "SPYXFAMILY" },
       { url: "https://fan.enamour.nu/trigun/", src: "trigun.png", alt: "TRIGUN" },
       { url: "https://rikafire.fanimated.net/tamers/", src: "digimontamers.png", alt: "Digimon Tamers" },
       { url: "https://hagaren.org/", src: "fma.gif", alt: "Fullmetal Alchemist" },
-      { url: "http://rhythm-emotion.net/sonic/index.php", src: "sonic_series.png", alt: "Sonic series" },
       { url: "https://pkmn.redcrown.net/hoenn/", src: "oras.png", alt: "Pokémon Ruby and Sapphire" },
       { url: "http://firaga.org/ffx/join.php", src: "ffx.png", alt: "Final Fantasy X" },
       { url: "http://fan.warmer-climate.net/portal2/", src: "portal2.png", alt: "Portal 2" },
       { url: "https://162candles.com/strangerthings/", src: "stranger_things.png", alt: "Stranger Things" },
       { url: "http://yandere.nu/soul/", src: "souleater.png", alt: "Soul Eater" },
-      { url: "http://zelda.shattered-memories.org/continuum/", src: "ocarina_of_time.png", alt: "Ocarina of Time" }
+      { url: "https://zelda.shattered-memories.org/continuum/", src: "ocarina_of_time.png", alt: "Ocarina of Time" }
     ],
     food: [
       { url: "https://salmon.fanfreak.net/", src: "salmon.png", alt: "Salmon" },
@@ -127,25 +133,21 @@ export default {
       { url: "https://love.strongisfighting.org/apples/", src: "apples.png", alt: "Apples" },
       { url: "https://10-31.net/megan/cottoncandy/", src: "cotton_candy.png", alt: "Cotton candy" },
       { url: "https://10-31.net/megan/dippindots/", src: "dippin_dots.gif", alt: "Dippin Dots" },
-      { url: "https://rhythm-emotion.net/fries/", src: "mcfries.png", alt: "McDonalds french fries" }
     ],
     items: [
       { url: "https://www.ladyrose.buruma.net/3ds/", src: "3ds.png", alt: "Nintendo 3DS" },
       { url: "http://fan.greenhype.net/gbasp/join.php", src: "gbasp.gif", alt: "Game Boy Advance SP" },
       { url: "http://fan.greenhype.net/switch/", src: "switch.png", alt: "Nintendo Switch" },
       { url: "https://www.ladyrose.buruma.net/gamecube/", src: "gc.jpg", alt: "Nintendo Gamecube" },
-      { url: "http://fan.haltfate.org/nendoroid", src: "nendoroid.png", alt: "Nendoroid" },
       { url: "https://10-31.net/chelsea/beds/", src: "beds.png", alt: "Beds" },
       { url: "https://candles.fanfreak.net/", src: "scented_candles.png", alt: "Scented candles" },
       { url: "https://precious-memory.net/blankets/", src: "blankets.gif", alt: "Blankets" },
-      { url: "https://rhythm-emotion.net/chopsticks/", src: "chopsticks.png", alt: "Chopsticks" },
       { url: "https://fanlistings.nickifaulk.com/skulls/", src: "skulls.png", alt: "Skulls" },
       { url: "https://pokemon.i-heart-you.net/plushies/", src: "pokemon_plushes.gif", alt: "Pokémon plushes" },
       { url: "http://fan.ravenbeauty.net/funko/", src: "funko.png", alt: "Funko Pop" }
     ],
     nature: [
-      { url: "http://fan.winterlantern.net/willows/", src: "willow_trees.png", alt: "Willow trees" },
-      { url: "http://nosastra.com/galaxies/", src: "galaxies.png", alt: "Galaxies" },
+      { url: "https://fan.winterlantern.net/willows/", src: "willow_trees.png", alt: "Willow trees" },
       { url: "http://love.in-blue-rain.org/auroras/", src: "auroras.png", alt: "Aurora borealis" },
       { url: "http://in-blue-rain.org/heart/", src: "bleeding_heart.png", alt: "Bleeding heart flowers" },
       { url: "https://prettylies.net/snow/", src: "snow.png", alt: "Snow" },
@@ -155,13 +157,13 @@ export default {
       { url: "http://winterseve.altervista.org/winter/", src: "winter.png", alt: "Winter" }
     ],
     celebrities: [
-      { url: "http://www.ladyrose.buruma.net/weirdal", src: "weird_al.gif", alt: "Weird Al Yankovic" },
+      { url: "https://www.ladyrose.buruma.net/weirdal/", src: "weird_al.gif", alt: "Weird Al Yankovic" },
       { url: "https://precious-memory.net/betty/index.php", src: "betty_white.gif", alt: "Betty White" },
       { url: "https://glitterskies.org/voiceactors/", src: "voice_actors.png", alt: "Voice actors" }
     ],
     places: [
       { url: "http://in-blue-rain.org/thetube/", src: "the_tube.png", alt: "Lond underground subway (the Tube)" },
-      { url: "https://moudoku.com/abandoned/", src: "abandoned-sites.png", alt: "Abandoned sites" },
+      { url: "https://shadow-lord.com/abandoned/", src: "abandoned-sites.png", alt: "Abandoned sites" },
       { url: "https://boundless-realms.com/disneyland/", src: "disneyland.jpg", alt: "Disneyland" },
       { url: "https://precious-memory.net/disneyworld/", src: "disney_world.gif", alt: "Walt Disney World" },
       { url: "https://fans.thislove.nu/aquariums/", src: "aquariums.png", alt: "Aquariums" },
@@ -170,7 +172,6 @@ export default {
       { url: "http://fan.still-breathing.com/museums/", src: "museums.png", alt: "Museums" }
     ],
     miscellaneous: [
-      { url: "https://fan.robotess.net/programming", src: "programming.jpeg", alt: "Programming" },
       { url: "https://fans.thislove.nu/css/", src: "css.jpg", alt: "CSS" },
       { url: "http://fanique.altervista.org/emoticons/", src: "emoticons.png", alt: "Emoticons" },
       { url: "https://10-31.net/halloween/index.php", src: "halloween.png", alt: "Halloween" },

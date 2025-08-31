@@ -23,6 +23,7 @@ With this library, animated GIFs are paused and can be enabled again by clicking
 It's an amazing library and it's saved me from a lot of eyestrain while debugging the graphics page. The instructions are pretty easy to follow, but I'd like to share my method of implementing this library to my Neocities site. I hope you find this helpful!
 
 **Disclaimers:**
+
 - This tutorial will show examples for both [JQuery](https://www.w3schools.com/jquery/default.asp) and [JavaScript](https://www.w3schools.com/js/default.asp), in which you can use either one or the other, but not both. While I prefer JQuery, both have its advantages and disadvantages, so it's up to you to look into both and see what you prefer. :)
 - Other webmasters have found wonderful alternatives to this library, which can be found in Vance's site at the [bottom of the page](#6-closing-thoughts). I recommend taking a look at their tutorial and other tips on making your site more accessible.
 
@@ -152,13 +153,11 @@ The functions that have "click" are what triggers the Freezeframe component to r
 
 So, you should have something like the following:
 
-<button id="play-gif" class="button" type='button'>Play GIFs</button>
-<button id="stop-gif" class="button" type='button'>Stop GIFs</button>
+<button id="play-gif" class="button me-2" type='button'>Play GIFs</button><button id="stop-gif" class="button" type='button'>Stop GIFs</button>
 
 <div class='freezeframe mb-4'>
 
-![Stamp of Doctor Strange activating his magic](/assets/images/goodies/stamps/strange.gif)
-![Stamp of Doctor Strange turning his head](/assets/images/goodies/stamps/strange_headturn.gif)
+![Stamp of Doctor Strange activating his magic](/assets/images/goodies/stamps/strange.gif) ![Stamp of Doctor Strange turning his head](/assets/images/goodies/stamps/strange_headturn.gif)
 
 ![Blinkie of Doctor Strange](/assets/images/goodies/blinkies/blinkie-strange-sprite.gif)
 
@@ -175,7 +174,7 @@ So, you should have something like the following:
 
 Of course, not every library is perfect, and Freezeframe.js is no exception. Here are some issues I encountered and some workarounds, if any, that I managed to figure out.
 
-### 5.1) Does not work in tabbed menus.
+### 5.1) Does not work in tabbed menus
 
 The library does not currently work in tabbed menus that use CSS. My guess is because of the clashing CSS styles somehow, but I haven't figured out a workaround for this, yet.
 

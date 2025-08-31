@@ -10,8 +10,25 @@ const statusCafeThemes = collection => {
   return collection.getFilteredByTag('statusCafeTheme');
 }
 
+const galleryImages = collection => {
+  const galleries = collection.getAll()[0].data.galleries;
+  let galleryImages = [];
+
+  galleries.forEach((gallery) => {
+    gallery.pictures.forEach((picture, i, arr) => {
+      picture.containingGallery = `${gallery.shortTitle || gallery.title}`;
+      picture.baseUrl = `${gallery.imgPath}`;
+      i ? (picture.previousImage = arr[i - 1].title) : null;
+      i + 1 != arr.length ? (picture.nextImage = arr[i + 1].title) : null;
+      galleryImages.push(picture);
+    });
+  });
+  return galleryImages;
+}
+
 module.exports = {
   writingPages,
   blogPosts,
-  statusCafeThemes
+  statusCafeThemes,
+  galleryImages
 }

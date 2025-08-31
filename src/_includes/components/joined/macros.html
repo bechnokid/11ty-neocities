@@ -1,4 +1,26 @@
 {% set imgPath = "/assets/images/webrings/" %}
+{% macro fixWidget(id, name = '', link = '') %}
+  <script>
+    webring = $('#{{ id }}')
+    webringId = '{{ id }}'
+    webringName = '{{ name }}'
+    webringLink = '{{ link }}'
+
+    if (webringId == 'resourceRing') {
+      webring.html(webring.html().replace('<br>', ' '));
+    } else if (webringId == 'gfdkris') {
+      webring.html(webring.html().replace('webring webring', 'webring'));
+    } else if (webringId == 'eggring') {
+      webring.html(webring.html().replace('the The', 'the'));
+    }
+
+    if (webring.html().includes('waiting') || webring.html().includes("yet") || webring.html().includes("isn't")) {
+      webring.html(webring.html().replace(webringName, `<a href='${webringLink}'>${webringName}</a>`))
+      webring.toggleClass('waiting');
+    }
+  </script>
+{% endmacro %}
+
 {% macro basic(webring) %}
   <div class="webring">
     {# Previous link #}
@@ -17,47 +39,56 @@
   </div>
 {% endmacro %}
 
-{% macro resource() %}
-  <div id="resourceRing"></div>
-  <script type="text/javascript" src="https://pixelsafari.neocities.org/webring/resourcering.js"></script>
-  <script>if ($('#resourceRing')[0].innerHTML.includes('waiting'))$('#resourceRing').toggleClass('waiting');</script>
-{% endmacro %}
-
-{% macro tropical(debug = false) %}
+{% macro resource(debug = false) %}
+  {% set webringUrl = 'https://pixelsafari.neocities.org/webring' %}
   {% if debug %}
-    <div style="display: flex; gap: 8px" id="TRB">
-      <a href="#" id="prevTRB"><img src="https://astracelestine.nekoweb.org/img/Illustration2.png" style="width: 50px"></a>
-      <div id="centerTRB"><a href="https://astracelestine.nekoweb.org/webring/tropical-rice-bowl"><img src="https://file.garden/Z1rkYOKl12fQ7vD8/img/aaaaaa.png" style="width: 180px"></a></div>
-      <a href="#" id="nextTRB"><img src="https://astracelestine.nekoweb.org/img/Illustration2.png" style="width: 50px; rotate: 180deg"></a>
+    <div id="resourceRing">
+      <a href="{{ webringUrl }}"><img src="{{ webringUrl }}/resourcering.png" alt=""></a><br><a href="#"><img src="{{ webringUrl }}/resourceringprev.png" alt=""></a><a href="#"><img src="{{ webringUrl }}/resourceringrandom.png" alt=""></a><a href="#"><img src="{{ webringUrl }}/resourceringnext.png" alt=""></a>
     </div>
   {% else %}
-    <div id='trb'><script src='https://astracelestine.nekoweb.org/webring/tropical-rice-bowl/widget.js'></script></div>
-    <script>if ($('#trb')[0].innerHTML.includes("isn't part"))$('#trb').toggleClass('waiting');</script>
+    <div id="resourceRing"></div>
+    <script type="text/javascript" src="{{ webringUrl }}/resourcering.js"></script>
+    {{ fixWidget('resourceRing', 'Re:source Ring', webringUrl) }}
   {% endif %}
 {% endmacro %}
 
+{% macro tropical(debug = false) %}
+    {% set webringUrl = 'https://astracelestine.nekoweb.org' %}
+  {% if debug %}
+    <div style="display: flex; gap: 8px" id="TRB">
+      <a href="#" id="prevTRB"><img src="{{ webringUrl }}/img/Illustration2.png" style="width: 50px"></a>
+      <div id="centerTRB"><a href="{{ webringUrl }}/webring/tropical-rice-bowl"><img src="https://file.garden/Z1rkYOKl12fQ7vD8/img/aaaaaa.png" style="width: 180px"></a></div>
+      <a href="#" id="nextTRB"><img src="{{ webringUrl }}/img/Illustration2.png" style="width: 50px; rotate: 180deg"></a>
+    </div>
+  {% else %}
+    <div id='trb'><script src='{{ webringUrl }}/webring/tropical-rice-bowl/widget.js'></script></div>
+    {% endif %}
+  <script>if ($('#trb').length > 0 && $('#trb').html().includes("isn't part"))$('#trb').toggleClass('waiting');</script>
+{% endmacro %}
+
 {% macro gfdkris(debug = false) %}
+  {% set webringUrl = 'https://fabstarotcorner.neocities.org/webring' %}
   {% if debug %}
     <div id='gfdkris'>
       <div class="kwtfaw-div">
-      <a href="https://fabstarotcorner.neocities.org/webring/sites.html" class="kwtfaw-top">
-        <img class="kwtfaw-img" src="https://fabstarotcorner.neocities.org/webring/assets/button/webringbutton.png">
-        <img class="kwtfaw-img" src="https://fabstarotcorner.neocities.org/webring/assets/button/bubble.svg" alt="kris where tf are we"/>
+      <a href="{{ webringUrl }}/sites.html" class="kwtfaw-top">
+        <img class="kwtfaw-img" src="{{ webringUrl }}/assets/button/webringbutton.png">
+        <img class="kwtfaw-img" src="{{ webringUrl }}/assets/button/bubble.svg" alt="kris where tf are we"/>
       </a>
       <div class="kwtfaw-controls">
       <a class="kwtfaw-button" href="#">
-        <img class="kwtfaw-control" src="https://fabstarotcorner.neocities.org/webring/assets/button/prev.svg" alt="prev"/>
+        <img class="kwtfaw-control" src="{{ webringUrl }}/assets/button/prev.svg" alt="prev"/>
       </a>
       <a class="kwtfaw-button" href='#'>
-        <img class="kwtfaw-control" src="https://fabstarotcorner.neocities.org/webring/assets/button/what.svg" alt="random"/> </a>
+        <img class="kwtfaw-control" src="{{ webringUrl }}/assets/button/what.svg" alt="random"/> </a>
       <a class="kwtfaw-button" href="#">
-        <img class="kwtfaw-control" src="https://fabstarotcorner.neocities.org/webring/assets/button/next.svg" alt="next"/>  </a>
+        <img class="kwtfaw-control" src="{{ webringUrl }}/assets/button/next.svg" alt="next"/>  </a>
       </div>
     </div>
     <style>
-    @font-face { font-family: deltarune; src: url('https://fabstarotcorner.neocities.org/webring/deltarune.ttf'); }
-    @font-face { font-family: determination; src: url('https://fabstarotcorner.neocities.org/webring/DTM-Mono.otf'); }
-    @font-face { font-family: mercy; src: url('https://fabstarotcorner.neocities.org/webring/MERCY.otf'); }
+    @font-face { font-family: deltarune; src: url('{{ webringUrl }}/deltarune.ttf'); }
+    @font-face { font-family: determination; src: url('{{ webringUrl }}/DTM-Mono.otf'); }
+    @font-face { font-family: mercy; src: url('{{ webringUrl }}/MERCY.otf'); }
 
       .kwtfaw-img{
           image-rendering: pixelated;
@@ -140,93 +171,14 @@
     </div>
   {% else %}
     <div id='gfdkris'>
-      <script type='text/javascript' src='https://fabstarotcorner.neocities.org/webring/onionring-variables.js'></script><script type='text/javascript' src='https://fabstarotcorner.neocities.org/webring/onionring-widget.js'></script>
+      <script type='text/javascript' src='{{ webringUrl }}/onionring-variables.js'></script><script type='text/javascript' src='{{ webringUrl }}/onionring-widget.js'></script>
     </div>
-    <script>if ($('#gfdkris')[0].innerHTML.includes("'t"))$('#gfdkris').toggleClass('waiting');</script>
+    {{ fixWidget('gfdkris', 'GFDKWTFAW webring', webringUrl)}}
   {% endif %}
 {% endmacro %}
 
 {% macro cookierun(debug = false) %}
   {% if debug %}
-    <style>
-      #ckwr {
-        margin: auto;
-        width:180px !important;
-        height:180px !important;
-        box-sizing: border-box;
-        background-color: #9D5535;
-        border: 4px solid #381d12;
-        border-radius: 10px;
-        display: inline-block;
-      }
-
-      #ckwr * {
-        padding: 0 !important;
-      }
-
-      #ckwr>img{
-          margin:0;
-          padding: 0;
-          max-width: 100% !important;
-      }
-
-      #ckwr .webring-wrapper{
-        width:100%;
-        height:100%;
-        display: flex;
-        letter-spacing: normal !important;
-        flex-direction: column;
-        justify-content: center!important;
-      }
-
-      #ckwr .webring-flex{
-        display:flex;
-        justify-content: center!important;
-        position: relative;
-      }
-
-      #ckwr .webring-title img{
-        margin:0;
-        margin-top: 1px;
-        text-align: center;
-        width: 100%;
-      }
-
-      #ckwr .webring-image{
-        display:block;
-        position: relative;
-        height:64px;
-        width:64px;
-        margin-top:4px;
-      }
-
-      #ckwr .webring-image > img:hover {
-        transform:scale(1.1);
-      }
-
-      #ckwr a {
-          color: black;
-          text-decoration: none;
-      }
-
-      #ckwr .webring-footer {
-        text-align: center;
-      }
-
-      #ckwr .webring-next, #ckwr .webring-prev{
-        display:flex;
-        flex-direction: column;
-        justify-content: center!important;
-      }
-
-      #ckwr .webring-next img {
-        transform: scaleX(-1);
-      }
-
-      #ckwr .arrow-image{
-        width:50px;
-      }
-    </style>
     <div id="ckwr">
       <div class="webring-wrapper">
         <div class="webring-title">
@@ -247,31 +199,35 @@
         </div>
       </div>
     </div>
+    <link rel="stylesheet" href="https://evehibi.nekoweb.org/ckwr/dynamic.css">
   {% else %}
-    <div id='ckwr' class="js-required">
-      <script type='text/javascript' src='https://evehibi.nekoweb.org/ckwr/var.js'></script><script type='text/javascript' src='https://evehibi.nekoweb.org/ckwr/widget.js'></script><link rel='stylesheet' href='https://evehibi.nekoweb.org/ckwr/widget.css'>
+    <div id="ckwr">
+      <script type="text/javascript" src="https://evehibi.nekoweb.org/ckwr/var.js"></script>
+      <script type="text/javascript" src="https://evehibi.nekoweb.org/ckwr/widget.js"></script>
+      <link rel="stylesheet" href="https://evehibi.nekoweb.org/ckwr/dynamic.css">
     </div>
   {% endif %}
 {% endmacro %}
 
 {% macro amiga(debug = false) %}
+{% set webringUrl = 'https://nicois.gay/amiga' %}
 {% if debug %}
   <div id="amiga">
     <table>
       <tr>
-        <td class='webring-prev'><a href='#'target="_top"><img src="https://nicois.gay/amiga/A.M.I.G.A.%20left.svg" alt="" width="50px"></a></td>
-        <td class='webring-info'><center><a href='https://nicois.gay/amiga/members' target="_top"><img src="https://nicois.gay/amiga/amiga%20button.svg" alt="" width="150px"></a></center></br>
+        <td class='webring-prev'><a href='#'target="_top"><img src="{{ webringUrl }}/A.M.I.G.A.%20left.svg" alt="" width="50px"></a></td>
+        <td class='webring-info'><center><a href='{{ webringUrl }}/members' target="_top"><img src="{{ webringUrl }}/amiga%20button.svg" alt="" width="150px"></a></center></br>
         <span class='webring-links'>
-          <a href='javascript:void(0)' onclick='randomSite()'>random</a> | <a href='https://nicois.gay/amiga/amiga-webring'>index</a> | <a href='https://garlic.garden/onionring/'>what is this?</a></span></td>
-        <td class='webring-next'><a href='#' target="_top"><img src="https://nicois.gay/amiga/A.M.I.G.A.%20right.svg" alt="" width="50px"></a></td>
+          <a href='javascript:void(0)' onclick='randomSite()'>random</a> | <a href='{{ webringUrl }}/amiga-webring'>index</a> | <a href='https://garlic.garden/onionring/'>what is this?</a></span></td>
+        <td class='webring-next'><a href='#' target="_top"><img src="{{ webringUrl }}/A.M.I.G.A.%20right.svg" alt="" width="50px"></a></td>
       </tr>
     </table>
   </div>
 {% else %}
   <div id='amiga'>
-    <script type='text/javascript' src='https://nicois.gay/amiga/onionring-variables.js'></script><script type='text/javascript' src='https://nicois.gay/amiga/onionring-widget.js'></script>
+    <script type='text/javascript' src='{{ webringUrl }}/onionring-variables.js'></script><script type='text/javascript' src='{{ webringUrl }}/onionring-widget.js'></script>
   </div>
-  <script>if ($('#amiga')[0].innerHTML.includes("isn't part"))$('#amiga').toggleClass('waiting');</script>
+  {{ fixWidget('amiga', 'Artists Making the Internet Gay Again webring', webringUrl )}}
 {% endif %}
 {% endmacro %}
 
@@ -280,43 +236,47 @@
 {% endmacro %}
 
 {% macro selfInsert() %}
-  <div class='self-insert-webring webring-border'><div class='webring-icon'><img class='webring-border' src='https://files.catbox.moe/3yxyd8.jpg' alt='Icon of a character for the Self-Insert Webring'></div><div class='webring-text webring-textbox webring-dashed-border'><p><strong>Bechno Kid</strong> absolutely loves <strong>Gilgamesh</strong> from <strong>Final Fantasy</strong>!</p></div><div class='webring-links webring-textbox webring-dashed-border'><p>| <a href='https://webring.koinuko.pink/members.php'>Members List</a>|</p><p>Part of the <a href='https://webring.koinuko.pink'>Self-Insert Webring</a></p></div></div>
+  <div class="self-insert-webring p-2">
+    <div class="row g-0">
+      <div class="col-5 self-insert-img d-flex">
+        <img src="https://files.catbox.moe/3yxyd8.jpg" alt="Image of Gilgamesh for the Self-insert Webring">
+      </div>
+      <div class="col-7 ps-2 text-center">
+        <div class="self-insert-text p-1 h-100 d-flex align-items-center">
+          <p><strong>Bechno Kid</strong> absolutely loves <strong>Gilgamesh</strong> from <strong>Final Fantasy</strong>!</p>
+        </div>
+      </div>
+    </div>
+    <div class="row g-0 self-insert-nav text-center mt-2 p-1">
+      <p>| <a href="https://webring.koinuko.pink/members.php">Members List</a> |</p>
+      <p>Part of the <a href="https://webring.koinuko.pink">Self-Insert Webring</a></p>
+    </div>
+  </div>
 {% endmacro %}
 
 {% macro persona(debug = false) %}
+{% set webringUrl = 'https://silly-beanz.neocities.org/personaring' %}
   {% if debug %}
     <div id="p-ring">
       <div class="ring-container">
         <img src="https://raw.githubusercontent.com/bechnokid/neocities/refs/heads/master/public/assets/images/webrings/personaring.png" alt="" class="sona">
         <div class="persona-ring">
           <div class="name-tag">
-            <div class="head">
-              <span style="font-size: 25px">HELLO!</span><br>
-              my name is:
-            </div>
-            <div class="namediv">
-              Bechno
-            </div>
-            <div class="webring-info">
-              part of the <a href="https://silly-beanz.neocities.org/personaring/home" title="join???">persona ring</a> :)
-            </div>
+            <div class="head"><span style="font-size: 25px">HELLO!</span><br>my name is:</div>
+            <div class="namediv">Bechno</div>
+            <div class="webring-info">part of the <a href="{{ webringUrl }}/home" title="join???">persona ring</a> :)</div>
           </div>
           <div class="direct">
-            <a href="#">
-              <img src="https://file.garden/Z2NdXxm2rXGo4wAJ/personaring/L%20arrow.png" alt="" class="prev">
-            </a>
-            <a href="#" onclick="randomSite()">
-              <img src="https://file.garden/Z2NdXxm2rXGo4wAJ/personaring/smiley.png" alt="" class="rand">
-            </a>
-            <a href="#">
-              <img src="https://file.garden/Z2NdXxm2rXGo4wAJ/personaring/R%20arrow.png" alt="" class="next">
-            </a>
+            <a href="#"><img src="https://file.garden/Z2NdXxm2rXGo4wAJ/personaring/L%20arrow.png" alt="" class="prev"></a>
+            <a href="#" onclick="randomSite()"><img src="https://file.garden/Z2NdXxm2rXGo4wAJ/personaring/smiley.png" alt="" class="rand"></a>
+            <a href="#"><img src="https://file.garden/Z2NdXxm2rXGo4wAJ/personaring/R%20arrow.png" alt="" class="next"></a>
           </div>
         </div>
       </div>
     </div>
   {% else %}
-    <div id='p-ring'><script type='text/javascript' src='https://silly-beanz.neocities.org/personaring/onionring-variables.js'></script><script type='text/javascript' src='https://silly-beanz.neocities.org/personaring/onionring-widget.js'></script></div><script>if ($('#p-ring')[0].innerHTML.includes("'t"))$('#p-ring').toggleClass('waiting');</script>
+    <div id='p-ring'><script type='text/javascript' src='{{ webringUrl }}/onionring-variables.js'></script><script type='text/javascript' src='{{ webringUrl }}/onionring-widget.js'></script></div>
+    {{ fixWidget('p-ring', 'persona ring', webringUrl)}}
   {% endif %}
 {% endmacro %}
 
@@ -341,107 +301,8 @@
 {% endmacro %}
 
 {% macro doodle(debug = false) %}
+  {% set webringUrl = 'https://evehibi.nekoweb.org/doodlering' %}
   {% if debug %}
-    <style>
-      #doodlering {
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        width:165px; /* 64:47*/
-        height:100px;
-        box-sizing: border-box;
-        font-family: Comic Sans MS, cursive !important;
-        font-size: 13px!important;
-        text-shadow:none !important;
-        text-decoration: none !important;
-        line-height:15px !important;
-      }
-
-      #doodlering>img{
-          margin:0 !important;
-          padding: 0 !important;
-      }
-
-      #doodlering .webring-wrapper{
-        top:0;
-        bottom:0;
-        left:0;
-        right:0;
-        width:100%;
-        height:inherit;
-        display: flex;
-        letter-spacing: normal !important;
-        flex-direction: column;
-        justify-content: center!important;
-        background-image: url(https://evehibi.nekoweb.org/doodlering/background.png);
-        color: black !important;
-      }
-
-      #doodlering .webring-flex{
-        display:flex;
-        justify-content: center!important;
-        position: relative;
-      }
-
-      #doodlering .webring-title{
-        text-align: center!important;
-        padding: 0!important;
-      }
-
-      #doodlering .webring-title h2{
-        margin:0 !important;
-        margin-top: 1px;
-        padding: 0!important;
-        font-size: 17px !important;
-        font-family: Comic Sans MS, cursive !important;
-        text-transform: none !important;
-        border:none !important;
-        text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
-        color: black !important;
-        background-color: transparent !important;
-      }
-
-      #doodlering .webring-image{
-        display:block;
-        position: relative;
-        height:64px;
-        width:64px;
-        margin-top:4px;
-        transition: transform .2s;
-      }
-
-      #doodlering .webring-image > img:hover {
-        transform:scale(1.1);
-      }
-
-      #doodlering a {
-          color: black;
-          text-decoration: none;
-      }
-
-      #doodlering .webring-footer {
-        text-align: center;
-      }
-
-      #doodlering .webring-next, #doodlering .webring-prev{
-        display:flex;
-        flex-direction: column;
-        justify-content: center!important;
-      }
-
-      #doodlering .webring-next img {
-        transform: scaleX(-1);
-      }
-
-      #doodlering .webring-links a {
-        font-size:small !important;
-      }
-
-      #doodlering .arrow-image{
-        width:50px;
-      }
-    </style>
     <div id="doodlering">
       <div class="webring-wrapper">
         <div class="webring-title">
@@ -470,11 +331,42 @@
         </div>
       </div>
     </div>
+    <link rel='stylesheet' href='{{ webringUrl }}/onionring.css'>
   {% else %}
-    <div id='doodlering'><script type='text/javascript' src='https://evehibi.nekoweb.org/doodlering/onionring-variables.js'></script><script type='text/javascript' src='https://evehibi.nekoweb.org/doodlering/onionring-widget.js'></script><link rel='stylesheet' href='https://evehibi.nekoweb.org/doodlering/onionring.css'></div><script>if ($('#doodlering')[0].innerHTML.includes('waiting'))$('#doodlering').toggleClass('waiting');</script>
+    <div id='doodlering'><script type='text/javascript' src='{{ webringUrl }}/onionring-variables.js'></script><script type='text/javascript' src='{{ webringUrl }}/onionring-widget.js'></script><link rel='stylesheet' href='{{ webringUrl }}/onionring.css'></div>
+    {{ fixWidget('doodlering', 'doodlering', webringUrl) }}
   {% endif %}
 {% endmacro %}
 
 {% macro jelly() %}
-  <div class='jelly-world p-3 mt-2'><div class='title'><a href='https://bechnokid.neocities.org/home/'>Bechno Kid</a> has bonded with<br><strong>Jelly Well-Done Steak!</strong></div><div class='d-flex justify-content-center'><div class='img my-2'><a href='https://jellyworld.neocities.org/'><img src='/assets/images/webrings/jw_steak.png' title='Mmm...so tasty!' alt='A jelly based on the Well-Done Steak from the Monster Hunter game franchise'></a></div></div></div>
+  <div class="jelly-world p-2">
+    <div class="row g-0">
+      <div class="col-5 jelly-world-img">
+        <a href="https://jellyworld.neocities.org"><img src="/assets/images/webrings/jw_steak.png" alt="A jelly that looks like the Well-Done Steak from the Monster Hunter game franchise" title="Mmm...so tasty!"></a>
+      </div>
+      <div class="col-7 jelly-world-text d-flex align-items-center ps-2">
+        <p><a href="/">Bechno Kid</a> has bonded with <strong>Jelly Well-Done Steak!</strong></p>
+      </div>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro wol(debug = false) %}
+  {% set webringUrl = 'https://wolwebring.neocities.org' %}
+  {% if debug %}
+    <div id="wolwebring">
+      <p><a href="#"><img src="{{webringUrl}}/left.png" alt="" style="width:20px;height:40px"></a> <a href="{{webringUrl}}"><img src="{{webringUrl}}/ff.png" alt="" style="width:100px;height:52px"></a> <a href="#"><img src="{{webringUrl}}/right.png" alt="" style="width:20px;height:40px"></a></p>
+    </div>
+  {% else %}
+    <div id='wolwebring'><script type="text/javascript" src="{{ webringUrl }}/onionring-variables.js"></script><script type="text/javascript" src="{{ webringUrl }}/onionring-widget.js"></script></div>
+    {{ fixWidget('wolwebring', 'Warriors of Light webring', webringUrl )}}
+  {% endif %}
+{% endmacro %}
+
+{% macro egg() %}
+ {% set webringUrl = 'https://eggring.neocities.org' %}
+ <script src="{{ webringUrl }}/js/hatring.js"></script><script src="{{ webringUrl }}/js/eggring-config.js"></script>
+ <script>window.onload = function() { eggring.buildWidget(); }</script>
+ <div id="eggring" class="d-flex flex-column align-items-center p-2"></div>
+ {{ fixWidget ('eggring', "Eggring", webringUrl)}}
 {% endmacro %}

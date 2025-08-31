@@ -7,13 +7,30 @@ hide: true
 tags: main
 ---
 {% macro collectionList(section, name = null) %}
+
 ## {{ (name or section) | title }} {.sitemap}
+
 {%- for link in collections[section] | sortCollectionByDisplayOrder %}
   {% if link.data.wip %}
+
 ### {{ link.data.title }} (WIP){.text-muted}
+
+  {% elif link.data.title == 'Artwork' %}
+
+### {{ link.data.title }}
+
+  {%- for gallery in galleries %}
+
+- [{{ gallery.title }}](../artwork/{{ (gallery.shortTitle or gallery.title) | slugify }})
+
+  {% endfor %}
+
   {% elif link.data.subList %}
+
 ### {{ link.data.shortTitle or link.data.title }}
+
     {%- for sublink in link.data.pagination.items | sortCollectionByDisplayOrder %}
+
 - {% link sublink.url, sublink.data.shortTitle or sublink.data.title, { cls: sublink.data.navTag } %} {% if sublink.data.flashing == true %} {% icon 'alert-triangle' %}{% endif %}
     {% endfor %}
   {% elif link.data.title != 'Sitemap' %}

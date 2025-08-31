@@ -1,0 +1,40 @@
+---
+pagination:
+  data: collections.galleryImages
+  size: 1
+  alias: picture
+css: art
+layout: layouts/basic.html
+eleventyExcludeFromCollections: true
+noScroll: true
+eleventyComputed:
+  title: "{{ picture.title | safe }}"
+  permalink: "/artwork/{{ picture.containingGallery | slugify }}/{{ picture.title | slugify }}/"
+---
+{% macro artNav(img) %}
+  {% if img.previousImage %}
+    {% set artLink = img.previousImage | slugify %}
+    {% link "../" + artLink, "&lt;&lt;", { cls: 'button', ariaLabel: 'Button to previous image' } %}
+  {% endif %}
+  {% set artLink = img.containingGallery | slugify %}
+  {% link "/artwork/" + artLink + "/", "Index", { cls: 'button mx-3' } %}
+  {% if img.nextImage %}
+    {% set artLink = img.nextImage | slugify %}
+    {% link "../" + artLink, "&gt;&gt;", { cls: 'button', ariaLabel: 'Button to next image' } %}
+  {% endif %}
+{% endmacro %}
+<section>
+	<div class='art-nav d-flex justify-content-center'>
+    {{ artNav(picture) }}
+	</div>
+  <div class='img-container d-flex mt-4 justify-content-center'>
+    <img src="{{ picture.baseUrl }}/{{ picture.filename }}" alt="{{ picture.altText }}" class='mb-3 mx-auto'>
+  </div>
+  {% if picture.fullSize %}<div class='full-size-link mb-3 text-center'><a href="{{ picture.baseUrl }}/{{ picture.filename }}">(Click for full size)</a></div>{% endif %}
+  <div class="art-desc mb-4">
+    {% artCaption picture.caption, { originalDate: picture.originalDate, originalCaption: picture.originalCaption, transcript: picture.transcript } %}
+  </div>
+  <div class='art-nav d-flex justify-content-center'>
+		{{ artNav(picture) }}
+	</div>
+</section>

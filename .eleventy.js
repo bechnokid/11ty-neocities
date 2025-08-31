@@ -11,19 +11,20 @@ const {
 } = require('./config/filters');
 
 const {
-  writingPages, blogPosts, statusCafeThemes
+  writingPages, blogPosts, galleryImages, statusCafeThemes
 } = require('./config/collections');
 
 const {
   icon, emoticon, emote, img, link, imgWithLink,
   tooltip, figure, details, galleryBox, convertToHtml,
-  convertToCode
+  convertToCode, artCaption
 } = require('./config/shortcodes');
 
 const markdownLib = require('./config/plugins/markdown');
 
 const TEMPLATE_ENGINE = 'njk';
 
+/** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 module.exports = async function(eleventyConfig){
   const { IdAttributePlugin } = await import("@11ty/eleventy");
 
@@ -39,6 +40,7 @@ module.exports = async function(eleventyConfig){
   eleventyConfig.addShortcode('img', img);
   eleventyConfig.addShortcode('link', link);
   eleventyConfig.addShortcode('imgWithLink', imgWithLink);
+  eleventyConfig.addShortcode('artCaption', artCaption);
 
   // Paired shortcodes
   eleventyConfig.addPairedShortcode('figure', figure);
@@ -81,6 +83,7 @@ module.exports = async function(eleventyConfig){
   eleventyConfig.addCollection('writing', writingPages);
   eleventyConfig.addCollection('blog', blogPosts);
   eleventyConfig.addCollection('statusCafeThemes', statusCafeThemes);
+  eleventyConfig.addCollection('galleryImages', galleryImages);
 
   // Plugins
   eleventyConfig.addPlugin(rssPlugin);
@@ -89,7 +92,13 @@ module.exports = async function(eleventyConfig){
   eleventyConfig.addPlugin(pluginTOC, {
     tags: ['h2']
   });
-  //eleventyConfig.addPlugin(brokenLinksPlugin, { excludeUrls: ["https://deviantart.com/view/*", "https://www.youtube.com/watch?"] });
+  // eleventyConfig.addPlugin(brokenLinksPlugin, {
+  //   excludeUrls: [
+  //     "https://deviantart.com/view/*",
+  //     "https://www.youtube.com/*",
+  //     "https://acingtheinternet.netlify.app/*",
+  //   ]
+  // });
 
   eleventyConfig.setLibrary('md', markdownLib);
 

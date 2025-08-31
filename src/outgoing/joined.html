@@ -22,30 +22,34 @@ debug: false
 {% endgalleryBox %}
 
 {% galleryBox { title: "Webrings", subCls: "overflow-y-auto webrings justify-content-center" } %}
+{# {{ webrings.WEBRINGNAME(debug = false) }} For debugging #}
+<div class="small-webrings js-required d-flex flex-wrap align-items-center justify-content-center mb-4">
+  {{ webrings.basic(outgoing.joined.neocreatives) }}
+  {{ webrings.basic(outgoing.joined.cuddler) }}
+  {{ webrings.basic(outgoing.joined.rayman) }}
+  {{ webrings.basic(outgoing.joined.acing) }}
+  {{ webrings.basic(outgoing.joined.ladies) }}
+  {{ webrings.basic(outgoing.joined.queercoded) }}
+  {{ webrings.tropical(debug = false) }}
+</div>
 <div class="row g-0 w-100 js-required">
   <div class="col-12 col-lg-4">
-    {# {{ webrings.WEBRINGNAME(debug = false) }} For debugging #}
-    {{ webrings.basic(outgoing.joined.neocreatives) }}
-    {{ webrings.basic(outgoing.joined.cuddler) }}
-    {{ webrings.basic(outgoing.joined.rayman) }}
-    {{ webrings.resource() }}
-    {{ webrings.basic(outgoing.joined.queercoded) }}
-    {{ webrings.basic(outgoing.joined.ladies) }}
-    {{ webrings.basic(outgoing.joined.acing) }}
-    {{ webrings.tropical(debug = false) }}
+    {{ webrings.resource(debug = false) }}
+    {{ webrings.egg() }}
     {{ webrings.gfdkris(debug = false) }}
+    {{ webrings.amiga(debug = false) }}
     {{ webrings.cookierun(debug = false) }}
   </div>
   <div class="col-12 col-lg-4">
-    {{ webrings.amiga(debug = false) }}
-    {{ webrings.wii() }} {# Does not need debugging #}
-    {{ webrings.selfInsert() }} {# Does not need debugging #}
-    {{ webrings.persona(debug = false) }}
+    {{ webrings.wol(debug = false) }}
+    {{ webrings.wii() }}
+    {{ webrings.doodle(debug = false) }}
+    {{ webrings.selfInsert() }}
   </div>
   <div class="col-12 col-lg-4">
+    {{ webrings.persona(debug = false) }}
     {{ webrings.kingdomHearts(debug = false) }}
-    {{ webrings.doodle(debug = false) }}
-    {{ webrings.jelly() }} {# Does not need debugging #}
+    {{ webrings.jelly() }}
   </div>
 </div>
 <noscript>

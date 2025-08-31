@@ -40,15 +40,15 @@ export default {
       rightText: "Chaotic Love Revolution"
     },
     {
-      leftText: "sanrio lvr",
+      leftText: "sanrio",
       centerIcon: "♡",
-      url: "https://jubiland.neocities.org/cliques#sanrioluvr",
+      url: "https://nanacore.neocities.org/cliques/sanrio",
       rightText: "Big Challenges"
     },
     {
       leftText: "What's Your Type?",
       centerIcon: "::",
-      url: "https://web.archive.org/web/20160101164734/http://pkmn.zeruda.org/clique",
+      url: "https://web.archive.org/web/20160122110916/http://pkmn.zeruda.org/clique/",
       rightText: "Psychic / Bug"
     },
     {
@@ -61,7 +61,7 @@ export default {
       leftText: "flowering",
       centerIcon: "//",
       url: "https://theflowering.neocities.org",
-      rightText: "hydrangea <a href='http://jbrr.fc2web.com/material.html'><img class='ms-1 inline-img' src='/assets/images/goodies/cliques/hydrangea.gif' aria-hidden='true' alt=''></a>"
+      rightText: "hydrangea <a href='https://web.archive.org/web/20250621102731/http://jbrr.fc2web.com/material.html'><img class='ms-1 inline-img' src='/assets/images/goodies/cliques/hydrangea.gif' aria-hidden='true' alt=''></a>"
     }
   ],
   col2: [

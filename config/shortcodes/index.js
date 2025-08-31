@@ -26,12 +26,13 @@ const emote = value => {
 const link = function (url, content, options = {}) {
   let linkCls = '';
   const ariaDesc = (options.ariaDesc) ? ` aria-describedby="${options.ariaDesc}"` : '';
+  const ariaLabel = (options.ariaLabel) ? ` aria-label="${options.ariaLabel}"` : '';
   if (options.markdown && ariaDesc == '') {
     if (options.cls) linkCls = `{${options.cls.split(' ').map((x) => `.${x}`).join(' ')}}`;
     return `[${content}](${url})${linkCls}`
   } else {
     if (options.cls) linkCls = ` class='${options.cls}'`;
-    return `<a href='${url}'${linkCls}${ariaDesc}>${content}</a>`;
+    return `<a href='${url}'${linkCls}${ariaDesc}${ariaLabel}>${content}</a>`;
   }
 }
 
@@ -153,6 +154,14 @@ const convertToHtml = function(children) {
   return markdownLib.render(children.trim());
 }
 
+const artCaption = function(caption, params = {}){
+  let date = params.originalDate ? `From ${params.originalDate}.` : '';
+  let ogCaption = params.originalCaption ? `<blockquote class='mb-4'>${markdownLib.renderInline(params.originalCaption.trim())}</blockquote>` : '';
+  let transcript =  params.transcript ? `<details><summary class='h3 text-primary'>Transcript</summary><p class='my-1 ms-4'>${markdownLib.renderInline(params.transcript.trim())}</p></details>` : '';
+  let cap = caption ? markdownLib.renderInline(caption.trim()) : '';
+  return `${date}${ogCaption} ${cap}${transcript}`;
+}
+
 // helper functions
 function isLowerCase(str) {
   return str === str.toLowerCase() && str !== str.toUpperCase();
@@ -171,4 +180,5 @@ module.exports = {
   galleryBox,
   convertToHtml,
   convertToCode,
+  artCaption
 }

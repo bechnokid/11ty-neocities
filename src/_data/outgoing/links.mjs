@@ -120,6 +120,7 @@ export default {
   ],
   credits: [
     { name: "Rina Cat's Domain", url: "http://web.archive.org/web/20041206135411/rinacat.com/main.html", desc: "inspiration" },
+    { name: 'Dann', url: 'https://dannarchy.com/tut/tut_002', desc: 'hit counter on splash page' },
     { name: "Feather", url: "https://feathericons.com/", desc: "icons seen throughout the site" },
     { name: "Eleventy", url: "https://11ty.dev", desc: "static site generator" },
     { name: "Catppuccin", url: "https://catppuccin.com/", desc: "colors for RSS Feed and Rainbow clique on home page" },
