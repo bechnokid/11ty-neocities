@@ -51,7 +51,7 @@ const img = function (src, options = {}) {
   } else {
     if (options.cls) clsArr.push(options.cls.split(' '));
     if (clsArr.length > 0) imgCls = ` class='${clsArr.flat().join(' ')}'`
-    return `<img src='${src}' alt="${imgAlt}"${imgCls}${ariaDesc}>`;
+    return `<img loading='lazy' src='${src}' alt="${imgAlt}"${imgCls}${ariaDesc}>`;
   }
 }
 

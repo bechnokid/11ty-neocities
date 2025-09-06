@@ -129,33 +129,34 @@ Below is a list of variables in the HTML code that you can change, provided with
 
 Since this is just a theme, you can change the variables however you'd like. :3
 {% endconvertToHtml %}
+{% set varsArr = resources.da2006 %}
 
 {% details { title: "#deviant-main-header", summaryCls: "details h3"} %}
-{{ varTable(headerVars) }}
+{{ varTable(varsArr.headerVars) }}
 {% enddetails %}
 
 {% details { title: "#deviant-attributes", summaryCls: "details h3" } %}
-{{ varTable(attrs) }}
+{{ varTable(varsArr.attrs) }}
 {% enddetails %}
 
 {% details { title: "#deviant-links", summaryCls: "details h3" } %}
-{{ varTable(links) }}
+{{ varTable(varsArr.links) }}
 {% enddetails %}
 
 {% details { title: "#deviant-stats", summaryCls: "details h3" } %}
-{{ varTable(stats) }}
+{{ varTable(varsArr.stats) }}
 <p>The other numbers in this list can be changed to what ever you'd like. For authenticity's sake, numbers have a comma, e.g. 1,000. </p>
 {% enddetails %}
 
 {% details { title: "#deviant-about", summaryCls: "details h3" } %}
-{{ varTable(info) }}
+{{ varTable(varsArr.info) }}
 {% enddetails %}
 
 {% details { title: "deviantART Emoticons", summaryCls: 'details h3' } %}
 <p>Before emojis became standardized, users often used emoticons such as ^_^ or GIFs provided by the dA staff. Here is a list of what users would have used to describe what they were currently feeling.</p>
 
 <table class="text-sm">
-  {%- for row in emoticons %}
+  {%- for row in varsArr.emoticons %}
     <tr>
       {%- for item in row %}
         {% set itemLetter = item.src | first %}
@@ -515,7 +516,7 @@ Below is a list of variables in the CSS code that you *should* change!
     <th>Name</th>
     <th>Description</th>
   </tr>
-  {%- for item in cssVars %}
+  {%- for item in varsArr.cssVars %}
     <tr>
       <td><strong>{{ item.name }}</strong></td>
       {% set itemBlock %}

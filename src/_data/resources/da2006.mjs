@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   headerVars: [
     { name: "PROFILE_PICTURE" },
     {

@@ -4,7 +4,7 @@ displayOrder: 1
 prism: true
 permalink: '/about/index.html'
 ---
-{% from 'components/about/macros.html' import flagViet, flagUS, flagPride %}
+
 {% figure "profile.png", { noLink: true, alt: "Bechno Kid", cls: 'about-figure figure-left' } %}{% endfigure %}
 
 Hi, I'm **Bechno Kid** (she/her), the head honcho of this hideout.
@@ -30,10 +30,11 @@ I have a Bachelor's degree in Computer Science and somehow managed to land in th
 <div class='about-info row d-flex flex-wrap justify-content-center mb-4 mb-lg-0'>
 <div class='col-12 col-lg-4 mb-3 mb-lg-0'>
 {% galleryBox { markdown: true, title: "Other Facts", cls: 'h-100' } %}
-- {{ flagViet() }} {{ flagUS() }} {{ flagPride() }}✝️
 - ♒︎ (☀️), ♉︎ (🌒), ♊︎ (⬆️)
-- INTJ...I think.
+- INTJ...I think
 - In a closed polyamorous marriage
+- Sleeps with a nightlight
+- Never walks barefoot
 {% endgalleryBox %}
 </div>
 <div class='col-12 col-lg-4 mb-3 mb-lg-0'>
@@ -42,7 +43,7 @@ I have a Bachelor's degree in Computer Science and somehow managed to land in th
 - Crocheting
 - Rice
 - Bún bò Huế
-- This shape {% icon 'arrow-right' %} {% icon 'meat', { alt: 'Meat on a bone' } %} "Mmm...so tasty!"
+- This shape {% icon 'arrow-right' %} [{% icon 'meat', { alt: 'Meat on a bone' } %}](/gadzooks){.uwu} "Mmm...so tasty!"
 {% endgalleryBox %}
 </div>
 <div class='col-12 col-lg-4'>
@@ -57,19 +58,22 @@ I have a Bachelor's degree in Computer Science and somehow managed to land in th
 </div>
 </div>
 
-{%- for key, value in about.favorites %}
+{% macro favsBox(favsArr) %}
 
-## {{ value.title }}
+## {{ favsArr.title }}
 
 <div class='d-flex flex-wrap justify-content-lg-between justify-content-center px-lg-5 px-0 text-center text-xs favs'>
-{%- for item in value.items %}
+{%- for item in favsArr.items %}
 <div class='sidebar m-lg-0 m-2'>
 
-![{{ item.name }}]({{ about.path + item.img }})
+![{{ item.name }}]({{ about.favs.path + item.img }})
 
 {{ item.name }}
 
 </div>
 {% endfor %}
 </div>
-{% endfor %}
+{% endmacro %}
+
+{{ favsBox(about.favs.chars) }}
+{{ favsBox(about.favs.monsters) }}

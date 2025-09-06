@@ -26,7 +26,7 @@
     </div>
   {% else %}
     <div id="resourceRing"></div>
-    <script type="text/javascript" src="{{ webringUrl }}/resourcering.js"></script>
+    <script type="text/javascript" src="{{ webringUrl }}/resourcering.js" defer></script>
   {% endif %}
 {% endmacro %}
 
@@ -39,7 +39,7 @@
       <a href="#" id="nextTRB"><img src="{{ webringUrl }}/img/Illustration2.png" style="width: 50px; rotate: 180deg"></a>
     </div>
   {% else %}
-    <div id='trb'><script src='{{ webringUrl }}/webring/tropical-rice-bowl/widget.js'></script></div>
+    <div id='trb'><script src='{{ webringUrl }}/webring/tropical-rice-bowl/widget.js' defer></script></div>
     {% endif %}
   <script>if ($('#trb').length > 0 && $('#trb').html().includes("isn't part"))$('#trb').toggleClass('waiting');</script>
 {% endmacro %}
@@ -149,7 +149,7 @@
     </div>
   {% else %}
     <div id='gfdkris'>
-      <script type='text/javascript' src='{{ webringUrl }}/onionring-variables.js'></script><script type='text/javascript' src='{{ webringUrl }}/onionring-widget.js'></script>
+      <script type='text/javascript' src='{{ webringUrl }}/onionring-variables.js' defer></script><script type='text/javascript' src='{{ webringUrl }}/onionring-widget.js' defer></script>
     </div>
   {% endif %}
 {% endmacro %}
@@ -179,8 +179,8 @@
     <link rel="stylesheet" href="https://evehibi.nekoweb.org/ckwr/dynamic.css">
   {% else %}
     <div id="ckwr">
-      <script type="text/javascript" src="https://evehibi.nekoweb.org/ckwr/var.js"></script>
-      <script type="text/javascript" src="https://evehibi.nekoweb.org/ckwr/widget.js"></script>
+      <script type="text/javascript" src="https://evehibi.nekoweb.org/ckwr/var.js" defer></script>
+      <script type="text/javascript" src="https://evehibi.nekoweb.org/ckwr/widget.js" defer></script>
       <link rel="stylesheet" href="https://evehibi.nekoweb.org/ckwr/dynamic.css">
     </div>
   {% endif %}
@@ -202,13 +202,13 @@
   </div>
 {% else %}
   <div id='amiga'>
-    <script type='text/javascript' src='{{ webringUrl }}/onionring-variables.js'></script><script type='text/javascript' src='{{ webringUrl }}/onionring-widget.js'></script>
+    <script type='text/javascript' src='{{ webringUrl }}/onionring-variables.js' defer></script><script type='text/javascript' src='{{ webringUrl }}/onionring-widget.js' defer></script>
   </div>
 {% endif %}
 {% endmacro %}
 
 {% macro wii() %}
-  <script src='https://jeith.com/assets/webring/wii-ring.js'></script><wii-ring site='https://bechnokid.neocities.org'></wii-ring>
+  <script src='https://jeith.com/assets/webring/wii-ring.js' defer></script><wii-ring site='https://bechnokid.neocities.org'></wii-ring>
 {% endmacro %}
 
 {% macro selfInsert() %}
@@ -251,7 +251,7 @@
       </div>
     </div>
   {% else %}
-    <div id='p-ring'><script type='text/javascript' src='{{ webringUrl }}/onionring-variables.js'></script><script type='text/javascript' src='{{ webringUrl }}/onionring-widget.js'></script></div>
+    <div id='p-ring'><script type='text/javascript' src='{{ webringUrl }}/onionring-variables.js' defer></script><script type='text/javascript' src='{{ webringUrl }}/onionring-widget.js' defer></script></div>
   {% endif %}
 {% endmacro %}
 
@@ -271,7 +271,7 @@
       </table>
     </div>
   {% else %}
-    <div id='khwr'><script type='text/javascript' src='https://traversetown.neocities.org/khwr/onionring-variables.js'></script><script type='text/javascript' src='https://traversetown.neocities.org/khwr/onionring-widget.js'></script></div>
+    <div id='khwr'><script type='text/javascript' src='https://traversetown.neocities.org/khwr/onionring-variables.js' defer></script><script type='text/javascript' src='https://traversetown.neocities.org/khwr/onionring-widget.js' defer></script></div>
   {% endif %}
 {% endmacro %}
 
@@ -308,7 +308,7 @@
     </div>
     <link rel='stylesheet' href='{{ webringUrl }}/onionring.css'>
   {% else %}
-    <div id='doodlering'><script type='text/javascript' src='{{ webringUrl }}/onionring-variables.js'></script><script type='text/javascript' src='{{ webringUrl }}/onionring-widget.js'></script><link rel='stylesheet' href='{{ webringUrl }}/onionring.css'></div>
+    <div id='doodlering'><script type='text/javascript' src='{{ webringUrl }}/onionring-variables.js' defer></script><script type='text/javascript' src='{{ webringUrl }}/onionring-widget.js' defer></script><link rel='stylesheet' href='{{ webringUrl }}/onionring.css'></div>
   {% endif %}
 {% endmacro %}
 
@@ -332,13 +332,13 @@
       <p><a href="#"><img src="{{webringUrl}}/left.png" alt="" style="width:20px;height:40px"></a> <a href="{{webringUrl}}"><img src="{{webringUrl}}/ff.png" alt="" style="width:100px;height:52px"></a> <a href="#"><img src="{{webringUrl}}/right.png" alt="" style="width:20px;height:40px"></a></p>
     </div>
   {% else %}
-    <div id='wolwebring'><script type="text/javascript" src="{{ webringUrl }}/onionring-variables.js"></script><script type="text/javascript" src="{{ webringUrl }}/onionring-widget.js"></script></div>
+    <div id='wolwebring'><script type="text/javascript" src="{{ webringUrl }}/onionring-variables.js" defer></script><script type="text/javascript" src="{{ webringUrl }}/onionring-widget.js" defer></script></div>
   {% endif %}
 {% endmacro %}
 
 {% macro egg() %}
  {% set webringUrl = 'https://eggring.neocities.org' %}
  <div id="eggring" class="d-flex flex-column align-items-center p-2"></div>
- <script src="{{ webringUrl }}/js/hatring.js"></script><script src="{{ webringUrl }}/js/eggring-config.js"></script>
- <script></script>
+ <script src="{{ webringUrl }}/js/hatring.js" defer></script><script src="{{ webringUrl }}/js/eggring-config.js" defer></script>
+ <script defer></script>
 {% endmacro %}

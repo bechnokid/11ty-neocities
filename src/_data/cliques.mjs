@@ -33,36 +33,35 @@ export default {
       rightText: "<span class='rainbow fav'>Mint Green</span>"
     },
     {
-      leftText: "my jam!!",
-      url: "https://cliqued.wings.nu/",
-      img: "jam.png",
-      imgAlt: "A sprite of a jar of pink jam",
-      rightText: "Chaotic Love Revolution"
-    },
-    {
       leftText: "sanrio",
       centerIcon: "♡",
       url: "https://nanacore.neocities.org/cliques/sanrio",
       rightText: "Big Challenges"
     },
     {
-      leftText: "What's Your Type?",
-      centerIcon: "::",
-      url: "https://web.archive.org/web/20160122110916/http://pkmn.zeruda.org/clique/",
-      rightText: "Psychic / Bug"
-    },
-    {
       leftText: "Mine!",
       centerIcon: "//",
       url: "https://cliques.windsprite.nu/mine/",
-      rightText: "Gilgamesh (FF)"
+      rightText: "Gilgamesh (FFV)"
     },
     {
       leftText: "flowering",
       centerIcon: "//",
       url: "https://theflowering.neocities.org",
       rightText: "hydrangea <a href='https://web.archive.org/web/20250621102731/http://jbrr.fc2web.com/material.html'><img class='ms-1 inline-img' src='/assets/images/goodies/cliques/hydrangea.gif' aria-hidden='true' alt=''></a>"
-    }
+    },
+    {
+      leftText: 'Cutie Connection',
+      img: 'paw-purple.png',
+      url: 'https://lockheart.love/collections/cliques',
+      rightText: 'Dodogama'
+    },
+    {
+      leftText: "my jam!!",
+      url: "https://cliqued.wings.nu/",
+      img: "jam.png",
+      rightText: "Chaotic Love Revolution"
+    },
   ],
   col2: [
     [
@@ -148,7 +147,7 @@ export default {
         id: "mercury",
         url: "https://sailorcrystal.net/guardians/",
         img: "mercury.png",
-        alt: "Sprite of Sailor Mercury"
+        imgAlt: "Sailor Mercury"
       },
       {
         title: "Final Fantasy Moogle Adoption Clique",
@@ -157,6 +156,14 @@ export default {
         url: "https://midnight-cloud.net/clique/moogle/",
         img: "moogle.gif",
         imgAlt: "A moogle"
+      },
+      {
+        title: 'pixel friends',
+        id: 'pixel-friend',
+        tooltip: "pixel friends | Felyne",
+        url: 'https://ac.kuchiki.net/',
+        img: 'felyne.gif',
+        imgAlt: 'Felyne from Animal Crossing New Leaf'
       },
       {
         title: "I Choose You!",

@@ -22,7 +22,7 @@ debug: false
 {% endgalleryBox %}
 
 {% galleryBox { title: "Webrings", subCls: "overflow-y-auto webrings justify-content-center" } %}
-{# {{ webrings.WEBRINGNAME(debug = true) }} For debugging #}
+{# {{ webrings.WEBRINGNAME(debug = false) }} For debugging #}
 <div class="small-webrings js-required d-flex flex-wrap align-items-center justify-content-center mb-4">
   {{ webrings.basic(outgoing.joined.neocreatives) }}
   {{ webrings.basic(outgoing.joined.cuddler) }}
@@ -30,25 +30,25 @@ debug: false
   {{ webrings.basic(outgoing.joined.acing) }}
   {{ webrings.basic(outgoing.joined.ladies) }}
   {{ webrings.basic(outgoing.joined.queercoded) }}
-  {{ webrings.tropical(debug = true) }}
+  {{ webrings.tropical(debug = false) }}
 </div>
 <div class="row g-0 w-100 js-required">
   <div class="col-12 col-lg-4">
     {{ webrings.resource(debug = false) }}
     {{ webrings.egg() }}
-    {{ webrings.gfdkris(debug = true) }}
-    {{ webrings.amiga(debug = true) }}
-    {{ webrings.cookierun(debug = true) }}
+    {{ webrings.gfdkris(debug = false) }}
+    {{ webrings.amiga(debug = false) }}
+    {{ webrings.cookierun(debug = false) }}
   </div>
   <div class="col-12 col-lg-4">
     {{ webrings.wol(debug = false) }}
     {{ webrings.wii() }}
-    {{ webrings.doodle(debug = true) }}
+    {{ webrings.doodle(debug = false) }}
     {{ webrings.selfInsert() }}
   </div>
   <div class="col-12 col-lg-4">
-    {{ webrings.persona(debug = true) }}
-    {{ webrings.kingdomHearts(debug = true) }}
+    {{ webrings.persona(debug = false) }}
+    {{ webrings.kingdomHearts(debug = false) }}
     {{ webrings.jelly() }}
   </div>
 </div>

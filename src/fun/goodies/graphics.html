@@ -20,7 +20,7 @@ flashing: true
     {% galleryBox { subCls: 'justify-content-center align-items-center graphics' + (' freezeframe' if type == "blinkies" else '' ) } %}
       {%- for item in array.items %}
         {% if item.url %}<a href="{{ item.url }}">{% endif %}
-        <div><img {{ "class=freezeframe" if item.freezeframe }} src="{{ goodiesArr[type].imgSrc + item.src }}" alt="{{ item.alt }}"></div>
+        <div><img {{ "class=freezeframe" if item.freezeframe }} src="{{ goodiesArr[type].imgSrc + item.src }}" alt="{{ item.alt }}" loading="lazy"></div>
         {% if item.url %}</a>{% endif %}
       {% endfor %}
     {% endgalleryBox %}

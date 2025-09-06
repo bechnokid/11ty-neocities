@@ -6,8 +6,11 @@ permalink: '/faq/index.html'
 ---
 
 {%- for section in site.faq.items %}
+
 ## {{ section.name }}{.{{ section.name | slugify }} .faq}
+
 {%- for item in section.questions %}
+
 - {{ item.q }} {.question }
   - {{ item.a | markdownifyInline | safe }} {.answer}
 {% endfor %}

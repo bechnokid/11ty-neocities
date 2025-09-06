@@ -96,7 +96,7 @@ export default [
 				fullSize: true
 			},
 			{
-				title: "Coworker Woes",
+				title: "Co-woe-kers",
 				filename: "202312crusadermonwoes.jpg",
 				altText: "A comic of Beelzemon and Gallantmon talking about the Royal Knights. Beelzemon questions if there is a knight that Gallantmon can't stand, which Gallantmon refutes, claiming that they are all pretty nice. Beelzemon asks about Crusadermon, whose selfishness he points out. Gallantmon states that he doesn't agree with her usual methods but is otherwise a kind person...until he remembers some things she had done to him. The more he remembers her cruelty towards him, the more he breaks down into tears. Beelzemon is then seen trying to comfort Gallantmon, patting on his pauldron and donning a rather worried expression.",
 				originalDate: "December 2023",
@@ -119,6 +119,7 @@ export default [
 				filename: "202312cursedchess.jpg",
 				altText: "An image of Gallantmon and Beelzemon from the Digimon franchise playing a game of chess. In the back, Gallantmon is visibly distressed with text next to him reading, \"My best friend, not understanding how he's losing to me.\" Meanwhile, Beelzemon is looking at the camera with a smirk on his face, with text next to him reading, \"Me, who's been eating the pieces when he's not looking\".",
 				originalDate: "December 2023",
+				transcript: "Text next to Gallantmon: \"My best friend, not understanding how he's losing to me.\"\nText next to Beelzemon: \"Me, who's been eating the pieces when he's not looking.\"",
 				caption: "An epic battle between a Royal Knight and a Demon Lord!"
 			},
 			{
@@ -162,7 +163,7 @@ export default [
 				title: "Safety First (part 1)",
 				filename: '202408safety.jpg',
 				altText: "Gilgamesh (Final Fantasy VII Rebirth) deciding between two items that Siduri (OC) is holding: a pool noodle and a tennis ball",
-				originalDate: "August 2024.",
+				originalDate: "August 2024",
 				caption: "This was posted on Tumblr and Twitter with a poll attached! The result is in the next picture!"
 			},
 			{

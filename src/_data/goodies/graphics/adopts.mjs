@@ -8,74 +8,88 @@ export default {
     url: ""
   },
   mine: [
-    {
-      name: "Kill la Kill",
-      cls: "align-items-start",
-      items: [
-        {
-          src: "ryuko1.png",
-          alt: "Ryuko from Kill la Kill in her standard uniform",
-          tooltip: "Ryuko Matoi (standard uniform)"
-        },
-        {
-          src: "ryuko2.png",
-          alt: "Ryuko from Kill la Kill in her standard uniform and wielding the Scissor Blade",
-          tooltip: "Ryuko Matoi (standard uniform with Scissor Blade)"
-        },
-        {
-          src: "ryuko3.png",
-          alt: "Ryuko from Kill la Kill wearing Senketsu",
-          tooltip: "Ryuko Matoi (Senketsu)"
-        },
-        {
-          src: "ryuko4.png",
-          alt: "Ryuko from Kill la Kill wearing Senketsu and wielding the Scissor Blade",
-          tooltip: "Ryuko Matoi (Senketsu with Scissor Blade)"
-        },
-        {
-          src: "ryuko5.png",
-          alt: "Ryuko from Kill la Kill wearing Senketsu during Life Fiber Synchronization",
-          tooltip: "Ryuko Matoi (transformed)"
-        },
-        {
-          src: "ryuko6.png",
-          alt: "Ryuko from Kill la Kill wearing Senketsu during Life Fiber Synchronization and wielding the Scissor Blade",
-          tooltip: "Ryuko Matoi (transformed with Scissor Blade)"
-        }
-      ]
-    },
-    {
-      name: "Kill la Kill (Future AU)",
-      cls: "align-items-start",
-      items: [
-        {
-          src: "ryuketsu.png",
-          alt: "Ryuko and Senketsu from a Kill la Kill Future AU",
-          tooltip: "Ryuko and Human!Senketsu"
-        },
-        {
-          src: "ryuketsu2.png",
-          alt: "Ryuko and Senketsu from a Kill la Kill Future AU wielding both halves of the Scissor Blade",
-          tooltip: "Ryuko and Human!Senketsu with Scissor Blades"
-        }
-      ]
-    },
-    {
-      name: "Final Fantasy VII Rebirth",
-      cls: "align-items-baseline",
-      items: [
-        {
-          src: "gilgamesh.png",
-          alt: "Gilgamesh from Final Fantasy VII Rebirth, depicted without his mask",
-          tooltip: "Gilgamesh"
-        },
-        {
-          src: "siduri.png",
-          alt: "Siduri, an OC from Final Fantasy VII Rebirth",
-          tooltip: "Siduri (OC)"
-        }
-      ]
-    }
+    [
+      {
+        name: "Kill la Kill",
+        cls: "align-items-start",
+        items: [
+          {
+            src: "ryuko1.png",
+            alt: "Ryuko from Kill la Kill in her standard uniform",
+            tooltip: "Ryuko Matoi (standard uniform)"
+          },
+          {
+            src: "ryuko2.png",
+            alt: "Ryuko from Kill la Kill in her standard uniform and wielding the Scissor Blade",
+            tooltip: "Ryuko Matoi (standard uniform with Scissor Blade)"
+          },
+          {
+            src: "ryuko3.png",
+            alt: "Ryuko from Kill la Kill wearing Senketsu",
+            tooltip: "Ryuko Matoi (Senketsu)"
+          },
+          {
+            src: "ryuko4.png",
+            alt: "Ryuko from Kill la Kill wearing Senketsu and wielding the Scissor Blade",
+            tooltip: "Ryuko Matoi (Senketsu with Scissor Blade)"
+          },
+          {
+            src: "ryuko5.png",
+            alt: "Ryuko from Kill la Kill wearing Senketsu during Life Fiber Synchronization",
+            tooltip: "Ryuko Matoi (transformed)"
+          },
+          {
+            src: "ryuko6.png",
+            alt: "Ryuko from Kill la Kill wearing Senketsu during Life Fiber Synchronization and wielding the Scissor Blade",
+            tooltip: "Ryuko Matoi (transformed with Scissor Blade)"
+          }
+        ]
+      },
+      {
+        name: "Kill la Kill (Future AU)",
+        cls: "align-items-start",
+        items: [
+          {
+            src: "ryuketsu.png",
+            alt: "Ryuko and Senketsu from a Kill la Kill Future AU",
+            tooltip: "Ryuko and Human!Senketsu"
+          },
+          {
+            src: "ryuketsu2.png",
+            alt: "Ryuko and Senketsu from a Kill la Kill Future AU wielding both halves of the Scissor Blade",
+            tooltip: "Ryuko and Human!Senketsu with Scissor Blades"
+          }
+        ]
+      },
+      {
+        name: "Final Fantasy VII Rebirth",
+        cls: "align-items-baseline",
+        items: [
+          {
+            src: "gilgamesh.png",
+            alt: "Gilgamesh from Final Fantasy VII Rebirth, depicted without his mask",
+            tooltip: "Gilgamesh"
+          },
+          {
+            src: "siduri.png",
+            alt: "Siduri, an OC from Final Fantasy VII Rebirth",
+            tooltip: "Siduri (OC)"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        name: 'Digimon',
+        items: [
+          {
+            src: 'gigantic_pump.png',
+            alt: 'Gigantic Pumpkinmon from the Vital Bracelet',
+            tooltip: 'Gigantic Pumpkinmon'
+          }
+        ]
+      }
+    ]
   ],
   interactive: [
     { name: "Lil&apos; Guy", src: "https://tamanotchi.world/i/3706", url: "https://tamanotchi.world/i/3706", alt: "Lil Guy from TamaNOTchi" },
@@ -206,26 +220,6 @@ export default {
     {
       cls: "adopts other align-items-baseline",
       items: [
-        {
-          src: "CTNY-saguaro.png",
-          alt: "Pixel image of a Saguaro Cactiny",
-          url: "https://clownfred.zone/webpets"
-        },
-        {
-          src: "BDOG-pink.png",
-          alt: "Pixel image of a Pink Balloon Dog",
-          url: "https://clownfred.zone/webpets"
-        },
-        {
-          src: "clown_asexual.png",
-          alt: "Pixel image of a clown with the colors of the asexual flag",
-          url: "https://clownfred.zone/prideclowns"
-        },
-        {
-          src: "clown_demigirl.png",
-          alt: "Pixel image of a clown with the colors of the demigirl flag",
-          url: "https://clownfred.zone/prideclowns"
-        },
         {
           src: "bell5.png",
           alt: "A Bellhead with a color scheme that resembles a typical ice cream sundae, with its body resembling vanilla, strawberry, and chocolate ice cream; its scarf resembling whipped cream with sprinkles, and its head resembling a cherry",
