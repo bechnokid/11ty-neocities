@@ -86,7 +86,7 @@ export default {
     { name: "COUNTRY" },
     {
       name: "STATUS_IMAGE, STATUS_ALT, and STATUS_TOOLTIP",
-      desc: "An image selected from a list of emojis (then known as &quot;emoticons&quot;). You can use regular emojis for this one, but if you would like to make the page as authentic as possible, a list of deviantART's emojis is listed under **deviantART Emoticons** along with their original tooltip text."
+      desc: "An image selected from a list of emojis (then known as &quot;emoticons&quot;). You can use regular emojis for this one, but if you would like to make the page as authentic as possible, a list of deviantART's emojis is listed under [deviantART Emoticons](#da-emoticons) along with their original tooltip text."
     },
     {
       name: "DISCORD_USERNAME",
@@ -126,7 +126,7 @@ export default {
     },
     {
       name: "#deviant-list",
-      desc: "Think of this list as the offical deviantART survey/quiz. You can list all, some, or none of these questions! I never really understood what &quot;Skin of choice&quot; meant..."
+      desc: "Think of this list as the official deviantART survey/quiz. You can list all, some, or none of these questions! I never really understood what &quot;Skin of choice&quot; meant..."
     }
   ],
   cssVars: [

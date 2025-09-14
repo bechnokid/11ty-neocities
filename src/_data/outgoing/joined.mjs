@@ -43,11 +43,6 @@ export default {
   },
   webringBtns: [
     {
-      src: 'resource.png',
-      name: 'Re:resource',
-      url: 'https://pixelsafari.neocities.org/webring/'
-    },
-    {
       src: 'tropical.png',
       name: 'Tropical Rice Bowl',
       url: 'https://astracelestine.nekoweb.org/webring/tropical-rice-bowl'
@@ -86,17 +81,7 @@ export default {
       src: 'persona.png',
       name: 'Persona Ring',
       url: 'https://silly-beanz.neocities.org/personaring/home'
-    },
-    {
-      src: 'wol.png',
-      name: 'Warriors of Light Ring',
-      url: 'https://wolwebring.neocities.org'
-    },
-    {
-      src: 'egg.png',
-      name: 'Egg Ring',
-      url: 'https://eggring.neocities.org'
-    },
+    }
   ],
   fanlistings: {
     characters: [
@@ -109,9 +94,7 @@ export default {
       { url: "http://daria.ravenbeauty.net/", src: "daria.png", alt: "Daria" },
       { url: "https://boundless-realms.com/invaderzim/", src: "fan_iz.png", alt: "Invader Zim" },
       { url: "https://rikafire.fanimated.net/recess/index.php", src: "recess.png", alt: "Recess TV Show" },
-      { url: "https://movies.sweetbrat.cc/dsmm/", src: "dsmm.png", alt: "Doctor Strange in the Multiverse of Madness movie" },
       { url: "https://10-31.net/jenn/meangirls/", src: "mean_girls.png", alt: "Mean Girls movie" },
-      { url: "https://movies.sweetbrat.cc/doctor_strange", src: "doctor_strange.png", alt: "Doctor Strange (2016) movie" },
       { url: "https://love.cordy.nu/bones/", src: "bones.gif", alt: "Bones TV show" },
       { url: "https://michiru.org/spyxfamily/", src: "spyxfamily.png", alt: "SPYXFAMILY" },
       { url: "https://fan.enamour.nu/trigun/", src: "trigun.png", alt: "TRIGUN" },

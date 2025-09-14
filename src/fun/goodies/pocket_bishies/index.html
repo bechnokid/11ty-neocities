@@ -1,0 +1,53 @@
+---
+title: Pocket Bishies
+displayOrder: 5
+description: Pocket Bishies (bishounen and bishojo) that I managed to catch!
+summary: I'm pretty picky with anime, and even moreso with the characters I like! Regardless, here are the Pocket Bishonen and Pocket Bishojo I managed to catch!
+permalink: '/pocket_bishies/'
+imgPath: '/assets/images/goodies/pocket_bishies/'
+noScroll: true
+---
+<div class="d-flex justify-content-center flex-wrap mb-3">
+  {% img imgPath + 'badge.jpg', { cls: 'me-4', alt: "I'm an official Pocket Bishonen trainer!" } %}
+  {% img imgPath + 'badge2.jpg', { alt: "I'm an official Pocket Bishojo trainer!" } %}
+</div>
+<div class="bishies-collection d-flex justify-content-center align-items-center flex-wrap">
+  {%- for item in goodies.pocket_bishies.collected %}
+    {% if item.type == 'shonen' %}
+      {% set bishieLink = 'http://pocketbishonen.com/main.html' %}
+    {% elif item.type == 'shonen_old' %}
+      {% set bishieLink = 'https://web.archive.org/web/20010301084625/www.pocket-bishonen.com/' %}
+    {% elif item.type == 'shojo' %}
+      {% set bishieLink = 'https://pocket-bishoujo.com/index2.html' %}
+    {% endif %}
+    {% imgWithLink imgPath + item.src, bishieLink, { alt: "I caught " + item.alt } %}
+  {% endfor %}
+</div>
+<p class="text-xs">...yes, I remade all of the badges for consistency! ^^;</p>
+<section class="js-required">
+  <h2>Catch a Bishie!</h2>
+  <p>With the original sites currently inactive (at the time of writing this), I decided to make my own quizzes and badges for others to collect! Clicking on the below links will open a quiz within the page! No random pop-ups!</p>
+  <p>I don't plan on taking submissions to add more bishonens and bishojos, so this list of bishies will be curated to my own tastes!</p>
+  <div id="bishie-quiz-nav" class="d-flex flex-wrap flex-column">
+    {%- for key, list in goodies.pocket_bishies.custom %}
+      <ul>
+        <strong>{{ key }}</strong>
+        {%- for item in list %}
+          <li><a href="{{ item.name | slugify }}" target="quiz" class="quiz-nav-link">{{ item.name }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
+  </div>
+  <div id="quiz-iframe" class="mt-2 d-none"><iframe src="" frameborder="0" id="bishie-quiz" name="quiz"></iframe></div>
+</section>
+<script>
+  $(document).ready(function() {
+    $('.quiz-nav-link').on('click', function() {
+      const quizFrame = $('#quiz-iframe');
+      if (quizFrame.hasClass('d-none')) {
+        quizFrame.removeClass('d-none');
+        $('.back-to-top').removeClass('mobile-only');
+      };
+    })
+  })
+</script>

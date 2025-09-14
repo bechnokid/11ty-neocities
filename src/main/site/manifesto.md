@@ -41,6 +41,7 @@ The first version of this manifesto was more or less an exact copy of what other
   - For better or worse, social media allows others to communicate and form bonds just like they would outside the web. In fact, social media was how I met my wife and husband. Instead, this site will advocate for better ways of using these platforms, such as taking the time to respond to posts instead of just "liking" them.
 
 ## Links
+
 ### Others' Manifestos
 
 1. [Internet Manifesto](https://goblin-heart.net/sadgrl/cyberspace/internet-manifesto) - by Sadgrl

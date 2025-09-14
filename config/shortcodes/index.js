@@ -1,3 +1,4 @@
+const { monDayYear } = require('../filters')
 const markdownLib = require('../plugins/markdown');
 const chars = require('../variables.js');
 
@@ -98,10 +99,11 @@ const details = function (children, params) {
     summary = `<summary${summaryCls}${summaryStyle}>${params.title}</summary>`;
   }
 
+  const detailsId = (params.id) ? ` id='${params.id}'` : '';
   const detailsCls = (params.class) ? ` class='${params.class}'` : '';
   const detailsStyle = (params.detailsStyle) ? ` style='${params.detailsStyle}'` : '';
   const detailsOpen = (params.open) ? ` open` : '';
-  return `<details${detailsCls}${detailsStyle}${detailsOpen}>${summary}${children}</details>`;
+  return `<details${detailsId}${detailsCls}${detailsStyle}${detailsOpen}>${summary}${children}</details>`;
 }
 
 const figure = function (children, src, options = {}) {
@@ -155,11 +157,11 @@ const convertToHtml = function(children) {
 }
 
 const artCaption = function(caption, params = {}){
-  let date = params.originalDate ? `From ${params.originalDate}.` : '';
+  let ogDate = (params.originalDate) ? `From ${params.originalDate}.` : '';
   let ogCaption = params.originalCaption ? `<blockquote class='mb-4'>${markdownLib.renderInline(params.originalCaption.trim())}</blockquote>` : '';
-  let transcript =  params.transcript ? `<details><summary class='h3 text-primary'>Transcript</summary><p class='my-1 ms-4'>${markdownLib.renderInline(params.transcript.trim())}</p></details>` : '';
+  let transcript =  params.transcript ? `<details id='transcript'><summary class='h3 text-primary'>Transcript</summary><p class='my-1 ms-4'>${markdownLib.renderInline(params.transcript.trim())}</p></details>` : '';
   let cap = caption ? markdownLib.renderInline(caption.trim()) : '';
-  return `${date}${ogCaption} ${cap}${transcript}`;
+  return `${ogDate}${ogCaption} ${cap}${transcript}`;
 }
 
 // helper functions

@@ -9,10 +9,10 @@
     {%- for link in collections[section] | sortCollectionByDisplayOrder %}
       {% if link.data.wip %}
         <li class="text-muted">{{ link.data.title }} (WIP)</li>
-      {% elif link.data.subList %}
+      {% elif link.data.subList and (link.data.pagination.items.length <= 5) %}
         <li class="desktop">
           {% set sublinkItems = link.data.pagination.items | getPageLinks %}
-          <details{{ " open" if page.url in sublinkItems }}>
+          <details data-num-of-items="{{ sublinkItems.length }}"{{ " open" if page.url in sublinkItems }}>
             <summary class="text-secondary">{{ link.data.title }}</summary>
             <ul class="ms-2">
               {%- for sublink in link.data.pagination.items %}

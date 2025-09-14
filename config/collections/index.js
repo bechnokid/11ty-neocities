@@ -10,25 +10,36 @@ const statusCafeThemes = collection => {
   return collection.getFilteredByTag('statusCafeTheme');
 }
 
-const galleryImages = collection => {
-  const galleries = collection.getAll()[0].data.galleries;
-  let galleryImages = [];
+const galleries = collection => {
+  return Object.values(collection.getAll()[0].data.art);
+}
 
-  galleries.forEach((gallery) => {
-    gallery.pictures.forEach((picture, i, arr) => {
-      picture.containingGallery = `${gallery.shortTitle || gallery.title}`;
-      picture.baseUrl = `${gallery.imgPath}`;
-      i ? (picture.previousImage = arr[i - 1].title) : null;
-      i + 1 != arr.length ? (picture.nextImage = arr[i + 1].title) : null;
-      galleryImages.push(picture);
+const artPages = collection => {
+  let artPages = [];
+
+  galleries(collection).forEach((gallery) => {
+    gallery.items.forEach((picture, i, arr) => {
+      const title = gallery.shortTitle || gallery.title;
+      picture.containingGallery = `${title}`;
+      picture.baseUrl = `/assets/images/art/${title.toLowerCase()}`;
+      if (i) picture.previousImage = arr[i - 1].title;
+      if (i + 1 != arr.length) picture.nextImage = arr[i + 1].title;
+      artPages.push(picture);
     });
   });
-  return galleryImages;
+  return artPages;
+}
+
+const pocketBishies = collection => {
+  const bishieCollection = collection.getAll()[0].data.goodies.pocket_bishies.custom
+  return Object.values(bishieCollection).flat();
 }
 
 module.exports = {
   writingPages,
   blogPosts,
   statusCafeThemes,
-  galleryImages
+  galleries,
+  artPages,
+  pocketBishies,
 }

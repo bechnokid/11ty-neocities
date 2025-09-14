@@ -79,7 +79,8 @@ export default {
     { name: "ValyceNegative.it", url: "https://valycenegative.it", src: "valycenegative.gif" },
     { name: "THE WEBEVERSE", url: "https://webeverse.neocities.org/", src: "webeverse.png" },
     { name: "whiona.me", url: "https://whiona.me/", src: "whiona.png" },
-    { name: "WiNGS.nu", url: "https://wings.nu", src: "wings.png" }
+    { name: "WiNGS.nu", url: "https://wings.nu", src: "wings.png" },
+    { name: 'zero arms: grani', url: 'https://grani.nekoweb.org/', src: 'zeroarmsgrani.gif' },
   ],
   resources: [
     {

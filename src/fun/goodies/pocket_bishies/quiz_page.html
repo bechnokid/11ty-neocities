@@ -1,0 +1,59 @@
+---
+layout: ""
+pagination:
+  data: collections.pocketBishies
+  size: 1
+  alias: bishie
+eleventyExcludeFromCollections: true
+eleventyComputed:
+  title: "{{ bishie.name }}"
+  titleType: "{{ bishie.type | title }}"
+  permalink: "/pocket_bishies/{{ bishie.name | slugify }}/"
+---
+<!DOCTYPE html>
+<html lang={{ meta.lang }} data-theme="light">
+<head>
+  {% include "partials/head.html" %}
+  <noscript><link rel="stylesheet" href="{{ meta.cssUrl }}/no-script.css" type="text/css" media="all"></noscript>
+  <link rel="stylesheet" href="{{ meta.cssUrl }}/pocket_bishie.css" type="text/css" media="all">
+  <script src="{{ meta.jsUrl }}/bechnoQuery.js"></script>
+  <title>{{ title }} (Pocket {{ titleType }}) - {{ meta.name }}</title>
+</head>
+<body>
+  <main class="container-fluid">
+    <div id="bishie-results"><p>&nbsp;</p></div>
+    <div id="bishie-content">
+      <form>
+        {%- for item in bishie.questions %}
+          <p><strong>{{ item.text }}</strong></p>
+          <fieldset>
+            <ul>
+              {%- for option in item.options %}
+                <li class="mb-2">
+                  <label for="{{ option.val }}">
+                    <input type="radio" name="{{ item.id }}" id="{{ option.val }}" value="{{ option.val }}">
+                    {{ option.label or option.val }}
+                  </label>
+                </li>
+              {% endfor %}
+            </ul>
+          </fieldset>
+        {% endfor %}
+        <button id="bishie-btn-submit" type="button">Submit</button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>
+<script>
+  const answer = {{ bishie.answer | dump | safe }};
+  let images = [];
+  {% if bishie.images %}
+    images = {{ bishie.images | dump | safe }}
+  {% else %}
+    const imgInfo = ["{{ bishie.img }}", "{{ bishie.imgAlt }}"];
+  {% endif %}
+  let quizScript = document.createElement('script');
+  quizScript.src = '/assets/javascript/bishie_quiz.js';
+  document.head.appendChild(quizScript);
+</script>

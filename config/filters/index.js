@@ -45,9 +45,15 @@ const markdownifyInline = value => {
 
 // Sorts collections by displayOrder
 const sortCollectionByDisplayOrder = collection => {
-  return collection.sort((a, b) =>
-    a.data.displayOrder - b.data.displayOrder
-  );
+  if (collection[0].data !== undefined) {
+    return collection.sort((a, b) =>
+      a.data.displayOrder - b.data.displayOrder
+    );
+  } else {
+    return collection.sort((a, b) =>
+      a.displayOrder - b.displayOrder
+    );
+  }
 }
 
 function limit (arr, limit) {

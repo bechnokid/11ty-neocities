@@ -110,6 +110,11 @@ export default {
           url: "https://peachnuts.neocities.org/"
         },
         {
+          src: "heartcat.png",
+          alt: 'A pink cat with a cream-colored body and light pink markings. Its ears and tail have darker pink tips, and its rear has a pink heart',
+          url: 'https://spiders.neocities.org/z-adopts'
+        },
+        {
           src: "https://i.imgur.com/LzZrTi7.png",
           alt: "The titular unicorn from \"The Last Unicorn\"",
           url: "https://vampirevalentine.neocities.org/",
@@ -214,7 +219,17 @@ export default {
           src: "hannaritofu_pink.gif",
           alt: "A pink Hannari Tofu",
           url: "https://soda.bake-neko.net/PixelAdoptables.html"
-        }
+        },
+        {
+          src: 'coffee.png',
+          alt: 'A cup of coffee with a happy face',
+          url: 'https://mostlypixels.com/foryou/'
+        },
+        {
+          src: 'nudibranch.png',
+          alt: 'A blue nudibranch with orange protrusions on its body',
+          url: 'https://newlambda.neocities.org/stuff/adopt'
+        },
       ]
     },
     {
@@ -244,6 +259,11 @@ export default {
           src: "chatt.png",
           alt: "custom Chatt that resembles Pikachu",
           url: "https://neonriser.neocities.org/adopt"
+        },
+        {
+          src: 'leafy-gecko.png',
+          alt: 'A gecko with a leafy tail',
+          url: 'https://mycorrhiza.space/backalley/spellshoppe/'
         },
         {
           src: "chao.gif",

@@ -56,7 +56,7 @@ This follows steps 1 through 3 from [gutz's tutorial](http://web.archive.org/web
 1. Create subfolders as needed.
 1. Select `Edit Site` to go to your Neocities dashboard where all of your files are located.
 1. Hover over each .html, .css., or .js file you want to save. Right-click and select `Save link as...` and save your file in your hard drive folder.
-  1. Be sure to name your files exactly like in your Neocities dashboard and that they all retain their file types. Since folders cannot be saved, every file in each subfolder must be saved individually.
+    1. Be sure to name your files exactly like in your Neocities dashboard and that they all retain their file types. Since folders cannot be saved, every file in each subfolder must be saved individually.
 1. Organize all files in the same file structure as your Neocities dashboard. This means every file must be in its original folder, etc.
 
 ## 4) Opening Neocities Files in VSCode
@@ -68,9 +68,9 @@ This follows steps 1 through 3 from [gutz's tutorial](http://web.archive.org/web
 ## 5) Previewing Neocities Files Locally
 
 1. We will be using the `Live Preview` extension that I mentioned earlier. To start using it, open any HTML file from the Explorer sidebar by double-clicking on it.
-2. Right-click anywhere in the HTML file, and select `Show Preview`.
-3. VSCode will open a new tab on the right side that will show a live preview of your site using a local server. The "browser" it uses is similar to Chrome.
-  1. If Chrome is not your default browser and you would like to open it in your default browser, select the icon with four horizontal lines on the right side of the screen, then select `Open in Browser`.
+1. Right-click anywhere in the HTML file, and select `Show Preview`.
+1. VSCode will open a new tab on the right side that will show a live preview of your site using a local server. The "browser" it uses is similar to Chrome.
+    1. If Chrome is not your default browser and you would like to open it in your default browser, select the icon with four horizontal lines on the right side of the screen, then select `Open in Browser`.
 1. VSCode will then open your site in your default browser and a terminal window within the software's UI.
 1. Close the browser by simply closing the window, and then close the terminal window by clicking on the trash can icon, or pressing "Ctrl + C" within the terminal.
 

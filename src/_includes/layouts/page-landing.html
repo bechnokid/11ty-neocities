@@ -1,3 +1,6 @@
+---
+noScroll: true
+---
 {% extends "layouts/base.html" %}
 
 {% set pageHeaderTitle = title %}
@@ -7,18 +10,28 @@
 {% block content %}
   <article>
     {% include "partials/page-header.html" %}
-    <ul>
-      {%- for item in pageCollection | sortCollectionByDisplayOrder %}
-      <dl>
-        <dt class="h3">
-          <a href="{{ item.url }}">{{ item.data.title }}</a>
-          {% if item.data.warning %}
-          <span class="text-muted">(Warning: Flashing graphics)</span>
-          {% endif %}
-        </dt>
-        <dd>{{ item.data.description | markdownify | safe }}</dd>
-      </dl>
-      {% endfor %}
-    </ul>
+    {% if sideImg %}
+    <div class="row">
+      <div class="col-4 d-flex justify-content-end">
+        <img class="side-img" src="/assets/images/{{ sideImg }}" aria-hidden="true" alt="">
+      </div>
+      <div class="col-8">
+    {% endif %}
+        <dl {% if not sideImg %}class="ms-4"{% endif %}>
+          {%- for item in pageCollection | sortCollectionByDisplayOrder %}
+            {% set pageUrl = item.url or '/art/' + (item.shortTitle or item.title) | slugify %}
+            <dt class="h3">
+              <a href="{{ pageUrl }}">{{ item.data.title or item.title }}</a>
+              {% if item.data.warning %}
+              <span class="text-muted">(Warning: Flashing graphics)</span>
+              {% endif %}
+            </dt>
+            <dd>{{ item.data.description | markdownify | safe }}</dd>
+          {% endfor %}
+        </dl>
+    {% if sideImg %}
+      </div>
+    </div>
+    {% endif %}
   </article>
 {% endblock content %}

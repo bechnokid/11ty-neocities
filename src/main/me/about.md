@@ -68,7 +68,7 @@ I have a Bachelor's degree in Computer Science and somehow managed to land in th
 
 ![{{ item.name }}]({{ about.favs.path + item.img }})
 
-{{ item.name }}
+{{ item.name | markdownifyInline | safe }}
 
 </div>
 {% endfor %}

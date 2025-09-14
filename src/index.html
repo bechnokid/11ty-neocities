@@ -2,9 +2,9 @@
 title: 'Splash page'
 displayOrder: 1
 tags: main
+splashImg: '/assets/images/splash.png'
+splashImgAlt: "Splash image for Bechno Kid's Hideout that links to the home page"
 ---
-{% set splashImage = '/assets/images/splash.png' %}
-{% set splashImgAlt = "Splash image for Bechno Kid's Hideout that links to the home page" %}
 {% set feedItems = collections.rssFeed | reverse %}
 {% set lastUpdated = feedItems[0].data.date | monDayYear %}
 <!DOCTYPE html>
@@ -43,7 +43,7 @@ tags: main
             </div>
           </div>
           <div class="col-lg-6 d-flex justify-content-center align-items-center order-lg-1 order-0">
-            <a href="/home/"><img src="{{ splashImage }}" alt="{{ splashImgAlt }}"></a>
+            <a href="/home/"><img src="{{ splashImg }}" alt="{{ splashImgAlt }}"></a>
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 export default {
+  env: process.env.ELEVENTY_ENV,
   name: "Bechno Kid's Hideout",
   url: "https://bechnokid.neocities.org",
   stylesheetsUrl: "/assets/stylesheets",

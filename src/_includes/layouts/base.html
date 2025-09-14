@@ -9,7 +9,7 @@
   {% block css %}<link rel="stylesheet" href="{{ meta.cssUrl }}/bechno.css" type="text/css" media="all">{% endblock css %}
   <noscript><link rel="stylesheet" href="{{ meta.cssUrl }}/no-script.css" type="text/css" media="all"></noscript>
   {% if prism %}<link rel="stylesheet" href="{{ meta.cssUrl }}/prismJS.css" type="text/css" media="all" id="prismJS">{% endif %}
-  <title>{{ meta.name }}{% if title != null %} - {{ title }}{% endif %}</title>
+  <title>{% if title != null %}{{ title }} - {% endif %}{{ meta.name }}</title>
 </head>
 <body class='position-relative'>
   <details class="burger">
@@ -21,7 +21,7 @@
       <nav><div class="sidebar pb-2 pb-lg-0">{% include "partials/navigation.html" %}</div></nav>
     </details>
     <div class="page bg-body">
-      <a href="/home"><header class="bg-body"></header></a>
+      <a href="/home"><header class="bg-body"><span class="hidden">Navigate to the home page</span></header></a>
       <div class="bg-body main desktop">
         <div class="row g-0">
           <nav id="nav-main" class="col-lg-2">
@@ -30,7 +30,7 @@
           <main id="main-content" class="offset-lg-2 col{{ "-lg-10" if title !="Home" }} px-2 px-lg-4 py-lg-3 position-relative" tabindex="-1">
             {% include 'partials/theme-switcher.html' %}
             {% block content %}{% endblock %}
-            <div class="back-to-top{% if noScroll %} mobile-only{% endif %}"><a href="#" aria-label="Scroll to Top">{% icon 'arrow-up' %}</a></div>
+            <div class="back-to-top{% if noScroll == "true" or noScroll == true %} mobile-only{% endif %}"><a href="#" aria-label="Scroll to Top">{% icon 'arrow-up' %}</a></div>
           </main>
           {% if title == "Home" %}<aside class="col-lg-2 px-2 px-lg-0 my-3 my-lg-0">{% include "partials/homepage/updates.html" %}</aside>{% endif %}
         </div>

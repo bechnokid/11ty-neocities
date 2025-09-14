@@ -1,34 +1,33 @@
 ---
 pagination:
-  data: collections.galleryImages
+  data: collections.artPages
   size: 1
   alias: picture
 css: art
 layout: layouts/basic.html
 eleventyExcludeFromCollections: true
-noScroll: true
 eleventyComputed:
   title: "{{ picture.title | safe }}"
-  permalink: "/artwork/{{ picture.containingGallery | slugify }}/{{ picture.title | slugify }}/"
+  summary: "{% if picture.date %}{{ picture.date | monDayYear }}{% endif %}"
+  permalink: "/art/{{ picture.containingGallery | slugify }}/{{ picture.title | slugify }}/"
+  noScroll: "{{ picture.scroll != true }}"
 ---
 {% macro artNav(img) %}
   {% if img.previousImage %}
     {% set artLink = img.previousImage | slugify %}
-    {% link "../" + artLink, "&lt;&lt;", { cls: 'button', ariaLabel: 'Button to previous image' } %}
+    {% link "../" + artLink, "&lt;&lt;", { cls: 'button', ariaLabel: 'Go to previous image' } %}
   {% endif %}
   {% set artLink = img.containingGallery | slugify %}
-  {% link "/artwork/" + artLink + "/", "Index", { cls: 'button mx-3' } %}
+  {% link "/art/" + artLink + "/", "Index", { cls: 'button mx-3' } %}
   {% if img.nextImage %}
     {% set artLink = img.nextImage | slugify %}
-    {% link "../" + artLink, "&gt;&gt;", { cls: 'button', ariaLabel: 'Button to next image' } %}
+    {% link "../" + artLink, "&gt;&gt;", { cls: 'button', ariaLabel: 'Go to next image' } %}
   {% endif %}
 {% endmacro %}
 <section>
-	<div class='art-nav d-flex justify-content-center'>
-    {{ artNav(picture) }}
-	</div>
+	<div class='art-nav d-flex justify-content-center'>{{ artNav(picture) }}</div>
   <div class='img-container d-flex mt-4 justify-content-center'>
-    <img src="{{ picture.baseUrl }}/{{ picture.filename }}" alt="{{ picture.altText }}" class='mb-3 mx-auto'>
+    <img src="{{ picture.baseUrl }}/{{ picture.filename }}" alt="{{ picture.altText }}" class='mb-3 mx-auto'{% if picture.transcript %} aria-describedby="transcript"{% endif %}>
   </div>
   {% if picture.fullSize %}<div class='full-size-link mb-3 text-center'><a href="{{ picture.baseUrl }}/{{ picture.filename }}">(Click for full size)</a></div>{% endif %}
   <div class="art-desc mb-4">

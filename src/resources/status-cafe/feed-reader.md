@@ -65,6 +65,7 @@ fetch(feedURL)
 What this code is doing is converting the feed into XML, which JavaScript can then extract the feed's data. The script then takes all of the posts you created in StatusCafe and stores them into the `entries` variable.
 
 ## 4) Preparing the Data
+
 This section will show how to prepare the data of your StatusCafe posts using the stored feed data.
 
 The way how StatusCafe sets up their feeds makes things a little difficult, and it took me a while to figure everything out. Hopefully the next few steps won't be too confusing.
@@ -88,13 +89,16 @@ This loop takes the data from each StatusCafe post and splits them into differen
 - **title** - Displays your StatusCafe username along with the emoji picked when creating the post. Note the `NUMBER_OF_CHARACTERS` shown in the code block. This number should be equal to the number of characters in your username. However, if you want to include the emoji associated with the status, just add 3 to the number of characters in your username.
   - For example, my username "bechnokid" contains 9 characters. If I wanted to include the emoji, I would replace `NUMBER_OF_CHARACTERS` with 9 + 3, which would be 12.
   - The final line would then be the following:
+
 ```js
 let title = el.querySelector("title").innerHTML.slice(0, 12).trim()
 ```
+
 - **content** - Displays the full status. Self-explanatory.
 - **dateString** - This is optional, but this displays the date when the status was posted. It will also display the full date instead of the "...days ago" that StatusCafe displays.
 
 ## 5) Setting up the HTML
+
 We will be adding the extracted data into the "html" variable that I previously mentioned.
 
 This part requires the most customization as it entirely depends on how you want your feed to be displayed. For simplicity's sake, I'll use `<p>` tags.
@@ -171,6 +175,7 @@ Note that using the `forEach()` will loop through every post you made on StatusC
 There are some options for this, such as implementing pagination, but the easiest (and my favorite) method is showing only a certain number of statuses. Let's say, for this example, that I only want to show 3 statuses from StatusCafe, and then provide a link to my StatusCafe account.
 
 First, make the following changes:
+
 1. Change `forEach()` into a `for` loop with an index
 1. Change `el` within the loop to `entries[i]`
 

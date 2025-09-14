@@ -6,8 +6,9 @@ export default {
       items: [
         { name: "Miss Kobayashi", img: "kobayashi.png" },
         { name: "Crona Gorgon", img: "crona.png" },
-        { name: "Ryuko Matoi", img: "ryuko.png" },
-        { name: "Ami Mizuno", img: "ami.png" }
+        { name: "Senketsu", img: "senketsu.png" },
+        { name: "Ami Mizuno", img: "ami.png" },
+        { name: "Dr. Brennan", img: "bones.png" }
       ]
     },
     monsters: {

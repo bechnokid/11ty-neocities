@@ -1,5 +1,5 @@
+const env = process.env.ELEVENTY_ENV;
 const rssPlugin = require('@11ty/eleventy-plugin-rss');
-const htmlmin = require("html-minifier-terser");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const brokenLinksPlugin = require("eleventy-plugin-broken-links");
 const pluginTOC = require('eleventy-plugin-toc');
@@ -11,7 +11,8 @@ const {
 } = require('./config/filters');
 
 const {
-  writingPages, blogPosts, galleryImages, statusCafeThemes
+  writingPages, blogPosts, galleries, artPages, statusCafeThemes,
+  pocketBishies
 } = require('./config/collections');
 
 const {
@@ -21,17 +22,28 @@ const {
 } = require('./config/shortcodes');
 
 const markdownLib = require('./config/plugins/markdown');
+const htmlmin = require('./config/plugins/htmlmin');
 
 const TEMPLATE_ENGINE = 'njk';
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 module.exports = async function(eleventyConfig){
   const { IdAttributePlugin } = await import("@11ty/eleventy");
+  const assetsPath = './src/assets'
 
-  eleventyConfig.addPassthroughCopy('./src/assets/images/');
-  eleventyConfig.addPassthroughCopy('./src/assets/fonts/');
-  eleventyConfig.addPassthroughCopy('./src/assets/stylesheets/');
-  eleventyConfig.addPassthroughCopy('./src/assets/javascript/');
+  eleventyConfig.addPassthroughCopy(`${assetsPath}/images/`);
+  eleventyConfig.addPassthroughCopy(`${assetsPath}/fonts/`);
+  eleventyConfig.addPassthroughCopy(`${assetsPath}/stylesheets/`);
+  eleventyConfig.addPassthroughCopy(`${assetsPath}/javascript/`);
+
+  // Ignores
+  if (env === 'dev') {
+    eleventyConfig.ignores.add('./src/artwork/')
+    eleventyConfig.ignores.add('./src/artwork.html')
+    eleventyConfig.ignores.add('./src/content/writing/blog/')
+  }
+
+  // Data Extensions
 
   // Shortcodes
   eleventyConfig.addShortcode('icon', icon);
@@ -51,20 +63,7 @@ module.exports = async function(eleventyConfig){
   eleventyConfig.addPairedShortcode('convertToCode', convertToCode);
 
   // Transform
-  eleventyConfig.addTransform("htmlmin", function (content) {
-    if ((this.page.outputPath || "").endsWith(".html")) {
-      let minified = htmlmin.minify(content, {
-        useShortDoctype: true,
-        removeComments: true,
-        collapseWhitespace: true,
-      });
-
-      return minified;
-    }
-
-    // If not an HTML output, return content as-is
-    return content;
-  });
+  eleventyConfig.addTransform("htmlmin", htmlmin);
 
   // Filters
   eleventyConfig.addFilter('date', date);
@@ -83,7 +82,9 @@ module.exports = async function(eleventyConfig){
   eleventyConfig.addCollection('writing', writingPages);
   eleventyConfig.addCollection('blog', blogPosts);
   eleventyConfig.addCollection('statusCafeThemes', statusCafeThemes);
-  eleventyConfig.addCollection('galleryImages', galleryImages);
+  eleventyConfig.addCollection('pocketBishies', pocketBishies);
+  if (env !== 'dev') eleventyConfig.addCollection('gallery', galleries);
+  if (env !== 'dev') eleventyConfig.addCollection('artPages', artPages);
 
   // Plugins
   eleventyConfig.addPlugin(rssPlugin);
@@ -92,13 +93,7 @@ module.exports = async function(eleventyConfig){
   eleventyConfig.addPlugin(pluginTOC, {
     tags: ['h2']
   });
-  // eleventyConfig.addPlugin(brokenLinksPlugin, {
-  //   excludeUrls: [
-  //     "https://deviantart.com/view/*",
-  //     "https://www.youtube.com/*",
-  //     "https://acingtheinternet.netlify.app/*",
-  //   ]
-  // });
+  if (env === 'prod') eleventyConfig.addPlugin(brokenLinksPlugin, { loggingLevel: 1 });
 
   eleventyConfig.setLibrary('md', markdownLib);
 

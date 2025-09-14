@@ -3,8 +3,12 @@
   "version": "3.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "bun x @11ty/eleventy --serve --quiet",
-    "build": "bun x @11ty/eleventy"
+    "art": "cross-env ELEVENTY_ENV=art bun x @11ty/eleventy --serve",
+    "art:quiet": "cross-env ELEVENTY_ENV=art bun x @11ty/eleventy --serve --quiet",
+    "dev": "cross-env ELEVENTY_ENV=dev bun x @11ty/eleventy --serve",
+    "dev:quiet": "cross-env ELEVENTY_ENV=dev bun x @11ty/eleventy --serve --quiet",
+    "prod": "cross-env ELEVENTY_ENV=prod bun x @11ty/eleventy --serve --quiet",
+    "build": "cross-env ELEVENTY_ENV=prod bun x @11ty/eleventy"
   },
   "keywords": [],
   "author": "",
@@ -50,6 +54,7 @@
     "commander": "^10.0.1",
     "concat-map": "^0.0.1",
     "constantinople": "^4.0.1",
+    "cross-env": "^10.0.0",
     "cross-spawn": "^7.0.3",
     "date-fns": "^4.1.0",
     "debug": "^4.3.4",
