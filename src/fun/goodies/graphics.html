@@ -8,39 +8,21 @@ freezeframe: true
 hasLinks: true
 flashing: true
 ---
-
-{% set goodiesArr = goodies.graphics %}
-{% set typesArr = ['web_badges', 'buttons', 'blinkies', 'stamps'] %}
+{% import 'components/goodies/macros.html' as goodies with context %}
 
 <h2>Graphics I Collected</h2>
-<section class="mb-4">
-  {%- for type in typesArr %}
-  {% set array = goodiesArr[type].collection %}
-  {% details { title: goodiesArr[type].title, cls: 'mt-3', summaryCls: 'h3 details', open: array.open } %}
-    {% galleryBox { subCls: 'justify-content-center align-items-center graphics' + (' freezeframe' if type == "blinkies" else '' ) } %}
-      {%- for item in array.items %}
-        {% if item.url %}<a href="{{ item.url }}">{% endif %}
-        <div><img {{ "class=freezeframe" if item.freezeframe }} src="{{ goodiesArr[type].imgSrc + item.src }}" alt="{{ item.alt }}" loading="lazy"></div>
-        {% if item.url %}</a>{% endif %}
-      {% endfor %}
-    {% endgalleryBox %}
-  {% enddetails %}
-  {% endfor %}
+<section class="mb-4 collected">
+  {{ goodies.webBadges() }}
+  {{ goodies.buttons('collected') }}
+  {{ goodies.blinkies('collected') }}
+  {{ goodies.stamps('collected') }}
+  {{ goodies.honeycomb() }}
 </section>
 
 <h2>Graphics I Made</h2>
-<section>
+<section class="mine">
   <p>No need to credit me for these! Use them however and wherever you'd like!</p>
-  {%- for type in typesArr %}
-  {% set array = goodiesArr[type].mine %}
-  {% if array %}
-    {% details { title: goodiesArr[type].title, cls: 'mt-3', summaryCls: 'h3 details', open: array.open } %}
-      {% galleryBox { subCls: 'justify-content-center align-items-center graphics' + (' freezeframe' if type == "blinkies" else '' ) } %}
-        {%- for item in array.items %}
-          {% img goodiesArr[type].imgSrc + item.src, { alt: item.alt, freezeframe: item.freezeframe } %}
-        {% endfor %}
-      {% endgalleryBox %}
-    {% enddetails %}
-  {% endif %}
-  {% endfor %}
+  {{ goodies.buttons('mine') }}
+  {{ goodies.blinkies('mine') }}
+  {{ goodies.stamps('mine') }}
 </section>

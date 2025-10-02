@@ -22,5 +22,9 @@ export default {
     { name: 'Sitemap', url: '/sitemap' },
     { name: 'RSS Feed', url: '/feed.xml' },
     { name: 'Guestbook', url: '/guestbook' }
-  ]
+  ],
+  favicon: {
+    prod: "/assets/images/favicon.ico",
+    dev: "/assets/images/meat.png"
+  }
 }

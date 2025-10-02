@@ -1,24 +1,24 @@
+const templates = {
+  text:
+  {
+    leftText: "",
+    centerIcon: "",
+    img: "",
+    imgAlt: "",
+    url: "",
+    rightText: ""
+  },
+  button: {
+    title: "",
+    id: "",
+    tooltip: "",
+    url: "",
+    img: "",
+    alt: ""
+  }
+}
 export default {
   path: "/assets/images/goodies/cliques/",
-  templates: {
-    text:
-    {
-      leftText: "",
-      centerIcon: "",
-      img: "",
-      imgAlt: "",
-      url: "",
-      rightText: ""
-    },
-    button: {
-      title: "",
-      id: "",
-      tooltip: "",
-      url: "",
-      img: "",
-      alt: ""
-    }
-  },
   col1: [
     {
       leftText: "aromatic",
@@ -62,6 +62,12 @@ export default {
       img: "jam.png",
       rightText: "Chaotic Love Revolution"
     },
+    {
+      leftText: "Nobility",
+      url: "https://sanguineroyal.com/com/nobility/",
+      centerIcon: "::",
+      rightText: "Emperor of Beets!"
+    }
   ],
   col2: [
     [

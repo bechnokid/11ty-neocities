@@ -1,0 +1,54 @@
+{% macro textClique (clique) %}
+<a href="{{ clique.url }}">{{ clique.leftText | safe }}</a>
+{% if clique.img %}
+  <img class="mx-2" src="{{ cliques.path + clique.img }}" aria-hidden="true" alt="">
+{% elif clique.centerIcon %}
+  <span class='mx-2'>{{ clique.centerIcon }}</span>
+{% else %}
+  &nbsp;
+{% endif %}
+{{ clique.rightText | safe }}
+{% endmacro %}
+
+<div class="row g-0">
+  {% galleryBox { title: "Cliques", cls: 'cliques' } %}
+    <div class="row g-0 mb-0 mb-lg-2">
+      <div class="col-lg-6 col-12 d-flex flex-column align-items-center order-lg-1 order-2">
+        {%- for clique in cliques.col1 %}
+        <div class="d-flex align-items-center {% if not loop.last %}mb-1{% endif %}">
+          {{ textClique (clique) }}
+        </div>
+        {% endfor %}
+      </div>
+      <div class="col-lg-6 col-12 justify-content-center order-lg-2 order-1">
+        <div class="desktop-only">
+          {%- for row in cliques.col2 %}
+          <div class="row">
+            <div class="col d-flex flex-wrap justify-content-center align-items-baseline">
+              {%- for clique in row %}
+                {% set altText = clique.imgAlt + " for the '" + clique.title + "' clique"%}
+                {% set cliqueSrc = cliques.path + clique.img %}
+                {% if clique.tooltip %}
+                  {% tooltip { tooltipId: "clique-" + clique.id, url: clique.url, src: cliques.path + clique.img, alt: altText, cls: 'mx-1' } %}{{ clique.tooltip }}{% endtooltip %}
+                {% else %}
+                  {% img cliqueSrc, { url: clique.url, alt: altText, cls: 'mx-1' } %}
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="mobile-only">
+          {%- for row in cliques.col2 %}
+            {%- for clique in row %}
+              {% if clique.mobile %}
+                {% set mobile = clique.mobile %}
+                <div class="d-flex justify-content-center align-items-center">{{ textClique (mobile) }}</div>
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% endgalleryBox %}
+</div>

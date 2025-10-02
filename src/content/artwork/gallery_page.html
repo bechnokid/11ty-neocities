@@ -1,6 +1,6 @@
 ---
 pagination:
-  data: collections.gallery
+  data: art.data
   size: 1
   alias: gallery
 css: art
@@ -15,9 +15,9 @@ eleventyComputed:
   imgPath: "/assets/images/art/{{ gallerySlug }}"
 ---
 <section class="gallery d-flex flex-wrap justify-content-center mb-3">
-  {%- for artwork in gallery.items %}
+  {%- for artwork in art.galleries[gallerySlug] %}
     <a href="/art/{{ gallerySlug }}/{{ artwork.title | slugify }}">
-      <img src="{{ imgPath }}/{{ artwork.filename }}" alt="{{ artwork.title }}" class="img-thumbnail{{ (' ' + artwork.position) or '' }}">
+      <img src="{{ imgPath }}/{{ artwork.filename }}" alt="{{ artwork.title }}" class="img-thumbnail">
     </a>
   {% endfor %}
 </section>

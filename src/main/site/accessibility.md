@@ -11,7 +11,7 @@ I used to be one of those "don't be a phone chump, use a desktop" chumps, mainly
 
 I realized that this didn't need to be the case after coming across some other indie web developers' fun sites. So, I wanted to challenge myself in making my personal site fun AND accessible.
 
-## This site should have the following:
+## This site should have the following
 
 - Mobile-responsive layouts throughout the site
 - Toggles for light and dark mode
@@ -22,7 +22,7 @@ I realized that this didn't need to be the case after coming across some other i
 - Alt text for non-decorative images
 - Semantic HTML
 - Pages that can be navigated via a keyboard
-	- This includes a link to skip to the main content
+  - This includes a link to skip to the main content
 - JavaScript usage will be kept to a minimum
   - Whatever page that uses JS will be noted
   - Pages that rely entirely on JS will be hidden if the user has JS disabled
@@ -30,4 +30,4 @@ I realized that this didn't need to be the case after coming across some other i
   - Even with JS disabled, warnings will be implemented for flashing and blinking GIFs
 - **Absolutely no autoplay**
 
-This site will frequently be tested in multiple sizes and resolutions. I might still miss some things, but I will do my best to fix them if pointed out, so don't be afraid to let me know via email via [bechnokid@yahoo.com](mailto:bechnokid@yahoo.com)!
+This site will frequently be tested in multiple sizes and resolutions. I might still miss some things, but I will do my best to fix them if pointed out, so don't be afraid to let me know via email via **bechnokid[at]yahoo.com**!

@@ -7,8 +7,8 @@ permalink: '/pocket_bishies/'
 imgPath: '/assets/images/goodies/pocket_bishies/'
 noScroll: true
 ---
-<div class="d-flex justify-content-center flex-wrap mb-3">
-  {% img imgPath + 'badge.jpg', { cls: 'me-4', alt: "I'm an official Pocket Bishonen trainer!" } %}
+<div class="d-flex justify-content-center flex-wrap flex-gap-3 mb-3">
+  {% img imgPath + 'badge.jpg', { alt: "I'm an official Pocket Bishonen trainer!" } %}
   {% img imgPath + 'badge2.jpg', { alt: "I'm an official Pocket Bishojo trainer!" } %}
 </div>
 <div class="bishies-collection d-flex justify-content-center align-items-center flex-wrap">
@@ -20,7 +20,7 @@ noScroll: true
     {% elif item.type == 'shojo' %}
       {% set bishieLink = 'https://pocket-bishoujo.com/index2.html' %}
     {% endif %}
-    {% imgWithLink imgPath + item.src, bishieLink, { alt: "I caught " + item.alt } %}
+    {% img imgPath + item.src, { url: bishieLink, alt: "I caught " + item.alt } %}
   {% endfor %}
 </div>
 <p class="text-xs">...yes, I remade all of the badges for consistency! ^^;</p>

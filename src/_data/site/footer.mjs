@@ -31,11 +31,6 @@ export default {
       src: "validhtml.png",
       url: "https://validator.w3.org/nu/?doc=https%3A%2F%2Fbechnokid.neocities.org%2Fhome%2F",
       alt: "Valid HTML!"
-    },
-    {
-      src: "validcss.png",
-      url: "https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fbechnokid.neocities.org%2Fhome&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en",
-      alt: "Valid CSS!"
     }
   ]
 }

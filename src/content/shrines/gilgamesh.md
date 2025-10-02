@@ -153,7 +153,7 @@ Here's some art I did of these two losers whom I love so very much help me--
 
 **Note**: Gilgamesh in FFVII Rebirth has never taken off his helmet, so the below images have what I *think* he might look. ƪ(˘⌣˘)ʃ
 
-<div class='gallery d-flex'>
+<div class='gallery d-flex my-4'>
 
 [![Siduri and Gilgamesh lying on the ground, with Siduri stroking one of Gilgamesh's horns.](/assets/images/shrines/gilgamesh/sidumesh-1.png)](/assets/images/shrines/gilgamesh/sidumesh-1.png)
 

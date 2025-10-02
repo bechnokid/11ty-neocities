@@ -11,7 +11,7 @@ tags:
 ---
 ## 0) Introduction
 
-As Neocities user gutz (now [strawberry-gashes](https://strawberry-gashes.neocities.org)) has said in the past:
+As [Erin](https://strawberry-gashes.neocities.org) has said in the past:
 
 > i imagine this is a problem that happens to neocities users: you edit your page in the built-in web editor, hit save, then go to the page to see the changes. par for the course. the only problem is... suddenly you've got 10,000 "hits" on your neocities stats. you know bc you've been tinkering and refreshing your own pages to get everything juuuust right that those numbers aren't accurate. "that me -_-" this can also happen with general web counters, depending on how your counter counts visitors orz
 >
@@ -19,7 +19,7 @@ As Neocities user gutz (now [strawberry-gashes](https://strawberry-gashes.neocit
 >
 > a solution to help assuage these problems is to have your pages saved on your own hard drive, so you can edit and view to your heart's content with no affect on your views and with less strain on the servers uwu
 
-[gutz provided a wonderful tutorial](http://web.archive.org/web/20220918162237/https://gutz.neocities.org/neocities.html) on how to edit your files by using Notepad++ and your local browser as a live preview. However, I wondered if I could do the same with my favorite code editor: **Visual Studio Code** or VSCode for short.
+[Erin provided a wonderful tutorial](http://web.archive.org/web/20220918162237/https://gutz.neocities.org/neocities.html) on how to edit your files by using Notepad++ and your local browser as a live preview. However, I wondered if I could do the same with my favorite code editor: **Visual Studio Code** or VSCode for short.
 
 I would link the entire documentation for VSCode, but I imagine it would be overwhelming for new users. So, I'll provide a small tutorial on setting up VSCode to help new users get started.
 

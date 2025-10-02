@@ -1,46 +1,4 @@
 export default {
-  neocreatives: {
-    title: 'NeoCreatives',
-    src: 'neocreatives.png',
-    url: 'https://neocreatives.byethost5.com'
-  },
-  cuddler: {
-    title: "Cuddler",
-    src: "cuddler.png",
-    url: "https://cuddler-webring.netlify.app"
-  },
-  queercoded: {
-    title: 'Queer Coded',
-    src: "queercoded.png",
-    url: "https://neptune.monster/webring/",
-    nav: 'queercoded_nav.png',
-    prevUrl: "https://neptune.monster/webring/22.html",
-    nextUrl: "https://neptune.monster/webring/24.html"
-  },
-  ladies: {
-    title: "Ladies of the Link",
-    src: "ladiesofthelink.gif",
-    url: "https://ladiesofthe.link/",
-    nav: 'ladiesofthelink_nav.gif',
-    prevUrl: 'https://webri.ng/webring/ladiesofthelinks/previous?via=https://bechnokid.neocities.org',
-    nextUrl: 'https://webri.ng/webring/ladiesofthelinks/next?via=https://bechnokid.neocities.org'
-  },
-  acing: {
-    title: "Acing the Internet",
-    src: "ace.png",
-    url: "https://acingtheinternet.netlify.app",
-    nav: 'ace_nav.gif',
-    prevUrl: 'https://acingtheinternet.netlify.app/bechnokid/previous',
-    nextUrl: 'https://acingtheinternet.netlify.app/bechnokid/next'
-  },
-  rayman: {
-    title: "Rayman Ring",
-    src: 'rayman.png',
-    url: 'https://edgyrabbid.neocities.org/Raymanring.HTML',
-    nav: 'rayman_nav.png',
-    prevUrl: 'https://lapislabel.net',
-    nextUrl: 'https://nathanntan.neocities.org/'
-  },
   webringBtns: [
     {
       src: 'tropical.png',

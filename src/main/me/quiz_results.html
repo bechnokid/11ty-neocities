@@ -4,11 +4,11 @@ summary: What better way is there to get to know someone than to look at their q
 displayOrder: 4
 permalink: '/quiz_results/index.html'
 ---
-{% set imgPath = about.quizResults.path %}
+{% set imgPath = meta.imgUrl + "/about/quiz_results/" %}
 <div class="d-flex flex-wrap justify-content-center align-items-center quiz-results">
-  {%- for item in about.quizResults.items %}
+  {%- for item in about.quiz_results %}
     {% if item.title %}
-      <div class="quiz-widget sidebar p-2 {{ item.alignment }}">
+      <div class="quiz-widget sidebar p-3 {{ item.alignment }}">
         {% if item.alignment == 'columns' %}
           <div class="row g-0">
             <div class="col-4 d-flex align-items-center">
@@ -28,7 +28,7 @@ permalink: '/quiz_results/index.html'
     {% elif item.widget %}
       {{ item.widget | safe }}
     {% else %}
-      {% imgWithLink imgPath + item.img, item.url, { alt: item.alt } %}
+      {% img imgPath + item.img, { url: item.url, alt: item.alt } %}
     {% endif %}
   {% endfor %}
 </div>

@@ -5,7 +5,7 @@ subList: true
 layout: layouts/page-landing.html
 permalink: '/art/'
 pagination:
-  data: collections.gallery
+  data: art.data
   size: 10
 sideImg: 'side_art.png'
 tags:

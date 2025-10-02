@@ -40,6 +40,9 @@ The first version of this manifesto was more or less an exact copy of what other
 - **This site will not encourage the entire removal of social media.**
   - For better or worse, social media allows others to communicate and form bonds just like they would outside the web. In fact, social media was how I met my wife and husband. Instead, this site will advocate for better ways of using these platforms, such as taking the time to respond to posts instead of just "liking" them.
 
+- **This site will not encourage the use if any kind of generative AI.**
+  - This includes generative AI such as image generators (Diffusion, etc.) or chat bots (ChatGPT, etc.). I say "generative" in this case because I do not believe that *all* artificial intelligence is bad when used wisely (like helping doctors/surgeons, contractors, etc.). However, I cannot deny the fact that generative AI can limit the potential for creativity and the ability for users to think critically.
+
 ## Links
 
 ### Others' Manifestos

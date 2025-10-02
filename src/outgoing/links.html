@@ -8,39 +8,42 @@ flashing: true
 ---
 {% set imgPath = "/assets/images/links/" %}
 
-<h2>Fellow Netizens</h2>
+<section>
+  <h2>Fellow Netizens</h2>
+  {% convertToHtml %}
+  Here are some sites whose webmasters are friends, affiliates, or people who I think are just cool in general!
 
-{% convertToHtml %}
-Here are some sites whose webmasters are friends, affiliates, or people who I think are just cool in general!
+  If you already added my button to your site, let me know and I'll add you here!
+  {% endconvertToHtml %}
+</section>
 
-If you already added my button to your site, let me know and I'll add you here!
-{% endconvertToHtml %}
-
-{% galleryBox { cls: 'mb-4', subCls: 'netizens justify-content-center align-items-center' } %}
-{%- for item in outgoing.links.netizens %}
-  {% if item.noBtn %}
-    <a class="no-button-container text-xs" href="{{ item.url }}">
-      <span>{{ item.name }}</span>
-    </a>
-  {% else %}
-    {% imgWithLink imgPath + item.src, item.url , { alt: outgoing.links.altText + item.name, linkCls: 'm-1 link-btn', freezeframe: true } %}
-  {% endif %}
-{% endfor %}
-{% endgalleryBox %}
-
-<h2>Favorite Resources</h2>
-
-<table class='resources'>
-  {%- for item in outgoing.links.resources %}
-    <tr>
-      <td><a href='{{ item.url  }}'>{{ item.name }}</a></td>
-      <td class='td-desc'>{{ item.desc }}</td>
-    </tr>
+{% details { title: "(click to show/hide links)", summaryCls: "details h3"} %}
+  {% galleryBox { cls: 'my-4', subCls: 'netizens justify-content-center align-items-center' } %}
+  {%- for item in outgoing.links.netizens %}
+    {% if item.noBtn %}
+      <a class="no-button-container text-xs" href="{{ item.url }}">
+        <span>{{ item.name }}</span>
+      </a>
+    {% else %}
+      {% img imgPath + item.src, { url: item.url, alt: "Link button for " + item.name, urlCls: 'm-1 link-btn', freezeframe: item.freezeframe } %}
+    {% endif %}
   {% endfor %}
-</table>
+  {% endgalleryBox %}
+{% enddetails %}
+
+<section>
+  <h2>Favorite Resources</h2>
+  <table class='resources'>
+    {%- for item in outgoing.links.resources %}
+      <tr>
+        <td><a href='{{ item.url }}'>{{ item.name }}</a></td>
+        <td class='td-desc'>{{ item.desc }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+</section>
 
 <h2>Made Possible By</h2>
-
 <ul>
   {%- for link in outgoing.links.credits %}
   <li>

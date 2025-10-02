@@ -1,5 +1,5 @@
 const { format } = require('date-fns');
-const markdownLib = require('../plugins/markdown');
+const { markdownLib } = require('../plugins/');
 const chars = require('../variables.js');
 
 // Converts date string into Date object
@@ -40,7 +40,7 @@ const markdownify = value => {
 
 const markdownifyInline = value => {
   if (value == null) value = "";
-  return markdownLib.renderInline(value.trim());
+  return markdownLib.renderInline(value.replaceAll("\\n", "\n").trim());
 }
 
 // Sorts collections by displayOrder

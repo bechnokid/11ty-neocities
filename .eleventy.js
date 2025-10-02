@@ -11,18 +11,17 @@ const {
 } = require('./config/filters');
 
 const {
-  writingPages, blogPosts, galleries, artPages, statusCafeThemes,
+  writingPages, blogPosts, artPages, statusCafeThemes,
   pocketBishies
 } = require('./config/collections');
 
 const {
-  icon, emoticon, emote, img, link, imgWithLink,
-  tooltip, figure, details, galleryBox, convertToHtml,
-  convertToCode, artCaption
+  icon, emoticon, emote, img, link, tooltip, figure,
+  details, galleryBox, convertToHtml, convertToCode,
+  artCaption
 } = require('./config/shortcodes');
 
-const markdownLib = require('./config/plugins/markdown');
-const htmlmin = require('./config/plugins/htmlmin');
+const { markdownLib, htmlmin, csvParse } = require('./config/plugins/');
 
 const TEMPLATE_ENGINE = 'njk';
 
@@ -38,12 +37,12 @@ module.exports = async function(eleventyConfig){
 
   // Ignores
   if (env === 'dev') {
-    eleventyConfig.ignores.add('./src/artwork/')
-    eleventyConfig.ignores.add('./src/artwork.html')
-    eleventyConfig.ignores.add('./src/content/writing/blog/')
+    eleventyConfig.ignores.add('./src/content/artwork/');
+    eleventyConfig.ignores.add('./src/content/writing/blog/');
   }
 
   // Data Extensions
+  eleventyConfig.addDataExtension('csv', csvParse);
 
   // Shortcodes
   eleventyConfig.addShortcode('icon', icon);
@@ -51,7 +50,6 @@ module.exports = async function(eleventyConfig){
   eleventyConfig.addShortcode('emote', emote);
   eleventyConfig.addShortcode('img', img);
   eleventyConfig.addShortcode('link', link);
-  eleventyConfig.addShortcode('imgWithLink', imgWithLink);
   eleventyConfig.addShortcode('artCaption', artCaption);
 
   // Paired shortcodes
@@ -83,16 +81,13 @@ module.exports = async function(eleventyConfig){
   eleventyConfig.addCollection('blog', blogPosts);
   eleventyConfig.addCollection('statusCafeThemes', statusCafeThemes);
   eleventyConfig.addCollection('pocketBishies', pocketBishies);
-  if (env !== 'dev') eleventyConfig.addCollection('gallery', galleries);
-  if (env !== 'dev') eleventyConfig.addCollection('artPages', artPages);
+  eleventyConfig.addCollection('artPages', artPages);
 
   // Plugins
   eleventyConfig.addPlugin(rssPlugin);
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(IdAttributePlugin);
-  eleventyConfig.addPlugin(pluginTOC, {
-    tags: ['h2']
-  });
+  eleventyConfig.addPlugin(pluginTOC, { tags: ['h2'] });
   if (env === 'prod') eleventyConfig.addPlugin(brokenLinksPlugin, { loggingLevel: 1 });
 
   eleventyConfig.setLibrary('md', markdownLib);

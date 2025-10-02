@@ -1,12 +1,13 @@
+const toAdd = [];
+const template =
+{
+  src: "",
+  alt: "",
+  url: ""
+}
+;
 export default {
   imgSrc: "/assets/images/goodies/adopts/",
-  toAdd: [ ],
-  template:
-  {
-    src: "",
-    alt: "",
-    url: ""
-  },
   mine: [
     [
       {
@@ -76,7 +77,38 @@ export default {
             tooltip: "Siduri (OC)"
           }
         ]
-      }
+      },
+      {
+        name: 'Tamagotchi',
+        cls: 'mb-2',
+        items: [
+          {
+            src: "maskutchi.png",
+            alt: "a white and purple Maskutchi from Tamagotchi",
+            tooltip: "Maskutchi"
+          },
+          {
+            src: "maskutchi2.png",
+            alt: "a black and blue Maskutchi from Tamagotchi",
+            tooltip: "Maskutchi (US)"
+          },
+          {
+            src: "tamagotchi.png",
+            alt: "a blue and yellow Tamagotchi P1 device",
+            tooltip: "Tamagotchi (Blue Clock)"
+          },
+          {
+            src: "tamagotchi-orange.png",
+            alt: "an orange and yellow Tamagotchi P1 device",
+            tooltip: "Tamagotchi (Orange)"
+          },
+          {
+            src: "tamagotchi-pink.png",
+            alt: "an pink and green Tamagotchi P1 device with blue buttons",
+            tooltip: "Tamagotchi (Pink and Green)"
+          }
+        ]
+      },
     ],
     [
       {
@@ -87,6 +119,16 @@ export default {
             alt: 'Gigantic Pumpkinmon from the Vital Bracelet',
             tooltip: 'Gigantic Pumpkinmon'
           }
+        ]
+      },
+      {
+        name: 'Monster Hunter',
+        cls: 'my-1',
+        items: [
+          {
+            src: "meat.png",
+            alt: "a Well-Done Steak from Monster Hunter"
+          },
         ]
       }
     ]
@@ -119,6 +161,11 @@ export default {
           alt: "The titular unicorn from \"The Last Unicorn\"",
           url: "https://vampirevalentine.neocities.org/",
           ogLink: true
+        },
+        {
+          src: 'lacroixhydrangea.gif',
+          alt: 'A hydrangea plant in a La Croix can',
+          url: 'https://www.lejlart.com/apple.html'
         },
         {
           src: "vash.gif",
@@ -235,6 +282,11 @@ export default {
     {
       cls: "adopts other align-items-baseline",
       items: [
+        {
+          src: 'isopod_kelpeater.png',
+          alt: 'An isopod with colored stripes that resemble the demigirl flat, starting from its head to its rear: grey, light grey, pink, white, pink, light grey, grey',
+          url: 'https://kelpeater.neocities.org/collections/isopods'
+        },
         {
           src: "bell5.png",
           alt: "A Bellhead with a color scheme that resembles a typical ice cream sundae, with its body resembling vanilla, strawberry, and chocolate ice cream; its scarf resembling whipped cream with sprinkles, and its head resembling a cherry",

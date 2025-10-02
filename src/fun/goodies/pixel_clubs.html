@@ -10,23 +10,29 @@ hasLinks: true
 {% from 'components/pixel_clubs/macros.html' import
   basicClique as clique,
   cdwClique as cdw,
-  yysClique as yys %}
+  yysClique as yys,
+  teaClique as tea %}
 {% set imgLink = '/assets/images/goodies/cliques/' %}
 
 {% macro cliqueSection(cliqueName) %}
-  {% set cliqueArray = goodies.pixel_clubs.items[cliqueName] %}
+  {% set cliqueArray = goodies.pixel_clubs[cliqueName] %}
   {% if cliqueArray %}
   <section>
     <h2 id="{{ cliqueName }}">{{ cliqueArray.title }}</h2>
-    <p>Created by <a href="{{ cliqueArray.owner.link }}">{{ cliqueArray.owner.name }}</a>!{% if cliqueArray.owner.archived %} (archived){% endif %}</p>
+    <p>Created by <a href="{{ cliqueArray.owner.url }}">{{ cliqueArray.owner.name }}</a>!{% if cliqueArray.owner.archived %} (archived){% endif %}</p>
     {%- for arrayName in ["mine", "collection"] %}
-      {% if cliqueArray[arrayName] %}
+      {% set pixelClique = cliqueArray[arrayName] %}
+      {% if pixelClique %}
+        {% set cliqueImgSrc = imgLink + cliqueName + '/' %}
+        {% set cliqueAltText = cliqueArray.altText %}
         {% if cliqueName == "yys" %}
-          {{ yys(cliqueArray[arrayName], imgLink + cliqueName + '/', cliqueArray.altText) }}
+          {{ yys(pixelClique, cliqueImgSrc, cliqueAltText) }}
         {% elif cliqueName == 'cdw' %}
-          {{ cdw(cliqueArray[arrayName], imgLink + cliqueName + '/', cliqueArray.altText) }}
+          {{ cdw(pixelClique, cliqueImgSrc, cliqueAltText) }}
+        {% elif cliqueName == 'tea' %}
+          {{ tea(pixelClique, cliqueImgSrc, cliqueAltText)}}
         {% else %}
-          {{ clique(cliqueArray[arrayName], imgLink + cliqueName + '/', cliqueArray.altText) }}
+          {{ clique(pixelClique, cliqueImgSrc, cliqueAltText) }}
         {% endif %}
       {% endif %}
     {% endfor %}
@@ -39,12 +45,11 @@ hasLinks: true
     {{ cliqueSection('kindnessrocks') }}
     {{ cliqueSection('jarjam') }}
     {{ cliqueSection('stickers') }}
+    {{ cliqueSection('fzv') }}
     {{ cliqueSection('cdw') }}
-    {% include "partials/objets.html" %}
   </div>
   <div class="col-lg-6 col">
     {{ cliqueSection('tea') }}
-    {{ cliqueSection('fzv') }}
     {{ cliqueSection('yys') }}
   </div>
 </div>

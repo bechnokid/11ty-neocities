@@ -2,13 +2,27 @@
   {% details { title: array.title, cls: 'mt-3 mb-4', summaryCls: 'h3 details', open: array.open } %}
     {% galleryBox { subCls: 'justify-content-center cliques' + ( (" align-items-" + array.alignItems) if array.alignItems else " align-items-center") } %}
       {%- for item in array.items %}
-        {% if item.link %}
-          {% imgWithLink location + item.src, item.link, { alt: altText + item.desc, freezeframe: item.freezeframe } %}
-        {% else %}
-          {% img location + item.src, {  alt: altText + item.desc, freezeframe: item.freezeframe } %}
-        {% endif %}
+        {% set options = { url: item.url, alt: (item.altText or "") + item.alt, freezeframe: item.freezeframe } %}
+        {% img location + item.src, options %}
       {% endfor %}
     {% endgalleryBox %}
+  {% enddetails %}
+{% endmacro %}
+
+{% macro teaClique (array, location, altText) %}
+  {% details {title: array.title, cls:'mt-3 mb-4', summaryCls: 'h3 details', open: array.open} %}
+    <div class="d-flex flex-wrap justify-content-center cliques">
+      {%- for item in array.items %}
+        <div class="tea-section px-1 d-flex flex-column align-items-center">
+          {% set options = { url: item.url, alt: item.alt, freezeframe: item.freezeframe} %}
+          <div class="tea-img">{% img location + item.src, options %}</div>
+          <details class="tea-taste sidebar text-xs text-center p-1 w-100">
+            <summary>Tastes like...</summary>
+            {{ item.taste }}
+          </details>
+        </div>
+      {% endfor %}
+    </div>
   {% enddetails %}
 {% endmacro %}
 
@@ -16,7 +30,7 @@
   {% details { title: array.title, cls: 'mt-3 mb-4', summaryCls: 'h3 details', open: array.open } %}
     {% galleryBox { subCls: 'justify-content-center align-items-center cliques' } %}
       {%- for item in array.items %}
-        {% figure location + item.src, { noMarkdown: true, cls: 'border-0 text-center m-1 p-1', alt: item.desc, figCaptionCls: 'text-center', noLink: (false if item.link else true), imgLink: item.link } %}
+        {% figure location + item.src, { noMarkdown: true, cls: 'border-0 text-center m-1 p-1', alt: item.desc, figCaptionCls: 'text-center', noLink: (false if item.url else true), imgLink: item.url } %}
           <a href='{{ item.playlist }}'><button type="button" class="rounded-5 text-xs"><i class="fa fa-play"></i> Play</button></a>
         {% endfigure %}
       {% endfor %}
@@ -39,8 +53,8 @@
       <tr>
         <td class='item text-center'><img {{'class=freezeframe' if row.freezeframe }} src="{{ location + row.src }}" alt="{{ (altText + row.alt) if altText else row.alt }}"></td>
         <td>{{ row.desc }}</td>
-        {% if row.link %}
-        <td>{% link row.link, row.name %}</td>
+        {% if row.url %}
+        <td>{% link row.url, row.name %}</td>
         {% endif %}
       </tr>
       {% endfor %}

@@ -1,7 +1,7 @@
 ---
 title: Adopts
 displayOrder: 3
-description: Little creatures that I found from other sites that I decided to adopt.
+description: Little creatures that I found from other sites and decided to adopt.
 permalink: '/goodies/adopts/index.html'
 hasLinks: true
 ---
@@ -38,7 +38,7 @@ hasLinks: true
   <div class="w-100 d-flex">
     {%- for item in array.interactive %}
       <div class="pet-click border-sidebar bg-body p-3 text-center rounded-4 mx-2">
-        {% imgWithLink item.src, item.url, { alt: item.alt } %}
+        {% img item.src, { url: item.url, alt: item.alt } %}
         <p class="m-0">{{ item.name | safe }}</p>
       </div>
     {% endfor %}
@@ -57,7 +57,7 @@ hasLinks: true
         {% else %}
           {% set imgPath = imgLink + item.src %}
         {% endif %}
-        {% imgWithLink imgPath, item.url, { alt: item.alt, linkCls: 'mx-1', freezeframe: item.freezeframe } %}
+        {% img imgPath, { url: item.url, alt: item.alt, urlCls: 'mx-1', freezeframe: item.freezeframe } %}
       {% endfor %}
     </div>
   </div>

@@ -10,23 +10,19 @@ const statusCafeThemes = collection => {
   return collection.getFilteredByTag('statusCafeTheme');
 }
 
-const galleries = collection => {
-  return Object.values(collection.getAll()[0].data.art);
-}
-
 const artPages = collection => {
   let artPages = [];
+  const galleries = Object.entries(collection.getAll()[0].data.art.galleries)
 
-  galleries(collection).forEach((gallery) => {
-    gallery.items.forEach((picture, i, arr) => {
-      const title = gallery.shortTitle || gallery.title;
-      picture.containingGallery = `${title}`;
-      picture.baseUrl = `/assets/images/art/${title.toLowerCase()}`;
-      if (i) picture.previousImage = arr[i - 1].title;
-      if (i + 1 != arr.length) picture.nextImage = arr[i + 1].title;
-      artPages.push(picture);
+  for (let [key, items] of galleries) {
+    items.forEach((currentImg, i, arr) => {
+      currentImg.gallery = key;
+      currentImg.baseUrl = `/assets/images/art/${key}/`;
+      if (i) currentImg.prevImg = arr[i - 1].title;
+      if (i + 1 != arr.length) currentImg.nextImg = arr[i + 1].title;
+      artPages.push(currentImg);
     });
-  });
+  };
   return artPages;
 }
 
@@ -39,7 +35,6 @@ module.exports = {
   writingPages,
   blogPosts,
   statusCafeThemes,
-  galleries,
   artPages,
   pocketBishies,
 }

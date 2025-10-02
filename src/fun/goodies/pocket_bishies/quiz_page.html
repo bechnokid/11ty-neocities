@@ -25,7 +25,7 @@ eleventyComputed:
     <div id="bishie-content">
       <form>
         {%- for item in bishie.questions %}
-          <p><strong>{{ item.text }}</strong></p>
+          <p class="question"><strong>{{ item.text }}</strong></p>
           <fieldset>
             <ul>
               {%- for option in item.options %}

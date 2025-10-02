@@ -1,0 +1,59 @@
+{% macro graphicsBox(arrId, arrCls, arrTitle, type = null) %}
+  {% set imgPath = "/assets/images/goodies/" + arrId + "/" %}
+  {% set subClsStr = 'justify-content-center flex-gap-1' %}
+  {% if arrId == 'blinkies' %}
+    {% set subCls = subClsStr + " freezeframe" %}
+  {% else %}
+    {% set subCls = subClsStr %}
+  {% endif %}
+  {% details { title: arrTitle, cls: arrCls, summaryCls: 'h3 details' } %}
+    {% galleryBox { subCls: subCls } %}
+      {% if type == "mine" %}
+        {% set goodiesArr = goodies.graphics[arrId]['mine'] %}
+      {% elif type == "collected" %}
+        {% set goodiesArr = goodies.graphics[arrId]['collected'] %}
+      {% else %}
+        {% set goodiesArr = goodies.graphics[arrId] %}
+      {% endif %}
+      {%- for item in goodiesArr %}
+        {% set itemSrc = imgPath + item.src %}
+        {% set itemOptions = { alt: item.alt, freezeframe: item.freezeframe, url: item.url } %}
+        <div>{% img itemSrc, itemOptions %}</div>
+      {% endfor %}
+    {% endgalleryBox %}
+  {% enddetails %}
+{% endmacro %}
+
+{% macro webBadges() %}
+  {{ graphicsBox('web_badges', 'web-badges', 'Web Badges') }}
+{% endmacro %}
+
+{% macro buttons(type = null) %}
+  {{ graphicsBox('buttons', 'btn-88x31', '88x31 Buttons', type) }}
+{% endmacro %}
+
+{% macro blinkies(type = null) %}
+  {{ graphicsBox('blinkies', 'blinkies', 'Blinkies', type) }}
+{% endmacro %}
+
+{% macro stamps(type = null) %}
+  {{ graphicsBox('stamps', 'stamps', 'Stamps', type) }}
+{% endmacro %}
+
+{% macro honeycomb() %}
+  {% set array = goodies.graphics.honeycomb %}
+  {% set imgPath = "/assets/images/goodies/honeycomb/" %}
+  {% details { title: "Honeycomb", cls: "honeycomb", summaryCls: 'h3 details' } %}
+    {% galleryBox { subCls: 'justify-content-center' } %}
+      {%- for col in array | batch(6) %}
+        <div class="comb-row d-flex w-100">
+          {%- for stamp in col %}
+            {% set itemSrc = imgPath + stamp.src %}
+            {% set itemOptions = { alt: stamp.alt, freezeframe: stamp.freezeframe, url: stamp.url } %}
+            <div>{% img itemSrc, itemOptions %}</div>
+          {% endfor %}
+        </div>
+      {% endfor %}
+    {% endgalleryBox %}
+  {% enddetails %}
+{% endmacro %}

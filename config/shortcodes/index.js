@@ -1,5 +1,4 @@
-const { monDayYear } = require('../filters')
-const markdownLib = require('../plugins/markdown');
+const { markdownLib } = require('../plugins/');
 const chars = require('../variables.js');
 
 const icon = function (value, options = {}) {
@@ -37,57 +36,47 @@ const link = function (url, content, options = {}) {
   }
 }
 
-const img = function (src, options = {}) {
+const img = function(src, options = {}) {
   let clsArr = [];
   if (options.freezeframe) clsArr.push('freezeframe');
-
-  let imgCls = "";
   const imgAlt = (options.alt) ? options.alt.replace(/"/g, "&quot;") : "";
-  const ariaDesc = (options.ariaDesc) ? ` aria-describedby="${options.ariaDesc}"` : '';
 
-  if (options.markdown && ariaDesc == '') {
+  let imgCls = '';
+  let resultString = '';
+  if (options.markdown && options.aria === undefined) {
     if (options.cls) clsArr.push(options.cls.split(' '));
     if (clsArr.length > 0) imgCls = `{${clsArr.flat().map((x) => `.${x}`).join(' ')}}`;
-    return `![${imgAlt}](${src})${imgCls}`;
+
+    resultString = `![${imgAlt}](${src})${imgCls}`;
+    if (options.url){
+      resultString = `[${resultString}](${options.url})`
+      if (options.urlCls) resultString += `{${options.urlCls.split(' ').map((x) => `.${x}`).join(' ')}}`;
+    }
+    return resultString;
   } else {
+    ariaStr = '';
+    if (options.aria) {
+      const ariaData = options.aria;
+      if (ariaData.desc) ariaStr += ` aria-describedby="${ariaData.desc}"`;
+      if (ariaData.hidden == true) ariaStr += ` aria-hidden="true"`
+    }
+    dataStr = '';
     if (options.cls) clsArr.push(options.cls.split(' '));
     if (clsArr.length > 0) imgCls = ` class='${clsArr.flat().join(' ')}'`
-    return `<img loading='lazy' src='${src}' alt="${imgAlt}"${imgCls}${ariaDesc}>`;
+
+    resultString = `<img src='${src}' alt="${imgAlt}"${imgCls}${ariaStr}>`;
+    if (options.url) {
+      const urlCls = (options.urlCls) ? ` class='${options.urlCls}'` : '';
+      const urlId = (options.urlId) ? ` id='${options.urlId}'` : '';
+      resultString = `<a${urlId} href="${options.url}"${urlCls}>` + resultString + '</a>';
+    }
   }
-}
-
-const imgWithLink = function (src, url, options = {}) {
-  let clsArr = [];
-  if (options.freezeframe) clsArr.push('freezeframe');
-
-  let imgCls = "";
-  let imgAlt = (options.alt) ? options.alt.replace(/"/g, "&quot;") : "";
-  let linkCls = '';
-  const ariaDesc = (options.ariaDesc) ? ` aria-describedby="${options.ariaDesc}"` : '';
-
-  if (options.markdown && ariaDesc == '') {
-    if (options.imgCls) clsArr.push(options.imgCls.split(' '));
-    if (clsArr.length > 0) imgCls = `{${clsArr.flat().map((x) => `.${x}`).join(' ')}}`;
-    if (options.linkCls) linkCls = `{${options.linkCls.split(' ').map((x) => `.${x}`).join(' ')}}`;
-    return `[![${imgAlt}](${src})${imgCls}](${url})${linkCls}`;
-  } else {
-    if (options.imgCls) clsArr.push(options.imgCls);
-    if (clsArr.length > 0) imgCls = ` class='${clsArr.join(' ')}'`;
-    if (options.linkCls) linkCls = ` class='${options.linkCls}'`;
-    return `<a href='${url}'${linkCls}${ariaDesc}><img src='${src}' alt="${imgAlt}"${imgCls}></a>`;
-  }
-}
+  return resultString;
+};
 
 // Paired
 const tooltip = function(children, params) {
-  let mainContent = '';
-  if (params.src && params.url) {
-    mainContent = imgWithLink(params.src, params.url, params);
-  } else if (params.src && !params.url) {
-    mainContent = img(params.src, params);
-  } else {
-    mainContent = link(params.url, params);
-  }
+  let mainContent = (params.src) ? img(params.src, params) : link(params.url, params);
   return `<div class='tooltip'>${mainContent}<div id='${params.tooltipId}' class='tooltip-content' role='tooltip'>${children}</div></div>`
 }
 
@@ -100,7 +89,7 @@ const details = function (children, params) {
   }
 
   const detailsId = (params.id) ? ` id='${params.id}'` : '';
-  const detailsCls = (params.class) ? ` class='${params.class}'` : '';
+  const detailsCls = (params.cls) ? ` class='${params.cls}'` : '';
   const detailsStyle = (params.detailsStyle) ? ` style='${params.detailsStyle}'` : '';
   const detailsOpen = (params.open) ? ` open` : '';
   return `<details${detailsId}${detailsCls}${detailsStyle}${detailsOpen}>${summary}${children}</details>`;
@@ -135,15 +124,17 @@ const figure = function (children, src, options = {}) {
 
 const galleryBox = function (children, params = {}) {
   let mainContent = children;
-  let title = (params.title) ? `<h2>${params.title}</h2>` : '';
-  let mainCls = (params.cls) ? ` ${params.cls}` : '';
-  let subCls = (params.subCls) ? ` ${params.subCls}` : '';
+  const galleryId = (params.id) ? ` id="${params.id}"` : '';
+  const title = (params.title) ? `<h2>${params.title}</h2>` : '';
+  const mainCls = (params.cls) ? ` ${params.cls}` : '';
+  let subCls = (params.simple) ? "" : " d-flex flex-wrap";
+  if (params.subCls) subCls += ` ${params.subCls}`;
 
   if (params.markdown) {
     mainContent = (params.markdown.inline) ? markdownLib.renderInline(children.trim()) : markdownLib.render(children.trim());
   }
 
-  return `<div class='sidebar${mainCls}'>${title}<div class='content d-flex flex-wrap p-3${subCls}'>${mainContent}</div></div>`;
+  return `<div${galleryId} class='sidebar${mainCls}'>${title}<div class='content p-3${subCls}'>${mainContent}</div></div>`;
 }
 
 const convertToCode = function (children) {
@@ -157,10 +148,10 @@ const convertToHtml = function(children) {
 }
 
 const artCaption = function(caption, params = {}){
-  let ogDate = (params.originalDate) ? `From ${params.originalDate}.` : '';
-  let ogCaption = params.originalCaption ? `<blockquote class='mb-4'>${markdownLib.renderInline(params.originalCaption.trim())}</blockquote>` : '';
-  let transcript =  params.transcript ? `<details id='transcript'><summary class='h3 text-primary'>Transcript</summary><p class='my-1 ms-4'>${markdownLib.renderInline(params.transcript.trim())}</p></details>` : '';
-  let cap = caption ? markdownLib.renderInline(caption.trim()) : '';
+  const ogDate = (params.originalDate) ? `From ${params.originalDate}.` : '';
+  const ogCaption = params.originalCaption ? `<blockquote class='mb-4'>${markdownLib.renderInline(params.originalCaption.replaceAll("\\n", "\n").trim())}</blockquote>` : '';
+  const transcript =  params.transcript ? `<details id='transcript'><summary class='h3 text-primary'>Transcript</summary><p class='my-1 ms-4'>${markdownLib.renderInline(params.transcript.replaceAll("\\n", "\n").trim())}</p></details>` : '';
+  const cap = caption ? markdownLib.renderInline(caption.replaceAll("\\n", "\n").trim()) : '';
   return `${ogDate}${ogCaption} ${cap}${transcript}`;
 }
 
@@ -175,7 +166,6 @@ module.exports = {
   emote,
   img,
   link,
-  imgWithLink,
   tooltip,
   figure,
   details,

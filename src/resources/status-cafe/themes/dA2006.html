@@ -10,7 +10,7 @@ flashing: true
 ---
 {% from 'components/resources/macros.html' import varTable %}
 {% set previewImg = '/assets/images/resources/statuscafe_da2006.png' %}
-{% figure previewImg, { cls: 'figure-center theme-preview text-sm', alt: 'Preview image for the deviantART 2006 theme for Status Cafe' } %}
+{% figure previewImg, { cls: 'figure-center theme-preview text-sm mb-4', alt: 'Preview image for the deviantART 2006 theme for Status Cafe' } %}
 Preview (Yes, this really is StatusCafe!)
 {% endfigure %}
 {% convertToHtml %}
@@ -27,12 +27,14 @@ There is a credit block within the HTML code that I would like to be kept there,
 All I ask is that you don't claim that you made it all on your own!
 
 I also highly recommend saving the image links (found in the HTML and CSS code) on your own server! It's unlikely that I'll move or delete the image links, but better safe than sorry!
+
+The below HTML code can be copy and pasted directly into the "About" section.
 {% endconvertToHtml %}
 
-{% details { title: "HTML (click to show/hide code)", summaryCls: "details h2" } %}
-{% convertToHtml %}
-The below HTML code can be copy and pasted directly into the "About" section.
-
+<section>
+  <h2>HTML</h2>
+  {% details { title: "(click to show/hide code)", summaryCls: "details h3" } %}
+  {% convertToHtml %}
 ```html
 <div class='deviant-banner'>
   <div class='deviant-container'>
@@ -121,58 +123,56 @@ The below HTML code can be copy and pasted directly into the "About" section.
   </div>
   <!-- END CREDIT BLOCK -->
 ```
-{% endconvertToHtml %}
-{% enddetails %}
+  {% endconvertToHtml %}
+  {% enddetails %}
+  <p>Below is a list of variables in the HTML code that you can change, provided with descriptions of their original function.</p>
+  <p>Since this is just a theme, you can change the variables however you'd like. :3</p>
 
-{% convertToHtml %}
-Below is a list of variables in the HTML code that you can change, provided with descriptions of their original function.
+  {% set varsArr = resources.da2006 %}
+  {% details { title: "#deviant-main-header", summaryCls: "details h4"} %}
+    {{ varTable(varsArr.headerVars) }}
+  {% enddetails %}
 
-Since this is just a theme, you can change the variables however you'd like. :3
-{% endconvertToHtml %}
-{% set varsArr = resources.da2006 %}
+  {% details { title: "#deviant-attributes", summaryCls: "details h4" } %}
+    {{ varTable(varsArr.attrs) }}
+  {% enddetails %}
 
-{% details { title: "#deviant-main-header", summaryCls: "details h3"} %}
-{{ varTable(varsArr.headerVars) }}
-{% enddetails %}
+  {% details { title: "#deviant-links", summaryCls: "details h4" } %}
+    {{ varTable(varsArr.links) }}
+  {% enddetails %}
 
-{% details { title: "#deviant-attributes", summaryCls: "details h3" } %}
-{{ varTable(varsArr.attrs) }}
-{% enddetails %}
+  {% details { title: "#deviant-stats", summaryCls: "details h4" } %}
+    {{ varTable(varsArr.stats) }}
+    <p>The other numbers in this list can be changed to what ever you'd like. For authenticity's sake, numbers have a comma, e.g. 1,000. </p>
+  {% enddetails %}
 
-{% details { title: "#deviant-links", summaryCls: "details h3" } %}
-{{ varTable(varsArr.links) }}
-{% enddetails %}
+  {% details { title: "#deviant-about", summaryCls: "details h4" } %}
+    {{ varTable(varsArr.info) }}
+  {% enddetails %}
 
-{% details { title: "#deviant-stats", summaryCls: "details h3" } %}
-{{ varTable(varsArr.stats) }}
-<p>The other numbers in this list can be changed to what ever you'd like. For authenticity's sake, numbers have a comma, e.g. 1,000. </p>
-{% enddetails %}
+  {% details { title: "deviantART Emoticons", id: 'da-emoticons', summaryCls: 'details h4' } %}
+  <p>Before emojis became standardized, users often used emoticons such as ^_^ or GIFs provided by the dA staff. Here is a list of what users would have used to describe what they were currently feeling.</p>
 
-{% details { title: "#deviant-about", summaryCls: "details h3" } %}
-{{ varTable(varsArr.info) }}
-{% enddetails %}
+  <table class="text-sm">
+    {%- for row in varsArr.emoticons | batch (4) %}
+      <tr>
+        {%- for item in row %}
+          {% set itemLetter = item.src | first %}
+          {% set itemSrc = "https://e.deviantart.net/emoticons/" + itemLetter + "/" + item.src + ".gif" %}
+          <td>{% img itemSrc, { freezeframe: item.freezeframe } %}</td>
+          <td>{{ (item.name or item.src) | title }}</td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </table>
+  {% enddetails %}
+</section>
 
-{% details { title: "deviantART Emoticons", id: 'da-emoticons', summaryCls: 'details h3' } %}
-<p>Before emojis became standardized, users often used emoticons such as ^_^ or GIFs provided by the dA staff. Here is a list of what users would have used to describe what they were currently feeling.</p>
-
-<table class="text-sm">
-  {%- for row in varsArr.emoticons %}
-    <tr>
-      {%- for item in row %}
-        {% set itemLetter = item.src | first %}
-        {% set itemSrc = "https://e.deviantart.net/emoticons/" + itemLetter + "/" + item.src + ".gif" %}
-        <td>{% img itemSrc, { freezeframe: item.freezeframe } %}</td>
-        <td>{{ (item.name or item.src) | title }}</td>
-      {% endfor %}
-    </tr>
-  {% endfor %}
-</table>
-{% enddetails %}
-
-{% details { title: "CSS (click to show/hide code)", summaryCls: "details h2"} %}
-{% convertToHtml %}
-**IMPORTANT:** Remember to put the below CSS code in a `<style>` tag in the "About" section!
-
+<section>
+  <h2>CSS</h2>
+  <p><strong>IMPORTANT:</strong> Remember to put the below CSS code in a <code>style</code> tag in the "About" section!</p>
+  {% details { title: "(click to show/hide code)", summaryCls: "details h3"} %}
+  {% convertToHtml %}
 ```css
 :root {
   --bg-primary: #a7afa7;
@@ -503,36 +503,34 @@ a:hover {
   white-space: pre-wrap;
 }
 ```
-{% endconvertToHtml %}
-{% enddetails %}
+  {% endconvertToHtml %}
+  {% enddetails %}
 
-{% details { title: "Variables", summaryCls: "details h3"} %}
-{% convertToHtml %}
-Below is a list of variables in the CSS code that you *should* change!
-{% endconvertToHtml %}
-
-<table class="text-sm">
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-  </tr>
-  {%- for item in varsArr.cssVars %}
+  {% details { title: "Variables", summaryCls: "details h4"} %}
+  <p class="mb-4">Below is a list of variables in the CSS code that you <em>should</em> change!</p>
+  <table class="text-sm">
     <tr>
-      <td><strong>{{ item.name }}</strong></td>
-      {% set itemBlock %}
-        <p>{{ (item.desc or "Self-explanatory!") | markdownifyInline | safe }}</p>
-        {% if item.list %}
-          <div class="table-list mb-3">
-            <ul>
-              {%- for li in item.list %}
-                <li>{{ li | markdownifyInline | safe }}</li>
-              {% endfor %}
-            </ul>
-          </div>
-        {% endif %}
-      {% endset %}
-      <td>{{ itemBlock | safe }}</td>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
-  {% endfor %}
-</table>
-{% enddetails %}
+    {%- for item in varsArr.cssVars %}
+      <tr>
+        <td><strong>{{ item.name }}</strong></td>
+        {% set itemBlock %}
+          <p>{{ (item.desc or "Self-explanatory!") | markdownifyInline | safe }}</p>
+          {% if item.list %}
+            <div class="table-list mb-3">
+              <ul>
+                {%- for li in item.list %}
+                  <li>{{ li | markdownifyInline | safe }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+        {% endset %}
+        <td>{{ itemBlock | safe }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+  {% enddetails %}
+</section>
