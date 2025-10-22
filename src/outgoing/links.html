@@ -17,19 +17,20 @@ flashing: true
   {% endconvertToHtml %}
 </section>
 
-{% details { title: "(click to show/hide links)", summaryCls: "details h3"} %}
+<div class="position-relative">
+  {% include "partials/loading-sidebar.html" %}
   {% galleryBox { cls: 'my-4', subCls: 'netizens justify-content-center align-items-center' } %}
-  {%- for item in outgoing.links.netizens %}
-    {% if item.noBtn %}
-      <a class="no-button-container text-xs" href="{{ item.url }}">
-        <span>{{ item.name }}</span>
-      </a>
-    {% else %}
-      {% img imgPath + item.src, { url: item.url, alt: "Link button for " + item.name, urlCls: 'm-1 link-btn', freezeframe: item.freezeframe } %}
-    {% endif %}
-  {% endfor %}
+    {%- for item in outgoing.links.netizens %}
+      {% if item.noBtn %}
+        <a class="no-button-container text-xs" href="{{ item.url }}">
+          <span>{{ item.name }}</span>
+        </a>
+      {% else %}
+        {% img imgPath + item.src, { url: item.url, alt: "Link button for " + item.name, urlCls: 'm-1 link-btn', freezeframe: item.freezeframe } %}
+      {% endif %}
+    {% endfor %}
   {% endgalleryBox %}
-{% enddetails %}
+</div>
 
 <section>
   <h2>Favorite Resources</h2>

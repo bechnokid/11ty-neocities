@@ -38,14 +38,19 @@
       {% include 'partials/footer.html' %}
     </div>
   </div>
-  {% if freezeframe %}
   <script>
     $(document).ready(function () {
-      const e = new Freezeframe({ trigger: false, responsive: false });
-      $(".play-gif").on("click", function () { e.start() });
-      $(".stop-gif").on("click", function () { e.stop() });
+      {% if freezeframe %}
+        const e = new Freezeframe({ trigger: false, responsive: false });
+        $(".play-gif").on("click", function () { e.start() });
+        $(".stop-gif").on("click", function () { e.stop() });
+      {% endif %}
+      if ($('.loading-sidebar').length > 0) {
+        setTimeout(function () {
+          $('.loading-sidebar').addClass('d-none');
+        }, 1000);
+      }
     });
   </script>
-  {% endif %}
 </body>
 </html>

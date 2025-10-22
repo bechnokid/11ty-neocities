@@ -1,5 +1,5 @@
 {% macro navLink(linkUrl, linkTitle, options = {}) %}
-<li class="nav-link-item{{ (" " + options.cls) if options.cls }}"><a href="{{ linkUrl }}">{{ linkTitle }}</a> {% if options.flashing == true %}{% icon 'alert-triangle' %}{% endif %} {% if options.new %}{% icon 'new' %}{% endif %}</li>
+<li class="nav-link-item{{ (" " + options.cls) if options.cls }}"><a href="{{ linkUrl }}">{{ linkTitle }}</a> {% if options.flashing == true %}{% icon 'alert-triangle', { cls: "show" if linkTitle == "Webgarden" } %}{% endif %} {% if options.up %}{% icon 'updated' %}{% elif options.new %}{% icon 'new' %}{% endif %}</li>
 {% endmacro %}
 
 {% macro navSection(section, name = null) %}
@@ -17,7 +17,8 @@
             <ul class="ms-2">
               {%- for sublink in link.data.pagination.items %}
                 {% set sublinkCls = sublink.data.navTag or "" %}
-                {{ navLink(sublink.page.url, sublink.data.shortTitle or sublink.data.title, { cls: sublinkCls , flashing: sublink.data.flashing, new: sublink.data.new }) }}
+                {% set linkTitle =  sublink.data.shortTitle or sublink.data.title %}
+                {{ navLink(sublink.page.url, linkTitle, { cls: sublinkCls , flashing: sublink.data.flashing, up: linkTitle in meta.updated, new: linkTitle in meta.new }) }}
               {% endfor %}
             </ul>
           </details>
@@ -26,12 +27,14 @@
           <ul>
             {%- for sublink in link.data.pagination.items %}
               {% set sublinkCls = sublink.data.navTag or "" %}
-              {{ navLink(sublink.page.url, sublink.data.shortTitle or sublink.data.title, { cls: sublinkCls + " mobile" , flashing: sublink.data.flashing, new: sublink.data.new }) }}
+              {% set linkTitle =  sublink.data.shortTitle or sublink.data.title %}
+              {{ navLink(sublink.page.url, linkTitle, { cls: sublinkCls + " mobile" , flashing: sublink.data.flashing, up: linkTitle in meta.updated, new: linkTitle in meta.new }) }}
             {% endfor %}
           </ul>
         </li>
       {% elif "nav" in link.data.tags %}
-        {{ navLink(link.page.url, link.data.shortTitle or link.data.title, { cls: link.data.navTag, flashing: link.data.freezeframe or link.data.flashing, new: link.data.new }) }}
+        {% set linkTitle =  link.data.shortTitle or link.data.title %}
+        {{ navLink(link.page.url, linkTitle, { cls: link.data.navTag, flashing: link.data.freezeframe or link.data.flashing, up: linkTitle in meta.updated, new: linkTitle in meta.new }) }}
       {% endif %}
     {% endfor %}
   </ul>

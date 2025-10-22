@@ -1,10 +1,8 @@
 ---
-title: 'Sitemap'
+title: Sitemap
 summary: Lost? Hopefully, this sitemap will help you navigate to where you want to go!
-displayOrder: 3
+displayOrder: 4
 permalink: '/sitemap/index.html'
-hide: true
-tags: main
 ---
 {% macro collectionList(section, name = null) %}
 
@@ -19,10 +17,9 @@ tags: main
 
 ### {{ link.data.title }}
 
-  {%- for gallery in galleries %}
+  {%- for gallery in art.data %}
 
 - [{{ gallery.title }}](../artwork/{{ (gallery.shortTitle or gallery.title) | slugify }})
-
   {% endfor %}
 
   {% elif link.data.subList %}
@@ -34,7 +31,7 @@ tags: main
 - {% link sublink.url, sublink.data.shortTitle or sublink.data.title, { cls: sublink.data.navTag } %} {% if sublink.data.flashing == true %} {% icon 'alert-triangle' %}{% endif %}
     {% endfor %}
   {% elif link.data.title != 'Sitemap' %}
-- [{{ link.data.shortTitle or link.data.title }}]({{ link.url }}){% if link.data.navTag %}{.{{link.data.navTag}}}{% endif %}{% if link.data.flashing == true %} {% icon 'alert-triangle' %}{% endif %}
+- [{{ link.data.shortTitle or link.data.title }}]({{ link.url }}){% if link.data.navTag %}{.{{link.data.navTag}}}{% endif %}{% if link.data.flashing == true %} {% icon 'alert-triangle', { cls: 'show' if link.data.title == 'Webgarden' } %}{% endif %}
   {% endif %}
 {% endfor %}
 {% endmacro %}

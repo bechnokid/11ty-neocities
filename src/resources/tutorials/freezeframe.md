@@ -1,14 +1,11 @@
 ---
 title: Implementing FreezeframeJS
-shortTitle: FreezeframeJS Tutorial
+shortTitle: FreezeframeJS
 displayOrder: 2
 description: A tutorial on how to implement [Freezeframe.js](https://github.com/ctrl-freaks/freezeframe.js/), a library that can "freeze" animated GIFs.
 prism: true
 redirectFrom: [/tutorials/freezeframe, /resources/tut_freezeframe]
 summary: "**NOTE:** The examples will not work if JavaScript is disabled."
-tags:
-  - resources
-  - nav
 ---
 <script src="{{ meta.jsUrl }}/freezeframe.js"></script>
 
@@ -16,7 +13,7 @@ One of the greatest challenges for a web designer is creating a site that is acc
 
 As much as I do enjoy flashing images (blinkies, pixels, rainbow backgrounds, etc.), I've seen a lot of sites with so much blinking and flashing that I can't browse their site for very long without my eyes hurting. If my eyes hurt from browsing some sites, then I can't imagine what it must be like for those who are prone to seizures.
 
-So, I started my journey to find out methods on allow others to enjoy these colorful GIFs but without the eyestrain, and that was when I found a magnificent JS library called [Freezeframe.js](https://github.com/ctrl-freaks/freezeframe.js/) (demo page [here](http://ctrl-freaks.github.io/freezeframe.js/)).
+So, I started my journey to find out methods on allow others to enjoy these colorful GIFs but without the eyestrain, and that was when I found a magnificent JS library called [Freezeframe.js](https://github.com/ctrl-freaks/freezeframe.js/) ([demo page here](http://ctrl-freaks.github.io/freezeframe.js/)).
 
 With this library, animated GIFs are paused and can be enabled again by clicking/hovering the image or manually through a button and such.
 
@@ -41,13 +38,13 @@ If there comes a need that you need to customize the script, the code can be fou
 
 There are two ways of setting up freezeframe.js in HTML. You can set it up for each individual `<img>` tag, or you can set it up as a class for a `<div>` tag that holds several `<img>` elements inside, as shown below:
 
-### Option 1
+### Option 1 {.underline}
 
 ```html
 <img class="freezeframe" src="image.gif">
 ```
 
-### Option 2
+### Option 2 {.underline}
 
 ```html
 <div class="freezeframe">
@@ -65,7 +62,7 @@ This is only because I'm cautious about saving as much space as possible, since 
 
 One thing to note about the library is, like most scripts, it will not work properly until the entire page has been loaded. You can put the script in your HTML file, or you can put it in a separate JS file if you intend on using this script in multiple HTML files.
 
-### 3.1) Usage in a Single File
+### 3.1) Usage in a Single File {.underline}
 
 If you intend on using this library in a HTML file, then you can place the following code in one of two places:
 
@@ -89,7 +86,7 @@ If you intend on using this library in a HTML file, then you can place the follo
 </body>
 ```
 
-### 3.2) Usage in Multiple HTML Files
+### 3.2) Usage in Multiple HTML Files {.underline}
 
 If you intend on using the script in multiple HTML files, then you can put `new Freezeframe();` in a separate JS file. If this is the case, be sure to be aware of the following:
 
@@ -129,7 +126,7 @@ In HTML, create the buttons and label them appropriately so the script can locat
 
 Then, go to the script you put `new Freezeframe();` and change it into the following:
 
-#### JavaScript
+### JavaScript {.underline}
 
 ```js
 document.addEventListener("DOMContentLoaded", function(event) {
@@ -139,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 ```
 
-#### JQuery
+### JQuery {.underline}
 
 ```js
 $(document).ready(function() {
@@ -155,9 +152,9 @@ So, you should have something like the following:
 
 <button id="play-gif" class="button me-2" type='button'>Play GIFs</button><button id="stop-gif" class="button" type='button'>Stop GIFs</button>
 
-<div class='freezeframe mb-4'>
+<div class='freezeframe my-4'>
 
-![Stamp of Doctor Strange activating his magic](/assets/images/goodies/stamps/strange.gif) ![Stamp of Doctor Strange turning his head](/assets/images/goodies/stamps/strange_headturn.gif)
+![Stamp of Doctor Strange activating his magic](/assets/images/goodies/stamps/strange.gif) ![Stamp of Doctor Strange turning his head](/assets/images/goodies/stamps/strange_headturn.gif) {.d-flex .flex-gap-2}
 
 ![Blinkie of Doctor Strange](/assets/images/goodies/blinkies/blinkie-strange-sprite.gif)
 
@@ -174,11 +171,11 @@ So, you should have something like the following:
 
 Of course, not every library is perfect, and Freezeframe.js is no exception. Here are some issues I encountered and some workarounds, if any, that I managed to figure out.
 
-### 5.1) Does not work in tabbed menus
+### 5.1) Does not work in tabbed menus {.underline}
 
 The library does not currently work in tabbed menus that use CSS. My guess is because of the clashing CSS styles somehow, but I haven't figured out a workaround for this, yet.
 
-### 5.2) Hover CSS styling does not work
+### 5.2) Hover CSS styling does not work {.underline}
 
 There are instances of the library not working properly with other images that already change when hovering the cursor over it. This is because the styling for classes generated by Freezeframe.js more often than not clashes with whatever style you have already configured for your images.
 
@@ -208,7 +205,7 @@ a:hover .ff-image {
 }
 ```
 
-### 5.3) Inconsistent sizes for 88x31 buttons
+### 5.3) Inconsistent sizes for 88x31 buttons {.underline}
 
 The original developer of the library added a feature to make all images responsive, resulting in some images to appear much larger than they actually are, especially blinkies and other smaller graphics. Thankfully, [Vance from Entropically](https://entropically.neocities.org/learn/freezeframe/#why-are-my-gifs-so-big) informed me that there is a feature to disable this.
 

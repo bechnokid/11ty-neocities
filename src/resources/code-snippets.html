@@ -1,0 +1,225 @@
+---
+title: Code Snippets
+summary: Snippets you can use for your own site!
+description: Snippets that can be used on your site.
+displayOrder: 1
+prism: true
+redirectFrom: [/resources/code_snippets]
+tags:
+  - resources
+  - nav
+---
+<section>
+  <h2>"Old-Fashioned" Marquee with Pure CSS</h2>
+  <p>I remembered how marquees used to move in a more "choppy" manner before they officially became "deprecated". If you want your sites to really have the Y2K aesthetic, choppy marquees are the way to go, in my opinion!</p>
+
+  <section>
+    <h3 class="underline">Example</h3>
+    <div class="marquee-container sidebar mb-2 p-2">
+      <div class="marquee-content">
+        {% for i in range(0, 11) %}
+          {% img "https://placehold.co/88x31", { alt: "Placeholder 88x31 button" } %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <h3 class="underline">HTML</h3>
+{% convertToHtml %}
+```html
+<div class="marquee-container">
+  <div class="marquee-content">
+    <img src="[IMAGE_PATH]" alt="[IMAGE_ALT_TEXT]">
+    <img src="[IMAGE_PATH]" alt="[IMAGE_ALT_TEXT]">
+    <img src="[IMAGE_PATH]" alt="[IMAGE_ALT_TEXT]">
+  </div>
+</div>
+```
+{% endconvertToHtml %}
+  </section>
+
+  <section>
+    <h3 class="underline">CSS</h3>
+{% details { title: "(Click to show/hide code)", summaryCls: "details h4" } %}
+{% convertToHtml %}
+```css
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-150%); }
+}
+
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: marquee 30s steps(400, end) infinite;
+}
+
+.marquee-content > * {
+  margin: 0 .25rem;
+}
+
+.marquee-content img {
+  vertical-align: middle;
+}
+```
+{% endconvertToHtml %}
+{% enddetails %}
+  </section>
+
+  <h3 class="underline">Notes</h3>
+
+{% convertToHtml %}
+- The values from `100%` to `-150%` is to ensure that all items in the example "disappear" before cycling through again. These numbers can change depending on how wide the marquee will be and how many items will be in it. Feel free to experiment!
+  - For the marquee to scroll from left to right (as opposed to right to left in the example), reverse the numbers. (change 100% to -150%, and change -150% to 100%)
+- For `.marquee-container`, the width can be any number. I just chose 100% so that it would span the width of this page.
+- The duration (listed as 30s in the example CSS) can be changed to have the following effects:
+  - Lower number = faster scrolling
+  - Higher number = slower scrolling
+- The steps (listed as 400 in the example CSS) can be changed to have the following effects:
+  - Lower number = choppier movement
+  - Higher number = smoother movement
+- `.marquee-content > *` is only there to ensure there is some spacing between the items within the container. This is optional and can be removed if you'd like.
+{% endconvertToHtml %}
+</section>
+
+<section class="js-required">
+  <h2 id="calendar">Calendar</h2>
+  <p><b>Note:</b> Requires Javascript.</p>
+  <p>Based on the script from <a href="https://www.javascriptfreecode.com/36.htm">Kerixa Inc.</a>, I made an attempt to shorten the code, replace outdated parts, and add CSS classes for easier styling.</p>
+
+  <section>
+    <h3 class="underline">Example</h3>
+    <script src="{{ meta.jsUrl }}/calendar.js"></script>
+    <div id="widget-calendar"></div>
+  </section>
+
+  <section>
+    <h3 class="underline">HTML</h3>
+{% convertToHtml %}
+```html
+<div id="calendar"></div>
+```
+{% endconvertToHtml %}
+<p>That's it, really!</p>
+  </section>
+  <section>
+    <h3 class="underline">CSS</h3>
+      <p>You can check the CSS below to see which classes you can style.</p>
+{% details { title: "(Click to show/hide code)", summaryCls: "details h4" } %}
+{% convertToHtml %}
+```css
+#calendar table {
+  border: 1px solid #000;
+  border-collapse: collapse;
+  color: #000;
+}
+
+#calendar td {
+  padding: 0 .25rem;
+  border: 1px solid #000;
+}
+
+#calendar .month {
+  font-weight: bold;
+  text-align: center;
+}
+
+#calendar .days {
+  font-weight: bold;
+}
+
+#calendar .today {
+  font-weight: bold;
+}
+
+#calendar .blank {
+  background-color: #dedede;
+}
+```
+{% endconvertToHtml %}
+{% enddetails %}
+  </section>
+  <section>
+    <h3 class="underline">Javascript</h3>
+    <p>Arrays that hold the names of the months and days are placed near the beginning of the code for easy access.</p>
+    {% convertToHtml %}You might know this already, but just in case, it is recommended to put this script in your `<head>` tag.{% endconvertToHtml %}
+{% details { title: "(Click to show/hide code)", summaryCls: "details h4" } %}
+{% convertToHtml %}
+```js
+const monthData = [
+  { name: 'January', numOfDays: 31 },
+  { name: 'February', numOfDays: 28 },
+  { name: 'March', numOfDays: 31 },
+  { name: 'April', numOfDays: 30 },
+  { name: 'May', numOfDays: 31 },
+  { name: 'June', numOfDays: 30 },
+  { name: 'July', numOfDays: 31 },
+  { name: 'August', numOfDays: 31 },
+  { name: 'September', numOfDays: 30 },
+  { name: 'October', numOfDays: 31 },
+  { name: 'November', numOfDays: 30 },
+  { name: 'December', numOfDays: 31 },
+]
+const dayNamesData = [
+  "Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"
+]
+
+let todayDate = new Date();
+let thisDay = todayDate.getDay();
+let thisMonth = todayDate.getMonth();
+let thisDate = todayDate.getDate();
+let thisYear = todayDate.getYear() % 100;
+thisYear = ((thisYear < 50) ? (2000 + thisYear) : (1900 + thisYear));
+if (((thisYear % 4 == 0) && !(thisYear % 100 == 0)) || (thisYear % 400 == 0)) {
+  monthData[1].numOfDays = 29;
+}
+let startSpaces = thisDate;
+while (startSpaces > 7) startSpaces -= 7;
+startSpaces = thisDay - startSpaces + 1;
+if (startSpaces < 0) startSpaces += 7;
+
+let tableContent = ['<tr>'];
+for (let i = 0; i < startSpaces; i++) {
+  tableContent.push("<td class='blank'> </td>");
+}
+let count = 1;
+while (count <= monthData[thisMonth].numOfDays) {
+  if (startSpaces == 0) tableContent.push('</tr><tr>')
+  for (let i = startSpaces; i < 7; i++) {
+    let dayText = (count <= monthData[thisMonth].numOfDays) ? count : "";
+    if (count == thisDate) dayText = `<span class='today'>${dayText}</span>`;
+    tableContent.push(`<td${(dayText == '') ? " class='blank'" : ""}>${dayText}</td>`);
+    count++;
+  }
+  tableContent.push('</tr>');
+  startSpaces = 0;
+}
+
+let daysContent = [];
+for (let i = 0; i < dayNamesData.length; i++) {
+  daysContent.push(`<td>${dayNamesData[i]}</td>`)
+}
+
+let calendar = `
+<table>
+  <thead>
+    <tr class='month'><td colspan="7">${monthData[thisMonth].name} ${thisYear}</td></tr>
+    <tr class='days'>${daysContent.join('')}</tr>
+  </thead>
+  <tbody>${tableContent.join('')}</tbody>
+</table>
+`;
+
+document.addEventListener("DOMContentLoaded", () => {
+  const calendarWidget = document.querySelector('div#widget-calendar');
+  if (calendarWidget) calendarWidget.innerHTML = calendar;
+})
+```
+{% endconvertToHtml %}
+{% enddetails %}
+  </section>
+</section>

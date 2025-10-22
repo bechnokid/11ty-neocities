@@ -25,13 +25,12 @@ splashImgAlt: "Splash image for Bechno Kid's Hideout that links to the home page
           <div class="col-lg-6 pe-lg-3 py-lg-3 order-lg-0 order-1 text-center d-flex flex-column justify-content-center splash-desc">
             <h1>{{ meta.name }}</h1>
             <hr class="m-0">
-            <div class="p-2">
-              <p>Welcome!</p>
+            <div class="p-2 mt-3">
               <p><strong>Some notes about this site:</strong></p>
-              <ul class="text-left mx-4 text-sm">
-                <li><strong>PG-13</strong> for minimal swearing and some mature themes.</li>
+              <ul class="text-left mx-4 mt-4 text-sm">
+                <li><strong>PG-13 / WEB 14</strong> for minimal swearing and some mature themes.</li>
                 <li>Mobile-friendly, but looks best on a desktop at 1920 x 1080 with JS enabled.</li>
-                <li>Pages labeled with {% icon 'alert-triangle' %} will have blinking/flashing graphics when first loading the page or if JS is disabled.</li>
+                <li>Pages labeled with {% icon 'alert-triangle', { cls: 'index' } %} contain blinking/flashing graphics.</li>
               </ul>
             </div>
             <a class="font-weight-bold mb-4 mt-2 text-lg" href="/home/">ENTER HERE</a>

@@ -6,6 +6,6 @@ pagination:
   data: collections.statusCafe
   size: 10
 description: Various resources for [Status Cafe](https://status.cafe)!
-displayOrder: 5
+displayOrder: 3
 tags: resources
 ---

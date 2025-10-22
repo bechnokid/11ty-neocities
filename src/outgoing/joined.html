@@ -5,109 +5,80 @@ css: 'joined'
 summary: "**Warning:** Be cautious of any flashing colors and images when navigating away from this page."
 displayOrder: 2
 permalink: '/joined/index.html'
-debug: false
 ---
 {% import 'components/joined/macros.html' as webrings with context %}
 <script src="/assets/javascript/webring.js" type="text/javascript"></script>
-{% galleryBox { title: "Webrings", subCls: "webrings justify-content-center" } %}
-{% set debug = false if meta.env == "prod" else true %}
-<div class="small-webrings js-required d-flex flex-wrap align-items-center justify-content-center mb-4">
-  {{ webrings.neocreatives() }}
-  {{ webrings.cuddler() }}
-  {{ webrings.rayman() }}
-  {{ webrings.acing() }}
-  {{ webrings.ladies() }}
-  {{ webrings.queercoded() }}
-  {{ webrings.tropical(debug) }}
-</div>
-<div class="row g-0 w-100 js-required justify-content-md-center flex-md-gap-0 flex-gap-3">
-  <div class="col-12 col-md-6 col-lg-4">
-    {{ webrings.resource() }}
-    {{ webrings.gfdkris() }}
-    {{ webrings.amiga() }}
-    {{ webrings.doodle() }}
-  </div>
-  <div class="col-12 col-md-6 col-lg-4">
-    {{ webrings.wii() }}
-    {{ webrings.cookierun() }}
-    {{ webrings.selfInsert() }}
-  </div>
-  <div class="col-12 col-md-6 col-lg-4">
-    {{ webrings.persona() }}
-    {{ webrings.kingdomHearts() }}
-  </div>
-</div>
-<noscript>
-  <div id="webring-btn-container" class="d-flex flex-wrap align-items-center justify-content-center">
-    {{ webrings.neocreatives() }}
-    {{ webrings.cuddler() }}
-    {%- for button in outgoing.joined.webringBtns %}
-      {% img "/assets/images/webrings/" + button.src, { url: button.url, alt: "Button for the &quot;" + button.name + "&quot; webring"} %}
-    {% endfor %}
-  </div>
-  <div class="webring-widget-container mt-4">
-    <div class="d-flex flex-wrap justify-content-center flex-gap-3">
+<div class="position-relative">
+  {% include "partials/loading-sidebar.html" %}
+  {% galleryBox { title: "Webrings", subCls: "webrings justify-content-center" } %}
+    {% set debug = false if meta.env == "prod" else true %}
+    <div class="small-webrings js-required d-flex flex-wrap align-items-center justify-content-center mb-4">
+      {{ webrings.neocreatives() }}
+      {{ webrings.cuddler() }}
       {{ webrings.rayman() }}
-      {{ webrings.queercoded() }}
-      {{ webrings.ladies() }}
       {{ webrings.acing() }}
-      {{ webrings.selfInsert() }}
+      {{ webrings.ladies() }}
+      {{ webrings.queercoded() }}
+      {{ webrings.tropical(debug) }}
     </div>
-  </div>
-</noscript>
-{% endgalleryBox %}
+    <div class="row g-0 w-100 js-required justify-content-md-center flex-md-gap-0 flex-gap-3">
+      <div class="col-12 col-md-6 col-lg-4">
+        {{ webrings.resource() }}
+        {{ webrings.gfdkris() }}
+        {{ webrings.amiga() }}
+        {{ webrings.doodle() }}
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        {{ webrings.wii() }}
+        {{ webrings.cookierun() }}
+        {{ webrings.selfInsert() }}
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        {{ webrings.persona() }}
+        {{ webrings.kingdomHearts() }}
+      </div>
+    </div>
+    <noscript>
+      <div id="webring-btn-container" class="d-flex flex-wrap align-items-center justify-content-center">
+        {{ webrings.neocreatives() }}
+        {{ webrings.cuddler() }}
+        {%- for button in outgoing.joined.webringBtns %}
+          {% img "/assets/images/webrings/" + button.src, { url: button.url, alt: "Button for the &quot;" + button.name + "&quot; webring"} %}
+        {% endfor %}
+      </div>
+      <div class="webring-widget-container mt-4">
+        <div class="d-flex flex-wrap justify-content-center flex-gap-3">
+          {{ webrings.rayman() }}
+          {{ webrings.queercoded() }}
+          {{ webrings.ladies() }}
+          {{ webrings.acing() }}
+          {{ webrings.selfInsert() }}
+        </div>
+      </div>
+    </noscript>
+  {% endgalleryBox %}
 
-{% galleryBox { title: "Webrings?", cls: 'my-4', subCls: "fake-webrings", simple: true } %}
-<p class="mb-4">These webrings are either inactive or are not letting people join even though the option to become a member is still available. So, I cheated a bit to make myself an "honorary member", like a rascal. Yes, these are all functional!</p>
-<p>If you're the owner of any of these webrings and you want me to take these down, then please go back to updating your webrings or at least say applications are closed!</p>
-<div class="d-flex flex-md-row flex-column align-items-center justify-content-center flex-gap-3">
-  <div class="d-flex flex-column align-items-center flex-gap-1">
-    {{ webrings.wol() }}
-    {{ webrings.pokering() }}
-  </div>
-  {{ webrings.jelly() }}
-</div>
-{% endgalleryBox %}
+  {% galleryBox { title: "Webrings?", cls: 'my-4', subCls: "fake-webrings", simple: true } %}
+    <p class="mb-4">These webrings are either inactive or are not letting people join even though the option to become a member is still available. So, I cheated a bit to make myself an "honorary member", like a rascal. Yes, these are all functional!</p>
+    <p>If you're the owner of any of these webrings and you want me to take these down, then please go back to updating your webrings or at least say applications are closed!</p>
+    <div class="d-flex flex-md-row flex-column align-items-center justify-content-center flex-gap-3">
+      <div class="d-flex flex-column align-items-center flex-gap-1">
+        {{ webrings.wol() }}
+        {{ webrings.pokering() }}
+      </div>
+      {{ webrings.jelly() }}
+    </div>
+  {% endgalleryBox %}
 
-{% set assetLink = '/assets/images/about/fanlistings/' %}
-{% galleryBox { title: "Fanlistings", subCls: 'fanlistings pt-0'} %}
-{%- for key, value in outgoing.joined.fanlistings %}
-  <div class="w-100">
-    <h3>{{ key | title }}</h3>
-    {%- for item in value %}
-      {% img assetLink + item.src, { url: item.url, alt: item.alt + " fanlisting button", urlCls: 'mx-1' } %}
+  {% set assetLink = '/assets/images/about/fanlistings/' %}
+  {% galleryBox { title: "Fanlistings", subCls: 'fanlistings pt-0'} %}
+    {%- for key, value in outgoing.joined.fanlistings %}
+      <div class="w-100">
+        <h3>{{ key | title }}</h3>
+        {%- for item in value %}
+          {% img assetLink + item.src, { url: item.url, alt: item.alt + " fanlisting button", urlCls: 'mx-1' } %}
+        {% endfor %}
+      </div>
     {% endfor %}
-  </div>
-{% endfor %}
-{% endgalleryBox %}
-<script>
-  const pendingWebrings = []
-  $(document).ready(function() {
-    if (pendingWebrings.length > 0) {
-      for (let w of pendingWebrings) {
-        let ring = $(`#${w.id}`);
-        let ringId = w.id;
-        let ringName = w.name;
-        let ringUrl = w.url;
-
-        if (ringId == 'resourceRing') {
-          let oldText = '';
-          let newText = '';
-          if (ringId == 'resourceRing') {
-            oldText = '<br>';
-            newText = ' '
-          } else {
-            oldText = 'the The',
-            newText = 'the'
-          }
-          ring.html(ring.html().replace(oldText, newText));
-        }
-
-        if (ring.html().includes('waiting') || ring.html().includes('yet') || ring.html().includes("isn't")) {
-          ring.html(ring.html().replace(ringName, `<a href='${ringUrl}'>${ringName}</a>`));
-          ring.toggleClass('waiting');
-        }
-      }
-    };
-  });
-</script>
+  {% endgalleryBox %}
+</div>

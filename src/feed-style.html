@@ -30,8 +30,8 @@ Visit [About Feeds](https://aboutfeeds.com) to learn more about feeds and to get
             <header>
               <h1 class="d-flex align-items-center mt-3"><img src="{{ meta.imgUrl }}/rss.svg" aria-hidden="true" class="img-svg me-2" alt="" /><xsl:value-of select="/atom:feed/atom:title"/></h1>
               <p class="subtitle"><xsl:value-of select="/atom:feed/atom:subtitle"/></p>
-              <div class="d-flex align-items-center mb-4"><span class="text-lg me-2">&#x2190;</span><a class="head-link"><xsl:attribute name="href">/home</xsl:attribute>go back home?</a></div>
-              <div class="about-feed mx-3 my-4 px-3 py-1">{{ aboutFeed | markdownify | safe }}</div>
+              <div class="d-flex align-items-center my-4"><span class="text-lg me-2">&#x2190;</span><a class="head-link"><xsl:attribute name="href">/home</xsl:attribute>go back home?</a></div>
+              <div class="about-feed mx-3 my-4 px-3 py-1p-3">{{ aboutFeed | markdownify | safe }}</div>
             </header>
             <h2>Recent Updates</h2>
             <xsl:for-each select="/atom:feed/atom:entry[position() &lt; {{ postLimit }}]">

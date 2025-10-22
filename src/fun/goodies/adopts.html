@@ -52,11 +52,7 @@ hasLinks: true
   <div class="row g-0 w-100{{ " mb-4" if not loop.last }}">
     <div class="col d-flex flex-wrap justify-content-center{% if row.cls %} {{ row.cls }}{% endif %}">
       {%- for item in row.items %}
-        {% if item.ogLink %}
-          {% set imgPath = item.src %}
-        {% else %}
-          {% set imgPath = imgLink + item.src %}
-        {% endif %}
+        {% set imgPath = item.src if item.ogLink else imgLink + item.src %}
         {% img imgPath, { url: item.url, alt: item.alt, urlCls: 'mx-1', freezeframe: item.freezeframe } %}
       {% endfor %}
     </div>

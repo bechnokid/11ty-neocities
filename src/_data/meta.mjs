@@ -26,5 +26,7 @@ export default {
   favicon: {
     prod: "/assets/images/favicon.ico",
     dev: "/assets/images/meat.png"
-  }
+  },
+  updated: ["Digimon", "Pixel Clubs", "Graphics"],
+  new: ["Code Snippets"],
 }

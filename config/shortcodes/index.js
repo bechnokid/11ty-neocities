@@ -7,8 +7,8 @@ const icon = function (value, options = {}) {
     const iconAlt = (options.alt) ? ` alt="${options.alt}"` : '';
     if (options.cls) iconCls = ` class='${options.cls}'`;
     return `<img src='/assets/images/meat.png'${iconAlt}${iconCls}>`;
-  } else if (value == 'new') {
-    return `<img src='/assets/images/new.gif' alt=''>`;
+  } else if (value == 'new' || value == "updated") {
+    return `<img src='/assets/images/${value}.gif' alt='${value[0].toUpperCase() + value.substring(1)}'>`;
   } else {
     if (options.cls) iconCls = ` ${options.cls}`;
     return `<i class='ft-${value}${iconCls}'></i>`
@@ -121,11 +121,26 @@ const figure = function (children, src, options = {}) {
   const figcaptionCls = (options.figcaptionCls) ? ` class='${options.figcaptionCls}` : '';
   return `<figure${figureCls}${figureStyle}>${imgStr}<figcaption${figcaptionCls}>${caption}</figcaption></figure>`;
 }
-
+/* galleryBox params:
+  - children: content between {% galleryBox %} and {% endgalleryBox %}
+  - id (str): sets "id" attribute
+  - title (str): creates <h2> for title
+    - subTitle (str): creates <h3> for subTitle
+    - title and subTitle cannot both be present
+  - cls (str): sets class for .sidebar
+  - subCls (str): sets class for .content
+  - simple (boolean): determines if gallery box will be simple or a flex box
+  - markdown (boolean or object): determines if content will be in Markdown
+    - inline (boolean): if markdown is object, this determines whether or not to add <p> tags
+*/
 const galleryBox = function (children, params = {}) {
   let mainContent = children;
   const galleryId = (params.id) ? ` id="${params.id}"` : '';
   const title = (params.title) ? `<h2>${params.title}</h2>` : '';
+  const subTitle = (params.subTitle) ? `<h3>${params.subTitle}</h3>` : '';
+
+  if (title != "" && subTitle != "") return "<p>There cannot be both a title and a sub title.</p>";
+
   const mainCls = (params.cls) ? ` ${params.cls}` : '';
   let subCls = (params.simple) ? "" : " d-flex flex-wrap";
   if (params.subCls) subCls += ` ${params.subCls}`;
@@ -134,7 +149,7 @@ const galleryBox = function (children, params = {}) {
     mainContent = (params.markdown.inline) ? markdownLib.renderInline(children.trim()) : markdownLib.render(children.trim());
   }
 
-  return `<div${galleryId} class='sidebar${mainCls}'>${title}<div class='content p-3${subCls}'>${mainContent}</div></div>`;
+  return `${subTitle}<div${galleryId} class='sidebar${mainCls}'>${title}<div class='content p-3 position-relative${subCls}'>${mainContent}</div></div>`;
 }
 
 const convertToCode = function (children) {

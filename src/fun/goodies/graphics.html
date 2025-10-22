@@ -9,20 +9,23 @@ hasLinks: true
 flashing: true
 ---
 {% import 'components/goodies/macros.html' as goodies with context %}
+<div class="position-relative">
+  {% include "partials/loading-sidebar.html" %}
+  <h2>Graphics I Made</h2>
+  <section class="mine">
+    <p>No need to credit me for these! Use them however and wherever you'd like!</p>
+    {{ goodies.buttons(true) }}
+    {{ goodies.blinkies(true) }}
+    {{ goodies.honeycomb(true) }}
+    {{ goodies.stamps(true) }}
+  </section>
 
-<h2>Graphics I Collected</h2>
-<section class="mb-4 collected">
-  {{ goodies.webBadges() }}
-  {{ goodies.buttons('collected') }}
-  {{ goodies.blinkies('collected') }}
-  {{ goodies.stamps('collected') }}
-  {{ goodies.honeycomb() }}
-</section>
-
-<h2>Graphics I Made</h2>
-<section class="mine">
-  <p>No need to credit me for these! Use them however and wherever you'd like!</p>
-  {{ goodies.buttons('mine') }}
-  {{ goodies.blinkies('mine') }}
-  {{ goodies.stamps('mine') }}
-</section>
+  <h2>Graphics I Collected</h2>
+  <section class="mb-4 collected">
+    {{ goodies.webBadges() }}
+    {{ goodies.honeycomb() }}
+    {{ goodies.buttons() }}
+    {{ goodies.blinkies() }}
+    {{ goodies.stamps() }}
+  </section>
+</div>

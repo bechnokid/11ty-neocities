@@ -1,7 +1,7 @@
 ---
 title: Manifesto
 summary: "This page serves as a reminder to myself of the site's main purpose!"
-displayOrder:
+displayOrder: 2
 permalink: '/manifesto/index.html'
 ---
 

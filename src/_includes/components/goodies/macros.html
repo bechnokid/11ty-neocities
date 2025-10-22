@@ -1,59 +1,55 @@
-{% macro graphicsBox(arrId, arrCls, arrTitle, type = null) %}
-  {% set imgPath = "/assets/images/goodies/" + arrId + "/" %}
+{# graphicsBox params:
+  - title (str): title for gallery box
+  - cls (str): class name for gallery box
+  - slug (str, optional): slug for img path if different from arrCls
+  - mine (bool): determines if collection has graphics I made or not
+#}
+{% macro graphicsBox(title, cls, slug, mine) %}
+  {% set arrSlug = slug or cls %}
+  {% set imgPath = "/assets/images/goodies/" + arrSlug + "/" %}
   {% set subClsStr = 'justify-content-center flex-gap-1' %}
-  {% if arrId == 'blinkies' %}
-    {% set subCls = subClsStr + " freezeframe" %}
-  {% else %}
-    {% set subCls = subClsStr %}
-  {% endif %}
-  {% details { title: arrTitle, cls: arrCls, summaryCls: 'h3 details' } %}
-    {% galleryBox { subCls: subCls } %}
-      {% if type == "mine" %}
-        {% set goodiesArr = goodies.graphics[arrId]['mine'] %}
-      {% elif type == "collected" %}
-        {% set goodiesArr = goodies.graphics[arrId]['collected'] %}
-      {% else %}
-        {% set goodiesArr = goodies.graphics[arrId] %}
-      {% endif %}
-      {%- for item in goodiesArr %}
-        {% set itemSrc = imgPath + item.src %}
-        {% set itemOptions = { alt: item.alt, freezeframe: item.freezeframe, url: item.url } %}
-        <div>{% img itemSrc, itemOptions %}</div>
-      {% endfor %}
-    {% endgalleryBox %}
-  {% enddetails %}
+  {% set subCls = (subClsStr + " freezeframe") if cls == "blinkies" else subClsStr %}
+  {% set boxTitle = (title or cls) | title %}
+  {% galleryBox { subTitle: boxTitle, cls: cls, subCls: subCls } %}
+    {% set goodiesArr = goodies.graphics[arrSlug]['mine'] if mine
+      else (goodies.graphics[arrSlug]['collected'] if (goodies.graphics[arrSlug]['collected'] | length) > 0 else goodies.graphics[arrSlug]) %}
+    {%- for item in goodiesArr %}
+      {% set itemSrc = imgPath + item.src %}
+      {% set itemOptions = { alt: item.alt, freezeframe: item.freezeframe, url: item.url } %}
+      <div>{% img itemSrc, itemOptions %}</div>
+    {% endfor %}
+  {% endgalleryBox %}
 {% endmacro %}
 
 {% macro webBadges() %}
-  {{ graphicsBox('web_badges', 'web-badges', 'Web Badges') }}
+  {{ graphicsBox(slug = 'web_badges', cls = 'web-badges', title = 'Web Badges') }}
 {% endmacro %}
 
-{% macro buttons(type = null) %}
-  {{ graphicsBox('buttons', 'btn-88x31', '88x31 Buttons', type) }}
+{% macro buttons(mine = false) %}
+  {{ graphicsBox(slug = 'buttons', cls = 'btn-88x31', title = '88x31 Buttons', mine = mine) }}
 {% endmacro %}
 
-{% macro blinkies(type = null) %}
-  {{ graphicsBox('blinkies', 'blinkies', 'Blinkies', type) }}
+{% macro blinkies(mine = false) %}
+  {{ graphicsBox(cls = 'blinkies', mine = mine) }}
 {% endmacro %}
 
-{% macro stamps(type = null) %}
-  {{ graphicsBox('stamps', 'stamps', 'Stamps', type) }}
+{% macro stamps(mine = false) %}
+  {{ graphicsBox(cls = 'stamps', mine = mine) }}
 {% endmacro %}
 
-{% macro honeycomb() %}
-  {% set array = goodies.graphics.honeycomb %}
+{% macro honeycomb(mine = false) %}
+  {% set array = goodies.graphics.honeycomb.mine if mine else goodies.graphics.honeycomb.collected %}
   {% set imgPath = "/assets/images/goodies/honeycomb/" %}
-  {% details { title: "Honeycomb", cls: "honeycomb", summaryCls: 'h3 details' } %}
-    {% galleryBox { subCls: 'justify-content-center' } %}
-      {%- for col in array | batch(6) %}
-        <div class="comb-row d-flex w-100">
-          {%- for stamp in col %}
-            {% set itemSrc = imgPath + stamp.src %}
-            {% set itemOptions = { alt: stamp.alt, freezeframe: stamp.freezeframe, url: stamp.url } %}
-            <div>{% img itemSrc, itemOptions %}</div>
-          {% endfor %}
-        </div>
-      {% endfor %}
-    {% endgalleryBox %}
-  {% enddetails %}
+  {% set honeyAlt = "Hexagonal stamp " %}
+  {% galleryBox { subTitle: "Honeycomb", cls: "honeycomb", subCls: 'justify-content-center' } %}
+    {%- for col in array | batch(6) %}
+      <div class="comb-row d-flex w-100">
+        {%- for stamp in col %}
+          {% set itemSrc = imgPath + stamp.src %}
+          {% set itemOptions = { alt: honeyAlt + stamp.alt, freezeframe: stamp.freezeframe, url: stamp.url } %}
+          <div>{% img itemSrc, itemOptions %}</div>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  {% endgalleryBox %}
 {% endmacro %}

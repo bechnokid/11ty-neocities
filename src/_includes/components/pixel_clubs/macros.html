@@ -1,21 +1,40 @@
-{% macro basicClique(array, location, altText) %}
-  {% details { title: array.title, cls: 'mt-3 mb-4', summaryCls: 'h3 details', open: array.open } %}
-    {% galleryBox { subCls: 'justify-content-center cliques' + ( (" align-items-" + array.alignItems) if array.alignItems else " align-items-center") } %}
-      {%- for item in array.items %}
-        {% set options = { url: item.url, alt: (item.altText or "") + item.alt, freezeframe: item.freezeframe } %}
-        {% img location + item.src, options %}
+{% set imgPath = "/assets/images/goodies/cliques/" %}
+{# params:
+    - title: string (name of pixel club)
+    - slug: string (name of pixel club as slug)
+    - owner: string (owner of pixel club)
+    - url: string (pixel club main url)
+    - alt (optional): string (alt text for pixel club for easy dup)
+    - arr: array (array of items for pixel club)
+    - gap: int (gap between items)
+#}
+{% macro basic(params) %}
+  <section class="{{ params.slug }}">
+    <h2>{{ params.title }}</h2>
+    <p>Created by <a href="{{ params.url }}">{{ params.owner }}</a>!</p>
+    {% set gapCls = ("justify-content-lg-start justify-content-center flex-lg-gap-1 flex-gap-" + params.gap) if params.gap else "flex-gap-1" %}
+    <div class="d-flex flex-wrap py-3 {{ gapCls }}">
+      {%- for item in params.arr %}
+        {% set altText = (params.alt + item.alt) if params.alt else item.alt %}
+        {% set options = { url: item.url, alt: (altText or ""), freezeframe: item.freezeframe } %}
+        {% img imgPath + params.slug + "/" + item.src, options  %}
       {% endfor %}
-    {% endgalleryBox %}
-  {% enddetails %}
+    </div>
+    {% if params.slug == 'bottlecaps' %}
+      <p class="text-xs"><strong>Note: </strong>Digimon sprites are from the <a href="https://dmc-sprite-database.vercel.app/">Digimon / Pendulum Color Mod Sprite Database</a></p>
+    {% endif %}
+  </section>
 {% endmacro %}
 
-{% macro teaClique (array, location, altText) %}
-  {% details {title: array.title, cls:'mt-3 mb-4', summaryCls: 'h3 details', open: array.open} %}
-    <div class="d-flex flex-wrap justify-content-center cliques">
-      {%- for item in array.items %}
-        <div class="tea-section px-1 d-flex flex-column align-items-center">
-          {% set options = { url: item.url, alt: item.alt, freezeframe: item.freezeframe} %}
-          <div class="tea-img">{% img location + item.src, options %}</div>
+{% macro afternoonTea() %}
+  <section class="afternoon-tea">
+    <h2>Afternoon Tea</h2>
+    <p>Created by <a href="https://lostletters.neocities.org/afternoontea/">Lost Letters!</a></p>
+    <div class="d-flex flex-wrap justify-content-center flex-gap-2 py-3">
+      {% for item in goodies.pixel_clubs.tea %}
+        <div class="teacup">
+          {% set options = { url: item.url, alt: item.alt, freezeframe: item.freezeframe } %}
+          <div class="tea-img">{% img imgPath + "tea/" + item.src, options %}</div>
           <details class="tea-taste sidebar text-xs text-center p-1 w-100">
             <summary>Tastes like...</summary>
             {{ item.taste }}
@@ -23,42 +42,141 @@
         </div>
       {% endfor %}
     </div>
-  {% enddetails %}
+  </section>
 {% endmacro %}
 
-{% macro cdwClique(array, location, altText) %}
-  {% details { title: array.title, cls: 'mt-3 mb-4', summaryCls: 'h3 details', open: array.open } %}
-    {% galleryBox { subCls: 'justify-content-center align-items-center cliques' } %}
-      {%- for item in array.items %}
-        {% figure location + item.src, { noMarkdown: true, cls: 'border-0 text-center m-1 p-1', alt: item.desc, figCaptionCls: 'text-center', noLink: (false if item.url else true), imgLink: item.url } %}
-          <a href='{{ item.playlist }}'><button type="button" class="rounded-5 text-xs"><i class="fa fa-play"></i> Play</button></a>
+{% macro bottlecaps() %}
+  {{ basic({
+    title: "Bottlecaps",
+    slug: "bottlecaps",
+    owner: "Karla",
+    url: "https://miserabledolly.net/bottlecaps",
+    arr: goodies.pixel_clubs.bottlecaps,
+    gap: 5
+  }) }}
+{% endmacro %}
+
+{% macro cdw() %}
+  <section class="cdw">
+    <h2>CDwORLD</h2>
+    <p>Created by <a href="https://humanfinny.neocities.org/clubs/cd_world/cdworld_home">Finny</a>!</p>
+    <div class="d-flex justify-content-lg-start justify-content-center align-items-center flex-gap-4 flex-wrap py-lg-0 py-4">
+      {% for item in goodies.pixel_clubs.cdw %}
+        {% set options = {
+          noMarkdown: true,
+          cls: 'border-0 text-center m-1 p-1',
+          alt: "A pixel image of a CD album containing " + item.alt,
+          figCaptionCls: "text-center",
+          noLink: (false if item.url else true),
+          imgLink: item.url } %}
+        {% figure imgPath + "cdw/" + item.src, options %}
+          <a class="playlist button" href="{{ item.playlist }}">Play</a>
         {% endfigure %}
       {% endfor %}
-    {% endgalleryBox %}
-  {% enddetails %}
+    </div>
+  </section>
 {% endmacro %}
 
-{% macro yysClique(array, location, altText) %}
-  {% details { title: array.title, cls: 'mt-3 mb-4', summaryCls: 'h3 details', open: array.open } %}
-  <table class="yys-table">
+{% macro fizzyVendor() %}
+  {{ basic ({
+    title: "Fizzy Vendor",
+    slug: "fzv",
+    owner: "Fizzsea",
+    url: "https://fizzsea.neocities.org/extra/fizzyvendor",
+    arr: goodies.pixel_clubs.fzv,
+    gap: 5
+  }) }}
+{% endmacro %}
+
+{% macro kindnessRocks() %}
+  {{ basic ({
+    title: "Kindness Rocks Pixel Project",
+    slug: "kindnessrocks",
+    owner: "PixelRevival",
+    url: "https://pixelrevival.xyz/kindnessrocks/",
+    arr: goodies.pixel_clubs.kindnessrocks,
+    gap: 5
+  }) }}
+{% endmacro %}
+
+{% macro jarJams() %}
+  {{ basic ({
+    title: "Jar Jams",
+    slug: "jarjam",
+    owner: "Blissnet",
+    url: "https://blissnet.neocities.org/toybox/JJ",
+    alt: "A pixel jar ",
+    arr: goodies.pixel_clubs.jarjam,
+    gap: 5
+  }) }}
+{% endmacro %}
+
+{% macro stickerSheet(mine) %}
+  {% set stickerAlt = "A pixel sticker that resembles " %}
+  {% set stickerImgPath = imgPath + "/stickers/" %}
+  {% set stickerArr = goodies.pixel_clubs.stickers.mine if mine else goodies.pixel_clubs.stickers.collected %}
+  <div class="sticker-box {{ "mine" if mine else "collected"}}">
+    <div class="sticker-header d-flex justify-content-center align-items-center flex-gap- mt-lg-0 mt-4">
+      <img src="{{ stickerImgPath }}tinyleaf.gif" alt="" aria-hidden="true"><span aria-label="My Sticker {{ "Sheet" if mine else "Collection" }}">𝑀𝓎 𝒮𝓉𝒾𝒸𝓀𝑒𝓇 {{ "𝒮𝒽𝑒𝑒𝓉" if mine else "𝓒𝓸𝓵𝓵𝓮𝓬𝓽𝓲𝓸𝓷" }}</span><img src="{{ stickerImgPath }}tinyleaf.gif" alt="" aria-hidden="true">
+    </div>
+    <div class="sticker-body d-flex flex-wrap justify-content-center align-items-center flex-gap-2 p-2">
+      {% for item in stickerArr %}
+        {% set options = { alt: stickerAlt + item.alt, url: item.url, freezeframe: item.freezeframe } %}
+        {% img stickerImgPath + item.src, options %}
+      {% endfor %}
+    </div>
+    <div class="sticker-footer p-2">
+      {% img stickerImgPath + "logo.png", { alt: "Main link to the Sticker Sheet Club", url: "https://stickersheetclub.neocities.org/" } %}
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro stickers() %}
+  <section class="sticker-sheet-club">
+    <h2>Sticker Sheet Club</h2>
+    <p>Created by <a href="https://stickersheetclub.neocities.org/">RoseDryad</a>!</p>
+    <div class="d-flex flex-column align-items-center flex-gap-3">
+      {{ stickerSheet(true) }}
+      {{ stickerSheet() }}
+    </div>
+  </section>
+{% endmacro %}
+
+{% macro yysTable(mine) %}
+  {% if not mine %}<h3>Shopping Cart</h3>{% endif %}
+  <table>
     <thead>
       <tr>
-        {%- for name in array.columnNames %}
-          <th>{{ name | title }}</th>
-        {% endfor %}
+        <th>Item</th>
+        <th>Description</th>
+        {% if not mine %}<th>Purchased From</th>{% endif %}
       </tr>
     </thead>
     <tbody>
-      {%- for row in array.rows %}
-      <tr>
-        <td class='item text-center'><img {{'class=freezeframe' if row.freezeframe }} src="{{ location + row.src }}" alt="{{ (altText + row.alt) if altText else row.alt }}"></td>
-        <td>{{ row.desc }}</td>
-        {% if row.url %}
-        <td>{% link row.url, row.name %}</td>
-        {% endif %}
-      </tr>
+      {% set yysArr = goodies.pixel_clubs.yys.mine if mine else goodies.pixel_clubs.yys.cart %}
+      {% for item in yysArr %}
+        <tr>
+          <td class="text-center">
+            {% img imgPath + "yys/" + item.src, { alt: "A small pixel of " + item.alt, freezeframe: item.freezeframe} %}
+          </td>
+          <td>{{ item.desc }}</td>
+          {% if not mine %}
+            <td><a href="{{ item.url }}">{{ item.name }}</a></td>
+          {% endif %}
+        </tr>
       {% endfor %}
     </tbody>
   </table>
-  {% enddetails %}
+{% endmacro %}
+
+{% macro yys() %}
+  {% set yysAlt = "A small pixel of " %}
+  <section class="yys">
+    <h2>Yum-Yum Shoppe</h2>
+    <p>Originally created by <a href="https://web.archive.org/web/20030608043805/http://www.letsbefriends.org/yum-yum/">Lani</a>! (archived)</p>
+    <div class="d-flex flex-column align-items-center mt-lg-0 mt-4">
+      {{ yysTable(true) }}
+      {{ yysTable() }}
+    </div>
+  </section>
 {% endmacro %}
