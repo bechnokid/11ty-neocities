@@ -1,5 +1,5 @@
 {% macro navLink(linkUrl, linkTitle, options = {}) %}
-<li class="nav-link-item{{ (" " + options.cls) if options.cls }}"><a href="{{ linkUrl }}">{{ linkTitle }}</a> {% if options.flashing == true %}{% icon 'alert-triangle', { cls: "show" if linkTitle == "Webgarden" } %}{% endif %} {% if options.up %}{% icon 'updated' %}{% elif options.new %}{% icon 'new' %}{% endif %}</li>
+<li class="nav-link-item{{ (" " + options.cls) if options.cls }}"><a href="{{ linkUrl }}">{{ linkTitle }}</a> {% if options.flashing == true %}{% icon 'alert-triangle' %}{% endif %} {% if options.up %}{% icon 'updated' %}{% elif options.new %}{% icon 'new' %}{% endif %}</li>
 {% endmacro %}
 
 {% macro navSection(section, name = null) %}

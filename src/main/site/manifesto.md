@@ -26,7 +26,7 @@ I couldn't be happier and prouder of this small side project. :')
 The first version of this manifesto was more or less an exact copy of what others have said, "Corporate websites bad, personal websites good!" This statement is still something I abide by, but I would like to update this manifesto and further explain the goals of this website.
 
 - **This site will primarily serve as an archive for artwork I have created over the span of 20+ years.**
-  - It will take a while to upload everything, and I certainly don't have a quarter of the pencil sketches that are left behind on the other side of the country, but my intention is to inspire younger artists to continue drawing. I have seen a distressing trend of younger artists being pressured to be on the same level as a professional, which is not only unrealistic but also extremely damaging to their psyche.
+  - I sadly don't have *all* of my old art uploaded here, but my intention is to inspire younger artists to continue drawing. I have seen a distressing trend of younger artists being pressured to be on the same level as a professional, which is not only unrealistic but also extremely damaging to their psyche.
 
 - **This site will also never be removed, unless Neocities itself goes down, nor will it remove any art.**
   - Even if I find my art to be "old and cringey", I believe it's important to keep old art as a way to not only gauge one's progress, but also to remind others that no artist starts out perfect. The only art that will not be archived here are pieces that have been deemed harmful.
@@ -40,7 +40,7 @@ The first version of this manifesto was more or less an exact copy of what other
 - **This site will not encourage the entire removal of social media.**
   - For better or worse, social media allows others to communicate and form bonds just like they would outside the web. In fact, social media was how I met my wife and husband. Instead, this site will advocate for better ways of using these platforms, such as taking the time to respond to posts instead of just "liking" them.
 
-- **This site will not encourage the use if any kind of generative AI.**
+- **This site will not encourage the use of any kind of generative AI.**
   - This includes generative AI such as image generators (Diffusion, etc.) or chat bots (ChatGPT, etc.). I say "generative" in this case because I do not believe that *all* artificial intelligence is bad when used wisely (like helping doctors/surgeons, contractors, etc.). However, I cannot deny the fact that generative AI can limit the potential for creativity and the ability for users to think critically.
 
 ## Links

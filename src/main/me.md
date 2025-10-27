@@ -1,5 +1,5 @@
 ---
-title: About Me
+title: Personal
 subList: true
 layout: 'layouts/page-landing.html'
 pagination:

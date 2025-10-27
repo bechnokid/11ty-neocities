@@ -2,11 +2,11 @@ const templates = {
   text:
   {
     leftText: "",
-    centerIcon: "",
+    center: "",
     img: "",
     imgAlt: "",
     url: "",
-    rightText: ""
+    right: ""
   },
   button: {
     title: "",
@@ -21,52 +21,76 @@ export default {
   path: "/assets/images/goodies/cliques/",
   col1: [
     {
-      leftText: "aromatic",
-      centerIcon: "//",
-      url: "https://aromatic.wings.nu/",
-      rightText: "bánh bò"
+      left: {
+        url: "https://aromatic.wings.nu/",
+        text: "aromatic"
+      },
+      center: "//",
+      right: "bánh bò"
     },
     {
-      leftText: "<span class='rainbow clique'>rainbow</span>",
-      centerIcon: "🌈",
-      url: "https://cliqued.wings.nu/",
-      rightText: "<span class='rainbow fav'>Mint Green</span>"
+      left: {
+        cls: "rainbow clique",
+        text: "rainbow",
+        url: "https://cliqued.wings.nu/various.php"
+      },
+      center: "🌈",
+      right: {
+        cls: "rainbow fav",
+        text: "Mint Green"
+      }
     },
     {
-      leftText: "sanrio",
-      centerIcon: "♡",
-      url: "https://nanacore.neocities.org/cliques/sanrio",
-      rightText: "Big Challenges"
+      left: {
+        text: "sanrio",
+        url: "https://nanacore.neocities.org/cliques/sanrio"
+      },
+      center: "♡",
+      right: "Big Challenges"
     },
     {
-      leftText: "Mine!",
-      centerIcon: "//",
-      url: "https://cliques.windsprite.nu/mine/",
-      rightText: "Gilgamesh (FFV)"
+      left: {
+        url: "https://cliques.windsprite.nu/mine/",
+        text: "Mine!"
+      },
+      center: "//",
+      right: "Gilgamesh (FFV)"
     },
     {
-      leftText: "flowering",
-      centerIcon: "//",
-      url: "https://theflowering.neocities.org",
-      rightText: "hydrangea <a href='https://web.archive.org/web/20250621102731/http://jbrr.fc2web.com/material.html'><img class='ms-1 inline-img' src='/assets/images/goodies/cliques/hydrangea.gif' aria-hidden='true' alt=''></a>"
+      left: "flowers",
+      center: {
+        text: "ꕤ",
+        url: "https://reef.kingdra.net/"
+      },
+      right: "hydrangea <a href='https://web.archive.org/web/20250621102731/http://jbrr.fc2web.com/material.html'><img class='ms-1 inline-img' src='/assets/images/goodies/cliques/hydrangea.gif' aria-hidden='true' alt=''></a>"
     },
     {
-      leftText: 'Cutie Connection',
-      img: 'paw-purple.png',
-      url: 'https://lockheart.love/collections/cliques',
-      rightText: 'Dodogama'
+      left: {
+        text: 'Cutie Connection',
+        url: 'https://lockheart.love/collections/cliques',
+      },
+      center: {
+        img: 'paw-purple.png',
+      },
+      right: 'Dodogama'
     },
     {
-      leftText: "my jam!!",
-      url: "https://cliqued.wings.nu/",
-      img: "jam.png",
-      rightText: "Chaotic Love Revolution"
+      left: {
+        text: "my jam!!",
+        url: "https://cliqued.wings.nu/",
+      },
+      center: {
+        img: "jam.png",
+      },
+      right: "Chaotic Love Revolution"
     },
     {
-      leftText: "Nobility",
-      url: "https://sanguineroyal.com/com/nobility/",
-      centerIcon: "::",
-      rightText: "Emperor of Beets!"
+      left: {
+        text: "Nobility",
+        url: "https://sanguineroyal.com/com/nobility/",
+      },
+      center: "::",
+      right: "Emperor of Beets!"
     }
   ],
   col2: [
@@ -79,9 +103,9 @@ export default {
         img: "otp_dearest.png",
         alt: "A pink button with hearts on the side and text that says, 'OTP Dearest'",
         mobile: {
-          leftText: "OTP",
-          centerIcon: "::",
-          rightText: "Ryuuko Matoi & Senketsu"
+          left: "OTP",
+          center: "::",
+          right: "Ryuuko Matoi & Senketsu"
         }
       },
       {
@@ -92,9 +116,9 @@ export default {
         img: "caffeine-nation.png",
         alt: "A button that says, 'Caffeine NATION'",
         mobile: {
-          leftText: "caffeineNATION",
-          centerIcon: "☕︎",
-          rightText: "Light roast with creamer"
+          left: "caffeineNATION",
+          center: "☕︎",
+          right: "Light roast with creamer"
         }
       },
       {
@@ -103,9 +127,9 @@ export default {
         img: "aquarius.gif",
         alt: "A button with a star and text that says, 'Aquarius'",
         mobile: {
-          leftText: "celestial divine",
-          centerIcon: "//",
-          rightText: "aquarius"
+          left: "celestial divine",
+          center: "//",
+          right: "aquarius"
         }
       },
       {
@@ -114,9 +138,9 @@ export default {
         img: "shoujo.gif",
         alt: "A pink button with a floating heart and text that says, 'Shoujo'",
         mobile: {
-          leftText: "i love anime",
-          centerIcon: "//",
-          rightText: "shoujo"
+          left: "i love anime",
+          center: "//",
+          right: "shoujo"
         }
       },
       {
@@ -127,9 +151,9 @@ export default {
         img: "barbieland.gif",
         alt: "A white button with pink text that says, \"Barbieland\" with the Barbie logo on the side",
         mobile: {
-          leftText: "Barbieland",
-          centerIcon: "::",
-          rightText: "This Barbie is a Monster Hunter!"
+          left: "Barbieland",
+          center: "::",
+          right: "This Barbie is a Monster Hunter!"
         }
       },
       {
@@ -140,9 +164,9 @@ export default {
         img: 'miasma.gif',
         alt: 'White and purple text that reads, \"miasma\"',
         mobile: {
-          leftText: 'miasma',
-          centerIcon: '::',
-          rightText: "Christine from Stephen King's \"Christine\""
+          left: 'miasma',
+          center: '::',
+          right: "Christine from Stephen King's \"Christine\""
         }
       }
     ],
@@ -179,9 +203,9 @@ export default {
         img: "i-choose-you.gif",
         imgAlt: "The pokemon Chi-Yu",
         mobile: {
-          leftText: "I Choose You!",
-          centerIcon: "|",
-          rightText: "CHI-YU"
+          left: "I Choose You!",
+          center: "|",
+          right: "CHI-YU"
         }
       },
       {
@@ -202,9 +226,9 @@ export default {
         img: "x-gilgamesh.png",
         alt: "Gilgamesh as he appears in Final Fantasy Brave Exvius",
         mobile: {
-          leftText: "Exvius",
-          centerIcon: "//",
-          rightText: "Gilgamesh"
+          left: "Exvius",
+          center: "//",
+          right: "Gilgamesh"
         }
       },
       {
@@ -215,9 +239,9 @@ export default {
         img: "yojimbo.png",
         alt: "Yojimbo as he appears in Final Fantasy Brave Exvius",
         mobile: {
-          leftText: "Grand Summoning",
-          centerIcon: "::",
-          rightText: "Yojimbo"
+          left: "Grand Summoning",
+          center: "::",
+          right: "Yojimbo"
         }
       }
     ]

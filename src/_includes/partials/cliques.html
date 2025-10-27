@@ -1,13 +1,36 @@
-{% macro textClique (clique) %}
-<a href="{{ clique.url }}">{{ clique.leftText | safe }}</a>
-{% if clique.img %}
-  <img class="mx-2" src="{{ cliques.path + clique.img }}" aria-hidden="true" alt="">
-{% elif clique.centerIcon %}
-  <span class='mx-2'>{{ clique.centerIcon }}</span>
-{% else %}
-  &nbsp;
-{% endif %}
-{{ clique.rightText | safe }}
+{% set imgPath = "/assets/images/goodies/cliques/" %}
+
+{% macro textClique(clique) %}
+  {# Left text #}
+  {% set leftUrl = clique.left.url or clique.leftUrl %}
+  {% set leftText = clique.left.text or clique.leftText or clique.left %}
+  {% if leftUrl %}
+    <a href="{{ leftUrl }}">
+      <span {% if clique.left.cls %} class="{{ clique.left.cls }}"{% endif %}>
+        {{ leftText }}
+      </span>
+    </a>
+  {% else %}
+    <span {% if clique.left.cls %}class="{{ clique.left.cls }}"{% endif %}>
+      {{ leftText | safe }}
+    </span>
+  {% endif %}
+  {# Center text (or image) #}
+  {% if clique.center.img %}
+    {% decoImg src = imgPath + clique.center.img, cls = 'mx-2' %}
+  {% elif clique.center.url %}
+    <a href="{{ clique.center.url }}" class="mx-2{{ (" " + clique.center.cls) if clique.center.cls else "" }}">
+      {{ clique.center.text or clique.center }}
+    </a>
+  {% else %}
+    <span class="mx-2{{ (" " + clique.center.cls) if clique.center.cls else "" }}">
+      {{ clique.center }}
+    </span>
+  {% endif %}
+  {# Right text #}
+  <span {% if clique.right.cls %} class="{{ clique.right.cls }}"{% endif %}>
+    {{ clique.right.text or clique.rightText or clique.right | safe }}
+  </span>
 {% endmacro %}
 
 <div class="row g-0">
@@ -43,7 +66,9 @@
             {%- for clique in row %}
               {% if clique.mobile %}
                 {% set mobile = clique.mobile %}
-                <div class="d-flex justify-content-center align-items-center">{{ textClique (mobile) }}</div>
+                <div class="d-flex justify-content-center align-items-center">
+                  {{ textClique ({ leftText: mobile.left, leftUrl: clique.url, center: mobile.center, right: mobile.right }) }}
+                </div>
               {% endif %}
             {% endfor %}
           {% endfor %}

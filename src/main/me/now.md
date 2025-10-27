@@ -1,28 +1,38 @@
 ---
 title: 'Bech-NOW'
 shortTitle: 'Now'
+layout: 'layouts/now.html'
 displayOrder: 2
 permalink: '/now/index.html'
 description: A [now](https://nownownow.com/about) page that describes what Bechno Kid is up to.
 summary: What's Bechno Kid been up to?
 noScroll: true
+date: "2025-10-27"
 ---
+## {{ date | monthDayYear}}
 
-**Last updated:** August 6th, 2025
+### General
 
-## What am I up to?
+- I think the reason why I might have felt "off" the past couple of weeks might have been because of seasonal depression! I keep forgetting it's an actual thing that people can suffer from lol. I'm doing a lot better now, just in time for Halloween!
+- Still in the same situation as I have been at work for a while now, made slightly worse no thanks to the shutdown affecting everything for everyone everywhere! It's a good thing that I've saved enough money for rainy days like this!
 
-- Due to some...things going on at my work that are out of my control, I am temporarily working from home! I've been enjoying it so far, but I don't want to get too used to this lifestyle! {% emote 'embarrassed' %} I need to make sure I get enough sun and that I am diligent in any sort of workout routine!
-- I learned how to make the perfect hard-boiled eggs, thanks to Sam! They're so good!! With how expensive eggs have become, they've become a nice treat to have every now and then.
+### Playing
 
-## Playing
+- [Digimon Story Time Stranger](https://www.bandainamcoent.com/games/digimon-story-time-stranger)
+  - This is quite honestly the best Digimon game I've ever played!! I made so much art for the game that I hope to share someday. For now, I'm just going to continue gushing over my new ship. {% emote 'love' %}
+  - I might write a review on this someday if I have enough spoons to write...but the spoons usually end up getting used for life, drawing, and games. {% emote 'embarrassed' %}
 - [Monster Hunter Wilds](https://www.monsterhunter.com/wilds/en-us/)
-  - Participating in the Flamefete Festival has been so fun!! Sam and I are still looking for miniature crowns for Rey Dau and Gore Magala, as well as both large and mini crowns for Lagiacrus! They've been really difficult to find despite it being exponentially easier to find crowns in this game!
+  - The Dreamspell Festival has started recently! I'm not a huge fan of the music in the hub, the new song from the Diva, nor the new barrel bombs that have a random projectile in the Barrel Bowling mini-game, but it's still been a lot of fun!
+  - The new armor sets look great, and I'm so, **so** glad that armors are no longer gender-locked! I can finally look like a spooky pumpkin ghost!!
+  - Arch-tempered Nu Udra kicked my butt pretty good! I got the male's layered armor and the Palico layered weapon before deciding I didn't want to hunt the fire octopus anymore lol.
 
-## Watching
-- King of the Hill, Season 14
-- Dandadan, Season 2
+### Watching
 
-## Listening to
-- Various artists - [[1 hour] Battle at the Big Bridge](https://www.youtube.com/watch?v=jI2DDEGO9ek)
-- Yoshinori Nakuamura - [Battle at the Big Bridge #SQkawaii Sounds](https://song.link/y/SsVU-YrRavw)
+- Dr. STONE, season 3
+- Digimon Beatbreak
+- Digimon Savers
+
+### Listening to
+
+- Super db - [Back to Me](https://song.link/y/QKYgwieUZzc)
+- wherever you are - [reche](https://song.link/y/2HRCixpw8Ko)

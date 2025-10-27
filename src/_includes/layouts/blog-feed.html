@@ -6,6 +6,7 @@ noScroll: true
 {% set pageHeaderTitle = title %}
 {% set pageHeaderSummary = content | markdownifyInline | safe %}
 {% set postListItems = pagination.items %}
+{% set lastUpdated = (collections.rssFeed | reverse)[0].date | monthDayYear %}
 
 {% block css %}
   <link rel="stylesheet" href="{{ meta.cssUrl }}/blog.css" type="text/css" media="all">
@@ -26,11 +27,15 @@ noScroll: true
       </div>
     {% else %}
       {%- for item in postListItems %}
+      {% set blogDate = item.date | monthDayYear %}
       <div class="blog row py-1">
-        <div class="col-lg-8 col-7"><a href="{{ item.url }}">
-          {{ item.data.title | markdownifyInline | safe }}
-        </a></div>
-        <div class="col-lg-4 col-5">{{ item.data.date | monthDayYear }}</div>
+        <div class="col-lg-8 col-7">
+          <a href="{{ item.url }}">{{ item.data.title | markdownifyInline | safe }}</a>
+          {% if blogDate == lastUpdated %}
+            {% icon 'new' %}
+          {% endif %}
+        </div>
+        <div class="col-lg-4 col-5">{{ blogDate }}</div>
       </div>
       {% endfor %}
     {% endif %}

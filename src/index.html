@@ -6,7 +6,7 @@ splashImg: '/assets/images/splash.png'
 splashImgAlt: "Splash image for Bechno Kid's Hideout that links to the home page"
 ---
 {% set feedItems = collections.rssFeed | reverse %}
-{% set lastUpdated = feedItems[0].data.date | monDayYear %}
+{% set lastUpdated = feedItems[0].date | monDayYear %}
 <!DOCTYPE html>
 <html lang={{ meta.lang }} data-theme="light">
   <head>

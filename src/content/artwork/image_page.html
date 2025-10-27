@@ -8,7 +8,7 @@ layout: layouts/basic.html
 eleventyExcludeFromCollections: true
 eleventyComputed:
   title: "{{ picture.title | safe }}"
-  summary: "{% if picture.date %}{{ picture.date | monDayYear }}{% endif %}"
+  summary: "{% if picture.date %}{{ picture.date | monthDayYear }}{% endif %}"
   permalink: "/art/{{ picture.gallery | slugify }}/{{ picture.title | slugify }}/"
   noScroll: "{{ picture.scroll != 'TRUE' }}"
 ---

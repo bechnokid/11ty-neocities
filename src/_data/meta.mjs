@@ -27,6 +27,21 @@ export default {
     prod: "/assets/images/favicon.ico",
     dev: "/assets/images/meat.png"
   },
-  updated: ["Digimon", "Pixel Clubs", "Graphics"],
-  new: ["Code Snippets"],
+  updated: ["Now", "Quiz Results"],
+  new: [],
+  emotes: [
+    "angry",
+    "calm",
+    "confused",
+    "dead",
+    "embarrassed",
+    "excited",
+    "happy",
+    "love",
+    "sad",
+    "shock",
+    "sleep",
+    "wink",
+    "worried",
+  ],
 }

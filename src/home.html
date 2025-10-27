@@ -20,7 +20,7 @@ Webrings and fanlistings can be found in [/joined](/joined)!
 <script src="{{ meta.jsUrl }}/microblog.js"></script>
   <div class="content">
     {{ contentBlock | markdownify | safe }}
-    <div class="h3 intro-links text-center mt-4">
+    <div class="intro-links text-center mt-4">
       {%- for link in meta.introLinks %}
         {% link link.url, link.name %}{% if not loop.last %}<span class="mx-2">✦</span>{% endif %}
       {% endfor %}

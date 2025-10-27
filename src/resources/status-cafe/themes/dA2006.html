@@ -33,7 +33,7 @@ The below HTML code can be copy and pasted directly into the "About" section.
 
 <section>
   <h2>HTML</h2>
-  {% details { title: "(click to show/hide code)", summaryCls: "details h3" } %}
+  {% details { title: "(click to show/hide code)", summaryCls: "details h4" } %}
   {% convertToHtml %}
 ```html
 <div class='deviant-banner'>
@@ -171,7 +171,7 @@ The below HTML code can be copy and pasted directly into the "About" section.
 <section>
   <h2>CSS</h2>
   <p><strong>IMPORTANT:</strong> Remember to put the below CSS code in a <code>style</code> tag in the "About" section!</p>
-  {% details { title: "(click to show/hide code)", summaryCls: "details h3"} %}
+  {% details { title: "(click to show/hide code)", summaryCls: "details h4"} %}
   {% convertToHtml %}
 ```css
 :root {
@@ -506,31 +506,30 @@ a:hover {
   {% endconvertToHtml %}
   {% enddetails %}
 
-  {% details { title: "Variables", summaryCls: "details h4"} %}
-  <p class="mb-4">Below is a list of variables in the CSS code that you <em>should</em> change!</p>
-  <table class="text-sm">
+<h4>Variables</h4>
+<p class="mb-4">Below is a list of variables in the CSS code that you <em>should</em> change!</p>
+<table class="text-sm">
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  {%- for item in varsArr.cssVars %}
     <tr>
-      <th>Name</th>
-      <th>Description</th>
+      <td><strong>{{ item.name }}</strong></td>
+      {% set itemBlock %}
+        <p>{{ (item.desc or "Self-explanatory!") | markdownifyInline | safe }}</p>
+        {% if item.list %}
+          <div class="table-list mb-3">
+            <ul>
+              {%- for li in item.list %}
+                <li>{{ li | markdownifyInline | safe }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      {% endset %}
+      <td>{{ itemBlock | safe }}</td>
     </tr>
-    {%- for item in varsArr.cssVars %}
-      <tr>
-        <td><strong>{{ item.name }}</strong></td>
-        {% set itemBlock %}
-          <p>{{ (item.desc or "Self-explanatory!") | markdownifyInline | safe }}</p>
-          {% if item.list %}
-            <div class="table-list mb-3">
-              <ul>
-                {%- for li in item.list %}
-                  <li>{{ li | markdownifyInline | safe }}</li>
-                {% endfor %}
-              </ul>
-            </div>
-          {% endif %}
-        {% endset %}
-        <td>{{ itemBlock | safe }}</td>
-      </tr>
-    {% endfor %}
-  </table>
-  {% enddetails %}
+  {% endfor %}
+</table>
 </section>

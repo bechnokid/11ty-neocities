@@ -1,5 +1,4 @@
 const { markdownLib } = require('../plugins/');
-const chars = require('../variables.js');
 
 const icon = function (value, options = {}) {
   let iconCls = '';
@@ -73,6 +72,12 @@ const img = function(src, options = {}) {
   }
   return resultString;
 };
+
+const decoImg = function(params) {
+  if (!params.src) return "No img src provided.";
+  const cls = (params.cls)? ` class='${params.cls}'` : '';
+  return `<img src=${params.src}${cls} aria-hidden="true">`;
+}
 
 // Paired
 const tooltip = function(children, params) {
@@ -152,12 +157,6 @@ const galleryBox = function (children, params = {}) {
   return `${subTitle}<div${galleryId} class='sidebar${mainCls}'>${title}<div class='content p-3 position-relative${subCls}'>${mainContent}</div></div>`;
 }
 
-const convertToCode = function (children) {
-  let content = children;
-  content = content.replace(/[a-zA-Z]/g, m => isLowerCase(m) ? chars[m] : chars[m.toLowerCase()].toUpperCase());
-  return content;
-}
-
 const convertToHtml = function(children) {
   return markdownLib.render(children.trim());
 }
@@ -176,6 +175,7 @@ function isLowerCase(str) {
 }
 
 module.exports = {
+  decoImg,
   icon,
   emoticon,
   emote,
@@ -186,6 +186,5 @@ module.exports = {
   details,
   galleryBox,
   convertToHtml,
-  convertToCode,
   artCaption
 }

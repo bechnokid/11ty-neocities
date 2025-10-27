@@ -2,9 +2,9 @@
 title: 'Quiz Results'
 summary: What better way is there to get to know someone than to look at their quiz results? ...ok, there are other ways, but look at these cool quizzes!
 displayOrder: 4
-permalink: '/quiz_results/index.html'
+permalink: '/quiz-results/index.html'
 ---
-{% set imgPath = meta.imgUrl + "/about/quiz_results/" %}
+{% set imgPath = meta.imgUrl + "/about/quiz-results/" %}
 <div class="d-flex flex-wrap justify-content-center align-items-center quiz-results">
   {%- for item in about.quiz_results %}
     {% if item.title %}
@@ -21,7 +21,7 @@ permalink: '/quiz_results/index.html'
           </div>
         {% elif item.alignment == 'rows' %}
           <div class="text-center"><img src="{{ imgPath + item.img }}" alt="{{ item.alt }}"></div>
-          <p class="font-weight-bold text-center mt-0 mb-1"><a href='{{ item.url }}'>{{ item.title }}</a></p>
+          <p class="font-weight-bold text-center my-1"><a href='{{ item.url }}'>{{ item.title }}</a></p>
           <p class="text-xs m-0">{{ item.desc | markdownifyInline | safe }}</p>
         {% endif %}
       </div>

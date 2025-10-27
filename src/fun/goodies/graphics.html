@@ -11,8 +11,8 @@ flashing: true
 {% import 'components/goodies/macros.html' as goodies with context %}
 <div class="position-relative">
   {% include "partials/loading-sidebar.html" %}
-  <h2>Graphics I Made</h2>
   <section class="mine">
+    <h2>Graphics I Made</h2>
     <p>No need to credit me for these! Use them however and wherever you'd like!</p>
     {{ goodies.buttons(true) }}
     {{ goodies.blinkies(true) }}
@@ -20,8 +20,8 @@ flashing: true
     {{ goodies.stamps(true) }}
   </section>
 
-  <h2>Graphics I Collected</h2>
   <section class="mb-4 collected">
+    <h2>Graphics I Collected</h2>
     {{ goodies.webBadges() }}
     {{ goodies.honeycomb() }}
     {{ goodies.buttons() }}

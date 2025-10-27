@@ -1,0 +1,13 @@
+{% extends 'layouts/basic.html' %}
+
+{% block content %}
+  {{ super() }}
+  <section class="older-entries">
+    {% for entry in collections.now %}
+      <details>
+        <summary class="h2">{{ entry.date | monthDayYear }}</summary>
+        {{ entry.content | safe }}
+      </details>
+    {% endfor %}
+  </section>
+{% endblock content %}

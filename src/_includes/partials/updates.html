@@ -3,7 +3,7 @@
   <div class="update-content p-2">
     {% set feedItems = collections.rssFeed | reverse %}
     {%- for update in feedItems | limit(3) %}
-      <strong>{{ update.data.date | monDayYear }}</strong>
+      <strong>{{ update.date | monDayYear }}</strong>
       <ul>
         {%- for item in update.data.updateContent %}
         <li>{{ item | markdownifyInline | safe }}</li>

@@ -5,9 +5,9 @@ const brokenLinksPlugin = require("eleventy-plugin-broken-links");
 const pluginTOC = require('eleventy-plugin-toc');
 
 const {
-  date, dayOfMonth, monthDayYear, monDayYear, w3DateFilter,
-  markdownify, markdownifyInline, sortCollectionByDisplayOrder,
-  limit, useCode, getPageLinks
+  date, dayOfMonth, monthDayYear, monDayYear, markdownify,
+  markdownifyInline, sortCollectionByDisplayOrder, limit,
+  getPageLinks
 } = require('./config/filters');
 
 const {
@@ -16,9 +16,8 @@ const {
 } = require('./config/collections');
 
 const {
-  icon, emoticon, emote, img, link, tooltip, figure,
-  details, galleryBox, convertToHtml, convertToCode,
-  artCaption
+  decoImg, icon, emoticon, emote, img, link, tooltip, figure,
+  details, galleryBox, convertToHtml, artCaption
 } = require('./config/shortcodes');
 
 const { markdownLib, htmlmin, csvParse } = require('./config/plugins/');
@@ -45,6 +44,7 @@ module.exports = async function(eleventyConfig){
   eleventyConfig.addDataExtension('csv', csvParse);
 
   // Shortcodes
+  eleventyConfig.addShortcode('decoImg', decoImg);
   eleventyConfig.addShortcode('icon', icon);
   eleventyConfig.addShortcode('emoticon', emoticon);
   eleventyConfig.addShortcode('emote', emote);
@@ -58,7 +58,6 @@ module.exports = async function(eleventyConfig){
   eleventyConfig.addPairedShortcode('details', details);
   eleventyConfig.addPairedShortcode('galleryBox', galleryBox);
   eleventyConfig.addPairedShortcode('convertToHtml', convertToHtml);
-  eleventyConfig.addPairedShortcode('convertToCode', convertToCode);
 
   // Transform
   eleventyConfig.addTransform("htmlmin", htmlmin);
@@ -68,12 +67,10 @@ module.exports = async function(eleventyConfig){
   eleventyConfig.addFilter('dayOfMonth', dayOfMonth);
   eleventyConfig.addFilter('monthDayYear', monthDayYear);
   eleventyConfig.addFilter('monDayYear', monDayYear);
-  eleventyConfig.addFilter('w3DateFilter', w3DateFilter);
   eleventyConfig.addFilter("markdownify", markdownify);
   eleventyConfig.addFilter("markdownifyInline", markdownifyInline);
   eleventyConfig.addFilter('sortCollectionByDisplayOrder', sortCollectionByDisplayOrder);
   eleventyConfig.addFilter('getPageLinks', getPageLinks);
-  eleventyConfig.addFilter('useCode', useCode);
   eleventyConfig.addNunjucksFilter('limit', limit);
 
   // Collections
@@ -81,12 +78,21 @@ module.exports = async function(eleventyConfig){
   eleventyConfig.addCollection('blog', blogPosts);
   eleventyConfig.addCollection('statusCafeThemes', statusCafeThemes);
   eleventyConfig.addCollection('pocketBishies', pocketBishies);
-  eleventyConfig.addCollection('artPages', artPages);
+  if (env != 'dev') {
+    eleventyConfig.addCollection('artPages', artPages);
+  }
 
   // Plugins
   eleventyConfig.addPlugin(rssPlugin);
   eleventyConfig.addPlugin(syntaxHighlight);
-  eleventyConfig.addPlugin(IdAttributePlugin);
+  eleventyConfig.addPlugin(IdAttributePlugin, {
+    filter: function({ page }) {
+      const pageUrl = page.inputPath;
+      if (pageUrl.includes('now') && !pageUrl.endsWith("index.html")) {
+        return false;
+      }
+    }
+  });
   eleventyConfig.addPlugin(pluginTOC, { tags: ['h2'] });
   if (env === 'prod') eleventyConfig.addPlugin(brokenLinksPlugin, { loggingLevel: 1 });
 
