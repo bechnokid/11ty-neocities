@@ -35,4 +35,4 @@ date: "2025-10-27"
 ### Listening to
 
 - Super db - [Back to Me](https://song.link/y/QKYgwieUZzc)
-- wherever you are - [reche](https://song.link/y/2HRCixpw8Ko)
+- reche - [wherever you are](https://song.link/y/2HRCixpw8Ko)

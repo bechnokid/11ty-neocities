@@ -1,29 +1,42 @@
-const writingPages = collection => {
-  return collection.getFilteredByTag('writing');
-}
+const env = process.env.ELEVENTY_ENV
 
 const blogPosts = collection => {
-  return collection.getFilteredByTag('blog').reverse();
+  const posts = collection.getFilteredByTag('blog').reverse();
+  return (env === "dev") ? posts.slice(0, 5) : posts;
 }
 
-const statusCafeThemes = collection => {
-  return collection.getFilteredByTag('statusCafeTheme');
+const gallery = collection => {
+  const galleryData = collection.getAll()[0].data.art.data;
+  return (env === "dev") ? Array(galleryData[0]) : galleryData;
 }
 
 const artPages = collection => {
   let artPages = [];
-  const galleries = Object.entries(collection.getAll()[0].data.art.galleries)
+  const galleries = collection.getAll()[0].data.art.galleries;
 
-  for (let [key, items] of galleries) {
-    items.forEach((currentImg, i, arr) => {
-      currentImg.gallery = key;
-      currentImg.baseUrl = `/assets/images/art/${key}/`;
-      if (i) currentImg.prevImg = arr[i - 1].title;
-      if (i + 1 != arr.length) currentImg.nextImg = arr[i + 1].title;
-      artPages.push(currentImg);
-    });
-  };
+  if (env === "dev") {
+    const key = "digimon"
+    const artData = galleries[key];
+    artData.forEach((currentImg, i, arr) => {
+      artPages.push(setCurrentImg(currentImg, i, arr, key));
+    })
+  } else {
+    for (let [key, items] of Object.entries(galleries)) {
+      items.forEach((currentImg, i, arr) => {
+        artPages.push(setCurrentImg(currentImg, i, arr, key));
+      });
+    };
+  }
   return artPages;
+}
+
+function setCurrentImg(currentImg, i, arr, key) {
+  let resultImg = currentImg;
+  resultImg.gallery = key;
+  resultImg.baseUrl = `/assets/images/art/${key}/`;
+  if (i) resultImg.prevImg = arr[i - 1].title;
+  if (i + 1 != arr.length) resultImg.nextImg = arr[i + 1].title;
+  return resultImg;
 }
 
 const pocketBishies = collection => {
@@ -32,9 +45,8 @@ const pocketBishies = collection => {
 }
 
 module.exports = {
-  writingPages,
   blogPosts,
-  statusCafeThemes,
+  gallery,
   artPages,
   pocketBishies,
 }

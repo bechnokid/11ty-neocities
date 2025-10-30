@@ -5,14 +5,13 @@ const brokenLinksPlugin = require("eleventy-plugin-broken-links");
 const pluginTOC = require('eleventy-plugin-toc');
 
 const {
-  date, dayOfMonth, monthDayYear, monDayYear, markdownify,
+  dayOfMonth, monthDayYear, monDayYear, markdownify,
   markdownifyInline, sortCollectionByDisplayOrder, limit,
   getPageLinks
 } = require('./config/filters');
 
 const {
-  writingPages, blogPosts, artPages, statusCafeThemes,
-  pocketBishies
+  blogPosts, artPages, pocketBishies, gallery,
 } = require('./config/collections');
 
 const {
@@ -33,12 +32,6 @@ module.exports = async function(eleventyConfig){
   eleventyConfig.addPassthroughCopy(`${assetsPath}/fonts/`);
   eleventyConfig.addPassthroughCopy(`${assetsPath}/stylesheets/`);
   eleventyConfig.addPassthroughCopy(`${assetsPath}/javascript/`);
-
-  // Ignores
-  if (env === 'dev') {
-    eleventyConfig.ignores.add('./src/content/artwork/');
-    eleventyConfig.ignores.add('./src/content/writing/blog/');
-  }
 
   // Data Extensions
   eleventyConfig.addDataExtension('csv', csvParse);
@@ -63,7 +56,6 @@ module.exports = async function(eleventyConfig){
   eleventyConfig.addTransform("htmlmin", htmlmin);
 
   // Filters
-  eleventyConfig.addFilter('date', date);
   eleventyConfig.addFilter('dayOfMonth', dayOfMonth);
   eleventyConfig.addFilter('monthDayYear', monthDayYear);
   eleventyConfig.addFilter('monDayYear', monDayYear);
@@ -74,13 +66,10 @@ module.exports = async function(eleventyConfig){
   eleventyConfig.addNunjucksFilter('limit', limit);
 
   // Collections
-  eleventyConfig.addCollection('writing', writingPages);
   eleventyConfig.addCollection('blog', blogPosts);
-  eleventyConfig.addCollection('statusCafeThemes', statusCafeThemes);
   eleventyConfig.addCollection('pocketBishies', pocketBishies);
-  if (env != 'dev') {
-    eleventyConfig.addCollection('artPages', artPages);
-  }
+  eleventyConfig.addCollection('gallery', gallery);
+  eleventyConfig.addCollection('artPages', artPages);
 
   // Plugins
   eleventyConfig.addPlugin(rssPlugin);

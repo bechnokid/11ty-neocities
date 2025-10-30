@@ -198,14 +198,14 @@ export default {
           url: "http://digistar.db-destiny.net/rpixels/index2.html"
         },
         {
-          src: "wee-strange.gif",
-          alt: "Doctor Strange",
-          url: "https://pixels.elfwink.net/objects.php"
-        },
-        {
           src: "toki_dolce.gif",
           alt: "An animated Dolce the Unicorno",
           url: "https://www.lejlart.com/apple.html"
+        },
+        {
+          src: "wee-strange.gif",
+          alt: "Doctor Strange",
+          url: "https://pixels.elfwink.net/objects.php"
         },
         {
           src: "tamadachi3.png",

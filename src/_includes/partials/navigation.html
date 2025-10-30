@@ -9,7 +9,7 @@
     {%- for link in collections[section] | sortCollectionByDisplayOrder %}
       {% if link.data.wip %}
         <li class="text-muted">{{ link.data.title }} (WIP)</li>
-      {% elif link.data.subList and (link.data.pagination.items.length <= 5) %}
+      {% elif link.data.subList and link.data.pagination.items.length <= 5 and link.data.title != "Artwork" %}
         <li class="desktop">
           {% set sublinkItems = link.data.pagination.items | getPageLinks %}
           <details data-num-of-items="{{ sublinkItems.length }}"{{ " open" if page.url in sublinkItems }}>

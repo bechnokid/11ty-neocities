@@ -1,12 +1,6 @@
 const { format } = require('date-fns');
 const { markdownLib } = require('../plugins/');
 
-// Converts date string into Date object
-const date = value => {
-  const dateObject =  parseDate(value);
-  return dateObject;
-}
-
 // Formats the date into Day of Month Year
 const dayOfMonth = value => {
   const dateObject = (value instanceof Date) ? value.setHours(value.getHours() + 4) : parseDate(value);
@@ -66,7 +60,6 @@ function parseDate (value, timeValue = null) {
 }
 
 module.exports = {
-  date,
   dayOfMonth,
   monthDayYear,
   monDayYear,
