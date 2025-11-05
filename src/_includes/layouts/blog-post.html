@@ -6,8 +6,7 @@ permalink: '/writing/blog/{{ page.fileSlug }}.html'
 
 {% set pageHeaderTitle = title | markdownifyInline | safe %}
 {% set pageHeaderSummary %}
-  <time class="text-primary" datetime="{{ date }}">{{ date | monthDayYear }}</time>
-  {% if encode %}<p><strong>NOTE</strong>: The following journal entry is written in an undecipherable code.</p>{% endif %}
+  <time class="text-primary" datetime="{{ date | local }}">{{ date | monthDayYear }}</time>
   {% if summary %}<p>{{ summary | markdownifyInline | safe }}</p>{% endif %}
 {% endset %}
 

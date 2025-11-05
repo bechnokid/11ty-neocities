@@ -157,16 +157,16 @@ export default {
         }
       },
       {
-        title: "Miasma",
-        tooltip: "Fav fictional villain: Christine from Stephen King's Christine",
-        id: 'miasma',
-        url: "https://miasma.dual-weekend.com/",
-        img: 'miasma.gif',
-        alt: 'White and purple text that reads, \"miasma\"',
+        title: "Stardaze",
+        tooltip: "Wezen",
+        id: 'stardaze',
+        url: "https://clique.aelysia.net/star/",
+        img: 'stardaze.gif',
+        alt: 'A pink white and purple starry button that says, \"Stardaze\"',
         mobile: {
-          left: 'miasma',
-          center: '::',
-          right: "Christine from Stephen King's \"Christine\""
+          left: 'Stardaze',
+          center: '☆',
+          right: "Wezen"
         }
       }
     ],

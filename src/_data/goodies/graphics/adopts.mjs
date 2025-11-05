@@ -1,11 +1,10 @@
-const toAdd = [];
-const template =
-{
-  src: "",
-  alt: "",
-  url: ""
-}
-;
+const toAdd = [
+  {
+    src: "",
+    alt: "",
+    url: "",
+  },
+];
 export default {
   imgSrc: "/assets/images/goodies/adopts/",
   mine: [
@@ -135,7 +134,7 @@ export default {
   ],
   interactive: [
     { name: "Lil&apos; Guy", src: "https://tamanotchi.world/i/3706", url: "https://tamanotchi.world/i/3706", alt: "Lil Guy from TamaNOTchi" },
-    { name: "Nibblet", src: "https://wobble.town/visit/1155/wobble.gif", url: "https://wobble.town/visit/1155", alt: "Nibblet from Wobble Town" }
+    { name: "Nibblet", src: "https://wobble.town/visit/1155/wobble.gif", url: "https://wobble.town/visit/1155", alt: "Nibblet from Wobble Town", freezeframe: true }
   ],
   adopted: [
     {
@@ -145,6 +144,11 @@ export default {
           src: "auron2.gif",
           alt: "Auron as he appears in Kingdom Hearts II",
           url: "http://sweetskingdom.web.fc2.com/dot_icon/index.html"
+        },
+        {
+          src: "hotdog.gif",
+          alt: "A hot hog with streaks of ketchup and mustard on it",
+          url: "https://lastsecret.net/bitmapdreams/",
         },
         {
           src: "cupcake_peachnuts.png",
@@ -165,7 +169,13 @@ export default {
         {
           src: 'lacroixhydrangea.gif',
           alt: 'A hydrangea plant in a La Croix can',
-          url: 'https://www.lejlart.com/apple.html'
+          url: 'https://www.lejlart.com/apple.html',
+          freezeframe: true
+        },
+        {
+          src: "hydrangea.gif",
+          alt: "A bushel of hydrangea flowers",
+          url: "https://lastsecret.net/bitmapdreams/"
         },
         {
           src: "vash.gif",
@@ -200,7 +210,13 @@ export default {
         {
           src: "toki_dolce.gif",
           alt: "An animated Dolce the Unicorno",
-          url: "https://www.lejlart.com/apple.html"
+          url: "https://www.lejlart.com/apple.html",
+          freezeframe: true
+        },
+        {
+          src: "bobateapeach.gif",
+          alt: "A cup of pink peach-flavored boba tea",
+          url: "https://www.jellyfishforest.com/duckyfeet/",
         },
         {
           src: "wee-strange.gif",
@@ -230,7 +246,8 @@ export default {
         {
           src: "negg_angelic.gif",
           alt: "Angelic Negg from Neopets",
-          url: "https://www.lejlart.com/apple.html"
+          url: "https://www.lejlart.com/apple.html",
+          freezeframe: true
         },
         {
           src: "maca_strawb.png",
@@ -277,6 +294,17 @@ export default {
           alt: 'A blue nudibranch with orange protrusions on its body',
           url: 'https://newlambda.neocities.org/stuff/adopt'
         },
+        {
+          src: "tamaplanet.png",
+          alt: "A green sleeping tamagotchi with some drool in its mouth. It also has a cloud in the upper right",
+          url: "https://lostletters.neocities.org/toybox/",
+        },
+        {
+          src: "great-white.gif",
+          alt: "A great white shark",
+          url: "http://whimsical.heartette.net/",
+          freezeframe: true
+        },
       ]
     },
     {
@@ -321,6 +349,11 @@ export default {
           src: "chao.gif",
           alt: "A Normal adult Chao from Sonic Adventure",
           url: "https://qrunchy.space/foryou.html"
+        },
+        {
+          src: "smilies.png",
+          alt: "A set of various smilies of different sizes",
+          url: "https://itsyaboypedro.neocities.org/adoptables"
         },
       ]
     }

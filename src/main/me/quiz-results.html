@@ -15,13 +15,13 @@ permalink: '/quiz-results/index.html'
               <img src="{{ imgPath + item.img }}" alt="{{ item.alt }}">
             </div>
             <div class="col-8 ps-2">
-              <p class="font-weight-bold text-center mt-0 mb-1"><a href='{{ item.url }}'>{{ item.title }}</a></p>
+              <p class="text-center mt-0 mb-1"><a href='{{ item.url }}'>{{ item.title }}</a></p>
               <p class="text-xs m-0">{{ item.desc | markdownifyInline | safe }}</p>
             </div>
           </div>
         {% elif item.alignment == 'rows' %}
           <div class="text-center"><img src="{{ imgPath + item.img }}" alt="{{ item.alt }}"></div>
-          <p class="font-weight-bold text-center my-1"><a href='{{ item.url }}'>{{ item.title }}</a></p>
+          <p class="text-center my-2"><a href='{{ item.url }}'>{{ item.title }}</a></p>
           <p class="text-xs m-0">{{ item.desc | markdownifyInline | safe }}</p>
         {% endif %}
       </div>

@@ -6,20 +6,13 @@ export default {
       url: '/sitemap'
     },
     {
+      name: 'RSS Feed',
+      url: '/feed.xml',
+    },
+    {
       name: 'Guestbook',
       url: '/guestbook'
     },
-    {
-      name: 'GitHub',
-      url: 'https://github.com/bechnokid/neocities',
-    },
-    {
-      img: 'rss.svg',
-      url: '/feed.xml',
-      cls: 'mx-2 d-flex rss-link ms-1',
-      alt: 'RSS icon that leads to RSS feed',
-      imgCls: 'img-svg'
-    }
   ],
   buttons: [
     {

@@ -3,11 +3,11 @@ export default {
   chars: {
     title: "Characters That Are Almost Like Me IRL",
     items: [
-      { name: "Miss Kobayashi", img: "kobayashi.png" },
-      { name: "Crona Gorgon", img: "crona.png" },
-      { name: "Senketsu", img: "senketsu.png" },
-      { name: "Ami Mizuno", img: "ami.png" },
-      { name: "Dr. Brennan", img: "bones.png" }
+      { name: "Miss Kobayashi", series: "Miss Kobayashi's Dragon Maid", img: "kobayashi.png" },
+      { name: "Crona Gorgon", series: "Soul Eater", img: "crona.png" },
+      { name: "Senketsu", series: "Kill la Kill", img: "senketsu.png" },
+      { name: "Ami Mizuno", series: "Sailor Moon", img: "ami.png" },
+      { name: "Dr. Simmons", series: "Digimon Story Time Stranger", img: "simmons.png" }
     ]
   },
   monsters: {
@@ -18,6 +18,16 @@ export default {
       { name: "Nu Udra", img: "nuudra.png" },
       { name: "Shara Ishvalda", img: "shara.png" },
       { name: "Espinas", img: "espinas.png" }
+    ]
+  },
+  digimon: {
+    title: "Favorite Digimon",
+    items: [
+      { name: "Gallantmon", img: "gallantmon.png" },
+      { name: "Hagurumon", img: "hagurumon.png" },
+      { name: "Pumpkinmon", img: "pumpkinmon.png" },
+      { name: "Stingmon", img: "stingmon.png" },
+      { name: "Neptunemon", img: "neptunemon.png" },
     ]
   }
 }

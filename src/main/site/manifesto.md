@@ -32,7 +32,7 @@ The first version of this manifesto was more or less an exact copy of what other
   - Even if I find my art to be "old and cringey", I believe it's important to keep old art as a way to not only gauge one's progress, but also to remind others that no artist starts out perfect. The only art that will not be archived here are pieces that have been deemed harmful.
 
 - **This site will not be used to make any money.**
-  - This site will not or ever have any ads unless it is to promote other personal websites (for free, mind you). While I do take commissions, the time that they are open is very few and far in-between as I already have a full-time job.
+  - No ads or sponsors will ever be seen on this site. After all, this [isn't my side hustle](https://starbreaker.org/grimoire/entries/not-my-side-hustle).
 
 - **This site will not be used to promote hate, harassment, or discrimination of any kind.**
   - This one sounds pretty self-explanatory, but in this day and age, it's become common for self-righteous users to have a twisted sense of justice and send death threats to those with views that don't align with theirs.

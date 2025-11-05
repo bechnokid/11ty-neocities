@@ -77,7 +77,8 @@ I have a Bachelor's degree in Computer Science and somehow managed to land in th
   <div class='d-flex flex-wrap justify-content-lg-between justify-content-center px-lg-5 px-0 text-center text-xs favs'>
     {%- for item in favsArr.items %}
       <div class='sidebar m-lg-0 m-2'>
-        {% img about.favs.path + item.img, { alt: item.name } %}
+        {% set altText = (item.name + " from " + item.series) if item.series else item.name %}
+        {% img about.favs.path + item.img, { alt: altText } %}
         <p>{{ item.name | markdownifyInline | safe }}</p>
       </div>
     {% endfor %}
@@ -86,3 +87,4 @@ I have a Bachelor's degree in Computer Science and somehow managed to land in th
 
 {{ favsBox(about.favs.chars) }}
 {{ favsBox(about.favs.monsters) }}
+{{ favsBox(about.favs.digimon) }}

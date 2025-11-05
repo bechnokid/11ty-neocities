@@ -1,36 +1,37 @@
 {% set imgPath = "/assets/images/goodies/cliques/" %}
 
+{% macro cliqueText(text, options = {}) %}
+  {% set safeText = text | safe %}
+  {% if options.url %}
+    <a href="{{ options.url }}" {% if options.cls %}class="{{ options.cls | trim }}"{% endif %}>
+      {{ safeText }}
+    </a>
+  {% elif options.cls != undefined %}
+    <span class="{{ options.cls }}">{{ safeText }}</span>
+  {% else %}
+    {{ safeText }}
+  {% endif %}
+{% endmacro %}
+
 {% macro textClique(clique) %}
   {# Left text #}
   {% set leftUrl = clique.left.url or clique.leftUrl %}
   {% set leftText = clique.left.text or clique.leftText or clique.left %}
-  {% if leftUrl %}
-    <a href="{{ leftUrl }}">
-      <span {% if clique.left.cls %} class="{{ clique.left.cls }}"{% endif %}>
-        {{ leftText }}
-      </span>
-    </a>
-  {% else %}
-    <span {% if clique.left.cls %}class="{{ clique.left.cls }}"{% endif %}>
-      {{ leftText | safe }}
-    </span>
-  {% endif %}
+  {{ cliqueText(leftText, { url: leftUrl, cls: clique.left.cls }) }}
+
   {# Center text (or image) #}
+  {% set centerUrl = clique.center.url or clique.centerUrl %}
+  {% set centerText = clique.center.text or clique.centerText or clique.center %}
   {% if clique.center.img %}
     {% decoImg src = imgPath + clique.center.img, cls = 'mx-2' %}
-  {% elif clique.center.url %}
-    <a href="{{ clique.center.url }}" class="mx-2{{ (" " + clique.center.cls) if clique.center.cls else "" }}">
-      {{ clique.center.text or clique.center }}
-    </a>
   {% else %}
-    <span class="mx-2{{ (" " + clique.center.cls) if clique.center.cls else "" }}">
-      {{ clique.center }}
-    </span>
+    {{ cliqueText(centerText, { url: centerUrl, cls: 'mx-2 ' + clique.center.cls }) }}
   {% endif %}
+
   {# Right text #}
-  <span {% if clique.right.cls %} class="{{ clique.right.cls }}"{% endif %}>
-    {{ clique.right.text or clique.rightText or clique.right | safe }}
-  </span>
+  {% set rightUrl = clique.right.url or clique.rightUrl %}
+  {% set rightText = clique.right.text or clique.rightText or clique.right %}
+  {{ cliqueText(rightText, { url: rightUrl, cls: clique.right.cls }) }}
 {% endmacro %}
 
 <div class="row g-0">

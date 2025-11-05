@@ -25,7 +25,13 @@
       <div class="bg-body main desktop">
         <div class="row g-0">
           <nav id="nav-main" class="col-lg-2">
-            <div class="sidebar pb-1">{% include "partials/navigation.html" %}</div>
+            <div class="sidebar pb-1 mb-lg-2">{% include "partials/navigation.html" %}</div>
+            {% if freezeframe %}
+              <div class="freeze-btns desktop d-lg-block d-none">
+                <button type="button" class="button play-gif">Play GIFs</button>
+                <button type="button" class="button stop-gif">Stop GIFs</button>
+              </div>
+            {% endif %}
           </nav>
           <main id="main-content" class="offset-lg-2 col{{ "-lg-10" if title !="Home" }} px-2 px-lg-4 py-lg-3 position-relative" tabindex="-1">
             {% include 'partials/theme-switcher.html' %}

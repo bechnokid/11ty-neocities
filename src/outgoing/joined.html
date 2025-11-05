@@ -7,6 +7,7 @@ displayOrder: 2
 permalink: '/joined/index.html'
 ---
 {% import 'components/joined/macros.html' as webrings with context %}
+
 <script src="/assets/javascript/webring.js" type="text/javascript"></script>
 <div class="position-relative">
   {% include "partials/loading-sidebar.html" %}
@@ -43,7 +44,7 @@ permalink: '/joined/index.html'
         {{ webrings.neocreatives() }}
         {{ webrings.cuddler() }}
         {%- for button in outgoing.joined.webringBtns %}
-          {% img "/assets/images/webrings/" + button.src, { url: button.url, alt: "Button for the &quot;" + button.name + "&quot; webring"} %}
+          {% img "/assets/images/joined/webrings/" + button.src, { url: button.url, alt: "Button for the &quot;" + button.name + "&quot; webring"} %}
         {% endfor %}
       </div>
       <div class="webring-widget-container mt-4">
@@ -70,7 +71,7 @@ permalink: '/joined/index.html'
     </div>
   {% endgalleryBox %}
 
-  {% set assetLink = '/assets/images/about/fanlistings/' %}
+  {% set assetLink = '/assets/images/joined/fanlistings/' %}
   {% galleryBox { title: "Fanlistings", subCls: 'fanlistings pt-0'} %}
     {%- for key, value in outgoing.joined.fanlistings %}
       <div class="w-100">

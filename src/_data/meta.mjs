@@ -27,7 +27,7 @@ export default {
     prod: "/assets/images/favicon.ico",
     dev: "/assets/images/meat.png"
   },
-  updated: ["Now", "Quiz Results"],
+  updated: ["Digimon", "Anime"],
   new: [],
   emotes: [
     "angry",

@@ -30,4 +30,4 @@ I realized that this didn't need to be the case after coming across some other i
   - Even with JS disabled, warnings will be implemented for flashing and blinking GIFs
 - **Absolutely no autoplay**
 
-This site will frequently be tested in multiple sizes and resolutions. I might still miss some things, but I will do my best to fix them if pointed out, so don't be afraid to let me know via email via **bechnokid[at]yahoo.com**!
+This site will frequently be tested in multiple sizes and resolutions. I might still miss some things, but I will do my best to fix them if pointed out, so don't be afraid to let me know via email via **bechnokid@yahoo.com**!

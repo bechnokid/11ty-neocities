@@ -13,7 +13,7 @@ flashing: true
 {% figure previewImg, { cls: 'figure-center theme-preview text-sm mb-4', alt: 'Preview image for the deviantART 2006 theme for Status Cafe' } %}
 Preview (Yes, this really is StatusCafe!)
 {% endfigure %}
-{% convertToHtml %}
+{% renderTemplate "md" %}
 This is the first Status Cafe theme I ever created! I got a few compliments on it, so I thought I'd share it with whoever would like to relive the old days of DeviantART!
 
 I might do the other iterations of the site if I have the inspiration to do so, but I hope you enjoy this one! If you are having issues of any kind or notice any errors in the code, please feel free to email me at **bechnokid[at]yahoo&period;com!**
@@ -29,12 +29,12 @@ All I ask is that you don't claim that you made it all on your own!
 I also highly recommend saving the image links (found in the HTML and CSS code) on your own server! It's unlikely that I'll move or delete the image links, but better safe than sorry!
 
 The below HTML code can be copy and pasted directly into the "About" section.
-{% endconvertToHtml %}
+{% endrenderTemplate %}
 
 <section>
   <h2>HTML</h2>
   {% details { title: "(click to show/hide code)", summaryCls: "details h4" } %}
-  {% convertToHtml %}
+  {% renderTemplate "md" %}
 ```html
 <div class='deviant-banner'>
   <div class='deviant-container'>
@@ -123,7 +123,7 @@ The below HTML code can be copy and pasted directly into the "About" section.
   </div>
   <!-- END CREDIT BLOCK -->
 ```
-  {% endconvertToHtml %}
+  {% endrenderTemplate %}
   {% enddetails %}
   <p>Below is a list of variables in the HTML code that you can change, provided with descriptions of their original function.</p>
   <p>Since this is just a theme, you can change the variables however you'd like. :3</p>
@@ -172,7 +172,7 @@ The below HTML code can be copy and pasted directly into the "About" section.
   <h2>CSS</h2>
   <p><strong>IMPORTANT:</strong> Remember to put the below CSS code in a <code>style</code> tag in the "About" section!</p>
   {% details { title: "(click to show/hide code)", summaryCls: "details h4"} %}
-  {% convertToHtml %}
+  {% renderTemplate "md" %}
 ```css
 :root {
   --bg-primary: #a7afa7;
@@ -503,7 +503,7 @@ a:hover {
   white-space: pre-wrap;
 }
 ```
-  {% endconvertToHtml %}
+  {% endrenderTemplate %}
   {% enddetails %}
 
 <h4>Variables</h4>

@@ -8,52 +8,63 @@ flashing: true
 ---
 {% set imgPath = "/assets/images/links/" %}
 
-<section>
-  <h2>Fellow Netizens</h2>
-  {% convertToHtml %}
-  Here are some sites whose webmasters are friends, affiliates, or people who I think are just cool in general!
-
-  If you already added my button to your site, let me know and I'll add you here!
-  {% endconvertToHtml %}
-</section>
-
 <div class="position-relative">
   {% include "partials/loading-sidebar.html" %}
-  {% galleryBox { cls: 'my-4', subCls: 'netizens justify-content-center align-items-center' } %}
+  <section>
+    <h2>Find Me Elsewhere</h2>
+    <div class="d-flex flex-wrap flex-gap-2 justify-content-center p-3">
+      {% for item in about.socials %}
+        {% img "/assets/images/about/socials/" + item.src, { alt: "Link to Bechno Kid's " + item.name, url: item.url } %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <section>
+    <h2>Fellow Netizens</h2>
+    {% renderTemplate "md" %}
+    Here are some sites whose webmasters are friends, affiliates, or people who I think are just cool in general!
+
+    If you already added my button to your site, [let me know](/guestbook) and I'll add you here!
+    {% endrenderTemplate %}
+  </section>
+
+  <section>
+    <h3>Link-Only</h3>
+    <ul class="inline-list">
+      {% for item in outgoing.links.no_btns %}
+        <li>{% link item.url, item.name %}{% if not loop.last %}<span class="mx-2 text-secondary">✦</span>{% endif %}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% galleryBox { cls: 'my-4 mx-2', subCls: 'netizens justify-content-center align-items-center' } %}
     {%- for item in outgoing.links.netizens %}
-      {% if item.noBtn %}
-        <a class="no-button-container text-xs" href="{{ item.url }}">
-          <span>{{ item.name }}</span>
-        </a>
-      {% else %}
-        {% img imgPath + item.src, { url: item.url, alt: "Link button for " + item.name, urlCls: 'm-1 link-btn', freezeframe: item.freezeframe } %}
-      {% endif %}
+      {% img imgPath + item.src, { url: item.url, alt: "Link button for " + item.name, urlCls: 'm-1 link-btn', freezeframe: item.freezeframe } %}
     {% endfor %}
   {% endgalleryBox %}
-</div>
 
-<section>
-  <h2>Favorite Resources</h2>
-  <table class='resources'>
-    {%- for item in outgoing.links.resources %}
-      <tr>
-        <td><a href='{{ item.url }}'>{{ item.name }}</a></td>
-        <td class='td-desc'>{{ item.desc }}</td>
-      </tr>
+  <section>
+    <h2>Favorite Resources</h2>
+    <table class='resources'>
+      {%- for item in outgoing.links.resources %}
+        <tr>
+          <td><a href='{{ item.url }}'>{{ item.name }}</a></td>
+          <td class='td-desc'>{{ item.desc }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  </section>
+
+  <h2>Made Possible By</h2>
+  <ul>
+    {%- for link in outgoing.links.credits %}
+    <li>
+      {% if link.url %}
+        {% link link.url, (link.name | markdownifyInline | safe) %}
+      {% else %}
+        {{ link.name | markdownifyInline | safe }}
+      {% endif %}
+      {% if link.desc %}({{ link.desc | markdownifyInline | safe }}){% endif %}
+    </li>
     {% endfor %}
-  </table>
-</section>
-
-<h2>Made Possible By</h2>
-<ul>
-  {%- for link in outgoing.links.credits %}
-  <li>
-    {% if link.url %}
-      {% link link.url, (link.name | markdownifyInline | safe) %}
-    {% else %}
-      {{ link.name | markdownifyInline | safe }}
-    {% endif %}
-    {% if link.desc %}({{ link.desc }}){% endif %}
-  </li>
-  {% endfor %}
-</ul>
+  </ul>
+</div>

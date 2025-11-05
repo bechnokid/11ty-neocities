@@ -1,4 +1,4 @@
-{% set imgPath = "/assets/images/webrings/" %}
+{% set imgPath = "/assets/images/joined/webrings" %}
 {% set altMain = "Main link to the " %}
 {% set altPrev = "Go to the previous site in the " %}
 {% set altNext = "Go to the next site in the " %}
@@ -67,9 +67,9 @@
 {% macro acing() %}
   {% set webringParams = {
     name: 'Acing the Internet',
-    src: imgPath + 'ace.png',
+    src: imgPath + '/ace.png',
     url: 'https://acingtheinternet.netlify.app',
-    nav: imgPath + 'ace_nav.gif',
+    nav: imgPath + '/ace_nav.gif',
     urlPrev: 'https://acingtheinternet.netlify.app/bechnokid/previous',
     urlNext: 'https://acingtheinternet.netlify.app/bechnokid/next'
   } %}
@@ -118,7 +118,7 @@
 {% macro cuddler() %}
   {% set webringParams = {
     name: 'cuddler',
-    src: imgPath + 'cuddler.png',
+    src: imgPath + '/cuddler.png',
     url: 'https://cuddler-webring.netlify.app',
     button: true
   } %}
@@ -137,7 +137,7 @@
         <div class="webring-prev">
         <a class='wr-prev' href=""><img class="arrow-image" src="{{ url }}/arrow.png" alt="{{ altPrev + name }} webring"></a>
         </div>
-        <img class="webring-image" src="https://raw.githubusercontent.com/bechnokid/neocities/refs/heads/master/public/assets/images/webrings/doodlering.png">
+        <img class="webring-image" src="{{ imgPath }}/doodlering.png">
         <div class="webring-next">
         <a class='wr-next' href=""><img class="arrow-image" src="{{ url }}/arrow.png" alt="{{ altNext + name }} webring"></a>
         </div>
@@ -161,9 +161,9 @@
     id: 'gfdkris',
     name: 'GFDKWTFAW',
     url: 'https://fabstarotcorner.neocities.org/webring/',
-    imgIndex: imgPath + "gfdkris_main.png",
-    imgNav: imgPath + "gfdkris_nav.png",
-    imgRand: imgPath + "gfdkris_rand.png"
+    imgIndex: imgPath + "/gfdkris_main.png",
+    imgNav: imgPath + "/gfdkris_nav.png",
+    imgRand: imgPath + "/gfdkris_rand.png"
   } %}
   {{ widget(webringParams) }}
   <script type='text/javascript' src='{{ webringParams.url }}onionring-variables.js'></script>
@@ -193,9 +193,9 @@
 {% macro ladies() %}
   {% set webringParams = {
     name: 'Ladies of the Link',
-    src: imgPath + 'ladiesofthelink.gif',
+    src: imgPath + '/ladiesofthelink.gif',
     url: 'https://ladiesofthe.link/',
-    nav: imgPath + 'ladiesofthelink_nav.png',
+    nav: imgPath + '/ladiesofthelink_nav.png',
     urlPrev: 'https://webri.ng/webring/ladiesofthelinks/previous?via=https://bechnokid.neocities.org',
     urlNext: 'https://webri.ng/webring/ladiesofthelinks/next?via=https://bechnokid.neocities.org'
   } %}
@@ -205,7 +205,7 @@
 {% macro neocreatives() %}
   {% set webringParams = {
     name: 'NeoCreatives',
-    src: imgPath + 'neocreatives.png',
+    src: imgPath + '/neocreatives.png',
     url: 'https://neocreatives.byethost5.com',
     button: true
   } %}
@@ -216,17 +216,17 @@
   {% set url = 'https://silly-beanz.neocities.org/personaring' %}
   <div id="p-ring">
     <div class="ring-container">
-      <img src="https://raw.githubusercontent.com/bechnokid/neocities/refs/heads/master/public/assets/images/webrings/personaring.png" alt="" class="sona">
+      <img src="{{ imgPath }}/personaring.png" alt="" class="sona outline" aria-hidden="true">
       <div class="persona-ring">
-        <div class="name-tag">
+        <div class="name-tag outline">
           <div class="head"><span style="font-size: 25px">HELLO!</span><br>my name is:</div>
           <div class="namediv">Bechno</div>
           <div class="webring-info">part of the <a href="{{ url }}/home" title="join???">persona ring</a> :)</div>
           </div>
           <div class="direct">
-            <a class='wr-prev' href=""><img src="https://file.garden/Z2NdXxm2rXGo4wAJ/personaring/L%20arrow.png" alt="{{ altPrev + name }} webring" class="prev"></a>
-            <a class='wr-rand' href=""><img src="https://file.garden/Z2NdXxm2rXGo4wAJ/personaring/smiley.png" alt="{{ altRand + name }} webring" class="rand"></a>
-            <a class='wr-next' href=""><img src="https://file.garden/Z2NdXxm2rXGo4wAJ/personaring/L%20arrow.png" alt="{{ altNext + name }} webring" class="img-next"></a>
+            <a class='wr-prev' href=""><img src="https://file.garden/Z2NdXxm2rXGo4wAJ/personaring/L%20arrow.png" alt="{{ altPrev + name }} webring" class="prev black-text"></a>
+            <a class='wr-rand' href=""><img src="https://file.garden/Z2NdXxm2rXGo4wAJ/personaring/smiley.png" alt="{{ altRand + name }} webring" class="rand black-text"></a>
+            <a class='wr-next' href=""><img src="https://file.garden/Z2NdXxm2rXGo4wAJ/personaring/L%20arrow.png" alt="{{ altNext + name }} webring" class="img-next black-text"></a>
         </div>
       </div>
     </div>
@@ -238,9 +238,9 @@
 {% macro queercoded() %}
   {% set webringParams = {
     name: 'Queer Coded',
-    src: imgPath + 'queercoded.png',
+    src: imgPath + '/queercoded.png',
     url: 'https://neptune.monster/webring/',
-    nav: imgPath + 'queercoded_nav.png',
+    nav: imgPath + '/queercoded_nav.png',
     urlPrev: 'https://neptune.monster/webring/22.html',
     urlNext: 'https://neptune.monster/webring/24.html'
   } %}
@@ -251,9 +251,9 @@
   {% set webringParams = {
     id: 'rayman',
     name: 'Rayman Ring',
-    src: imgPath + 'rayman.png',
+    src: imgPath + '/rayman.png',
     url: 'https://edgyrabbid.neocities.org/Raymanring.HTML',
-    nav: imgPath + 'rayman_nav.png',
+    nav: imgPath + '/rayman_nav.png',
     urlPrev: 'https://lapislabel.net',
     urlNext: 'https://nathanntan.neocities.org/'
   } %}
@@ -331,7 +331,7 @@
   <div class="jelly-world p-2">
     <div>
       <p><a href="/">Bechno Kid</a> has bonded with <strong>Jelly Well-Done Steak!</strong></p>
-      <img class='my-1' src="/assets/images/webrings/jw_steak.png" alt="{{ altMain }}Jelly World" title="Mmm...so tasty!">
+      <img class='my-1' src="{{ imgPath }}/jw_steak.png" alt="{{ altMain }}Jelly World" title="Mmm...so tasty!">
       <p class="jelly-world-desc">This jelly has the ability to boost your health and stamina! Mmm...so tasty!</p>
     </div>
     <div class="jelly-world-nav my-3 mb-2">
@@ -360,8 +360,8 @@
   {% set widgetUrl = 'https://dokodemo.neocities.org/pokering' %}
   {% set imgContainer = widgetUrl + '/ringwalker.png' %}
   {% set imgBox = widgetUrl + '/box_overlay.png' %}
-  {% set imgBg = '/assets/images/webrings/pokering_bg.png' %}
-  {% set imgPkmn = '/assets/images/webrings/pokering_splashy.png' %}
+  {% set imgBg = imgPath + '/pokering_bg.png' %}
+  {% set imgPkmn = imgPath + '/pokering_splashy.png' %}
   <div class="pokering position-relative">
     <img src="https://dokodemo.neocities.org/pokering/ringwalker.png" class="pokering-walker position-relative" usemap="#pokering" alt="">
     <map name="pokering">

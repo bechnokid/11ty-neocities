@@ -3,9 +3,10 @@ const rssPlugin = require('@11ty/eleventy-plugin-rss');
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const brokenLinksPlugin = require("eleventy-plugin-broken-links");
 const pluginTOC = require('eleventy-plugin-toc');
+const { EleventyPluginCodeDemo } = require('eleventy-plugin-code-demo');
 
 const {
-  dayOfMonth, monthDayYear, monDayYear, markdownify,
+  local, dayOfMonth, monthDayYear, monDayYear, markdownify,
   markdownifyInline, sortCollectionByDisplayOrder, limit,
   getPageLinks
 } = require('./config/filters');
@@ -16,7 +17,7 @@ const {
 
 const {
   decoImg, icon, emoticon, emote, img, link, tooltip, figure,
-  details, galleryBox, convertToHtml, artCaption
+  details, galleryBox, artCaption
 } = require('./config/shortcodes');
 
 const { markdownLib, htmlmin, csvParse } = require('./config/plugins/');
@@ -25,7 +26,7 @@ const TEMPLATE_ENGINE = 'njk';
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 module.exports = async function(eleventyConfig){
-  const { IdAttributePlugin } = await import("@11ty/eleventy");
+  const { IdAttributePlugin, RenderPlugin } = await import("@11ty/eleventy");
   const assetsPath = './src/assets'
 
   eleventyConfig.addPassthroughCopy(`${assetsPath}/images/`);
@@ -50,12 +51,12 @@ module.exports = async function(eleventyConfig){
   eleventyConfig.addPairedShortcode('tooltip', tooltip);
   eleventyConfig.addPairedShortcode('details', details);
   eleventyConfig.addPairedShortcode('galleryBox', galleryBox);
-  eleventyConfig.addPairedShortcode('convertToHtml', convertToHtml);
 
   // Transform
   eleventyConfig.addTransform("htmlmin", htmlmin);
 
   // Filters
+  eleventyConfig.addFilter('local', local);
   eleventyConfig.addFilter('dayOfMonth', dayOfMonth);
   eleventyConfig.addFilter('monthDayYear', monthDayYear);
   eleventyConfig.addFilter('monDayYear', monDayYear);
@@ -73,6 +74,7 @@ module.exports = async function(eleventyConfig){
 
   // Plugins
   eleventyConfig.addPlugin(rssPlugin);
+  eleventyConfig.addPlugin(RenderPlugin);
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(IdAttributePlugin, {
     filter: function({ page }) {
@@ -83,6 +85,24 @@ module.exports = async function(eleventyConfig){
     }
   });
   eleventyConfig.addPlugin(pluginTOC, { tags: ['h2'] });
+  eleventyConfig.addPlugin(EleventyPluginCodeDemo, {
+    name: 'codeDemo',
+    renderDocument: ({ html, css, js }) => `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <style>${css}</style>
+      </head>
+      <body>
+        ${html}
+        <script>${js}</script>
+      </body>
+    </html>`,
+    iframeAttributes: {
+      style: 'width: 100%;',
+      frameborder: '0',
+    }
+  })
   if (env === 'prod') eleventyConfig.addPlugin(brokenLinksPlugin, { loggingLevel: 1 });
 
   eleventyConfig.setLibrary('md', markdownLib);

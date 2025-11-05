@@ -157,21 +157,12 @@ const galleryBox = function (children, params = {}) {
   return `${subTitle}<div${galleryId} class='sidebar${mainCls}'>${title}<div class='content p-3 position-relative${subCls}'>${mainContent}</div></div>`;
 }
 
-const convertToHtml = function(children) {
-  return markdownLib.render(children.trim());
-}
-
 const artCaption = function(caption, params = {}){
   const ogDate = (params.originalDate) ? `From ${params.originalDate}.` : '';
   const ogCaption = params.originalCaption ? `<blockquote class='mb-4'>${markdownLib.renderInline(params.originalCaption.replaceAll("\\n", "\n").trim())}</blockquote>` : '';
   const transcript =  params.transcript ? `<details id='transcript'><summary class='h3 text-primary'>Transcript</summary><p class='my-1 ms-4'>${markdownLib.renderInline(params.transcript.replaceAll("\\n", "\n").trim())}</p></details>` : '';
   const cap = caption ? markdownLib.renderInline(caption.replaceAll("\\n", "\n").trim()) : '';
   return `${ogDate}${ogCaption} ${cap}${transcript}`;
-}
-
-// helper functions
-function isLowerCase(str) {
-  return str === str.toLowerCase() && str !== str.toUpperCase();
 }
 
 module.exports = {
@@ -185,6 +176,5 @@ module.exports = {
   figure,
   details,
   galleryBox,
-  convertToHtml,
   artCaption
 }

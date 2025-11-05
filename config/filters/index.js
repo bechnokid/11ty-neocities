@@ -1,6 +1,11 @@
 const { format } = require('date-fns');
 const { markdownLib } = require('../plugins/');
 
+// Converts date to local timezone
+const local = value => {
+  return (value instanceof Date) ? value.setHours(value.getHours() + 4) : value;
+}
+
 // Formats the date into Day of Month Year
 const dayOfMonth = value => {
   const dateObject = (value instanceof Date) ? value.setHours(value.getHours() + 4) : parseDate(value);
@@ -60,6 +65,7 @@ function parseDate (value, timeValue = null) {
 }
 
 module.exports = {
+  local,
   dayOfMonth,
   monthDayYear,
   monDayYear,

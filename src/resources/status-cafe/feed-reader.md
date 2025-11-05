@@ -51,7 +51,7 @@ I usually like to put the `<script>` tag right above the `</body>` tag, as shown
 
 Put the following code into the `<script>` tag:
 
-```js
+```js/
 const feedURL = 'https://status.cafe/users/[YOUR_STATUSCAFE_USERNAME].atom';
 
 fetch(feedURL)
@@ -62,7 +62,7 @@ fetch(feedURL)
   });
 ```
 
-What this code is doing is converting the feed into XML, which JavaScript can then extract the feed's data. The script then takes all of the posts you created in StatusCafe and stores them into the `entries` variable.
+What this code is doing is converting the feed into XML, which JavaScript can then extract the feed's data. The script then takes all of the posts you created in StatusCafe and stores them into the `entries` variable on **line 7**.
 
 ## 4) Preparing the Data
 
@@ -72,7 +72,7 @@ The way how StatusCafe sets up their feeds makes things a little difficult, and 
 
 Underneath `const entries = data.querySelectorAll("entry")`, add the following:
 
-```js
+```js/
 let html = `<p>No statuses yet.</p>`;
 if (entries.length > 1){
   entries.forEach(el => {
@@ -83,10 +83,10 @@ if (entries.length > 1){
 }
 ```
 
-This loop takes the data from each StatusCafe post and splits them into different variables that we can put into the "html" variable later on. I'll explain each one.
+This loop takes the data from each StatusCafe post and splits them into different variables that we can put into the `html` variable later on. I'll explain each one.
 
-- **html** - The HTML that will display all of your data from StatusCafe. You'll notice that it says that you don't have any statuses by default. This will only show if you don't have any posts in your StatusCafe. Otherwise, it will change.
-- **title** - Displays your StatusCafe username along with the emoji picked when creating the post. Note the `NUMBER_OF_CHARACTERS` shown in the code block. This number should be equal to the number of characters in your username. However, if you want to include the emoji associated with the status, just add 3 to the number of characters in your username.
+- **Line 1** - `html` will display all of your data from StatusCafe. You'll notice that it says that you don't have any statuses by default. This will only show if you don't have any posts in your StatusCafe. Otherwise, it will change.
+- **Line 4** - `title` displays your StatusCafe username along with the emoji picked when creating the post. Note the `NUMBER_OF_CHARACTERS` on the same line. This number should be equal to the number of characters in your username. However, if you want to include the emoji associated with the status, just add 3 to the number of characters in your username.
   - For example, my username "bechnokid" contains 9 characters. If I wanted to include the emoji, I would replace `NUMBER_OF_CHARACTERS` with 9 + 3, which would be 12.
   - The final line would then be the following:
 
@@ -122,9 +122,9 @@ document.getElementById("feed-reader").innerHTML = html;
 
 This line will look for the HTML element with the id attribute `feed reader` and fill it with the data stored in the `html` variable.
 
-## 6) The Finished HTML { #finished-html }
+## 6) The Finished Code { #finished-html }
 
-The finished HTML should look something like this:
+Putting the HTML and JS should look something like this:
 
 ```html
 <html>
@@ -132,8 +132,7 @@ The finished HTML should look something like this:
   <body>
     <div id='feed-reader'></div>
     <script>
-      const feedURL = 'https://status.cafe/users/[YOUR_STATUSCAFE_USERNAME].atom'
-
+      const feedURL = 'https://status.cafe/users/[YOUR_STATUSCAFE_USERNAME].atom';
       fetch(feedURL)
         .then(response => response.text())
         .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
@@ -158,7 +157,7 @@ The finished HTML should look something like this:
 </html>
 ```
 
-Again, be sure to replace `YOUR_STATUSCAFE_USERNAME` with your StatusCafe username and `NUMBER_OF_CHARACTERS` with the number of characters in your StatusCafe username (+ 3 if you want to include the emoji).
+Again, be sure to replace `YOUR_STATUSCAFE_USERNAME` near the top of the code with your StatusCafe username and `NUMBER_OF_CHARACTERS` with the number of characters in your StatusCafe username (+ 3 if you want to include the emoji).
 
 ## 7) Finishing the Reader
 
@@ -166,7 +165,34 @@ Using the script above, your feed reader should look something like the followin
 
 (Example feed is from [m15o](https://status.cafe/users/m15o), the main developer of StatusCafe)
 
-<div id="feed-reader"></div>
+{% codeDemo "Demo for a Status Cafe feed reader", height = "300" %}
+
+```html
+<div id="feed-reader" class="mt-4"></div>
+```
+
+```js
+const feedURL = 'https://status.cafe/users/m15o.atom'
+fetch(feedURL)
+  .then((response) => response.text())
+  .then((str) => new window.DOMParser().parseFromString(str, "text/xml"))
+  .then((data) => {
+    const entries = data.querySelectorAll("entry");
+    let html = (entries.length < 1) ? `<p>No statuses yet.</p>`: '';
+    let title, content, dateString = ``;
+    if (entries.length > 1){
+      entries.forEach((el) => {
+        title = el.querySelector("title").innerHTML.slice(0, 7).trim();
+        content = el.querySelector("content").textContent.trim();
+        dateString = el.querySelector("published").innerHTML.slice(0, 10);
+        html += `<p>${title} - ${dateString}<p><p>${content}</p>`;
+      });
+    }
+    document.getElementById("feed-reader").innerHTML = html;
+  });
+```
+
+{% endcodeDemo %}
 
 ## 8) Shortening the Reader (optional)
 
@@ -199,12 +225,40 @@ You might have noticed that there is a new variable now: `STATUS_LIMIT`. This ca
 
 If we change this number to 3, the feed reader will generate 3 posts, resulting in the following:
 
-<div id="feed-reader2"></div>
+{% codeDemo "Demo for a shortened Status Cafe feed reader", height = "275" %}
+
+```html
+<div id="feed-reader"></div>
+```
+
+```js
+const feedURL = 'https://status.cafe/users/m15o.atom'
+fetch(feedURL)
+  .then((response) => response.text())
+  .then((str) => new window.DOMParser().parseFromString(str, "text/xml"))
+  .then((data) => {
+    const entries = data.querySelectorAll("entry");
+    let html = (entries.length < 1) ? `<p>No statuses yet.</p>`: '';
+    let title, content, dateString = ``;
+    if (entries.length > 1){
+      let statusLimit = 3;
+      if (entries.length < statusLimit) statusLimit = entries.length;
+      for (i = 0; i < statusLimit; i++) {
+        title = entries[i].querySelector("title").innerHTML.slice(0, 7).trim();
+        content = entries[i].querySelector("content").textContent.trim();
+        dateString = entries[i].querySelector("published").innerHTML.slice(0, 10);
+        html += `<p>${title} - ${dateString}<p><p>${content}</p>`;
+      }
+      html += `<p><a href='https://status.cafe/users/m15o'>See more at StatusCafe</a></p>`;
+    }
+    document.getElementById("feed-reader").innerHTML = html;
+  });
+```
+
+{% endcodeDemo %}
 
 ## 9) Closing Thoughts
 
 Thank you for reading this tutorial! Like I said previously, it is entirely possible to use an iframe with StatusCafe as its source, but I've started to enjoy this method just for its customization options. Regardless, I hope you find this useful!
 
-If you come across any issues or mistakes with this tutorial, feel free to email me at [bechnokid@yahoo.com!](mailto:bechnokid@yahoo.com)
-
-<script src="{{ meta.jsUrl }}/status-feed-example.js"></script>
+If you come across any issues or mistakes with this tutorial, feel free to email me at **bechnokid@yahoo.com**!

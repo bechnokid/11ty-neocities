@@ -88,7 +88,8 @@ export default {
     { src: "bloopywoopy.png", alt: "A blue cup with a smiling face perched on top of a cloud. It is topped with whipped cream with chocolate syrup and two candies shaped like a rainbow and heart on top.", url: "https://bloopywoopy.neocities.org/cool-stuff/collections/", taste: "chocolate, whipped cream, and marshmallows" },
     { src: "fizzsea.png", alt: "A blue tea cup with a magenta stripe. It is dripping a black substance with magenta and blue circles and squares", url: "https://fizzsea.neocities.org/extra/collection", taste: "bit-crushed sugar" },
     { src: "mostlypixels.gif", url: "https://mostlypixels.com/pixelclubs/", alt: "A cup with a bee pattern. Behind it are some leaves, and some bees are flying above the cup", taste: 'honey', freezeframe: true },
-    { src: "starfighter.png", alt: "A rainbow-gradient tea-cup with a large dollop of whipped cream on top with a red and white-striped straw sticking out", url: "https://starfighter.neocities.org/pixl", taste: "a rainbow shake" }
+    { src: "starfighter.png", alt: "A rainbow-gradient tea-cup with a large dollop of whipped cream on top with a red and white-striped straw sticking out", url: "https://starfighter.neocities.org/pixl", taste: "a rainbow shake" },
+    { src: "themby.gif", alt: "A tea cup that contains the night sky with a comet occassionally flying through the sky", url: "http://themby.neocities.org/", taste: "stardust", freezeframe: true }
   ],
   yys: {
     mine: [
