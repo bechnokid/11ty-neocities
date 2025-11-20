@@ -2,6 +2,7 @@
 title: Shrines
 subList: true
 layout: 'layouts/page-landing.html'
+permalink: false
 pagination:
   data: collections.shrines
   size: 10

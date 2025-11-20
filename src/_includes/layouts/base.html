@@ -18,27 +18,27 @@
   <div class="container-fluid d-flex justify-content-center p-0">
     <details class="burger">
       <summary class="burger-summary d-flex align-items-center px-2 py-3" aria-label="Navigation Menu"></summary>
-      <nav><div class="sidebar pb-2 pb-lg-0">{% include "partials/navigation.html" %}</div></nav>
+      <nav><div class="sidebar pb-2 pb-md-0">{% include "partials/navigation.html" %}</div></nav>
     </details>
     <div class="page bg-body">
       <a href="/home"><header class="bg-body"><span class="hidden">Navigate to the home page</span></header></a>
       <div class="bg-body main desktop">
         <div class="row g-0">
-          <nav id="nav-main" class="col-lg-2">
-            <div class="sidebar pb-1 mb-lg-2">{% include "partials/navigation.html" %}</div>
+          <nav id="nav-main" class="col-md-2">
+            <div class="sidebar pb-1 mb-md-2">{% include "partials/navigation.html" %}</div>
             {% if freezeframe %}
-              <div class="freeze-btns desktop d-lg-block d-none">
+              <div class="freeze-btns desktop d-md-flex justify-content-lg-center flex-lg-row flex-column flex-gap-2 d-none">
                 <button type="button" class="button play-gif">Play GIFs</button>
                 <button type="button" class="button stop-gif">Stop GIFs</button>
               </div>
             {% endif %}
           </nav>
-          <main id="main-content" class="offset-lg-2 col{{ "-lg-10" if title !="Home" }} px-2 px-lg-4 py-lg-3 position-relative" tabindex="-1">
+          <main id="main-content" class="offset-md-2 col{{ "-md-10" if title !="Home" }} px-2 px-md-4 py-md-3 position-relative" tabindex="-1">
             {% include 'partials/theme-switcher.html' %}
             {% block content %}{% endblock %}
             <div class="back-to-top{% if noScroll == "true" or noScroll == true %} mobile-only{% endif %}"><a href="#" aria-label="Scroll to Top">{% icon 'arrow-up' %}</a></div>
           </main>
-          {% if title == "Home" %}<aside class="col-lg-2 px-2 px-lg-0 my-3 my-lg-0">{% include "partials/updates.html" %}</aside>{% endif %}
+          {% if title == "Home" %}<aside class="col-lg-2 offset-lg-0 col-md-10 offset-md-2 px-lg-0 px-md-4 px-2 mb-lg-0 mb-3">{% include "partials/updates.html" %}</aside>{% endif %}
         </div>
       </div>
       {% include 'partials/footer.html' %}

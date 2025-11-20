@@ -5,7 +5,7 @@
 {% macro navSection(section, name = null) %}
 <li>
   <div class="px-2 py-1 h2">{{ (name or section) | title }}</div>
-  <ul class="section-list ms-4 ms-lg-3 my-1">
+  <ul class="section-list ms-lg-3 ms-md-2 ms-4 my-1 pe-md-1 pe-0">
     {%- for link in collections[section] | sortCollectionByDisplayOrder %}
       {% if link.data.wip %}
         <li class="text-muted">{{ link.data.title }} (WIP)</li>

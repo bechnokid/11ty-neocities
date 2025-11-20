@@ -43,13 +43,13 @@ export default {
   ],
   fanlistings: {
     pending: [
-      { src: "power.jpg", url: "https://www.marheavenj.net/power/", alt: "Power from Chainsaw Man" },
       { src: "rin.jpg", url: "https://www.marheavenj.net/rin/", alt: "Rin Okumura from Blue Exorcist" },
-      { src: "senku.jpg", url: "https://www.marheavenj.net/senku/", alt: "Senku Ishigami from Dr. STONE" },
-      { src: "masaru.png", url: "https://rikafire.fanimated.net/masaru/", alt: "Masaru Daimon from Digimon Savers" },
-      { src: "mercury.gif", url: "https://eien-melody.net/ami/", alt: "Ami Mizuno/Sailor Mercury from Sailor Moon" },
     ],
     characters: [
+      { src: "mercury.gif", url: "https://eien-melody.net/ami/", alt: "Ami Mizuno/Sailor Mercury from Sailor Moon" },
+      { src: "masaru.png", url: "https://rikafire.fanimated.net/masaru/", alt: "Masaru Daimon from Digimon Savers" },
+      { src: "senku.jpg", url: "https://www.marheavenj.net/senku/", alt: "Senku Ishigami from Dr. STONE" },
+      { src: "power.jpg", url: "https://www.marheavenj.net/power/", alt: "Power from Chainsaw Man" },
       { src: "tifa.jpg", url: "https://www.celes.net/tifa/", alt: "Tifa Lockhart from Final Fantasy VII" },
       { url: "https://naiad.nu/doc/", src: "docbrown.jpg", alt: "Doc Brown from Back to the Future" },
       { url: "https://fan.glast-heim.net/davy/", src: "davy_jones.png", alt: "Davy Jones from Pirates of the Caribbean" },

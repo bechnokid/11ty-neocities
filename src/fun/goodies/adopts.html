@@ -10,13 +10,15 @@ freezeframe: true
 
 <div class="position-relative">
   {% include "partials/loading-sidebar.html" %}
+
   <h2>For You</h2>
+
   {% set imgLink = array.imgSrc + 'mine/' %}
 
   {% galleryBox { cls: 'adopts mine', subCls: 'flex-column' } %}
   <div class="row g-0">
     {%- for column in array.mine %}
-      <div class="col-lg-4 col-12">
+      <div class="col-md-4 col-12">
         {%- for row in column %}
           <p>{{ row.name }}</p>
           <div class='d-flex{% if row.cls %} {{ row.cls }}{% endif %}'>
@@ -36,9 +38,10 @@ freezeframe: true
   {% endgalleryBox %}
 
   <h2>Interactive</h2>
+
   {% galleryBox %}
     <p class="mt-0">Click on any one of these pets to feed them!</p>
-    <div class="w-100 d-flex">
+    <div class="w-100 d-flex mt-2">
       {%- for item in array.interactive %}
         <div class="pet-click border-sidebar bg-body p-3 text-center rounded-4 mx-2">
           {% img item.src, { url: item.url, alt: item.alt, freezeframe: item.freezeframe, urlCls: 'd-flex justify-content-center mb-2' } %}
@@ -49,7 +52,9 @@ freezeframe: true
   {% endgalleryBox %}
 
   {% set imgLink = array.imgSrc %}
+
   <h2>Adopted</h2>
+
   {% galleryBox %}
     {%- for row in array.adopted %}
     <div class="row g-0 w-100{{ " mb-4" if not loop.last }}">
@@ -60,6 +65,27 @@ freezeframe: true
         {% endfor %}
       </div>
     </div>
+    {% endfor %}
+  {% endgalleryBox %}
+
+  <h2>Orphaned</h2>
+
+  <p>These are pixels that were never put up for sale or whose owner sites no longer exist. So, I'm putting them here in the hopes that they can get adopted!</p>
+  <p>If you are the owner of any of these and would like me to take them down, please let me know via email or leaving a message in my <a href="/guestbook">guestbook</a>!</p>
+
+  {% galleryBox { cls: "mt-2", subCls: "flex-gap-2" } %}
+    {% for owner, value in array.orphaned %}
+      <a href="{{ value.url }}" class="d-flex flex-wrap align-img-baseline flex-gap-2">
+        {% for item in value.items %}
+          {% if item.group %}
+            {% for alt in item.alt %}
+              {% img imgLink + item.name + loop.index + ".png", { alt: "A pixel of " + alt } %}
+            {% endfor %}
+          {% else %}
+            {% img imgLink + item.src, { alt: item.alt, freezeframe: item.freezeframe } %}
+          {% endif %}
+        {% endfor %}
+      </a>
     {% endfor %}
   {% endgalleryBox %}
 </div>

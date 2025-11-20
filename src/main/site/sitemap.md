@@ -19,7 +19,7 @@ permalink: '/sitemap/index.html'
 
   {%- for gallery in art.data %}
 
-- [{{ gallery.title }}](../artwork/{{ (gallery.shortTitle or gallery.title) | slugify }})
+- [{{ gallery.title }}](../art/{{ (gallery.shortTitle or gallery.title) | slugify }})
   {% endfor %}
 
   {% elif link.data.subList %}

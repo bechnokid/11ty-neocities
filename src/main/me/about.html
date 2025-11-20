@@ -10,11 +10,11 @@ Hi, I'm **Bechno Kid** (she/her), the head honcho of this hideout.
 
 You can call me **"Bechno"** or even just **"Bec"**. You can call me "Kid", but I don't recommend it unless you're older than me!
 
-I'm a full-time software developer born in the early '90s who enjoys drawing on the side and tends to yap for hours about her interests. I like coffee, tea, and almost any caffeinated drink out there except for carbonated energy drinks.
+I'm a software developer born in the early '90s who enjoys drawing on the side and talking for hours about her interests.
 
-I may code as a career, but I am no means an expert at all. I frequently look up StackOverflow when I need help with my code, even at work. Regardless, I do enjoy learning new things every day!
+I collect a number of things including Tamagotchi Original and Digital Monster virtual pets with shells/characters that I particularly like. I try to collect merchandise of my favorite characters, but most of them aren't popular enough to get merch, unfortunately. At least I get to save money!
 
-I have a Bachelor's degree in Computer Science and somehow managed to land in the top 20% of my graduating class. People will say that I was a hard-working student, but all I can remember from my college days was utter confusion. I'm not sure how I even landed my current job, but at least I'm making money doing what I love!
+The little guys next to me are **Numemon**, a shy Champion-level Digimon, and **Maskutchi**, a slightly spoiled adult Tamagotchi. They are my little guys, and I love them very much!
 {% endset %}
 
 {% set geekCode %}
@@ -28,15 +28,15 @@ I have a Bachelor's degree in Computer Science and somehow managed to land in th
 **[More about Geek Code](https://web.archive.org/web/20090220181018/http://geekcode.com/geek.html)** {.text-right .mt-1 .mb-4}
 {% endset %}
 
-<div class="row g-0 mb-lg-3">
-  <div class="col-lg-5 col-12 d-flex justify-content-center mb-lg-0 mb-4 pe-lg-4">{% img '/assets/images/profile.png', { alt: 'Bechno Kid sitting down and playing with a purple Digital Monster 20th Anniversary device. Strapped to her pants is an orange 1998 Tamagotchi device. In her lap is Maskutchi, and hiding behind her is Numemon' } %}</div>
-  <div class="col-lg-7 col-12">{{ profileText | markdownify | safe }}</div>
+<div class="row g-0 mb-md-3">
+  <div class="col-lg-5 d-flex justify-content-center mb-lg-0 mb-4 pe-md-4">{% img '/assets/images/profile.png', { alt: 'Bechno Kid sitting down and playing with a purple Digital Monster 20th Anniversary device. Strapped to her pants is an orange 1998 Tamagotchi device. In her lap is Maskutchi, and hiding behind her is Numemon' } %}</div>
+  <div class="col-lg-7 d-flex flex-column justify-content-center">{{ profileText | markdownify | safe }}</div>
 </div>
 
 {{ geekCode | markdownify | safe }}
 
-<div class='about-info row d-flex flex-wrap justify-content-center mb-4 mb-lg-0'>
-  <div class="col-lg-4 col-12 mb-3 mb-lg-0">
+<div class='about-info row d-flex flex-wrap justify-content-center mb-4 mb-md-0'>
+  <div class="col-md-4 col-12 mb-3 mb-md-0">
     {% galleryBox { title: "Other Facts", cls: "h-100" } %}
       <ul>
         <li>♒︎ (☀️), ♉︎ (🌒), ♊︎ (⬆️)</li>
@@ -47,18 +47,18 @@ I have a Bachelor's degree in Computer Science and somehow managed to land in th
       </ul>
     {% endgalleryBox %}
   </div>
-  <div class="col-lg-4 col-12 mb-3 mb-lg-0">
+  <div class="col-md-4 col-12 mb-3 mb-md-0">
     {% galleryBox { title: "Likes", cls: "h-100" } %}
       <ul>
         <li>Drawing</li>
-        <li>Crocheting</li>
+        <li>Crocheting (sometimes)</li>
         <li>Rice</li>
         <li>Bún bò Huế</li>
         <li>This shape {% icon 'arrow-right' %} <a href="/gadzooks" class="uwu">{% icon 'meat', { alt: 'Meat on a bone' } %}</a><span class="text-xs ms-1">"Tasty!"</span></li>
       </ul>
     {% endgalleryBox %}
   </div>
-  <div class="col-lg-4 col-12">
+  <div class="col-md-4 col-12">
     {% galleryBox { title: "Fav Media", cls: "h-100" } %}
       <ul>
         <li><strong>Monster Hunter</strong></li>
@@ -72,19 +72,21 @@ I have a Bachelor's degree in Computer Science and somehow managed to land in th
   </div>
 </div>
 
-{% macro favsBox(favsArr) %}
-  <h2>{{ favsArr.title }}</h2>
-  <div class='d-flex flex-wrap justify-content-lg-between justify-content-center px-lg-5 px-0 text-center text-xs favs'>
-    {%- for item in favsArr.items %}
-      <div class='sidebar m-lg-0 m-2'>
-        {% set altText = (item.name + " from " + item.series) if item.series else item.name %}
-        {% img about.favs.path + item.img, { alt: altText } %}
-        <p>{{ item.name | markdownifyInline | safe }}</p>
+{% macro favsBox(favsArr, favCls = null) %}
+  {% set galleryCls = "my-4 " + favCls if favCls else "my-4" %}
+  {% galleryBox { title: favsArr.title, cls: "my-4 " + favCls, subCls: 'text-xs text-center justify-content-center' } %}
+    {% for item in favsArr.items %}
+      <div class="fav-box">
+        {% img about.favs.path + item.img, { alt: altText, cls: item.cls } %}
+        <p {% if "IRL" in favsArr.title %}class="font-weight-bold text-primary"{% endif %}>{{ item.name | markdownifyInline | safe }}</p>
+        {% if item.series %}
+          <p>{{ item.series | markdownifyInline | safe }}</p>
+        {% endif %}
       </div>
     {% endfor %}
-</div>
+  {% endgalleryBox %}
 {% endmacro %}
 
 {{ favsBox(about.favs.chars) }}
-{{ favsBox(about.favs.monsters) }}
+{{ favsBox(about.favs.monsters, "monsters") }}
 {{ favsBox(about.favs.digimon) }}

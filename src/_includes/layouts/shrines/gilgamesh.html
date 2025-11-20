@@ -1,4 +1,5 @@
 {% set pageCSS = "shrines/" + css %}
+{% set navigation = ["Intro", "About", "Why Gilgamesh?", "Yume", "Credits", "Home"] %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,18 +14,22 @@
   <header><img src="/assets/images/shrines/gilgamesh/header.png" aria-hidden="true" alt=""></header>
   <div class="container-fluid pb-4 d-flex justify-content-center align-items-center position-relative">
     <div class="content">
-      <h1 class="mt-4">{{ title }}</h1>
+      <h1 class="mt-md-4">{{ title }}</h1>
       <details class="mobile-nav px-2 py-3">
         <summary>Menu</summary>
-        {{ content | toc | safe }}
-        <a href="/home" class="d-block w-100 text-center">Home</a>
+          <nav class="toc">
+            {% for item in navigation %}
+              <li><a href={{ "/" if item == "Home" else "#" + (item | slug) }}>{{ item }}</a></li>
+            {% endfor %}
+          </nav>
       </details>
       <div class="row g-0">
         <div class="desktop-nav col-lg-2 d-flex flex-column">
-          {{ content | toc | safe }}
-          <div class="d-flex home">
-            <a href="/home" class="w-100 p-3 text-center">Home</a>
-          </div>
+          <nav class="toc">
+            {% for item in navigation %}
+              <li><a href="{{ "/" if item == "Home" else "#" + (item | slug) }}">{{ item }}</a></li>
+            {% endfor %}
+          </nav>
         </div>
         <div class="col-lg-10 main">
           <main class="px-lg-5 py-lg-4 p-4">

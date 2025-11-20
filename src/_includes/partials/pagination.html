@@ -5,7 +5,7 @@
       <a href="{{ pagination.href.previous }}{{ paginationAnchor }}" data-direction="backwards">{% icon 'arrow-left' %}<span class="ms-2">{{ paginationPrevText if paginationPrevText else 'Previous' }}</span></a>
     {% endif %}
     {% if pagination.href.previous and pagination.href.next %}
-    <span class="center-heart mx-2 mx-lg-4">❤</span>
+    <span class="center-heart mx-2 mx-md-4">❤</span>
     {% endif %}
     {% if pagination.href.next %}
       <a href="{{ pagination.href.next }}{{ paginationAnchor }}" data-direction="forwards"><span class="me-2">{{ paginationNextText if paginationNextText else 'Next' }}</span>{% icon 'arrow-right' %}</a>

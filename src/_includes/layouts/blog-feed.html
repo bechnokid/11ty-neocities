@@ -29,13 +29,13 @@ noScroll: true
       {%- for item in postListItems %}
       {% set blogDate = item.date | monthDayYear %}
       <div class="blog row py-1">
-        <div class="col-lg-8 col-7">
+        <div class="col-md-8 col-7">
           <a href="{{ item.url }}">{{ item.data.title | markdownifyInline | safe }}</a>
           {% if blogDate == lastUpdated %}
             {% icon 'new' %}
           {% endif %}
         </div>
-        <div class="col-lg-4 col-5">{{ blogDate }}</div>
+        <div class="col-md-4 col-5">{{ blogDate }}</div>
       </div>
       {% endfor %}
     {% endif %}

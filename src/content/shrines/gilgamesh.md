@@ -67,7 +67,7 @@ It was love at first sight, and I grew to love him even more as I started to pla
 Pondering the ~~orb~~ sword
 {% endfigure %}
 
-## Why Gilgamesh?
+## Why Gilgamesh? { #why-gilgamesh }
 
 Why not? He's such a great character! Even though he is well-known among FF fans, I don't see much love or any mention of him in fandom spaces. He doesn't even get that much merchandise compared to other characters! I can understand why, though.
 
@@ -99,7 +99,7 @@ If it sounds like that he is lot cooler than he is and that he's not the same id
 
 I can definitely say that Rebirth managed to achieve a perfect balance between making Gilgamesh funny and terrifying. It makes me a little sad that he might never return to a future FF7R game seeing as how there was a definite end to his boss fight, but a beet can dream!
 
-{% figure imgPath + 'meowmeow.png', { cls: 'figure-center', style: 'max-width: 500px' } %}
+{% figure imgPath + 'meowmeow.png', { cls: 'figure-center mt-3', style: 'max-width: 500px' } %}
 The babygirl. The meow meow. The skrunkly. The--
 {% endfigure %}
 

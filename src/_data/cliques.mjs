@@ -1,20 +1,24 @@
 const templates = {
-  text:
-  {
-    leftText: "",
+  textSimple: {
+    left: "",
     center: "",
-    img: "",
-    imgAlt: "",
-    url: "",
     right: ""
   },
-  button: {
-    title: "",
-    id: "",
-    tooltip: "",
-    url: "",
-    img: "",
-    alt: ""
+  text: {
+    left: {
+      cls: "",
+      url: "",
+      text: "",
+    },
+    center: {
+      url: "",
+      text: "",
+      img: ""
+    },
+    right: {
+      cls: "",
+      text: ""
+    }
   }
 }
 export default {
@@ -84,14 +88,6 @@ export default {
       },
       right: "Chaotic Love Revolution"
     },
-    {
-      left: {
-        text: "Nobility",
-        url: "https://sanguineroyal.com/com/nobility/",
-      },
-      center: "::",
-      right: "Emperor of Beets!"
-    }
   ],
   col2: [
     [
@@ -160,7 +156,7 @@ export default {
         title: "Stardaze",
         tooltip: "Wezen",
         id: 'stardaze',
-        url: "https://clique.aelysia.net/star/",
+        url: "https://star.aquarels.net/",
         img: 'stardaze.gif',
         alt: 'A pink white and purple starry button that says, \"Stardaze\"',
         mobile: {
@@ -177,7 +173,8 @@ export default {
         id: "mercury",
         url: "https://sailorcrystal.net/guardians/",
         img: "mercury.png",
-        imgAlt: "Sailor Mercury"
+        imgAlt: "Sailor Mercury",
+        cls: "me-1"
       },
       {
         title: "Final Fantasy Moogle Adoption Clique",
@@ -186,6 +183,14 @@ export default {
         url: "https://midnight-cloud.net/clique/moogle/",
         img: "moogle.gif",
         imgAlt: "A moogle"
+      },
+      {
+        title: "30+ Club",
+        id: "30plus",
+        url: "https://moonpr1sm.com/random/30plusclub",
+        img: "30plusclub.png",
+        imgAlt: "Button that says \"30+ Club\"",
+        cls: "ms-2"
       },
       {
         title: 'pixel friends',
@@ -199,7 +204,7 @@ export default {
         title: "I Choose You!",
         id: "i-choose-you",
         tooltip: "I choose you! :: CHI-YU",
-        url: "https://pkmn.caelestis.nu/",
+        url: "https://pkmn.aquarels.net/",
         img: "i-choose-you.gif",
         imgAlt: "The pokemon Chi-Yu",
         mobile: {
@@ -214,7 +219,8 @@ export default {
         tooltip: "Taro Milk Tea :: Adopt a Boba",
         url: "https://web.archive.org/web/20250407201106/https://pixelrevival.xyz/boba/",
         img: "boba.gif",
-        imgAlt: "A cup of taro milk tea with boba"
+        imgAlt: "A cup of taro milk tea with boba",
+        cls: "ms-1"
       }
     ],
     [
@@ -245,5 +251,135 @@ export default {
         }
       }
     ]
-  ]
+  ],
+  more: [
+    {
+      left: {
+        url: "https://emocowboy.neocities.org/?emo=/home/cliques/pokemon",
+        text: "favorite",
+      },
+      center: {
+        img: "pokefav.png"
+      },
+      right: "Chi-yu"
+    },
+    {
+      left: {
+        url: "https://cliqued.wings.nu/fandom.php",
+        text: "OTF",
+      },
+      center: {
+        img: "otf.png"
+      },
+      right: "Digimon"
+    },
+    {
+      left: {
+        url: "https://reef.kingdra.net/",
+        text: "greenery",
+      },
+      center: {
+        img: "greenery.png",
+      },
+      right: "cacti"
+    },
+    {
+      left: {
+        url: "https://reef.kingdra.net/",
+        text: "gemstone",
+      },
+      center: {
+        img: "gemstone.png",
+      },
+      right: "amethyst"
+    },
+    {
+      left: {
+        url: "https://lazer-bunny.neocities.org/Cliques",
+        text: "Crispy",
+      },
+      center: {
+        img: "crispy.png",
+      },
+      right: "Silent Salt Cookie"
+    },
+    {
+      left: {
+        url: "https://cliques.shadow-lord.com/deadlysins/buttons.php",
+        text: "Wrath",
+      },
+      right: " is my Deadly Sin"
+    },
+    {
+      left: {
+        url: "https://lazer-bunny.neocities.org/Cliques",
+        text: "My OTP",
+      },
+      center: {
+        img: "my-otp.png",
+      },
+      right: "Siduri x Gilgamesh (FF7R)"
+    },
+    {
+      widget: "<a href='https://joroki.neocities.org/cliques'>this site is <img src='/assets/images/goodies/cliques/camp-cute.png' alt='cute'></a>",
+    },
+    {
+      left: {
+        url: "https://joroki.neocities.org/cliques",
+        text: "my usual",
+      },
+      center: "//",
+      right: "caramel iced latte <img src='/assets/images/goodies/cliques/usual.png' alt='' aria-hidden='true'>",
+    },
+    {
+      left: {
+        url: "https://petrapixel.neocities.org/cliques",
+        text: "love tropes",
+      },
+      center: "//",
+      right: "slowburn friends to lovers"
+    },
+    {
+      left: {
+        url: "https://petrapixel.neocities.org/cliques",
+        text: "youtube",
+      },
+      center: "//",
+      right: "Caddicarus"
+    },
+    {
+      left: "Ambient Wonder",
+      center: "//",
+      right: {
+        url: "https://bloodgulch.neocities.org/ambientwonder/codes",
+        text: "Pokke Village (MHGU)",
+      },
+    },
+    {
+      left: {
+        url: "https://key.aquarels.net/",
+        text: "Keyblade"
+      },
+      center: {
+        img: "keyblade.png",
+      },
+      right: "Guardian's Soul"
+    },
+    {
+      left: {
+        url: "https://patron.snow-heart.net/",
+        text: "patron",
+      },
+      center: "::",
+      right: "Numemon"
+    },
+    {
+      left: {
+        url: "https://xandra.cc/patrons",
+        text: "protector"
+      },
+      center: "🌊",
+      right: "Neptune(mon)"
+    },
+  ],
 }

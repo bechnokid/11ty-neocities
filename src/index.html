@@ -22,14 +22,15 @@ splashImgAlt: "Splash image for Bechno Kid's Hideout that links to the home page
       {% include 'partials/theme-switcher.html' %}
       <div class="content bg-body">
         <div class="row d-flex g-0 p-4">
-          <div class="col-lg-6 pe-lg-3 py-lg-3 order-lg-0 order-1 text-center d-flex flex-column justify-content-center splash-desc">
+          <div class="col-md-6 pe-md-3 py-md-3 order-md-0 order-1 text-center d-flex flex-column justify-content-center splash-desc">
             <h1>{{ meta.name }}</h1>
             <hr class="m-0">
             <div class="p-2 mt-3">
               <p><strong>Some notes about this site:</strong></p>
               <ul class="text-left mx-4 mt-4 text-sm">
                 <li><strong>PG-13 / WEB 14</strong> for minimal swearing and some mature themes.</li>
-                <li>Mobile-friendly, but looks best on a desktop at 1920 x 1080 with JS enabled.</li>
+                <li>Some parts of the site uses JavaScript, but it will still be functional without it.</li>
+                <li>Responsive and mobile-friendly!</li>
                 <noscript>
                   <li>Pages labeled with {% icon 'alert-triangle', { cls: 'index' } %} contain blinking/flashing graphics.</li>
                 </noscript>
@@ -43,7 +44,7 @@ splashImgAlt: "Splash image for Bechno Kid's Hideout that links to the home page
               <p>Last updated: {{ lastUpdated }}</p>
             </div>
           </div>
-          <div class="col-lg-6 d-flex justify-content-center align-items-center order-lg-1 order-0">
+          <div class="col-md-6 d-flex justify-content-center align-items-center order-md-1 order-0">
             <a href="/home/"><img src="{{ splashImg }}" alt="{{ splashImgAlt }}"></a>
           </div>
         </div>

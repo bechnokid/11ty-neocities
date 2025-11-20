@@ -2,6 +2,7 @@
 title: Writing
 subList: writing
 layout: 'layouts/page-landing.html'
+permalink: false
 pagination:
   data: collections.writing
   size: 10

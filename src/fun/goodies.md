@@ -2,11 +2,11 @@
 title: Goodies
 subList: true
 layout: layouts/page-landing.html
+permalink: /goodies/index.html
 pagination:
   data: collections.goodies
   size: 10
 displayOrder: 3
-permalink: /goodies/index.html
 tags:
   - fun
   - nav

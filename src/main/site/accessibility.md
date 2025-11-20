@@ -11,19 +11,21 @@ I used to be one of those "don't be a phone chump, use a desktop" chumps, mainly
 
 I realized that this didn't need to be the case after coming across some other indie web developers' fun sites. So, I wanted to challenge myself in making my personal site fun AND accessible.
 
+If my website looks generic, that's just because I'm not very good at web design lol.
+
 ## This site should have the following
 
 - Mobile-responsive layouts throughout the site
 - Toggles for light and dark mode
-- US English set as every page's language
+- US English set as language for all pages
 - Text contrast that passes the WebAIM color contrast checker
-- Scalable text sizes (using EM instead of PX)
+- Scalable text sizes (using EM and REM instead of PX)
 - Text that is primarily aligned with right, center, and left. *Never* justify.
 - Alt text for non-decorative images
 - Semantic HTML
 - Pages that can be navigated via a keyboard
   - This includes a link to skip to the main content
-- JavaScript usage will be kept to a minimum
+- JavaScript usage kept to a minimum
   - Whatever page that uses JS will be noted
   - Pages that rely entirely on JS will be hidden if the user has JS disabled
 - Animated GIFs that can be paused via buttons (this requires JS)

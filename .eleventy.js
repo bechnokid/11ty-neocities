@@ -3,7 +3,6 @@ const rssPlugin = require('@11ty/eleventy-plugin-rss');
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const brokenLinksPlugin = require("eleventy-plugin-broken-links");
 const pluginTOC = require('eleventy-plugin-toc');
-const { EleventyPluginCodeDemo } = require('eleventy-plugin-code-demo');
 
 const {
   local, dayOfMonth, monthDayYear, monDayYear, markdownify,
@@ -27,6 +26,7 @@ const TEMPLATE_ENGINE = 'njk';
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 module.exports = async function(eleventyConfig){
   const { IdAttributePlugin, RenderPlugin } = await import("@11ty/eleventy");
+  const { EleventyPluginCodeDemo } = await import('eleventy-plugin-code-demo');
   const assetsPath = './src/assets'
 
   eleventyConfig.addPassthroughCopy(`${assetsPath}/images/`);

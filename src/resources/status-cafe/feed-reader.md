@@ -194,7 +194,7 @@ fetch(feedURL)
 
 {% endcodeDemo %}
 
-## 8) Shortening the Reader (optional)
+## 8) (Optional) Shortening the Reader
 
 Note that using the `forEach()` will loop through every post you made on StatusCafe. If you have more than fifty statuses, it can be overwhelming to scroll through a nearly endless list of statuses.
 

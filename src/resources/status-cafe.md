@@ -2,6 +2,7 @@
 title: Status Cafe
 subList: true
 layout: 'layouts/page-landing.html'
+permalink: false
 pagination:
   data: collections.statusCafe
   size: 10

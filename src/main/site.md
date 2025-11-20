@@ -2,6 +2,7 @@
 title: Sitely
 subList: true
 layout: 'layouts/page-landing.html'
+permalink: false
 pagination:
   data: collections.site
   size: 10
