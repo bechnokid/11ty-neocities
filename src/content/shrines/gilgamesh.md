@@ -22,14 +22,14 @@ Hello, and welcome to **"The Interdimensional Rift"**, a shrine dedicated to the
 ----
 
 {% figure imgPath + 'the-legend.png', { cls: 'figure-center', alt: "Gilgamesh as he appears in Final Fantasy V" } %}
-The legend.
+The man. The myth. The legend.
 {% endfigure %}
 
 ## Intro
 
 Gilgamesh is a character who originated in Final Fantasy V and worked as the captain of the guard to Exdeath, the main antagonist of the game. He is a recurring boss but later becomes an ally to the Dawn Warriors after being banished to the Interdimensional Rift.
 
-Even after his supposed sacrifice and death, Gilgamesh continues to make several appearances in many games since FFV's release in 1992, traveling through the Rift, collecting weapons, battling worthy opponents, and trying to find a way back home. Unlike legacy characters such as Cid, it is implied that most of Gilgamesh's appearance are indeed the same character from FFV. However, I personally find this claim to be rather debatable, which I will discuss later on.
+Even after his supposed sacrifice and death, Gilgamesh continues to make several appearances in many games since FFV's release in 1992, traveling through the Rift, collecting weapons, battling worthy opponents, and trying to find a way back home. Unlike legacy characters such as Cid, it is implied that almost every Gilgamesh encountered in different games are indeed the same character from FFV. However, I personally find this claim to be rather debatable, which I will discuss later on.
 
 A common running gag in most of his appearances often involve him trying to find a strong weapon (often called "Excalibur") but later finding a much weaker replica ("Excalipoor") instead. As a result, it's common to find him wielding both swords and sometimes dealing only one point of damage to party members (as a boss) or the enemy (as a summon).
 
@@ -55,7 +55,7 @@ At the time, I wasn't aware that his appearance differered in every game, but I 
 
 I wanted to learn even more about him, and I jumped into the rabbit hole, or rather...the Interdimensional Rift.
 
-I knew that Gilgamesh was an idiot, but I assumed that he was a classic "all brawn and no brains" kind of character, which was a type that never interested me. As a result, I didn't bother looking into him much. Huge mistake on my part lmao. My mind was blown after watching a cutscene on YouTube of Cloud's first encounter with Gilgamesh when the former ends up in another dimension. It looks like they were about to start battling when Gilgamesh takes a swipe at Cloud, but not only does he *miss*, but he immediately **runs away at lightning speed** afterwards yelling, "RETREAT!"
+Even before seeing him in Rebirth, I knew that Gilgamesh was an idiot, but I assumed that he was a classic "all brawn and no brains" kind of character, which was a type that never interested me. As a result, I didn't bother looking into him much. Huge mistake on my part lmao. My mind was blown after watching a cutscene on YouTube of Cloud's first encounter with Gilgamesh when the former ends up in another dimension. It looks like they were about to start battling when Gilgamesh takes a swipe at Cloud, but not only does he *miss*, but he immediately **runs away at lightning speed** afterwards yelling, "RETREAT!"
 
 I was completely dumbfounded (and so was Cloud)!! Here was this large and intimidating man, at least a foot taller than Cloud, with six arms to boot and who could have EASILY given Cloud a good fight...and yet he retreats!!
 
@@ -73,7 +73,7 @@ Why not? He's such a great character! Even though he is well-known among FF fans
 
 He's what many fans would call a "gonk", a far cry from the bishounens that Square-Enix have provided such as Cloud Strife, Squall Leonhart, etc. Not to mention that he's extremely hard to draw with his large and stout body type, bulky musculature, complex armor, and multiple arms whose numbers can range from 4 to 8 depending on what game he appears in.
 
-However, I firmly believe that Gilgamesh deserves the spotlight! Like every other Final Fantasy character, he is much more complex than his silly personality makes him out to be. Gilgamesh is 100% a bumbling idiot with one brain cell, but he's still a skilled and formidable swordsman! He knows so much about swords and yet still can't tell Excalibur and Excalipoor apart!
+However, I firmly believe that Gilgamesh deserves the spotlight as much as any other character! Like every other Final Fantasy character, he is much more complex than his silly personality makes him out to be. Gilgamesh is 100% a bumbling idiot with one brain cell, but he's still a skilled and formidable swordsman! He knows so much about swords and yet still can't tell Excalibur and Excalipoor apart! How is that possible? I don't know, and I love that about him!!
 
 ### Is Gilgamesh the Same in All FF Games? { #is-gilgamesh-the-same-in-all-ff-games }
 
@@ -95,7 +95,7 @@ In Rebirth, Gilgamesh speaks in a flowery, almost archaic manner, probably a ref
 
 I don't know if it's the same with other writers, but I know it takes me hours to be able to write poems, and for him to just easily improvise and write such thought-provoking pieces in seconds is amazing!! It really adds a level of depth to his character, and I love it!
 
-If it sounds like that he is lot cooler than he is and that he's not the same idiotic Gilgamesh, then I'm here to correct you! He's still very much a silly man with nary a thought in that tiny brain of his! As I have mentioned before in his first encounter with Cloud, his iconic goofiness is still present in Rebirth any time he has appeared. There is also an especially funny scene during the party's final fight with him, but I don't want to spoil it here! [Watch it for yourself!](https://www.youtube.com/watch?v=ed6irqLdhog) (volume warning)
+If it sounds like that he is lot cooler than he is and that he's not the same idiotic Gilgamesh, then I'm here to correct you! He's still very much a silly oni with nary a thought in that tiny brain of his! As I have mentioned before in his first encounter with Cloud, his iconic goofiness is still present in Rebirth any time he has appeared. There is also an especially funny scene during the party's final fight with him, but I don't want to spoil it here! [Watch it for yourself!](https://www.youtube.com/watch?v=ed6irqLdhog) (volume warning)
 
 I can definitely say that Rebirth managed to achieve a perfect balance between making Gilgamesh funny and terrifying. It makes me a little sad that he might never return to a future FF7R game seeing as how there was a definite end to his boss fight, but a beet can dream!
 

@@ -10,17 +10,23 @@ eleventyExcludeFromCollections: true
 <!DOCTYPE html>
 <html lang={{ meta.lang }} data-theme="light">
   <head>
-    {% include "partials/head.html" %}
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="{{ meta.cssUrl }}/webgarden.css" type="text/css" media="all">
+    <link rel="shortcut icon" href="{{ meta.favicon.prod if meta.env == "prod" else meta.favicon.dev }}" type="image/x-icon">
     <title>{{ meta.name }}{% if title != null %} - {{ title }}{% endif %}</title>
   </head>
 <body>
-  <main class="garden-pot bg-body m-3 p-3 text-xs">
-    <span class="h1 m-0 text-lg">Bechno Kid's Hideout!</span>
-    <hr class="my-2">
-    <p>art, blog, resources, and more?!</p>
-    <div class="mt-1 text-center"><a title='Click to enter!' href="https://bechnokid.neocities.org" target="_blank"><img src="{{ gardenImage }}" alt="{{ gardenImgAlt }}"></a></div>
-    <div class="last-update text-muted"><p>Last updated: {{ lastUpdated }}</p></div>
-  </main>
+  <div class="plant-bechno">
+    <div class="content">
+      <h1>Bechno Kid's Hideout!</h1>
+      <hr>
+      <div class="desc">
+        <p>art, blog, resources, and more?!</p>
+        <a href="http://bechnokid.neocities.org" target="_blank" rel="noopener noreferrer"><img src="{{ gardenImage }}" alt="{{ gardenImgAlt }}"></a>
+        <p class="last-updated">Last updated: {{ lastUpdated }}</p>
+      </div>
+    </div>
+    <img class="nume" src="/assets/images/nume.gif" alt="" aria-hidden="true">
+  </div>
 </body>
 </html>

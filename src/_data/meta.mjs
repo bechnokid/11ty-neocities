@@ -27,7 +27,7 @@ export default {
     prod: "/assets/images/favicon.ico",
     dev: "/assets/images/meat.png"
   },
-  updated: [],
+  updated: ["FreezeframeJS", "Webgarden", "Digimon", "Links", "Artwork", "Tutorials"],
   new: [],
   emotes: [
     "angry",

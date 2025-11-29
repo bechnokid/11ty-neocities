@@ -54,12 +54,13 @@ tags:
 }
 
 .marquee-content {
-  display: inline-block;
+  display: inline-flex;
+  gap: .5rem;
   animation: marquee 30s steps(400, end) infinite;
 }
 
-.marquee-content > * {
-  margin: 0 .25rem;
+.marquee-content:hover {
+  animation-play-state: paused;
 }
 
 .marquee-content img {
@@ -73,16 +74,17 @@ tags:
   <h3 class="underline">Notes</h3>
 
 {% renderTemplate "md" %}
-- **Lines 2-3**: the `translateX` values are to ensure that all items in the example "disappear" before cycling through again. These numbers can change depending on how wide the marquee will be and how many items will be in it. Feel free to experiment!
+- **Lines 2-3**: t`translateX`{.language-css} values ensure that all items in the example "disappear" before cycling through again. These numbers can change depending on how wide the marquee will be and how many items will be in it. Feel free to experiment!
   - For the marquee to scroll from left to right (as opposed to right to left in the example), reverse the numbers. (change 100% to -150%, and change -150% to 100%)
 - **Line 9**: this width can be any number. I just chose 100% so that it would span the width of this page.
-- **Line 14**: `30s` can be changed to have the following effects:
+- **Line 14**: `gap`{.language-css} can only be used by flex boxes, and it gives some space between flex elements. This is optional and can be removed.
+- **Line 15**: `30s`{.language-css} can be changed to have the following effects:
   - Lower number = faster scrolling
   - Higher number = slower scrolling
-- **Line 14**: 400 in `steps()` can be changed to have the following effects:
+- **Line 15**: 400 in `steps()`{.language-css} can be changed to have the following effects:
   - Lower number = choppier movement
   - Higher number = smoother movement
-- **Lines 17-19**: these lines are only here to ensure there is some spacing between the items within the container. This is optional and can be removed if you'd like.
+- **Lines 18-20**: Causes the marquee to pause at the user's cursor position when hovered over. This is optional and can be removed.
 {% endrenderTemplate %}
 </section>
 

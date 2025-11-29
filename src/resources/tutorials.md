@@ -2,7 +2,7 @@
 title: Tutorials
 subList: true
 layout: layouts/page-landing.html
-permalink: /tutorials/index.html
+permalink: /resources/tutorials/index.html
 pagination:
   data: collections.tutorials
   size: 10

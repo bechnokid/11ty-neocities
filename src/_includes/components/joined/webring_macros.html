@@ -14,15 +14,16 @@
   - urlNext: next URL in webring
   - src: index image in webring
   - nav: navigation image in webring (points left)
+  - gap: flex gap setting (1-5)
 #}
 {% macro basic(params) %} {# one-line widgets #}
   {% set webringId = params.id or (params.name | slugify) %}
   {% set webringAlt = params.name + " webring" %}
-  <div class="{{ webringId }} webring">
+  <div class="{{ webringId }} webring{{ " flex-gap-" + params.gap if params.gap else ""}}">
     {% if not params.button %}
       <a href="{{ params.urlPrev or "" }}" class="wr-prev webring-nav-btn"><img src="{{ params.nav }}" alt="{{ altPrev + webringAlt }}"></a>
     {% endif %}
-    <a href="{{ params.url }}" class="webring-index webring-nav-btn mx-1"><img src="{{ params.src }}" alt="{{ altMain + webringAlt }}"></a>
+    <a href="{{ params.url }}" class="webring-index webring-nav-btn"><img src="{{ params.src }}" alt="{{ altMain + webringAlt }}"></a>
     {% if not params.button %}
       <a href="{{ params.urlNext or "" }}" class="wr-next webring-nav-btn"><img src="{{ params.nav }}" class="img-next" alt="{{ altNext + webringAlt }}"></a>
     {% endif %}
@@ -218,15 +219,17 @@
     <div class="ring-container">
       <img src="{{ imgPath }}/personaring.png" alt="" class="sona outline" aria-hidden="true">
       <div class="persona-ring">
-        <div class="name-tag outline">
-          <div class="head"><span style="font-size: 25px">HELLO!</span><br>my name is:</div>
-          <div class="namediv">Bechno</div>
-          <div class="webring-info">part of the <a href="{{ url }}/home" title="join???">persona ring</a> :)</div>
+        <div class="d-flex flex-column flex-gap-1">
+          <div class="name-tag outline">
+            <div class="head"><span style="font-size: 25px">HELLO!</span><br>my name is:</div>
+            <div class="namediv">Bechno</div>
+            <div class="webring-info">part of the <a href="{{ url }}/home" title="join???">persona ring</a> :)</div>
           </div>
-          <div class="direct">
+          <div class="direct d-flex flex-gap-1">
             <a class='wr-prev' href=""><img src="https://file.garden/Z2NdXxm2rXGo4wAJ/personaring/L%20arrow.png" alt="{{ altPrev + name }} webring" class="prev black-text"></a>
             <a class='wr-rand' href=""><img src="https://file.garden/Z2NdXxm2rXGo4wAJ/personaring/smiley.png" alt="{{ altRand + name }} webring" class="rand black-text"></a>
             <a class='wr-next' href=""><img src="https://file.garden/Z2NdXxm2rXGo4wAJ/personaring/L%20arrow.png" alt="{{ altNext + name }} webring" class="img-next black-text"></a>
+          </div>
         </div>
       </div>
     </div>
@@ -328,13 +331,11 @@
 {# INACTIVE WEBRINGS #}
 
 {% macro jelly() %}
-  <div class="jelly-world p-2">
-    <div>
-      <p><a href="/">Bechno Kid</a> has bonded with <strong>Jelly Well-Done Steak!</strong></p>
-      <img class='my-1' src="{{ imgPath }}/jw_steak.png" alt="{{ altMain }}Jelly World" title="Mmm...so tasty!">
-      <p class="jelly-world-desc">This jelly has the ability to boost your health and stamina! Mmm...so tasty!</p>
-    </div>
-    <div class="jelly-world-nav my-3 mb-2">
+  <div class="jelly-world py-3 px-2 d-flex flex-column flex-gap-3">
+    <p><a href="/">Bechno Kid</a> has bonded with <strong>Jelly Well-Done Steak!</strong></p>
+    <img src="{{ imgPath }}/jw_steak.png" alt="{{ altMain }}Jelly World" title="Mmm...so tasty!">
+    <p class="jelly-world-desc">This jelly has the ability to boost your health and stamina! Mmm...so tasty!</p>
+    <div class="jelly-world-nav py-1">
       <a href="" class="wr-rand button" aria-label="Go to a random site in Jelly World">RANDOM</a>
       <a href="https://jellyworld.neocities.org/pals" class="button" aria-label="Link to other sites to Jelly World">JELLY PALS</a>
     </div>
@@ -349,7 +350,8 @@
     url: widgetUrl,
     title: "Warriors of Light",
     src: widgetUrl + "ff.png",
-    nav: widgetUrl + "left.png"
+    nav: widgetUrl + "left.png",
+    gap: 2
   } %}
   {{ basic(webringParams) }}
   <script type="text/javascript" src="{{ widgetUrl }}onionring-variables.js"></script>

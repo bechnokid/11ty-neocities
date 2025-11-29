@@ -1,6 +1,6 @@
 ---
 title: RSS Feed
-summary: The latest (and greatest?) from a beet disguised as a software engineer.
+summary: The latest (and greatest?) from a beet disguised as a masked humanoid entity.
 permalink: '/feed.xml'
 displayOrder: 4
 tags: main
@@ -21,7 +21,7 @@ tags: main
   {%- for item in feedItems | reverse %}
   <entry>
     <title>{{ item.date | monDayYear }} </title>
-    <link href="{{ meta.url }}/home"/>
+    <link href="/home"/>
     <updated>{{ item.date | dateToRfc3339 }}</updated>
     <id>{{ meta.url }}/home</id>
     <content type="html">{{ item.content | renderTransforms }}</content>

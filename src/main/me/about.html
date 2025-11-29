@@ -4,7 +4,11 @@ shortTitle: 'About Me'
 displayOrder: 1
 prism: true
 permalink: '/about/index.html'
+freezeframe:
+  noNav: true
 ---
+<script src="{{ meta.jsUrl }}/bechnoFreeze.js"></script>
+
 {% set profileText %}
 Hi, I'm **Bechno Kid** (she/her), the head honcho of this hideout.
 
@@ -25,68 +29,78 @@ The little guys next to me are **Numemon**, a shy Champion-level Digimon, and **
   PS++ PE+ Y+ PGP? !t 5? X?@ R@ tv+ b- DI>+ D@ G e++ h-- r+++ z-
 -----END GEEK CODE-----
 ```
-**[More about Geek Code](https://web.archive.org/web/20090220181018/http://geekcode.com/geek.html)** {.text-right .mt-1 .mb-4}
+**[More about Geek Code](https://web.archive.org/web/20090220181018/http://geekcode.com/geek.html)** {.text-right}
 {% endset %}
 
-<div class="row g-0 mb-md-3">
-  <div class="col-lg-5 d-flex justify-content-center mb-lg-0 mb-4 pe-md-4">{% img '/assets/images/profile.png', { alt: 'Bechno Kid sitting down and playing with a purple Digital Monster 20th Anniversary device. Strapped to her pants is an orange 1998 Tamagotchi device. In her lap is Maskutchi, and hiding behind her is Numemon' } %}</div>
-  <div class="col-lg-7 d-flex flex-column justify-content-center">{{ profileText | markdownify | safe }}</div>
+{% set otherFacts %}
+- ♒︎ (☀️), ♉︎ (🌒), ♊︎ (⬆️)
+- INTJ...I think
+- Still counts with fingers
+- Sleeps with a nightlight
+- Never walks barefoot
+{% endset %}
+
+{% set likes %}
+- Drawing
+- Crocheting (sometimes)
+- Rice
+- Bún bò Huế
+- This shape {% icon 'arrow-right' %} <a href="/gadzooks" class="uwu">{% icon 'meat', { alt: 'Meat on a bone' } %}</a><span class="text-xs ms-1">"Tasty!"</span>
+{% endset %}
+
+{% set favMedia %}
+- **Monster Hunter**
+- **Digimon**
+- Tamagotchi
+- Kill la Kill
+- Trigun
+- Demon Slayer
+{% endset %}
+
+<div class="row g-0">
+  <div class="col-lg-5 col-md-4 d-flex justify-content-center">{% img '/assets/images/profile.png', { alt: 'Bechno Kid sitting down and playing with a purple Digital Monster 20th Anniversary device. Strapped to her pants is an orange 1998 Tamagotchi device. In her lap is Maskutchi, and hiding behind her is Numemon' } %}</div>
+  <div class="col-lg-7 col-md-8 d-flex flex-column justify-content-center px-3">{{ profileText | markdownify | safe }}</div>
 </div>
 
-{{ geekCode | markdownify | safe }}
+<div class="d-flex flex-column flex-gap-4">
+  <div class="geek-code">{{ geekCode | markdownify | safe }}</div>
 
-<div class='about-info row d-flex flex-wrap justify-content-center mb-4 mb-md-0'>
-  <div class="col-md-4 col-12 mb-3 mb-md-0">
-    {% galleryBox { title: "Other Facts", cls: "h-100" } %}
-      <ul>
-        <li>♒︎ (☀️), ♉︎ (🌒), ♊︎ (⬆️)</li>
-        <li>INTJ...I think</li>
-        <li>Still counts with fingers</li>
-        <li>Sleeps with a nightlight</li>
-        <li>Never walks barefoot</li>
-      </ul>
+  {% macro favsBox(arr, options = {}) %}
+    {% set contentCls = "justify-content-center flex-gap-3 freezeframe" if options.freezeframe == true else "justify-content-center flex-gap-3" %}
+    {% galleryBox { title: arr.title, cls: options.cls, subCls: contentCls } %}
+      {% if options.freezeframe %}
+        <div class="w-100 d-flex justify-content-center"><button class="button toggle-gif">Toggle GIFs</button></div>
+      {% endif %}
+      {% for item in arr.items %}
+        <div class="fav-box">
+          {% img about.favs.path + item.img, { alt: item.alt, cls: item.cls } %}
+          <p {% if "IRL" in arr.title %}class="font-weight-bold text-primary"{% endif %}>{{ item.name | markdownifyInline | safe }}</p>
+          {% if item.series %}
+            <p class="series">{{ item.series | markdownifyInline | safe }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
     {% endgalleryBox %}
+  {% endmacro %}
+
+  <div class='about-info row d-flex flex-wrap justify-content-center mb-4 mb-md-0'>
+    <div class="col-md-4 col-12 mb-3 mb-md-0">
+      {% galleryBox { title: "Other Facts", cls: "h-100" } %}
+        {{ otherFacts | renderContent ("md") | safe }}
+      {% endgalleryBox %}
+    </div>
+    <div class="col-md-4 col-12 mb-3 mb-md-0">
+      {% galleryBox { title: "Likes", cls: "h-100" } %}
+        {{ likes | renderContent ("md") | safe }}
+      {% endgalleryBox %}
+    </div>
+    <div class="col-md-4 col-12">
+      {% galleryBox { title: "Fav Media", cls: "h-100" } %}
+        {{ favMedia | renderContent ("md") | safe }}
+      {% endgalleryBox %}
+    </div>
   </div>
-  <div class="col-md-4 col-12 mb-3 mb-md-0">
-    {% galleryBox { title: "Likes", cls: "h-100" } %}
-      <ul>
-        <li>Drawing</li>
-        <li>Crocheting (sometimes)</li>
-        <li>Rice</li>
-        <li>Bún bò Huế</li>
-        <li>This shape {% icon 'arrow-right' %} <a href="/gadzooks" class="uwu">{% icon 'meat', { alt: 'Meat on a bone' } %}</a><span class="text-xs ms-1">"Tasty!"</span></li>
-      </ul>
-    {% endgalleryBox %}
-  </div>
-  <div class="col-md-4 col-12">
-    {% galleryBox { title: "Fav Media", cls: "h-100" } %}
-      <ul>
-        <li><strong>Monster Hunter</strong></li>
-        <li>Tamagotchi</li>
-        <li>Digimon</li>
-        <li>Kill la Kill</li>
-        <li>Trigun</li>
-        <li>Demon Slayer</li>
-      </ul>
-    {% endgalleryBox %}
-  </div>
+  {{ favsBox(about.favs.chars) }}
+  {{ favsBox(about.favs.monsters, { cls: "monsters" }) }}
+  {{ favsBox(about.favs.digimon, { cls: "digimon", freezeframe: true }) }}
 </div>
-
-{% macro favsBox(favsArr, favCls = null) %}
-  {% set galleryCls = "my-4 " + favCls if favCls else "my-4" %}
-  {% galleryBox { title: favsArr.title, cls: "my-4 " + favCls, subCls: 'text-xs text-center justify-content-center' } %}
-    {% for item in favsArr.items %}
-      <div class="fav-box">
-        {% img about.favs.path + item.img, { alt: altText, cls: item.cls } %}
-        <p {% if "IRL" in favsArr.title %}class="font-weight-bold text-primary"{% endif %}>{{ item.name | markdownifyInline | safe }}</p>
-        {% if item.series %}
-          <p>{{ item.series | markdownifyInline | safe }}</p>
-        {% endif %}
-      </div>
-    {% endfor %}
-  {% endgalleryBox %}
-{% endmacro %}
-
-{{ favsBox(about.favs.chars) }}
-{{ favsBox(about.favs.monsters, "monsters") }}
-{{ favsBox(about.favs.digimon) }}

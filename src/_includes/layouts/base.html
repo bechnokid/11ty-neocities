@@ -3,7 +3,7 @@
 <head>
   {% include "partials/head.html" %}
   <script src="{{ meta.jsUrl }}/bechnoQuery.js"></script>
-  {% if freezeframe %}<script src="{{ meta.jsUrl }}/freezeframe.js"></script>{% endif %}
+  {% if freezeframe == true %}<script src="{{ meta.jsUrl }}/bechnoFreeze.js"></script>{% endif %}
   {% if code %}<link rel="stylesheet" href="{{ meta.cssUrl }}/highlight.css">{% endif %}
   <script src="{{ meta.jsUrl }}/script.js" crossorigin="anonymous"></script>
   {% block css %}<link rel="stylesheet" href="{{ meta.cssUrl }}/bechno.css" type="text/css" media="all">{% endblock css %}
@@ -26,14 +26,13 @@
         <div class="row g-0">
           <nav id="nav-main" class="col-md-2">
             <div class="sidebar pb-1 mb-md-2">{% include "partials/navigation.html" %}</div>
-            {% if freezeframe %}
+            {% if freezeframe == true %}
               <div class="freeze-btns desktop d-md-flex justify-content-lg-center flex-lg-row flex-column flex-gap-2 d-none">
-                <button type="button" class="button play-gif">Play GIFs</button>
-                <button type="button" class="button stop-gif">Stop GIFs</button>
+                <button type="button" class="button toggle-gif">Toggle GIFs</button>
               </div>
             {% endif %}
           </nav>
-          <main id="main-content" class="offset-md-2 col{{ "-md-10" if title !="Home" }} px-2 px-md-4 py-md-3 position-relative" tabindex="-1">
+          <main id="main-content" class="offset-md-2 col{{ "-md-10" if title !="Home" }} px-lg-4 p-md-3 px-2 position-relative" tabindex="-1">
             {% include 'partials/theme-switcher.html' %}
             {% block content %}{% endblock %}
             <div class="back-to-top{% if noScroll == "true" or noScroll == true %} mobile-only{% endif %}"><a href="#" aria-label="Scroll to Top">{% icon 'arrow-up' %}</a></div>
@@ -45,16 +44,13 @@
     </div>
   </div>
   <script>
-    $(document).ready(function () {
-      {% if freezeframe %}
-        const e = new Freezeframe({ trigger: false, responsive: false });
-        $(".play-gif").on("click", function () { e.start() });
-        $(".stop-gif").on("click", function () { e.stop() });
-      {% endif %}
-      if ($('.loading-sidebar').length > 0) {
-        setTimeout(function () {
-          $('.loading-sidebar').addClass('d-none');
-        }, 1000);
+    document.addEventListener("readystatechange", function () {
+      if (document.readyState === "complete") {
+        if ($('.loading-sidebar').length > 0) {
+          setTimeout(function () {
+            $('.loading-sidebar').addClass('d-none');
+          }, 1000);
+        }
       }
     });
   </script>

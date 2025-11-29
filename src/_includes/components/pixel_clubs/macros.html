@@ -32,7 +32,7 @@
     <p>Created by <a href="https://lostletters.neocities.org/afternoontea/">Lost Letters!</a></p>
     <div class="d-flex flex-wrap justify-content-center flex-gap-2 py-3">
       {% for item in goodies.pixel_clubs.tea %}
-        <div class="teacup">
+        <div class="teacup d-flex flex-column flex-gap-1">
           {% set options = { url: item.url, alt: item.alt, freezeframe: item.freezeframe } %}
           <div class="tea-img">{% img imgPath + "tea/" + item.src, options %}</div>
           <details class="tea-taste sidebar text-xs text-center p-1 w-100">

@@ -26,14 +26,17 @@ export default {
   digimon: {
     title: "Favorite Digimon",
     items: [
-      { name: "Alphamon", img: "alphamon.png" },
-      { name: "Gallantmon", img: "gallantmon.png" },
-      { name: "Hagurumon", img: "hagurumon.png" },
-      { name: "Neptunemon", img: "neptunemon.png" },
-      { name: "Pumpkinmon", img: "pumpkinmon.png" },
-      { name: "Seraphimon", img: "seraphimon.png" },
-      { name: "Sharkmon", img: "sharkmon.png" },
-      { name: "Stingmon", img: "stingmon.png" },
+      { name: "Alphamon", img: "alphamon.gif" },
+      { name: "Beetlemon", img: "beetlemon.gif" },
+      { name: "Gallantmon", img: "gallantmon.gif" },
+      { name: "Hagurumon", img: "hagurumon.gif" },
+      { name: "Neptunemon", img: "neptunemon.gif" },
+      { name: "Numemon", img: "numemon.gif" },
+      { name: "Pumpkinmon", img: "pumpkinmon.gif" },
+      { name: "Seraphimon", img: "seraphimon.gif" },
+      { name: "Sharkmon", img: "sharkmon.gif" },
+      { name: "Stingmon", img: "stingmon.gif" },
+      { name: "Wezengammamon", img: "wezengammamon.gif" },
     ]
   }
 }

@@ -425,6 +425,11 @@ export default {
           alt: "A set of various smilies of different sizes",
           url: "https://itsyaboypedro.neocities.org/adoptables"
         },
+        {
+          src: "aquarius.gif",
+          alt: "A bunny in a blue and green pitcher with the Aquarius sign",
+          url: "https://web.archive.org/web/20080509021455/http://harriet.dalcomie.net/"
+        },
       ]
     }
   ],

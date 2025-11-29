@@ -8,10 +8,11 @@ permalink: '/layout-archive/index.html'
 
 {% set altText = site.layout_archive.altText %}
 {%- for l in site.layout_archive.layouts %}
+
 ## {{ l.date }} {.layout-archive}
 
 {{ l.desc | markdownify | safe }}
 
-[![{{ altText + l.date }}]({{ imgLink + l.img }}){.preview-img {{ ".mb-4" if not loop.last }}}]({{ imgLink + l.img }})
+[![{{ altText + l.date }}]({{ imgLink + l.img }}){.preview-img}]({{ imgLink + l.img }})
 
 {% endfor %}

@@ -2,246 +2,502 @@
 title: Implementing FreezeframeJS
 shortTitle: FreezeframeJS
 displayOrder: 2
-description: A tutorial on how to implement [Freezeframe.js](https://github.com/ctrl-freaks/freezeframe.js/), a library that can "freeze" animated GIFs.
+description: A tutorial on installing a script to freeze GIFs.
 prism: true
 redirectFrom: [/tutorials/freezeframe, /resources/tut_freezeframe, /resources/freezeframe]
 summary: "**NOTE:** The examples will not work if JavaScript is disabled."
 ---
-<script src="{{ meta.jsUrl }}/freezeframe.js"></script>
+<script src="{{ meta.jsUrl }}/bechnoFreeze.js"></script>
 
-One of the greatest challenges for a web designer is creating a site that is accessible to those with disabilities. It's one thing to create responsive sites and provide alt text for screen readers, but I noticed a lot of Neocities users' sites are lacking one of the most important aspects: **avoiding seizure-inducing images**.
+## Intro
 
-As much as I do enjoy flashing images (blinkies, pixels, rainbow backgrounds, etc.), I've seen a lot of sites with so much blinking and flashing that I can't browse their site for very long without my eyes hurting. If my eyes hurt from browsing some sites, then I can't imagine what it must be like for those who are prone to seizures.
+Hi there! You are looking at the **2.0 version of the Freezeframe tutorial** with a script that's (hopefully) a lot easier to read and use! The archived version of this tutorial can be [found here](../freezeframe_old).
 
-So, I started my journey to find out methods on allow others to enjoy these colorful GIFs but without the eyestrain, and that was when I found a magnificent JS library called [Freezeframe.js](https://github.com/ctrl-freaks/freezeframe.js/) ([demo page here](http://ctrl-freaks.github.io/freezeframe.js/)).
+To be honest, this new version was inspired [Solaria's tutorial](https://solaria.neocities.org/guides/gifpausetut) on freezing GIFs. I loved his tutorial but whined to myself, *"Weeehhh, I don't wanna save static images of ALL of my GIFs...."*. FreezeframeJS had the benefit of essentially installing the script and leaving it alone (for the most part).
 
-With this library, animated GIFs are paused and can be enabled again by clicking/hovering the image or manually through a button and such.
+However, FreezeframeJS came with its own issues that others ([Vance](https://entropically.neocities.org/learn/freezeframe/), [Sen](https://sen.fish/), and myself) found really annoying, such as:
 
-It's an amazing library and it's saved me from a lot of eyestrain while debugging the graphics page. The instructions are pretty easy to follow, but I'd like to share my method of implementing this library to my Neocities site. I hope you find this helpful!
+- Its difficulty to install, which was the reason why I made the tutorial in the first place.
+- Having no features for toggling or customizing transition animations, meaning that if the image is loading, it will always have a spinning logo.
+- Its original code is long and illegible, making it nearly impossible to modify and see why certain parts of it won't work the way you want it to.
+- Causing images to stretch by default due to its "responsiveness" option, which I find to be a little silly.
+- No longer being updated (at the time of writing this in 11/2025), so users cannot ask questions, submit issues, or make any pull requests.
 
-**Disclaimers:**
+The list goes on! The issues made it annoying enough for me to ultimately stop using the library.
 
-- This tutorial will show examples for both [JQuery](https://www.w3schools.com/jquery/default.asp) and [JavaScript](https://www.w3schools.com/js/default.asp), in which you can use either one or the other, but not both. While I prefer JQuery, both have its advantages and disadvantages, so it's up to you to look into both and see what you prefer. :)
-- Other webmasters have found wonderful alternatives to this library, which can be found in Vance's site at the [bottom of the page](#6-closing-thoughts). I recommend taking a look at their tutorial and other tips on making your site more accessible.
+***So!!!*** I took it upon myself to make a **new script**, simplifying Freezeframe's original script that automatically creates a static image for every animated image, while also using Solaria's script as reference to make it easy to install without any unnecessary fiddling with the default settings.
 
-## 1) Installation
+I also removed any instances of JQuery for this tutorial. I still like using JQuery, but it's also good to learn vanilla JavaScript in case JQuery is deemed deprecated in the future. {% emote 'happy' %}
 
-There are a few ways of installing freezeframe.js, but my preferred method is adding the following to your `<head>` tag on every page that would use this library, preferably any that contain a large amount of animated graphics.
+Here's a small demo of the new script without any styling!
 
-```html
-<script src="https://unpkg.com/freezeframe/dist/freezeframe.min.js"></script>
-```
-
-If there comes a need that you need to customize the script, the code can be found on the library's GitHub page, where you can download it and save it to the same folder you would keep your other scripts.
-
-## 2) Setup
-
-There are two ways of setting up freezeframe.js in HTML. You can set it up for each individual `<img>` tag, or you can set it up as a class for a `<div>` tag that holds several `<img>` elements inside, as shown below:
-
-### Option 1
+{% codeDemo  "Script demo for freezing GIFs", height = "115", class = "mt-2" %}
 
 ```html
-<img class="freezeframe" src="image.gif">
-```
+<button class="play-gif">Play GIFs</button>
+<button class="stop-gif">Stop GIFs</button>
+<button class="toggle-gif">Turn GIFs on/off</button>
 
-### Option 2
-
-```html
-<div class="freezeframe">
-  <img src="image1.gif">
-  <img src="image2.gif">
-  <img src="image3.gif">
+<div style="margin-top: 1rem">
+  <img class="freeze" src="/assets/images/goodies/stamps/robbie-rotten.gif" alt="animated stamp of Robbie Rotten from Lazytown">
 </div>
 ```
 
-For me, if I know all images in a `<div>` element will be animated (such as blinkies), then I place the freezeframe class into `<div>` element. Otherwise, if a `<div>` element has both static and animated images (like for links), then I place the freezeframe class into the `<img>` element.
+```js
+class FreezeImages {
+  constructor(options = {}) {
+    // Set default params
+    this.selector = options.selector || ".freeze"
+    this.imgCls = "ff-img";
+    this.canvasCls = "ff-canvas";
+    this.hover = (options.hover === true) ? true : false;
 
-This is only because I'm cautious about saving as much space as possible, since adding the freezeframe class to an element will automatically create a "loading" image, whether the original image is animated or not.
+    // Finds all images with selector class and within elements with the selected class
+    //  and creates list
+    const imgList = document.querySelectorAll(`img${this.selector}, ${this.selector} img`);
+    this.imgList = imgList;
 
-## 3) Implementation
+    // Creates <style> tag for new elements
+    if (!this.noCSS) {
+      const style = document.createElement('style');
+      style.textContent = `
+        .ff-container {
+          display: inline-block;
+          position: relative;
+        }
 
-One thing to note about the library is, like most scripts, it will not work properly until the entire page has been loaded. You can put the script in your HTML file, or you can put it in a separate JS file if you intend on using this script in multiple HTML files.
+        .ff-container.ff-hover:hover .ff-active {
+          position: absolute;
+          opacity: 0;
+        }
 
-### 3.1) Usage in a Single File
+        .ff-container.ff-hover:hover .ff-inactive {
+          position: static;
+          opacity: 1;
+        }
 
-If you intend on using this library in a HTML file, then you can place the following code in one of two places:
+        .ff-inactive {
+          position: absolute;
+          opacity: 0;
+        }
+      `;
+      document.head.appendChild(style);
+    }
 
-- Right above the ending `</body>` tag, or...
-- As an onload event in the `<body>` tag, as shown below.
+    // Loops through all images
+    for (const img of this.imgList) {
+      // Gives <img> the inactive class, which hides GIF by default
+      img.className = `${this.imgCls} ff-inactive`;
 
-#### Option 1
+      // Creates <canvas> of GIF and copies data of first frame of animation
+      let canvas = document.createElement("canvas");
+      canvas.width = img.width;
+      canvas.height = img.height;
+      canvas.className = `${this.canvasCls} ff-active`;
+      canvas.getContext('2d').drawImage(img, 0, 0, img.width, img.height);
+
+      // Creates container that will hold both <img> and <canvas>
+      let wrapper = document.createElement("div");
+      wrapper.className = "ff-container";
+      if (this.hover) wrapper.classList.add("ff-hover");
+
+      // Inserts container with <img> and <canvas> where <img> originally was
+      img.parentNode.insertBefore(wrapper, img);
+      wrapper.appendChild(img);
+      wrapper.appendChild(canvas);
+    }
+  }
+
+  start() { // Starts animations by switching class names
+    for (const img of this.imgList) {
+      img.className = `${this.imgCls} ff-active`;
+      img.nextSibling.className = `${this.canvasCls} ff-inactive`;
+    }
+  }
+
+  stop() { // Stops animations by switching class names
+    for (const img of this.imgList) {
+      img.className = `${this.imgCls} ff-inactive`;
+      img.nextSibling.className = `${this.canvasCls} ff-active`;
+    }
+  }
+
+  toggle() { // Toggles animations by switching class names based on current state
+    for (const img of this.imgList) {
+      let imgNewCls = (img.className.includes('ff-inactive')) ? "ff-active": "ff-inactive";
+      let canvasNewCls = (img.className.includes('ff-inactive')) ? "ff-inactive": "ff-active";
+
+      img.className = `${this.imgCls} ${imgNewCls}`;
+      img.nextSibling.className = `${this.canvasCls} ${canvasNewCls}`;
+    }
+  }
+}
+
+// Waits for page to finish loading
+document.addEventListener("readystatechange", function () {
+  if (document.readyState === "complete") {
+    // Initialize script
+    const f = new FreezeImages ()
+
+    // Set event listeners for all buttons
+    for(const el of document.getElementsByClassName('play-gif')) {
+      el.addEventListener('click', () => f.start());
+    }
+
+    for(const el of document.getElementsByClassName('stop-gif')) {
+      el.addEventListener('click', () => f.stop());
+    }
+
+    for(const el of document.getElementsByClassName('toggle-gif')) {
+      el.addEventListener('click', () => f.toggle());
+    }
+  }
+});
+```
+
+{% endcodeDemo %}
+
+The script is not perfect by any means, and I'm sure there is a lot that can be improved on. However, after using it on my site for a while, I think it's pretty good for what it is, and I hope all of you find it easy to use, too.
+
+## Simple Setup
+
+### 1) HTML
+
+Set "freeze" as the class name for each GIF individually...
 
 ```html
-<body>
-  <!--  Code goes here... -->
-  <script>new Freezeframe();</script>
-</body>
+<img class="freeze" src="IMGSRC.gif">
 ```
 
-#### Option 2
+...Or for the parent element.
 
 ```html
-<body onload="new Freezeframe();">
-  <!--  Code goes here... -->
-</body>
-```
-
-### 3.2) Usage in Multiple HTML Files
-
-If you intend on using the script in multiple HTML files, then you can put `new Freezeframe();` in a separate JS file. If this is the case, be sure to be aware of the following:
-
-- Be sure to include the link to the JS file in every HTML file you plan to use the library in.
-- Make sure the skip runs *after* the page has been loaded.
-
-The following code would likely go into your `index.js` file.
-
-#### JavaScript
-
-```js
-document.addEventListener("DOMContentLoaded", function(event) {
-  new Freezeframe();
-});
-```
-
-#### JQuery
-
-```js
-$(document).ready(function() {
-  new Freezeframe();
-});
-```
-
-Once `new Freezeframe();` has been implemented, all images with the freezeframe class will pause upon loading the page and will only play when the mouse hovers above them.
-
-## 4) Customization
-
-There are multiple ways to customize the script depending on how you want the animated GIFs to start playing, as shown in the demo page. For me, I wanted to create buttons that would play or pause *all* animated images in a page, which is unfortunately not covered in the demo page, so here's how I did it.
-
-In HTML, create the buttons and label them appropriately so the script can locate them.
-
-```html
-<button id='play-gif' type='button'>Play GIFs</button>
-<button id='stop-gif' type='button'>Stop GIFs</button>
-```
-
-Then, go to the script you put `new Freezeframe();` and change it into the following:
-
-### JavaScript
-
-```js
-document.addEventListener("DOMContentLoaded", function(event) {
-  const e = new Freezeframe({ trigger: false });
-  document.getElementById("play-gif").addEventListener("click", function(){ e.start() });
-  document.getElementById("stop-gif").addEventListener("click", function(){ e.stop() });
-});
-```
-
-### JQuery
-
-```js
-$(document).ready(function() {
-  const e = new Freezeframe();
-  $("#play-gif").on("click", function(){ e.start() });
-  $("#stop-gif").on("click", function(){ e.stop() });
-});
-```
-
-The functions that have "click" are what triggers the Freezeframe component to run a certain method, so clicking the button with the ID `#play-gif` will play the GIFs, while clicking the button with the ID `#stop-gif` will stop the GIFs.
-
-So, you should have something like the following:
-
-<button id="play-gif" class="button me-2" type='button'>Play GIFs</button><button id="stop-gif" class="button" type='button'>Stop GIFs</button>
-
-<div class='freezeframe my-4'>
-
-![Stamp of Doctor Strange activating his magic](/assets/images/goodies/stamps/strange.gif) ![Stamp of Doctor Strange turning his head](/assets/images/goodies/stamps/strange_headturn.gif) {.d-flex .flex-gap-2}
-
-![Blinkie of Doctor Strange](/assets/images/goodies/blinkies/blinkie-strange-sprite.gif)
-
+<div class="freeze">
+  <img src="IMGSRC.gif">
+  <img src="IMGSRC.gif">
+  <img src="IMGSRC.gif">
 </div>
-<script>
-  $(document).ready(function() {
-    const e = new Freezeframe({ trigger: false, responsive: false });
-    $("#play-gif").on("click", function(){ e.start() });
-    $("#stop-gif").on("click", function(){ e.stop() });
-  });
-</script>
-
-## 5) Troubleshooting
-
-Of course, not every library is perfect, and Freezeframe.js is no exception. Here are some issues I encountered and some workarounds, if any, that I managed to figure out.
-
-### 5.1) Does not work in tabbed menus
-
-The library does not currently work in tabbed menus that use CSS. My guess is because of the clashing CSS styles somehow, but I haven't figured out a workaround for this, yet.
-
-### 5.2) Hover CSS styling does not work
-
-There are instances of the library not working properly with other images that already change when hovering the cursor over it. This is because the styling for classes generated by Freezeframe.js more often than not clashes with whatever style you have already configured for your images.
-
-To prevent this, you can put this block of code in your CSS stylesheet.
-
-```css
-/* Remove all transitions from Freezeframe elements */
-a .ff-image,
-a .ff-canvas.ff-canvas-ready {
-  transition: none !important;
-  -o-transition: none !important;
-  -moz-transition: none !important;
-  -webkit-transition: none !important;
-}
-
-/* Add the selectors for Freezeframe elements to wherever the image changes when hovered */
-
-a:hover img,
-a:hover .ff-image,
-a:hover .ff-canvas.ff-canvas-ready {
-  opacity: .5 !important;
-}
-
-/* This is only required if images become transparent when hovered*/
-a:hover .ff-image {
-  opacity: 0 !important;
-}
 ```
 
-### 5.3) Inconsistent sizes for 88x31 buttons
+Make buttons for playing and starting the GIFs...
 
-The original developer of the library added a feature to make all images responsive, resulting in some images to appear much larger than they actually are, especially blinkies and other smaller graphics. Thankfully, [Vance from Entropically](https://entropically.neocities.org/learn/freezeframe/#why-are-my-gifs-so-big) informed me that there is a feature to disable this.
+```html
+<button class="play-gif">Play GIFs</button>
+<button class="stop-gif">Stop GIFs</button>
+```
 
-Assuming you have `const e = new Freezeframe({ trigger: false });` set up somewhere, it can be changed to the following:
+...Or make a single button for toggling them.
+
+```html
+<button class="toggle-gif">Toggle GIFs</button>
+```
+
+Then, put the "Play/Stop GIFs" buttons or the "Toggle GIFs" button somewhere in the HTML.
+
+...You can also use all three types of buttons if you feel like it! The script will work either way!
+
+### 2) JavaScript
+
+Put the following script in a `<script>`{.language-html} tag in the head of the HTML document.
+
+{% details { title: "(Show/hide script)", summaryCls: "details h4"} %}
+
+Comments can be removed! They're just there to explain how parts of the script works. :)
 
 ```js
-const e = new Freezeframe({ trigger: false, responsive: false });
+class FreezeImages {
+  constructor(options = {}) {
+    // Set default params
+    this.selector = options.selector || ".freeze"
+    this.imgCls = "ff-img";
+    this.canvasCls = "ff-canvas";
+    this.hover = (options.hover === true) ? true : false;
+
+    // Finds all images with selector class and within elements with the selected class
+    //  and creates list
+    const imgList = document.querySelectorAll(`img${this.selector}, ${this.selector} img`);
+    this.imgList = imgList;
+
+    // Creates <style> tag for new elements
+    if (!this.noCSS) {
+      const style = document.createElement('style');
+      style.textContent = `
+        .ff-container {
+          display: inline-block;
+          position: relative;
+        }
+
+        .ff-container.ff-hover:hover .ff-active {
+          position: absolute;
+          opacity: 0;
+        }
+
+        .ff-container.ff-hover:hover .ff-inactive {
+          position: static;
+          opacity: 1;
+        }
+
+        .ff-inactive {
+          position: absolute;
+          opacity: 0;
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    // Loops through all images
+    for (const img of this.imgList) {
+      // Gives <img> the inactive class, which hides GIF by default
+      img.className = `${this.imgCls} ff-inactive`;
+
+      // Creates <canvas> of GIF and copies data of first frame of animation
+      let canvas = document.createElement("canvas");
+      canvas.width = img.width;
+      canvas.height = img.height;
+      canvas.className = `${this.canvasCls} ff-active`;
+      canvas.getContext('2d').drawImage(img, 0, 0, img.width, img.height);
+
+      // Creates container that will hold both <img> and <canvas>
+      let wrapper = document.createElement("div");
+      wrapper.className = "ff-container";
+      if (this.hover) wrapper.classList.add("ff-hover");
+
+      // Inserts container with <img> and <canvas> where <img> originally was
+      img.parentNode.insertBefore(wrapper, img);
+      wrapper.appendChild(img);
+      wrapper.appendChild(canvas);
+    }
+  }
+
+  start() { // Starts animations by switching class names
+    for (const img of this.imgList) {
+      img.className = `${this.imgCls} ff-active`;
+      img.nextSibling.className = `${this.canvasCls} ff-inactive`;
+    }
+  }
+
+  stop() { // Stops animations by switching class names
+    for (const img of this.imgList) {
+      img.className = `${this.imgCls} ff-inactive`;
+      img.nextSibling.className = `${this.canvasCls} ff-active`;
+    }
+  }
+
+  toggle() { // Toggles animations by switching class names based on current state
+    for (const img of this.imgList) {
+      let imgNewCls = (img.className.includes('ff-inactive')) ? "ff-active": "ff-inactive";
+      let canvasNewCls = (img.className.includes('ff-inactive')) ? "ff-inactive": "ff-active";
+
+      img.className = `${this.imgCls} ${imgNewCls}`;
+      img.nextSibling.className = `${this.canvasCls} ${canvasNewCls}`;
+    }
+  }
+}
+
+// Waits for page to finish loading
+document.addEventListener("readystatechange", function () {
+  if (document.readyState === "complete") {
+    // Initialize script
+    const f = new FreezeImages ()
+
+    // Set event listeners for all buttons
+    for(const el of document.getElementsByClassName('play-gif')) {
+      el.addEventListener('click', () => f.start());
+    }
+
+    for(const el of document.getElementsByClassName('stop-gif')) {
+      el.addEventListener('click', () => f.stop());
+    }
+
+    for(const el of document.getElementsByClassName('toggle-gif')) {
+      el.addEventListener('click', () => f.toggle());
+    }
+  }
+});
 ```
 
-However, if the above does not work, another option would be to add in some CSS to resize the images manually.
+{% enddetails %}
 
-In this example, let's say you have a link like so: `<a class="buttonLink" href='https://SOMESITE.com'><img src='BUTTON.png'></a>`. Notice that the `</a>` element has the class called **buttonLink**.
+If everything's set up properly, then the buttons and GIFs should behave like in the demo!
+
+From here, you can continue reading for slightly more advanced ways on using this script, or you can skip straight to the [bottom of the page](#closing-thoughts).
+
+## Advanced Usage
+
+From this point on, I'll be using terms that mostly JavaScript users would know. If you're still a beginner at JavaScript, I recommend familiarizing yourself with it more before entering this section!
+
+*You've been warned!*
+
+### Changing Class Names (Images)
+
+The parameters that the script accepts includes the selector name that the script looks for when processing images.
+
+The default class name is **freeze**, but it is possible to use a different class name instead, such as **freeze-img**, as shown below:
+
+```html
+<img class="freeze-img" src="IMGSRC.gif">
+```
+
+Refer to the highlighted line from this section of the script.
+
+```js/2
+document.addEventListener("readystatechange", function () {
+  if (document.readyState === "complete") {
+    const f = new FreezeImages ()
+
+    /* Event listeners go here...*/
+  }
+});
+```
+
+Change **line 3** so that it looks like the following:
+
+```js
+  const f = new FreezeImages ({ selector: "freeze-img" })
+```
+
+The script will now look for all elements with the class name **freeze-img**.
+
+### Changing Class Names (Buttons)
+
+By default, the script waits for the page to finish loading and then looks for the buttons with the class names **play-gif**, **stop-gif**, and **toggle-gif**.
+
+You can change the names the script looks for by going directly into the script.
+
+Let's say we have these buttons for example:
+
+```html
+<button class="start-img-btn">Start GIFs</button>
+<button class="stop-img-btn">Stop GIFs</button>
+<button class="toggle-img-btn">Toggle GIFs</button>
+```
+
+For the script to work, look for this block of code in the script:
+
+```js/
+document.addEventListener("readystatechange", function () {
+  if (document.readyState === "complete") {
+    const f = new FreezeImages ()
+
+    for(const el of document.getElementsByClassName('play-gif')) {
+      el.addEventListener('click', () => f.start());
+    }
+
+    for(const el of document.getElementsByClassName('stop-gif')) {
+      el.addEventListener('click', () => f.stop());
+    }
+
+    for(const el of document.getElementsByClassName('toggle-gif')) {
+      el.addEventListener('click', () => f.toggle());
+    }
+  }
+});
+```
+
+At **line 5**, you would change **play-gif** to **start-img-btn**.
+At **line 9**, you would change **stop-gif** to **stop-img-btn**.
+At **line 13**, you would change **toggle-gif** to **toggle-img-btn**.
+
+If you want to take the advanced route, you can remove **lines 5 through 15** entirely and make your own event listeners that will call the `start()`{.language-js}, `stop()`{.language-js}, and `toggle()`{.language-js} methods on their own.
+
+### Playing/Pausing GIFs on Hover
+
+By default, the script depends on two existing buttons in the HTML in order to trigger animations. However, by passing in a certain parameter, animations can be triggered by just hovering over an image.
+
+Please note that hovering over images to trigger their animations is only possible on desktop computers. If you plan on making your site mobile-friendly, I would recommend skipping this section and sticking with the buttons!
+
+Refer to the highlighted line from this section of the script.
+
+```js/2
+document.addEventListener("readystatechange", function () {
+  if (document.readyState === "complete") {
+    const f = new FreezeImages ()
+
+    /* Event listeners go here...*/
+  }
+});
+```
+
+Then, add the "hover" parameter, so the line will look like this:
+
+```js
+const f = new FreezeImages ({ hover: true })
+```
+
+By setting this parameter, the script will add the class `.ff-hover`{.language-html} to `.ff-container`{.language-html}. Afterwards, hovering over images will play their animations with the power of pure CSS.
+
+This works because of the CSS that the script already added to the `<style>`{.language-html} tag in the head of the document. It's possible that the CSS the script adds might clash with existing styles in your CSS, so if that is something you'd like to avoid, the next section will help!
+
+### No Additional CSS
+
+As previously mentioned, the script adds some CSS to your HTML by default. To prevent this, you can add the **no_css** parameter, and set it to true.
+
+```js
+const f = new FreezeImages ({ no_css: true })
+```
+
+This will tell the script to not add any CSS to your HTML. The script will still create the other elements with the original class names ("ff-container", etc.), so you can add in your own CSS if you so desire!
+
+Here's the original CSS from the script in case you'd like to use it as reference (with pretty syntax highlighting for easy viewing):
+
+{% details { title: "(Show/hide CSS)", summaryCls: "details h4"} %}
 
 ```css
-.button-link,
-.button-link > div,
-.button-link img {
-  height: 31px;
-  width: 88px;
+.ff-container {
+  display: inline-block;
+  position: relative;
+}
+
+.ff-container.ff-hover:hover .ff-active {
+  position: absolute;
+  opacity: 0;
+}
+
+.ff-container.ff-hover:hover .ff-inactive {
+  position: static;
+  opacity: 1;
+}
+
+.ff-inactive {
+  position: absolute;
+  opacity: 0;
 }
 ```
 
-I've also had a couple of people point out that the images can get really stretched. I would also suggest adjusting the height of the `<a>` element to mitigate this issue.
+{% enddetails %}
 
-I also recommend having this code in your main stylesheet.
+### Resulting Constructor
+
+To make things easier to see, there is what calling the FreezeImages class will look with its available options.
+
+```js
+const f = new FreezeImages (
+  {
+    selector: "freeze",
+    hover: true,
+    noCss: true,
+  }
+)
+```
+
+## Troubleshooting
+
+### Images Appear Stretched
+
+This is a common issue I've encountered when using flex, so I thought I'd put this here in case someone else needs help.
+
+I find that putting this CSS block would prevent images from stretching. Hopefully, it works for you, too!
 
 ```css
-.ff-image {
-  vertical-align: unset !important;
+img {
+  align-self: end; /* "center" and "start" also work */
 }
 ```
 
-I sadly have no explanation for this block of code except, "-shrugs- it works!"
+## Closing Thoughts
 
-## 6) Closing Thoughts
+As mentioned before, this script isn't perfect since I'm not a JavaScript expert, so if anyone reads through the script and sees some improvements that can be made, feel free to send them to me at **bechnokid@yahoo.com**, and I'll make the appropriate changes!
 
-Hopefully this tutorial helps anyone who wishes to make their site a little more accessible. If you have any questions, don't be afraid to send an email to <bechnokid@yahoo.com>. I'll do my best to answer any questions you might have!
+You can also make a pull request on the [GitHub repository](https://github.com/bechnokid/simple-freeze) if that's more your style!
 
-I would also like to give HUGE thanks to Vance for the corrections as well as suggestions on improving this tutorial. I would also argue that [their tutorial](https://entropically.neocities.org/learn/freezeframe/) covers a lot, if not more, aspects of the library as well as providing alternatives to disabling the animations on GIFS. Please give it a read when you can!
+Everyone is more than welcome to take the script for themselves and make a better version that works for their site! I fully encourage it! {% emote 'happy' %}

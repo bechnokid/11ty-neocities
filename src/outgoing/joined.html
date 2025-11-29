@@ -27,7 +27,7 @@ permalink: '/joined/index.html'
   {% endgalleryBox %}
   {% galleryBox { title: "Webrings", subCls: "webrings justify-content-center flex-gap-2" } %}
     {% set debug = false if meta.env == "prod" else true %}
-    <div class="small-webrings js-required d-flex flex-wrap align-items-center justify-content-center">
+    <div class="small-webrings js-required d-flex flex-wrap align-items-center justify-content-center flex-gap-2">
       {{ webrings.neocreatives() }}
       {{ webrings.cuddler() }}
       {{ webrings.rayman() }}
@@ -74,9 +74,9 @@ permalink: '/joined/index.html'
   {% endgalleryBox %}
 
   {% galleryBox { title: "Webrings?", subCls: "webrings fake-webrings", simple: true } %}
-    <p class="mb-4">These webrings are either inactive or are not letting people join even though the option to become a member is still available. So, I cheated a bit to make myself an "honorary member", like a rascal. Yes, these are all functional!</p>
+    <p>These webrings are either inactive or are not letting people join even though the option to become a member is still available. So, I cheated a bit to make myself an "honorary member", like a rascal. Yes, these are all functional!</p>
     <p>If you're the owner of any of these webrings and you want me to take these down, then please go back to updating your webrings or at least say applications are closed!</p>
-    <div class="d-flex flex-md-row flex-column align-items-center justify-content-center flex-gap-3">
+    <div class="d-flex flex-md-row flex-column align-items-center justify-content-center flex-gap-3 mt-3">
       <div class="d-flex flex-column align-items-center flex-gap-1">
         {{ webrings.wol() }}
         {{ webrings.pokering() }}
@@ -90,9 +90,11 @@ permalink: '/joined/index.html'
     {%- for key, value in outgoing.joined.fanlistings %}
       <div class="w-100">
         <h3>{{ key | title }}</h3>
-        {%- for item in value %}
-          {% img assetLink + item.src, { url: item.url, alt: item.alt + " fanlisting button", urlCls: 'mx-1' } %}
-        {% endfor %}
+        <div class="d-flex flex-wrap flex-gap-1">
+          {%- for item in value %}
+            {% img assetLink + item.src, { url: item.url, alt: item.alt + " fanlisting button" } %}
+          {% endfor %}
+        </div>
       </div>
     {% endfor %}
   {% endgalleryBox %}

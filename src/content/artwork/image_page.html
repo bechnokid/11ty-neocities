@@ -18,22 +18,22 @@ eleventyComputed:
     {% link "../" + artLink, "&lt;&lt;", { cls: 'button', ariaLabel: 'Go to previous image' } %}
   {% endif %}
   {% set artLink = img.gallery | slugify %}
-  {% link "/art/" + artLink + "/", "Index", { cls: 'button mx-3' } %}
+  {% link "/art/" + artLink + "/", "Index", { cls: 'button' } %}
   {% if img.nextImg %}
     {% set artLink = img.nextImg | slugify %}
     {% link "../" + artLink, "&gt;&gt;", { cls: 'button', ariaLabel: 'Go to next image' } %}
   {% endif %}
 {% endmacro %}
-<section>
-	<div class='art-nav d-flex justify-content-center'>{{ artNav(picture) }}</div>
-  <div class='img-container d-flex mt-4 justify-content-center'>
-    <img src="{{ picture.baseUrl + picture.filename }}" alt="{{ picture.altText }}" class='mb-3 mx-auto'{% if picture.transcript %} aria-describedby="transcript"{% endif %}>
+<section class="d-flex flex-column flex-gap-3">
+	<div class='art-nav'>{{ artNav(picture) }}</div>
+  <div class='img-container d-flex flex-column justify-content-center'>
+    <img src="{{ picture.baseUrl + picture.filename }}" alt="{{ picture.altText }}"{% if picture.transcript %} aria-describedby="transcript"{% endif %}>
   </div>
-  {% if picture.fullSize %}<div class='full-size-link mb-3 text-center'><a href="{{ picture.baseUrl + picture.filename }}">(Click for full size)</a></div>{% endif %}
-  <div class="art-desc mb-4">
+  {% if picture.fullSize %}<a class="text-center" href="{{ picture.baseUrl + picture.filename }}">(Click for full size)</a>{% endif %}
+  <div class="art-desc">
     {% artCaption picture.caption, { originalDate: picture.originalDate, originalCaption: picture.originalCaption, transcript: picture.transcript } %}
   </div>
-  <div class='art-nav d-flex justify-content-center'>
+  <div class='art-nav'>
 		{{ artNav(picture) }}
 	</div>
 </section>

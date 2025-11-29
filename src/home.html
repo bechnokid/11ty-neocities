@@ -17,36 +17,38 @@ Please enjoy your stay, and thank you for visiting! {% emote 'happy' %}
 
 Webrings and fanlistings can be found in [/joined](/joined)!
 {% endset %}
+
 <script src="{{ meta.jsUrl }}/microblog.js"></script>
-  <div class="content">
-    {{ contentBlock | markdownify | safe }}
-    <div class="intro-links text-center mt-4">
-      {%- for link in meta.introLinks %}
-        {% link link.url, link.name %}{% if not loop.last %}<span class="mx-2">✦</span>{% endif %}
-      {% endfor %}
-    </div>
-    <div class="status-row row g-md-3 mb-3">
-      <div class="status col-md-7 mb-md-0 mb-3">
-        <div class="sidebar h-100 overflow-hidden">
-          <div class="h2 p-2">Latest Status</div>
-          {% set status = microblog.microblog[0] %}
-          <div id="status-cafe" class="js-required status-container d-flex">
-            <div class="p-5 w-100 text-center">Loading...</div>
-          </div>
-          <noscript>
-            <p class="p-4 text-center">Find me over at <a href="https://status.cafe/users/bechnokid">Status Cafe</a>!</p>
-          </noscript>
-        </div>
-      </div>
-      <div class="col-md-5">
-        <div class="sidebar h-100">
-        <div class="h2 p-2">Link Me!</div>
-          <div class="content p-2 text-center d-flex flex-column">
-            <p class="my-1">Feel free to hotlink!</p>
-            <div>{%- for button in meta.buttons %}{% img button.src, { cls: 'mx-1', alt: button.alt + " button for Bechno Kid's hideout"} %}{% endfor %}</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    {% include "partials/cliques.html" %}
+
+<div class="d-flex flex-column flex-gap-4">
+  <div class="content">{{ contentBlock | markdownify | safe }}</div>
+  <div class="intro-links text-center">
+    {%- for link in meta.introLinks %}
+      {% link link.url, link.name %}{% if not loop.last %}<span class="mx-2">✦</span>{% endif %}
+    {% endfor %}
   </div>
+  <div class="status-row row d-flex flex-md-row flex-column flex-md-gap-0 flex-gap-4">
+    <div class="status col-md-7">
+      <div class="sidebar h-100 overflow-hidden">
+        <div class="h2 p-2">Latest Status</div>
+        {% set status = microblog.microblog[0] %}
+        <div id="status-cafe" class="js-required status-container d-flex flex-gap-3 px-3">
+          <div class="p-5 w-100 text-center">Loading...</div>
+        </div>
+        <noscript>
+          <p class="p-4 text-center">Find me over at <a href="https://status.cafe/users/bechnokid">Status Cafe</a>!</p>
+        </noscript>
+      </div>
+    </div>
+    <div class="col-md-5 link-btns">
+      <div class="sidebar h-100">
+      <div class="h2 p-2">Link Me!</div>
+        <div class="content p-2 text-center d-flex flex-column flex-gap-2">
+          <p>Feel free to hotlink!</p>
+          <div class="d-flex flex-wrap justify-content-center flex-gap-2 jus">{%- for button in meta.buttons %}{% img button.src, { alt: button.alt + " button for Bechno Kid's hideout"} %}{% endfor %}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% include "partials/cliques.html" %}
+</div>

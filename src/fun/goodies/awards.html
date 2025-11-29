@@ -8,7 +8,7 @@ permalink: '/goodies/awards/index.html'
 hasLinks: true
 ---
 {% set imgPath = '/assets/images/goodies/awards/' %}
-<div class="d-flex flex-wrap justify-content-center align-items-center awards">
+<div class="d-flex flex-wrap justify-content-center align-items-center flex-gap-2">
   {%- for item in goodies.graphics.awards %}
     {% img imgPath + item.src, { url: item.url, alt: item.alt } %}
   {% endfor %}

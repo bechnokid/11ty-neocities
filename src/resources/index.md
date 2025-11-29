@@ -2,7 +2,7 @@
 title: Resources
 subList: true
 layout: 'layouts/page-landing.html'
-permalink: false
+permalink: /resources/index.html
 pagination:
   data: collections.resources
   size: 10

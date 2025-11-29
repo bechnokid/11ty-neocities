@@ -19,28 +19,34 @@ flashing: true
     </div>
   </section>
 
-  <section>
-    <h2>Fellow Netizens</h2>
-    {% renderTemplate "md" %}
-    Here are some sites whose webmasters are friends, affiliates, or people who I think are just cool in general!
+  {# Creates section for links\
+    * @param {string} options.title - Section title
+    * @param {string} options.desc - Section description
+    * @param {array} options.btnsArr - Array that holds links and their data, including buttons
+    * @param {array} options.noBtnsArr - Array that holds only links
+  #}
+  {% macro linkSection(options) %}
+    <section class="neighbors">
+      <h2>{{ options.title }}</h2>
+      <div class="d-flex flex-column flex-gap-2">
+        <p>{{ options.desc }}</p>
+        <ul class="inline-list text-center">
+          {% for item in options.noBtnsArr %}
+            <li>{% link item.url, item.name %}{% if not loop.last %}<span class="mx-2 text-secondary">✦</span>{% endif %}</li>
+          {% endfor %}
+        </ul>
+        {% galleryBox { cls: 'mx-2', subCls: 'justify-content-center align-items-center flex-gap-1' } %}
+          {%- for item in options.btnsArr %}
+            {% img imgPath + item.src, { url: item.url, alt: "Link button for " + item.name, freezeframe: item.freezeframe } %}
+          {% endfor %}
+        {% endgalleryBox %}
+      </div>
+    </section>
+  {% endmacro %}
 
-    If you already added my button to your site, [let me know](/guestbook) and I'll add you here!
-    {% endrenderTemplate %}
-  </section>
-
-  <section>
-    <h3>Link-Only</h3>
-    <ul class="inline-list">
-      {% for item in outgoing.links.no_btns %}
-        <li>{% link item.url, item.name %}{% if not loop.last %}<span class="mx-2 text-secondary">✦</span>{% endif %}</li>
-      {% endfor %}
-    </ul>
-  </section>
-  {% galleryBox { cls: 'my-4 mx-2', subCls: 'netizens justify-content-center align-items-center' } %}
-    {%- for item in outgoing.links.netizens %}
-      {% img imgPath + item.src, { url: item.url, alt: "Link button for " + item.name, urlCls: 'm-1 link-btn', freezeframe: item.freezeframe } %}
-    {% endfor %}
-  {% endgalleryBox %}
+  {{ linkSection ({ title: "Neighbors", desc: "Sites whose webmasters I'm happy to be affiliated with!", btnsArr: outgoing.links.neighbors, noBtnsArr: outgoing.links.no_btns.neighbors }) }}
+  {{ linkSection ({ title: "Other Sites I Like", desc: "Sites that I've admired from afar!", btnsArr: outgoing.links.cool_sites, noBtnsArr: outgoing.links.no_btns.cool_sites })}}
+  {{ linkSection ({ title: "Inactive (for now?)", desc: "Sites that haven't been updated in a while, but are still worth checking out!", btnsArr: outgoing.links.inactive, noBtnsArr: outgoing.links.no_btns.inactive }) }}
 
   <section>
     <h2>Favorite Resources</h2>
@@ -55,7 +61,7 @@ flashing: true
   </section>
 
   <h2>Made Possible By</h2>
-  <ul>
+  <ul class="ms-2">
     {%- for link in outgoing.links.credits %}
     <li>
       {% if link.url %}

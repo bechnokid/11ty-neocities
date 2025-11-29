@@ -3,7 +3,6 @@ title: Webgarden
 displayOrder: 3
 description: Little pots that show a sneak peek of the websites they're based on.
 summary: A concept created by [Corv](https://webgardens.neocities.org/)! It is, as she quotes, *"a fun way to see new content from your favorite websites"*. This particular greenhouse has pots that I personally think are super cool.
-permalink: '/outgoing/webgarden/index.html'
 prism: true
 flashing: true
 hasLinks: true
@@ -13,7 +12,7 @@ hasLinks: true
   <section id="my-pot">
     <h2>My Pot</h2>
     <p>If you think my site is cool, perhaps you can raise your own pot and help it grow?</p>
-    <div class='d-flex justify-content-center'>
+    <div class='d-flex justify-content-center mt-3'>
       <iframe class='webgarden-pot' src='/webgarden.html' scrolling='no' loading='lazy'></iframe>
     </div>
     {% renderTemplate "md" %}
@@ -25,9 +24,8 @@ hasLinks: true
 
   <section id="greenhouse">
     <h2>Greenhouse</h2>
-    <p>Here is my pot collection! Any pots that are broken need to be put away until they can hopefully regrow!</p>
-    <div class="greenhouse d-flex flex-wrap justify-content-center align-items-center">
-    {%- for pot in outgoing.greenhouse | reverse %}<div><iframe src={{ pot }} scrolling="no"></iframe></div>{% endfor %}
+    <div class="greenhouse d-flex flex-wrap justify-content-center align-items-center flex-gap-2 mt-3">
+    {%- for pot in outgoing.webgarden | reverse %}<iframe src={{ pot }} scrolling="no"></iframe>{% endfor %}
     </div>
   </section>
 </div>

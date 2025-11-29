@@ -15,7 +15,7 @@
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
     "@toycode/markdown-it-class": "^1.2.4",
     "eleventy-plugin-broken-links": "^2.2.1",
     "markdown-it-implicit-figures": "^0.12.0",

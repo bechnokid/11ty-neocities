@@ -5,7 +5,7 @@ displayOrder: 4
 permalink: '/quiz-results/index.html'
 ---
 {% set imgPath = meta.imgUrl + "/about/quiz-results/" %}
-<div class="d-flex flex-wrap justify-content-center align-items-center quiz-results">
+<div class="d-flex flex-wrap justify-content-center align-items-center flex-gap-2">
   {%- for item in about.quiz_results %}
     {% if item.title %}
       <div class="quiz-widget sidebar p-3 {{ item.alignment }}">
