@@ -13,31 +13,25 @@
 <body>
   <header><img src="/assets/images/shrines/gilgamesh/header.png" aria-hidden="true" alt=""></header>
   <div class="container-fluid pb-4 d-flex justify-content-center align-items-center position-relative">
-    <div class="content">
-      <h1 class="mt-md-4">{{ title }}</h1>
+    <div class="content d-flex flex-column flex-gap-3">
+      <h1>{{ title }}</h1>
       <details class="mobile-nav px-2 py-3">
         <summary>Menu</summary>
-          <nav class="toc">
+          <nav class="toc text-center">
             {% for item in navigation %}
               <li><a href={{ "/" if item == "Home" else "#" + (item | slug) }}>{{ item }}</a></li>
             {% endfor %}
           </nav>
       </details>
-      <div class="row g-0">
-        <div class="desktop-nav col-lg-2 d-flex flex-column">
-          <nav class="toc">
-            {% for item in navigation %}
-              <li><a href="{{ "/" if item == "Home" else "#" + (item | slug) }}">{{ item }}</a></li>
-            {% endfor %}
-          </nav>
-        </div>
-        <div class="col-lg-10 main">
-          <main class="px-lg-5 py-lg-4 p-4">
-            {{ content | safe }}
-            <div class="back-to-top"><a href="#" aria-label="Scroll to Top">{% icon 'arrow-up' %}</a></div>
-          </main>
-        </div>
-      </div>
+      <nav class="desktop-nav toc">
+        {% for item in navigation %}
+          <li><a href="{{ "/" if item == "Home" else "#" + (item | slug) }}">{{ item }}</a></li>
+        {% endfor %}
+      </nav>
+      <main class="px-lg-5 py-lg-4 p-4">
+        {{ content | safe }}
+        <div class="back-to-top"><a href="#" aria-label="Scroll to Top">{% icon 'arrow-up' %}</a></div>
+      </main>
     </div>
   </div>
 </body>

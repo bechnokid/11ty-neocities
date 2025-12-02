@@ -107,19 +107,20 @@ The babygirl. The meow meow. The skrunkly. The--
 
 ## Yume
 
-I had a few OCxCanon ships, but I admit that it wasn't really until 2019 where I finally embraced my "cringe, but free" nature. In May 2024, I declared that I wanted to make an OC to ship with Gilgamesh, and over time she's become one of my most beloved fan OCs!
+<div class="siduri-wrapper row g-0">
 
-[![Reference for Siduri Neemon](/assets/images/shrines/gilgamesh/siduri.png)](/assets/images/shrines/gilgamesh/siduri.png) {.siduri-img}
+[![Reference for Siduri Neemon](/assets/images/shrines/gilgamesh/siduri.png)](/assets/images/shrines/gilgamesh/siduri.png) {.siduri-img .text-center .col-md-4 }
 
-<div class='siduri-bio pt-2 my-3'>
+<div class='siduri-bio ps-md-4 pt-md-0 pt-4 col-md-8'>
 
-**Name**: Siduri Neemon
+I had a few OCxCanon ships, but I admit that it wasn't really until 2019 where I finally embraced my "cringe, but free" nature. In May 2024, I declared that I wanted to make an OC to ship with Gilgamesh, and over time she's become one of my most beloved fan OCs! Here's some info about her!
 
-**Age**: 38
+- **Name**: Siduri Neemon
+- **Age**: 38
+- **Height, build**: 5'7", average
+- **Occupation**: Gold Saucer Engineer
 
-**Height, build**: 5'7", average
-
-**Occupation**: Gold Saucer Engineer
+</div>
 
 </div>
 
@@ -168,6 +169,14 @@ Here's some art I did of these two losers whom I love so very much help me--
 If you're reading this, thank you so much getting this far in my shrine and letting me yap about this oni. I might update this shrine with some personal headcanons as well as a tier list, but we'll see!
 
 [![A 4-panel comic based on Mhuyo's template on her Twitter/X account. Two people in the first panel are asking the small person, "Which video game character do you like?" The small person answers, "Gilgamesh!" in the second panel. In the third panel, the two characters say, "Oh yeah, he's super cute! Great choice!" with images of Gilgamesh from the Fate series in the background. The final panel has the small person shedding a single tear with various images of Gilgamesh from Final Fantasy VII Rebirth in the background.](/assets/images/shrines/gilgamesh/wrong-gilgamesh.png)](/assets/images/shrines/gilgamesh/wrong-gilgamesh.png) {.text-center .wrong-gilgamesh}
+
+<div class="directory">
+
+Listed at:
+
+[![Button that links to the Emotion directory](/assets/images/shrines/gilgamesh/emotion_button.png)](https://emotion.oubliette.nu/)
+
+</div>
 
 -----
 
