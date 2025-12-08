@@ -3,15 +3,11 @@
 {% set pageHeaderTitle = title %}
 {% set pageHeaderSummary %}
   {% if imgDate %}<time datetime="{{ imgDate }}" class="text-primary">{{ imgDate | monthDayYear }}</time>{% endif %}
-  <p>{{ summary | markdownifyInline | safe }}</p>
+  {% if summary %}{{ summary | markdownify | safe }}{% endif %}
 {% endset %}
 {% set pageFreezeframe = freezeframe %}
 {% set outgoingPageWarning = hasLinks %}
 {% set pageCSS = css %}
-
-{% block css %}
-<link rel="stylesheet" href="{{ meta.cssUrl }}/{{ pageCSS or "basic" }}.css" type="text/css" media="all">
-{% endblock %}
 
 {% block content %}
   <article class="mb-md-0 mb-2 position-relative {{ (shortTitle or title) | lower | slugify }}">

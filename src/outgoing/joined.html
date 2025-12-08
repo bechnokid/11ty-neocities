@@ -1,14 +1,13 @@
 ---
 title: Places I've Joined
 shortTitle: Joined
-css: 'joined'
 summary: "**Warning:** Be cautious of any flashing colors and images when navigating away from this page."
 displayOrder: 2
 permalink: '/joined/index.html'
 ---
 {% import 'components/joined/webring_macros.html' as webrings with context %}
 {% import 'components/joined/clique_macros.html' as clique with context %}
-<script src="/assets/javascript/webring.js" type="text/javascript"></script>
+<script src="/assets/js/webring.js" type="text/javascript"></script>
 
 <div class="position-relative d-flex flex-column flex-gap-4">
   {% include "partials/loading-sidebar.html" %}
@@ -54,7 +53,7 @@ permalink: '/joined/index.html'
       </div>
     </div>
     <noscript>
-      <div id="webring-btn-container" class="d-flex flex-wrap align-items-center justify-content-center">
+      <div id="webring-btn-container" class="d-flex flex-wrap align-items-center justify-content-center flex-gap-1">
         {{ webrings.neocreatives() }}
         {{ webrings.cuddler() }}
         {%- for button in outgoing.joined.webringBtns %}

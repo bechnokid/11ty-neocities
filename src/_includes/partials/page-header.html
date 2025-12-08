@@ -1,5 +1,5 @@
 <h1>{{ pageHeaderTitle }}</h1>
-{% if pageHeaderSummary != "" %}<p>{{ pageHeaderSummary | safe }}</p>{% endif %}
-{% if outgoingPageWarning %}{{ "**Warning:** When clicking on any graphics with links, please be cautious of any flashing images when navigating away from this page. {.mb-0}" | markdownify | safe }}{% endif %}
+{% if pageHeaderSummary != "" %}{{ pageHeaderSummary | safe }}{% endif %}
+{% if outgoingPageWarning %}<p><b>Warning:</b> When clicking on any graphics with links, please be cautious of any flashing images when navigating away from this page.</p>{% endif %}
 {% if pageFreezeframe %}{% include 'partials/freezeframe-buttons.html' %}{% endif %}
-<hr class="my-3">
+<hr>

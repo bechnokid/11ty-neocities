@@ -2,9 +2,8 @@ export default {
   env: process.env.ELEVENTY_ENV,
   name: "Bechno Kid's Hideout",
   url: "https://bechnokid.neocities.org",
-  stylesheetsUrl: "/assets/stylesheets",
-  cssUrl: "/assets/stylesheets/css",
-  jsUrl: "/assets/javascript",
+  cssUrl: "/assets/css",
+  jsUrl: "/assets/js",
   imgUrl: "/assets/images",
   desc: "The personal website of a beet disguised as a software engineer. Contains art, ramblings, and other things?",
   ogImgUrl: "https://bechnokid.neocities.org/images/og_image.png",
@@ -20,14 +19,14 @@ export default {
   ],
   introLinks: [
     { name: 'Sitemap', url: '/sitemap' },
-    { name: 'RSS Feed', url: '/feed.xml' },
+    { name: 'RSS', url: '/feeds' },
     { name: 'Guestbook', url: '/guestbook' }
   ],
   favicon: {
     prod: "/assets/images/favicon.ico",
     dev: "/assets/images/meat.png"
   },
-  updated: ["FreezeframeJS", "Webgarden", "Digimon", "Links", "Artwork", "Tutorials"],
+  updated: [],
   new: [],
   emotes: [
     "angry",

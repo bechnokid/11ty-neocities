@@ -1,7 +1,7 @@
 <footer class="bg-footer text-center p-1 px-md-0">
   {% set footer = site.footer %}
   <p class="m-0 my-1 text-lg d-flex flex-wrap justify-content-center align-items-center">
-    {%- for item in footer.links %}
+    {%- for item in meta.introLinks %}
       <a class="px-2{% if not loop.last%} link-border{% endif %} {{ item.cls }}" href="{{ item.url }}">
         {% if item.img %}
           <img src="{{ meta.imgUrl }}/{{item.img}}" alt="{{ item.alt }}" class="{{ item.imgCls }}">
@@ -13,9 +13,4 @@
   </p>
   <p class="m-0">© Bechno Kid 2022 - 20XX</p>
   <p class="m-0">Please do not edit or reupload any artwork from this site.</p>
-  <div class="footer-btns mt-2">
-    {%- for item in footer.buttons %}
-      <a href="{{ item.url }}" class="mx-1"><img src="{{ footer.imgSrc + item.src }}" alt="{{ item.alt }}"></a>
-    {% endfor %}
-  </div>
 </footer>

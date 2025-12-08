@@ -17,20 +17,31 @@ noScroll: true
       </div>
       <div class="col-8">
     {% endif %}
-      <dl {% if not sideImg %}class="ms-4"{% endif %}>
+      {% if title == "Artwork" %}
+      <ul class="gallery-list">
         {%- for item in pageCollection | sortCollectionByDisplayOrder %}
-          {% set pageUrl = item.url or '/art/' + (item.shortTitle or item.title) | slugify %}
-          {% set linkTitle = item.data.title or item.title %}
-          <dt class="h3">
-            <a href="{{ pageUrl }}">{{ linkTitle }}</a>
+          <li>
+            {% set linkTitle = item.data.title or item.title %}
+            <a href="/art/{{ item.shortTitle or item.title | slug }}">{{ linkTitle }}</a>
             {% if linkTitle in meta.updated %}{% icon "updated" %}{% elif linkTitle in meta.new %}{% icon "new" %}{% endif %}
-            {% if item.data.warning %}
-            <span class="text-muted">(Warning: Flashing graphics)</span>
-            {% endif %}
-          </dt>
-          <dd>{{ (item.data.description or item.content) | markdownify | safe }}</dd>
+          </li>
         {% endfor %}
-      </dl>
+      </ul>
+      {% else %}
+        <dl {% if not sideImg %}class="ms-4"{% endif %}>
+          {%- for item in pageCollection | sortCollectionByDisplayOrder %}
+            {% set linkTitle = item.data.title or item.title %}
+            <dt>
+              <a href="{{ item.url }}">{{ linkTitle }}</a>
+              {% if linkTitle in meta.updated %}{% icon "updated" %}{% elif linkTitle in meta.new %}{% icon "new" %}{% endif %}
+              {% if item.data.warning %}
+              <span class="text-muted">(Warning: Flashing graphics)</span>
+              {% endif %}
+            </dt>
+            <dd>{{ (item.data.description or item.content) | markdownify | safe }}</dd>
+          {% endfor %}
+        </dl>
+      {% endif %}
     {% if sideImg %}
       </div>
     </div>

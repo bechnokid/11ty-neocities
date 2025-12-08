@@ -3,12 +3,11 @@
   "version": "3.0.0",
   "main": "index.js",
   "scripts": {
-    "art": "cross-env ELEVENTY_ENV=art bun x @11ty/eleventy --serve",
-    "art:quiet": "cross-env ELEVENTY_ENV=art bun x @11ty/eleventy --serve --quiet",
-    "dev": "cross-env ELEVENTY_ENV=dev bun x @11ty/eleventy --serve",
-    "dev:quiet": "cross-env ELEVENTY_ENV=dev bun x @11ty/eleventy --serve --quiet",
+    "dev": "cross-env ELEVENTY_ENV=dev bun x @11ty/eleventy --serve --quiet",
+    "dev:build": "cross-env ELEVENTY_ENV=dev bun x @11ty/eleventy",
     "prod": "cross-env ELEVENTY_ENV=prod bun x @11ty/eleventy --serve --quiet",
-    "build": "cross-env ELEVENTY_ENV=prod bun x @11ty/eleventy"
+    "prod:build": "cross-env ELEVENTY_ENV=prod bun x @11ty/eleventy",
+    "check-links": "cross-env ELEVENTY_ENV=checkLinks bun x @11ty/eleventy --quiet"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +23,7 @@
   "dependencies": {
     "@11ty/eleventy-img": "^6.0.1",
     "@11ty/eleventy-plugin-rss": "^2.0.3",
+    "@11tyrocks/eleventy-plugin-lightningcss": "^1.5.0",
     "a-sync-waterfall": "^1.0.1",
     "acorn": "^7.4.1",
     "ansi-styles": "^4.3.0",

@@ -10,10 +10,6 @@ permalink: '/writing/blog/{{ page.fileSlug }}.html'
   {% if summary %}<p>{{ summary | markdownifyInline | safe }}</p>{% endif %}
 {% endset %}
 
-{% block css %}
-  <link rel="stylesheet" href="{{ meta.cssUrl }}/blog.css" type="text/css" media="all">
-{% endblock css %}
-
 {% block content %}
   <article>
     {% include "partials/page-header.html" %}

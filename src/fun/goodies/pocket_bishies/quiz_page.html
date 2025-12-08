@@ -14,8 +14,8 @@ eleventyComputed:
 <html lang={{ meta.lang }} data-theme="light">
 <head>
   {% include "partials/head.html" %}
-  <noscript><link rel="stylesheet" href="{{ meta.cssUrl }}/no-script.css" type="text/css" media="all"></noscript>
   <link rel="stylesheet" href="{{ meta.cssUrl }}/pocket_bishie.css" type="text/css" media="all">
+  <noscript><link rel="stylesheet" href="{{ meta.cssUrl }}/no-script.css" type="text/css" media="all"></noscript>
   <script src="{{ meta.jsUrl }}/bechnoQuery.js"></script>
   <title>{{ title }} (Pocket {{ titleType }}) - {{ meta.name }}</title>
 </head>
@@ -54,6 +54,6 @@ eleventyComputed:
     const imgInfo = ["{{ bishie.img }}", "{{ bishie.imgAlt }}"];
   {% endif %}
   let quizScript = document.createElement('script');
-  quizScript.src = '/assets/javascript/bishie_quiz.js';
+  quizScript.src = '/assets/js/bishie_quiz.js';
   document.head.appendChild(quizScript);
 </script>

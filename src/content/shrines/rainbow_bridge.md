@@ -5,7 +5,6 @@ layout: 'layouts/shrines/rainbow_bridge.html'
 displayOrder: 2
 description: Dedicated to the small friends in my life who are gone but never forgotten.
 imgSrc: 'shrines/rainbow/'
-css: 'rainbow'
 permalink: '/shrines/rainbow_bridge/index.html'
 ---
 

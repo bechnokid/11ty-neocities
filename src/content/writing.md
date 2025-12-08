@@ -1,6 +1,6 @@
 ---
 title: Writing
-subList: writing
+subList: true
 layout: 'layouts/page-landing.html'
 permalink: false
 pagination:

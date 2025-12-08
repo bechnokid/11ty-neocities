@@ -1,0 +1,87 @@
+#guestbook {
+  input,
+  textarea {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--text-body);
+    font-size: 1em;
+  }
+
+  fieldset {
+    border: 0;
+  }
+
+  label {
+    display: block;
+    margin-bottom: .25rem;
+  }
+}
+
+.guestbook-input-field {
+  border: 1px solid var(--bg-primary);
+}
+
+.guestbook-msg-field {
+  resize: vertical;
+  height: 80px;
+}
+
+.guestbook-msg-container {
+  font-size: .85em;
+}
+
+.guestbook-msg-header p {
+  margin: 0;
+}
+
+#guestbook-pagination {
+  button.pagination-num {
+    margin: 0 .5rem;
+    height: 35px;
+    width: 35px;
+
+    &.active {
+      font-weight: bold;
+    }
+
+    &:not(.active) {
+      border: 0;
+      background: none;
+
+      &:hover {
+        background-color: var(--bg-footer);
+        cursor: pointer;
+      }
+    }
+
+  }
+
+  button.pagination-btn {
+    border: 0;
+    background: none;
+
+    &:hover {
+      background-color: var(--bg-footer);
+      cursor: pointer;
+    }
+  }
+}
+
+.wide-field {
+  width: 500px;
+}
+
+@media screen and (max-width: 767px) {
+  .wide-field {
+    width: 100%;
+  }
+
+  .guestbook-msg-field {
+    height: 150px;
+  }
+
+  #guestbook-pagination button {
+    margin: 0 .5rem;
+    height: 45px;
+    width: 45px;
+  }
+}

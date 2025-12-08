@@ -21,16 +21,17 @@ flashing: true
 
   {# Creates section for links\
     * @param {string} options.title - Section title
+    * @param {string} options.cls - Section CSS class
     * @param {string} options.desc - Section description
     * @param {array} options.btnsArr - Array that holds links and their data, including buttons
     * @param {array} options.noBtnsArr - Array that holds only links
   #}
   {% macro linkSection(options) %}
-    <section class="neighbors">
+    <section class="{{ options.cls or (options.title | slug) }}">
       <h2>{{ options.title }}</h2>
       <div class="d-flex flex-column flex-gap-2">
         <p>{{ options.desc }}</p>
-        <ul class="inline-list text-center">
+        <ul class="inline-list justify-content-center">
           {% for item in options.noBtnsArr %}
             <li>{% link item.url, item.name %}{% if not loop.last %}<span class="mx-2 text-secondary">✦</span>{% endif %}</li>
           {% endfor %}
@@ -46,7 +47,7 @@ flashing: true
 
   {{ linkSection ({ title: "Neighbors", desc: "Sites whose webmasters I'm happy to be affiliated with!", btnsArr: outgoing.links.neighbors, noBtnsArr: outgoing.links.no_btns.neighbors }) }}
   {{ linkSection ({ title: "Other Sites I Like", desc: "Sites that I've admired from afar!", btnsArr: outgoing.links.cool_sites, noBtnsArr: outgoing.links.no_btns.cool_sites })}}
-  {{ linkSection ({ title: "Inactive (for now?)", desc: "Sites that haven't been updated in a while, but are still worth checking out!", btnsArr: outgoing.links.inactive, noBtnsArr: outgoing.links.no_btns.inactive }) }}
+  {{ linkSection ({ title: "Inactive (for now?)", cls: "inactive-links", desc: "Sites that haven't been updated in a while, but are still worth checking out!", btnsArr: outgoing.links.inactive, noBtnsArr: outgoing.links.no_btns.inactive }) }}
 
   <section>
     <h2>Favorite Resources</h2>

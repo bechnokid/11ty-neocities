@@ -70,7 +70,7 @@
           noLink: (false if item.url else true),
           imgLink: item.url } %}
         {% figure imgPath + "cdw/" + item.src, options %}
-          <a class="playlist button" href="{{ item.playlist }}">Play</a>
+          <a class="playlist" href="{{ item.playlist }}">Playlist</a>
         {% endfigure %}
       {% endfor %}
     </div>

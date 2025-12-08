@@ -11,81 +11,82 @@ freezeframe: true
 <div class="position-relative">
   {% include "partials/loading-sidebar.html" %}
 
-  <h2>For You</h2>
-
   {% set imgLink = array.imgSrc + 'mine/' %}
-
-  {% galleryBox { cls: 'adopts mine', subCls: 'flex-column' } %}
-  <div class="row g-0">
-    {%- for column in array.mine %}
-      <div class="col-md-4 col-12">
-        {%- for row in column %}
-          <p>{{ row.name }}</p>
-          <div class='d-flex{% if row.cls %} {{ row.cls }}{% endif %}'>
-            {%- for item in row.items %}
-              {% if item.tooltip %}<div class="tooltip">{% endif %}
-                {% img imgLink + item.src, { alt: item.alt } %}
-              {% if item.tooltip %}
-                <div class="tooltip-content" role="tooltip">{{ item.tooltip }}</div>
-              </div>
-              {% endif %}
-            {% endfor %}
-          </div>
-        {% endfor %}
-      </div>
-    {% endfor %}
-  </div>
-  {% endgalleryBox %}
-
-  <h2>Interactive</h2>
-
-  {% galleryBox %}
-    <p class="mt-0">Click on any one of these pets to feed them!</p>
-    <div class="w-100 d-flex mt-2">
-      {%- for item in array.interactive %}
-        <div class="pet-click border-sidebar bg-body p-3 text-center rounded-4 mx-2">
-          {% img item.src, { url: item.url, alt: item.alt, freezeframe: item.freezeframe, urlCls: 'd-flex justify-content-center mb-2' } %}
-          <p class="m-0">{{ item.name | safe }}</p>
+  <section class="for-you">
+    <h2>For You</h2>
+    {% galleryBox { cls: 'adopts mine', subCls: 'flex-column' } %}
+    <div class="row g-0">
+      {%- for column in array.mine %}
+        <div class="col-md-4 col-12">
+          {%- for row in column %}
+            <p>{{ row.name }}</p>
+            <div class='d-flex{% if row.cls %} {{ row.cls }}{% endif %}'>
+              {%- for item in row.items %}
+                {% if item.tooltip %}<div class="tooltip">{% endif %}
+                  {% img imgLink + item.src, { alt: item.alt } %}
+                {% if item.tooltip %}
+                  <div class="tooltip-content" role="tooltip">{{ item.tooltip }}</div>
+                </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endfor %}
         </div>
       {% endfor %}
     </div>
-  {% endgalleryBox %}
+    {% endgalleryBox %}
+  </section>
 
-  {% set imgLink = array.imgSrc %}
-
-  <h2>Adopted</h2>
-
-  {% galleryBox %}
-    {%- for row in array.adopted %}
-    <div class="row g-0 w-100{{ " mb-4" if not loop.last }}">
-      <div class="col d-flex flex-wrap justify-content-center{% if row.cls %} {{ row.cls }}{% endif %}">
-        {%- for item in row.items %}
-          {% set imgPath = item.src if item.ogLink else imgLink + item.src %}
-          {% img imgPath, { url: item.url, alt: item.alt, urlCls: 'mx-1', freezeframe: item.freezeframe } %}
+  <section class="interactive">
+    <h2>Interactive</h2>
+    {% galleryBox %}
+      <p class="mt-0">Click on any one of these pets to feed them!</p>
+      <div class="w-100 d-flex mt-2">
+        {%- for item in array.interactive %}
+          <div class="pet-click border-sidebar bg-body p-3 text-center rounded-4 mx-2">
+            {% img item.src, { url: item.url, alt: item.alt, freezeframe: item.freezeframe, urlCls: 'd-flex justify-content-center mb-2' } %}
+            <p class="m-0">{{ item.name | safe }}</p>
+          </div>
         {% endfor %}
       </div>
-    </div>
-    {% endfor %}
-  {% endgalleryBox %}
+    {% endgalleryBox %}
+  </section>
 
-  <h2>Orphaned</h2>
+  {% set imgLink = array.imgSrc %}
+  <section class="adopted">
+    <h2>Adopted</h2>
+    {% galleryBox %}
+      {%- for row in array.adopted %}
+      <div class="row g-0 w-100{{ " mb-4" if not loop.last }}">
+        <div class="col d-flex flex-wrap justify-content-center{% if row.cls %} {{ row.cls }}{% endif %}">
+          {%- for item in row.items %}
+            {% set imgPath = item.src if item.ogLink else imgLink + item.src %}
+            {% img imgPath, { url: item.url, alt: item.alt, urlCls: 'mx-1', freezeframe: item.freezeframe } %}
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    {% endgalleryBox %}
+  </section>
 
-  <p>These are pixels that were never put up for sale or whose owner sites no longer exist. So, I'm putting them here in the hopes that they can get adopted!</p>
-  <p>If you are the owner of any of these and would like me to take them down, please let me know via email or leaving a message in my <a href="/guestbook">guestbook</a>!</p>
-
-  {% galleryBox { cls: "mt-2", subCls: "flex-gap-2 orphaned-adopts" } %}
-    {% for owner, value in array.orphaned %}
-      <a href="{{ value.url }}" class="d-flex flex-wrap flex-gap-2">
-        {% for item in value.items %}
-          {% if item.group %}
-            {% for alt in item.alt %}
-              {% img imgLink + item.name + loop.index + ".png", { alt: "A pixel of " + alt } %}
-            {% endfor %}
-          {% else %}
-            {% img imgLink + item.src, { alt: item.alt, freezeframe: item.freezeframe } %}
-          {% endif %}
-        {% endfor %}
-      </a>
-    {% endfor %}
-  {% endgalleryBox %}
+  <section class="orphaned">
+    <h2>Orphaned</h2>
+    <p>These are pixels that were never put up for sale or whose owner sites no longer exist. So, I'm putting them here in the hopes that they can get adopted!</p>
+    <p>If you are the owner of any of these and would like me to take them down, please let me know via email or leaving a message in my <a href="/guestbook">guestbook</a>!</p>
+    {% galleryBox { cls: "mt-2", subCls: "flex-gap-2 orphaned-adopts" } %}
+      {% for owner, value in array.orphaned %}
+        <a href="{{ value.url }}" class="d-flex flex-wrap flex-gap-2">
+          {% for item in value.items %}
+            {% if item.group %}
+              {% for alt in item.alt %}
+                {% img imgLink + item.name + loop.index + ".png", { alt: "A pixel of " + alt } %}
+              {% endfor %}
+            {% else %}
+              {% img imgLink + item.src, { alt: item.alt, freezeframe: item.freezeframe } %}
+            {% endif %}
+          {% endfor %}
+        </a>
+      {% endfor %}
+    {% endgalleryBox %}
+  </section>
 </div>

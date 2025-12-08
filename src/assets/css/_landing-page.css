@@ -1,0 +1,41 @@
+article.landing-page {
+  .h3 {
+    border-bottom: 0;
+  }
+
+  dt,
+  ul.gallery-list > li {
+    font-family: 'Dyslexic';
+    font-size: 1.4em;
+
+    &::marker {
+      color: var(--text-link-visited);
+    }
+  }
+
+  ul.gallery-list {
+    height: 100%;
+    justify-content: space-around;
+  }
+
+  dl {
+    dt {
+      margin-bottom: .5rem;
+
+      &::before {
+        margin-right: .25rem;
+        content: "✦";
+        color: var(--text-link-visited);
+      }
+    }
+
+    dd {
+      margin-bottom: 1rem;
+      margin-left: 2rem;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}

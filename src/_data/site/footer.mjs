@@ -6,8 +6,8 @@ export default {
       url: '/sitemap'
     },
     {
-      name: 'RSS Feed',
-      url: '/feed.xml',
+      name: 'RSS',
+      url: '/feeds',
     },
     {
       name: 'Guestbook',

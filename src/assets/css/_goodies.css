@@ -1,0 +1,153 @@
+#main-content:has(.collected details:not(.web-badges):open) .back-to-top {
+  display: block;
+}
+
+.adopts.mine p {
+  margin: 0;
+}
+
+.adopts.other > * {
+  max-width: 150px;
+}
+
+.orphaned-adopts {
+  .ff-container {
+    display: flex;
+    align-items: end;
+  }
+
+  img,
+  canvas {
+    align-self: end;
+  }
+}
+
+.kindnessrocks .d-flex a,
+.jarjam .d-flex a {
+  display: flex;
+  align-items: baseline;
+}
+
+.kindnessrocks .d-flex {
+  align-items: baseline;
+}
+
+.sticker-box {
+  width: 300px;
+  border: 1px solid #fdc2ce;
+  background-color: #fdc2ce;
+  color: #e55a76;
+}
+
+.sticker-header {
+  height: 76px;
+  background-image: url(/assets/images/goodies/cliques/stickers/header.png);
+  background-position: top;
+  background-repeat: repeat-x;
+  font-weight: bold;
+}
+
+.sticker-body {
+  border: 1px solid #fdc2ce;
+  border-right: 0;
+  border-left: 0;
+}
+
+.sticker-footer {
+  background-color: #fff;
+  text-align: center;
+}
+
+.cdw figcaption {
+  padding: .75rem 0;
+}
+
+.cdw .playlist {
+  font-size: .7rem;
+}
+
+.yys table {
+  font-size: .85em;
+  max-width: 400px;
+}
+
+.teacup {
+  width: 120px;
+}
+
+.tea-img {
+  min-height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.tea-taste {
+  line-height: 1rem;
+}
+
+.tea-taste summary:hover {
+  text-decoration: underline;
+}
+
+.comb-row {
+  margin-left: 1rem;
+}
+
+.comb-row:nth-child(even) {
+  margin-top: -30px;
+}
+
+.comb-row > *:nth-child(odd) {
+  margin: 30px -10px 0;
+}
+
+.bishies-collection > * {
+  margin: .25rem .5rem;
+}
+
+#bishie-quiz {
+  height: 475px;
+  width: 100%;
+  border: 1px solid var(--border-sidebar);
+}
+
+#bishie-quiz-nav {
+  max-height: 250px;
+
+  > ul {
+    margin-right: .5rem;
+
+    &:nth-child(odd) {
+      margin-top: .5rem;
+      margin-bottom: .5rem;
+    }
+
+    > li {
+      margin-left: 1rem;
+    }
+  }
+}
+
+#bishie-logos img {
+  width: 200px;
+}
+
+@media screen and (max-width: 767px) {
+  .jarjam img,
+  .jarjam .ff-canvas,
+  .kindnessrocks img,
+  .kindnessrocks .ff-canvas {
+    transform: scale(2);
+    image-rendering: pixelated;
+  }
+
+  .kindnessrocks .d-flex,
+  .jarjam .d-flex {
+    padding: 2rem 0 !important;
+  }
+
+  .cdw .playlist {
+    font-size: 1rem;
+  }
+}

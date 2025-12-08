@@ -1,7 +1,7 @@
 <div class="sidebar">
   <div class="h2 text-center p-1">❤ Updates ❤</div>
   <div class="update-content p-2">
-    {% set feedItems = collections.rssFeed | reverse %}
+    {% set feedItems = collections.feed | reverse %}
     {%- for update in feedItems | limit(3) %}
       <strong>{{ update.date | monDayYear }}</strong>
       <ul>

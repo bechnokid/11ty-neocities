@@ -1,7 +1,6 @@
 ---
 title: "Home"
 layout: "layouts/basic.html"
-css: home
 tags:
   - nav
   - main
@@ -22,12 +21,12 @@ Webrings and fanlistings can be found in [/joined](/joined)!
 
 <div class="d-flex flex-column flex-gap-4">
   <div class="content">{{ contentBlock | markdownify | safe }}</div>
-  <div class="intro-links text-center">
+  <ul class="inline-links justify-content-center">
     {%- for link in meta.introLinks %}
-      {% link link.url, link.name %}{% if not loop.last %}<span class="mx-2">✦</span>{% endif %}
+      <li>{% link link.url, link.name %}</li>
     {% endfor %}
-  </div>
-  <div class="status-row row d-flex flex-md-row flex-column flex-md-gap-0 flex-gap-4">
+  </ul>
+  <div class="home-row row d-flex flex-md-row flex-column flex-md-gap-0 flex-gap-4">
     <div class="status col-md-7">
       <div class="sidebar h-100 overflow-hidden">
         <div class="h2 p-2">Latest Status</div>

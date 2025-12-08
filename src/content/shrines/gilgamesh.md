@@ -5,7 +5,6 @@ layout: 'layouts/shrines/gilgamesh.html'
 displayOrder: 1
 description: Dedicated to Gilgamesh, the dimension-hopping bladesman from the Final Fantasy game series.
 imgSrc: shrines/gilgamesh/
-css: gilgamesh
 permalink: 'shrines/gilgamesh/index.html'
 imgPath: '/assets/images/shrines/gilgamesh/'
 ---

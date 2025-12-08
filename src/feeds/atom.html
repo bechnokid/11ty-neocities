@@ -1,0 +1,26 @@
+---
+permalink: '/feeds/atom.xml'
+---
+<?xml version="1.0" encoding="utf-8"?>
+{% set feedItems = collections.feed %}
+<?xml-stylesheet href="/assets/styles.xslt" type="text/xml"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ meta.lang }}">
+  <title>{{ meta.name }} - Atom Feed</title>
+  <link href="{{ meta.url }}/feeds/atom.xml" rel="self" type="application/atom+xml" />
+  <subtitle>{{ summary }}</subtitle>
+  <updated>{{ feedItems[0].date | dateToRfc3339 }}</updated>
+  <id>{{ meta.url }}/feeds/atom.xml</id>
+  <author>
+    <name>{{ meta.name }}</name>
+    <uri>{{ meta.url }}</uri>
+  </author>
+  {%- for item in feedItems | reverse %}
+  <entry>
+    <title>{{ item.date | monDayYear }} </title>
+    <link href="/home"/>
+    <updated>{{ item.date | dateToRfc3339 }}</updated>
+    <id>{{ meta.url }}/home</id>
+    <content type="html">{{ item.content | renderTransforms }}</content>
+  </entry>
+  {% endfor %}
+</feed>

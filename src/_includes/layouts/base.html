@@ -2,13 +2,11 @@
 <html lang={{ meta.lang }} data-theme="light">
 <head>
   {% include "partials/head.html" %}
+  {% block css %}<link rel="stylesheet" href="{{ meta.cssUrl }}/main.css" type="text/css" media="all">{% endblock css %}
+  <noscript><link rel="stylesheet" href="{{ meta.cssUrl }}/no-script.css" type="text/css" media="all"></noscript>
   <script src="{{ meta.jsUrl }}/bechnoQuery.js"></script>
   {% if freezeframe == true %}<script src="{{ meta.jsUrl }}/bechnoFreeze.js"></script>{% endif %}
-  {% if code %}<link rel="stylesheet" href="{{ meta.cssUrl }}/highlight.css">{% endif %}
   <script src="{{ meta.jsUrl }}/script.js" crossorigin="anonymous"></script>
-  {% block css %}<link rel="stylesheet" href="{{ meta.cssUrl }}/bechno.css" type="text/css" media="all">{% endblock css %}
-  <noscript><link rel="stylesheet" href="{{ meta.cssUrl }}/no-script.css" type="text/css" media="all"></noscript>
-  {% if prism %}<link rel="stylesheet" href="{{ meta.cssUrl }}/prismJS.css" type="text/css" media="all" id="prismJS">{% endif %}
   <title>{% if title != null %}{{ title }} - {% endif %}{{ meta.name }}</title>
 </head>
 <body class='position-relative'>
@@ -37,7 +35,7 @@
             {% block content %}{% endblock %}
             <div class="back-to-top{% if noScroll == "true" or noScroll == true %} mobile-only{% endif %}"><a href="#" aria-label="Scroll to Top">{% icon 'arrow-up' %}</a></div>
           </main>
-          {% if title == "Home" %}<aside class="col-lg-2 offset-lg-0 col-md-10 offset-md-2 px-lg-0 px-md-4 px-2 mb-lg-0 mb-3">{% include "partials/updates.html" %}</aside>{% endif %}
+          {% if title == "Home" %}<aside id="updates-bar" class="col-lg-2 offset-lg-0 col-md-10 offset-md-2 px-lg-0 px-md-4 px-2 mb-lg-0 mb-3">{% include "partials/updates.html" %}</aside>{% endif %}
         </div>
       </div>
       {% include 'partials/footer.html' %}

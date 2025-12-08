@@ -5,7 +5,7 @@
     <div class="row g-0">
       <div class="col-lg-6 col-12 d-flex flex-column align-items-center order-md-1 order-2 mb-lg-0 mb-3">
         {%- for item in cliques.col1 %}
-        <div class="d-flex align-items-center flex-md-gap-1 flex-gap-2{% if not loop.last %} mb-1{% endif %}">
+        <div class="d-flex align-items-center flex-gap-2{% if not loop.last %} mb-1{% endif %}">
           {% if item.widget %}
             {{ item.widget | safe }}
           {% else %}
@@ -19,7 +19,7 @@
         <div class="desktop-only">
           {%- for row in cliques.col2 %}
           <div class="row">
-            <div class="col d-flex flex-wrap justify-content-center align-items-baseline flex-md-gap-1 flex-gap-2">
+            <div class="col d-flex flex-wrap justify-content-center align-items-baseline flex-gap-2">
               {%- for item in row %}
                 {{ clique.img(item) }}
               {% endfor %}
@@ -32,7 +32,7 @@
             {%- for item in row %}
               {% if item.mobile %}
                 {% set mobile = item.mobile %}
-                <div class="d-flex justify-content-center align-items-center flex-md-gap-1 flex-gap-2">
+                <div class="d-flex justify-content-center align-items-center flex-gap-2">
                   {{ clique.text({ leftText: mobile.left, leftUrl: item.url, center: mobile.center, right: mobile.right }) }}
                 </div>
               {% endif %}

@@ -27,7 +27,7 @@ noScroll: true
 <section class="js-required">
   <h2>Catch a Bishie!</h2>
   <p>With the original sites currently inactive (at the time of writing this), I decided to make my own quizzes and badges for others to collect! Clicking on the below links will open a quiz within the page! No random pop-ups!</p>
-  <p>I don't plan on taking submissions to add more bishonens and bishojos, so this list of bishies will be curated to my own tastes!</p>
+  <p>This list of bishies will be curated to my own tastes, so I don't plan on taking submissions to add more bishonens and bishojos!</p>
   <div id="bishie-quiz-nav" class="d-flex flex-wrap flex-column">
     {%- for key, list in goodies.pocket_bishies.custom %}
       <ul>
@@ -39,6 +39,15 @@ noScroll: true
     {% endfor %}
   </div>
   <div id="quiz-iframe" class="mt-2 d-none"><iframe src="" frameborder="0" id="bishie-quiz" name="quiz"></iframe></div>
+</section>
+<section>
+  <h2>Wanna Make Your Own?</h2>
+  <p>If you'd like to make your own badges (200x200px) of bishies for others to catch, here are the logos that you can save on your server!</p>
+  <p>(They're only resized for the site. Right-clicking and saving will save the images in their original resolution!)</p>
+  <div id="bishie-logos" class="d-flex justify-content-center flex-gap-3 p-3">
+    <img src="/assets/images/goodies/pocket_bishies/logo_bishonen.png" alt="Logo for Pocket Bishonen">
+    <img src="/assets/images/goodies/pocket_bishies/logo_bishoujo.png" alt="Logo for Pocket Bishoujo">
+  </div>
 </section>
 <script>
   $(document).ready(function() {

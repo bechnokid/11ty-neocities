@@ -62,8 +62,13 @@ class FreezeImages {
       const style = document.createElement('style');
       style.textContent = `
         .ff-container {
-          display: inline-block;
+          display: flex;
           position: relative;
+        }
+
+        .ff-container img,
+        .ff-container canvas {
+          align-self: end;
         }
 
         .ff-container.ff-hover:hover .ff-active {
@@ -208,14 +213,16 @@ Comments can be removed! They're just there to explain how parts of the script w
 class FreezeImages {
   constructor(options = {}) {
     // Set default params
-    this.selector = options.selector || ".freeze"
+    this.selector = options.selector || "freeze"
     this.imgCls = "ff-img";
     this.canvasCls = "ff-canvas";
-    this.hover = (options.hover === true) ? true : false;
+    this.hover = (options.hover === true || options.hover === "true") ? true : false;
+    this.noCSS = (options.no_css === true || options.hover === "true") ? true : false;
+    this.smoothing = (options.smoothing === false) ? false : true;
 
     // Finds all images with selector class and within elements with the selected class
     //  and creates list
-    const imgList = document.querySelectorAll(`img${this.selector}, ${this.selector} img`);
+    const imgList = document.querySelectorAll(`img.${this.selector}, .${this.selector} img`);
     this.imgList = imgList;
 
     // Creates <style> tag for new elements
@@ -223,8 +230,13 @@ class FreezeImages {
       const style = document.createElement('style');
       style.textContent = `
         .ff-container {
-          display: inline-block;
+          display: flex;
           position: relative;
+        }
+
+        .ff-container img,
+        .ff-container canvas {
+          align-self: end;
         }
 
         .ff-container.ff-hover:hover .ff-active {
@@ -255,6 +267,7 @@ class FreezeImages {
       canvas.width = img.width;
       canvas.height = img.height;
       canvas.className = `${this.canvasCls} ff-active`;
+      canvas.getContext('2d').imageSmoothingEnabled = this.smoothing;
       canvas.getContext('2d').drawImage(img, 0, 0, img.width, img.height);
 
       // Creates container that will hold both <img> and <canvas>
@@ -269,21 +282,21 @@ class FreezeImages {
     }
   }
 
-  start() { // Starts animations by switching class names
+  start() { // Starts animation
     for (const img of this.imgList) {
       img.className = `${this.imgCls} ff-active`;
       img.nextSibling.className = `${this.canvasCls} ff-inactive`;
     }
   }
 
-  stop() { // Stops animations by switching class names
+  stop() { // Stops animation
     for (const img of this.imgList) {
       img.className = `${this.imgCls} ff-inactive`;
       img.nextSibling.className = `${this.canvasCls} ff-active`;
     }
   }
 
-  toggle() { // Toggles animations by switching class names based on current state
+  toggle() { // Toggles animation based on current state
     for (const img of this.imgList) {
       let imgNewCls = (img.className.includes('ff-inactive')) ? "ff-active": "ff-inactive";
       let canvasNewCls = (img.className.includes('ff-inactive')) ? "ff-inactive": "ff-active";
@@ -444,8 +457,13 @@ Here's the original CSS from the script in case you'd like to use it as referenc
 
 ```css
 .ff-container {
-  display: inline-block;
+  display: flex;
   position: relative;
+}
+
+.ff-container img,
+.ff-container canvas {
+  align-self: end;
 }
 
 .ff-container.ff-hover:hover .ff-active {
@@ -476,6 +494,7 @@ const f = new FreezeImages (
     selector: "freeze",
     hover: true,
     noCss: true,
+    smoothing: false,
   }
 )
 ```

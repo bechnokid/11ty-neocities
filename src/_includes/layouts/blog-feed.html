@@ -6,39 +6,23 @@ noScroll: true
 {% set pageHeaderTitle = title %}
 {% set pageHeaderSummary = content | markdownifyInline | safe %}
 {% set postListItems = pagination.items %}
-{% set lastUpdated = (collections.rssFeed | reverse)[0].date | monthDayYear %}
-
-{% block css %}
-  <link rel="stylesheet" href="{{ meta.cssUrl }}/blog.css" type="text/css" media="all">
-{% endblock css %}
+{% set lastUpdated = (collections.feed | reverse)[0].date | monthDayYear %}
 
 {% block content %}
   <article>
     {% include "partials/page-header.html" %}
-    {% if title == 'Microblog' %}
-      <div id='microblog' class='sidebar px-3'>
-        {%- for entry in postListItems %}
-          <p class="d-flex align-items-center">{% if entry.mood %}{% emoticon entry.mood %}{% else %}{% emoticon 'normal' %}{% endif %}<strong>{{ entry.date | monthDayYear }}</strong></p>
-          <p>{{ entry.content | markdownifyInline | safe }}</p>
-          {% if loop.index != loop.length %}
-            <hr class="small">
-          {% endif %}
-        {% endfor %}
+    {%- for item in postListItems %}
+    {% set blogDate = item.date | monthDayYear %}
+    <div class="blog row py-1">
+      <div class="col-md-8 col-7">
+        <a href="{{ item.url }}">{{ item.data.title | markdownifyInline | safe }}</a>
+        {% if blogDate == lastUpdated %}
+          {% icon 'new' %}
+        {% endif %}
       </div>
-    {% else %}
-      {%- for item in postListItems %}
-      {% set blogDate = item.date | monthDayYear %}
-      <div class="blog row py-1">
-        <div class="col-md-8 col-7">
-          <a href="{{ item.url }}">{{ item.data.title | markdownifyInline | safe }}</a>
-          {% if blogDate == lastUpdated %}
-            {% icon 'new' %}
-          {% endif %}
-        </div>
-        <div class="col-md-4 col-5">{{ blogDate }}</div>
-      </div>
-      {% endfor %}
-    {% endif %}
+      <div class="col-md-4 col-5">{{ blogDate }}</div>
+    </div>
+    {% endfor %}
     {% include "partials/pagination.html" %}
   </article>
 {% endblock %}

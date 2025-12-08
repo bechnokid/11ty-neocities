@@ -1,25 +1,14 @@
 const env = process.env.ELEVENTY_ENV;
-const rssPlugin = require('@11ty/eleventy-plugin-rss');
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const brokenLinksPlugin = require("eleventy-plugin-broken-links");
-const pluginTOC = require('eleventy-plugin-toc');
 
-const {
-  local, dayOfMonth, monthDayYear, monDayYear, markdownify,
-  markdownifyInline, sortCollectionByDisplayOrder, limit,
-  getPageLinks
-} = require('./config/filters');
+const { blogPosts, ...collections } = require('./config/collections.js');
+const filters = require('./config/filters.js');
+const plugins = require('./config/plugins.js');
+const shortcodes = require('./config/shortcodes.js');
+const pairedShortcodes = require('./config/shortcodesPaired.js');
 
-const {
-  blogPosts, artPages, pocketBishies, gallery,
-} = require('./config/collections');
-
-const {
-  decoImg, icon, emoticon, emote, img, link, tooltip, figure,
-  details, galleryBox, artCaption
-} = require('./config/shortcodes');
-
-const { markdownLib, htmlmin, csvParse } = require('./config/plugins/');
+const markdownLib = require('./config/markdownlib.js');
+const htmlmin = require('./config/htmlmin.js');
+const csvParse = require('./config/csvparse.js');
 
 const TEMPLATE_ENGINE = 'njk';
 
@@ -27,55 +16,55 @@ const TEMPLATE_ENGINE = 'njk';
 module.exports = async function(eleventyConfig){
   const { IdAttributePlugin, RenderPlugin } = await import("@11ty/eleventy");
   const { EleventyPluginCodeDemo } = await import('eleventy-plugin-code-demo');
-  const assetsPath = './src/assets'
 
-  eleventyConfig.addPassthroughCopy(`${assetsPath}/images/`);
-  eleventyConfig.addPassthroughCopy(`${assetsPath}/fonts/`);
-  eleventyConfig.addPassthroughCopy(`${assetsPath}/stylesheets/`);
-  eleventyConfig.addPassthroughCopy(`${assetsPath}/javascript/`);
+  ['images', 'fonts', 'js'].forEach(path => {
+    eleventyConfig.addPassthroughCopy(`./src/assets/${path}/`)
+  })
 
   // Data Extensions
   eleventyConfig.addDataExtension('csv', csvParse);
 
   // Shortcodes
-  eleventyConfig.addShortcode('decoImg', decoImg);
-  eleventyConfig.addShortcode('icon', icon);
-  eleventyConfig.addShortcode('emoticon', emoticon);
-  eleventyConfig.addShortcode('emote', emote);
-  eleventyConfig.addShortcode('img', img);
-  eleventyConfig.addShortcode('link', link);
-  eleventyConfig.addShortcode('artCaption', artCaption);
+  for (key in shortcodes) {
+    eleventyConfig.addShortcode(key, shortcodes[key])
+  }
 
   // Paired shortcodes
-  eleventyConfig.addPairedShortcode('figure', figure);
-  eleventyConfig.addPairedShortcode('tooltip', tooltip);
-  eleventyConfig.addPairedShortcode('details', details);
-  eleventyConfig.addPairedShortcode('galleryBox', galleryBox);
+  for (key in pairedShortcodes) {
+    eleventyConfig.addPairedShortcode(key, pairedShortcodes[key])
+  }
 
   // Transform
   eleventyConfig.addTransform("htmlmin", htmlmin);
 
   // Filters
-  eleventyConfig.addFilter('local', local);
-  eleventyConfig.addFilter('dayOfMonth', dayOfMonth);
-  eleventyConfig.addFilter('monthDayYear', monthDayYear);
-  eleventyConfig.addFilter('monDayYear', monDayYear);
-  eleventyConfig.addFilter("markdownify", markdownify);
-  eleventyConfig.addFilter("markdownifyInline", markdownifyInline);
-  eleventyConfig.addFilter('sortCollectionByDisplayOrder', sortCollectionByDisplayOrder);
-  eleventyConfig.addFilter('getPageLinks', getPageLinks);
-  eleventyConfig.addNunjucksFilter('limit', limit);
+  for (key in filters.base) {
+    eleventyConfig.addFilter(key, filters.base[key])
+  }
+  for (key in filters.njk) {
+    eleventyConfig.addNunjucksFilter(key, filters.njk[key])
+  }
 
   // Collections
   eleventyConfig.addCollection('blog', blogPosts);
-  eleventyConfig.addCollection('pocketBishies', pocketBishies);
-  eleventyConfig.addCollection('gallery', gallery);
-  eleventyConfig.addCollection('artPages', artPages);
+
+  for (key in collections) {
+    eleventyConfig.addCollection(key, collections[key])
+  }
 
   // Plugins
-  eleventyConfig.addPlugin(rssPlugin);
+  plugins.forEach(plugin => {
+    if (plugin.options && plugin.options.pluginName) {
+      const pluginName = plugin.options.pluginName;
+      if ((env === "checkLinks" && pluginName === "lightning") ||
+        (env != "checkLinks" && pluginName === "brokenLinks")) {
+        return;
+      }
+    }
+    eleventyConfig.addPlugin(plugin.name, { ...plugin.options })
+  })
+
   eleventyConfig.addPlugin(RenderPlugin);
-  eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(IdAttributePlugin, {
     filter: function({ page }) {
       const pageUrl = page.inputPath;
@@ -84,7 +73,6 @@ module.exports = async function(eleventyConfig){
       }
     }
   });
-  eleventyConfig.addPlugin(pluginTOC, { tags: ['h2'] });
   eleventyConfig.addPlugin(EleventyPluginCodeDemo, {
     name: 'codeDemo',
     renderDocument: ({ html, css, js }) => `
@@ -103,7 +91,6 @@ module.exports = async function(eleventyConfig){
       frameborder: '0',
     }
   })
-  if (env === 'prod') eleventyConfig.addPlugin(brokenLinksPlugin, { loggingLevel: 1 });
 
   eleventyConfig.setLibrary('md', markdownLib);
 

@@ -1,0 +1,27 @@
+---
+permalink: '/feeds/feed.json'
+---
+{% set feedItems = collections.feed %}
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "{{ meta.name }} - JSON Feed",
+  "home_page_url": "{{ meta.url }}",
+  "feed_url": "{{ meta.url }}/feeds/feed.json",
+  "description": "{{ summary }}",
+  "user_comment": "This is a JSON feed. You can subscribe by copying the URL from the address bar into your newsreader!",
+  "authors": {
+    "name": "{{ meta.author.name }}",
+    "url": "{{ meta.url }}"
+  },
+  "items": [
+    {% for item in feedItems | reverse %}
+      {
+        "id": "bechnokid-{{ item.date | dateToIso8601 }}",
+        "url": "{{ meta.url }}",
+        "title": "{{ item.date | monDayYear }}",
+        "content_html": {{ item.content | renderTransforms(item.data.page, meta.url ) | dump | safe }},
+        "date_published": "{{ item.date | dateToRfc3339 }}"
+      }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}

@@ -1,0 +1,37 @@
+.fav-box {
+  max-width: 100px;
+  text-align: center;
+  font-size: .8em;
+
+  p {
+    margin: 0;
+  }
+
+  .series {
+    line-height: .8rem;
+  }
+
+  .ff-container {
+    justify-content: center;
+  }
+}
+
+.monsters img {
+  height: 53px;
+  object-fit: none;
+}
+
+.digimon .freezeframe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.sitemap-section {
+  margin: 1rem 1rem 1.25rem !important
+}
+
+.older-entries section {
+  padding-left: .5rem;
+}

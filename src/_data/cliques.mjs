@@ -70,13 +70,13 @@ export default {
     },
     {
       left: {
-        text: 'Cutie Connection',
-        url: 'https://lockheart.love/collections/cliques',
+        text: "Crystallizing",
+        url: "https://crystallizing.neocities.org"
       },
       center: {
-        img: 'paw-purple.png',
+        img: "phos.png",
       },
-      right: 'Dodogama'
+      right: "Phosphophyllite"
     },
     {
       left: {
@@ -253,6 +253,16 @@ export default {
     ]
   ],
   more: [
+    {
+      left: {
+        text: 'Cutie Connection',
+        url: 'https://lockheart.love/collections/cliques',
+      },
+      center: {
+        img: 'paw-purple.png',
+      },
+      right: 'Dodogama'
+    },
     {
       left: {
         url: "https://emocowboy.neocities.org/?emo=/home/cliques/pokemon",

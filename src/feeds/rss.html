@@ -1,0 +1,31 @@
+---
+permalink: '/feeds/rss.xml'
+---
+<?xml version="1.0" encoding="utf-8"?>
+{% set feedItems = collections.feed %}
+<?xml-stylesheet href="/assets/styles.xslt" type="text/xml"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <atom:link href="{{ meta.url }}/feeds/rss.xml" rel="self" type="application/rss+xml" />
+    <title>{{ meta.name }} - RSS Feed</title>
+    <link>{{ meta.url }}</link>
+    <description>{{ summary }}</description>
+    <language>en-us</language>
+    <lastBuildDate>{{ feedItems[0].date | dateToRfc3339 }}</lastBuildDate>
+    <docs>https://www.rssboard.org/rss-specification</docs>
+    {%- for item in feedItems | reverse %}
+    <item>
+      <title>{{ item.title or (item.date | monDayYear) }}</title>
+      <link>{{ item.pageUrl or "/home" }}</link>
+      <guid isPermaLink="false">{{ item.title or "update" }}-{{ item.date }}</guid>
+      <pubDate>{{ feedItems[0].date | dateToRfc3339 }}</pubDate>
+      <description><![CDATA[
+        {{ (item.summary or item.content) | markdownify | safe }}
+        ]]></description>
+      <content:encoded><![CDATA[
+        {{ item.content | markdownify }}
+        ]]></content:encoded>
+    </item>
+    {% endfor %}
+  </channel>
+</rss>
