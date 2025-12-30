@@ -99,7 +99,6 @@ ul.separator.space li:not(:last-child)::after {
   transform: scaleX(-1);
 }
 
-
 div.waiting {
   border: 1px solid var(--border-sidebar);
   padding: .5rem;
@@ -112,6 +111,12 @@ div.waiting {
   > div {
     font-size: .8em;
     margin: 0;
+  }
+}
+
+#webring-btn-container {
+  a:has(img) {
+    display: inline-flex;
   }
 }
 
@@ -492,6 +497,12 @@ div.waiting {
 
 /* personaring */
 .p-ring {
+  .btn {
+    height: 31px;
+    background: url(/assets/images/webrings/persona.png);
+    width: 88px;
+  }
+
   .ring-container {
     position: relative;
     text-align: center;

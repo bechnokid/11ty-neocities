@@ -337,15 +337,6 @@
   {% endif %}
 {% endmacro %}
 
-{% macro cuddler() %}
-  {% set webring_params = {
-    name: 'Cuddler',
-    src: imgPath + '/cuddler.png',
-    url: 'https://cuddler-webring.netlify.app'
-  } %}
-  {{ widget(webring_params, true) }}
-{% endmacro %}
-
 {% macro doodle(btn_only = false) %}
   {% set webring_url = 'https://evehibi.nekoweb.org/doodlering' %}
   {% set webring_params = {
@@ -449,34 +440,43 @@
 {% endmacro %}
 
 {% macro persona(btn_only = false) %}
-  {% set url = 'https://silly-beanz.neocities.org/personaring' %}
-  <div id="p-ring" class="p-ring webring">
-    <div class="ring-container">
-      <img src="{{ imgPath }}/personaring.png" alt="" class="sona outline" aria-hidden="true">
-      <div class="persona-ring">
-        <div class="d-flex flex-column flex-gap-1">
-          <div class="name-tag">
-            <div class="head"><span style="font-size: 25px">HELLO!</span><br>my name is:</div>
-            <div class="namediv">Bechno</div>
-            <div class="webring-info">part of the <a href="{{ url }}/home" title="join???">persona ring</a> :)</div>
-          </div>
-          <div class="nav d-flex justify-content-center align-items-center flex-gap-1">
-            <a href="">
-              {% imgDiv { cls: "prev black-text", alt: alt_prev + name + " webring" } %}
-            </a>
-            <a class='link-rand' href="">
-              {% imgDiv { cls: "rand black-text", alt: alt_rand + name + " webring" } %}
-            </a>
-            <a href="">
-              {% imgDiv { cls: "next black-text", alt: alt_next + name + " webring" } %}
-            </a>
+  {% set webring_params = {
+    id: "p-ring",
+    name: "persona ring",
+    url: "https://silly-beanz.neocities.org/personaring"
+  } %}
+
+  {% if btn_only %}
+    {{ widget(webring_params, true) }}
+  {% else %}
+    <div class="{{ webring_params.id }} webring">
+      <div class="ring-container">
+        <img src="{{ imgPath }}/personaring.png" alt="" class="sona outline" aria-hidden="true">
+        <div class="persona-ring">
+          <div class="d-flex flex-column flex-gap-1">
+            <div class="name-tag">
+              <div class="head"><span style="font-size: 25px">HELLO!</span><br>my name is:</div>
+              <div class="namediv">Bechno</div>
+              <div class="webring-info">part of the <a href="{{ webring_params.url }}/home" title="join???">{{ webring_params.name }}</a> :)</div>
+            </div>
+            <div class="nav d-flex justify-content-center align-items-center flex-gap-1">
+              <a href="">
+                {% imgDiv { cls: "prev black-text", alt: alt_prev + webring_params.name + " webring" } %}
+              </a>
+              <a class='link-rand' href="">
+                {% imgDiv { cls: "rand black-text", alt: alt_rand + webring_params.name + " webring" } %}
+              </a>
+              <a href="">
+                {% imgDiv { cls: "next black-text", alt: alt_next + webring_params.name + " webring" } %}
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <script type='text/javascript' src='{{ url }}/onionring-variables.js'></script>
-  <script>webringLinks['p-ring'] = sites</script>
+    <script type='text/javascript' src='{{ webring_params.url }}/onionring-variables.js'></script>
+    <script>webringLinks['p-ring'] = sites</script>
+  {% endif %}
 {% endmacro %}
 
 {% macro queercoded() %}

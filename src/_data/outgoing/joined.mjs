@@ -1,15 +1,15 @@
 export default {
-  webringBtns: [
+  directories: [
     {
-      src: 'tropical.png',
-      name: 'Tropical Rice Bowl',
-      url: 'https://astracelestine.nekoweb.org/webring/tropical-rice-bowl'
+      src: 'bannerclub.png',
+      name: 'Banner Club',
+      url: 'https://banner.nekoweb.org'
     },
     {
-      src: 'persona.png',
-      name: 'Persona Ring',
-      url: 'https://silly-beanz.neocities.org/personaring/home'
-    }
+      src: "cuddler.png",
+      name: "now closed Cuddler Webring",
+      url: "https://cuddler-webring.netlify.app"
+    },
   ],
   fanlistings: {
     pending: "none",

@@ -23,11 +23,13 @@ permalink: '/joined/index.html'
       {% endfor %}
     </div>
   {% endgalleryBox %}
-  {% galleryBox { title: "Webrings", subCls: "webrings justify-content-center flex-gap-2" } %}
+  {% galleryBox { title: "Webrings/Directories", subCls: "webrings justify-content-center flex-gap-2" } %}
     {% set debug = false if meta.env == "prod" else true %}
     <p class="mobile-only mb-4">I'm so sorry the widgets are so small on mobile! One day, I'll find a way to make them easy to navigate, but for now, please zoom in!</p>
     <div class="small-webrings js-required d-flex flex-wrap align-items-center justify-content-center flex-gap-2">
-      {{ webrings.cuddler() }}
+      {% for item in outgoing.joined.directories %}
+        {% img "/assets/images/webrings/" + item.src, { url: item.url, alt: "Button to &quot;" + item.name + "&quot;"} %}
+      {% endfor %}
       {{ webrings.rayman() }}
       {{ webrings.acing() }}
       {{ webrings.ladies() }}
@@ -54,8 +56,10 @@ permalink: '/joined/index.html'
     </div>
     <noscript>
       <div id="webring-btn-container" class="d-flex flex-wrap align-items-center justify-content-center flex-md-gap-1 flex-gap-4">
+        {% for item in outgoing.joined.directories %}
+          {% img "/assets/images/webrings/" + item.src, { url: item.url, alt: "Button to the " + item.name } %}
+        {% endfor %}
         {{ webrings.neocreatives(true) }}
-        {{ webrings.cuddler() }}
         {{ webrings.gfdkris(true) }}
         {{ webrings.cookie_run(true) }}
         {{ webrings.resource(true) }}
@@ -63,9 +67,8 @@ permalink: '/joined/index.html'
         {{ webrings.wii(true) }}
         {{ webrings.kingdom_hearts(true) }}
         {{ webrings.doodle(true) }}
-        {%- for button in outgoing.joined.webringBtns %}
-          {% img "/assets/images/joined/webrings/" + button.src, { url: button.url, alt: "Button for the &quot;" + button.name + "&quot; webring"} %}
-        {% endfor %}
+        {{ webrings.persona(true) }}
+        {% img "/assets/images/webrings/tropical.png", { url: "https://astracelestine.nekoweb.org/webring/tropical-rice-bowl", alt: "Button for the &quot;Tropical Rice Bowl&quot; webring" } %}
       </div>
       <div class="webring-widget-container mt-4">
         <div class="d-flex flex-wrap justify-content-center flex-gap-3">
