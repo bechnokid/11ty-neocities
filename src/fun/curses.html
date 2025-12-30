@@ -31,11 +31,11 @@ permalink: '/curses/index.html'
     <div class="curses p-3 bg-footer position-relative rounded">
       <div class="curse-list">
         <p>I hope...</p>
-        <p class="random js-required">...you get an intolerance to your favorite food.</p>
+        <p class="js-required">...<span class="random">you get an intolerance to your favorite food.</span></p>
         <noscript>
           <ul>
             {% for item in goodies.curses %}
-              <li>{{ item | safe }}</li>
+              <li>...{{ item | safe }}</li>
             {% endfor %}
           </ul>
         </noscript>

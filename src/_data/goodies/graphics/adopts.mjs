@@ -133,7 +133,7 @@ export default {
     ]
   ],
   interactive: [
-    { name: "Lil&apos; Guy", src: "https://tamanotchi.world/i/3706", url: "https://tamanotchi.world/i/3706", alt: "Lil Guy from TamaNOTchi" },
+    { name: "Lil&apos; Guy", src: "https://tamanotchi.world/i/3706", url: "https://tamanotchi.world/3706", alt: "Lil Guy from TamaNOTchi" },
     { name: "Nibblet", src: "https://wobble.town/visit/1155/wobble.gif", url: "https://wobble.town/visit/1155", alt: "Nibblet from Wobble Town", freezeframe: true }
   ],
   adopted: [

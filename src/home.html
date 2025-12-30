@@ -17,11 +17,9 @@ Please enjoy your stay, and thank you for visiting! {% emote 'happy' %}
 Webrings and fanlistings can be found in [/joined](/joined)!
 {% endset %}
 
-<script src="{{ meta.jsUrl }}/microblog.js"></script>
-
 <div class="d-flex flex-column flex-gap-4">
   <div class="content">{{ contentBlock | markdownify | safe }}</div>
-  <ul class="inline-links justify-content-center">
+  <ul class="home-links inline-list justify-content-center">
     {%- for link in meta.introLinks %}
       <li>{% link link.url, link.name %}</li>
     {% endfor %}
@@ -31,7 +29,7 @@ Webrings and fanlistings can be found in [/joined](/joined)!
       <div class="sidebar h-100 overflow-hidden">
         <div class="h2 p-2">Latest Status</div>
         {% set status = microblog.microblog[0] %}
-        <div id="status-cafe" class="js-required status-container d-flex flex-gap-3 px-3">
+        <div id="status-cafe-widget" class="js-required status-container d-flex flex-gap-3 px-3">
           <div class="p-5 w-100 text-center">Loading...</div>
         </div>
         <noscript>

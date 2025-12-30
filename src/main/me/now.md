@@ -7,32 +7,30 @@ permalink: '/now/index.html'
 description: A [now](https://nownownow.com/about) page that describes what Bechno Kid is up to.
 summary: What's Bechno Kid been up to?
 noScroll: true
-date: "2025-10-27"
+date: "2025-12-30"
 ---
 ## {{ date | monthDayYear}}
 
 ### General
 
-- I think the reason why I might have felt "off" the past couple of weeks might have been because of seasonal depression! I keep forgetting it's an actual thing that people can suffer from lol. I'm doing a lot better now, just in time for Halloween!
-- Still in the same situation as I have been at work for a while now, made slightly worse no thanks to the shutdown affecting everything for everyone everywhere! It's a good thing that I've saved enough money for rainy days like this!
+- It's almost 2026! I'm still working from home surprisingly enough! It's been great since the daily commute put a lot of strain on my knees, and they've been given time to heal!
+- Speaking of work, my company gave me an Amazon gift card, so I went and got myself something that I had been thinking of getting for a long time, a tub of Gamer Supps! I was lucky enough to try some free samples a couple of years ago, and I was happy to see that the flavor I wanted was available on Amazon. {% emote 'happy' %}
 
 ### Playing
 
-- [Digimon Story Time Stranger](https://www.bandainamcoent.com/games/digimon-story-time-stranger)
-  - This is quite honestly the best Digimon game I've ever played!! I made so much art for the game that I hope to share someday. For now, I'm just going to continue gushing over my new ship. {% emote 'love' %}
-  - I might write a review on this someday if I have enough spoons to write...but the spoons usually end up getting used for life, drawing, and games. {% emote 'embarrassed' %}
 - [Monster Hunter Wilds](https://www.monsterhunter.com/wilds/en-us/)
-  - The Dreamspell Festival has started recently! I'm not a huge fan of the music in the hub, the new song from the Diva, nor the new barrel bombs that have a random projectile in the Barrel Bowling mini-game, but it's still been a lot of fun!
-  - The new armor sets look great, and I'm so, **so** glad that armors are no longer gender-locked! I can finally look like a spooky pumpkin ghost!!
-  - Arch-tempered Nu Udra kicked my butt pretty good! I got the male's layered armor and the Palico layered weapon before deciding I didn't want to hunt the fire octopus anymore lol.
+  - Nothing says "Merry Christmas" like getting your ass kicked by Gogmazios and Arch-Tempered Jin Dahaad while dressed as Santa Claus! This is the final update for Wilds, so I can't wait to see what's in store for the expansion. {% emote 'excited' %}
+- [Legend of Zelda: Tears of the Kingdom](https://www.nintendo.com/us/store/products/the-legend-of-zelda-tears-of-the-kingdom-nintendo-switch-2-edition-switch-2/) (modded)
+  - Sam recently started adding mods to TotK, and she was more than happy to share her hard work with me by letting me play on a new file, and it's been so fun!!
 
 ### Watching
 
 - Dr. STONE, season 3
 - Digimon Beatbreak
-- Digimon Savers
+- Fionna and Cake, season 2 (completed)
+- Digimon Savers (on hold)
 
 ### Listening to
 
-- Super db - [Back to Me](https://song.link/y/QKYgwieUZzc)
-- reche - [wherever you are](https://song.link/y/2HRCixpw8Ko)
+- Anh Duy - [PIXEL HEART ft. KITANE](https://song.link/y/GlKyjc3MXAE)
+- Taku Takahashi, MONJOE- [Divine](https://song.link/y/jN1lr07nCvA)

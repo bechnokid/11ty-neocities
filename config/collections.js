@@ -1,9 +1,5 @@
 const env = process.env.ELEVENTY_ENV
 
-const blogPosts = collection => {
-  return collection.getFilteredByTag('post').reverse();
-}
-
 const gallery = collection => {
   const galleryData = collection.getAll()[0].data.art.data;
   return (env === "dev") ? Array(galleryData[0]) : galleryData;
@@ -44,7 +40,6 @@ const pocketBishies = collection => {
 }
 
 module.exports = {
-  blogPosts,
   gallery,
   artPages,
   pocketBishies,

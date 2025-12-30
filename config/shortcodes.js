@@ -24,14 +24,14 @@ const emote = value => {
 
 const link = function (url, content, options = {}) {
   let linkCls = '';
-  const ariaDesc = (options.ariaDesc) ? ` aria-describedby="${options.ariaDesc}"` : '';
-  const ariaLabel = (options.ariaLabel) ? ` aria-label="${options.ariaLabel}"` : '';
-  if (options.markdown && ariaDesc == '') {
+  const desc = (options.desc) ? ` aria-describedby="${options.desc}"` : '';
+  const alt = (options.alt) ? ` aria-label="${options.alt}"` : '';
+  if (options.markdown && desc == '') {
     if (options.cls) linkCls = `{${options.cls.split(' ').map((x) => `.${x}`).join(' ')}}`;
     return `[${content}](${url})${linkCls}`
   } else {
     if (options.cls) linkCls = ` class='${options.cls}'`;
-    return `<a href='${url}'${linkCls}${ariaDesc}${ariaLabel}>${content}</a>`;
+    return `<a href='${url}'${linkCls}${desc}${alt}>${content}</a>`;
   }
 }
 
@@ -73,6 +73,16 @@ const img = function(src, options = {}) {
   return resultString;
 };
 
+const imgDiv = function(params) {
+  const divCls = (params.cls) ? ` class="${params.cls}"` : "";
+  let results = `<div${divCls} role="img" aria-label="${params.alt}"></div>`;
+  if (params.url) {
+    const urlCls = (params.urlCls) ? ` class="${params.urlCls}"` : "";
+    results = `<a href="${params.url}"${urlCls}>${results}</a>`
+  }
+  return results;
+}
+
 const decoImg = function(params) {
   if (!params.src) return "No img src provided.";
   const cls = (params.cls)? ` class='${params.cls}'` : '';
@@ -93,6 +103,7 @@ module.exports = {
   emoticon,
   emote,
   img,
+  imgDiv,
   link,
   artCaption,
 }

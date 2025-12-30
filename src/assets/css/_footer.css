@@ -1,0 +1,17 @@
+footer {
+  font-size: .8em;
+  border: 5px solid var(--bg-body);
+
+  p {
+    margin: 0;
+  }
+
+  .inline-list {
+    font-size: 1.25em;
+
+    li:not(:last-child):after {
+      content: "|";
+      margin-left: .5rem;
+    }
+  }
+}

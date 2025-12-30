@@ -17,6 +17,10 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
+
+  .button:visited {
+    border-color: var(--border-sidebar);
+  }
 }
 
 .img-container img {

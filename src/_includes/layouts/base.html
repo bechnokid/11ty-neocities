@@ -4,8 +4,6 @@
   {% include "partials/head.html" %}
   {% block css %}<link rel="stylesheet" href="{{ meta.cssUrl }}/main.css" type="text/css" media="all">{% endblock css %}
   <noscript><link rel="stylesheet" href="{{ meta.cssUrl }}/no-script.css" type="text/css" media="all"></noscript>
-  <script src="{{ meta.jsUrl }}/bechnoQuery.js"></script>
-  {% if freezeframe == true %}<script src="{{ meta.jsUrl }}/bechnoFreeze.js"></script>{% endif %}
   <script src="{{ meta.jsUrl }}/script.js" crossorigin="anonymous"></script>
   <title>{% if title != null %}{{ title }} - {% endif %}{{ meta.name }}</title>
 </head>
@@ -41,16 +39,5 @@
       {% include 'partials/footer.html' %}
     </div>
   </div>
-  <script>
-    document.addEventListener("readystatechange", function () {
-      if (document.readyState === "complete") {
-        if ($('.loading-sidebar').length > 0) {
-          setTimeout(function () {
-            $('.loading-sidebar').addClass('d-none');
-          }, 1000);
-        }
-      }
-    });
-  </script>
 </body>
 </html>

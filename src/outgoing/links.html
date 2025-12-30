@@ -36,7 +36,7 @@ flashing: true
             <li>{% link item.url, item.name %}{% if not loop.last %}<span class="mx-2 text-secondary">✦</span>{% endif %}</li>
           {% endfor %}
         </ul>
-        {% galleryBox { cls: 'mx-2', subCls: 'justify-content-center align-items-center flex-gap-1' } %}
+        {% galleryBox { cls: 'mx-2', subCls: 'justify-content-center flex-gap-1' } %}
           {%- for item in options.btnsArr %}
             {% img imgPath + item.src, { url: item.url, alt: "Link button for " + item.name, freezeframe: item.freezeframe } %}
           {% endfor %}

@@ -176,7 +176,7 @@ div.code-toolbar>.toolbar .toolbar-item {
 }
 
 div.code-toolbar>.toolbar a {
-	cursor: pointer;
+	cursor: var(--img-cursor-point), pointer;
 }
 
 div.code-toolbar>.toolbar button {

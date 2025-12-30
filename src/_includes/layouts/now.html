@@ -2,10 +2,10 @@
 
 {% block content %}
   {{ super() }}
-  <section class="older-entries">
+  <section class="older-entries mt-4">
     {% for entry in collections.now %}
       <details>
-        <summary class="h2">{{ entry.date | monthDayYear }}</summary>
+        <summary class="h2">{{ entry.fileSlug | monthDayYear }}</summary>
         {{ entry.content | safe }}
       </details>
     {% endfor %}

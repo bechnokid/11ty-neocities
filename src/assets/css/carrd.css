@@ -1,0 +1,204 @@
+@import "_reset.css";
+
+:root {
+  --black: #2c2424;
+  --cinnamon: #903636;
+  --dark-choco: #826d6d;
+  --choco: #a88d8d;
+  --teal: #4CD3C2;
+  --mint: #B7EFCD;
+  --white: rgb(255, 255, 254);
+}
+
+body {
+  color: var(--black);
+  font-family: 'Gamja Flower';
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 37px, #EBFFF7 37px, #EBFFF7 74px);
+	background-color: #d5f4f1;
+  height: 100vh;
+  display: flex;
+}
+
+strong {
+  color: #28aa9a;
+}
+
+.border-page {
+  outline: 10px solid var(--dark-choco);
+  border: 2px dashed #e3caca;
+  border-radius: 2rem;
+  padding: 0.5rem;
+  background: var(--dark-choco);
+}
+
+.stickers {
+  position: absolute;
+  z-index: 10;
+  filter: drop-shadow(3px 3px 2px #1a5d5d66);
+
+  &.bowl {
+    top: -.5rem;
+    left: -.5rem;
+  }
+
+  &.nume {
+    right: -5rem;
+    bottom: -2rem;
+  }
+}
+
+.page {
+  max-width: 648px;
+  border: 5px solid var(--black);
+  border-radius: 2rem;
+  background-color: var(--white);
+  overflow: hidden;
+}
+
+main {
+  border-top: 5px solid var(--black);
+  border-bottom: 0;
+
+  & > .row {
+    border-bottom: 5px solid var(--black);
+  }
+}
+
+header {
+  height: 150px;
+  background-image: radial-gradient(#8EE6E1 5px, transparent 5px), radial-gradient(#8EE6E1 5px, transparent 5px);
+	background-size: 40px 40px;
+	background-position: 0 0, 20px 20px;
+	background-color: var(--teal);
+
+  h1 {
+    background-color: var(--white);
+    border-radius: 4rem;
+    border: 2px dashed var(--black);
+    outline: 5px solid var(--white);
+    padding: .5rem 2rem 1rem;
+    color: var(--black);
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+}
+
+h1, h2 {
+  font-family: "Cherry Bomb One";
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+img.pfp {
+  border-radius: 10rem;
+  border: 5px solid var(--black);
+}
+
+p.caption {
+  color: var(--dark-choco);
+  font-size: .8em;
+}
+
+section.about {
+  h2 {
+    display: inline-block;
+    margin-left: -.5rem;
+    margin-bottom: .5rem;
+    padding: .5rem .75rem 1rem;
+    color: var(--white);
+    background-color: #28aa9a;
+    border-radius: 2rem;
+  }
+}
+
+.links {
+  background-color: var(--choco);
+
+  .button {
+    border: 2px solid var(--white);
+    border-radius: 2rem;
+    padding: .5rem 1rem;
+    color: var(--white);
+    background-color: var(--black);
+    font-family: "Cherry Bomb One";
+    letter-spacing: 1px;
+    text-decoration: none;
+
+    &:hover {
+      background-color: #7d5353;
+      cursor: pointer;
+    }
+
+    svg {
+      width: 2rem;
+      vertical-align: top;
+      fill: var(--white);
+    }
+  }
+}
+
+input#credits-checkbox {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+label:hover {
+  cursor: pointer;
+}
+
+.credits {
+  max-height: 0;
+  overflow: hidden;
+  transition: all .8s ease-in-out;
+
+  & > ul {
+    margin-left: 2rem;
+    padding: 1rem 0;
+
+    & ul {
+      margin-left: 2rem;
+    }
+  }
+
+  li::marker {
+    content: "- "
+  }
+
+  a {
+    color: var(--cinnamon);
+  }
+}
+
+main:has(#credits-checkbox:checked) {
+  border-bottom: 5px solid var(--black);
+
+  .credits {
+    max-height: 300px;
+  }
+}
+
+footer {
+  background-image:linear-gradient(0deg,rgba(76,211,194,.6) 0% 12.5%,rgba(235,255,247,.6) 12.5% 37.5%,rgba(142,230,225,.6) 37.5% 62.5%,rgba(235,255,247,.6) 62.5% 87.5%,rgba(76,211,194,.6) 87.5% 100%),linear-gradient(90deg,rgba(76,211,194,.6) 0% 12.5%,rgba(235,255,247,.6) 12.5% 37.5%,rgba(142,230,225,.6) 37.5% 62.5%,rgba(235,255,247,.6) 62.5% 87.5%,rgba(76,211,194,.6) 87.5% 100%);
+  background-size: 60px 60px,60px 60px,60px 60px,60px 60px;
+
+  p {
+    background: var(--white);
+    padding: .25rem 1rem;
+    border-radius: 2rem;
+    border: 1px dashed var(--black);
+    outline: 3px solid var(--white)
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    height: unset;
+  }
+
+  .stickers {
+    display: none;
+  }
+}

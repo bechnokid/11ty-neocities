@@ -1,288 +1,536 @@
-{% set imgPath = "/assets/images/joined/webrings" %}
-{% set altMain = "Main link to the " %}
-{% set altPrev = "Go to the previous site in the " %}
-{% set altNext = "Go to the next site in the " %}
-{% set altRand = "Go to a random site in the " %}
+{% set imgPath = "/assets/images/webrings" %}
+{% set alt_main = "Main link to the " %}
+{% set alt_prev = "Go to the previous site in the " %}
+{% set alt_next = "Go to the next site in the " %}
+{% set alt_rand = "Go to a random site in the " %}
+
+{# Params for button-only webrings
+
+{% set webring_params = {
+  id: "id(optional)",
+  name: "Webring name",
+  url: ""
+} %}
+#}
+
+{# Params for one-line widgets
+  - "prev", "index", and "next" can also be strings only
+
+{% set webring_params = {
+  id: "id(optional)",
+  name: "Webring Name",
+  simple: true,
+  nav: {
+    prev: {
+      text: "",
+      alt: "only use if text is a symbol like <-",
+      src: "",
+      url: "use # if using script to replace links"
+    },
+    index: {
+      text: "",
+      alt: "only use if text is a symbol like +",
+      src: "",
+      url: ""
+    },
+    next: {
+      text: "",
+      alt: "only use if text is a symbol like ->",
+      src: "",
+      url: "use # if using script to replace links"
+    }
+  }
+} %}
+#}
+
+{# Params for multi-line widgets
+
+{% set webring_params = {
+  id: "id(optional)",
+  name: "webring_name",
+  src: "use only if btn has image path",
+  url: "",
+  title: {
+    text: "",
+    src: "",
+    url: ""
+  },
+  nav: {
+    prev: {
+      text: "",
+      alt: "only use if text is a symbol like <-",
+      src: "",
+      url: "use # if using script to replace links"
+    },
+    index: {
+      random: false,
+      hide: false,
+      btnOnly: false,
+      text: "",
+      alt: "only use if text is a symbol like +",
+      src: "",
+      url: "replace with # if random = true, else use any other url"
+    },
+    next: {
+      noFlip: false,
+      text: "",
+      alt: "only use if text is a symbol like ->",
+      src: "",
+      url: "use # if using script to replace links"
+    }
+  },
+  links: {
+    separator: "(optional) pipe or dash",
+    random: {
+      text: "",
+      src: ""
+    },
+    index: {
+      text: "",
+      src: ""
+    },
+    onion: {
+      text: "",
+      src: ""
+    }
+  }
+} %}
+#}
 
 {# HELPER MACROS #}
 
-{# params:
-  - id: widget ID
-  - name: webring name
-  - urlPrev: previous URL in webring
-  - url: index URL in webring
-  - urlNext: next URL in webring
-  - src: index image in webring
-  - nav: navigation image in webring (points left)
-  - gap: flex gap setting (1-5)
-#}
-{% macro basic(params) %} {# one-line widgets #}
-  {% set webringId = params.id or (params.name | slugify) %}
-  {% set webringAlt = params.name + " webring" %}
-  <div class="{{ webringId }} webring{{ " flex-gap-" + params.gap if params.gap else ""}}">
-    {% if not params.button %}
-      <a href="{{ params.urlPrev or "" }}" class="wr-prev webring-nav-btn"><img src="{{ params.nav }}" alt="{{ altPrev + webringAlt }}"></a>
-    {% endif %}
-    <a href="{{ params.url }}" class="webring-index webring-nav-btn"><img src="{{ params.src }}" alt="{{ altMain + webringAlt }}"></a>
-    {% if not params.button %}
-      <a href="{{ params.urlNext or "" }}" class="wr-next webring-nav-btn"><img src="{{ params.nav }}" class="img-next" alt="{{ altNext + webringAlt }}"></a>
-    {% endif %}
-  </div>
+{% macro widget_button(params) %}
+  {% if params.src %}
+    {% img params.src, { url: params.url, cls: "btn index",   alt: params.alt or (alt_main + params.name + " webring") } %}
+  {% else %}
+    {% imgDiv { url: params.url, cls: "btn index", alt: params.alt or (alt_main + params.name + " webring") } %}
+  {% endif %}
 {% endmacro %}
 
-{# params:
-  - id: widget ID
-  - name: webring name
-  - url: webring URL
-  - imgIndex: index image in webring
-  - urlPrev: prev URL in webring
-  - urlNext: next URL in webring
-  - imgNav: image for navigating in webring
-      - imgPrev: image for prev URL in webring
-      - imgNext: image for next URL in webring
-  - urlRand: random URL in webring
-  - imgRand: image for random URL in webring
-#}
-{% macro widget(params) %} {# two-line widgets #}
-  {% set webringAlt = params.name + " webring" %}
-  <div class="{{ params.id }}">
-    <div class="{{ params.id }}-index">
-      <a href="{{ params.url }}"><img src="{{ params.imgIndex }}" alt="{{ altMain + webringAlt }}"></a>
-    </div>
-    <div class="{{ params.id }}-nav">
-      <a href="" class="wr-prev {{ params.id }}-nav-btn">
-        <img src="{{ params.imgPrev or params.imgNav }}" alt="{{ altPrev + webringAlt }}">
+{% macro widget_simple(params) %}
+  {# PREVIOUS LINK #}
+  {% set webring_alt_prev = params.nav.prev.alt or (alt_prev + params.name + " webring") %}
+  {% if params.nav.prev.src %}
+    {% img params.nav.prev.src, { cls: "prev", url: params.nav.prev.url or params.nav.prev, alt: webring_alt_prev } %}
+  {% elif params.nav.prev.text %}
+    {% link params.nav.prev.url, params.nav.prev.text, { cls: "prev", alt: webring_alt_prev } %}
+  {% else %}
+    {% imgDiv { cls: "prev", url: params.nav.prev.url or params.nav.prev, alt: webring_alt_prev } %}
+  {% endif %}
+
+  {# CENTER LINK #}
+  {% if not params.nav.index.hide %} {# If index btn must be hidden #}
+    {% set webring_alt_main = params.nav.index.alt or (alt_main + params.name + " webring") %}
+
+    {% if params.nav.index.random %} {# If index btn should be made into random link btn #}
+      {% set webring_alt_rand = params.nav.index.alt or (alt_rand + params.name + " webring") %}
+      <a class="link-rand" href="#">
+        {% if params.nav.index.src %} {# If index btn has img path #}
+          {% img params.nav.index.src, { cls: "rand", alt: webring_alt_rand } %}
+        {% elif params.nav.index.text %}
+          {% link params.nav.index.url, params.nav.index.text, { cls: "rand", alt: webring_alt_rand } %}
+        {% else %} {# Else, make it into a div bg #}
+          {% imgDiv { cls: "rand", alt: webring_alt_rand } %}
+        {% endif %}
       </a>
-      <a href="" class="wr-rand {{ params.id }}-nav-btn">
-        <img src="{{ params.imgRand }}" alt="{{ altRand + webringAlt }}">
-      </a>
-      <a href="" class="wr-next {{ params.id }}-nav-btn">
-        <img src="{{ params.imgNext or params.imgNav }}" alt="{{ altNext + webringAlt }}"{% if not params.imgNext %} class="img-next"{% endif %}>
-      </a>
-    </div>
+    {% elif params.nav.index.btnOnly %}
+      {% if params.nav.index.src %}
+        {% img params.nav.index.src, { cls: "index", alt: webring_alt_main } %}
+      {% else %}
+        {% imgDiv { cls: "index", alt: webring_alt_main } %}
+      {% endif %}
+    {% else %}
+      {% if params.nav.index.src %} {# If index btn has img path #}
+        {% img params.nav.index.src, { cls: "index", url: params.nav.index.url or params.nav.index, alt: webring_alt_main } %}
+      {% elif params.nav.index.text %}
+        {% link params.nav.index.url, params.nav.index.text, { cls: "index", alt: webring_alt_main } %}
+      {% else %} {# Else, make it into a div bg #}
+        {% set index_url = parmas.nav.index.url or params.nav.index %}
+        {% if index_url %}
+          {% imgDiv { cls: "index", url: params.nav.index.url or params.nav.index, alt: webring_alt_main } %}
+        {% endif %}
+      {% endif %}
+    {% endif %}
+  {% endif %}
+
+  {# Next link #}
+  {% set next_cls = "next" if not params.nav.next.noFlip else "" %}
+  {% set webring_alt_next = params.nav.next.alt or (alt_next + params.name + " webring") %}
+
+  {% if params.nav.next.src %}
+    {% img params.nav.next.src, { cls: next_cls, url: params.nav.next.url or params.nav.next, alt: alt_next + params.name + " webring" } %}
+  {% elif params.nav.next.text %}
+    {% link params.nav.next.url, params.nav.next.text, { cls: next_cls, alt: params.nav.next.alt } %}
+  {% else %}
+    {% imgDiv { cls: next_cls, url: params.nav.next.url or params.nav.next, alt: alt_next + params.name + " webring" } %}
+  {% endif %}
+{% endmacro %}
+
+{% macro widget(params, btn_only = false) %}
+  <div class="{{ params.id or (params.name | slugify) }} webring">
+    {% if btn_only %}
+      {{ widget_button(params) }}
+    {% elif params.simple %} {# One-line widget: <- |Button| -> #}
+      {{ widget_simple(params) }}
+    {% else %} {# Multiple-line Widget #}
+      {% if params.title %}
+        <div class="webring-title">
+          {% if params.title.src %}
+            {% img params.title.src, { url: params.title.url, alt: params.name + " webring"} %}
+          {% elif params.title.text %}
+            {% if params.title.url %}
+              {% link params.title.url, params.title.text %}
+            {% else %}
+              {{ params.title.text }}
+            {% endif %}
+          {% else %}
+            {% imgDiv { alt: params.name + " webring", url: params.title.url } %}
+          {% endif %}
+        </div>
+      {% endif %}
+      <div class="webring-nav">
+        {{ widget_simple(params) }}
+      </div>
+      {% if params.links %}
+        <div class="webring-links">
+          <ul {% if params.links.separator %}class="separator {{ params.links.separator }}"{% endif %}>
+            {# Random link #}
+            {% if params.links.random %}
+              <li>
+                <a class="link-rand" href="#">
+                  {% if params.links.random.src %}
+                    {% img params.links.random.src, { cls: "rand", alt: alt_rand + params.name + " webring" } %}
+                  {% elif params.links.random.text %}
+                    {{ params.links.random.text }}
+                  {% else %}
+                    {% imgDiv { cls: "rand", alt: alt_rand + params.name + " webring" } %}
+                  {% endif %}
+                </a>
+              </li>
+            {% endif %}
+
+            {# Index or members list link #}
+            {% if params.links.index %}
+              <li>
+                <a href="{{ params.links.index.url }}">
+                  {% if params.links.index.src %}
+                    {% img params.links.index.src, { cls: "index", alt: alt_main + params.name + " webring" } %}
+                  {% elif params.links.index.text %}
+                    {{ params.links.index.text }}
+                  {% else %}
+                    {% imgDiv { cls: "index", alt: alt_main + params.name + " webring" } %}
+                  {% endif %}
+                </a>
+              </li>
+            {% endif %}
+
+            {# Onionring link (if applicable) #}
+            {% if params.links.onion %}
+              <li>
+                <a href="https://garlic.garden/onionring/">
+                  {% if params.links.onion.src %}
+                    {% img params.links.onion.src, { cls: "onion", alt: "Link to the onionring website" } %}
+                  {% elif params.links.onion.text %}
+                    {{ params.links.onion.text }}
+                  {% else %}
+                    {% imgDiv { cls: "onion", alt: "Link to the onionring website" } %}
+                  {% endif %}
+                </a>
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+      {% endif %}
+    {% endif %}
   </div>
+  {% if params.script_url %}
+    <script type="text/javascript" src="{{ params.script_url }}"></script>
+    {% if not params.custom_sites %}
+      <script>webringLinks["{{ params.id or (params.name | slugify ) }}"] = sites;</script>
+    {% else %}
+      {% if params.override %}
+        <script>webringLinks["{{ params.id or (params.name | slugify ) }}"] = { override: true, sites: sites }</script>
+      {% endif %}
+    {% endif %}
+  {% endif %}
 {% endmacro %}
 
 {# ACTIVE WEBRINGS #}
 
 {% macro acing() %}
-  {% set webringParams = {
+  {% set webring_params = {
+    simple: true,
+    id: 'ace',
     name: 'Acing the Internet',
-    src: imgPath + '/ace.png',
-    url: 'https://acingtheinternet.netlify.app',
-    nav: imgPath + '/ace_nav.gif',
-    urlPrev: 'https://acingtheinternet.netlify.app/bechnokid/previous',
-    urlNext: 'https://acingtheinternet.netlify.app/bechnokid/next'
+    nav: {
+      prev: "https://acingtheinternet.netlify.app/bechnokid/previous",
+      index: 'https://acingtheinternet.netlify.app',
+      next: "https://acingtheinternet.netlify.app/bechnokid/next"
+    }
   } %}
-  {{ basic(webringParams) }}
+  {{ widget(webring_params) }}
 {% endmacro %}
 
-{% macro amiga() %}
-  {% set url = 'https://nicois.gay/amiga' %}
-  {% set name = 'Artists Making the Internet Gay' %}
-  <div id="amiga">
-    <table>
-      <tr>
-        <td><a class='wr-prev' href='#'><img src="{{ url }}/A.M.I.G.A.%20left.svg" alt="{{ altPrev + name }} webring" width="50px"></a></td>
-        <td class='webring-info'><center><a href='{{ url }}/members'><img src="{{ url }}/amiga%20button.svg" alt="Go to the member list in the {{ name }} webring" width="150px"></a></center></br>
-        <span class='webring-links'>
-          <a id='amiga-rand' class="wr-rand" href="">random</a> | <a href='{{ url }}/amiga-webring'>index</a> | <a href='https://garlic.garden/onionring/'>what is this?</a></span></td>
-        <td><a class='wr-next' href=''><img class="img-next" src="{{ url }}/A.M.I.G.A.%20left.svg" alt="{{ altNext + name }}" width="50px"></a></td>
-      </tr>
-    </table>
-  </div>
-  <script type='text/javascript' src='{{ url }}/onionring-variables.js'></script>
-  <script type='text/javascript'>setWidget({ id: 'amiga', sites: sites })</script>
+{% macro amiga(btn_only = false) %}
+  {% set webring_url = "https://nicois.gay/amiga" %}
+  {% set webring_params = {
+      id: "amiga",
+      name: "AMIGA: Artists Making the Internet Gay",
+      src: webring_url + "/amiga%20button.svg",
+      url: webring_url,
+      script_url: "https://nicois.gay/amiga/onionring-variables.js",
+      nav: {
+        prev: { src: webring_url + "/A.M.I.G.A.%20left.svg", url: "#" },
+        index: {
+          src: webring_url + "/amiga%20button.svg",
+          url: webring_url + "/members",
+          alt: "Go to the member list in the AMIGA webring"
+        },
+        next: { src: webring_url + "/A.M.I.G.A.%20left.svg", url: "#" }
+      },
+      links: {
+        separator: "pipe",
+        random: { text: "random" },
+        index: { text: "index", url: webring_url + "/amiga-webring" },
+        onion: { text: "what is this?", url: "https://garlic.garden/onionring/" }
+      }
+    } %}
+
+  {{ widget(webring_params, btn_only) }}
 {% endmacro %}
 
-{% macro cookierun() %}
-  {% set url = 'https://evehibi.nekoweb.org/ckwr' %}
-  {% set name = 'Cookie Run' %}
-  <div id="ckwr">
-    <div class="webring-wrapper">
-    <div class="webring-title"><a href='{{ url }}/'><img src="{{ url }}/logo.png" alt="{{ altMain + name }} webring"></a></div>
-      <div class="webring-flex">
-        <div class="webring-prev"><a class='wr-prev' href=""><img class="arrow-image" src="{{ url }}/w/a.png" alt="{{ altPrev + name }} webring"></a></div>
-        <div class="ckwr-tooltip"><img class="wr-img webring-image" src=""></div>
-        <div class="webring-next"><a class='wr-next' href=""><img class="arrow-image" src="{{ url }}/w/a.png" alt="{{ altNext + name }} webring"></a></div>
+{% macro cookie_run(btn_only = false) %}
+  {% set webring_params = {
+    id: "ckwr",
+    name: "Cookie Run",
+    url: "https://evehibi.nekoweb.org/ckwr"
+  } %}
+
+  {% if btn_only %}
+    {{ widget(webring_params, true) }}
+  {% else %}
+    <div class="{{ webring_params.id }}">
+      <div class="cookie-wrapper">
+        <div class="cookie-tooltip">
+          {% img "/assets/images/webrings/crwr_icon.png", { cls: "cookie-icon", aria: { hidden: true } } %}
+        </div>
+        <div class="nav">
+          <a href="{{ webring_params.url }}">
+            {% imgDiv { cls: "logo", alt: "Main link to the Cookie Run webring" } %}
+          </a>
+          <div class="arrows">
+            <a href="" class="wr-prev">
+              {% imgDiv { cls: "prev", alt: "Go to the next link in the Cookie Run webring" } %}
+            </a>
+            <a href="" class="wr-next">
+              {% imgDiv { cls: "next", alt: "Go to the next link in the Cookie Run webring" } %}
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="cookie-tooltip-content" role="tooltip">
+        <p>This is Bechno Kid's favorite cookie! When asked why they liked this cookie, they said: "I love his design and story so much! He makes me sob but in a good way!"</p>
       </div>
     </div>
-    <div class="ckwr-tooltip-content" role="tooltip">
-      <p>This is Bechno Kid's favorite cookie! When asked why they liked this cookie, they said:</p>
-    </div>
-  </div>
-  <link rel="stylesheet" href="{{ url }}/dynamic.css">
-  <script type="text/javascript" src="{{ url }}/var.js"></script>
-  <script type="text/javascript">setWidget({ id: 'ckwr', sites: sites, imgUrl: 'https://evehibi.nekoweb.org/ckwr/c/CHANGEME.png' });</script>
+    <script type="text/javascript" src="{{ webring_params.url }}/var.js"></script>
+    <script>webringLinks['{{ webring_params.id }}'] = sites.map((site) => "https://" + site[0])</script>
+  {% endif %}
 {% endmacro %}
 
 {% macro cuddler() %}
-  {% set webringParams = {
-    name: 'cuddler',
+  {% set webring_params = {
+    name: 'Cuddler',
     src: imgPath + '/cuddler.png',
-    url: 'https://cuddler-webring.netlify.app',
-    button: true
+    url: 'https://cuddler-webring.netlify.app'
   } %}
-  {{ basic(webringParams) }}
+  {{ widget(webring_params, true) }}
 {% endmacro %}
 
-{% macro doodle() %}
-  {% set url = 'https://evehibi.nekoweb.org/doodlering' %}
-  {% set name = 'doodlering' %}
-  <div id="doodlering">
-    <div class="webring-wrapper">
-      <div class="webring-title">
-        <h2>doodlering! ✏</h2>
-      </div>
-      <div class="webring-flex">
-        <div class="webring-prev">
-        <a class='wr-prev' href=""><img class="arrow-image" src="{{ url }}/arrow.png" alt="{{ altPrev + name }} webring"></a>
-        </div>
-        <img class="webring-image" src="{{ imgPath }}/doodlering.png">
-        <div class="webring-next">
-        <a class='wr-next' href=""><img class="arrow-image" src="{{ url }}/arrow.png" alt="{{ altNext + name }} webring"></a>
-        </div>
-      </div>
-      <div class="webring-footer">
-        <span class='webring-links'>
-        <a class='wr-rand' href='' aria-label="{{ altRand + name }} webring"> 🎲 </a>
-        <a href='{{ url }}/' aria-label="{{ altMain + name }} webring">➕ </a>
-        <a href='https://garlic.garden/onionring/' target="_blank" aria-label="Go to the onionring.js site"> 🧅</a></span></td>
-        </span>
-      </div>
-    </div>
-  </div>
-  <link rel='stylesheet' href='{{ url }}/onionring.css'>
-  <script type='text/javascript' src='{{ url }}/onionring-variables.js'></script>
-  <script type='text/javascript'>sites = sites.map((site) => site[0]); setWidget({ id: 'doodlering', sites: sites })</script>
-{% endmacro %}
-
-{% macro gfdkris() %}
-  {% set webringParams = {
-    id: 'gfdkris',
-    name: 'GFDKWTFAW',
-    url: 'https://fabstarotcorner.neocities.org/webring/',
-    imgIndex: imgPath + "/gfdkris_main.png",
-    imgNav: imgPath + "/gfdkris_nav.png",
-    imgRand: imgPath + "/gfdkris_rand.png"
+{% macro doodle(btn_only = false) %}
+  {% set webring_url = 'https://evehibi.nekoweb.org/doodlering' %}
+  {% set webring_params = {
+    name: "doodlering",
+    url: webring_url,
+    script_url: "https://evehibi.nekoweb.org/doodlering/onionring-variables.js",
+    custom_sites: true,
+    title: {
+      text: "doodlering! ✏",
+      url: webring_url
+    },
+    nav: {
+      prev: "#",
+      index: {
+        src: "https://raw.githubusercontent.com/bechnokid/neocities/refs/heads/master/public/assets/images/webrings/doodlering.png",
+        url: webring_url + "/members"
+      },
+      next: "#"
+    },
+    links: {
+      separator: "space",
+      random: { text: "🎲" },
+      index: { text: "➕", url: webring_url },
+      onion: { text: "🧅" }
+    }
   } %}
-  {{ widget(webringParams) }}
-  <script type='text/javascript' src='{{ webringParams.url }}onionring-variables.js'></script>
-  <script type="text/javascript">setWidget({ id: 'gfdkris', sites: sites });</script>
+  {{ widget(webring_params, btn_only) }}
+  <script>webringLinks["{{ webring_params.name }}"] = sites.map((site) => site[0]);</script>
 {% endmacro %}
 
-{% macro kingdomHearts() %}
-  {% set name = 'Kingdom Hearts' %}
-  {% set url = 'https://kingdomheartswebring.neocities.org' %}
-    <div id='khwr'>
-      <table>
-        <tr>
-          <td>
-          <div>
-            <a href='{{ url }}'><img src="{{ url }}/khlogo.png" alt='{{ altMain + name }} webring'></a><br>
-            <a class='wr-prev' href='#'><img src="{{ url }}/arrowleft.png" alt='{{ altPrev + name }} webring'></a>&nbsp;
-            <a class='wr-next' href='#'><img class='img-next' src="{{ url }}/arrowleft.png" alt='{{ altNext + name }} webring'></a>
-          </div>
-          </td>
-        </tr>
-      </table>
-    </div>
-  <script type='text/javascript' src='{{ url }}/onionring-variables.js'></script>
-  <script type='text/javascript'>setWidget({ id: 'khwr', sites: sites })</script>
+{% macro gfdkris(btn_only = false) %}
+  {% set webring_url = "https://fabstarotcorner.neocities.org/webring/" %}
+  {% set webring_params = {
+    id: "gfdkris",
+    name: "GFDKWTFAW",
+    url: webring_url,
+    script_url: "https://fabstarotcorner.neocities.org/webring/onionring-variables.js",
+    title: {
+      url: webring_url
+    },
+    nav: {
+      prev: "#",
+      index: { random: true },
+      next: "#"
+    }
+  } %}
+  {{ widget(webring_params, btn_only) }}
+{% endmacro %}
+
+{% macro kingdom_hearts(btn_only = false) %}
+  {% set webring_url = 'https://kingdomheartswebring.neocities.org' %}
+  {% set webring_params = {
+    id: "khwr",
+    name: "Kingdom Hearts",
+    url: webring_url,
+    script_url: "https://kingdomheartswebring.neocities.org/onionring-variables.js",
+    title: { url: webring_url },
+    nav: { prev: "#", next: "#" }
+  } %}
+  {{ widget(webring_params, btn_only) }}
 {% endmacro %}
 
 {% macro ladies() %}
-  {% set webringParams = {
-    name: 'Ladies of the Link',
-    src: imgPath + '/ladiesofthelink.gif',
-    url: 'https://ladiesofthe.link/',
-    nav: imgPath + '/ladiesofthelink_nav.png',
-    urlPrev: 'https://webri.ng/webring/ladiesofthelinks/previous?via=https://bechnokid.neocities.org',
-    urlNext: 'https://webri.ng/webring/ladiesofthelinks/next?via=https://bechnokid.neocities.org'
+  {% set webring_params = {
+    id: "ladies",
+    name: "Ladies of the Link",
+    simple: true,
+    nav: {
+      prev: "https://webri.ng/webring/ladiesofthelinks/previous?via=https://bechnokid.neocities.org",
+      index: "https://ladiesofthe.link/",
+      next: "https://webri.ng/webring/ladiesofthelinks/next?via=https://bechnokid.neocities.org"
+    }
   } %}
-  {{ basic(webringParams) }}
+  {{ widget(webring_params) }}
 {% endmacro %}
 
-{% macro neocreatives() %}
-  {% set webringParams = {
-    name: 'NeoCreatives',
-    src: imgPath + '/neocreatives.png',
-    url: 'https://neocreatives.byethost5.com',
-    button: true
+{% macro neocreatives(btn_only = false) %}
+  {% set webring_url = "https://neocreatives.byethost5.com" %}
+  {% set webring_params = {
+    name: "Neocreatives",
+    url: webring_url,
+    script_url: "https://neocreatives.neocities.org/onionring-variables.js",
+    nav: {
+      prev: "#",
+      index: {
+        url: webring_url + "/directory.php",
+        alt: "Go to the list of members in the Neocreatives webring"
+      },
+      next: "#"
+    },
+    links: {
+      separator: "dash",
+      random: { text: "random" },
+      index: {
+        text: "index",
+        url: webring_url
+      }
+    }
   } %}
-  {{ basic(webringParams) }}
+  {{ widget(webring_params, btn_only) }}
 {% endmacro %}
 
-{% macro persona() %}
+{% macro persona(btn_only = false) %}
   {% set url = 'https://silly-beanz.neocities.org/personaring' %}
-  <div id="p-ring">
+  <div id="p-ring" class="p-ring webring">
     <div class="ring-container">
       <img src="{{ imgPath }}/personaring.png" alt="" class="sona outline" aria-hidden="true">
       <div class="persona-ring">
         <div class="d-flex flex-column flex-gap-1">
-          <div class="name-tag outline">
+          <div class="name-tag">
             <div class="head"><span style="font-size: 25px">HELLO!</span><br>my name is:</div>
             <div class="namediv">Bechno</div>
             <div class="webring-info">part of the <a href="{{ url }}/home" title="join???">persona ring</a> :)</div>
           </div>
-          <div class="direct d-flex flex-gap-1">
-            <a class='wr-prev' href=""><img src="https://file.garden/Z2NdXxm2rXGo4wAJ/personaring/L%20arrow.png" alt="{{ altPrev + name }} webring" class="prev black-text"></a>
-            <a class='wr-rand' href=""><img src="https://file.garden/Z2NdXxm2rXGo4wAJ/personaring/smiley.png" alt="{{ altRand + name }} webring" class="rand black-text"></a>
-            <a class='wr-next' href=""><img src="https://file.garden/Z2NdXxm2rXGo4wAJ/personaring/L%20arrow.png" alt="{{ altNext + name }} webring" class="img-next black-text"></a>
+          <div class="nav d-flex justify-content-center align-items-center flex-gap-1">
+            <a href="">
+              {% imgDiv { cls: "prev black-text", alt: alt_prev + name + " webring" } %}
+            </a>
+            <a class='link-rand' href="">
+              {% imgDiv { cls: "rand black-text", alt: alt_rand + name + " webring" } %}
+            </a>
+            <a href="">
+              {% imgDiv { cls: "next black-text", alt: alt_next + name + " webring" } %}
+            </a>
           </div>
         </div>
       </div>
     </div>
   </div>
   <script type='text/javascript' src='{{ url }}/onionring-variables.js'></script>
-  <script type='text/javascript'>setWidget({ id: 'p-ring', sites: sites })</script>
+  <script>webringLinks['p-ring'] = sites</script>
 {% endmacro %}
 
 {% macro queercoded() %}
-  {% set webringParams = {
-    name: 'Queer Coded',
-    src: imgPath + '/queercoded.png',
-    url: 'https://neptune.monster/webring/',
-    nav: imgPath + '/queercoded_nav.png',
-    urlPrev: 'https://neptune.monster/webring/22.html',
-    urlNext: 'https://neptune.monster/webring/24.html'
+  {# "prev", "index", and "next" can also be strings only #}
+  {% set webring_params = {
+    name: "Queercoded",
+    simple: true,
+    nav: {
+      prev: "https://neptune.monster/webring/22.html",
+      index: "https://neptune.monster/webring/",
+      next: "https://neptune.monster/webring/24.html"
+    }
   } %}
-  {{ basic(webringParams) }}
+  {{ widget(webring_params) }}
 {% endmacro %}
 
 {% macro rayman() %}
-  {% set webringParams = {
-    id: 'rayman',
-    name: 'Rayman Ring',
-    src: imgPath + '/rayman.png',
-    url: 'https://edgyrabbid.neocities.org/Raymanring.HTML',
-    nav: imgPath + '/rayman_nav.png',
-    urlPrev: 'https://lapislabel.net',
-    urlNext: 'https://nathanntan.neocities.org/'
+  {% set webring_params = {
+    simple: true,
+    id: "rayman",
+    name: "Rayman Ring",
+    nav: {
+      prev: "https://lapislabel.net",
+      index: "https://edgyrabbid.neocities.org/Raymanring.HTML",
+      next: "https://nathanntan.neocities.org/"
+    }
   } %}
-  {{ basic(webringParams) }}
+  {{ widget(webring_params) }}
 {% endmacro %}
 
-{% macro resource() %}
-  {% set widgetUrl = "https://pixelsafari.neocities.org/webring/" %}
-  {% set webringParams = {
+{% macro resource(btn_only = false) %}
+  {% set webring_url = "https://pixelsafari.neocities.org/webring/" %}
+  {% set webring_params = {
     id: "resource-ring",
-    url: widgetUrl,
-    name: "Re:source",
-    imgIndex: widgetUrl + "resourcering.png",
-    imgPrev: widgetUrl + "resourceringprev.png",
-    imgRand: widgetUrl + "resourceringrandom.png",
-    imgNext: widgetUrl + "resourceringnext.png"
+    name: "re:source",
+    url: webring_url,
+    title: {
+      url: webring_url
+    },
+    nav: {
+      prev: "#",
+      index: { random: true },
+      next: "#"
+    }
   } %}
-  {{ widget(webringParams) }}
-  <script type="text/javascript">setWidget({ id: "{{ webringParams.id }}" });</script>
+  {{ widget(webring_params, btn_only) }}
+  <script>webringLinks["{{ webring_params.id }}"] = RESOURCERINGLIST;</script>
 {% endmacro %}
 
-{% macro selfInsert() %}
-  <div class="self-insert-webring p-2">
+{% macro self_insert() %}
+  <div class="self-insert webring p-2">
     <div class="row g-0">
       <div class="col-5 self-insert-img d-flex">
-        <img src="https://files.catbox.moe/3yxyd8.jpg" alt="Image of Gilgamesh for the Self-insert Webring">
+        <img src="/assets/images/webrings/self-insert_icon.png" alt="Image of Gilgamesh for the Self-insert Webring">
       </div>
       <div class="col-7 ps-2 text-center">
         <div class="self-insert-text p-1 h-100 d-flex align-items-center">
@@ -311,73 +559,98 @@
   <script>if ($('#trb').length > 0 && $('#trb').html().includes("isn't part"))$('#trb').toggleClass('waiting');</script>
 {% endmacro %}
 
-{% macro wii() %}
-  {% set url = "https://jeith.neocities.org" %}
-  {% set name = "Wii Ring" %}
-  <div id="wii-ring">
-    <a class="wr-main" href="{{ url }}/wii-ring">
-      <img src="{{ url }}/assets/imgs/wii-ring.png" alt="{{ altMain }}{{ name }}">
-    </a>
-    <div class="wii-ring-nav">
-      <a href="" class="wr-prev"><img src="{{ url }}/assets/imgs/prev.png" alt="{{ altPrev }}{{ name }}"></a>
-      <img class="wr-img" src="{{ url }}/assets/miis/bechnokid.png" alt="Mii">
-      <a href="" class="wr-next"><img src="{{ url }}/assets/imgs/prev.png" class="img-next" alt="{{ altNext }}{{ name }}"></a>
-    </div>
-    <a href="" class="wr-rand"><img src="{{ url }}/assets/imgs/random.png" alt="{{ altRand }}{{ name }}"></a>
-  </div>
-  <script type='text/javascript'>setWidget({ id: 'wii-ring', jsonUrl: 'https://neocities.jeith.com/assets/miis.json', imgUrl: 'https://neocities.jeith.com/assets/miis/CHANGEME.png' })</script>
+{% macro wii(btn_only = false) %}
+  {% set webring_url = "https://jeith.com/wii-ring" %}
+  {% set webring_params = {
+    id: "wii-ring",
+    name: "Wii Ring",
+    url: webring_url,
+    title: { url: webring_url },
+    nav: {
+      prev: "#",
+      index: webring_url,
+      next: "#"
+    },
+    links: {
+      random: true
+    }
+  } %}
+
+  {{ widget(webring_params, btn_only)}}
 {% endmacro %}
 
 {# INACTIVE WEBRINGS #}
 
 {% macro jelly() %}
-  <div class="jelly-world py-3 px-2 d-flex flex-column flex-gap-3">
-    <p><a href="/">Bechno Kid</a> has bonded with <strong>Jelly Well-Done Steak!</strong></p>
-    <img src="{{ imgPath }}/jw_steak.png" alt="{{ altMain }}Jelly World" title="Mmm...so tasty!">
-    <p class="jelly-world-desc">This jelly has the ability to boost your health and stamina! Mmm...so tasty!</p>
-    <div class="jelly-world-nav py-1">
-      <a href="" class="wr-rand button" aria-label="Go to a random site in Jelly World">RANDOM</a>
+  {% set webring_name = "Jelly World" %}
+  <div class="{{ webring_name | slugify }} webring py-3 px-2 d-flex flex-column flex-gap-3">
+    <p class="jw-bond"><a href="/">Bechno Kid</a> has bonded with <strong>Jelly Well-Done Steak!</strong></p>
+    <img src="{{ imgPath }}/jw_steak.png" alt="{{ alt_main + webring_name }}" title="Mmm...so tasty!">
+    <p class="jw-desc">This jelly has the ability to boost your health and stamina! Mmm...so tasty!</p>
+    <div class="jw-nav py-1">
+      <a href="" class="link-rand button" aria-label="{{ alt_rand + webring_name }}">RANDOM</a>
       <a href="https://jellyworld.neocities.org/pals" class="button" aria-label="Link to other sites to Jelly World">JELLY PALS</a>
     </div>
   </div>
-  <script type="text/javascript">setWidget({ id: 'jelly-world', jsonUrl: 'https://miau.sadgrl.online/jellyworld/jellyworld.json', urlVar: 'owner_link', filter: true })</script>
+  <script>
+    $.ajax({
+      url: "https://miau.sadgrl.online/jellyworld/jellyworld.json",
+      success: function(data) {
+        webringLinks["{{ webring_name | slugify }}"] = { override: true, sites: data.map((item) => item.owner_link) };
+      },
+      fail: function(data) {
+        console.error("Error found in Jelly World: ", error);
+      }
+    })
+  </script>
 {% endmacro %}
 
 {% macro wol() %}
-  {% set widgetUrl = "https://wolwebring.neocities.org/" %}
-  {% set webringParams = {
+  {% set webring_url = "https://wolwebring.neocities.org/" %}
+  {% set webring_params = {
     id: "wol",
-    url: widgetUrl,
-    title: "Warriors of Light",
-    src: widgetUrl + "ff.png",
-    nav: widgetUrl + "left.png",
-    gap: 2
+    name: "Warriors of Light",
+    simple: true,
+    script_url: "https://wolwebring.neocities.org/onionring-variables.js",
+    nav: {
+      prev: "#",
+      index: webring_url,
+      next: "#"
+    }
   } %}
-  {{ basic(webringParams) }}
-  <script type="text/javascript" src="{{ widgetUrl }}onionring-variables.js"></script>
-  <script type="text/javascript">setWidget({ id: "{{ webringParams.id }}", sites: sites });</script>
+  {{ widget(webring_params) }}
 {% endmacro %}
 
 {% macro pokering() %}
-  {% set widgetUrl = 'https://dokodemo.neocities.org/pokering' %}
-  {% set imgContainer = widgetUrl + '/ringwalker.png' %}
-  {% set imgBox = widgetUrl + '/box_overlay.png' %}
-  {% set imgBg = imgPath + '/pokering_bg.png' %}
-  {% set imgPkmn = imgPath + '/pokering_splashy.png' %}
-  <div class="pokering position-relative">
-    <img src="https://dokodemo.neocities.org/pokering/ringwalker.png" class="pokering-walker position-relative" usemap="#pokering" alt="">
-    <map name="pokering">
-      <area alt="Main link to the Pokering webring" title="Main link to the Pokering webring" href="https://dokodemo.neocities.org/pokering" coords="63,22,152,47" shape="rect">
-      <area class="wr-prev" alt="Go to the previous site in the Pokering webring" title="Go to the previous site in the Pokering webring" href="#" coords="60,166,13" shape="circle">
-      <area class="wr-rand" alt="Go to a random site in the Pokering webring" title="Go to a random site in the Pokering webring" href="#" coords="108,173,17" shape="circle">
-      <area class="wr-next" alt="Go to the next site in the Pokering webring" title="Go to the next site in the Pokering webring" href="#" coords="156,165,14" shape="circle">
-    </map>
-    {% img imgBg, { cls: 'position-absolute pokering-bg' } %}
-    <input type="checkbox" name="pokering-info" class="position-absolute" id="pokering-info">
-    <label for="pokering-info" id="pokering-info-label" class="position-absolute" aria-label="Show information about Splashy">{% img imgPkmn %}</label>
-    <div class="pokering-info-box position-absolute p-2 text-center">
-      <p class="m-0">Splashy was caught by Bechno on 12/31/2022.</p>
+  {% set webring_url = 'https://dokodemo.neocities.org/pokering' %}
+  {% set webring_name = "Pokering" %}
+  <div class="{{ webring_name | slugify }}">
+    {% imgDiv { url: webring_url, cls: "title", alt: alt_main + webring_name + " webring" } %}
+    <div class="screen position-relative">
+      <input type="checkbox" name="info-checkbox" id="info-checkbox"></input>
+      <label for="info-checkbox">{% imgDiv { cls: "pokemon", alt: "Click for more information" } %}</label>
+      <div class="steps">
+        <p class="m-0 text-right">1004</p>
+      </div>
+      <div class="info-box">
+        <p class="m-0">Splashy was caught by Bechno on 12/31/2022.</p>
+      </div>
+    </div>
+    <div class="nav">
+      {% imgDiv { url: "#", cls: "prev", alt: alt_prev + webring_name + " webring" } %}
+      {% imgDiv { url: "#", urlCls: "link-rand", cls: "rand", alt: alt_rand + webring_name + " webring" } %}
+      {% imgDiv { url: "#", cls: "next", alt: alt_next + webring_name + " webring" } %}
     </div>
   </div>
-  <script type="text/javascript">setWidget({ id: 'pokering', jsonUrl: 'https://dokodemo.neocities.org/pokering/pokemembers.json' })</script>
+  <script>
+    $.ajax({
+      url: "https://dokodemo.neocities.org/pokering/pokemembers.json",
+      success: function(data) {
+        webringLinks["{{ webring_name | slugify }}"] = { override: true, sites: data.map((item) => item.url) };
+      },
+      fail: function(error) {
+        console.error('Error found in Pokering: ', error)
+      }
+    })
+  </script>
 {% endmacro %}

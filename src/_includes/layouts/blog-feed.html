@@ -6,13 +6,13 @@ noScroll: true
 {% set pageHeaderTitle = title %}
 {% set pageHeaderSummary = content | markdownifyInline | safe %}
 {% set postListItems = pagination.items %}
-{% set lastUpdated = (collections.feed | reverse)[0].date | monthDayYear %}
+{% set lastUpdated = (collections.feed | reverse)[0].fileSlug | monthDayYear %}
 
 {% block content %}
   <article>
     {% include "partials/page-header.html" %}
     {%- for item in postListItems %}
-    {% set blogDate = item.date | monthDayYear %}
+    {% set blogDate = item.fileSlug | monthDayYear %}
     <div class="blog row py-1">
       <div class="col-md-8 col-7">
         <a href="{{ item.url }}">{{ item.data.title | markdownifyInline | safe }}</a>

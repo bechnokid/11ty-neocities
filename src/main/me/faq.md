@@ -17,8 +17,8 @@ permalink: '/faq/index.html'
 ## Art
 
 - **What kind of tools/software do you use for your art?**
-  - [Clip Studio Paint v.1](https://www.clipstudio.net/en/) with an [XP-Pen Fun Deco S tablet](https://www.xp-pen.com/product/deco-fun-xs-s-l.html) for drawing, and [Photoscape](http://www.photoscape.org/ps/main/index.php) for any final edits! I also use [Color Quantizer](https://www.softpedia.com/get/Multimedia/Graphic/Graphic-Others/Color-quantizer.shtml) for resizing and compressing my art without losing too much of the quality.
-- **When will you open commissions again.**
+  - [Clip Studio Paint v.4](https://www.clipstudio.net/en/) with an [XP-Pen Fun Deco S tablet](https://www.xp-pen.com/product/deco-fun-xs-s-l.html) for drawing, and [Photoscape](http://www.photoscape.org/ps/main/index.php) for any final edits! I also use [Color Quantizer](https://www.softpedia.com/get/Multimedia/Graphic/Graphic-Others/Color-quantizer.shtml) for resizing and compressing my art without losing too much of the quality.
+- **When will you open commissions again?**
   - Probably never since I just don't have the time anymore! If by some miracle I decide to open commissions again, I will make sure to make an announcement post at least a few days in advance before opening them!
 - **Is there a way to support your work without commissioning you?**
   - You can always [buy me a coffee](https://buymeacoffee.com/bechnokid), but you're never obligated to! {% emote 'happy' %}

@@ -49,7 +49,7 @@
 
       &:hover {
         background-color: var(--bg-footer);
-        cursor: pointer;
+        cursor: var(--img-cursor-point), pointer;
       }
     }
 
@@ -61,7 +61,7 @@
 
     &:hover {
       background-color: var(--bg-footer);
-      cursor: pointer;
+      cursor: var(--img-cursor-point), pointer;
     }
   }
 }

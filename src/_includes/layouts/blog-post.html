@@ -17,5 +17,6 @@ permalink: '/writing/blog/{{ page.fileSlug }}.html'
       {{ content | safe }}
     </div>
   </article>
+  {% set back_url = "/writing/blog" %}
   {% include "partials/go-back.html" %}
 {% endblock %}

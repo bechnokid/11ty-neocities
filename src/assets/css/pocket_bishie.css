@@ -35,7 +35,7 @@ button {
 }
 
 button:hover {
-  cursor: pointer;
+  cursor: var(--img-cursor-point), pointer;
   background-color: var(--bg-body);
   color: var(--text-primary);
 }

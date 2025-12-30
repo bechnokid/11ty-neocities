@@ -7,7 +7,6 @@ prism: true
 redirectFrom: [/tutorials/freezeframe, /resources/tut_freezeframe, /resources/freezeframe]
 summary: "**NOTE:** The examples will not work if JavaScript is disabled."
 ---
-<script src="{{ meta.jsUrl }}/bechnoFreeze.js"></script>
 
 ## Intro
 

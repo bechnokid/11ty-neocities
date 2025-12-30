@@ -156,7 +156,7 @@ export default {
         title: "Stardaze",
         tooltip: "Wezen",
         id: 'stardaze',
-        url: "https://star.aquarels.net/",
+        url: "https://star.aquarel.nu/",
         img: 'stardaze.gif',
         alt: 'A pink white and purple starry button that says, \"Stardaze\"',
         mobile: {
@@ -228,7 +228,7 @@ export default {
         title: "exvius",
         id: "exvius",
         tooltip: "Protected by Gilgamesh!",
-        url: "https://exvius.aelysia.net/",
+        url: "https://ff.aquarel.nu/",
         img: "x-gilgamesh.png",
         alt: "Gilgamesh as he appears in Final Fantasy Brave Exvius",
         mobile: {
@@ -339,7 +339,7 @@ export default {
         text: "my usual",
       },
       center: "//",
-      right: "caramel iced latte <img src='/assets/images/goodies/cliques/usual.png' alt='' aria-hidden='true'>",
+      right: "iced caramel latte <img src='/assets/images/goodies/cliques/usual.png' alt='' aria-hidden='true'>",
     },
     {
       left: {
@@ -391,5 +391,31 @@ export default {
       center: "🌊",
       right: "Neptune(mon)"
     },
+    {
+      left: "Gilgamesh",
+      center: {
+        img: "materia.png",
+      },
+      right: {
+        text: "materia",
+        url: "https://www.garden.cainhurst.org/",
+      }
+    },
+    {
+      left: {
+        text: "Cringe is Dead",
+        url: "https://lockheart.love/collections/cliques",
+      },
+      center: "||",
+      right: "OC x Canon"
+    },
+    {
+      left: {
+        text: "Internet Obsession",
+        url: "https://lockheart.love/collections/cliques",
+      },
+      center: "||",
+      right: "Small pixel adoptables"
+    }
   ],
 }

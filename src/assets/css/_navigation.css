@@ -2,6 +2,18 @@
   position: fixed;
   width: 165px;
 
+  a {
+    border: 0;
+
+    &:hover {
+      border-bottom: 1px solid var(--text-link);
+
+      &:visited {
+        border-color: var(--text-link-visited);
+      }
+    }
+  }
+
   ul.section-list li.nav-link-item::marker {
     content: "✦";
     color: var(--text-secondary);
@@ -37,14 +49,6 @@
     padding: 0;
   }
 
-  a {
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
   .skip-link {
     position: absolute;
     margin: .25rem;
@@ -67,7 +71,7 @@ details.burger {
 
   summary.burger-summary {
     list-style-type: none;
-    cursor: pointer;
+    cursor: var(--img-cursor-point), pointer;
     background: var(--bg-img-color);
     color: transparent;
   }

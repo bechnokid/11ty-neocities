@@ -1,6 +1,6 @@
 const env = process.env.ELEVENTY_ENV;
 
-const { blogPosts, ...collections } = require('./config/collections.js');
+const collections = require('./config/collections.js');
 const filters = require('./config/filters.js');
 const plugins = require('./config/plugins.js');
 const shortcodes = require('./config/shortcodes.js');
@@ -46,8 +46,6 @@ module.exports = async function(eleventyConfig){
   }
 
   // Collections
-  eleventyConfig.addCollection('blog', blogPosts);
-
   for (key in collections) {
     eleventyConfig.addCollection(key, collections[key])
   }

@@ -1,0 +1,52 @@
+---
+title: Guestbook
+displayOrder: 5
+permalink: '/guestbook/index.html'
+tags: main
+---
+<noscript>
+  <p>JavaScript is required in order to send and view messages in the guestbook!</p>
+  <p>If you'd still like to send a message, feel free to send an email to <strong>bechnokid@yahoo.com</strong>!</p>
+</noscript>
+<div id="guestbook" class="js-required">
+  <div class="guestbooks___guestbook-form-container">
+    <form id="guestbooks___guestbook-form" class="d-flex flex-column">
+      <fieldset>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" eneterkeyhint="next" placeholder="Mametchi" class="guestbook-input-field wide-field bg-sidebar px-2 py-1 mb-2">
+      </fieldset>
+      <fieldset>
+        <label for="website">Website (optional)</label>
+        <input type="text" name="website" id="website" eneterkeyhint="next" placeholder="https://tamagotchi.com" class="guestbook-input-field wide-field bg-sidebar px-2 py-1 mb-2">
+      </fieldset>
+      <fieldset>
+        <label for="text">Say something nice? (Plain text only, please!)</label>
+        <textarea name="text" id="text" placeholder="Type here..." class="guestbook-msg-field guestbook-input-field w-100 bg-sidebar px-2 py-1 mb-2"></textarea>
+      </fieldset>
+      <div id="guestbooks___challenge-answer-container">
+        <div class="guestbooks___input-container">
+          <fieldset>
+            <label for="challengeQuestionAnswer">What is 5 + 3?</label>
+            <input type="text" id="question" class="px-2 py-1 mb-4 guestbook-input-field bg-sidebar" name="challengeQuestionAnswer" id="challengeQuestionAnswer" inputmode="numeric" eneterkeyhint="done">
+          </fieldset>
+        </div>
+      </div>
+      <div id="guestbook-submit-button">
+        <input type="submit" class="button" value="Submit">
+      </div>
+      <div id="guestbooks___error-message" class="guestbook-error-msg sidebar mt-2 p-3 d-none" aria-live="polite"></div>
+    </form>
+  </div>
+  <div class="guestbook-messages">
+    <hr class="small">
+    <h2>Messages</h2>
+    <div class="guestbook-msg-container d-flex flex-column flex-gap-3">
+      <p class="ms-2">Loading...</p>
+    </div>
+  </div>
+  <div id="guestbook-pagination" class="mt-4 d-flex flex-wrap justify-content-center d-none">
+    <button type="button" class="pagination-btn" id="prev-btn" aria-label="Previous page">&lt;</button>
+    <div id="pagination-numbers"></div>
+    <button type="button" class="pagination-btn" id="next-btn" aria-label="Next page">&gt;</button>
+  </div>
+</div>

@@ -44,58 +44,54 @@ img.preview-img {
   object-position: top center;
 }
 
-.inline-links {
-  flex-direction: row;
-  gap: .75rem;
-  font-size: 1.1rem;
-  font-family: 'Dyslexic';
-  line-height: 1.5rem;
-  color: var(--text-primary);
-}
+.quiz-results {
+  a:has(img) {
+    display: inline-flex;
+  }
 
-.inline-links li::marker {
-  content: "";
-}
+  .text-widget {
+    &.mh-sunbreak {
+      .desc {
+        flex-shrink: 1.2;
+      }
+    }
 
-.inline-links li:not(:last-child):after {
-  content: "✦";
-  color: var(--text-primary);
-  margin-left: .75rem;
-}
+    .img {
+      width: 100%;
+    }
 
-.quiz-widget {
-  line-height: 1.2em;
-}
+    .text {
+      margin-top: .5rem;
+      font-size: .8em;
+      line-height: 1.5em;
+    }
+  }
 
-.quiz-widget.columns {
-  max-width: 375px;
-}
+  .widget {
+    &.html-color {
+      max-width: 400px;
+      background-color: #fff;
+      border: 2px solid #6495ED;
 
-.quiz-widget.rows {
-  max-width: 350px;
-}
+      * {
+        color: #000;
+        border-bottom-color: #000 !important;
+      }
 
-.quiz-color {
-  background-color: #fff;
-  border: 2px solid #6495ED;
-}
+      a:after {
+        filter: unset !important;
+      }
 
-.quiz-color * {
-  color: #000;
-  border-bottom-color: #000 !important;
-}
+      .header,
+      .footer {
+        background-color: #6495ED;
+      }
 
-.quiz-color a:after {
-  filter: unset !important;
-}
-
-.quiz-color-header,
-.quiz-color-footer {
-  background-color: #6495ED;
-}
-
-.quiz-color-header * {
-  margin: 0;
+      .header * {
+        margin: 0;
+      }
+    }
+  }
 }
 
 .sitemap li > p {
@@ -126,7 +122,7 @@ img.preview-img {
 
 .go-to-heck.new-curse:hover {
   filter: drop-shadow(0 0 .5rem var(--text-secondary));
-  cursor: pointer;
+  cursor: var(--img-cursor-point), pointer;
 }
 
 .go-to-heck.new-curse:active {
@@ -141,8 +137,25 @@ img.preview-img {
   font-size: 1.15rem;
   line-height: 1.5rem;
 
+  a {
+    display: inline-flex;
+  }
+
   li::marker {
     color: var(--text-link-visited);
+  }
+}
+
+.older-entries {
+  summary.h2 {
+    margin-bottom: 0;
+  }
+}
+
+article.to-do {
+  img.to-do {
+    float: right;
+    max-width: 375px;
   }
 }
 
@@ -166,5 +179,12 @@ img.preview-img {
     left: 50%;
     right: unset;
     transform: rotate(-90deg);
+  }
+
+  article.to-do {
+    img.to-do {
+      float: unset;
+      width: 100%;
+    }
   }
 }

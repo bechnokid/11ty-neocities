@@ -38,16 +38,6 @@
   }
 }
 
-.back-button {
-  font-family: 'Dyslexic';
-  font-size: 1.5em;
-}
-
-.back-button:hover {
-  text-decoration: underline;
-  cursor: pointer;
-}
-
 .blog-gallery {
   display: flex;
   flex-wrap: wrap;
@@ -104,7 +94,7 @@
 }
 
 .valentines:hover {
-  cursor: pointer;
+  cursor: var(--img-cursor-point), pointer;
 }
 
 .triangle-up {
@@ -124,7 +114,7 @@
 }
 
 map:hover {
-  cursor: pointer;
+  cursor: var(--img-cursor-point), pointer;
 }
 
 img.hank {
@@ -140,7 +130,7 @@ textarea.key-map {
 }
 
 article#microblog {
-  #status-cafe hr {
+  #status-cafe-widget hr {
     margin: 0 !important;
   }
 }

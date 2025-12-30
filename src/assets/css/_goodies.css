@@ -10,6 +10,12 @@
   max-width: 150px;
 }
 
+.pet-click {
+  .ff-container {
+    display: inline-flex;
+  }
+}
+
 .orphaned-adopts {
   .ff-container {
     display: flex;

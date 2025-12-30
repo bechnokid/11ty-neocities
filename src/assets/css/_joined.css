@@ -15,6 +15,22 @@ article.joined {
   }
 }
 
+ul.separator li:not(:last-child)::after {
+  margin: 0 .25rem;
+}
+
+ul.separator.pipe li:not(:last-child)::after {
+  content: "|"
+}
+
+ul.separator.dash li:not(:last-child)::after {
+  content: "-"
+}
+
+ul.separator.space li:not(:last-child)::after {
+  content: " "
+}
+
 .webrings {
   .row.js-required > * {
     display: flex;
@@ -23,19 +39,63 @@ article.joined {
     padding: 0 .5rem;
     gap: 1rem;
   }
+}
 
-  .webring {
+.webring {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .25rem;
+
+  &:has(.webring-nav) {
+    flex-direction: column;
+  }
+
+  a {
+    text-decoration: underline !important;
+
+    &:not(.button) {
+      border-bottom: 0 !important;
+    }
+
+    &:hover {
+      text-decoration: none !important;
+    }
+
+    &:has(img) {
+      display: inline-flex;
+    }
+
+    &[href*="http"]::after {
+      display: none !important;
+    }
+  }
+
+  .webring-nav {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: .25rem;
   }
 
-  a[href*="http"]::after {
-    display: none !important;
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    padding: 0;
+
+    li {
+      display: inline-flex;
+      padding: 0;
+
+      &::marker {
+        content: "";
+      }
+    }
   }
 }
 
-.img-next {
+.next {
   transform: scaleX(-1);
 }
 
@@ -55,64 +115,84 @@ div.waiting {
   }
 }
 
-/* AMIGA webring */
-
-#webring-btn-container img[src*="amiga"] {
-  width: 88px;
-}
-
-#amiga {
-  .webring-info {
-    text-align: center;
+/* Acing the Internet */
+.ace {
+  .index {
+    width: 88px;
+    height: 31px;
+    background: url(/assets/images/webrings/ace.png)
   }
 
-  br {
-    display: none;
+  .prev,
+  .next {
+    width: 16px;
+    height: 14px;
+    background: url(/assets/images/webrings/ace.png) 0 -31px;
+  }
+}
+
+/* AMIGA webring */
+#webring-btn-container img[src*="amiga"] {
+  height: 31px;
+}
+
+.amiga {
+  font-size: .8em;
+
+  img {
+    max-height: 100px;
   }
 }
 
 /* Cookie Run Webring */
-#ckwr {
-  margin: 0 !important;
-  /* #### Silent Salt Cookie colors */
-  /* background: url(/assets/images/joined/webrings/crwr_bg.png) #748091 !important;
-  background-size: cover !important;
-  background-position: center !important;
-  border-color: #0d0f11 !important; */
+.ckwr .btn {
+  height: 31px;
+  background: url(/assets/images/webrings/cookie-run.png) -112px 0;
+  width: 88px;
+}
 
-  *:has(.ckwr-tooltip:hover) .ckwr-tooltip-content{
-    display: block;
-    z-index: 1;
+.ckwr:not(:has(.btn)) {
+  position: relative;
+  width: 180px;
+  height: 120px;
+  background: url(/assets/images/webrings/crwr_bg.png);
+  background-size: cover;
+  border: 4px solid #0d0f11;
+  border-radius: 1rem;
+
+  .cookie-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
   }
 
-  .webring-title:hover,
-  .webring-title:hover img {
+  &:has(.cookie-icon:hover) .cookie-tooltip-content{
     opacity: 1;
-    filter: unset;
+    z-index: 100;
   }
 
-  .webring-flex {
-    position: static !important;
-    align-items: center;
+  .cookie-tooltip {
+    width: 50%;
+    display: flex;
+    justify-content: end;
+
+    div[role="img"] {
+      height: 64px;
+      height: 64px;
+    }
   }
 
-  .ckwr-tooltip {
-    height: 64px;
-    width: 64px;
-    margin-top: 2rem;
-  }
-
-  .ckwr-tooltip-content {
-    display: none;
-    z-index: -100;
+  .cookie-tooltip-content {
+    opacity: 0;
+    z-index: -10;
     position: absolute;
     top: 0;
     left: -1rem;
     width: 50vw;
-    border: 1px solid var(--ckborder);
+    border: 1px solid #0d0f11;
     border-radius: .25rem;
     background: #fff;
-    color: var(--ckborder);
+    color: #0d0f11;
     line-height: 1rem;
     font-size: .7rem;
     padding: .25rem .5rem;
@@ -121,14 +201,154 @@ div.waiting {
       margin: 0;
     }
   }
+
+  a {
+    .logo {
+      width: 86px;
+      height: 34px;
+      background: url(/assets/images/webrings/cookie-run.png) -26px 0;
+      opacity: .5;
+    }
+
+    &:hover .logo {
+      opacity: 1;
+    }
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    padding: .25rem;
+    gap: .5rem;
+
+    .arrows {
+      display: flex;
+      justify-content: space-evenly;
+
+      .wr-next {
+        margin-top: 1rem;
+      }
+
+      div[role="img"] {
+        height: 38px;
+        width: 26px;
+        background: url(/assets/images/webrings/cookie-run.png)
+      }
+    }
+  }
+}
+
+[data-theme="dark"] #ckwr {
+  outline: 1px solid #fff;
 }
 
 /* doodlering */
-#doodlering {
-  margin: 0 !important;
+.doodlering {
+  &:not(:has(.btn)) {
+    background: url(/assets/images/webrings/doodle-ring.png);
+    background-position: top center;
+    padding: .25rem .5rem;
+    font-family: Comic Sans MS, cursive;
+    font-size: 1.1rem;
+  }
 
   a {
-    border-bottom-color: transparent;
+    color: #000;
+    text-decoration: none !important;
+
+    &:hover {
+      text-decoration: underline !important;
+    }
+  }
+
+  .btn {
+    width: 88px;
+    height: 31px;
+    background: url(/assets/images/webrings/doodle-ring.png) -39px -125px;
+  }
+
+  .webring-title {
+    font-weight: bold;
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  }
+
+  .webring-nav {
+    .prev,
+    .next {
+      width: 39px;
+      height: 31px;
+      background: url(/assets/images/webrings/doodle-ring.png) 0 -125px;
+    }
+
+    .index {
+      height: 64px;
+    }
+  }
+}
+
+/* GFDKWTFAW Ring */
+.gfdkris .btn {
+  width: 88px;
+  height: 31px;
+  background: url(/assets/images/webrings/gfdkris.png) 0 -64px;
+}
+
+.gfdkris {
+  .webring-title div[role="img"] {
+    width: 175px;
+    height: 64px;
+    background: url(/assets/images/webrings/gfdkris.png);
+  }
+
+  .webring-nav {
+    width: 100%;
+    justify-content: space-between !important;
+    padding: 0 1px;
+
+    div[role="img"] {
+      width: 38px;
+      height: 22px;
+    }
+
+    a {
+      padding: .2rem;
+      background-color: #000;
+      border: 1px solid #000 !important;
+
+      &:hover {
+        border: 1px solid #fb7f26 !important;
+
+        div {
+          opacity: 1;
+        }
+      }
+    }
+
+    .prev {
+      background: url(/assets/images/webrings/gfdkris.png) -88px -64px;
+    }
+
+    .rand {
+      background: url(/assets/images/webrings/gfdkris.png) -126px -64px;
+    }
+
+    .next {
+      background: url(/assets/images/webrings/gfdkris.png) -88px -64px;
+    }
+  }
+}
+
+[data-theme="dark"] {
+  .gfdkris {
+    .webring-nav {
+      a {
+        border: 1px solid #fb7f26 !important;
+
+        &:hover {
+          border-color: yellow !important;
+        }
+      }
+    }
   }
 }
 
@@ -138,17 +358,12 @@ div.waiting {
   font-family: Arial;
   width: 180px;
   border: 3px dotted orange;
-  background: url('/assets/images/joined/webrings/jw_bg.png');
+  background: url('/assets/images/webrings/jw_bg.png');
   background-color: #fcee95;
   line-height: 1rem;
 
   * {
     color: initial;
-  }
-
-  a {
-    color: #da6200;
-    font-weight: bold;
   }
 
   img {
@@ -158,51 +373,125 @@ div.waiting {
     margin: 0 auto;
   }
 
-  .jelly-world-desc {
+  .jw-bond {
+    a {
+      &:visited {
+        color: #da6200;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .jw-desc {
     font-style: italic;
   }
 
-  .button {
-    border: 1px solid #8F8F9D;
-    padding: .25rem;
-    background-color: #E9E9ED;
-    color: #000;
-    font-weight: normal;
+  .jw-nav {
+    a {
+      border: 1px solid #8F8F9D !important;
+      padding: .25rem;
+      background-color: #E9E9ED;
+      color: #000;
+      font-weight: normal;
+      text-decoration: none !important;
 
-    &:hover {
-      border-color: #676774;
-      background-color: #D0D0D7;
+      &:hover {
+        border-color: #676774 !important;
+        background-color: #D0D0D7;
+      }
+
+      &:visited {
+        color: #000;
+      }
     }
   }
 }
 
 /* Kingdom Hearts Webring */
-#khwr {
-  table {
-    background-image: url('/assets/images/joined/webrings/kh_auronbg.png');
-    border: 2px ridge #fc8476;
+.khwr {
+  &:has(.btn) {
+    .btn {
+      width: 88px;
+      height: 31px;
+      background: url(/assets/images/webrings/kingdom-hearts.png) -195px -202px;
+    }
+  }
+
+  &:not(:has(.btn)) {
+    background: url(/assets/images/webrings/kingdom-hearts.png);
     background-color: #ffeded;
-    margin: 0 auto;
-    /* centers the widget */
+    padding: 1rem;
+    border: 2px ridge #fc8476;
   }
 
-  table tr td {
-    padding: 15px;
-    /* creates some space between the links and text inside the widget */
+  .webring-title div {
+    width: 195px;
+    height: 110px;
+    background: url(/assets/images/webrings/kingdom-hearts.png) 0 -202px;
   }
 
-  div {
-    text-align: center;
+  .webring-nav {
+    padding: .25rem 0;
+
+    .prev,
+    .next {
+      width: 42px;
+      height: 28px;
+      background: url(/assets/images/webrings/kingdom-hearts.png) -195px -233px;
+    }
   }
+}
+
+/* Ladies of the Link */
+.ladies {
+  .index {
+    width: 88px;
+    height: 31px;
+    background: url(/assets/images/webrings/ladiesofthelink.png) -17px 0;
+  }
+
+  .prev,
+  .next {
+    width: 17px;
+    height: 31px;
+    background: url(/assets/images/webrings/ladiesofthelink.png);
+  }
+}
+
+/* Neocreatives Webring */
+.neocreatives {
+  font-family: MS UI Gothic;
+  color: #4b3d44;
+
+  a,
+  a:visited {
+    color: #4b3d44;
+  }
+
+  .index {
+    width: 88px;
+    height: 31px;
+    background: url(/assets/images/webrings/neocreatives.png) -15px 0;
+  }
+
+  .prev,
+  .next {
+    width: 15px;
+    height: 15px;
+    background: url(/assets/images/webrings/neocreatives.png);
+  }
+}
+
+[data-theme="dark"] .neocreatives {
+  color: #ecdde5;
 
   a {
-    color: black;
-    text-shadow: 1px 1px 0 white;
+    color: #ecdde5;
   }
 }
 
 /* personaring */
-#p-ring {
+.p-ring {
   .ring-container {
     position: relative;
     text-align: center;
@@ -258,31 +547,205 @@ div.waiting {
     border-bottom-color: transparent;
   }
 
-  .direct {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .nav {
+    .prev,
+    .next {
+      width: 30px;
+      height: 17px;
+      background: url(/assets/images/webrings/persona.png) -27px -31px;
+    }
+
+    .rand {
+      width: 27px;
+      height: 25px;
+      background: url(/assets/images/webrings/persona.png) 0 -31px;
+    }
+  }
+}
+
+/* Pokering */
+.pokering {
+  width: 215px;
+  height: 215px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background: url(/assets/images/webrings/pokering.png);
+  font-family: "MS UI Gothic", Tahoma;
+  color: #000;
+
+  .title {
+    width: 77px;
+    height: 21px;
+    background: url(/assets/images/webrings/pokering.png) 0 -215px;
+    margin-top: 1.3rem;
   }
 
-  .direct > * {
-    max-width: 30px;
+  .screen {
+    width: 117px;
+    height: 79px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+    background: url(/assets/images/webrings/pokering-bg.png);
+    background-size: cover;
+    background-position: top center;
+    border-radius: 5px;
+    overflow: hidden;
+
+    input[type="checkbox"] {
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      visibility: hidden;
+    }
+
+    .pokemon {
+      width: 46px;
+      height: 40px;
+      background: url(/assets/images/webrings/pokering.png) -215px 0;
+
+      &:hover {
+        cursor: var(--img-cursor-point), pointer;
+        filter: drop-shadow(1px 0 1px white) drop-shadow(-1px 0 1px white) drop-shadow(0 1px 1px white) drop-shadow(0 -1px 1px white);
+      }
+    }
+
+    .steps {
+      width: 100%;
+      padding-right: .25rem;
+      font-weight: bold;
+      text-shadow: 1px 1px #00000024;
+    }
+
+    .info-box {
+      position: absolute;
+      bottom: -3rem;
+      color: #000;
+      font-size: .7rem;
+      line-height: .6rem;
+      width: 100%;
+      border: 8px solid transparent;
+      border-image: url(/assets/images/webrings/pokering-box.png) 8 fill round;
+      transition: bottom .3s steps(5, end);
+      text-align: center;
+    }
+  }
+
+  &:has(input[type="checkbox"]:checked) .info-box {
+    bottom: -.1rem;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+
+    a:hover > * {
+      opacity: 1;
+      filter: drop-shadow(1px 0 1px gray) drop-shadow(-1px 0 1px gray) drop-shadow(0 1px 1px gray) drop-shadow(0 -1px 1px gray)
+    }
+
+    .prev,
+    .next {
+      width: 26px;
+      height: 26px;
+      background: url(/assets/images/webrings/pokering.png) -215px -72px;
+    }
+
+    .rand {
+      width: 32px;
+      height: 32px;
+      margin-top: .25rem;
+      background: url(/assets/images/webrings/pokering.png) -215px -40px;
+    }
+  }
+}
+
+/* Queercoded */
+.queercoded {
+  .index {
+    width: 88px;
+    height: 31px;
+    background: url(/assets/images/webrings/queercoded.png) -31px 0;
+  }
+
+  .prev,
+  .next {
+    width: 31px;
+    height: 31px;
+    background: url(/assets/images/webrings/queercoded.png);
+  }
+}
+
+/* Rayman Ring */
+.rayman {
+  .index {
+    width: 24px;
+    height: 24px;
+    background: url(/assets/images/webrings/rayman.png) -29px 0;
+  }
+  .prev,
+  .next {
+    width: 29px;
+    height: 33px;
+    background: url(/assets/images/webrings/rayman.png);
   }
 }
 
 /* Re:source Ring */
-.resource-ring > * {
-  height: 31px;
-}
+.resource-ring {
+  gap: 0 !important;
 
-.resource-ring-nav > a {
-  display: inline-block;
+  .webring-title {
+    div[role="img"] {
+      width: 88px;
+      height: 31px;
+      background: url(/assets/images/webrings/resource-ring.png);
+    }
+  }
+
+  .index {
+    width: 88px;
+    height: 31px;
+    background: url(/assets/images/webrings/resource-ring.png) 0 -62px;
+  }
+
+  .webring-nav {
+    gap: 0 !important;
+
+    .prev,
+    .next,
+    .rand {
+      height: 31px;
+    }
+
+    .prev {
+      width: 22px;
+      background: url(/assets/images/webrings/resource-ring.png) 0 -31px;
+    }
+
+    .rand {
+      width: 44px;
+      background: url(/assets/images/webrings/resource-ring.png) -22px -31px;
+    }
+
+    .next {
+      width: 22px;
+      background: url(/assets/images/webrings/resource-ring.png) -66px -31px;
+      transform: scale(1);
+    }
+  }
+
 }
 
 /* Self-Insert Webring */
-.self-insert-webring {
+.self-insert {
   width: 225px;
   background-color: #ffe3f1;
-  background-image: url("https://koinuko.neocities.org/shipping/webring/bg.png");
+  background-image: url(/assets/images/webrings/self-insert_bg.png);
   background-size: cover;
   border: 2px solid #DD28A7;
   font-size: .85em;
@@ -325,109 +788,78 @@ div.waiting {
   background-color: #fff;
 }
 
-/* WOL Webring */
-#wolwebring p {
-  margin: 0;
-}
-
-/* GFDKWTFAW Ring */
-.gfdkris-nav {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  column-gap: .5rem;
-}
-
-.gfdkris-nav-btn {
-  background: black;
-  border: 1px solid black;
-  text-align: center;
-}
-
-.gfdkris-nav-btn:hover {
-  border-color: #fb7f26;
-}
-
-[data-theme="dark"] .gfdkris-nav-btn {
-  border-color: #fb7f26;
-}
-
-[data-theme="dark"] .gfdkris-nav-btn:hover {
-  border-color: yellow;
-}
-
-.gfdkris-nav-btn:hover img {
-  opacity: 1;
-}
-
-/* Pokering */
-.pokering-walker {
-  z-index: 1;
-}
-
-#pokering-info {
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  visibility: hidden;
-}
-
-#pokering-info-label {
-  top: 72px;
-  left: 88px;
-  z-index: 2;
-  cursor: pointer;
-}
-
-.pokering-info-box {
-  height: 46px;
-  width: 117px;
-  background: transparent url(https://dokodemo.neocities.org/pokering/box_overlay.png) no-repeat right top;
-  top: 91px;
-  left: 49px;
-  z-index: 2;
-  display: none;
-  color: #000;
-  font-family: "MS UI Gothic", Tahoma;
-  align-items: center;
-  font-size: .7rem;
-  line-height: .7rem;
-}
-
-.pokering:has(#pokering-info:checked) .pokering-info-box {
-  display: flex;
-}
-
-.pokering-bg {
-  top: 57px;
-  left: 48px;
-}
-
 /* WiiRing */
-#wii-ring {
-  max-width: 150px;
-  padding: .75rem .5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.wii-ring {
   background-color: #fff;
-  border: 4px solid #d3bfbf;
-  border-radius: 8px;
 
-  img.wr-img {
-    width: calc(100% - 50px);
-    padding-bottom: .5rem;
-  }
-
-  .wii-ring-nav {
+  &:has(.btn) {
     display: flex;
-    align-items: center;
+    justify-content: center;
+    padding-top: 2px;
+    width: 87px;
+    height: 30px;
+    border: 1px solid #989898;
+
+    .btn {
+      width: 76px;
+      height: 23px;
+      background: url(/assets/images/webrings/wiiring.png) -44px 0;
+    }
   }
 
-  .wr-main img,
-  .wr-rand img {
-    height: 20px;
-    vertical-align: bottom;
+  &:not(:has(.btn)) {
+    width: 150px;
+    gap: .5rem !important;
+    padding: .75rem;
+    border: 4px solid #d3bfbf;
+    border-radius: 8px;
+  }
+
+  .webring-title div[role="img"] {
+    width: 76px;
+    height: 23px;
+    background: url(/assets/images/webrings/wiiring.png) -44px 0;
+  }
+
+  .webring-nav {
+    gap: 1rem !important;
+
+    .prev,
+    .next {
+      width: 17px;
+      height: 14px;
+      background: url(/assets/images/webrings/wiiring.png) -69px -23px;
+    }
+
+    .index {
+      width: 44px;
+      height: 59px;
+      background: url(/assets/images/webrings/wiiring.png);
+    }
+  }
+
+  .webring-links {
+    .rand {
+      width: 25px;
+      height: 20px;
+      background: url(/assets/images/webrings/wiiring.png) -44px -23px;
+    }
+  }
+}
+
+/* WOL Webring */
+.wol {
+  .prev,
+  .next {
+    width: 20px;
+    height: 40px;
+    background: url(/assets/images/webrings/wol.png);
+  }
+
+  .index {
+    width: 110px;
+    height: 52px;
+    background: url(/assets/images/webrings/wol.png) -20px 0;
   }
 }
 
@@ -443,5 +875,15 @@ div.waiting {
   .jelly-world {
     width: 210px;
     line-height: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .doodlering:not(:has(.btn)) {
+    padding: 0 .5rem;
+  }
+
+  .self-insert {
+    width: 300px;
   }
 }

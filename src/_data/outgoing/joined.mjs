@@ -6,46 +6,15 @@ export default {
       url: 'https://astracelestine.nekoweb.org/webring/tropical-rice-bowl'
     },
     {
-      src: 'gfdkris.png',
-      name: 'godfucking dammmit kris, the fuck are we?',
-      url: 'https://fabstarotcorner.neocities.org/webring/'
-    },
-    {
-      src: 'crwr.png',
-      name: 'Cookie Run',
-      url: 'https://evehibi.nekoweb.org/ckwr/'
-    },
-    {
-      src: 'amiga.svg',
-      name: 'AMIGA: Artists Making the Internet Gay',
-      url: 'https://nicois.gay/amiga/amiga-webring'
-    },
-    {
-      src: 'wiiring.png',
-      name: 'WiiRing',
-      url: 'https://jeith.com/wii-ring'
-    },
-    {
-      src: 'kingdomhearts.png',
-      name: 'Kingdom Hearts',
-      url: 'https://traversetown.neocities.org/khwr/khwr'
-    },
-    {
-      src: 'doodlering.gif',
-      name: 'Doodle Ring',
-      url: 'https://evehibi.nekoweb.org/doodlering/'
-    },
-    {
       src: 'persona.png',
       name: 'Persona Ring',
       url: 'https://silly-beanz.neocities.org/personaring/home'
     }
   ],
   fanlistings: {
-    pending: [
-      { src: "rin.jpg", url: "https://www.marheavenj.net/rin/", alt: "Rin Okumura from Blue Exorcist" },
-    ],
+    pending: "none",
     characters: [
+      { src: "rin.jpg", url: "https://www.marheavenj.net/rin/", alt: "Rin Okumura from Blue Exorcist" },
       { src: "mercury.gif", url: "https://eien-melody.net/ami/", alt: "Ami Mizuno/Sailor Mercury from Sailor Moon" },
       { src: "masaru.png", url: "https://rikafire.fanimated.net/masaru/", alt: "Masaru Daimon from Digimon Savers" },
       { src: "senku.jpg", url: "https://www.marheavenj.net/senku/", alt: "Senku Ishigami from Dr. STONE" },
