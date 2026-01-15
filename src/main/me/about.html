@@ -3,7 +3,8 @@ title: 'About The Web Beet'
 shortTitle: 'About Me'
 displayOrder: 1
 prism: true
-permalink: '/about/index.html'
+permalink: '/personal/about/index.html'
+description: (Almost) everything you need to know about the webmaster!
 freezeframe:
   noNav: true
 ---
@@ -82,11 +83,13 @@ The little guys next to me are **Numemon**, a shy Champion-level Digimon, and **
     </div>
   </div>
 
+  {% set img_path = "/assets/images/about/monsters/" %}
+
   {% macro favsBox(arr, options = {}) %}
     {% galleryBox { title: arr.title, cls: options.cls, subCls: "justify-content-center flex-gap-3" } %}
       {% for item in arr.items %}
         <div class="fav-box">
-          {% img about.favs.path + item.img, { alt: item.alt, cls: item.cls } %}
+          {% img img_path + item.src, { alt: item.alt, cls: item.cls } %}
           <p {% if "IRL" in arr.title %}class="font-weight-bold text-primary"{% endif %}>{{ item.name | markdownifyInline | safe }}</p>
           {% if item.series %}
             <p class="series">{{ item.series | markdownifyInline | safe }}</p>
@@ -95,17 +98,15 @@ The little guys next to me are **Numemon**, a shy Champion-level Digimon, and **
       {% endfor %}
     {% endgalleryBox %}
   {% endmacro %}
-
-  {{ favsBox(about.favs.chars) }}
-  {{ favsBox(about.favs.monsters, { cls: "monsters" }) }}
+  {{ favsBox(about.monsters.monhun, { cls: "monsters" }) }}
 
   {% galleryBox { title: "Favorite Digimon", cls: "digimon" } %}
     <div class="w-100 d-flex justify-content-center mb-3 js-required"><button class="button toggle-gif">Toggle GIFs</button></div>
 
     <div class="freezeframe">
-      {% for item in about.favs.digimon %}
+      {% for item in about.monsters.digimon %}
       <div class="fav-box">
-        {% img about.favs.path + item.img, { alt: "Sprite of {{ item.name }}", cls: item.cls } %}
+        {% img img_path + item.src, { alt: "Sprite of {{ item.name }}", cls: item.cls } %}
         <p>{{ item.name | markdownifyInline | safe }}</p>
       </div>
       {% endfor %}

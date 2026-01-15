@@ -24,6 +24,7 @@
   --bg-img-color: #DE9DB1;
   --bg-overlay: #de9db1cc;
   --bg-primary: #e48aa7;
+  --bg-secondary: #f6e6f6;
   --bg-selection: #a50e5a;
   --bg-sidebar: #fffffe;
   --border-body: var(--bg-body);
@@ -49,6 +50,7 @@
   --bg-img-color: #391b3d;
   --bg-overlay: #391b3dcc;
   --bg-primary: #28162b;
+  --bg-secondary: #9f6a83;
   --bg-body: #47284D;
   --bg-sidebar: var(--bg-footer);
   --bg-footer: #2f1933;

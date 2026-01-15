@@ -14,6 +14,10 @@ const icon = function (value, options = {}) {
   }
 }
 
+const emoji = function (value) {
+  return `<span class='emoji'>${value}</span>`
+}
+
 const emoticon = function (value) {
   return `<img class='emoticon' src='/assets/images/blog/emoticon/${value}.svg' aria-hidden='true' alt=''>`;
 }
@@ -100,6 +104,7 @@ const artCaption = function(caption, params = {}){
 module.exports = {
   decoImg,
   icon,
+  emoji,
   emoticon,
   emote,
   img,

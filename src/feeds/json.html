@@ -1,7 +1,7 @@
 ---
 permalink: '/feeds/feed.json'
 ---
-{% set feedItems = collections.feed %}
+{% set feed_items = collections.feed %}
 {
   "version": "https://jsonfeed.org/version/1.1",
   "title": "{{ meta.name }} - JSON Feed",
@@ -14,11 +14,11 @@ permalink: '/feeds/feed.json'
     "url": "{{ meta.url }}"
   },
   "items": [
-    {% for item in feedItems | reverse %}
+    {% for item in feed_items | reverse %}
       {
-        "id": "bechnokid-{{ item.date | dateToIso8601 }}",
+        "id": "bechnokid-{{ item.fileSlug | dateToIso8601 }}",
         "url": "{{ meta.url }}",
-        "title": "{{ item.date | monDayYear }}",
+        "title": "{{ item.fileSlug | monDayYear }}",
         "content_html": {{ item.content | renderTransforms(item.data.page, meta.url ) | dump | safe }},
         "date_published": "{{ item.date | dateToRfc3339 }}"
       }{% if not loop.last %},{% endif %}

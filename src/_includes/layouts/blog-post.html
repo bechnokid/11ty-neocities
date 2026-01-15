@@ -4,8 +4,8 @@ permalink: '/writing/blog/{{ page.fileSlug }}.html'
 {% set date = page.date %}
 {% extends "layouts/base.html" %}
 
-{% set pageHeaderTitle = title | markdownifyInline | safe %}
-{% set pageHeaderSummary %}
+{% set page_header_title = title | markdownifyInline | safe %}
+{% set page_header_summary %}
   <time class="text-primary" datetime="{{ date | local }}">{{ date | monthDayYear }}</time>
   {% if summary %}<p>{{ summary | markdownifyInline | safe }}</p>{% endif %}
 {% endset %}
@@ -17,6 +17,5 @@ permalink: '/writing/blog/{{ page.fileSlug }}.html'
       {{ content | safe }}
     </div>
   </article>
-  {% set back_url = "/writing/blog" %}
   {% include "partials/go-back.html" %}
 {% endblock %}

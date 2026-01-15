@@ -26,17 +26,16 @@ With that being said, I figure I'd make a to-do list in case I run out of ideas 
   - [ ] 🍖 {# MEAT #}
   - [ ] 👾🥚 {# Tamagotchi/Digimon #}
 - [ ] Make own assets for social media links
-- [x] "Carrd" replica page of other links: ([here](/carrd))
 - [ ] Fanlistings
   - [ ] 🧜‍♂️ {# Neptunemon #}
   - [ ] 🔥🐟 {# Chi-yu #}
   - [ ] 🐲⚔️ {# Monster Hunter #}
 - [ ] Join pixel cliques that I have saved in my bookmarks
-- [x] Custom cursor
-- [x] Re-organize [quiz results](/quiz-results)
-- [x] Add more [curses](/curses)
 - [ ] Update image on redirect page to better match site
-- [ ] Page for fangirling
-  - [ ] Characters like me
-  - [ ] Favorites
-  - [ ] OTPs
+- [ ] Fix OpenGraph image for site
+- [x] Page for fangirling
+  - [x] Characters like me
+  - [x] Favorites
+  - [x] OTPs
+  - [x] OC x canon
+- [x] Make more Status Cafe themes

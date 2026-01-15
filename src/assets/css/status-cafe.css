@@ -1,0 +1,53 @@
+body {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 1em;
+    font-family: Verdana;
+    background-color: azure;
+    color: midnightblue;
+}
+
+.profile-picture {
+    max-width: 100px;
+}
+
+.cols {
+    display: grid;
+}
+
+a {
+    font-weight: bold;
+}
+
+.status-username {
+    margin-bottom: .5em;
+}
+
+.status-content {
+    margin: 0 1em 0.5em 1em;
+}
+
+.status nav {
+    font-size: 0.8em;
+    margin-left: 1em;
+}
+
+.status {
+    margin-bottom: 1em;
+    word-break: break-word;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin-bottom: 1em;
+}
+
+@media (min-width: 650px) {
+  .cols {
+      grid-template-columns: 1fr 2fr;
+      grid-gap: 2em;
+  }
+}

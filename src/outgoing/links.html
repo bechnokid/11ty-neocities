@@ -38,7 +38,8 @@ flashing: true
         </ul>
         {% galleryBox { cls: 'mx-2', subCls: 'justify-content-center flex-gap-1' } %}
           {%- for item in options.btnsArr %}
-            {% img imgPath + item.src, { url: item.url, alt: "Link button for " + item.name, freezeframe: item.freezeframe } %}
+            {% set item_src = item.src if "https" in item.src else imgPath + item.src %}
+            {% img item_src, { url: item.url, alt: "Link button for " + item.name, freezeframe: item.freezeframe } %}
           {% endfor %}
         {% endgalleryBox %}
       </div>
@@ -47,7 +48,7 @@ flashing: true
 
   {{ linkSection ({ title: "Neighbors", desc: "Sites whose webmasters I'm happy to be affiliated with!", btnsArr: outgoing.links.neighbors, noBtnsArr: outgoing.links.no_btns.neighbors }) }}
   {{ linkSection ({ title: "Other Sites I Like", desc: "Sites that I've admired from afar!", btnsArr: outgoing.links.cool_sites, noBtnsArr: outgoing.links.no_btns.cool_sites })}}
-  {{ linkSection ({ title: "Inactive (for now?)", cls: "inactive-links", desc: "Sites that haven't been updated in a while, but are still worth checking out!", btnsArr: outgoing.links.inactive, noBtnsArr: outgoing.links.no_btns.inactive }) }}
+  {{ linkSection ({ title: "Inactive (for now?)", cls: "inactive-links", desc: "Sites that haven't been updated in a while or are on hiatus, but are still worth checking out!", btnsArr: outgoing.links.inactive, noBtnsArr: outgoing.links.no_btns.inactive }) }}
 
   <section>
     <h2>Favorite Resources</h2>

@@ -1,12 +1,12 @@
 {% extends "layouts/base.html" %}
 
-{% set pageHeaderTitle = title %}
-{% set pageHeaderSummary %}
+{% set page_header_title = title %}
+{% set page_header_summary %}
   {% if imgDate %}<time datetime="{{ imgDate }}" class="text-primary">{{ imgDate | monthDayYear }}</time>{% endif %}
   {% if summary %}{{ summary | markdownify | safe }}{% endif %}
 {% endset %}
-{% set pageFreezeframe = freezeframe %}
-{% set outgoingPageWarning = hasLinks %}
+{% set page_freeze = freezeframe %}
+{% set outgoing_page_warning = hasLinks %}
 {% set pageCSS = css %}
 
 {% block content %}

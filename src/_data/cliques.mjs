@@ -1,26 +1,34 @@
-const templates = {
-  textSimple: {
-    left: "",
-    center: "",
-    right: ""
+/*
+## SIMPLE TEXT
+{
+  left: "",
+  center: "",
+  right: ""
+},
+
+## FULL
+{
+  left: {
+    cls: "",
+    url: "",
+    text: "",
   },
-  text: {
-    left: {
-      cls: "",
-      url: "",
-      text: "",
-    },
-    center: {
-      url: "",
-      text: "",
-      img: ""
-    },
-    right: {
-      cls: "",
-      text: ""
-    }
+  center: {
+    url: "",
+    text: "",
+    img: ""
+  },
+  right: {
+    cls: "",
+    text: ""
   }
 }
+
+## CUSTOM
+{
+  custom: "HTML code goes here"
+}
+*/
 export default {
   path: "/assets/images/goodies/cliques/",
   col1: [
@@ -92,7 +100,7 @@ export default {
   col2: [
     [
       {
-        title: "Dearest",
+        name: "Dearest",
         tooltip: "OTP: Ryuuko Matoi and Senketsu",
         id: "dearest-otp",
         url: "https://dearest.snow-heart.net",
@@ -105,9 +113,8 @@ export default {
         }
       },
       {
-        title: "Caffeine NATION",
+        name: "Caffeine NATION",
         tooltip: "Light roast with French vanilla (or Irish creme) creamer",
-        id: "caffeine-nation",
         url: "https://caffeinated.wings.nu/index.php",
         img: "caffeine-nation.png",
         alt: "A button that says, 'Caffeine NATION'",
@@ -118,7 +125,7 @@ export default {
         }
       },
       {
-        title: "Astrology",
+        name: "Astrology",
         url: "https://dust.kuchiki.net/",
         img: "aquarius.gif",
         alt: "A button with a star and text that says, 'Aquarius'",
@@ -129,7 +136,7 @@ export default {
         }
       },
       {
-        title: "Anime Genres",
+        name: "Anime Genres",
         url: "https://dust.kuchiki.net/",
         img: "shoujo.gif",
         alt: "A pink button with a floating heart and text that says, 'Shoujo'",
@@ -140,8 +147,7 @@ export default {
         }
       },
       {
-        title: "Barbieland",
-        id: 'barbieland',
+        name: "Barbieland",
         tooltip: 'This Barbie is a Monster Hunter!',
         url: "https://fan.sanguineroyal.com/cli/barbieland/",
         img: "barbieland.gif",
@@ -153,9 +159,8 @@ export default {
         }
       },
       {
-        title: "Stardaze",
+        name: "Stardaze",
         tooltip: "Wezen",
-        id: 'stardaze',
         url: "https://star.aquarel.nu/",
         img: 'stardaze.gif',
         alt: 'A pink white and purple starry button that says, \"Stardaze\"',
@@ -168,45 +173,45 @@ export default {
     ],
     [
       {
-        title: "Pretty Guardians",
+        name: "Pretty Guardians",
         tooltip: "Under the protection of Mercury",
         id: "mercury",
         url: "https://sailorcrystal.net/guardians/",
         img: "mercury.png",
-        imgAlt: "Sailor Mercury",
+        alt: "Sailor Mercury",
         cls: "me-1"
       },
       {
-        title: "Final Fantasy Moogle Adoption Clique",
+        name: "Final Fantasy Moogle Adoption Clique",
         id: "moogle",
         tooltip: "I ♥ moogles // Kupo, kupo! Moogle Adoption Clique",
         url: "https://midnight-cloud.net/clique/moogle/",
         img: "moogle.gif",
-        imgAlt: "A moogle"
+        alt: "A moogle"
       },
       {
-        title: "30+ Club",
+        name: "30+ Club",
         id: "30plus",
         url: "https://moonpr1sm.com/random/30plusclub",
         img: "30plusclub.png",
-        imgAlt: "Button that says \"30+ Club\"",
+        alt: "Button that says \"30+ Club\"",
         cls: "ms-2"
       },
       {
-        title: 'pixel friends',
+        name: 'pixel friends',
         id: 'pixel-friend',
         tooltip: "pixel friends | Felyne",
         url: 'https://ac.kuchiki.net/',
         img: 'felyne.gif',
-        imgAlt: 'Felyne from Animal Crossing New Leaf'
+        alt: 'Felyne from Animal Crossing New Leaf'
       },
       {
-        title: "I Choose You!",
+        name: "I Choose You!",
         id: "i-choose-you",
         tooltip: "I choose you! :: CHI-YU",
         url: "https://pkmn.aquarels.net/",
         img: "i-choose-you.gif",
-        imgAlt: "The pokemon Chi-Yu",
+        alt: "The pokemon Chi-Yu",
         mobile: {
           left: "I Choose You!",
           center: "|",
@@ -214,19 +219,23 @@ export default {
         }
       },
       {
-        title: "Adopt a Boba",
-        id: "adopt-a-boba",
+        name: "Adopt a Boba",
         tooltip: "Taro Milk Tea :: Adopt a Boba",
         url: "https://web.archive.org/web/20250407201106/https://pixelrevival.xyz/boba/",
         img: "boba.gif",
-        imgAlt: "A cup of taro milk tea with boba",
+        alt: "A cup of taro milk tea with boba",
         cls: "ms-1"
+      },
+      {
+        name: "Camp Theme",
+        url: "https://joro.nu/cliques",
+        img: "camp-cute.png",
+        alt: "This site is cute",
       }
     ],
     [
       {
-        title: "exvius",
-        id: "exvius",
+        name: "exvius",
         tooltip: "Protected by Gilgamesh!",
         url: "https://ff.aquarel.nu/",
         img: "x-gilgamesh.png",
@@ -238,8 +247,7 @@ export default {
         }
       },
       {
-        title: "Grand Summoning",
-        id: 'grand-summoning',
+        name: "Grand Summoning",
         tooltip: "Grand Summoning :: Yojimbo",
         url: "https://deathbusters.org/aeon/",
         img: "yojimbo.png",
@@ -416,6 +424,10 @@ export default {
       },
       center: "||",
       right: "Small pixel adoptables"
+    },
+    {
+      id: "type-master",
+      custom: "<img src='/assets/images/goodies/cliques/dark.png'> I am a <span class='font-weight-bold'>dark</span> type <a href='https://seafare.neocities.org/cliques/'>master</a>! <img src='/assets/images/goodies/cliques/dark.png'>",
     }
   ],
 }

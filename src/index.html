@@ -5,8 +5,8 @@ tags: main
 splashImg: '/assets/images/splash.png'
 splashImgAlt: "Splash image for Bechno Kid's Hideout that links to the home page"
 ---
-{% set feedItems = collections.feed | reverse %}
-{% set lastUpdated = feedItems[0].fileSlug | monDayYear %}
+{% set feed_items = collections.feed | reverse %}
+{% set last_updated = feed_items[0].fileSlug | monDayYear %}
 <!DOCTYPE html>
 <html lang={{ meta.lang }} data-theme="light">
   <head>
@@ -38,7 +38,7 @@ splashImgAlt: "Splash image for Bechno Kid's Hideout that links to the home page
             </div>
             <a class="font-weight-bold my-2 text-lg" href="/home/">ENTER HERE</a>
             <div class="last-update">
-              <p>Last updated: {{ lastUpdated }}</p>
+              <p>Last updated: {{ last_updated }}</p>
             </div>
           </div>
           <div class="col-md-6 d-flex justify-content-center align-items-center order-md-1 order-0">

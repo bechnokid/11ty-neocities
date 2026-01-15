@@ -3,10 +3,10 @@ title: 'Beet Garden'
 permalink: '/webgarden.html'
 eleventyExcludeFromCollections: true
 ---
-{% set gardenImage = '/assets/images/webgarden_head.png' %}
-{% set gardenImgAlt = 'Image of Bechno Kid for her webgarden pot' %}
-{% set feedItems = collections.feed | reverse %}
-{% set lastUpdated = feedItems[0].date | monDayYear %}
+{% set garden_image = '/assets/images/webgarden_head.png' %}
+{% set graden_img_alt = 'Image of Bechno Kid for her webgarden pot' %}
+{% set feed_items = collections.feed | reverse %}
+{% set last_updated = feed_items[0].fileSlug | monDayYear %}
 <!DOCTYPE html>
 <html lang={{ meta.lang }} data-theme="light">
   <head>
@@ -22,8 +22,8 @@ eleventyExcludeFromCollections: true
       <hr>
       <div class="desc">
         <p>art, blog, resources, and more?!</p>
-        <a href="http://bechnokid.neocities.org" target="_blank" rel="noopener noreferrer"><img src="{{ gardenImage }}" alt="{{ gardenImgAlt }}"></a>
-        <p class="last-updated">Last updated: {{ lastUpdated }}</p>
+        <a href="http://bechnokid.neocities.org" target="_blank" rel="noopener noreferrer"><img src="{{ garden_image }}" alt="{{ graden_img_alt }}"></a>
+        <p class="last-updated">Last updated: {{ last_updated }}</p>
       </div>
     </div>
     <img class="nume" src="/assets/images/nume.gif" alt="" aria-hidden="true">

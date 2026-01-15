@@ -53,7 +53,7 @@ export default {
           ],
         },
         {
-          id: "birthdaty",
+          id: "birthday",
           text: "When is Rengoku's birthday?",
           options: [
             { label: "May 4th", val: "answer4" },

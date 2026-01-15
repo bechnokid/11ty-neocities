@@ -6,6 +6,7 @@
   a {
     color: var(--text-link-visited);
     text-decoration: none;
+    border-bottom-color: transparent !important;
 
     &:hover span {
       text-decoration: underline;

@@ -1,4 +1,13 @@
 article.landing-page {
+  a {
+    display: inline-flex;
+
+    &[href*="https"] {
+      display: inline;
+    }
+  }
+
+
   .h3 {
     border-bottom: 0;
   }

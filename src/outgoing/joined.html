@@ -15,8 +15,12 @@ permalink: '/joined/index.html'
       {% for items in cliques.more | slice(2) %}
         <div class="col-md-6 col-12 d-flex flex-column align-items-center flex-gap-2">
           {% for item in items %}
-            <div class="d-flex align-items-center flex-gap-2">
-              {{ clique.text(item) }}
+            <div class="d-flex align-items-center flex-gap-2 {{ item.id or "" }}">
+              {% if item.custom %}
+                {{ item.custom | safe }}
+              {% else %}
+                {{ clique.text(item) }}
+              {% endif %}
             </div>
           {% endfor %}
         </div>

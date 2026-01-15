@@ -1,8 +1,8 @@
 <div class="sidebar">
   <div class="h2 text-center p-1">❤ Updates ❤</div>
   <div class="update-content p-2">
-    {% set feedItems = collections.feed | reverse %}
-    {%- for update in feedItems | limit(3) %}
+    {% set feed_items = collections.feed | reverse %}
+    {%- for update in feed_items | limit(3) %}
       <strong>{{ update.fileSlug | monDayYear }}</strong>
       <ul>
         {%- for item in update.data.updateContent %}

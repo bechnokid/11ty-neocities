@@ -1,54 +1,53 @@
-{% set imgPath = "/assets/images/goodies/cliques/" %}
+{% set img_path = "/assets/images/goodies/cliques/" %}
 
-{% macro cliqueText(text, options = {}) %}
-  {% set safeText = text | safe %}
+{% macro clique_text(text, options = {}) %}
+  {% set safe_text = text | safe %}
   {% if options.url %}
-    <a href="{{ options.url }}" {% if options.cls %}class="{{ options.cls | trim }}"{% endif %}>{{ safeText }}</a>
+    <a href="{{ options.url }}" {% if options.cls %}class="{{ options.cls | trim }}"{% endif %}>{{ safe_text }}</a>
   {% elif options.cls != undefined %}
-    <span class="{{ options.cls }}">{{ safeText }}</span>
+    <span class="{{ options.cls }}">{{ safe_text }}</span>
   {% else %}
-    {{ safeText }}
+    {{ safe_text }}
   {% endif %}
 {% endmacro %}
 
 {% macro text(clique) %}
   {# Left text #}
-  {% set leftUrl = clique.left.url or clique.leftUrl %}
+  {% set left_url = clique.left.url or clique.leftUrl %}
   {% set leftText = clique.left.text or clique.leftText or clique.left %}
-  {{ cliqueText(leftText, { url: leftUrl, cls: clique.left.cls }) }}
+  {{ clique_text(leftText, { url: left_url, cls: clique.left.cls }) }}
 
   {# Center text (or image) #}
   {% if clique.center %}
-    {% set centerUrl = clique.center.url or clique.centerUrl %}
-    {% set centerText = clique.center.text or clique.centerText or clique.center %}
+    {% set center_url = clique.center.url or clique.centerUrl %}
+    {% set center_text = clique.center.text or clique.centerText or clique.center %}
     {% if clique.center.img %}
-      {% decoImg src = imgPath + clique.center.img, cls = clique.center.cls %}
+      {% decoImg src = img_path + clique.center.img, cls = clique.center.cls %}
     {% else %}
-      {{ cliqueText(centerText, { url: centerUrl, cls: clique.center.cls }) }}
+      {{ clique_text(center_text, { url: center_url, cls: clique.center.cls }) }}
     {% endif %}
   {% endif %}
 
   {# Right text #}
-  {% set rightUrl = clique.right.url or clique.rightUrl %}
-  {% set rightText = clique.right.text or clique.rightText or clique.right %}
-  {{ cliqueText(rightText, { url: rightUrl, cls: clique.right.cls }) }}
+  {% set right_url = clique.right.url or clique.rightUrl %}
+  {% set right_text = clique.right.text or clique.rightText or clique.right %}
+  {{ clique_text(right_text, { url: right_url, cls: clique.right.cls }) }}
 {% endmacro %}
 
 {% macro img(clique) %}
-  {% set altText = clique.imgAlt + " for the '" + clique.title + "' clique" %}
-  {% set cliqueSrc = imgPath + clique.img %}
+  {% set alt_text = clique.alt + " for the '" + clique.name + "' clique" %}
   {% if clique.tooltip %}
-    {% set tooltipOptions =
+    {% set tooltip_params =
       {
-        tooltipId: "clique-" + clique.id,
+        tooltipId: "clique-" + (clique.id or clique.name | slugify),
         url: clique.url,
-        src: imgPath + clique.img,
-        alt: altText,
+        src: img_path + clique.img,
+        alt: alt_text,
         cls: clique.cls
       }
     %}
-    {% tooltip tooltipOptions %}{{ clique.tooltip }}{% endtooltip %}
+    {% tooltip tooltip_params %}{{ clique.tooltip }}{% endtooltip %}
   {% else %}
-    {% img cliqueSrc, { url: clique.url, alt: altText, cls: clique.cls } %}
+    {% img img_path + clique.img, { url: clique.url, alt: alt_text, cls: clique.cls } %}
   {% endif %}
 {% endmacro %}

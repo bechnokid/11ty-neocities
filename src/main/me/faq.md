@@ -1,8 +1,9 @@
 ---
 title: 'F.A.Q'
 summary: I've gotten a lot of questions over the years. Many of them are asked pretty often, which is why I created this page! If you have another question that you don't see on this page, feel free to email me at **bechnokid@yahoo.com**.
+description: Short for "frequently asked questions", here are some questions that I've been asked a lot over the years!
 displayOrder: 3
-permalink: '/faq/index.html'
+permalink: 'me/faq/index.html'
 ---
 
 ## Me
@@ -18,8 +19,8 @@ permalink: '/faq/index.html'
 
 - **What kind of tools/software do you use for your art?**
   - [Clip Studio Paint v.4](https://www.clipstudio.net/en/) with an [XP-Pen Fun Deco S tablet](https://www.xp-pen.com/product/deco-fun-xs-s-l.html) for drawing, and [Photoscape](http://www.photoscape.org/ps/main/index.php) for any final edits! I also use [Color Quantizer](https://www.softpedia.com/get/Multimedia/Graphic/Graphic-Others/Color-quantizer.shtml) for resizing and compressing my art without losing too much of the quality.
-- **When will you open commissions again?**
-  - Probably never since I just don't have the time anymore! If by some miracle I decide to open commissions again, I will make sure to make an announcement post at least a few days in advance before opening them!
+- **Will you open commissions again?**
+  - I don't think I will since I just don't have the time anymore! If by some miracle I decide to open commissions again, I will make sure to make an announcement post at least a few days in advance before opening them!
 - **Is there a way to support your work without commissioning you?**
   - You can always [buy me a coffee](https://buymeacoffee.com/bechnokid), but you're never obligated to! {% emote 'happy' %}
 - **Are you open for art trades/requests?**
@@ -38,4 +39,4 @@ permalink: '/faq/index.html'
 - **What do you think of _____?**
   - I probably won't know enough to give you an opinion unless it's related to a current or previous interest, sorry!
 - **Are you a proshipper or an anti?**
-  - Neither. I'm too old to get involved in tiresome discourse! Sure, there are topics that I wouldn't though with a 39 1/2 foot pole such as incest, noncon, power imbalance, age gaps between a minor and an adult, but I don't go around the Internet harassing people about it! I won't bother you as long as you don't bother me. In fact, I'll stay so far away from you that you won't even know I exist!
+  - Neither. I'm too old to get involved in tiresome discourse! There are topics that I abhor such as incest, dubcon/noncon, power imbalance (teacher/student, boss/employee, etc.), large age gaps between a minor and an adult, but I know better than to harass or publicly shit-talk those who enjoy that kind of content.

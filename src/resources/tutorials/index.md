@@ -1,12 +1,12 @@
 ---
 title: Tutorials
 subList: true
-layout: layouts/page-landing.html
-permalink: /resources/tutorials/index.html
+layout: layouts/landing-page.html
 pagination:
   data: collections.tutorials
   size: 10
 displayOrder: 2
+eleventyExcludeFromCollections: ["tutorials"]
 tags:
   - resources
   - nav

@@ -6,7 +6,7 @@ export default {
   jsUrl: "/assets/js",
   imgUrl: "/assets/images",
   desc: "The personal website of a beet disguised as a software engineer. Contains art, ramblings, and other things?",
-  ogImgUrl: "https://bechnokid.neocities.org/images/og_image.png",
+  ogImgUrl: "/assets/images/og_image.png",
   lang: "en-US",
   author: {
     name: "Bechno Kid",
@@ -26,8 +26,8 @@ export default {
     prod: "/assets/images/favicon.ico",
     dev: "/assets/images/meat.png"
   },
-  updated: [ "Digimon", "Links" ],
-  new: [ "To-Do" ],
+  updated: [ "Themes", "deviantART '06", "Games" ],
+  new: [ "Fangirling", "Starry Lullaby" ],
   emotes: [
     "angry",
     "calm",

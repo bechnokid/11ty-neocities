@@ -1,39 +1,42 @@
 export default {
-  path: "/assets/images/about/favs/",
-  chars: {
-    title: "Characters Who Are Almost Like Me IRL",
-    items: [
-      { name: "Kobayashi", series: "Miss Kobayashi's Dragon Maid", img: "kobayashi.png" },
-      { name: "Crona Gorgon", series: "Soul Eater", img: "crona.png" },
-      { name: "Senketsu", series: "Kill la Kill", img: "senketsu.png" },
-      { name: "Ami Mizuno", series: "Sailor Moon", img: "ami.png" },
-      { name: "Dr. Simmons", series: "Digimon Story Time Stranger", img: "simmons.png" }
-    ]
-  },
-  monsters: {
-    title: "Favorite Monsters",
-    items: [
-      { name: "Rathalos", img: "rathalos.png" },
-      { name: "Chameleos", img: "chameleos.png", cls: 'img-shadow' },
-      { name: "Tobi Kadachi", img: "tobi-kadachi.png", cls: 'img-shadow' },
-      { name: "Nu Udra", img: "nu-udra.png" },
-      { name: "Shara Ishvalda", img: "shara-ishvalda.png", cls: 'img-shadow' },
-      { name: "Espinas", img: "espinas.png", cls: 'img-shadow' },
-      { name: "Pukei-Pukei", img: "pukei-pukei.png", cls: 'img-shadow' },
-      { name: "Nerscylla", img: "nerscylla.png" },
-    ]
-  },
-  digimon: [
-    { name: "Alphamon", img: "alphamon.gif" },
-    { name: "Beetlemon", img: "beetlemon.gif" },
-    { name: "Gallantmon", img: "gallantmon.gif" },
-    { name: "Hagurumon", img: "hagurumon.gif" },
-    { name: "Neptunemon", img: "neptunemon.gif" },
-    { name: "Numemon", img: "numemon.gif" },
-    { name: "Pumpkinmon", img: "pumpkinmon.gif" },
-    { name: "Seraphimon", img: "seraphimon.gif" },
-    { name: "Sharkmon", img: "sharkmon.gif" },
-    { name: "Stingmon", img: "stingmon.gif" },
-    { name: "Wezengammamon", img: "wezengammamon.gif" },
-  ]
+  irl: [
+    { name: "Kobayashi", series: "Miss Kobayashi's Dragon Maid", src: "kobayashi.png" },
+    { name: "Crona Gorgon", series: "Soul Eater", src: "crona.png" },
+    { name: "Senketsu", series: "Kill la Kill", src: "senketsu.png" },
+    { name: "Ami Mizuno", series: "Sailor Moon", src: "ami.png" },
+    { name: "Dr. Monica Simmons", series: "Digimon Story", src: "simmons.png" }
+  ],
+  other: [
+    { name: "Auron", series: "Final Fantasy", src: "auron.png", },
+    { name: "Gilgamesh", series: "Final Fantasy", src: "gilgamesh.png", },
+    { name: "Jonathan Joestar", series: "JoJo's Bizarre Adventure", src: "jonathan.png", },
+    { name: "Captain Linebeck", series: "Legend of Zelda", src: "linebeck.png", },
+    { name: "Sir Daniel Fortesque", series: "MediEvil", src: "sirdaniel.png", },
+    { name: "Nadia", series: "Monster Hunter", src: "nadia.png", },
+    { name: "Olivia", series: "Monster Hunter", src: "olivia.png", },
+    { name: "Beagle Boys", series: "Mickey, Donald, and Goofy: Three Musketeers", src: "beagleboys.png", },
+    { name: "King Dedede", series: "Kirby", src: "dedede.png", },
+    { name: "Giovanni", series: "Pokemon", src: "giovanni.png", },
+    { name: "Guzma", series: "Pokemon", src: "guzma.png", },
+    { name: "Rayman", src: "rayman.png" },
+  ],
+  science: [
+    { name: "Dr. Nefarious Tropy ♀", series: "Crash Bandicoot", src: "tropy.png", },
+    { name: "Dr. Neo Cortex", series: "Crash Bandicoot", src: "cortex.png", },
+    { name: "Dr. Chelsea Childe", series: "Dr. STONE", src: "chelsea.png", },
+    { name: "Senku Ishigami", series: "Dr. STONE", src: "senku.png", },
+    { name: "Dr. Xeno Wingfield", series: "Dr. STONE", src: "xeno.png", },
+    { name: "Professor Membrane", series: "Invader Zim", src: "membrane.png", },
+    { name: "Sgt. Major Kururu", series: "Keroro Gunso", src: "kururu.png", },
+    { name: "Mineru", series: "Legend of Zelda", src: "mineru.png", },
+    { name: "Purah", series: "Legend of Zelda", src: "purah.png", },
+    { name: "Ozen the Immovable", series: "Made in Abyss", src: "ozen.png", },
+    { name: "Fawful", series: "Mario & Luigi", src: "fawful.png", },
+    { name: "Dr. Stephen Strange", series: "MCU", src: "stephen.png", },
+    { name: "The Handler", series: "Monster Hunter", src: "handler.png", },
+    { name: "Dr. Indigo", series: "One Piece", src: "indigo.png", },
+    { name: "Colress", series: "Pokemon", src: "colress.png" },
+    { name: "Dr. Ivo Robotnik", series: "Sonic the Hedgehog", src: "robotnik.png" },
+    { name: "Dist the Reaper", series: "Tales of the Abyss", src: "dist.png", },
+  ],
 }

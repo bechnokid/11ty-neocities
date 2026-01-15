@@ -2,7 +2,7 @@
 title: Artwork
 displayOrder: 1
 subList: true
-layout: layouts/page-landing.html
+layout: layouts/landing-page.html
 permalink: '/art/'
 pagination:
   data: collections.gallery

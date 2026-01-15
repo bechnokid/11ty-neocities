@@ -122,11 +122,11 @@ h4, .h4 {
 a {
   color: var(--text-link);
 
-  &:not(:has(img, div[role="img"])) {
+  &:not(:has(img, div[role="img"], i.ft-arrow-up), .button) {
     border-bottom: 1px solid var(--text-link);
 
     &:hover {
-      border-bottom: 0;
+      border-bottom-color: transparent;
     }
   }
 
@@ -157,7 +157,7 @@ a:hover .ff-container .ff-inactive {
   opacity: 0 !important;
 }
 
-a:not([href="/home/"], [href="#"]):visited {
+a:not([href="/home/"], [href="#"], .button):visited {
   color: var(--text-link-visited);
   border-bottom-color: var(--text-link-visited) !important;
 }
@@ -232,10 +232,21 @@ h4,
 }
 
 blockquote {
+  position: relative;
   margin: 1rem 0 1rem 1.5rem;
-  padding-left: 1rem;
+  padding-left: 1.75rem;
   border-left: 4px solid var(--bg-primary);
   color: var(--text-primary);
+
+  &::before {
+    content: "‟";
+    font-family: 'Georgia';
+    font-weight: bold;
+    position: absolute;
+    font-size: 2.5rem;
+    left: .25rem;
+    opacity: .25;
+  }
 }
 
 button,
@@ -671,6 +682,7 @@ a[href*="http"]:not(:has(img, div[role="img"]))::after {
   font-family: 'Dyslexic';
   font-size: 1.5em;
   text-decoration: none;
+  border: 0 !important;
 
   &:hover {
     text-decoration: underline;

@@ -1,7 +1,7 @@
 ---
 title: Writing
 subList: true
-layout: 'layouts/page-landing.html'
+layout: 'layouts/landing-page.html'
 permalink: false
 pagination:
   data: collections.writing

@@ -1,5 +1,7 @@
 section {
-  padding-left: .5rem;
+  &:has(.h2, h2) {
+    padding-left: .5rem;
+  }
 
   .h1, h1,
   .h2, h2 {
@@ -94,9 +96,7 @@ img.preview-img {
   }
 }
 
-.sitemap li > p {
-  margin: 0;
-}
+
 
 .curse-list {
   max-height: 300px;

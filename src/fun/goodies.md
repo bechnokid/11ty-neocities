@@ -1,7 +1,7 @@
 ---
 title: Goodies
 subList: true
-layout: layouts/page-landing.html
+layout: layouts/landing-page.html
 permalink: /goodies/index.html
 pagination:
   data: collections.goodies

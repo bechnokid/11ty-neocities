@@ -120,6 +120,21 @@ div.waiting {
   }
 }
 
+/* Cliques */
+.cliques {
+  .type-master {
+    display: block !important;
+
+    img {
+      vertical-align: middle;
+    }
+
+    span {
+      color: #5e1742;
+    }
+  }
+}
+
 /* Acing the Internet */
 .ace {
   .index {

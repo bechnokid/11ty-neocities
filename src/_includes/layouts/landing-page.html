@@ -3,30 +3,30 @@ noScroll: true
 ---
 {% extends "layouts/base.html" %}
 
-{% set pageHeaderTitle = title %}
-{% set pageHeaderSummary = content | safe %}
+{% set page_header_title = title %}
+{% set page_header_summary = content | markdownify | safe %}
 {% set pageCollection = pagination.items %}
 
 {% block content %}
   <article class="landing-page">
     {% include "partials/page-header.html" %}
     {% if sideImg %}
-    <div class="row">
-      <div class="col-4 d-flex justify-content-end">
-        <img class="side-img" src="/assets/images/{{ sideImg }}" aria-hidden="true" alt="">
-      </div>
-      <div class="col-8">
+      <div class="row">
+        <div class="col-4 d-flex justify-content-end">
+          <img class="side-img" src="/assets/images/{{ sideImg }}" aria-hidden="true" alt="">
+        </div>
+        <div class="col-8">
     {% endif %}
       {% if title == "Artwork" %}
-      <ul class="gallery-list">
-        {%- for item in pageCollection | sortCollectionByDisplayOrder %}
-          <li>
-            {% set linkTitle = item.data.title or item.title %}
-            <a href="/art/{{ item.shortTitle or item.title | slug }}">{{ linkTitle }}</a>
-            {% if linkTitle in meta.updated %}{% icon "updated" %}{% elif linkTitle in meta.new %}{% icon "new" %}{% endif %}
-          </li>
-        {% endfor %}
-      </ul>
+        <ul class="gallery-list">
+          {%- for item in pageCollection | sortCollectionByDisplayOrder %}
+            <li>
+              {% set linkTitle = item.data.title or item.title %}
+              <a href="/art/{{ item.shortTitle or item.title | slug }}">{{ linkTitle }}</a>
+              {% if linkTitle in meta.updated %}{% icon "updated" %}{% elif linkTitle in meta.new %}{% icon "new" %}{% endif %}
+            </li>
+          {% endfor %}
+        </ul>
       {% else %}
         <dl {% if not sideImg %}class="ms-4"{% endif %}>
           {%- for item in pageCollection | sortCollectionByDisplayOrder %}

@@ -1,8 +1,8 @@
 ---
 title: Personal
 subList: true
-layout: 'layouts/page-landing.html'
-permalink: false
+layout: layouts/landing-page.html
+permalink: /personal/index.html
 pagination:
   data: collections.me
   size: 10

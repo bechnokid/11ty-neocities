@@ -245,12 +245,10 @@
   </div>
   {% if params.script_url %}
     <script type="text/javascript" src="{{ params.script_url }}"></script>
-    {% if not params.custom_sites %}
-      <script>webringLinks["{{ params.id or (params.name | slugify ) }}"] = sites;</script>
+    {% if params.override %}
+      <script>webringLinks["{{ params.id or (params.name | slugify ) }}"] = { override: true, sites: sites }</script>
     {% else %}
-      {% if params.override %}
-        <script>webringLinks["{{ params.id or (params.name | slugify ) }}"] = { override: true, sites: sites }</script>
-      {% endif %}
+      <script>webringLinks["{{ params.id or (params.name | slugify ) }}"] = sites;</script>
     {% endif %}
   {% endif %}
 {% endmacro %}
@@ -343,7 +341,6 @@
     name: "doodlering",
     url: webring_url,
     script_url: "https://evehibi.nekoweb.org/doodlering/onionring-variables.js",
-    custom_sites: true,
     title: {
       text: "doodlering! ✏",
       url: webring_url
@@ -612,6 +609,7 @@
     name: "Warriors of Light",
     simple: true,
     script_url: "https://wolwebring.neocities.org/onionring-variables.js",
+    override: true,
     nav: {
       prev: "#",
       index: webring_url,

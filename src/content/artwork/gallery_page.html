@@ -21,5 +21,6 @@ eleventyComputed:
       </a>
     {% endfor %}
   </section>
-  <div class="text-center py-2"><a href="/art" class="button">Back</a></div>
+  {% set back_url = "/art" %}
+  {% include "partials/go-back.html" %}
 </div>

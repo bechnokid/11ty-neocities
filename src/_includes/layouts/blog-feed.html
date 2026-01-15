@@ -3,24 +3,24 @@ noScroll: true
 ---
 {% extends "layouts/base.html" %}
 
-{% set pageHeaderTitle = title %}
-{% set pageHeaderSummary = content | markdownifyInline | safe %}
-{% set postListItems = pagination.items %}
-{% set lastUpdated = (collections.feed | reverse)[0].fileSlug | monthDayYear %}
+{% set page_header_title = title %}
+{% set page_header_summary = content | markdownifyInline | safe %}
+{% set post_list_items = pagination.items %}
+{% set last_updated = (collections.feed | reverse)[0].fileSlug | monthDayYear %}
 
 {% block content %}
   <article>
     {% include "partials/page-header.html" %}
-    {%- for item in postListItems %}
-    {% set blogDate = item.fileSlug | monthDayYear %}
+    {%- for item in post_list_items %}
+    {% set blog_date = item.fileSlug | monthDayYear %}
     <div class="blog row py-1">
       <div class="col-md-8 col-7">
         <a href="{{ item.url }}">{{ item.data.title | markdownifyInline | safe }}</a>
-        {% if blogDate == lastUpdated %}
+        {% if blog_date == last_updated %}
           {% icon 'new' %}
         {% endif %}
       </div>
-      <div class="col-md-4 col-5">{{ blogDate }}</div>
+      <div class="col-md-4 col-5">{{ blog_date }}</div>
     </div>
     {% endfor %}
     {% include "partials/pagination.html" %}
