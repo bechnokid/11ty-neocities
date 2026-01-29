@@ -3,7 +3,7 @@ title: 'Bech-NOW'
 shortTitle: 'Now'
 layout: 'layouts/now.html'
 displayOrder: 2
-permalink: 'me/now/index.html'
+permalink: 'personal/now/index.html'
 description: A [now](https://nownownow.com/about) page that describes what I'm up to.
 summary: What's Bechno Kid been up to?
 noScroll: true

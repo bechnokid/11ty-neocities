@@ -51,8 +51,8 @@ const figure = function (children, src, options = {}) {
   - children: content between {% galleryBox %} and {% endgalleryBox %}
   - id (str): sets "id" attribute
   - title (str): creates <h2> for title
-    - subTitle (str): creates <h3> for subTitle
-    - title and subTitle cannot both be present
+    - subtitle (str): creates <h3> for subtitle
+    - title and subtitle cannot both be present
   - cls (str): sets class for .sidebar
   - subCls (str): sets class for .content
   - simple (boolean): determines if gallery box will be simple or a flex box
@@ -63,9 +63,9 @@ const galleryBox = function (children, params = {}) {
   let mainContent = children;
   const galleryId = (params.id) ? ` id="${params.id}"` : '';
   const title = (params.title) ? `<h2>${params.title}</h2>` : '';
-  const subTitle = (params.subTitle) ? `<h3>${params.subTitle}</h3>` : '';
+  const subtitle = (params.subtitle) ? `<h3>${params.subtitle}</h3>` : '';
 
-  if (title != "" && subTitle != "") return "<p>There cannot be both a title and a sub title.</p>";
+  if (title != "" && subtitle != "") return "<p>There cannot be both a title and a sub title.</p>";
 
   const mainCls = (params.cls) ? ` ${params.cls}` : '';
   let subCls = (params.simple) ? "" : " d-flex flex-wrap";
@@ -75,7 +75,7 @@ const galleryBox = function (children, params = {}) {
     mainContent = (params.markdown.inline) ? markdownLib.renderInline(children.trim()) : markdownLib.render(children.trim());
   }
 
-  return `${subTitle}<div${galleryId} class='sidebar${mainCls}'>${title}<div class='content p-3 position-relative${subCls}'>${mainContent}</div></div>`;
+  return `${subtitle}<div${galleryId} class='sidebar${mainCls}'>${title}<div class='content p-3 position-relative${subCls}'>${mainContent}</div></div>`;
 }
 
 module.exports = {

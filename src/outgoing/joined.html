@@ -3,7 +3,7 @@ title: Places I've Joined
 shortTitle: Joined
 summary: "**Warning:** Be cautious of any flashing colors and images when navigating away from this page."
 displayOrder: 2
-permalink: '/joined/index.html'
+permalink: 'joined/index.html'
 ---
 {% import 'components/joined/webring_macros.html' as webrings with context %}
 {% import 'components/joined/clique_macros.html' as clique with context %}
@@ -106,7 +106,7 @@ permalink: '/joined/index.html'
           <h3>{{ key | title }}</h3>
           <div class="d-flex flex-wrap flex-gap-1">
             {%- for item in value %}
-              {% img assetLink + item.src, { url: item.url, alt: item.alt + " fanlisting button" } %}
+              {% img assetLink + item.src, { url: item.url, alt: item.alt + " fanlisting button", height: "50", width: "50" } %}
             {% endfor %}
           </div>
         </div>

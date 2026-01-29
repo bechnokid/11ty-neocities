@@ -69,12 +69,7 @@ export default {
       right: "Gilgamesh (FFV)"
     },
     {
-      left: "flowers",
-      center: {
-        text: "ꕤ",
-        url: "https://reef.kingdra.net/"
-      },
-      right: "hydrangea <a href='https://web.archive.org/web/20250621102731/http://jbrr.fc2web.com/material.html'><img class='ms-1 inline-img' src='/assets/images/goodies/cliques/hydrangea.gif' aria-hidden='true' alt=''></a>"
+      custom: "<link rel='stylesheet' href='https://reef.kingdra.net/flower.css'><p><span class='flower-clique'><span class='flower'>Flowers</span> <a href='https://reef.kingdra.net'>ꕤ</a> hydrangeas</span> <a href='https://web.archive.org/web/20250621102731/http://jbrr.fc2web.com/material.html'><img class='ms-1 inline-img' src='/assets/images/goodies/cliques/hydrangea.gif' aria-hidden='true' alt=''></a></p>",
     },
     {
       left: {
@@ -339,7 +334,7 @@ export default {
       right: "Siduri x Gilgamesh (FF7R)"
     },
     {
-      widget: "<a href='https://joroki.neocities.org/cliques'>this site is <img src='/assets/images/goodies/cliques/camp-cute.png' alt='cute'></a>",
+      custom: "<a href='https://joroki.neocities.org/cliques'>this site is <img class='inline-img' src='/assets/images/goodies/cliques/camp-cute.png' alt='cute'></a>",
     },
     {
       left: {
@@ -428,6 +423,19 @@ export default {
     {
       id: "type-master",
       custom: "<img src='/assets/images/goodies/cliques/dark.png'> I am a <span class='font-weight-bold'>dark</span> type <a href='https://seafare.neocities.org/cliques/'>master</a>! <img src='/assets/images/goodies/cliques/dark.png'>",
+    },
+    {
+      left: {
+        text: "support",
+        url: "https://reef.kingdra.net",
+      },
+      center: {
+        img: "splatoon.png",
+      },
+      right: "heavy splatling"
+    },
+    {
+      custom: "<link rel='stylesheet' href='https://reef.kingdra.net/problematic.css'><p><span class='problematic'><strike>un</strike>problematic blorbo <a href='https://reef.kingdra.net'>❥</a> <span class='blorbo'>Dr. Xeno</span></span></p>"
     }
   ],
 }

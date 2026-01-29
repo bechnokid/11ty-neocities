@@ -58,7 +58,7 @@ export default {
       {
         name: "Dr. STONE",
         items: [
-          { ship: "Xeno x Stanley", emoji: "❗", info: "Call me a square, but I hate smokers. The only way I'd ever ship these two is if Stanley gets over his chain-smoking habits and if the two had some remorse over their actions lmao. Otherwise, I love their dynamic." }
+          { ship: "Stanley x Dr. Xeno", emoji: "💖" }
         ]
       },
       {
@@ -140,6 +140,7 @@ export default {
         name: "Legend of Zelda",
         items: [
           { ship: "Link x Zelda (BotW/TotK)", emoji: "💖" },
+          "Sonia x Rauru",
           "Linebeck x Jolene",
           { ship: "Linebeck x Ganondorf", info: "I've seen people ship characters within the Smash Bros universe, and I had the idea to ship these two because of their affinity for treasure. I fell for these two HARD."},
         ]
@@ -223,6 +224,7 @@ export default {
     "Siduri (OC) x Gilgamesh *(Chocobo Tales)*",
     "Hisui Aoyama (OC) x Haganezuka *(Demon Slayer)*",
     "Kaybee (OC) x Whisper *(Yokai Watch)*",
-    "Dr. Vitamin (OC) x *Professor Membrane (Invader Zim)*",
+    "Dr. Vitamin (OC) x Professor Membrane *(Invader Zim)*",
+    "Jennifer (OC) + Giovanni *(Pokemon)*"
   ]
 }

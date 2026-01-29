@@ -3,7 +3,7 @@ title: 'Accessibility Statement'
 shortTitle: 'Accessibility'
 displayOrder: 1
 prism: true
-permalink: '/accessibility/index.html'
+permalink: 'accessibility/index.html'
 noScroll: true
 ---
 

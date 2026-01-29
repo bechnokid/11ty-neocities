@@ -3,7 +3,7 @@ title: 'Fangirling'
 summary: A page where I talk about preferences and experiences as a fan of the media I enjoy and consume.
 description: A page that describes myself as a fan of whatever media I consume.
 displayOrder: 5
-permalink: 'me/fan/index.html'
+permalink: 'personal/fan/index.html'
 ---
 ## Fan Behavior
 
@@ -103,13 +103,15 @@ You can click on ships with a dotted underline for commentary!
 
 ### OC x Canon
 
-I used to have a few fan OCs as a child that I would ship with my favorite characters until I discovered in 2004 the (hopefully) now-outdated concept of [Mary Sues](https://tvtropes.org/pmwiki/pmwiki.php/Main/MarySue) and how much of a faux pas to ship them with canon characters.
+I used to have a few fan OCs as a child that I would ship with my favorite characters until I discovered in 2004 the (hopefully) now-outdated concept of [Mary Sues](https://tvtropes.org/pmwiki/pmwiki.php/Main/MarySue) and how much of a faux pas it was to ship them with canon characters.
 
-It wasn't until probably 2019 when I actually decided to be a little bit more brave and explore the wonders of OCxCanon ships.
+It wasn't until probably 2019 when I actually decided to be a little bit more brave and re-discover the wonders of OCxCanon ships.
 
 I honestly have no control over the process of making characters to ship with my favorite characters. They're either an extension of me (like a self-insert), completely original characters, or refurbished OCs from my childhood. The process is pretty random!
 
 I plan on writing full descriptions for each OC x Canon ship I have, but for now, I offer a humble list.
+
+**Note:** "x" is for romantic ships, while "+" is for platonic ships!s
 
 <ul>{% for item in about.ships.ocxcanon %}<li>{{ item | markdownifyInline | safe }}</li>{% endfor %}</ul>
 

@@ -26,8 +26,8 @@ export default {
     prod: "/assets/images/favicon.ico",
     dev: "/assets/images/meat.png"
   },
-  updated: [ "Themes", "deviantART '06", "Games" ],
-  new: [ "Fangirling", "Starry Lullaby" ],
+  updated: [ 'Pocket Bishies', 'Quiz Results', 'Fangirling', 'Adopts', 'Links', "Pixel Clubs", "Other", "Anime" ],
+  new: [ ],
   emotes: [
     "angry",
     "calm",

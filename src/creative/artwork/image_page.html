@@ -1,0 +1,38 @@
+---
+pagination:
+  data: collections.artPages
+  size: 1
+  alias: picture
+layout: layouts/basic.html
+eleventyExcludeFromCollections: true
+eleventyComputed:
+  title: "{{ picture.title | safe }}"
+  imgDate: "{% if picture.date %}{{ picture.date }}{% endif %}"
+  permalink: "art/{{ picture.gallery | slugify }}/{{ picture.title | slugify }}/"
+  noScroll: "{{ picture.scroll != 'TRUE' }}"
+---
+{% macro artNav(img) %}
+  {% if img.prevImg %}
+    {% set artLink = img.prevImg | slugify %}
+    {% link "../" + artLink, "&lt;&lt;", { cls: 'button', alt: 'Go to previous image' } %}
+  {% endif %}
+  {% set artLink = img.gallery | slugify %}
+  {% link "/art/" + artLink + "/", "Index", { cls: 'button' } %}
+  {% if img.nextImg %}
+    {% set artLink = img.nextImg | slugify %}
+    {% link "../" + artLink, "&gt;&gt;", { cls: 'button', alt: 'Go to next image' } %}
+  {% endif %}
+{% endmacro %}
+<section class="d-flex flex-column flex-gap-3">
+	<div class='art-nav'>{{ artNav(picture) }}</div>
+  <div class='img-container d-flex flex-column justify-content-center'>
+    <img src="{{ picture.baseUrl + picture.filename }}" alt="{{ picture.altText }}"{% if picture.transcript %} aria-describedby="transcript"{% endif %}>
+  </div>
+  {% if picture.fullSize %}<a class="art-full-size" href="{{ picture.baseUrl + picture.filename }}">(Click for full size)</a>{% endif %}
+  <div class="art-desc">
+    {% artCaption picture.caption, { originalDate: picture.originalDate, originalCaption: picture.originalCaption, transcript: picture.transcript } %}
+  </div>
+  <div class='art-nav'>
+		{{ artNav(picture) }}
+	</div>
+</section>

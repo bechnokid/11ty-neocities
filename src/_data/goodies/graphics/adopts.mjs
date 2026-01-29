@@ -141,9 +141,19 @@ export default {
       cls: "align-items-baseline",
       items: [
         {
+          src: "gossharag.png",
+          alt: "Goss Harag from Monster Hunter Rise",
+          url: "https://www.deviantart.com/egg-nonamedummy/art/Monster-Hunter-Sprite-GossHarag-893389694"
+        },
+        {
           src: "auron2.gif",
           alt: "Auron as he appears in Kingdom Hearts II",
           url: "http://sweetskingdom.web.fc2.com/dot_icon/index.html"
+        },
+        {
+          src: "heru.gif",
+          alt: "A hercules beetle",
+          url: "http://www.anne-box.com/"
         },
         {
           src: "egghead.gif",
@@ -176,6 +186,21 @@ export default {
           url: "https://web.archive.org/web/20071231194352/http://tarakana.net/?page=toys",
         },
         {
+          src: "gloomcake.png",
+          alt: "A slice of Gloom Cake from Legend of Zelda: Tears of the Kingdom",
+          url: "https://cloudcover.neocities.org/digital/adopts"
+        },
+        {
+          src: "stuffed_pumpkin.png",
+          alt: "A serving of Meat-Stuffed Pumpkin from Legend of Zelda: Breath of the Wild",
+          url: "https://cloudcover.neocities.org/digital/adopts"
+        },
+        {
+          src: "heartsoup.png",
+          alt: "A bowl of Creamy Heart Soup from Legend of Zelda: Breath of the Wild",
+          url: "https://cloudcover.neocities.org/digital/adopts"
+        },
+        {
           src: 'lacroixhydrangea.gif',
           alt: 'A hydrangea plant in a La Croix can',
           url: 'https://www.lejlart.com/apple.html',
@@ -190,6 +215,11 @@ export default {
           src: "february.gif",
           alt: "A jar with a purple ribbon and two white marbles. The text below the jar reads, \"February\"",
           url: "https://web.archive.org/web/20120727084933/http://petal-tea.net/wordpress/"
+        },
+        {
+          src: "yarnfish_skein_pink.png",
+          alt: "A skein of pink yarn",
+          url: "https://yarnfish.neocities.org/toybox"
         },
         {
           src: "vash.gif",
@@ -212,6 +242,11 @@ export default {
           url: "http://www.sailorenergy.net/AnimeGIFs/TRSEIMGKawaiiAnimesS.html"
         },
         {
+          src: "magpiesprite.png",
+          alt: "A magpie",
+          url: "https://yogomagpie.neocities.org/souvenirs"
+        },
+        {
           src: "beelzebumon2.gif",
           alt: "Beelzemon from Digimon Tamers",
           url: "http://digistar.db-destiny.net/rpixels/index2.html"
@@ -231,6 +266,12 @@ export default {
           src: "bobateapeach.gif",
           alt: "A cup of pink peach-flavored boba tea",
           url: "https://www.jellyfishforest.com/duckyfeet/",
+        },
+        {
+          src: "monster_mango.gif",
+          alt: "A can of Mango Loco flavored Monster Juice",
+          url: "https://velvetmoth.neocities.org/",
+          freezeframe: true,
         },
         {
           src: "wee-strange.gif",
@@ -362,6 +403,7 @@ export default {
           src: "icecream_daniberry.gif",
           alt: "A bobbing ice cream cone",
           url: "https://web.archive.org/web/20100328111125/http://dani.pandasaur.com/",
+          freezeframe: true,
         },
         {
           src: "great-white.gif",

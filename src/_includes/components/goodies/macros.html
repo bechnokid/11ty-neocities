@@ -1,53 +1,49 @@
-{# graphicsBox params:
+{# graphics_box params:
   - title (str): title for gallery box
   - cls (str): class name for gallery box
   - slug (str, optional): slug for img path if different from arrCls
   - mine (bool): determines if collection has graphics I made or not
 #}
-{% macro graphicsBox(title, cls, slug, mine) %}
-  {% set arrSlug = slug or cls %}
-  {% set imgPath = "/assets/images/goodies/" + arrSlug + "/" %}
-  {% set subClsStr = 'justify-content-center flex-gap-1' %}
-  {% set subCls = (subClsStr + " freezeframe") if cls == "blinkies" else subClsStr %}
-  {% set boxTitle = (title or cls) | title %}
-  {% galleryBox { subTitle: boxTitle, cls: cls, subCls: subCls } %}
-    {% set goodiesArr = goodies.graphics[arrSlug]['mine'] if mine
-      else (goodies.graphics[arrSlug]['collected'] if (goodies.graphics[arrSlug]['collected'] | length) > 0 else goodies.graphics[arrSlug]) %}
-    {%- for item in goodiesArr %}
-      {% set itemSrc = imgPath + item.src %}
-      {% set itemOptions = { alt: item.alt, freezeframe: item.freezeframe, url: item.url } %}
-      <div>{% img itemSrc, itemOptions %}</div>
+{% macro graphics_box(title, cls, slug, mine) %}
+  {% set arr_slug = slug or cls %}
+  {% set img_path = "/assets/images/goodies/" + arr_slug + "/" %}
+  {% set sub_cls_str = 'justify-content-center flex-gap-1' %}
+  {% set sub_cls = (sub_cls_str + " freezeframe") if cls == "blinkies" else sub_cls_str %}
+  {% set box_title = (title or cls) | title %}
+  {% galleryBox { subtitle: box_title, cls: cls, subCls: sub_cls } %}
+    {% set goodies_arr = goodies.graphics[arr_slug]['mine'] if mine
+      else (goodies.graphics[arr_slug]['collected'] if (goodies.graphics[arr_slug]['collected'] | length) > 0 else goodies.graphics[arr_slug]) %}
+    {%- for item in goodies_arr %}
+      <div>{% img img_path + item.src, { alt: item.alt, freezeframe: item.freezeframe, url: item.url } %}</div>
     {% endfor %}
   {% endgalleryBox %}
 {% endmacro %}
 
-{% macro webBadges() %}
-  {{ graphicsBox(slug = 'web_badges', cls = 'web-badges', title = 'Web Badges') }}
+{% macro web_badges() %}
+  {{ graphics_box(slug = 'web_badges', cls = 'web-badges', title = 'Web Badges') }}
 {% endmacro %}
 
 {% macro buttons(mine = false) %}
-  {{ graphicsBox(slug = 'buttons', cls = 'btn-88x31', title = '88x31 Buttons', mine = mine) }}
+  {{ graphics_box(slug = 'buttons', cls = 'btn-88x31', title = '88x31 Buttons', mine = mine) }}
 {% endmacro %}
 
 {% macro blinkies(mine = false) %}
-  {{ graphicsBox(cls = 'blinkies', mine = mine) }}
+  {{ graphics_box(cls = 'blinkies', mine = mine) }}
 {% endmacro %}
 
 {% macro stamps(mine = false) %}
-  {{ graphicsBox(cls = 'stamps', mine = mine) }}
+  {{ graphics_box(cls = 'stamps', mine = mine) }}
 {% endmacro %}
 
 {% macro honeycomb(mine = false) %}
   {% set array = goodies.graphics.honeycomb.mine if mine else goodies.graphics.honeycomb.collected %}
-  {% set imgPath = "/assets/images/goodies/honeycomb/" %}
-  {% set honeyAlt = "Hexagonal stamp " %}
-  {% galleryBox { subTitle: "Honeycomb", cls: "honeycomb", subCls: 'justify-content-center' } %}
+  {% set img_path = "/assets/images/goodies/honeycomb/" %}
+  {% set honey_alt = "Hexagonal stamp " %}
+  {% galleryBox { subtitle: "Honeycomb", cls: "honeycomb", subCls: 'justify-content-center' } %}
     {%- for col in array | batch(6) %}
       <div class="comb-row d-flex w-100">
         {%- for stamp in col %}
-          {% set itemSrc = imgPath + stamp.src %}
-          {% set itemOptions = { alt: honeyAlt + stamp.alt, freezeframe: stamp.freezeframe, url: stamp.url } %}
-          <div>{% img itemSrc, itemOptions %}</div>
+          <div>{% img img_path + stamp.src, { alt: honey_alt + stamp.alt, freezeframe: stamp.freezeframe, url: stamp.url } %}</div>
         {% endfor %}
       </div>
     {% endfor %}

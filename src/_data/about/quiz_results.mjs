@@ -41,6 +41,11 @@ export default {
           url: "https://www.springhole.net/quizzes/dominant-element-quiz/",
         },
         {
+          src: "blacksmith.gif",
+          alt: "You are a resilient, hardy fellow. full of experience. The pedastal reads, \"The blacksmith gave me 'Worn Wanderer'. +10 strength, +10 dexterity.\"",
+          url: "https://mudflower.earth/blacksmith/",
+        },
+        {
           src: "pkmn_bozocorner.png",
           alt: "You are Normal Type",
           url: "https://bozocorner.com/pages/quizzes/what-pokemon-type-are-you.html",
@@ -92,6 +97,11 @@ export default {
           src: "geek_stargirl.png",
           alt: "Internet Geek. You are an extreme geek! You spend your days updating your site and surfing others. You get stressed out if you stay away from the Internet longer than a few hours.",
           url: "https://web.archive.org/web/20050208175852/http://star-girl.org/pages/quizzes/internetgeek/geekquiz.php",
+        },
+        {
+          src: "sweetrice.png",
+          alt: "You are sweet rice. You're so nice and pure. You're a lovely person and people love to be around you. Sometimes you're way too nice though...",
+          url: "https://rice.place/quiz.html",
         },
         {
           src: "magic-technique.png",

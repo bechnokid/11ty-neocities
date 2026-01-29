@@ -1,0 +1,26 @@
+---
+pagination:
+  data: collections.gallery
+  size: 1
+  alias: gallery
+layout: layouts/basic.html
+eleventyExcludeFromCollections: true
+noScroll: true
+eleventyComputed:
+  title: "{{ gallery.title }}"
+  summary: "{{ gallery.summary }}"
+  gallerySlug: "{{ (gallery.shortTitle or gallery.title) | slugify }}"
+  permalink: "art/{{ gallerySlug }}/"
+  imgPath: "/assets/images/art/{{ gallerySlug }}"
+---
+<div class="d-flex flex-column flex-gap-3">
+  <section class="gallery d-flex flex-wrap justify-content-center flex-gap-2">
+    {%- for artwork in art.galleries[gallerySlug] %}
+      <a href="/art/{{ gallerySlug }}/{{ artwork.title | slugify }}">
+        <img src="{{ imgPath }}/{{ artwork.filename }}" alt="{{ artwork.title }}" class="img-thumbnail">
+      </a>
+    {% endfor %}
+  </section>
+  {% set back_url = "/art" %}
+  {% include "partials/go-back.html" %}
+</div>

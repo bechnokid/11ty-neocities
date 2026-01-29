@@ -35,7 +35,7 @@
         <div class="teacup d-flex flex-column flex-gap-1">
           {% set options = { url: item.url, alt: item.alt, freezeframe: item.freezeframe } %}
           <div class="tea-img">{% img imgPath + "tea/" + item.src, options %}</div>
-          <details class="tea-taste sidebar text-xs text-center p-1 w-100">
+          <details class="tea-taste sidebar text-xs text-center py-1 px-2 w-100">
             <summary>Tastes like...</summary>
             {{ item.taste }}
           </details>

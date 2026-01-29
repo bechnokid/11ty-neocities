@@ -7,8 +7,10 @@ export default {
     { name: "Dr. Monica Simmons", series: "Digimon Story", src: "simmons.png" }
   ],
   other: [
+    { name: "Vash", series: "TRIGUN", src: "vash.png", },
     { name: "Auron", series: "Final Fantasy", src: "auron.png", },
     { name: "Gilgamesh", series: "Final Fantasy", src: "gilgamesh.png", },
+    { name: "Ryuko Matoi", series: "Kill la Kill", src: "ryuko.png", },
     { name: "Jonathan Joestar", series: "JoJo's Bizarre Adventure", src: "jonathan.png", },
     { name: "Captain Linebeck", series: "Legend of Zelda", src: "linebeck.png", },
     { name: "Sir Daniel Fortesque", series: "MediEvil", src: "sirdaniel.png", },

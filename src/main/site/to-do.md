@@ -1,7 +1,7 @@
 ---
 title: To-Do
 displayOrder: 4
-permalink: '/to-do/index.html'
+permalink: 'to-do/index.html'
 ---
 
 {% img "/assets/images/silly/no-plan.jpg", { cls: "to-do sidebar p-2 ms-md-3" } %}
@@ -23,19 +23,20 @@ With that being said, I figure I'd make a to-do list in case I run out of ideas 
 - [ ] Make *THE* webring {# Digimon #}
 - [ ] Shrines
   - [ ] 🔥🐟 {# Chi-yu #}
+  - [ ] 🧜‍♂️ {# Neptunemon #}
   - [ ] 🍖 {# MEAT #}
   - [ ] 👾🥚 {# Tamagotchi/Digimon #}
-- [ ] Make own assets for social media links
+  - [ ] 🚬✖️ {# Stanley x Dr. Xeno #}
+- [ ] Make/fix assets and pages
+  - [ ] Social media links
+  - [ ] Loading screen
+  - [ ] Redirect page
+  - [ ] Site preview
 - [ ] Fanlistings
   - [ ] 🧜‍♂️ {# Neptunemon #}
   - [ ] 🔥🐟 {# Chi-yu #}
   - [ ] 🐲⚔️ {# Monster Hunter #}
 - [ ] Join pixel cliques that I have saved in my bookmarks
-- [ ] Update image on redirect page to better match site
-- [ ] Fix OpenGraph image for site
-- [x] Page for fangirling
-  - [x] Characters like me
-  - [x] Favorites
-  - [x] OTPs
-  - [x] OC x canon
-- [x] Make more Status Cafe themes
+- [ ] Finish OC x Canon section
+- [ ] Make at least 3 Status Cafe themes (1/3 done)
+- [ ] Add Tumblr Scarves to Code Snippets

@@ -1,6 +1,7 @@
 @import "_reset.css";
 
 :root {
+  --img-link: url(/assets/images/link.svg);
   --base: #24273a;
   --mantle: #1e2030;
   --surface: #363a4f;
@@ -53,15 +54,11 @@ h3 a {
 a {
   color: var(--mauve);
   font-weight: bold;
-}
-
-a[href*="http"] {
-  text-decoration: none;
   border-bottom: 1px solid var(--mauve);
-}
 
-a[href*="http"]:hover {
-  border-bottom-color: transparent;
+  &:hover {
+    border-bottom-color: transparent;
+  }
 }
 
 a[href*="http"]::after {

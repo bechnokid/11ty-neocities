@@ -15,3 +15,4 @@ node_modules
 public
 dist
 src/assets/css/*-min.css
+src/_drafts

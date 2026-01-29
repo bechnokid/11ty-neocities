@@ -29,8 +29,14 @@
 
 .art-desc > ul {
   margin-left: 1rem;
+  margin-top: 1rem;
 }
 
-.art-desc > ul > li {
-  margin: .5rem 0;
+.art-full-size {
+  text-align: center;
+  border: 0 !important;
+
+  &:hover {
+    font-weight: bold;
+  }
 }

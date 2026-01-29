@@ -3,7 +3,7 @@ title: Pocket Bishies
 displayOrder: 5
 description: Pocket Bishies (bishounen and bishojo) that I managed to catch!
 summary: I'm pretty picky with anime, and even moreso with the characters I like! Regardless, here are the Pocket Bishonen and Pocket Bishojo I managed to catch!
-permalink: '/pocket_bishies/'
+permalink: 'goodies/pocket-bishies/'
 imgPath: '/assets/images/goodies/pocket_bishies/'
 noScroll: true
 ---
@@ -14,13 +14,13 @@ noScroll: true
 <div class="bishies-collection d-flex justify-content-center align-items-center flex-wrap">
   {%- for item in goodies.pocket_bishies.collected %}
     {% if item.type == 'shonen' %}
-      {% set bishieLink = 'http://pocketbishonen.com/main.html' %}
+      {% set bishie_link = 'http://pocketbishonen.com/main.html' %}
     {% elif item.type == 'shonen_old' %}
-      {% set bishieLink = 'https://web.archive.org/web/20010301084625/www.pocket-bishonen.com/' %}
+      {% set bishie_link = 'https://web.archive.org/web/20010301084625/www.pocket-bishonen.com/' %}
     {% elif item.type == 'shojo' %}
-      {% set bishieLink = 'https://pocket-bishoujo.com/index2.html' %}
+      {% set bishie_link = 'https://pocket-bishoujo.com/index2.html' %}
     {% endif %}
-    {% img imgPath + item.src, { url: bishieLink, alt: "I caught " + item.alt } %}
+    {% img imgPath + item.src, { url: bishie_link, alt: "I caught " + item.alt } %}
   {% endfor %}
 </div>
 <p class="text-xs">...yes, I remade all of the badges for consistency! ^^;</p>
@@ -45,8 +45,8 @@ noScroll: true
   <p>If you'd like to make your own badges (200x200px) of bishies for others to catch, here are the logos that you can save on your server!</p>
   <p>(They're only resized for the site. Right-clicking and saving will save the images in their original resolution!)</p>
   <div id="bishie-logos" class="d-flex justify-content-center flex-gap-3 p-3">
-    <img src="/assets/images/goodies/pocket_bishies/logo_bishonen.png" alt="Logo for Pocket Bishonen">
-    <img src="/assets/images/goodies/pocket_bishies/logo_bishoujo.png" alt="Logo for Pocket Bishoujo">
+    <img src="{{ imgPath }}logo_bishonen.png" alt="Logo for Pocket Bishonen">
+    <img src="{{ imgPath }}logo_bishoujo.png" alt="Logo for Pocket Bishoujo">
   </div>
 </section>
 <script>

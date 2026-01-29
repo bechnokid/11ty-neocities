@@ -6,9 +6,7 @@ permalink: "resources/status-cafe/themes/{{ page.fileSlug }}.html"
 {% set page_header_title = title %}
 {% set page_header_summary = summary | markdownifyInline | safe %}
 
-{% set copy_code %}
-  {% include "components/resources/status-cafe-themes/" + page.fileSlug + ".html" %}
-{% endset %}
+{% set copy_code %}{% include "components/resources/status-cafe-themes/" + page.fileSlug + ".html" %}{% endset %}
 
 {% block content %}
   <article class="status-cafe-theme">
@@ -17,8 +15,7 @@ permalink: "resources/status-cafe/themes/{{ page.fileSlug }}.html"
       <section class="preview">
     {% endif %}
       <button id="copy-btn" type="button">Copy code</button>
-      <iframe src="/resources/status-cafe/preview/{{ page.fileSlug }}.html" frameborder="0"></iframe>
-      <textarea class="copy-text d-none">{{ copy_code | safe }}</textarea>
+      <iframe src="/resources/status-cafe/preview/{{ page.fileSlug }}.html" frameborder="0"></iframe><textarea class="copy-text d-none">{{ copy_code | safe }}</textarea>
     {% if content %}
       </section>
       <section class="notes mt-3">

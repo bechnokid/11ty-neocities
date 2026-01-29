@@ -1,7 +1,7 @@
-const template =
+/*
     {
       name: "",
-      type: "",
+      type: "shonen or shoujo",
       img: "",
       imgAlt: "",
       questions: [
@@ -35,6 +35,7 @@ const template =
       ],
       answer: ["", "", ""],
     }
+*/
 export default {
   "Demon Slayer": [
     {
@@ -75,7 +76,7 @@ export default {
     },
     {
       name: "Shinobu Kocho",
-      type: "shojo",
+      type: "shoujo",
       img: "kny_shinobu.jpg",
       imgAlt: "Shinobu Kocho from Demon Slayer",
       questions: [
@@ -113,7 +114,7 @@ export default {
   "Digimon": [
     {
       name: 'Alphamon',
-      type: 'shojo',
+      type: 'shoujo',
       img: 'dgmn_alphamon.jpg',
       imgAlt: 'Alphamon from Digimon Story: Cyber Sleuth',
       questions: [
@@ -220,10 +221,84 @@ export default {
       answer: ["answer2", "answer4", "answer9"],
     }
   ],
+  "Dr. STONE": [
+    {
+      name: "Dr. Xeno",
+      type: "shonen",
+      img: "drstone_xeno.jpg",
+      imgAlt: "Dr. Xeno from Dr. STONE",
+      questions: [
+        {
+          id: "catchphrase",
+          text: "What is a word Dr. Xeno usually says?",
+          options: [
+            { label: "Marvelous", val: "answer1" },
+            { label: "Elegant", val: "answer2" },
+            { label: "Exquisite", val: "answer3" },
+          ],
+        },
+        {
+          id: "job",
+          text: "Where did Dr. Xeno formerly work?",
+          options: [
+            { label: "NASA", val: "answer4" },
+            { label: "Smithsonian Institution", val: "answer5" },
+            { label: "Harvard University", val: "answer6" },
+          ],
+        },
+        {
+          id: "food",
+          text: "What is Dr. Xeno's favorite food?",
+          options: [
+            { label: "Burritos", val: "answer7" },
+            { label: "Burgers", val: "answer8" },
+            { label: "Hot dogs", val: "answer9" },
+          ],
+        },
+      ],
+      answer: ["answer2", "answer4", "answer8"],
+    },
+    {
+      name: "Stanley Snyder",
+      type: "shonen",
+      img: "drstone_stanley.jpg",
+      imgAlt: "Stanley Snyder from Dr. STONE",
+      questions: [
+        {
+          id: "inspiration",
+          text: "What did Stanley usually have in his mouth as a child?",
+          options: [
+            { label: "Twig", val: "answer1" },
+            { label: "Toothpick", val: "answer2" },
+            { label: "Lollipop", val: "answer3" },
+          ],
+        },
+        {
+          id: "food",
+          text: "What is Stanley's favorite food?",
+          options: [
+            { label: "Burritos", val: "answer4" },
+            { label: "Burgers", val: "answer5" },
+            { label: "Hot dogs", val: "answer6" },
+          ],
+        },
+        {
+          id: "nickname",
+          text: "What is Dr. Xeno's nickname for Stanley?",
+          options: [
+            { label: "None. He just calls him Stanley", val: "answer7" },
+            { label: "S.", val: "answer8" },
+            { label: "Stan", val: "answer9" },
+          ],
+        },
+      ],
+      answer: ["answer3", "answer4", "answer9"],
+    }
+  ],
   "Final Fantasy": [
     {
       name: "Gilgamesh (FFV)",
-      type: "bishonen",
+      type: "shonen",
       images: [
         { img: "ff_gilgamesh_ff7.jpg", imgAlt: "Gilgamesh from Final Fantasy VII Rebirth" },
         { img: "ff_gilgamesh_dissidia.jpg", imgAlt: "Gilgamesh from Final Fantasy Dissidia" }
@@ -373,7 +448,7 @@ export default {
   "Pokemon": [
     {
       name: "Cynthia",
-      type: "shojo",
+      type: "shoujo",
       img: "pkmn_cynthia.jpg",
       imgAlt: "Cynthia from Pokemon Diamond and Pearl",
       questions: [
@@ -409,7 +484,7 @@ export default {
     },
     {
       name: "Grimsley",
-      type: "bishonen",
+      type: "shonen",
       img: "pkmn_grimsley.jpg",
       imgAlt: "Grimsley from Pokemon Black and White",
       questions: [
@@ -445,7 +520,7 @@ export default {
     },
     {
       name: "Guzma",
-      type: "bishonen",
+      type: "shonen",
       img: "pkmn_guzma.jpg",
       imgAlt: "Guzma from Pokemon Sun and Moon",
       questions: [
@@ -483,7 +558,7 @@ export default {
   "Re:CREATORS": [
     {
       name: "Military Uniform Princess",
-      type: "shojo",
+      type: "shoujo",
       img: "rec_gunpukuhime.jpg",
       imgAlt: "the Military Uniform Princess from Re:CREATORS",
       questions: [

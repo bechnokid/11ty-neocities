@@ -4,7 +4,7 @@ export default {
     { src: "beelzemon.gif", alt: "A purple bottle cap with Beelzemon's sprite by tortoisehel", freezeframe: true },
     { src: "neptunemon.gif", alt: "A blue bottle cap with Neptunemon's sprite by phrogmentado", freezeframe: true },
     { src: "venusmon.gif", alt: "A yellow bottle cap with Venusmon's sprite by phrogmentado", freezeframe: true },
-    { src: "steak.png", alt: "A beige bottle cap of a Well-Done Steak from Monster Hunter. The text says \"So tasty!\"" },
+    { src: "steak.gif", alt: "A beige bottle cap of a Well-Done Steak from Monster Hunter. The text says \"So tasty!\"" },
     { src: "computerguts-gay_sheher.png", alt: "A magenta bottle cap that says \"she her\"", url: "https://computerguts.gay/graphics" },
     { src: "averageshrimp.png", alt: "A light green bottle cap with a tabby cat and text that says \"Average Shrimp\"", url: "https://averageshrimp.neocities.org/" },
     { src: "miserabledolly-net_cd.png", alt: "A grey bottle cap with a CD printed on it", url: "https://miserabledolly.net/bottlecaps" },
@@ -78,18 +78,75 @@ export default {
     ]
   },
   tea: [
-    { src: "bechnokid_steak.png", alt: "An orange cup with a pattern based on a Felyne from the Monster Hunter games. There is a Well-Done Steak in the tea cup.", taste: "a Well-Done Steak. Mmm...so tasty!" },
-    { src: "lostletters.png", alt: "A blue cup shaped like an onsen with an octopus bathing in it.", url: "https://lostletters.neocities.org/afternoontea/", taste: "salt water" },
-    { src: "floral-tears.png", alt: "A creme-colored cup with a leaf pattern. It has two scoops of mint chocolate chip ice cream in it", url: "https://floral-tears.neocities.org/adoptables", taste: "mint tea with a hint of chocolate. Definitely not ice cream at all" },
-    { src: "sleepymoss.gif", alt: "A pink cup with a white polka-dot pattern. It is surrounded by sparkles and some clovers in it.", url: "https://sleepymoss.neocities.org", taste: "sweet strawberries and matcha", freezeframe: true },
-    { src: "sakuradreams.gif", alt: "A white cup with a red ribbon. Perched inside the cup is a black cat.", url: "https://sakuradreams.neocities.org", taste: "freshly baked bread", freezeframe: true },
-    { src: "mouthsweets.png", alt: "A pink and mint colored tea cup with a ribbon wrapped around its handle", url: "https://mouthsweets.neocities.org/", taste: "fresh garden flowers" },
-    { src: "artwork.gif", alt: "A pink and blue star-patterned tea cup with Korilakkuma and Rilakkuma sitting in it", url: "https://artwork.neocities.org/cliques", taste: "mixed berries" },
-    { src: "bloopywoopy.png", alt: "A blue cup with a smiling face perched on top of a cloud. It is topped with whipped cream with chocolate syrup and two candies shaped like a rainbow and heart on top.", url: "https://bloopywoopy.neocities.org/cool-stuff/collections/", taste: "chocolate, whipped cream, and marshmallows" },
-    { src: "fizzsea.png", alt: "A blue tea cup with a magenta stripe. It is dripping a black substance with magenta and blue circles and squares", url: "https://fizzsea.neocities.org/extra/collection", taste: "bit-crushed sugar" },
-    { src: "mostlypixels.gif", url: "https://mostlypixels.com/pixelclubs/", alt: "A cup with a bee pattern. Behind it are some leaves, and some bees are flying above the cup", taste: 'honey', freezeframe: true },
-    { src: "starfighter.png", alt: "A rainbow-gradient tea-cup with a large dollop of whipped cream on top with a red and white-striped straw sticking out", url: "https://starfighter.neocities.org/pixl", taste: "a rainbow shake" },
-    { src: "themby.gif", alt: "A tea cup that contains the night sky with a comet occassionally flying through the sky", url: "http://themby.neocities.org/", taste: "stardust", freezeframe: true }
+    {
+      src: "bechnokid_steak.png",
+      alt: "An orange cup with a pattern based on a Felyne from the Monster Hunter games. There is a Well-Done Steak in the tea cup.",
+      taste: "a Well-Done Steak. Mmm...so tasty!"
+    },
+    {
+      src: "lostletters.png",
+      alt: "A blue cup shaped like an onsen with an octopus bathing in it.", url: "https://lostletters.neocities.org/afternoontea/",
+      taste: "salt water"
+    },
+    {
+      src: "cloudcover.png",
+      alt: "A pastel blue cup with a rainbow painted on it. Inside the cup is a pink seal with sparkles surrounding it.",
+      taste: "iced coffee with mint and brown sugar"
+    },
+    {
+      src: "floral-tears.png",
+      alt: "A creme-colored cup with a leaf pattern. It has two scoops of mint chocolate chip ice cream in it", url: "https://floral-tears.neocities.org/adoptables",
+      taste: "mint tea with a hint of chocolate. Definitely not ice cream at all"
+    },
+    {
+      src: "sleepymoss.gif",
+      alt: "A pink cup with a white polka-dot pattern. It is surrounded by sparkles and some clovers in it.", url: "https://sleepymoss.neocities.org",
+      taste: "sweet strawberries and matcha",
+      freezeframe: true
+    },
+    {
+      src: "sakuradreams.gif",
+      alt: "A white cup with a red ribbon. Perched inside the cup is a black cat.", url: "https://sakuradreams.neocities.org",
+      taste: "freshly baked bread",
+      freezeframe: true
+    },
+    {
+      src: "mouthsweets.png",
+      alt: "A pink and mint colored tea cup with a ribbon wrapped around its handle", url: "https://mouthsweets.neocities.org/",
+      taste: "fresh garden flowers"
+    },
+    {
+      src: "artwork.gif",
+      alt: "A pink and blue star-patterned tea cup with Korilakkuma and Rilakkuma sitting in it", url: "https://artwork.neocities.org/cliques",
+      taste: "mixed berries"
+    },
+    {
+      src: "bloopywoopy.png",
+      alt: "A blue cup with a smiling face perched on top of a cloud. It is topped with whipped cream with chocolate syrup and two candies shaped like a rainbow and heart on top.", url: "https://bloopywoopy.neocities.org/cool-stuff/collections/",
+      taste: "chocolate, whipped cream, and marshmallows"
+    },
+    {
+      src: "fizzsea.png",
+      alt: "A blue tea cup with a magenta stripe. It is dripping a black substance with magenta and blue circles and squares", url: "https://fizzsea.neocities.org/extra/collection",
+      taste: "bit-crushed sugar"
+    },
+    {
+      src: "mostlypixels.gif", url: "https://mostlypixels.com/pixelclubs/",
+      alt: "A cup with a bee pattern. Behind it are some leaves, and some bees are flying above the cup",
+      taste: 'honey',
+      freezeframe: true
+    },
+    {
+      src: "starfighter.png",
+      alt: "A rainbow-gradient tea-cup with a large dollop of whipped cream on top with a red and white-striped straw sticking out", url: "https://starfighter.neocities.org/pixl",
+      taste: "a rainbow shake"
+    },
+    {
+      src: "themby.gif",
+      alt: "A tea cup that contains the night sky with a comet occassionally flying through the sky", url: "http://themby.neocities.org/",
+      taste: "stardust",
+      freezeframe: true
+    }
   ],
   yys: {
     mine: [
@@ -111,23 +168,108 @@ export default {
     ]
   },
   cdw: [
-    { src: "bechnokid_onemoretime.png", alt: "Britney Spear's \"...Baby One More Time\"", playlist: "https://youtube.com/playlist?list=OLAK5uy_kSwJwbDKMMgruIaQ585WXWclKbaI2DmX8&si=2StyxYeMoXVdDyyI" },
-    { src: "pklucky_cycleofremorse.png", alt: "the \"Cycle of Remorse Mood Mix [2023]\" by PK Lucky", url: "https://pklucky.neocities.org", playlist: "https://www.youtube.com/playlist?list=PLSpUyxMrwKqMDO_hmS7IgppY4l2Z3D1A6" },
-    { src: "finny_90sgirlrock.png", alt: "\"Finny's 90's Girl Rock Volume 1 [2023]\" by the human finny", url: "https://humanfinny.neocities.org", playlist: "https://www.youtube.com/playlist?list=PLVHUFWHuSE_JdeRh4tGL6KepNbvV_YMnu" },
-    { src: "tubedfruit_90spunk.jpg", alt: "\"TubedFruit's AZ 90s Hardcore Punk Mix [2023]\" by TubedFruit", url: "https://toothachesplinter.neocities.org", playlist: "https://www.youtube.com/playlist?list=PLIBqbVUh0UvgsR_ImP6g5S5CRx7k70nPi" }
+    {
+      src: "bechnokid_onemoretime.png",
+      alt: "Britney Spear's \"...Baby One More Time\"",
+      playlist: "https://youtube.com/playlist?list=OLAK5uy_kSwJwbDKMMgruIaQ585WXWclKbaI2DmX8&si=2StyxYeMoXVdDyyI"
+    },
+    {
+      src: "cloudcover_happyhardcore.png",
+      alt: "the \"Best of Happy Hardcore\" by Cloud Cover", url: "https://cloudcover.neocities.org/digital/fan",
+      playlist: "https://www.youtube.com/playlist?list=PLjKsR7qEFZMNaDn-hvx2D1Q0d8dcvssOe"
+    },
+    {
+      src: "pklucky_cycleofremorse.png",
+      alt: "the \"Cycle of Remorse Mood Mix [2023]\" by PK Lucky", url: "https://pklucky.neocities.org",
+      playlist: "https://www.youtube.com/playlist?list=PLSpUyxMrwKqMDO_hmS7IgppY4l2Z3D1A6"
+    },
+    {
+      src: "finny_90sgirlrock.png",
+      alt: "\"Finny's 90's Girl Rock Volume 1 [2023]\" by the human finny", url: "https://humanfinny.neocities.org",
+      playlist: "https://www.youtube.com/playlist?list=PLVHUFWHuSE_JdeRh4tGL6KepNbvV_YMnu"
+    },
+    {
+      src: "tubedfruit_90spunk.jpg",
+      alt: "\"TubedFruit's AZ 90s Hardcore Punk Mix [2023]\" by TubedFruit", url: "https://toothachesplinter.neocities.org",
+      playlist: "https://www.youtube.com/playlist?list=PLIBqbVUh0UvgsR_ImP6g5S5CRx7k70nPi"
+    },
   ],
   fzv: [
-    { src: "bk_felyne.png", alt: "A green and yellow can that has a Felyne and a Potion from Monster Hunter" },
-    { src: "fizzsea.png", url: "https://fizzsea.neocities.org/", alt: "An orange Ramune glass bottle with the logo fizzsea printed on it. Sitting next to it is half of an  orange with a smile on its face." },
-    { src: "bloopywoopy.png", url: "https://bloopywoopy.neocities.org/cool-stuff/collections/", alt: "A bottle of water with a label that reads, \"Water\"" },
-    { src: "flowercentral.png", url: "https://flowercentral.art/", alt: "A bottle of peach-colored Sunkist." },
-    { src: "insqueeration.webp", url: "https://insqueeration.neocities.org/pixels", alt: "A transparent can of a rainbow-colored drink" },
-    { src: "percevalprintpress.png", url: "https://percevalprintpress.neocities.org/", alt: "A bottle of glue with a label that reads, \"Paste\"" },
-    { src: "spaceshanty.png", url: "https://thespaceshanty.neocities.org/Cliques/", alt: "A bottle of a purple-colored drink with a green label" },
-    { src: "artwork.png", url: "https://artwork.neocities.org/cliques", alt: "A milk carton that looks like Korilakkuma with text that reads \"strawberry o'lait\" in Japanese." },
-    { src: "button0z.png", url: "https://butt0n-z.neocities.org/funthings", alt: "A can that says \"Hi-C Ectocooler\" based on the drink of the same name based on Ghostbusters" },
-    { src: "grlrot.gif", url: "https://grlrot.neocities.org/", alt: "A heart-shaped potion with pink liquid", freezeframe: true },
-    { src: "furbisms.gif", url: "https://furbisms.neocities.org/clix", alt: "A sparkly purple drink with a heart as the logo", freezeframe: true }
+    {
+      src: "bk_felyne.png",
+      alt: "A green and yellow can that has a Felyne and a Potion from Monster Hunter"
+    },
+    {
+      src: "fizzsea.png",
+      url: "https://fizzsea.net/",
+      alt: "An orange Ramune glass bottle with the logo fizzsea printed on it. Sitting next to it is half of an orange with a smile on its face.",
+      taste: "lemonade but pink!",
+    },
+    {
+      src: "cloudcover.png",
+      url: "https://cloudcover.neocities.org/digital/fan",
+      alt: "A bottle with a purple cap and label. Inside is soda that contains several berries and slices of lime.",
+      taste: "fresh berries, limes, and summer",
+    },
+    {
+      src: "joroki.png",
+      url: "https://joroki.neocities.org/",
+      alt: "A slim can with a turquoise label and a lychee printed on it. The text reads, \"Lychee Pop\".",
+      taste: "like lychee and is super caffeinated",
+    },
+    {
+      src: "bloopywoopy.png",
+      url: "https://bloopywoopy.neocities.org/cool-stuff/collections/",
+      alt: "A bottle of water with a label that reads, \"Water\"",
+      taste: "just regular normal water",
+    },
+    {
+      src: "flowercentral.png",
+      url: "https://flowercentral.art/",
+      alt: "A bottle of peach-colored Sunkist.",
+      taste: "orange, so the packaging is deceptive"
+    },
+    {
+      src: "insqueeration.webp",
+      url: "https://insqueeration.neocities.org/pixels",
+      alt: "A transparent can of a rainbow-colored drink",
+      taste: "sparkling Skittles",
+    },
+    {
+      src: "percevalprintpress.png",
+      url: "https://percevalprintpress.neocities.org/",
+      alt: "A bottle of glue with a label that reads, \"Paste\"",
+      taste: "month old unrefridgerated book paste -archival quality-"
+    },
+    {
+      src: "spaceshanty.png",
+      url: "https://thespaceshanty.neocities.org/Cliques/",
+      alt: "A bottle of a purple-colored drink with a green label",
+      taste: "battery acid and sugar",
+    },
+    {
+      src: "artwork.png",
+      url: "https://artwork.neocities.org/cliques",
+      alt: "A milk carton that looks like Korilakkuma with text that reads \"strawberry o'lait\" in Japanese."
+    },
+    {
+      src: "button0z.png",
+      url: "https://butt0n-z.neocities.org/funthings",
+      alt: "A can that says \"Hi-C Ectocooler\" based on the drink of the same name based on Ghostbusters",
+      taste: "citrus. A nostalgic drink for your ghostly pals!"
+    },
+    {
+      src: "grlrot.gif",
+      url: "https://grlrot.neocities.org/",
+      alt: "A heart-shaped potion with pink liquid",
+      freezeframe: true
+    },
+    {
+      src: "furbisms.gif",
+      url: "https://furbisms.neocities.org/clix",
+      alt: "A sparkly purple drink with a heart as the logo",
+      freezeframe: true
+    }
   ],
   jarjam: [
     {

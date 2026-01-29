@@ -2,7 +2,7 @@
 title: Sitemap
 summary: Lost? Hopefully, this sitemap will help you navigate to where you want to go!
 displayOrder: 5
-permalink: '/sitemap/index.html'
+permalink: 'sitemap/index.html'
 ---
 {% macro collectionList(section, name = null) %}
 
@@ -37,7 +37,7 @@ permalink: '/sitemap/index.html'
 {% endmacro %}
 
 {{ collectionList('main') }}
-{{ collectionList('content') }}
+{{ collectionList('creative') }}
 {{ collectionList('resources') }}
 {{ collectionList('fun') }}
 {{ collectionList('outgoing') }}

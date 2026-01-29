@@ -5,12 +5,12 @@ const icon = function (value, options = {}) {
   if (value == 'meat') {
     const iconAlt = (options.alt) ? ` alt="${options.alt}"` : '';
     if (options.cls) iconCls = ` class='${options.cls}'`;
-    return `<img src='/assets/images/meat.png'${iconAlt}${iconCls}>`;
+    return `<img src='/assets/images/meat.png'${iconAlt + iconCls}>`;
   } else if (value == 'new' || value == "updated") {
     return `<img src='/assets/images/${value}.gif' alt='${value[0].toUpperCase() + value.substring(1)}'>`;
   } else {
     if (options.cls) iconCls = ` ${options.cls}`;
-    return `<i class='ft-${value}${iconCls}'></i>`
+    return `<i class='ft-${value + iconCls}'></i>`
   }
 }
 
@@ -35,7 +35,7 @@ const link = function (url, content, options = {}) {
     return `[${content}](${url})${linkCls}`
   } else {
     if (options.cls) linkCls = ` class='${options.cls}'`;
-    return `<a href='${url}'${linkCls}${desc}${alt}>${content}</a>`;
+    return `<a href='${url}'${linkCls + desc + alt}>${content}</a>`;
   }
 }
 
@@ -67,7 +67,9 @@ const img = function(src, options = {}) {
     if (options.cls) clsArr.push(options.cls.split(' '));
     if (clsArr.length > 0) imgCls = ` class='${clsArr.flat().join(' ')}'`
 
-    resultString = `<img src='${src}' alt="${imgAlt}"${imgCls}${ariaStr}>`;
+    const imgWidth = options.width ? ` width=${options.width}px` : "";
+    const imgHeight = options.height ? ` height=${options.height}px` : "";
+    resultString = `<img src='${src}' alt="${imgAlt}"${imgCls + ariaStr + imgWidth +  imgHeight}>`;
     if (options.url) {
       const urlCls = (options.urlCls) ? ` class='${options.urlCls}'` : '';
       const urlId = (options.urlId) ? ` id='${options.urlId}'` : '';
@@ -98,7 +100,7 @@ const artCaption = function(caption, params = {}){
   const ogCaption = params.originalCaption ? `<blockquote class='mb-4'>${markdownLib.renderInline(params.originalCaption.replaceAll("\\n", "\n").trim())}</blockquote>` : '';
   const transcript =  params.transcript ? `<details id='transcript'><summary class='h3 text-primary'>Transcript</summary><p class='my-1 ms-4'>${markdownLib.renderInline(params.transcript.replaceAll("\\n", "\n").trim())}</p></details>` : '';
   const cap = caption ? markdownLib.renderInline(caption.replaceAll("\\n", "\n").trim()) : '';
-  return `${ogDate}${ogCaption} ${cap}${transcript}`;
+  return `${ogDate + ogCaption} ${cap + transcript}`;
 }
 
 module.exports = {

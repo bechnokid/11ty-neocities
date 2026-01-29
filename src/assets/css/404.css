@@ -1,5 +1,18 @@
 @import "_reset.css";
 
+@font-face {
+  font-family: 'Dyslexic';
+  src: url(/assets/fonts/OpenDyslexic-Regular.otf)
+}
+
+:root {
+    --bg-sidebar: #fffffe;
+    --text-body: #0e172c;
+    --text-primary: #a50e5a;
+    --text-secondary: #7122aa;
+    --text-link: var(--text-secondary);
+}
+
 body {
   color: var(--text-body);
   background: var(--bg-sidebar);

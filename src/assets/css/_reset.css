@@ -1,78 +1,6 @@
 @import "_bootstrap-grid.css";
 @import "_feather.min.css";
 
-@font-face {
-  font-family: 'Dyslexic';
-  src: url(/assets/fonts/OpenDyslexic-Regular.otf)
-}
-
-:root {
-  --body-height: 480px;
-  --img-link: url(/assets/images/link.svg);
-  --img-cursor: url(/assets/images/cursor.png);
-  --img-cursor-point: url(/assets/images/cursor_point.png);
-}
-
-[data-theme="light"] {
-  --img-bg: url(/assets/images/bg.jpg);
-  --img-header: -0 -0;
-  --bg-body: #fff0f3;
-  --bg-button: var(--bg-footer);
-  --bg-code: var(--bg-footer);
-  --bg-footer: #fccdd7;
-  --bg-heading: var(--bg-footer);
-  --bg-img-color: #DE9DB1;
-  --bg-overlay: #de9db1cc;
-  --bg-primary: #e48aa7;
-  --bg-secondary: #f6e6f6;
-  --bg-selection: #a50e5a;
-  --bg-sidebar: #fffffe;
-  --border-body: var(--bg-body);
-  --border-sidebar: var(--bg-primary);
-  --scroll-bg: var(--bg-footer);
-  --scroll-tab: var(--bg-primary);
-  --text-body: #0e172c;
-  --text-button: var(--text-primary);
-  --text-muted: #805f6f;
-  --text-primary: #a50e5a;
-  --text-secondary: #7122aa;
-  --text-link: var(--text-secondary);
-  --text-link-visited: #933773;
-  --text-shadow: #a50e5a6c;
-  --text-selection: #fffffe;
-  --line-color: var(--bg-primary);
-  --svg-color: brightness(0) saturate(100%) invert(15%) sepia(73%) saturate(7437%) hue-rotate(276deg) brightness(72%) contrast(85%);
-}
-
-[data-theme="dark"] {
-  --img-bg: url(/assets/images/bg_dark.jpg);
-  --img-header: -0 -150px;
-  --bg-img-color: #391b3d;
-  --bg-overlay: #391b3dcc;
-  --bg-primary: #28162b;
-  --bg-secondary: #9f6a83;
-  --bg-body: #47284D;
-  --bg-sidebar: var(--bg-footer);
-  --bg-footer: #2f1933;
-  --bg-heading: #180c1a;
-  --bg-code: var(--bg-footer);
-  --bg-selection: #fffffe;
-  --border-body: var(--bg-body);
-  --border-sidebar: var(--bg-heading);
-  --scroll-bg: var(--bg-heading);
-  --scroll-tab: var(--bg-body);
-  --text-body: #fffffe;
-  --text-muted: #805f6f;
-  --text-primary: var(--text-body);
-  --text-secondary: var(--text-body);
-  --text-link: #ffaada;
-  --text-link-visited: #b68ae5;
-  --text-shadow: #FDCDD96c;
-  --text-selection: #28162b;
-  --line-color: var(--text-link);
-  --svg-color: brightness(0) saturate(100%) invert(72%) sepia(77%) saturate(1588%) hue-rotate(288deg) brightness(103%) contrast(101%);
-}
-
 *,
 *::before,
 *::after {
@@ -89,14 +17,6 @@
   html {
     interpolate-size: allow-keywords;
   }
-}
-
-[data-theme="dark"] .black-text {
-  filter: brightness(0) saturate(100%) invert(98%) sepia(0%) saturate(1%) hue-rotate(118deg) brightness(110%) contrast(101%);
-}
-
-[data-theme="dark"] .outline {
-  filter: drop-shadow(1px 0 0 #fff) drop-shadow(0 1px 0 #fff) drop-shadow(-1px 0 0 #fff) drop-shadow(0 -1px 0 #fff)
 }
 
 html,
