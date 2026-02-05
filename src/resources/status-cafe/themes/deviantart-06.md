@@ -79,7 +79,7 @@ USERNAME_SYMBOL
   : matches the symbol chosen in the banner
 
 SIGNATURE (optional)
-  : similar to forum signatures. Unfortunately, due to the limitations of pseudo classes, this can only be in plain text, and no HTML can be used. You can remove signatures by deleting the `&:after`{.language-css} block in the `.status-content`{.language-css} block.
+  : similar to forum signatures. Unfortunately, due to the limitations of pseudo classes, this can only be in plain text, and no HTML can be used. You can remove signatures by deleting the `&:after` block in the `.status-content` block.
 
 ## Credits
 

@@ -130,6 +130,7 @@ img {
 
     & img {
       width: 125px;
+      image-rendering: optimizequality;
       animation: becDefault 2s steps(2) 0.5s infinite;
     }
 

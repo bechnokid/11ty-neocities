@@ -1,100 +1,9 @@
 ---
-title: Code Snippets
-summary: Snippets you can use for your own site!
-description: Snippets that can be used on your site.
-displayOrder: 1
-prism: true
-redirectFrom: [/resources/code_snippets]
-tags:
-  - resources
-  - nav
+jsRequired: true
+description: Based on a script from [Kerixa Inc.](https://www.javascriptfreecode.com/36.htm), I made an attempt to shorten the code, replace any outdated parts, and also add CSS classes for easier styling.
 ---
 <section>
-  <h2>"Old-Fashioned" Marquee with Pure CSS</h2>
-  <p>I remembered how marquees used to move in a more "choppy" manner before they officially became "deprecated". If you want your sites to really have the Y2K aesthetic, choppy marquees are the way to go, in my opinion!</p>
-
-  <section>
-    <h3 class="underline">Example</h3>
-    <div class="marquee-container sidebar mb-2 p-2">
-      <div class="marquee-content">
-        {% for i in range(0, 11) %}
-          {% img "https://placehold.co/88x31", { alt: "Placeholder 88x31 button" } %}
-        {% endfor %}
-      </div>
-    </div>
-
-    <h3 class="underline">HTML</h3>
-{% renderTemplate "md" %}
-```html
-<div class="marquee-container">
-  <div class="marquee-content">
-    <img src="[IMAGE_PATH]" alt="[IMAGE_ALT_TEXT]">
-    <img src="[IMAGE_PATH]" alt="[IMAGE_ALT_TEXT]">
-    <img src="[IMAGE_PATH]" alt="[IMAGE_ALT_TEXT]">
-  </div>
-</div>
-```
-{% endrenderTemplate %}
-  </section>
-
-  <section>
-    <h3 class="underline">CSS</h3>
-{% details { title: "(Click to show/hide code)", summaryCls: "details h4" } %}
-{% renderTemplate "md" %}
-```css/
-@keyframes marquee {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-150%); }
-}
-
-.marquee-container {
-  overflow: hidden;
-  white-space: nowrap;
-  width: 100%;
-}
-
-.marquee-content {
-  display: inline-flex;
-  gap: .5rem;
-  animation: marquee 30s steps(400, end) infinite;
-}
-
-.marquee-content:hover {
-  animation-play-state: paused;
-}
-
-.marquee-content img {
-  vertical-align: middle;
-}
-```
-{% endrenderTemplate %}
-{% enddetails %}
-  </section>
-
-  <h3 class="underline">Notes</h3>
-
-{% renderTemplate "md" %}
-- **Lines 2-3**: t`translateX`{.language-css} values ensure that all items in the example "disappear" before cycling through again. These numbers can change depending on how wide the marquee will be and how many items will be in it. Feel free to experiment!
-  - For the marquee to scroll from left to right (as opposed to right to left in the example), reverse the numbers. (change 100% to -150%, and change -150% to 100%)
-- **Line 9**: this width can be any number. I just chose 100% so that it would span the width of this page.
-- **Line 14**: `gap`{.language-css} can only be used by flex boxes, and it gives some space between flex elements. This is optional and can be removed.
-- **Line 15**: `30s`{.language-css} can be changed to have the following effects:
-  - Lower number = faster scrolling
-  - Higher number = slower scrolling
-- **Line 15**: 400 in `steps()`{.language-css} can be changed to have the following effects:
-  - Lower number = choppier movement
-  - Higher number = smoother movement
-- **Lines 18-20**: Causes the marquee to pause at the user's cursor position when hovered over. This is optional and can be removed.
-{% endrenderTemplate %}
-</section>
-
-<section class="js-required">
-  <h2 id="calendar">Calendar</h2>
-  <p><b>Note:</b> Requires Javascript.</p>
-  <p>Based on the script from <a href="https://www.javascriptfreecode.com/36.htm">Kerixa Inc.</a>, I made an attempt to shorten the code, replace outdated parts, and add CSS classes for easier styling.</p>
-
-  <section>
-    <h3 class="underline">Example</h3>
+  <h3 class="underline">Example</h3>
 {% codeDemo 'Calendar widget demo', height = "175" %}
 
 ```html
@@ -186,13 +95,13 @@ for (let i = 0; i < dayNamesData.length; i++) {
 }
 
 let calendar = `
-<table>
+  <table>
   <thead>
     <tr class='month'><td colspan="7">${monthData[thisMonth].name} ${thisYear}</td></tr>
     <tr class='days'>${daysContent.join('')}</tr>
   </thead>
   <tbody>${tableContent.join('')}</tbody>
-</table>
+  </table>
 `;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -201,20 +110,20 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 ```
 {% endcodeDemo %}
-  </section>
+</section>
 
-  <section>
-    <h3 class="underline">HTML</h3>
+<section>
+  <h3 class="underline">HTML</h3>
 {% renderTemplate "md" %}
 ```html
 <div id="widget-calendar"></div>
 ```
 {% endrenderTemplate %}
 <p>That's it, really!</p>
-  </section>
-  <section>
-    <h3 class="underline">CSS</h3>
-      <p>You can check the CSS below to see which classes you can style.</p>
+</section>
+<section>
+  <h3 class="underline">CSS</h3>
+    <p>You can check the CSS below to see which classes you can style.</p>
 {% details { title: "(Click to show/hide code)", summaryCls: "details h4" } %}
 {% renderTemplate "md" %}
 ```css
@@ -249,11 +158,11 @@ document.addEventListener("DOMContentLoaded", () => {
 ```
 {% endrenderTemplate %}
 {% enddetails %}
-  </section>
-  <section>
-    <h3 class="underline">Javascript</h3>
-    <p>Arrays that hold the names of the months and days are placed near the beginning of the code for easy access.</p>
-    {% renderTemplate "md" %}You might know this already, but just in case, it is recommended to put this script in your `<head>` tag.{% endrenderTemplate %}
+</section>
+<section>
+  <h3 class="underline">Javascript</h3>
+  <p>Arrays that hold the names of the months and days are placed near the beginning of the code for easy access.</p>
+  {% renderTemplate "md" %}You might know this already, but just in case, it is recommended to put this script in your `<head>` tag.{% endrenderTemplate %}
 {% details { title: "(Click to show/hide code)", summaryCls: "details h4" } %}
 {% renderTemplate "md" %}
 ```js
@@ -310,13 +219,13 @@ for (let i = 0; i < dayNamesData.length; i++) {
 }
 
 let calendar = `
-<table>
+  <table>
   <thead>
     <tr class='month'><td colspan="7">${monthData[thisMonth].name} ${thisYear}</td></tr>
     <tr class='days'>${daysContent.join('')}</tr>
   </thead>
   <tbody>${tableContent.join('')}</tbody>
-</table>
+  </table>
 `;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -326,5 +235,4 @@ document.addEventListener("DOMContentLoaded", () => {
 ```
 {% endrenderTemplate %}
 {% enddetails %}
-  </section>
 </section>

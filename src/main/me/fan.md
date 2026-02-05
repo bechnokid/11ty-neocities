@@ -5,6 +5,9 @@ description: A page that describes myself as a fan of whatever media I consume.
 displayOrder: 5
 permalink: 'personal/fan/index.html'
 ---
+
+==toc
+
 ## Fan Behavior
 
 Perhaps one of my most defining traits as a fan is the [art](/art) that I draw of the things I like. I have been a fan artist since 1998 but didn't start engaging in fandoms until 2006, which was when I created a DeviantArt account in late 2005 and started interacting with other people who had similar interests as mine.
@@ -55,13 +58,13 @@ I'm mostly a monoshipper, but there are rare instances where I love multiple shi
 
 I mostly have monogamous ships, but I have a couple of polyamorous ships that I thoroughly enjoy. That being said, I vehemently believe that polyamorous ships can't always be solutions to love triangles (or other shapes). This is mostly because I value chemistry above all else, and if I can't see chemistry between the characters, then I just can't get into it.
 
-### HL
+### Het Love (HL)
 
 The most ships I have are HL where the girl is assertive, either the dominant one of the pair or on equal footing, and the guy is more sensitive, easily flustered by the girl, and holds the girl in really high regard where he'd do anything for her. Bonus points if the guy is way taller/bigger than the girl! Essentially, I love HL ships where the two characters subvert most if not all gender roles!
 
 This is going to sound so shallow of me to say, but I honestly don't like any HL ships where the guy is a known flirter and pick-up artist, and the girl is really submissive. Those kinds of ships do not move me a single millimeter!
 
-### BL
+### Boy Love (BL)
 
 Admittedly, I didn't start getting into BL ships until pretty recently. I started out as a "eww yaoi is gross" child, and when I grew into an adult, I had a former best friend who also hated BL ships and only liked HL and GL ships. It was bad to the point where if I expressed any interest in any BL ships, she would interrogate me.
 
@@ -71,7 +74,7 @@ The kinds of BL ships I enjoy are friends who frequently bicker but always know 
 
 Unpopular opinion, but I'm not a fan of the omegaverse. Never liked it, and probably never will. {% emote 'embarrassed' %}
 
-### GL
+### Girl Love (GL)
 
 I sadly have the smallest number of GL ships, and all of them have OCs rather than canon characters! I'm hoping to change this someday!
 
@@ -83,7 +86,7 @@ The kind of GL ships I've found myself enjoying are the ones either when both gi
 
 Not to be cringe, but I also love the trend of people pairing girls from those "I'm not like other girls" memes and having them date each other. It's so cliche to have a preppy girl date a goth girl, but dang it, *I love it!!!!*
 
-## Ships {.ships}
+## Ships
 
 When writing down ship names, I don't consider if the character is a "top" or "bottom" in a ship. I just write them in the order that feels right to me!
 
@@ -111,7 +114,7 @@ I honestly have no control over the process of making characters to ship with my
 
 I plan on writing full descriptions for each OC x Canon ship I have, but for now, I offer a humble list.
 
-**Note:** "x" is for romantic ships, while "+" is for platonic ships!s
+**Note:** "x" is for romantic ships, while "&" is for platonic ships!
 
 <ul>{% for item in about.ships.ocxcanon %}<li>{{ item | markdownifyInline | safe }}</li>{% endfor %}</ul>
 
@@ -122,3 +125,11 @@ This page wouldn't be here if not for the existence of these webmasters' own fan
 - [Inkcaps's shipping wall](https://inkcaps.neocities.org/library/ships/)
 - [Nanacore's fan page](https://nanacore.neocities.org/fan)
 - [Fan behaviors on Planetary Influence](https://planetaryinfluence.neocities.org/fan)
+
+## Thoughts on Taboo Topics
+
+I'm not going to list any of them here because I can assure you that for any taboo or "dead dove" topic you can think of there is a ten billion percent chance that I do not like it. You can call me a "prude" or claim that I "don't truly enjoy fandom", and that's ok! That's your opinion, and I won't try to make you change it.
+
+Even if I don't like any of those topics, I don't ever plan on going out of my way to bully or harass someone if they happen to enjoy them. I believe it's important to allow others to explore these topics in fiction as long as they have the self-awareness to not apply them in real life and actually hurt someone.
+
+I might never want to be friends with people who enjoy and consume those topics, but the worst I would do is ignore those people and continue with my life as if they don't exist.

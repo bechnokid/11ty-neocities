@@ -5,9 +5,7 @@
   {% if imgDate %}<time datetime="{{ imgDate }}" class="text-primary">{{ imgDate | monthDayYear }}</time>{% endif %}
   {% if summary %}{{ summary | markdownify | safe }}{% endif %}
 {% endset %}
-{% set page_freeze = freezeframe %}
 {% set outgoing_page_warning = hasLinks %}
-{% set pageCSS = css %}
 
 {% block content %}
   <article class="mb-md-0 mb-2 position-relative {{ (shortTitle or title) | lower | slugify }}">

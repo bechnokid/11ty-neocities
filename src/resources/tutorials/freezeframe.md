@@ -4,9 +4,11 @@ shortTitle: FreezeframeJS
 displayOrder: 2
 description: A tutorial on installing a script to freeze GIFs.
 prism: true
-redirectFrom: [/tutorials/freezeframe, /resources/tut_freezeframe, /resources/freezeframe]
+permalink: /tutorials/freezeframe/index.html
+redirectFrom: [/resources/tut_freezeframe, /resources/freezeframe, /resources/tutorials/freezeframe]
 summary: "**NOTE:** The examples will not work if JavaScript is disabled."
 ---
+==toc
 
 ## Intro
 
@@ -165,7 +167,7 @@ The script is not perfect by any means, and I'm sure there is a lot that can be 
 
 ## Simple Setup
 
-### 1) HTML
+### HTML
 
 Set "freeze" as the class name for each GIF individually...
 
@@ -200,9 +202,9 @@ Then, put the "Play/Stop GIFs" buttons or the "Toggle GIFs" button somewhere in 
 
 ...You can also use all three types of buttons if you feel like it! The script will work either way!
 
-### 2) JavaScript
+### JavaScript
 
-Put the following script in a `<script>`{.language-html} tag in the head of the HTML document.
+Put the following script in a `<script>` tag in the head of the HTML document.
 
 {% details { title: "(Show/hide script)", summaryCls: "details h4"} %}
 
@@ -410,7 +412,7 @@ At **line 5**, you would change **play-gif** to **start-img-btn**.
 At **line 9**, you would change **stop-gif** to **stop-img-btn**.
 At **line 13**, you would change **toggle-gif** to **toggle-img-btn**.
 
-If you want to take the advanced route, you can remove **lines 5 through 15** entirely and make your own event listeners that will call the `start()`{.language-js}, `stop()`{.language-js}, and `toggle()`{.language-js} methods on their own.
+If you want to take the advanced route, you can remove **lines 5 through 15** entirely and make your own event listeners that will call the `start()`, `stop()`, and `toggle()` methods on their own.
 
 ### Playing/Pausing GIFs on Hover
 
@@ -436,9 +438,9 @@ Then, add the "hover" parameter, so the line will look like this:
 const f = new FreezeImages ({ hover: true })
 ```
 
-By setting this parameter, the script will add the class `.ff-hover`{.language-html} to `.ff-container`{.language-html}. Afterwards, hovering over images will play their animations with the power of pure CSS.
+By setting this parameter, the script will add the class `.ff-hover` to `.ff-container`. Afterwards, hovering over images will play their animations with the power of pure CSS.
 
-This works because of the CSS that the script already added to the `<style>`{.language-html} tag in the head of the document. It's possible that the CSS the script adds might clash with existing styles in your CSS, so if that is something you'd like to avoid, the next section will help!
+This works because of the CSS that the script already added to the `<style>` tag in the head of the document. It's possible that the CSS the script adds might clash with existing styles in your CSS, so if that is something you'd like to avoid, the next section will help!
 
 ### No Additional CSS
 

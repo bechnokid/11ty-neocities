@@ -2,7 +2,7 @@
   {% set footer = site.footer %}
   <ul class="inline-list justify-content-center flex-gap-2 mb-1">
     {%- for item in meta.introLinks %}
-      <li>{% link item.url, item.name %}</li>
+      <li>{% link item.url, { text: item.name } %}</li>
     {% endfor %}
   </ul>
   <p>© Bechno Kid 2022 - 20XX</p>

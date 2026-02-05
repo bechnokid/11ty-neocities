@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'lmm-i';
+  src: url('https://reef.kingdra.net/lmm-i.otf');
+}
+
 [data-theme="light"] .rainbow.clique {
   background: linear-gradient(to right, #d20f39, #fe640b, #df8e1d, #40a02b, #1e66f5, #7287fd, #8839ef);
   background-clip: text;
@@ -50,6 +55,37 @@ article.home {
     .status-text {
       font-size: .8rem;
       line-height: 1.5em;
+    }
+  }
+}
+
+.cliques {
+  .flower-clique {
+    font-family: 'lmm-i';
+    font-size: 1.15em;
+    letter-spacing: 1px;
+  }
+
+  .problematic strike {
+    font-family:'lmm-i';
+    font-size: 1.15em;
+    letter-spacing: 2px;
+    opacity: 0.65;
+  }
+
+  .blorbo {
+    font-style: italic;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .cliques {
+    .mobile-only {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: .25rem;
     }
   }
 }

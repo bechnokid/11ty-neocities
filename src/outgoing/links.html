@@ -6,16 +6,27 @@ freezeframe: true
 hasLinks: true
 flashing: true
 ---
-{% set imgPath = "/assets/images/links/" %}
+{% set img_path = "/assets/images/links/" %}
 
 <div class="position-relative">
   {% include "partials/loading-sidebar.html" %}
-  <section>
+  <section class="tama-links">
     <h2>Find Me Elsewhere</h2>
-    <div class="d-flex flex-wrap flex-gap-2 justify-content-center p-3">
-      {% for item in about.socials %}
-        {% img "/assets/images/about/socials/" + item.src, { alt: "Link to Bechno Kid's " + item.name, url: item.url } %}
-      {% endfor %}
+    <div class="tama-screen">
+      <div class="links-desc">
+        <p>My MHWilds Hunter ID is <strong>FL3BY6XH</strong>!</p>
+      </div>
+      <div class="links-container">
+        <ul class="inline-list">
+          {% for item in outgoing.links.socials %}
+            <a href="{{ item.url }}" class="{{ item.cls }}">
+              {% set aria_label = "Link to Bechno Kid's " if item.url else "Bechno Kid's " %}
+              {% set item_label = item.label or (item.cls | title) %}
+              <li class="link-item {{ item.cls }}" role="img" aria-labeL="{{ aria_label + item_label }}"></li>
+            </a>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -26,19 +37,19 @@ flashing: true
     * @param {array} options.btnsArr - Array that holds links and their data, including buttons
     * @param {array} options.noBtnsArr - Array that holds only links
   #}
-  {% macro linkSection(options) %}
-    <section class="{{ options.cls or (options.title | slug) }}">
+  {% macro link_section(options) %}
+    <section class="{{ options.cls or (options.title | slugify) }}">
       <h2>{{ options.title }}</h2>
       <div class="d-flex flex-column flex-gap-2">
         <p>{{ options.desc }}</p>
-        <ul class="inline-list justify-content-center">
+        <ul class="no-btn-list inline-list justify-content-center">
           {% for item in options.noBtnsArr %}
-            <li>{% link item.url, item.name %}{% if not loop.last %}<span class="mx-2 text-secondary">✦</span>{% endif %}</li>
+            <li>{% link item.url, { text: item.name } %}</li>
           {% endfor %}
         </ul>
-        {% galleryBox { cls: 'mx-2', subCls: 'justify-content-center flex-gap-1' } %}
+        {% galleryBox { cls: 'mx-2', subCls: 'justify-content-center' } %}
           {%- for item in options.btnsArr %}
-            {% set item_src = item.src if "https" in item.src else imgPath + item.src %}
+            {% set item_src = item.src if "https" in item.src else img_path + item.src %}
             {% img item_src, { url: item.url, alt: "Link button for " + item.name, freezeframe: item.freezeframe, width: 88, height: 31 } %}
           {% endfor %}
         {% endgalleryBox %}
@@ -46,16 +57,24 @@ flashing: true
     </section>
   {% endmacro %}
 
-  {{ linkSection ({ title: "Neighbors", desc: "Sites whose webmasters I'm happy to be affiliated with!", btnsArr: outgoing.links.neighbors, noBtnsArr: outgoing.links.no_btns.neighbors }) }}
-  {{ linkSection ({ title: "Other Sites I Like", desc: "Sites that I've admired from afar!", btnsArr: outgoing.links.cool_sites, noBtnsArr: outgoing.links.no_btns.cool_sites })}}
-  {{ linkSection ({ title: "Inactive (for now?)", cls: "inactive-links", desc: "Sites that haven't been updated in a while or are on hiatus, but are still worth checking out!", btnsArr: outgoing.links.inactive, noBtnsArr: outgoing.links.no_btns.inactive }) }}
+  {{ link_section ({ title: "Neighbors", desc: "Sites whose webmasters I'm happy to be affiliated with!", btnsArr: outgoing.links.neighbors, noBtnsArr: outgoing.links.no_btns.neighbors }) }}
+  {{ link_section ({ title: "Other Sites I Like", desc: "Sites that I've admired from afar!", btnsArr: outgoing.links.cool_sites, noBtnsArr: outgoing.links.no_btns.cool_sites })}}
+  {{ link_section ({ title: "Inactive (for now?)", cls: "inactive-links", desc: "Neighbors that haven't been updated in a while or are on hiatus, but are still worth checking out!", btnsArr: outgoing.links.inactive, noBtnsArr: outgoing.links.no_btns.inactive }) }}
 
   <section>
     <h2>Favorite Resources</h2>
     <table class='resources'>
       {%- for item in outgoing.links.resources %}
         <tr>
-          <td><a href='{{ item.url }}'>{{ item.name }}</a></td>
+          <td>
+            <a href='{{ item.url }}'>
+              {% if item.img %}
+                {% img img_path + item.img, { alt: "Button for " + item.name } %}
+              {% else %}
+                {{ item.name }}
+              {% endif %}
+            </a>
+          </td>
           <td class='td-desc'>{{ item.desc }}</td>
         </tr>
       {% endfor %}
@@ -67,7 +86,7 @@ flashing: true
     {%- for link in outgoing.links.credits %}
     <li>
       {% if link.url %}
-        {% link link.url, (link.name | markdownifyInline | safe) %}
+        {% link link.url, { text: (link.name | markdownifyInline | safe) } %}
       {% else %}
         {{ link.name | markdownifyInline | safe }}
       {% endif %}

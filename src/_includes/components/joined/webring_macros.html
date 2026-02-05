@@ -113,7 +113,7 @@
   {% if params.nav.prev.src %}
     {% img params.nav.prev.src, { cls: "prev", url: params.nav.prev.url or params.nav.prev, alt: webring_alt_prev } %}
   {% elif params.nav.prev.text %}
-    {% link params.nav.prev.url, params.nav.prev.text, { cls: "prev", alt: webring_alt_prev } %}
+    {% link params.nav.prev.url, { text: params.nav.prev.text, cls: "prev", alt: webring_alt_prev } %}
   {% else %}
     {% imgDiv { cls: "prev", url: params.nav.prev.url or params.nav.prev, alt: webring_alt_prev } %}
   {% endif %}
@@ -128,7 +128,7 @@
         {% if params.nav.index.src %} {# If index btn has img path #}
           {% img params.nav.index.src, { cls: "rand", alt: webring_alt_rand } %}
         {% elif params.nav.index.text %}
-          {% link params.nav.index.url, params.nav.index.text, { cls: "rand", alt: webring_alt_rand } %}
+          {% link params.nav.index.url, { text: params.nav.index.text, cls: "rand", alt: webring_alt_rand } %}
         {% else %} {# Else, make it into a div bg #}
           {% imgDiv { cls: "rand", alt: webring_alt_rand } %}
         {% endif %}
@@ -143,7 +143,7 @@
       {% if params.nav.index.src %} {# If index btn has img path #}
         {% img params.nav.index.src, { cls: "index", url: params.nav.index.url or params.nav.index, alt: webring_alt_main } %}
       {% elif params.nav.index.text %}
-        {% link params.nav.index.url, params.nav.index.text, { cls: "index", alt: webring_alt_main } %}
+        {% link params.nav.index.url, { text: params.nav.index.text, cls: "index", alt: webring_alt_main } %}
       {% else %} {# Else, make it into a div bg #}
         {% set index_url = parmas.nav.index.url or params.nav.index %}
         {% if index_url %}
@@ -160,7 +160,7 @@
   {% if params.nav.next.src %}
     {% img params.nav.next.src, { cls: next_cls, url: params.nav.next.url or params.nav.next, alt: alt_next + params.name + " webring" } %}
   {% elif params.nav.next.text %}
-    {% link params.nav.next.url, params.nav.next.text, { cls: next_cls, alt: params.nav.next.alt } %}
+    {% link params.nav.next.url, { text: params.nav.next.text, cls: next_cls, alt: params.nav.next.alt } %}
   {% else %}
     {% imgDiv { cls: next_cls, url: params.nav.next.url or params.nav.next, alt: alt_next + params.name + " webring" } %}
   {% endif %}
@@ -179,7 +179,7 @@
             {% img params.title.src, { url: params.title.url, alt: params.name + " webring"} %}
           {% elif params.title.text %}
             {% if params.title.url %}
-              {% link params.title.url, params.title.text %}
+              {% link params.title.url, { text: params.title.text } %}
             {% else %}
               {{ params.title.text }}
             {% endif %}

@@ -8,30 +8,31 @@
   <title>{% if title != null %}{{ title }} - {% endif %}{{ meta.name }}</title>
 </head>
 <body class='position-relative'>
-  <details class="burger">
-    <summary class="py-2 text-background" aria-label="Open Navigation Menu"></summary>
-  </details>
   <div class="container-fluid d-flex justify-content-center p-0">
-    <details class="burger">
-      <summary class="burger-summary d-flex align-items-center px-2 py-3" aria-label="Navigation Menu"></summary>
-      <nav><div class="sidebar pb-2 pb-md-0">{% include "partials/navigation.html" %}</div></nav>
-    </details>
+    <div class="mobile-nav-container">
+      <details class="burger">
+        <summary class="burger-summary d-flex align-items-center px-2 py-3" aria-label="Open Navigation Menu">
+        </summary>
+        <nav><div class="sidebar pb-2 pb-md-0">{% include "partials/navigation.html" %}</div></nav>
+      </details>
+      <button type="button" class="toggle-mode" aria-label="Switch to dark mode">{% icon 'moon' %}</button>
+    </div>
     <div class="page bg-body">
       <a href="/home"><header class="bg-body"><span class="hidden">Navigate to the home page</span></header></a>
       <div class="bg-body main desktop">
         <div class="row g-0">
           <nav id="nav-main" class="col-md-2">
             <div class="sidebar pb-1 mb-md-2">{% include "partials/navigation.html" %}</div>
-            {% if freezeframe == true %}
-              <div class="freeze-btns desktop d-md-flex justify-content-lg-center flex-lg-row flex-column flex-gap-2 d-none">
-                <button type="button" class="button toggle-gif">Toggle GIFs</button>
-              </div>
-            {% endif %}
+            <div class="buttons desktop d-flex flex-column flex-gap-2">
+              <button type="button" class="desktop button toggle-mode" aria-label="Switch to dark mode">{% icon 'moon' %}</button>
+              {% if freezeframe == true %}
+                <button type="button" class="desktop button toggle-gif">Toggle GIFs</button>
+              {% endif %}
+            </div>
           </nav>
-          <main id="main-content" class="offset-md-2 col{{ "-md-10" if title !="Home" }} px-lg-4 p-md-3 px-2 position-relative" tabindex="-1">
-            {% include 'partials/theme-switcher.html' %}
+          <main id="main-content" class="offset-md-2 col{{ "-md-10" if title !="Home" }} px-lg-4 p-md-3 px-2 pt-3 position-relative" tabindex="-1">
             {% block content %}{% endblock %}
-            <div class="back-to-top{% if noScroll == "true" or noScroll == true %} mobile-only{% endif %}"><a href="#" aria-label="Scroll to Top">{% icon 'arrow-up' %}</a></div>
+            <div class="back-to-top{% if noScroll == "true" or noScroll == true %} mobile-only{% endif %}"><a class="button" href="#" aria-label="Scroll to Top">{% icon 'arrow-up' %}</a></div>
           </main>
           {% if title == "Home" %}<aside id="updates-bar" class="col-lg-2 offset-lg-0 col-md-10 offset-md-2 px-lg-0 px-md-4 px-2 mb-lg-0 mb-3">{% include "partials/updates.html" %}</aside>{% endif %}
         </div>

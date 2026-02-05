@@ -74,27 +74,12 @@ article.status-cafe-theme {
   }
 }
 
-@keyframes marquee {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-150%); }
-}
+article.code-snippets {
+  pre + ul {
+    margin: 1.5rem 0;
+  }
 
-.marquee-container {
-  overflow: hidden;
-  white-space: nowrap;
-  width: 100%;
-}
-
-.marquee-content {
-  display: inline-flex;
-  gap: .5rem;
-  animation: marquee 30s steps(400, end) infinite;
-}
-
-.marquee-content:hover {
-  animation-play-state: paused;
-}
-
-.marquee-content img {
-  vertical-align: middle;
+  li > code {
+    line-height: 2rem;
+  }
 }

@@ -69,7 +69,15 @@ export default {
       right: "Gilgamesh (FFV)"
     },
     {
-      custom: "<link rel='stylesheet' href='https://reef.kingdra.net/flower.css'><p><span class='flower-clique'><span class='flower'>Flowers</span> <a href='https://reef.kingdra.net'>ꕤ</a> hydrangeas</span> <a href='https://web.archive.org/web/20250621102731/http://jbrr.fc2web.com/material.html'><img class='ms-1 inline-img' src='/assets/images/goodies/cliques/hydrangea.gif' aria-hidden='true' alt=''></a></p>",
+      left: {
+        text: "flowers",
+        cls: "flower-clique",
+      },
+      center: {
+        text: "ꕤ",
+        url: "https://reef.kingdra.net",
+      },
+      right: "hydrangeas <a href='https://web.archive.org/web/20250621102731/http://jbrr.fc2web.com/material.html'><img class='ms-1 inline-img' src='/assets/images/goodies/cliques/hydrangea.gif' aria-hidden='true' alt=''></a>",
     },
     {
       left: {
@@ -435,7 +443,28 @@ export default {
       right: "heavy splatling"
     },
     {
-      custom: "<link rel='stylesheet' href='https://reef.kingdra.net/problematic.css'><p><span class='problematic'><strike>un</strike>problematic blorbo <a href='https://reef.kingdra.net'>❥</a> <span class='blorbo'>Dr. Xeno</span></span></p>"
+      left: {
+        text: "<strike>un</strike>problematic blorbo",
+        cls: "problematic",
+      },
+      center: {
+        text: "❥",
+        url: "https://reef.kingdra.net",
+      },
+      right: {
+        text: "dr. xeno",
+        cls: "blorbo",
+      }
+    },
+    {
+      left: {
+        text: "LINKED!",
+        url: "https://ballonlea.net/trickyfox/",
+      },
+      center: {
+        img: "linked.png",
+      },
+      right: "Miss Kobayashi"
     }
   ],
 }

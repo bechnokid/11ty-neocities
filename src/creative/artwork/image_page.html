@@ -11,20 +11,20 @@ eleventyComputed:
   permalink: "art/{{ picture.gallery | slugify }}/{{ picture.title | slugify }}/"
   noScroll: "{{ picture.scroll != 'TRUE' }}"
 ---
-{% macro artNav(img) %}
+{% macro art_nav(img) %}
   {% if img.prevImg %}
-    {% set artLink = img.prevImg | slugify %}
-    {% link "../" + artLink, "&lt;&lt;", { cls: 'button', alt: 'Go to previous image' } %}
+    {% set art_link = img.prevImg | slugify %}
+    {% link "../" + art_link, { text: "&lt;&lt;", cls: 'button', alt: 'Go to previous image' } %}
   {% endif %}
-  {% set artLink = img.gallery | slugify %}
-  {% link "/art/" + artLink + "/", "Index", { cls: 'button' } %}
+  {% set art_link = img.gallery | slugify %}
+  {% link "/art/" + art_link + "/", { text: "Index", cls: 'button' } %}
   {% if img.nextImg %}
-    {% set artLink = img.nextImg | slugify %}
-    {% link "../" + artLink, "&gt;&gt;", { cls: 'button', alt: 'Go to next image' } %}
+    {% set art_link = img.nextImg | slugify %}
+    {% link "../" + art_link, { text: "&gt;&gt;", cls: 'button', alt: 'Go to next image' } %}
   {% endif %}
 {% endmacro %}
 <section class="d-flex flex-column flex-gap-3">
-	<div class='art-nav'>{{ artNav(picture) }}</div>
+	<div class='art-nav'>{{ art_nav(picture) }}</div>
   <div class='img-container d-flex flex-column justify-content-center'>
     <img src="{{ picture.baseUrl + picture.filename }}" alt="{{ picture.altText }}"{% if picture.transcript %} aria-describedby="transcript"{% endif %}>
   </div>
@@ -33,6 +33,6 @@ eleventyComputed:
     {% artCaption picture.caption, { originalDate: picture.originalDate, originalCaption: picture.originalCaption, transcript: picture.transcript } %}
   </div>
   <div class='art-nav'>
-		{{ artNav(picture) }}
+		{{ art_nav(picture) }}
 	</div>
 </section>

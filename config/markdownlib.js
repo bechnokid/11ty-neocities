@@ -4,6 +4,7 @@ const markdownItAttrs = require('markdown-it-attrs');
 const markdownItDefList = require('markdown-it-deflist');
 const markdownItAnchor = require('markdown-it-anchor');
 const markdownItTaskList = require('markdown-it-task-lists');
+const markdownItToc = require('markdown-it-toc-done-right');
 
 module.exports = markdownIt({
   // Use of HTML tags in Markdown
@@ -20,3 +21,7 @@ module.exports = markdownIt({
 .use(markdownItAnchor)
 .use(markdownItDefList)
 .use(markdownItTaskList)
+.use(markdownItToc, {
+  placeholder: "\\=\\=toc",
+  containerClass: "toc",
+})

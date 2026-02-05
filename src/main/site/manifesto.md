@@ -47,10 +47,8 @@ The first version of this manifesto was more or less an exact copy of what other
 
 ### Others' Manifestos
 
-1. [Internet Manifesto](https://goblin-heart.net/sadgrl/cyberspace/internet-manifesto) - by Sadgrl
 1. [My Manifesto](https://l-chan.neocities.org/manifesto) - by L-chan
 1. [The "Old" Web: What Have We Lost?](https://purplehello98.neocities.org/articles/oldweb/) - by PurpleHello98
-1. [So, Why a Personal Website?](https://gildedware.net/manifesto) - by Gildedware
 
 ### Good Reads
 

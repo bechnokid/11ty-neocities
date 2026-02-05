@@ -21,7 +21,7 @@ Webrings and fanlistings can be found in [/joined](/joined)!
   <div class="content">{{ contentBlock | markdownify | safe }}</div>
   <ul class="home-links inline-list justify-content-center">
     {%- for link in meta.introLinks %}
-      <li>{% link link.url, link.name %}</li>
+      <li>{% link link.url, { text: link.name} %}</li>
     {% endfor %}
   </ul>
   <div class="home-row row d-flex flex-md-row flex-column flex-md-gap-0 flex-gap-4">

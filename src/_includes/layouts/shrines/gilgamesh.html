@@ -1,4 +1,3 @@
-{% set pageCSS = "shrines/" + css %}
 {% set navigation = ["Intro", "About", "Why Gilgamesh?", "Yume", "Credits", "Home"] %}
 
 <!DOCTYPE html>
@@ -19,13 +18,13 @@
         <summary>Menu</summary>
           <nav class="toc text-center">
             {% for item in navigation %}
-              <li><a href={{ "/home" if item == "Home" else "#" + (item | slug) }}>{{ item }}</a></li>
+              <li><a href={{ "/home" if item == "Home" else "#" + (item | slugify) }}>{{ item }}</a></li>
             {% endfor %}
           </nav>
       </details>
       <nav class="desktop-nav toc">
         {% for item in navigation %}
-          <li><a href="{{ "/home" if item == "Home" else "#" + (item | slug) }}">{{ item }}</a></li>
+          <li><a href="{{ "/home" if item == "Home" else "#" + (item | slugify) }}">{{ item }}</a></li>
         {% endfor %}
       </nav>
       <main class="px-lg-5 py-lg-4 p-4">

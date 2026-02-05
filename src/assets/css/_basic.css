@@ -188,3 +188,9 @@ article.to-do {
     }
   }
 }
+
+@media screen and (max-width: 576px) {
+  section:has(.h2, h2) {
+    padding-left: 0;
+  }
+}

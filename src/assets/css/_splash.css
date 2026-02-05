@@ -27,9 +27,5 @@ body#splash-page {
     .container-fluid {
       height: revert;
     }
-
-    #splash-container #theme-switcher-container {
-      top: .5rem;
-    }
   }
 }

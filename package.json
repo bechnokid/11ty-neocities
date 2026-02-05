@@ -141,6 +141,7 @@
     "markdown-it-expandable": "^1.0.2",
     "markdown-it-header-sections": "^1.0.0",
     "markdown-it-task-lists": "^2.1.1",
+    "markdown-it-toc-done-right": "^4.2.0",
     "maximatch": "^0.1.0",
     "mdurl": "^1.0.1",
     "merge2": "^1.4.1",

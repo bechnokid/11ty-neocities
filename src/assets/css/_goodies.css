@@ -2,12 +2,14 @@
   display: block;
 }
 
-.adopts.mine p {
-  margin: 0;
-}
+.adopts {
+  &.mine p {
+    margin: 0;
+  }
 
-.adopts.other > * {
-  max-width: 150px;
+  &.other > * {
+    max-width: 150px;
+  }
 }
 
 .pet-click {
@@ -39,73 +41,88 @@
 }
 
 .sticker-box {
-  width: 300px;
+  min-width: 300px;
+  max-width: 650px;
   border: 1px solid #fdc2ce;
   background-color: #fdc2ce;
   color: #e55a76;
+
+  .header {
+    height: 76px;
+    background-image: url(/assets/images/goodies/cliques/stickers/header.png);
+    background-position: top;
+    background-repeat: repeat-x;
+    font-weight: bold;
+  }
+
+  .body {
+    border: 1px solid #fdc2ce;
+    border-right: 0;
+    border-left: 0;
+  }
+
+  .footer {
+    background-color: #fff;
+    text-align: center;
+  }
 }
 
-.sticker-header {
-  height: 76px;
-  background-image: url(/assets/images/goodies/cliques/stickers/header.png);
-  background-position: top;
-  background-repeat: repeat-x;
-  font-weight: bold;
+.cdw {
+  figcaption {
+    padding: .75rem 0;
+  }
+
+  .playlist {
+    font-size: .7rem;
+  }
 }
 
-.sticker-body {
-  border: 1px solid #fdc2ce;
-  border-right: 0;
-  border-left: 0;
+.yys {
+  table {
+    font-size: .85em;
+    max-width: 400px;
+  }
+
+  .ff-container {
+    justify-content: center;
+  }
 }
 
-.sticker-footer {
-  background-color: #fff;
-  text-align: center;
+.detailed {
+  .item {
+    width: 120px;
+  }
+
+  .img {
+    min-height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+  }
+
+  .desc {
+    line-height: 1rem;
+
+    summary:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
-.cdw figcaption {
-  padding: .75rem 0;
-}
-
-.cdw .playlist {
-  font-size: .7rem;
-}
-
-.yys table {
-  font-size: .85em;
-  max-width: 400px;
-}
-
-.teacup {
-  width: 120px;
-}
-
-.tea-img {
-  min-height: 75px;
-  display: flex;
-  justify-content: center;
-  align-items: end;
-}
-
-.tea-taste {
-  line-height: 1rem;
-}
-
-.tea-taste summary:hover {
-  text-decoration: underline;
+.fzv .img {
+  min-height: 80px;
 }
 
 .comb-row {
   margin-left: 1rem;
-}
 
-.comb-row:nth-child(even) {
-  margin-top: -30px;
-}
+  &:nth-child(even) {
+    margin-top: -30px;
+  }
 
-.comb-row > *:nth-child(odd) {
-  margin: 30px -10px 0;
+  & > *:nth-child(odd) {
+    margin: 30px -10px 0;
+  }
 }
 
 .bishies-collection > * {

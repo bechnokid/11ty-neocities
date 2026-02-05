@@ -9,8 +9,8 @@ freezeframe:
   noNav: true
 ---
 
-{% set profileText %}
-Hi, I'm **Bechno Kid** (she/her), the head honcho of this hideout.
+{% set profile_text %}
+Hi, I'm **Bechno Kid**, the head honcho of this hideout.
 
 You can call me **"Bechno"** or even just **"Bec"**. You can call me "Kid", but I don't recommend it unless you're older than me!
 
@@ -21,7 +21,7 @@ I collect a number of things including Tamagotchi Original and Digital Monster v
 The little guys next to me are **Numemon**, a shy Champion-level Digimon, and **Maskutchi**, a slightly spoiled adult Tamagotchi. They are my little guys, and I love them very much!
 {% endset %}
 
-{% set geekCode %}
+{% set geek_code %}
 ```git
 -----BEGIN GEEK CODE-----
   Version: 3.12
@@ -32,64 +32,48 @@ The little guys next to me are **Numemon**, a shy Champion-level Digimon, and **
 **[More about Geek Code](https://web.archive.org/web/20090220181018/http://geekcode.com/geek.html)** {.text-right}
 {% endset %}
 
-{% set otherFacts %}
-- ♒︎ (☀️), ♉︎ (🌒), ♊︎ (⬆️)
-- INTJ...I think
-- Still counts with fingers
-- Sleeps with a nightlight
-- Never walks barefoot
-{% endset %}
-
-{% set likes %}
-- Drawing
-- Crocheting (sometimes)
-- Rice
-- Bún bò Huế
-- This shape {% icon 'arrow-right' %} <a href="/gadzooks" class="uwu">{% icon 'meat', { alt: 'Meat on a bone' } %}</a><span class="text-xs ms-1">"Tasty!"</span>
-{% endset %}
-
-{% set favMedia %}
-- **Monster Hunter**
-- **Digimon**
-- Tamagotchi
-- Kill la Kill
-- Trigun
-- Demon Slayer
-{% endset %}
-
 <div class="row g-0">
   <div class="col-lg-5 col-md-4 d-flex justify-content-center">{% img '/assets/images/profile.png', { alt: 'Bechno Kid sitting down and playing with a purple Digital Monster 20th Anniversary device. Strapped to her pants is an orange 1998 Tamagotchi device. In her lap is Maskutchi, and hiding behind her is Numemon' } %}</div>
-  <div class="col-lg-7 col-md-8 d-flex flex-column justify-content-center px-3">{{ profileText | markdownify | safe }}</div>
+  <div class="col-lg-7 col-md-8 d-flex flex-column justify-content-center px-3">
+    {{ profile_text | markdownify | safe }}
+    <details class="identity-btns sidebar m-3">
+      <summary>ID Buttons</summary>
+      <div class="d-flex flex-wrap justify-content-center align-items-center flex-gap-2 p-2">
+        {% for item in about.list.identityBtns %}
+          {% img "/assets/images/about/" + item.src, { alt: 'Button that says "' + item.name + '"'} %}
+        {% endfor %}
+      </div>
+    </details>
+  </div>
 </div>
 
 <div class="d-flex flex-column flex-gap-4">
-  <div class="geek-code">{{ geekCode | markdownify | safe }}</div>
-
+  <div class="geek-code">{{ geek_code | markdownify | safe }}</div>
   <div class='about-info row d-flex flex-wrap justify-content-center mb-4 mb-md-0'>
     <div class="col-md-4 col-12 mb-3 mb-md-0">
       {% galleryBox { title: "Other Facts", cls: "h-100" } %}
-        {{ otherFacts | renderContent ("md") | safe }}
+        <ul>{% for item in about.list.otherFacts %}<li>{{ item | markdownifyInline | safe }}</li>{% endfor %}</ul>
       {% endgalleryBox %}
     </div>
     <div class="col-md-4 col-12 mb-3 mb-md-0">
       {% galleryBox { title: "Likes", cls: "h-100" } %}
-        {{ likes | renderContent ("md") | safe }}
+        <ul>{% for item in about.list.likes %}<li>{{ item | markdownifyInline | safe }}</li>{% endfor %}</ul>
       {% endgalleryBox %}
     </div>
     <div class="col-md-4 col-12">
       {% galleryBox { title: "Fav Media", cls: "h-100" } %}
-        {{ favMedia | renderContent ("md") | safe }}
+        <ul>{% for item in about.list.favMedia %}<li>{{ item | markdownifyInline | safe }}</li>{% endfor %}</ul>
       {% endgalleryBox %}
     </div>
   </div>
 
   {% set img_path = "/assets/images/about/monsters/" %}
 
-  {% macro favsBox(arr, options = {}) %}
+  {% macro favs_box(arr, options = {}) %}
     {% galleryBox { title: arr.title, cls: options.cls, subCls: "justify-content-center flex-gap-3" } %}
       {% for item in arr.items %}
         <div class="fav-box">
-          {% img img_path + item.src, { alt: item.alt, cls: item.cls } %}
+          {% img img_path + item.src, { alt: item.alt, cls: item.cls, url: ("/gadzooks" if item.name == "Espinas" else ""), urlCls: ("uwu" if item.name == "Espinas" else "") } %}
           <p {% if "IRL" in arr.title %}class="font-weight-bold text-primary"{% endif %}>{{ item.name | markdownifyInline | safe }}</p>
           {% if item.series %}
             <p class="series">{{ item.series | markdownifyInline | safe }}</p>
@@ -98,7 +82,7 @@ The little guys next to me are **Numemon**, a shy Champion-level Digimon, and **
       {% endfor %}
     {% endgalleryBox %}
   {% endmacro %}
-  {{ favsBox(about.monsters.monhun, { cls: "monsters" }) }}
+  {{ favs_box(about.monsters.monhun, { cls: "monsters" }) }}
 
   {% galleryBox { title: "Favorite Digimon", cls: "digimon" } %}
     <div class="w-100 d-flex justify-content-center mb-3 js-required"><button class="button toggle-gif">Toggle GIFs</button></div>
@@ -106,7 +90,7 @@ The little guys next to me are **Numemon**, a shy Champion-level Digimon, and **
     <div class="freezeframe">
       {% for item in about.monsters.digimon %}
       <div class="fav-box">
-        {% img img_path + item.src, { alt: "Sprite of {{ item.name }}", cls: item.cls } %}
+        {% img img_path + item.src, { alt: "Sprite of " + item.name, cls: item.cls } %}
         <p>{{ item.name | markdownifyInline | safe }}</p>
       </div>
       {% endfor %}

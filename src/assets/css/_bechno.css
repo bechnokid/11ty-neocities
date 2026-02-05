@@ -4,7 +4,7 @@
 }
 
 :root {
-  --body-height: 480px;
+  --body-height: 515px;
   --img-link: url(/assets/images/link.svg);
   --img-cursor: url(/assets/images/cursor.png);
   --img-cursor-point: url(/assets/images/cursor_point.png);
@@ -21,7 +21,7 @@
   --bg-img-color: #DE9DB1;
   --bg-overlay: #de9db1cc;
   --bg-primary: #e48aa7;
-  --bg-secondary: #f6e6f6;
+  --bg-secondary: #eed8ee;
   --bg-selection: #a50e5a;
   --bg-sidebar: #fffffe;
   --border-body: var(--bg-body);
@@ -48,7 +48,7 @@
   --bg-img-color: #391b3d;
   --bg-overlay: #391b3dcc;
   --bg-primary: #28162b;
-  --bg-secondary: #9f6a83;
+  --bg-secondary: #883e60;
   --bg-body: #47284D;
   --bg-sidebar: var(--bg-footer);
   --bg-footer: #2f1933;
@@ -64,7 +64,7 @@
   --text-primary: var(--text-body);
   --text-secondary: var(--text-body);
   --text-link: #ffaada;
-  --text-link-visited: #b68ae5;
+  --text-link-visited: #d4baf0;
   --text-shadow: #FDCDD96c;
   --text-selection: #28162b;
   --line-color: var(--text-link);
@@ -343,16 +343,8 @@ button,
 button:not(.pagination-btn):not(.pagination-num):hover,
 .button:hover {
   cursor: var(--img-cursor-point), pointer;
-  background-color: var(--bg-body);
-  color: var(--text-primary);
-}
-
-code:not([class*="language-"]) {
-  font-family: 'Courier New', monospace;
-  color: var(--text-primary);
-  background-color: var(--bg-code);
-  padding: .2rem .3rem;
-  white-space: normal;
+  background-color: var(--bg-selection);
+  color: var(--text-selection);
 }
 
 summary:hover {
@@ -461,6 +453,10 @@ main {
       &::marker {
         color: var(--text-secondary);
       }
+
+      p {
+        margin: 0;
+      }
     }
 
     > li {
@@ -476,20 +472,6 @@ main {
           content: "✧";
         }
       }
-    }
-  }
-}
-
-.inline-list {
-  display: flex;
-  flex-direction: row;
-
-  li {
-    display: inline-block;
-    padding: 0;
-
-    &::marker {
-      content: none;
     }
   }
 }
@@ -561,16 +543,16 @@ a.hidden-link {
   cursor: default !important;
 }
 
-a[href*="http"]:not(:has(img, div[role="img"])) {
+a[href*="http"]:not(:has(img, [role="img"])) {
   text-decoration: none;
   border-bottom: 1px solid var(--text-link);
 }
 
-a[href*="http"]:not(:has(img, div[role="img"]), .button):hover {
+a[href*="http"]:not(:has(img, [role="img"]), .button):hover {
   border-bottom-color: transparent;
 }
 
-a[href*="http"]:not(:has(img, div[role="img"]))::after {
+a[href*="http"]:not(:has(img, [role="img"]))::after {
   content: "";
   display: inline-block;
   width: .8rem;
@@ -596,41 +578,6 @@ a[href*="http"]:not(:has(img, div[role="img"]))::after {
   z-index: 99;
   top: 0;
   letter-spacing: 1px;
-}
-
-#theme-switcher-container {
-  right: 0;
-  z-index: 100;
-}
-
-#splash-container #theme-switcher-container {
-  top: -2.5rem;
-}
-
-#theme-switcher {
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  visibility: hidden;
-}
-
-#switcher-label {
-  cursor: var(--img-cursor-point), pointer;
-  font-size: 1.5rem;
-  filter: drop-shadow(0px 1px var(--text-primary)) drop-shadow(0 -1px var(--text-primary)) drop-shadow(1px 0 var(--text-primary)) drop-shadow(-1px 0 var(--text-primary));
-}
-
-#switcher-label:hover {
-  opacity: .5;
-}
-
-#splash-container #switcher-label {
-  font-size: 2rem;
-}
-
-#theme-switcher:focus ~ #switcher-label {
-  text-shadow: 0 0 5px var(--text-shadow);
 }
 
 .tooltip {
@@ -693,7 +640,7 @@ a[href*="http"]:not(:has(img, div[role="img"]))::after {
   position: absolute;
   top: 100vh;
   right: .5rem;
-  bottom: 0;
+  bottom: 2rem;
   width: 3em;
   pointer-events: none;
 }
@@ -704,10 +651,9 @@ a[href*="http"]:not(:has(img, div[role="img"]))::after {
   padding: .5rem;
   pointer-events: all;
   top: calc(100vh - 4rem);
-  border: 1px solid var(--text-link);
+  border-width: 2px;
   border-radius: .5rem;
   font-size: 2em;
-  background-color: var(--bg-sidebar);
   margin-bottom: -2rem;
 }
 
@@ -729,11 +675,6 @@ a[href*="http"]:not(:has(img, div[role="img"]))::after {
   max-height: 300px;
 }
 
-.uwu:hover img {
-  opacity: 1 !important;
-  cursor: default;
-}
-
 .hidden {
   display: inline-block;
   height: 1px;
@@ -747,7 +688,7 @@ a[href*="http"]:not(:has(img, div[role="img"]))::after {
 }
 
 .position-relative:has(> .loading-sidebar:not(.d-none)) {
-  height: 200px;
+  height: calc(var(--body-height) * .9);
   overflow: hidden;
 }
 
@@ -771,6 +712,79 @@ a[href*="http"]:not(:has(img, div[role="img"]))::after {
   }
 }
 
+.toc {
+  display: inline-block;
+  border: 1px solid var(--border-sidebar);
+  background: var(--bg-sidebar);
+  padding: .5rem .75rem .75rem;
+
+  &:has(+ p) {
+    margin-bottom: 1rem;
+  }
+
+  > * {
+    padding-left: .5rem;
+  }
+
+  p {
+    background: var(--bg-heading);
+    font-family: 'Dyslexic';
+    font-size: 1rem;
+    color: var(--text-primary);
+    padding: .25rem .5rem;
+    margin-bottom: .25rem;
+  }
+
+  li {
+    padding: .1rem 0;
+  }
+
+  ol {
+    margin-left: 1.5rem;
+
+    > li {
+      padding-left: .25rem;
+
+      & > ol {
+        padding-top: .25rem;
+        padding-left: 0;
+        list-style-type: lower-roman;
+      }
+    }
+  }
+
+  ul {
+    margin-left: 1rem;
+
+    & > li {
+      padding-left: .5rem;
+    }
+  }
+}
+
+.loading-sidebar {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .loading-img {
+    width: 235px;
+    height: 249px;
+    background-image: url('/assets/images/meat_loading.png');
+    animation: steakRotate 1s steps(2) infinite;
+  }
+}
+
+@keyframes steakRotate {
+  to {
+    background-position-x: -470px;
+  }
+}
+
 @media screen and (max-width: 767px) {
   :target {
     scroll-margin: 80px;
@@ -781,9 +795,7 @@ a[href*="http"]:not(:has(img, div[role="img"]))::after {
     line-height: 1.7em;
   }
 
-  a[href*="http"]:not(:has(img, div[role="img"])) {
-    display: ruby;
-
+  a[href*="http"]:not(:has(img, [role="img"])) {
     &::after {
       width: 1rem;
       height: 1rem;
@@ -799,7 +811,8 @@ a[href*="http"]:not(:has(img, div[role="img"]))::after {
   }
 
   .page {
-    max-width: calc(100% - 10px);
+    margin-top: 3.7rem;
+    width: 100%;
   }
 
   .main {

@@ -11,7 +11,7 @@ freezeframe: true
 <div class="position-relative">
   {% include "partials/loading-sidebar.html" %}
 
-  {% set imgLink = array.imgSrc + 'mine/' %}
+  {% set img_link = array.imgSrc + 'mine/' %}
   <section class="for-you">
     <h2>For You</h2>
     {% galleryBox { cls: 'adopts mine', subCls: 'flex-column' } %}
@@ -23,7 +23,7 @@ freezeframe: true
             <div class='d-flex{% if row.cls %} {{ row.cls }}{% endif %}'>
               {%- for item in row.items %}
                 {% if item.tooltip %}<div class="tooltip">{% endif %}
-                  {% img imgLink + item.src, { alt: item.alt } %}
+                  {% img img_link + item.src, { alt: item.alt } %}
                 {% if item.tooltip %}
                   <div class="tooltip-content" role="tooltip">{{ item.tooltip }}</div>
                 </div>
@@ -46,7 +46,7 @@ freezeframe: true
           <div class="pet-click border-sidebar bg-body p-3 text-center rounded-4 mx-2">
             {% img item.src, { alt: item.alt, freezeframe: item.freezeframe, urlCls: 'd-flex justify-content-center mb-2' } %}
             <p class="m-0">
-              {% link item.url, (item.name | safe) %}
+              {% link item.url, { text: (item.name | safe) } %}
             </p>
           </div>
         {% endfor %}
@@ -54,7 +54,7 @@ freezeframe: true
     {% endgalleryBox %}
   </section>
 
-  {% set imgLink = array.imgSrc %}
+  {% set img_link = array.imgSrc %}
   <section class="adopted">
     <h2>Adopted</h2>
     {% galleryBox %}
@@ -62,8 +62,8 @@ freezeframe: true
       <div class="row g-0 w-100{{ " mb-4" if not loop.last }}">
         <div class="col d-flex flex-wrap justify-content-center{% if row.cls %} {{ row.cls }}{% endif %}">
           {%- for item in row.items %}
-            {% set imgPath = item.src if item.ogLink else imgLink + item.src %}
-            {% img imgPath, { url: item.url, alt: item.alt, urlCls: 'mx-1', freezeframe: item.freezeframe } %}
+            {% set img_path = item.src if item.ogLink else img_link + item.src %}
+            {% img img_path, { url: item.url, alt: item.alt, urlCls: 'mx-1', freezeframe: item.freezeframe } %}
           {% endfor %}
         </div>
       </div>
@@ -81,10 +81,10 @@ freezeframe: true
           {% for item in value.items %}
             {% if item.group %}
               {% for alt in item.alt %}
-                {% img imgLink + item.name + loop.index + ".png", { alt: "A pixel of " + alt } %}
+                {% img img_link + item.name + loop.index + ".png", { alt: "A pixel of " + alt } %}
               {% endfor %}
             {% else %}
-              {% img imgLink + item.src, { alt: item.alt, freezeframe: item.freezeframe } %}
+              {% img img_link + item.src, { alt: item.alt, freezeframe: item.freezeframe } %}
             {% endif %}
           {% endfor %}
         </a>

@@ -1,7 +1,7 @@
-{% set imgPath = "/assets/images/goodies/cliques/" %}
+{% set img_path = "/assets/images/goodies/cliques/" %}
 {# params:
-    - title: string (name of pixel club)
-    - slug: string (name of pixel club as slug)
+    - name: string (name of pixel club)
+    - id: string (id for pixel club)
     - owner: string (owner of pixel club)
     - url: string (pixel club main url)
     - alt (optional): string (alt text for pixel club for easy dup)
@@ -9,35 +9,35 @@
     - gap: int (gap between items)
 #}
 {% macro basic(params) %}
-  <section class="{{ params.slug }}">
-    <h2>{{ params.title }}</h2>
+  <section class="{{ params.id or (params.name | slugify) }}">
+    <h2>{{ params.name }}</h2>
     <p>Created by <a href="{{ params.url }}">{{ params.owner }}</a>!</p>
-    {% set gapCls = ("justify-content-md-start justify-content-center flex-md-gap-1 flex-gap-" + params.gap) if params.gap else "flex-gap-1" %}
-    <div class="d-flex flex-wrap py-3 {{ gapCls }}">
+    {% set gap_cls = ("justify-content-md-start justify-content-center flex-md-gap-1 flex-gap-" + params.gap) if params.gap else "flex-gap-1" %}
+    <div class="d-flex flex-wrap py-3 {{ gap_cls }}">
       {%- for item in params.arr %}
-        {% set altText = (params.alt + item.alt) if params.alt else item.alt %}
-        {% set options = { url: item.url, alt: (altText or ""), freezeframe: item.freezeframe } %}
-        {% img imgPath + params.slug + "/" + item.src, options  %}
+        {% set alt_text = (params.alt + item.alt) if params.alt else item.alt %}
+        {% set options = { url: item.url, alt: (alt_text or ""), freezeframe: item.freezeframe } %}
+        {% img img_path + (params.id or (params.name | slugify)) + "/" + item.src, options %}
       {% endfor %}
     </div>
-    {% if params.slug == 'bottlecaps' %}
+    {% if params.id == 'bottlecaps' %}
       <p class="text-xs"><strong>Note: </strong>Digimon sprites are from the <a href="https://dmc-sprite-database.vercel.app/">Digimon / Pendulum Color Mod Sprite Database</a></p>
     {% endif %}
   </section>
 {% endmacro %}
 
-{% macro afternoonTea() %}
-  <section class="afternoon-tea">
-    <h2>Afternoon Tea</h2>
-    <p>Created by <a href="https://lostletters.neocities.org/afternoontea/">Lost Letters!</a></p>
+{% macro detailed(params) %}
+  <section class="{{ params.id or (params.name | slugify )}} detailed">
+    <h2>{{ params.name }}</h2>
+    <p>Created by {% link params.url, { text: params.owner } %}</p>
     <div class="d-flex flex-wrap justify-content-center flex-gap-2 py-3">
-      {% for item in goodies.pixel_clubs.tea %}
-        <div class="teacup d-flex flex-column flex-gap-1">
+      {% for item in params.arr %}
+        <div class="item d-flex flex-column flex-gap-1">
           {% set options = { url: item.url, alt: item.alt, freezeframe: item.freezeframe } %}
-          <div class="tea-img">{% img imgPath + "tea/" + item.src, options %}</div>
-          <details class="tea-taste sidebar text-xs text-center py-1 px-2 w-100">
-            <summary>Tastes like...</summary>
-            {{ item.taste }}
+          <div class="img">{% img img_path + (params.id or (params.name | slugify)) + "/" + item.src, options %}</div>
+          <details class="desc sidebar text-xs text-center py-1 px-2 w-100">
+            <summary>{{ params.summary }}</summary>
+            {{ item.desc or params.desc or "N/A" }}
           </details>
         </div>
       {% endfor %}
@@ -45,10 +45,20 @@
   </section>
 {% endmacro %}
 
+{% macro afternoonTea() %}
+  {{ detailed({
+    name: "Afternoon Tea",
+    id: "tea",
+    owner: "Lost Letters",
+    url: "https://lostletters.neocities.org/afternoontea/",
+    arr: goodies.pixel_clubs.tea,
+    summary: "Tastes like..."
+  }) }}
+{% endmacro %}
+
 {% macro bottlecaps() %}
   {{ basic({
-    title: "Bottlecaps",
-    slug: "bottlecaps",
+    name: "Bottlecaps",
     owner: "Karla",
     url: "https://miserabledolly.net/bottlecaps",
     arr: goodies.pixel_clubs.bottlecaps,
@@ -69,7 +79,7 @@
           figCaptionCls: "text-center",
           noLink: (false if item.url else true),
           imgLink: item.url } %}
-        {% figure imgPath + "cdw/" + item.src, options %}
+        {% figure img_path + "cdw/" + item.src, options %}
           <a class="playlist" href="{{ item.playlist }}">Playlist</a>
         {% endfigure %}
       {% endfor %}
@@ -78,20 +88,21 @@
 {% endmacro %}
 
 {% macro fizzyVendor() %}
-  {{ basic ({
-    title: "Fizzy Vendor",
-    slug: "fzv",
+  {{ detailed({
+    name: "Fizzy Vendor",
+    id: "fzv",
     owner: "Fizzsea",
-    url: "https://fizzsea.neocities.org/extra/fizzyvendor",
+    url: "https://fizzsea.net/extra/fizzyvendor.html",
     arr: goodies.pixel_clubs.fzv,
-    gap: 5
+    summary: "Tastes like...",
+    desc: "???"
   }) }}
 {% endmacro %}
 
 {% macro kindnessRocks() %}
   {{ basic ({
-    title: "Kindness Rocks Pixel Project",
-    slug: "kindnessrocks",
+    name: "Kindness Rocks Pixel Project",
+    id: "kindnessrocks",
     owner: "PixelRevival",
     url: "https://pixelrevival.xyz/kindnessrocks/",
     arr: goodies.pixel_clubs.kindnessrocks,
@@ -101,8 +112,8 @@
 
 {% macro jarJams() %}
   {{ basic ({
-    title: "Jar Jams",
-    slug: "jarjam",
+    name: "Jar Jams",
+    id: "jarjam",
     owner: "Blissnet",
     url: "https://blissnet.neocities.org/toybox/JJ",
     alt: "A pixel jar ",
@@ -113,19 +124,19 @@
 
 {% macro stickerSheet(mine) %}
   {% set stickerAlt = "A pixel sticker that resembles " %}
-  {% set stickerImgPath = imgPath + "/stickers/" %}
+  {% set stickerImgPath = img_path + "/stickers/" %}
   {% set stickerArr = goodies.pixel_clubs.stickers.mine if mine else goodies.pixel_clubs.stickers.collected %}
   <div class="sticker-box {{ "mine" if mine else "collected"}}">
-    <div class="sticker-header d-flex justify-content-center align-items-center flex-gap-1">
+    <div class="header d-flex justify-content-center align-items-center flex-gap-1">
       <img src="{{ stickerImgPath }}tinyleaf.gif" alt="" aria-hidden="true"><span aria-label="My Sticker {{ "Sheet" if mine else "Collection" }}">𝑀𝓎 𝒮𝓉𝒾𝒸𝓀𝑒𝓇 {{ "𝒮𝒽𝑒𝑒𝓉" if mine else "𝓒𝓸𝓵𝓵𝓮𝓬𝓽𝓲𝓸𝓷" }}</span><img src="{{ stickerImgPath }}tinyleaf.gif" alt="" aria-hidden="true">
     </div>
-    <div class="sticker-body d-flex flex-wrap justify-content-center align-items-center flex-gap-2 p-2">
+    <div class="body d-flex flex-wrap justify-content-center align-items-center flex-gap-2 p-2">
       {% for item in stickerArr %}
         {% set options = { alt: stickerAlt + item.alt, url: item.url, freezeframe: item.freezeframe } %}
         {% img stickerImgPath + item.src, options %}
       {% endfor %}
     </div>
-    <div class="sticker-footer p-2">
+    <div class="footer p-2">
       {% img stickerImgPath + "logo.png", { alt: "Main link to the Sticker Sheet Club", url: "https://stickersheetclub.neocities.org/" } %}
     </div>
   </div>
@@ -157,7 +168,7 @@
       {% for item in yysArr %}
         <tr>
           <td class="text-center">
-            {% img imgPath + "yys/" + item.src, { alt: "A small pixel of " + item.alt, freezeframe: item.freezeframe} %}
+            {% img img_path + "yys/" + item.src, { alt: "A small pixel of " + item.alt, freezeframe: item.freezeframe} %}
           </td>
           <td>{{ item.desc }}</td>
           {% if not mine %}

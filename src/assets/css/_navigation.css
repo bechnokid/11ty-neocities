@@ -1,3 +1,15 @@
+.skip-link {
+  position: absolute;
+  margin: .25rem;
+  padding: .25rem;
+  z-index: -99;
+}
+
+.skip-link:focus-visible {
+  position: relative;
+  z-index: 99;
+}
+
 #nav-main {
   position: fixed;
   width: 165px;
@@ -49,54 +61,60 @@
     padding: 0;
   }
 
-  .skip-link {
-    position: absolute;
-    margin: .25rem;
-    padding: .25rem;
-    z-index: -99;
-  }
-
-  .skip-link:focus-visible {
-    position: relative;
-    z-index: 99;
+  .toggle-mode {
+    font-size: 1.25rem;
   }
 }
 
-
-details.burger {
+.mobile-nav-container {
   display: none;
   position: fixed;
   width: 100%;
   z-index: 100;
 
-  summary.burger-summary {
-    list-style-type: none;
-    cursor: var(--img-cursor-point), pointer;
-    background: var(--bg-img-color);
-    color: transparent;
+  details.burger {
+    width: 100%;
+    z-index: 100;
+
+    summary.burger-summary {
+      list-style-type: none;
+      cursor: var(--img-cursor-point), pointer;
+      background: var(--bg-body);
+      color: transparent;
+    }
+
+    summary.burger-summary::before {
+      content: "☰";
+      font-size: 2.5em;
+      color: var(--text-primary);
+    }
+
+    nav {
+      height: calc(100vh - 50px);
+      width: 300px;
+      overflow-y: auto;
+    }
   }
 
-  summary.burger-summary::before {
-    content: "☰";
-    font-size: 2.5em;
-    color: var(--text-primary);
+  details.burger[open] {
+    background: var(--bg-overlay);
+
+    summary.burger-summary::before {
+      content: '×';
+      font-size: 3em;
+    }
   }
 
-  nav {
-    height: calc(100vh - 50px);
-    width: 300px;
-    overflow-y: auto;
+  button.toggle-mode {
+    position: fixed;
+    top: .5rem;
+    right: 1rem;
+    border: 0;
+    z-index: 100;
+    font-size: 1.5rem;
   }
 }
 
-details.burger[open] {
-  background: var(--bg-overlay);
-
-  summary.burger-summary::before {
-    content: '×';
-    font-size: 3em;
-  }
-}
 
 li.desktop > details > ul {
   margin-top: -.25rem;
@@ -110,24 +128,26 @@ li.mobile {
   margin-left: 1rem;
 }
 
-.main.desktop:has(#nav-main details[data-num-of-items="1"]:open) {
-  min-height: calc(var(--body-height) + 1.1rem);
-}
+.main.desktop {
+  &:has(#nav-main details[data-num-of-items="1"]:open) {
+    min-height: calc(var(--body-height) + 1.1rem);
+  }
 
-.main.desktop:has(#nav-main details[data-num-of-items="2"]:open) {
-  min-height: calc(var(--body-height) + 2.25rem);
-}
+  &:has(#nav-main details[data-num-of-items="2"]:open) {
+    min-height: calc(var(--body-height) + 2.25rem);
+  }
 
-.main.desktop:has(#nav-main details[data-num-of-items="3"]:open) {
-  min-height: calc(var(--body-height) + 3.47rem);
-}
+  &:has(#nav-main details[data-num-of-items="3"]:open) {
+    min-height: calc(var(--body-height) + 3.47rem);
+  }
 
-.main.desktop:has(#nav-main details[data-num-of-items="4"]:open) {
-  min-height: calc(var(--body-height) + 4.9rem);
-}
+  &:has(#nav-main details[data-num-of-items="4"]:open) {
+    min-height: calc(var(--body-height) + 4.9rem);
+  }
 
-.main.desktop:has(#nav-main details[data-num-of-items="5"]:open) {
-  min-height: calc(var(--body-height) + 6rem);
+  &:has(#nav-main details[data-num-of-items="5"]:open) {
+    min-height: calc(var(--body-height) * 1.27);
+  }
 }
 
 @media screen and (max-width: 991px) {
@@ -160,20 +180,23 @@ li.mobile {
     display: revert;
   }
 
-  details.burger {
+  .mobile-nav-container {
     display: block;
-    font-size: 1.25em;
 
-    .h2 {
-      padding: .5rem !important;
+    details.burger {
+      font-size: 1.25em;
+
+      .h2 {
+        padding: .5rem !important;
+      }
+
+      ul li ul li {
+        margin: .75rem 0;
+      }
     }
 
-    ul li ul li {
-      margin: .75rem 0;
+    .page {
+      margin-top: 3.75rem;
     }
-  }
-
-  .page {
-    margin-top: 3.75rem;
   }
 }

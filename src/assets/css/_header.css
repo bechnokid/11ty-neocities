@@ -6,6 +6,7 @@
   border: 5px solid var(--bg-body);
   background-image: url(/assets/images/header.jpg), linear-gradient(to right, var(--bg-footer), var(--bg-footer));
   background-position: var(--img-header);
+  z-index: 125;
 }
 
 .page > a:focus-visible {

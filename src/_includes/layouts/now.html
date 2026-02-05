@@ -3,7 +3,7 @@
 {% block content %}
   {{ super() }}
   <section class="older-entries mt-4">
-    {% for entry in collections.now %}
+    {% for entry in collections.now | reverse %}
       <details>
         <summary class="h2">{{ entry.fileSlug | monthDayYear }}</summary>
         {{ entry.content | safe }}

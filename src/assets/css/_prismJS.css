@@ -218,14 +218,13 @@ div.code-toolbar>.toolbar span:focus {
 /* Remove text shadow for printing */
 
 @media print {
-
-	code[class*="language-"],
+	code,
 	pre[class*="language-"] {
 		text-shadow: none;
 	}
 }
 
-code[class*="language-"],
+code,
 pre[class*="language-"] {
 	color: var(--foreground);
 	background: var(--background);
@@ -260,13 +259,13 @@ pre[class*="language-"] {
 	counter-reset: line-number;
 }
 
-:not(pre)>code[class*="language-"],
+:not(pre) > code,
 pre[class*="language-"] {
 	background: var(--background);
 }
 
 /* Inline code */
-:not(pre)>code[class*="language-"] {
+:not(pre) > code {
 	padding: 4px 7px;
 	border-radius: 0.3em;
 	white-space: normal;

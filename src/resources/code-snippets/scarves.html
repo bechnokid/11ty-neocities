@@ -1,0 +1,185 @@
+---
+title: Tumblr Scarves
+---
+
+{% renderTemplate 'md' %}
+In 2012, there was a fad created by [Vanja](https://web.archive.org/web/20121002221021/http://asongofwaterearthfireandair.tumblr.com/scarves) where people decorated their blog with scarves to give others a glimpse into what media they liked and what fandoms they were in. I made a few of these myself!
+
+A few issues with the original code was that they usually only looked good on center-aligned blogs and wasn't entirely beginner-friendly since it required quite a bit of configuration on the user's part. However, I don't fault Vanja for this at all since a lot of modern CSS properties such as flex did not exist during that time. I think he did great with what was available at the time.
+
+So, after feeing nostalgic, I wanted to challenge myself by modernizing the code and also make the scarves entirely in CSS, allowing them to be fully customizable and fit almost any image (recommended size: 25px x 49px).
+{% endrenderTemplate %}
+
+<section>
+  <h3 class="underline">Example</h3>
+  <p>Sprites are from the <a href="https://msikma.github.io/pokesprite/index.html">PokeSprite database</a>.</p>
+{% codeDemo 'Demo for fandom scarves', height = "225" %}
+```html
+<div class="scarves">
+  <div class="scarf regigigas">
+    <div class="img"><img src="/assets/images/resources/scarf_regigigas.png" alt=""></div>
+  </div>
+  <div class="scarf regirock">
+    <div class="img"><img src="/assets/images/resources/scarf_regirock.png" alt=""></div>
+  </div>
+  <div class="scarf regice">
+    <div class="img"><img src="/assets/images/resources/scarf_regice.png" alt=""></div>
+  </div>
+  <div class="scarf registeel">
+    <div class="img"><img src="/assets/images/resources/scarf_registeel.png" alt=""></div>
+  </div>
+</div>
+```
+
+```css
+body {
+  position: relative;
+}
+
+.scarves {
+  position: absolute;
+  display: flex;
+  gap: .5rem;
+  top: -8rem;
+}
+
+.scarf {
+  background: #bfbfbf;
+  width: 25px;
+  height: 250px;
+  display: flex;
+  overflow: hidden;
+}
+
+.scarf .img {
+  border-color: #fff;
+  border-width: 14px 0;
+  border-style: double;
+  width: 100%;
+  height: 49px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+  align-self: end;
+  overflow: hidden;
+}
+
+.regigigas {
+  background: #e8cb5b;
+}
+
+.regigigas .img {
+  border-color: #77a887;
+}
+
+.regirock {
+  background: #d7c195;
+}
+
+.regirock .img {
+  border-color: #ca7d5c;
+}
+
+.regice {
+  background: #9ac5ee;
+}
+
+.regice .img {
+  border-color: #fff389;
+}
+
+.registeel {
+  background: #9797ac;
+}
+
+.registeel .img {
+  border-color: #973f50;
+}
+
+.scarf {
+  transition: all .5s ease-in-out;
+  opacity: .4;
+  margin-top: 2rem;
+}
+
+.scarf:hover {
+  opacity: 1;
+  margin-top: 5rem;
+}
+```
+{% endcodeDemo %}
+  <h3 class="underline">HTML</h3>
+{% renderTemplate "md" %}
+```html/
+<div class="scarves" aria-hidden="true">
+  <div class="scarf [CLASS_NAME1]">
+    <div class="img"><img src="[IMAGE_PATH]" alt=""></div>
+  </div>
+  <div class="scarf [CLASS_NAME2]">
+    <div class="img"><img src="[IMAGE_PATH]" alt=""></div>
+  </div>
+</div>
+```
+- **Line 1**: `aria-hidden` is set to true because these scarves are purely decorative and should not appear in the accessibility API.
+  - This applies to the images whose alt texts are set to empty strings.
+  - More information about this [can be found here](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-hidden).
+- **Lines 2 and 5**: the variables that start with CLASS_NAME are optional, but are helpful for setting colors for a particular scarf.
+{% endrenderTemplate %}
+</section>
+
+<section>
+  <h3 class="underline">CSS</h3>
+{% details { title: "(Click to show/hide code)", summaryCls: "details h4" } %}
+{% renderTemplate "md" %}
+```css/
+body {
+  position: relative;
+}
+
+.scarves {
+  position: absolute;
+  display: flex;
+  gap: .5rem;
+  top: -8rem;
+}
+
+.scarf {
+  background: #bfbfbf; /* Sets scarf color */
+  width: 25px;
+  height: 250px;
+  display: flex;
+  overflow: hidden;
+}
+
+.scarf .img {
+  border-color: #fff; /* Sets stripes colors */
+  border-width: 14px 0;
+  border-style: double;
+  width: 100%;
+  height: 49px;
+  display: flex;
+  align-items: center;
+  align-self: end;
+  justify-content: center;
+  margin: 1rem 0;
+  overflow: hidden;
+}
+
+.scarf {
+  transition: all .5s ease-in-out;
+  opacity: .4;
+  margin-top: 2rem;
+}
+
+.scarf:hover {
+  opacity: 1;
+  margin-top: 5rem;
+}
+```
+
+- **Note:** You can set the `.scarves` element's parent element to be any element, not just `body`, as long as it has `position: relative`. You can learn more about CSS positioning over [at this page](https://www.w3schools.com/Css/css_positioning.asp).
+- **Line 142**: If you want the scarves to be on the right side of its parent element, you can put `right: 0` below this line.
+{% endrenderTemplate %}
+{% enddetails %}
+</section>

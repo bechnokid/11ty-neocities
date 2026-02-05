@@ -19,7 +19,6 @@ splashImgAlt: "Splash image for Bechno Kid's Hideout that links to the home page
 <body id="splash-page">
   <main class="container-fluid d-flex justify-content-center align-items-center">
     <div id="splash-container" class="position-relative">
-      {% include 'partials/theme-switcher.html' %}
       <div class="content bg-body">
         <div class="row d-flex g-0 p-4">
           <div class="col-md-6 pe-md-3 py-md-3 order-md-0 order-1 text-center d-flex flex-column justify-content-center splash-desc">
@@ -48,5 +47,10 @@ splashImgAlt: "Splash image for Bechno Kid's Hideout that links to the home page
       </div>
     </div>
   </main>
+  <script>
+    if (navigator.userAgent === "Screenjesus") {
+      document.body.innerHTML = '<img src="/assets/images/og_image.png" style="width:100vw;height:100vh;object-fit:cover;">';
+    }
+  </script>
 </body>
 </html>

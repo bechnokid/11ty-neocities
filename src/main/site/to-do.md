@@ -28,9 +28,9 @@ With that being said, I figure I'd make a to-do list in case I run out of ideas 
   - [ ] 👾🥚 {# Tamagotchi/Digimon #}
   - [ ] 🚬✖️ {# Stanley x Dr. Xeno #}
 - [ ] Make/fix assets and pages
-  - [ ] Social media links
-  - [ ] Loading screen
-  - [ ] Redirect page
+  - [x] Social media links
+  - [x] Loading screen
+  - [x] Redirect page
   - [ ] Site preview
 - [ ] Fanlistings
   - [ ] 🧜‍♂️ {# Neptunemon #}
@@ -39,4 +39,4 @@ With that being said, I figure I'd make a to-do list in case I run out of ideas 
 - [ ] Join pixel cliques that I have saved in my bookmarks
 - [ ] Finish OC x Canon section
 - [ ] Make at least 3 Status Cafe themes (1/3 done)
-- [ ] Add Tumblr Scarves to Code Snippets
+- [x] Add Tumblr Scarves to Code Snippets

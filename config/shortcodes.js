@@ -26,16 +26,17 @@ const emote = value => {
   return `<img class='inline-img' src='/assets/images/blog/emoticon/emote_${value}.png' aria-hidden='true' alt=''>`;
 }
 
-const link = function (url, content, options = {}) {
+const link = function (url, options = {}) {
   let linkCls = '';
+  let linkContent = options.text || url;
   const desc = (options.desc) ? ` aria-describedby="${options.desc}"` : '';
   const alt = (options.alt) ? ` aria-label="${options.alt}"` : '';
   if (options.markdown && desc == '') {
     if (options.cls) linkCls = `{${options.cls.split(' ').map((x) => `.${x}`).join(' ')}}`;
-    return `[${content}](${url})${linkCls}`
+    return `[${linkContent}](${url})${linkCls}`
   } else {
     if (options.cls) linkCls = ` class='${options.cls}'`;
-    return `<a href='${url}'${linkCls + desc + alt}>${content}</a>`;
+    return `<a href='${url}'${linkCls + desc + alt}>${linkContent}</a>`;
   }
 }
 

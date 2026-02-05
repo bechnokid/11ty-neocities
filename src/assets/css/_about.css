@@ -5,7 +5,7 @@
   line-height: .8rem;
 
   p {
-    margin: 0;
+    margin: .25rem 0;
   }
 
   .name {
@@ -52,7 +52,7 @@
     }
   }
 
-  section.ships {
+  section:has(h2#ships) {
     .sidebar {
       ul {
         font-size: .9em;
@@ -103,6 +103,21 @@
   }
 }
 
+.identity-btns {
+  summary {
+    background: var(--bg-heading);
+    padding: .25rem .5rem;
+    font-family: "Dyslexic";
+    font-size: 1rem;
+    color: var(--text-primary);
+  }
+}
+
+a.uwu:hover img {
+  opacity: 1 !important;
+  cursor: var(--img-cursor), auto;
+}
+
 @media screen and (max-width: 991px) {
   .fangirling {
     .other.favs-container {
@@ -111,7 +126,7 @@
   }
 }
 
-@media screen and (max-width: 577px) {
+@media screen and (max-width: 576px) {
   .fangirling {
     .other.favs-container {
       max-height: unset;

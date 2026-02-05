@@ -39,4 +39,4 @@ permalink: 'personal/faq/index.html'
 - **What do you think of _____?**
   - I probably won't know enough to give you an opinion unless it's related to a current or previous interest, sorry!
 - **Are you a proshipper or an anti?**
-  - Neither. I'm too old to get involved in tiresome discourse! There are topics that I abhor such as incest, dubcon/noncon, power imbalance (teacher/student, boss/employee, etc.), large age gaps between a minor and an adult, but I know better than to harass or publicly shit-talk those who enjoy that kind of content.
+  - Neither. I'm too old to get involved in tiresome discourse! You can see my thoughts on this over on my [fan](/personal/fan#thoughts-on-taboo-topics) page!

@@ -21,19 +21,19 @@ noScroll: true
         <ul class="gallery-list">
           {%- for item in pageCollection | sortCollectionByDisplayOrder %}
             <li>
-              {% set linkTitle = item.data.title or item.title %}
-              <a href="/art/{{ item.shortTitle or item.title | slug }}">{{ linkTitle }}</a>
-              {% if linkTitle in meta.updated %}{% icon "updated" %}{% elif linkTitle in meta.new %}{% icon "new" %}{% endif %}
+              {% set link_title = item.data.title or item.title %}
+              <a href="/art/{{ item.shortTitle or item.title | slugify }}">{{ link_title }}</a>
+              {% if link_title in meta.updated %}{% icon "updated" %}{% elif link_title in meta.new %}{% icon "new" %}{% endif %}
             </li>
           {% endfor %}
         </ul>
       {% else %}
         <dl {% if not sideImg %}class="ms-4"{% endif %}>
           {%- for item in pageCollection | sortCollectionByDisplayOrder %}
-            {% set linkTitle = item.data.title or item.title %}
+            {% set link_title = item.data.title or item.title %}
             <dt>
-              <a href="{{ item.url }}">{{ linkTitle }}</a>
-              {% if linkTitle in meta.updated %}{% icon "updated" %}{% elif linkTitle in meta.new %}{% icon "new" %}{% endif %}
+              <a href="{{ item.url }}">{{ link_title }}</a>
+              {% if link_title in meta.updated %}{% icon "updated" %}{% elif link_title in meta.new %}{% icon "new" %}{% endif %}
               {% if item.data.warning %}
               <span class="text-muted">(Warning: Flashing graphics)</span>
               {% endif %}

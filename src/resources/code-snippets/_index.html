@@ -1,0 +1,29 @@
+---
+title: Code Snippets
+summary: Snippets you can use for your own site!
+description: Snippets that can be used on your site.
+displayOrder: 1
+prism: true
+permalink: "resources/code-snippets/index.html"
+tags:
+  - resources
+  - nav
+eleventyExcludeFromCollections: ["snippets"]
+---
+{% set snippets = collections.snippets %}
+<nav class="toc">
+  <ul>
+    {% for item in snippets %}
+      <li>{% link "#" + item.fileSlug, { text: item.data.title or (item.fileSlug | title) } %}</li>
+    {% endfor %}
+  </ul>
+</nav>
+
+{% for item in snippets %}
+  <section id="{{ item.fileSlug }}" class="{{ item.fileSlug }}{{ " js-required" if item.data.jsRequired }}">
+    <h2>{{ item.data.title or (item.fileSlug | title) }}</h2>
+    {% if item.data.jsRequired %}<p><b>Note: </b>Requires JavaScript.</p>{% endif %}
+    {% if item.data.description %}<p>{{ item.data.description | markdownifyInline | safe }}</p>{% endif %}
+    {{ item.content | safe }}
+  </section>
+{% endfor %}

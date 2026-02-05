@@ -26,7 +26,7 @@ export default {
     prod: "/assets/images/favicon.ico",
     dev: "/assets/images/meat.png"
   },
-  updated: [ 'Pocket Bishies', 'Quiz Results', 'Fangirling', 'Adopts', 'Links', "Pixel Clubs", "Other", "Anime" ],
+  updated: [ "Now", "Code Snippets", "Anime", "Pixel Clubs" ],
   new: [ ],
   emotes: [
     "angry",

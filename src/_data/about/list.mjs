@@ -1,0 +1,41 @@
+export default {
+  otherFacts: [
+    "Born Feb. 10th",
+    "INTJ...I think",
+    "Still counts with fingers",
+    "Sleeps with a nightlight and plushies",
+    "Never walks barefoot",
+    "Forgetful",
+  ],
+  likes: [
+    "Drawing",
+    "Crocheting (sometimes)",
+    "Rice",
+    "Bún bò Huế",
+    "Pizza-flavored snacks",
+    "This shape <i class='ft-arrow-right'> <img src='/assets/images/meat.png' alt='Meat on a bone'>",
+  ],
+  favMedia: [
+    "**Monster Hunter**",
+    "**Digimon**",
+    "Tamagotchi",
+    "Kill la Kill",
+    "Trigun",
+    "Demon Slayer",
+    "Dr. STONE",
+  ],
+  identityBtns: [
+    { name: "She/Her", src: "she-her.png"},
+    { name: "Demigirl", src: "demigirl.png"},
+    { name: "Asexual", src: "asexual.png", },
+    { name: "Panromantic", src: "panromantic.png", },
+    { name: "Taken by two partners", src: "takenx2.png", },
+    { name: "Aquarius (Sun)", src: "aquarius.png", },
+    { name: "Taurus (Moon)", src: "taurus-moon.png", },
+    { name: "Gemini (Rising)", src: "gemini-rising.png", },
+    { name: "Year of the Monkey", src: "monkey.png", },
+    { name: "Vietnamese", src: "viet.png", },
+    { name: "Chaotic Neutral", src: "chaotic-neutral.png", },
+    { name: "Catholic", src: "catholic.png", },
+  ]
+}

@@ -211,6 +211,7 @@ export default {
           { ship: "Doctor Strange x Clea (Marvel Comics)", emoji: "💀"},
           "Inosuke x Aoi (Demon Slayer)",
           "Vash x Wolfwood (TRIGUN)",
+          "Shadow Milk Cookie x Pure Vanilla Cookie",
           "Sonic x Sally (Archie Sonic)",
           "Knuckles x Julie-Su (Archie Sonic)",
         ]
@@ -225,6 +226,6 @@ export default {
     "Hisui Aoyama (OC) x Haganezuka *(Demon Slayer)*",
     "Kaybee (OC) x Whisper *(Yokai Watch)*",
     "Dr. Vitamin (OC) x Professor Membrane *(Invader Zim)*",
-    "Jennifer (OC) + Giovanni *(Pokemon)*"
+    "Jennifer (OC) & Giovanni *(Pokemon)*"
   ]
 }
