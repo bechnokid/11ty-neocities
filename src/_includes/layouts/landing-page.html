@@ -38,7 +38,7 @@ noScroll: true
               <span class="text-muted">(Warning: Flashing graphics)</span>
               {% endif %}
             </dt>
-            <dd>{{ (item.data.description or item.content) | markdownify | safe }}</dd>
+            <dd>{{ (item.data.description or "No description") | markdownify | safe }}</dd>
           {% endfor %}
         </dl>
       {% endif %}

@@ -22,7 +22,7 @@
     {% set center_url = clique.center.url or clique.centerUrl %}
     {% set center_text = clique.center.text or clique.centerText or clique.center %}
     {% if clique.center.img %}
-      {% decoImg src = img_path + clique.center.img, cls = clique.center.cls %}
+      {% img img_path + clique.center.img, { cls: clique.center.cls, ariaHidden: true } %}
     {% else %}
       {{ clique_text(center_text, { url: center_url, cls: clique.center.cls }) }}
     {% endif %}

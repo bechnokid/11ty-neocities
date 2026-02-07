@@ -1,9 +1,9 @@
 ---
-title: 'About The Web Beet'
-shortTitle: 'About Me'
+title: About The Web Beet
+shortTitle: About Me
 displayOrder: 1
 prism: true
-permalink: 'personal/about/index.html'
+permalink: about/index.html
 description: (Almost) everything you need to know about the webmaster!
 freezeframe:
   noNav: true
@@ -49,7 +49,7 @@ The little guys next to me are **Numemon**, a shy Champion-level Digimon, and **
 
 <div class="d-flex flex-column flex-gap-4">
   <div class="geek-code">{{ geek_code | markdownify | safe }}</div>
-  <div class='about-info row d-flex flex-wrap justify-content-center mb-4 mb-md-0'>
+  <div class='about-info row d-flex flex-wrap justify-content-center'>
     <div class="col-md-4 col-12 mb-3 mb-md-0">
       {% galleryBox { title: "Other Facts", cls: "h-100" } %}
         <ul>{% for item in about.list.otherFacts %}<li>{{ item | markdownifyInline | safe }}</li>{% endfor %}</ul>
@@ -68,32 +68,51 @@ The little guys next to me are **Numemon**, a shy Champion-level Digimon, and **
   </div>
 
   {% set img_path = "/assets/images/about/monsters/" %}
-
-  {% macro favs_box(arr, options = {}) %}
-    {% galleryBox { title: arr.title, cls: options.cls, subCls: "justify-content-center flex-gap-3" } %}
-      {% for item in arr.items %}
-        <div class="fav-box">
-          {% img img_path + item.src, { alt: item.alt, cls: item.cls, url: ("/gadzooks" if item.name == "Espinas" else ""), urlCls: ("uwu" if item.name == "Espinas" else "") } %}
-          <p {% if "IRL" in arr.title %}class="font-weight-bold text-primary"{% endif %}>{{ item.name | markdownifyInline | safe }}</p>
-          {% if item.series %}
-            <p class="series">{{ item.series | markdownifyInline | safe }}</p>
-          {% endif %}
+  <div class="row g-4">
+    <div class="col-md-6 d-flex">
+      {% galleryBox { title: "Favorite Monsters" } %}
+        {% for item in about.monsters.monhun %}
+          <div class="fav-box">
+            {% img img_path + item.src, { alt: item.alt, cls: item.cls, url: ("/gadzooks" if item.name == "Espinas" else ""), urlCls: ("uwu" if item.name == "Espinas" else "") } %}
+            <p>{{ item.name | markdownifyInline | safe }}</p>
+          </div>
+        {% endfor %}
+      {% endgalleryBox %}
+    </div>
+    <div class="col-md-6">
+      {% galleryBox { title: "Favorite Digimon" } %}
+        <div class="w-100 d-flex justify-content-center js-required mb-3"><button class="button toggle-gif">Toggle GIFs</button></div>
+        <div class="freezeframe">
+          {% for item in about.monsters.digimon %}
+          <div class="fav-box">
+            {% img img_path + item.src, { alt: "Sprite of " + item.name, cls: item.cls } %}
+            <p>{{ item.name | markdownifyInline | safe }}</p>
+          </div>
+          {% endfor %}
         </div>
-      {% endfor %}
-    {% endgalleryBox %}
-  {% endmacro %}
-  {{ favs_box(about.monsters.monhun, { cls: "monsters" }) }}
+      {% endgalleryBox %}
+    </div>
+  </div>
 
-  {% galleryBox { title: "Favorite Digimon", cls: "digimon" } %}
-    <div class="w-100 d-flex justify-content-center mb-3 js-required"><button class="button toggle-gif">Toggle GIFs</button></div>
-
-    <div class="freezeframe">
-      {% for item in about.monsters.digimon %}
-      <div class="fav-box">
-        {% img img_path + item.src, { alt: "Sprite of " + item.name, cls: item.cls } %}
-        <p>{{ item.name | markdownifyInline | safe }}</p>
-      </div>
+  {% set img_path = "/assets/images/about/quiz-results/" %}
+  <div class="quiz-results sidebar">
+    <h2>Quiz Results</h2>
+    <div class="gallery-box">
+      {% for item in about.quiz_results %}
+        {% if item.title %}
+          <div class="text-widget sidebar d-flex{{ " flex-column" if item.alignment == "vertical" }} flex-gap-3 p-3{{ " " + item.cls if item.cls }}">
+            <div class="img d-flex align-items-center justify-content-center">{% img img_path + item.src, { alt: item.alt } %}</div>
+            <div class="desc">
+              <p class="title text-center"><a href="{{ item.url }}">{{ item.title }}</a></p>
+              <p class="text{{ " text-center" if item.alignment == "vertical" }}">{{ item.desc }}</p>
+            </div>
+          </div>
+        {% elif item.widget %}
+          {{ item.widget | safe }}
+        {% else %}
+          {% img img_path + item.src, { alt: item.alt, url: item.url } %}
+        {% endif %}
       {% endfor %}
     </div>
-  {% endgalleryBox %}
+  </div>
 </div>

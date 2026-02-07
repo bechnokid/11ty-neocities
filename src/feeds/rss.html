@@ -11,20 +11,17 @@ permalink: 'feeds/rss.xml'
     <link>{{ meta.url }}</link>
     <description>{{ summary }}</description>
     <language>en-us</language>
-    <lastBuildDate>{{ feed_items[0].date | dateToRfc3339 }}</lastBuildDate>
+    <lastBuildDate>{{ feed_items[0].date.toUTCString() }}</lastBuildDate>
     <docs>https://www.rssboard.org/rss-specification</docs>
     {%- for item in feed_items | reverse %}
     <item>
       <title>{{ item.title or (item.fileSlug | monDayYear) }}</title>
-      <link>{{ item.pageUrl or "/home" }}</link>
+      <link>https://bechnokid.neocities.org/home</link>
       <guid isPermaLink="false">{{ item.title or "update" }}-{{ item.date }}</guid>
-      <pubDate>{{ feed_items[0].date | dateToRfc3339 }}</pubDate>
+      <pubDate>{{ feed_items[0].date.toUTCString() }}</pubDate>
       <description><![CDATA[
         {{ (item.summary or item.content) | markdownify | safe }}
         ]]></description>
-      <content:encoded><![CDATA[
-        {{ item.content | markdownify }}
-        ]]></content:encoded>
     </item>
     {% endfor %}
   </channel>

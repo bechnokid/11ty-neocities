@@ -1,9 +1,10 @@
 ---
-title: 'Accessibility Statement'
-shortTitle: 'Accessibility'
+title: Accessibility Statement
+shortTitle: Accessibility
+description: Features that my website implemented to be accessible.
 displayOrder: 1
 prism: true
-permalink: 'accessibility/index.html'
+permalink: accessibility/index.html
 noScroll: true
 ---
 

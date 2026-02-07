@@ -47,40 +47,14 @@ const figure = function (children, src, options = {}) {
   const figcaptionCls = (options.figcaptionCls) ? ` class='${options.figcaptionCls}` : '';
   return `<figure${figureCls}${figureStyle}>${imgStr}<figcaption${figcaptionCls}>${caption}</figcaption></figure>`;
 }
-/* galleryBox params:
-  - children: content between {% galleryBox %} and {% endgalleryBox %}
-  - id (str): sets "id" attribute
-  - title (str): creates <h2> for title
-    - subtitle (str): creates <h3> for subtitle
-    - title and subtitle cannot both be present
-  - cls (str): sets class for .sidebar
-  - subCls (str): sets class for .content
-  - simple (boolean): determines if gallery box will be simple or a flex box
-  - markdown (boolean or object): determines if content will be in Markdown
-    - inline (boolean): if markdown is object, this determines whether or not to add <p> tags
-*/
-const galleryBox = function (children, params = {}) {
-  let mainContent = children;
-  const galleryId = (params.id) ? ` id="${params.id}"` : '';
-  const title = (params.title) ? `<h2>${params.title}</h2>` : '';
-  const subtitle = (params.subtitle) ? `<h3>${params.subtitle}</h3>` : '';
 
-  if (title != "" && subtitle != "") return "<p>There cannot be both a title and a sub title.</p>";
-
-  const mainCls = (params.cls) ? ` ${params.cls}` : '';
-  let subCls = (params.simple) ? "" : " d-flex flex-wrap";
-  if (params.subCls) subCls += ` ${params.subCls}`;
-
-  if (params.markdown) {
-    mainContent = (params.markdown.inline) ? markdownLib.renderInline(children.trim()) : markdownLib.render(children.trim());
-  }
-
-  return `${subtitle}<div${galleryId} class='sidebar${mainCls}'>${title}<div class='content p-3 position-relative${subCls}'>${mainContent}</div></div>`;
+const info = function(children, params = {}) {
+  return `<div class='info ${params.cls || ""}'>${children}</div>`;
 }
 
 module.exports = {
   tooltip,
   figure,
   details,
-  galleryBox,
+  info,
 }

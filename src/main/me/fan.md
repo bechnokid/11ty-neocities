@@ -1,9 +1,9 @@
 ---
-title: 'Fangirling'
+title: Fangirling
 summary: A page where I talk about preferences and experiences as a fan of the media I enjoy and consume.
 description: A page that describes myself as a fan of whatever media I consume.
 displayOrder: 5
-permalink: 'personal/fan/index.html'
+permalink: fan/index.html
 ---
 
 ==toc
@@ -101,7 +101,7 @@ When writing down ship names, I don't consider if the character is a "top" or "b
 
 You can click on ships with a dotted underline for commentary!
 
-<div class="row mt-1 g-3">{% for key, value in about.ships.canon %} <div class="col-md-4 d-flex flex-column"><div class="sidebar"><p class="h3">{{ key | title }}</p><div class="content">{% for media in value %} <details open class="p-2"><summary class="media">{{ media.name }}</summary><ul>{% for item in media.items %} <li>{% if item.info %} <details class="info"><summary class="info">{{ item.ship | safe }}{% if item.emoji %} {% emoji item.emoji %}{% endif %}</summary><p>{{ item.info | safe }}</p></details>{% else %} {{ (item.ship or item) | safe }}{% if item.emoji %} {% emoji item.emoji %}{% endif %} {% endif %} </li>{% endfor %}</ul></details>{% endfor %}</div></div></div>{% endfor %}
+<div class="row mt-1 mb-4 g-3">{% for key, value in about.ships.canon %} <div class="col-md-4 d-flex flex-column"><div class="sidebar"><p class="h3">{{ key | title }}</p><div class="content">{% for media in value %} <details open class="p-2"><summary class="media">{{ media.name }}</summary><ul>{% for item in media.items %} <li>{% if item.info %} <details class="fan-info"><summary>{{ item.ship | safe }}{% if item.emoji %} {% emoji item.emoji %}{% endif %}</summary><p>{{ item.info | safe }}</p></details>{% else %} {{ (item.ship or item) | safe }}{% if item.emoji %} {% emoji item.emoji %}{% endif %} {% endif %} </li>{% endfor %}</ul></details>{% endfor %}</div></div></div>{% endfor %}
 </div>
 
 ### OC x Canon

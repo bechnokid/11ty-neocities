@@ -15,20 +15,22 @@ article.joined {
   }
 }
 
-ul.separator li:not(:last-child)::after {
-  margin: 0 .25rem;
-}
+ul.separator {
+  &.pipe li:not(:last-child)::after {
+    content: "|"
+  }
 
-ul.separator.pipe li:not(:last-child)::after {
-  content: "|"
-}
+  &.dash li:not(:last-child)::after {
+    content: "-"
+  }
 
-ul.separator.dash li:not(:last-child)::after {
-  content: "-"
-}
+  &.space li:not(:last-child)::after {
+    content: " "
+  }
 
-ul.separator.space li:not(:last-child)::after {
-  content: " "
+  li:not(:last-child)::after {
+    margin: 0 .25rem;
+  }
 }
 
 .webrings {
@@ -69,6 +71,15 @@ ul.separator.space li:not(:last-child)::after {
     &[href*="http"]::after {
       display: none !important;
     }
+  }
+
+  .pending {
+    border: 1px solid var(--border-sidebar);
+    background: var(--bg-body);
+    padding: 0 1rem;
+    max-width: 150px;
+    font-size: 0.9em;
+    text-align: center;
   }
 
   .webring-nav {
@@ -368,6 +379,31 @@ div.waiting {
           border-color: yellow !important;
         }
       }
+    }
+  }
+}
+
+/* Gummy Ring */
+
+.gummy {
+  .webring-title [role="img"] {
+    width: 57px;
+    height: 58px;
+    background: url('/assets/images/webrings/gummyring.png');
+  }
+
+  .webring-nav {
+    .prev,
+    .next {
+      width: 21px;
+      height: 13px;
+      background: url('/assets/images/webrings/gummyring.png') -57px -15px;
+    }
+
+    .index {
+      width: 87px;
+      height: 15px;
+      background: url('/assets/images/webrings/gummyring.png') -57px 0;
     }
   }
 }
@@ -767,6 +803,72 @@ div.waiting {
 
 }
 
+/* Sanrio Webring */
+@font-face {
+  font-family: 'Cherry Bomb One';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/cherry-bomb-one@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/cherry-bomb-one@latest/latin-400-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: 'Hi Melody';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/hi-melody@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/hi-melody@latest/latin-400-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+.sanrio {
+  width: 250px;
+  height: 175px;
+  background: url(/assets/images/webrings/sanrio.png);
+  font-family: 'Hi Melody';
+  font-size: 1rem;
+  justify-content: space-around;;
+
+  .webring-title > * {
+    font-family: 'Cherry Bomb One';
+    color: #fff !important;
+    font-size: 1.5rem;
+    text-shadow: 0 0 10px #00393c;
+    line-height: 1rem;
+    text-decoration: none !important;
+
+    &:hover {
+      text-decoration: underline !important;
+    }
+  }
+
+  .webring-nav {
+    .prev,
+    .next {
+      width: 49px;
+      height: 50px;
+      background: url(/assets/images/webrings/sanrio.png) -250px 0;
+    }
+
+    .index {
+      width: 124px;
+      height: 48px;
+      background: url(/assets/images/webrings/sanrio.png) 0 -175px;
+    }
+  }
+
+  .webring-links {
+    a {
+      color: #085745;
+
+      &:visited {
+        color: #5b2c58 !important;
+      }
+    }
+  }
+}
+
 /* Self-Insert Webring */
 .self-insert {
   width: 225px;
@@ -886,6 +988,36 @@ div.waiting {
     width: 110px;
     height: 52px;
     background: url(/assets/images/webrings/wol.png) -20px 0;
+  }
+}
+
+/* Yume-ring */
+.yume-ring {
+  &:has(.btn) {
+    .btn {
+      width: 88px;
+      height: 31px;
+      background: url(/assets/images/webrings/yumering.png) -77px 0;
+    }
+  }
+
+  .webring-title {
+    [role="img"] {
+      width: 77px;
+      height: 40px;
+      background: url(/assets/images/webrings/yumering.png);
+    }
+  }
+  .webring-nav {
+    font-size: .8em;
+
+    & > * {
+      font-weight: bold;
+    }
+
+    .next {
+      transform: scale(1);
+    }
   }
 }
 

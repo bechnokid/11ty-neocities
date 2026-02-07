@@ -20,14 +20,14 @@ export default {
   introLinks: [
     { name: 'Sitemap', url: '/sitemap' },
     { name: 'RSS', url: '/feeds' },
-    { name: 'Guestbook', url: 'https://bechnokid.atabook.org/' }
+    { name: 'Guestbook', url: '/guestbook' }
   ],
   favicon: {
     prod: "/assets/images/favicon.ico",
     dev: "/assets/images/meat.png"
   },
-  updated: [ "Now", "Code Snippets", "Anime", "Pixel Clubs" ],
-  new: [ ],
+  updated: [ ],
+  new: [ "Descriptions in RSS Feed" ],
   emotes: [
     "angry",
     "calm",

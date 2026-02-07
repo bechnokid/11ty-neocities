@@ -1,11 +1,10 @@
-{% set imgPath = "/assets/images/webrings" %}
+{% set img_path = "/assets/images/webrings" %}
 {% set alt_main = "Main link to the " %}
 {% set alt_prev = "Go to the previous site in the " %}
 {% set alt_next = "Go to the next site in the " %}
 {% set alt_rand = "Go to a random site in the " %}
 
 {# Params for button-only webrings
-
 {% set webring_params = {
   id: "id(optional)",
   name: "Webring name",
@@ -44,11 +43,9 @@
 #}
 
 {# Params for multi-line widgets
-
 {% set webring_params = {
   id: "id(optional)",
   name: "webring_name",
-  src: "use only if btn has image path",
   url: "",
   title: {
     text: "",
@@ -143,7 +140,11 @@
       {% if params.nav.index.src %} {# If index btn has img path #}
         {% img params.nav.index.src, { cls: "index", url: params.nav.index.url or params.nav.index, alt: webring_alt_main } %}
       {% elif params.nav.index.text %}
-        {% link params.nav.index.url, { text: params.nav.index.text, cls: "index", alt: webring_alt_main } %}
+        {% if params.nav.index.url %}
+          {% link params.nav.index.url, { text: params.nav.index.text, cls: "index", alt: webring_alt_main } %}
+        {% else %}
+          {{ params.nav.index.text }}
+        {% endif %}
       {% else %} {# Else, make it into a div bg #}
         {% set index_url = parmas.nav.index.url or params.nav.index %}
         {% if index_url %}
@@ -212,7 +213,7 @@
             {# Index or members list link #}
             {% if params.links.index %}
               <li>
-                <a href="{{ params.links.index.url }}">
+                <a href="{{ params.links.index.url or params.url }}">
                   {% if params.links.index.src %}
                     {% img params.links.index.src, { cls: "index", alt: alt_main + params.name + " webring" } %}
                   {% elif params.links.index.text %}
@@ -246,9 +247,9 @@
   {% if params.script_url %}
     <script type="text/javascript" src="{{ params.script_url }}"></script>
     {% if params.override %}
-      <script>webringLinks["{{ params.id or (params.name | slugify ) }}"] = { override: true, sites: sites }</script>
+      <script>webringLinks["{{ params.id or (params.name | slugify ) }}"] = { name: "{{params.name}}", url: "{{ params.nav.index.url or params.url }}", override: true, sites: sites }</script>
     {% else %}
-      <script>webringLinks["{{ params.id or (params.name | slugify ) }}"] = sites;</script>
+      <script>webringLinks["{{ params.id or (params.name | slugify ) }}"] = { name: "{{params.name}}", url: "{{ params.nav.index.url or params.url }}", sites: sites };</script>
     {% endif %}
   {% endif %}
 {% endmacro %}
@@ -331,7 +332,7 @@
       </div>
     </div>
     <script type="text/javascript" src="{{ webring_params.url }}/var.js"></script>
-    <script>webringLinks['{{ webring_params.id }}'] = sites.map((site) => "https://" + site[0])</script>
+    <script>webringLinks['{{ webring_params.id }}'] = { name: "{{ webring_params.name }}", url: "{{ webring_params.url }}", sites: sites.map((site) => "https://" + site[0]) }</script>
   {% endif %}
 {% endmacro %}
 
@@ -361,7 +362,7 @@
     }
   } %}
   {{ widget(webring_params, btn_only) }}
-  <script>webringLinks["{{ webring_params.name }}"] = sites.map((site) => site[0]);</script>
+  <script>webringLinks["{{ webring_params.name }}"] = { name: "doodlering", url: "{{ webring_params.url }}", sites: sites.map((site) => site[0])};</script>
 {% endmacro %}
 
 {% macro gfdkris(btn_only = false) %}
@@ -448,7 +449,7 @@
   {% else %}
     <div class="{{ webring_params.id }} webring">
       <div class="ring-container">
-        <img src="{{ imgPath }}/personaring.png" alt="" class="sona outline" aria-hidden="true">
+        <img src="{{ img_path }}/personaring.png" alt="" class="sona outline" aria-hidden="true">
         <div class="persona-ring">
           <div class="d-flex flex-column flex-gap-1">
             <div class="name-tag">
@@ -472,7 +473,7 @@
       </div>
     </div>
     <script type='text/javascript' src='{{ webring_params.url }}/onionring-variables.js'></script>
-    <script>webringLinks['p-ring'] = sites</script>
+    <script>webringLinks['p-ring'] = { name: "{{ webring_params.name }}", url: "{{ webring_params.url }}", sites: sites };</script>
   {% endif %}
 {% endmacro %}
 
@@ -520,7 +521,7 @@
     }
   } %}
   {{ widget(webring_params, btn_only) }}
-  <script>webringLinks["{{ webring_params.id }}"] = RESOURCERINGLIST;</script>
+  <script>webringLinks["{{ webring_params.id }}"] = { name: "{{ webring_params.name }}", sites: RESOURCERINGLIST };</script>
 {% endmacro %}
 
 {% macro self_insert() %}
@@ -576,13 +577,76 @@
   {{ widget(webring_params, btn_only)}}
 {% endmacro %}
 
+{# PENDING WEBRINGS #}
+
+{% macro gummy() %}
+  {% set webring_url = "https://gummyring.neocities.org" %}
+  {% set webring_params = {
+    id: "gummy",
+    name: "gummy ring",
+    url: webring_url,
+    title: { url: webring_url },
+    nav: {
+      prev: "https://gummyring.neocities.org/?action=previous",
+      index: webring_url,
+      next: "https://gummyring.neocities.org/?action=next"
+    }
+  } %}
+  {{ widget(webring_params) }}
+{% endmacro %}
+
+{% macro yume() %}
+  {% set webring_url = "https://yume-ring.neocities.org/" %}
+  {% set webring_params = {
+    name: 'yume-ring',
+    url: webring_url,
+    script_url: webring_url + "onionring-variables.js",
+    title: {
+      url: webring_url
+    },
+    nav: {
+      prev: {
+        text: "← previous"
+      },
+      index: { text: "♡ Yume-Ring ♡"},
+      next: {
+        text: "next →"
+      }
+    }
+  } %}
+  {{ widget(webring_params) }}
+{% endmacro %}
+
+{% macro sanrio() %}
+  {% set webring_url = "https://luckyatoll.nekoweb.org/sanringo.html" %}
+  {% set webring_params = {
+    name: "Sanrio",
+    url: webring_url,
+    title: {
+      text: "Sanrio Webring",
+      url: webring_url
+    },
+    nav: {
+      prev: "https://luckyatoll.nekoweb.org/sanringo.html?action=previous",
+      index: { btnOnly: true },
+      next: "https://luckyatoll.nekoweb.org/sanringo.html?action=next"
+    },
+    links: {
+      index: {
+        text: "what's this?"
+      }
+    }
+  } %}
+  {{ widget(webring_params) }}
+{% endmacro %}
+
 {# INACTIVE WEBRINGS #}
 
 {% macro jelly() %}
   {% set webring_name = "Jelly World" %}
   <div class="{{ webring_name | slugify }} webring py-3 px-2 d-flex flex-column flex-gap-3">
     <p class="jw-bond"><a href="/">Bechno Kid</a> has bonded with <strong>Jelly Well-Done Steak!</strong></p>
-    <img src="{{ imgPath }}/jw_steak.png" alt="{{ alt_main + webring_name }}" title="Mmm...so tasty!">
+    <img src="{{ img_path }}/jw_steak.png" alt="{{ alt_main + webring_name }}" title="Mmm...so tasty!">
     <p class="jw-desc">This jelly has the ability to boost your health and stamina! Mmm...so tasty!</p>
     <div class="jw-nav py-1">
       <a href="" class="link-rand button" aria-label="{{ alt_rand + webring_name }}">RANDOM</a>

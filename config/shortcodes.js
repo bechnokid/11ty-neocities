@@ -58,23 +58,19 @@ const img = function(src, options = {}) {
     }
     return resultString;
   } else {
-    ariaStr = '';
-    if (options.aria) {
-      const ariaData = options.aria;
-      if (ariaData.desc) ariaStr += ` aria-describedby="${ariaData.desc}"`;
-      if (ariaData.hidden == true) ariaStr += ` aria-hidden="true"`
-    }
-    dataStr = '';
+    let optionsArr = [];
     if (options.cls) clsArr.push(options.cls.split(' '));
-    if (clsArr.length > 0) imgCls = ` class='${clsArr.flat().join(' ')}'`
+    if (clsArr.length > 0) optionsArr.push(` class='${clsArr.flat().join(' ')}'`);
+    if (options.width) optionsArr.push(` width="${options.width}px"`);
+    if (options.height) optionsArr.push(` height="${options.height}px"`);
+    if (options.ariaHidden) optionsArr.push(' aria-hidden="true"');
+    if (options.ariaDescribedBy) optionsArr.push(` aria-describedby="${options.ariaDescribedBy}"`)
 
-    const imgWidth = options.width ? ` width=${options.width}px` : "";
-    const imgHeight = options.height ? ` height=${options.height}px` : "";
-    resultString = `<img src='${src}' alt="${imgAlt}"${imgCls + ariaStr + imgWidth +  imgHeight}>`;
+    resultString = `<img src='${src}' alt="${imgAlt}"${optionsArr.flat().join(' ')}>`;
     if (options.url) {
       const urlCls = (options.urlCls) ? ` class='${options.urlCls}'` : '';
       const urlId = (options.urlId) ? ` id='${options.urlId}'` : '';
-      resultString = `<a${urlId} href="${options.url}"${urlCls}>` + resultString + '</a>';
+      resultString = `<a${urlId} href="${options.url}"${urlCls}>${resultString}</a>`;
     }
   }
   return resultString;
@@ -90,12 +86,6 @@ const imgDiv = function(params) {
   return results;
 }
 
-const decoImg = function(params) {
-  if (!params.src) return "No img src provided.";
-  const cls = (params.cls)? ` class='${params.cls}'` : '';
-  return `<img src=${params.src}${cls} aria-hidden="true">`;
-}
-
 const artCaption = function(caption, params = {}){
   const ogDate = (params.originalDate) ? `From ${params.originalDate}.` : '';
   const ogCaption = params.originalCaption ? `<blockquote class='mb-4'>${markdownLib.renderInline(params.originalCaption.replaceAll("\\n", "\n").trim())}</blockquote>` : '';
@@ -105,7 +95,6 @@ const artCaption = function(caption, params = {}){
 }
 
 module.exports = {
-  decoImg,
   icon,
   emoji,
   emoticon,

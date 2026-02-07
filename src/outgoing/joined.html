@@ -86,6 +86,12 @@ permalink: 'joined/index.html'
     </noscript>
   {% endgalleryBox %}
 
+  {% galleryBox { title: "Pending", cls: "js-required", subCls: "webrings pending justify-content-center align-items-center flex-gap-3" } %}
+    {{ webrings.gummy() }}
+    {{ webrings.yume() }}
+    {{ webrings.sanrio() }}
+  {% endgalleryBox %}
+
   {% galleryBox { title: "Webrings?", cls: 'js-required', subCls: "webrings fake-webrings", simple: true } %}
     <p>These webrings are either inactive or are not letting people join even though the option to become a member is still available. So, I cheated a bit to make myself an "honorary member", like a rascal. Yes, these are all functional!</p>
     <p>If you're the owner of any of these webrings and you want me to take these down, then please go back to updating your webrings or at least say applications are closed!</p>

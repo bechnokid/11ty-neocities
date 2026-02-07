@@ -1,6 +1,7 @@
 ---
 title: Manifesto
 summary: "This page serves as a reminder to myself of the site's main purpose!"
+description: A short history and general goals for this website.
 displayOrder: 2
 permalink: 'manifesto/index.html'
 ---

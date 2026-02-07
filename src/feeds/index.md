@@ -2,7 +2,7 @@
 title: "Feeds"
 layout: layouts/basic.html
 summary: "You can catch up to what I'm up to by adding any one of my feeds to your newsreader!"
-displayOrder: 4
+displayOrder: 2
 tags: main
 noScroll: true
 ---
@@ -28,5 +28,6 @@ I personally use [FreshRSS](https://rss.32bit.cafe) (browser) and [Feedbro](http
 Here are a couple of my favorite resources on making your own feeds:
 
 - [Style your RSS feed by Darek Kay](https://darekkay.com/blog/rss-styling/) - shares how to make your RSS pretty and easy for users to read
+  - [Adding Full Descriptions to Your RSS Feed](/tutorials/rss-feed.html) - Bit of a shameless plug, but this is an expansion of Darek's tutorial, allowing you to add full descriptions to your RSS feed!
 - [RSS feeds tutorial by Des](https://doqmeat.com/notebook/tutorials/rss/) - also shows how to display RSS feeds on HTML! Super helpful and adorable to boot!
 - [RSS feeds tutorial by PKLucky](https://pklucky.neocities.org/coding/rss-tutorial) - provides another template and goes into depth on filling it out!

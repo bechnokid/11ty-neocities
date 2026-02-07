@@ -34,6 +34,41 @@ module.exports = async function(eleventyConfig){
     eleventyConfig.addPairedShortcode(key, pairedShortcodes[key])
   }
 
+  /* galleryBox params:
+    - children: content between {% galleryBox %} and {% endgalleryBox %}
+    - id (str): sets "id" attribute
+    - title (str): creates <h2> for title
+      - subtitle (str): creates <h3> for subtitle
+      - title and subtitle cannot both be present
+    - cls (str): sets class for .sidebar
+    - subCls (str): sets class for .content
+    - simple (boolean): determines if gallery box will be simple or a flex box
+    - markdown (boolean or object): determines if content will be in Markdown
+      - inline (boolean): if markdown is object, this determines whether or not to add <p> tags
+  */
+  eleventyConfig.addPairedShortcode('galleryBox', function(children, params = {}) {
+    let mainContent = children;
+    const galleryId = (params.id) ? ` id="${params.id}"` : '';
+    const title = (params.title) ? `<h2>${params.title}</h2>` : '';
+    const subtitle = (params.subtitle) ? `<h3>${params.subtitle}</h3>` : '';
+
+    if (title != "" && subtitle != "") return "<p>There cannot be both a title and a sub title.</p>";
+
+    let mainClsArr = ['sidebar'];
+    if (params.cls) mainClsArr.push(...params.cls.split(' '));
+    if (params.title) mainClsArr.push(eleventyConfig.getFilter('slugify')(params.title));
+
+    let subClsArr = (params.simple) ? [] : ['d-flex', 'flex-wrap']
+    if (params.subCls) subClsArr.push(...params.subCls.split(' '));
+
+    if (params.markdown) {
+      mainContent = (params.markdown.inline) ? markdownLib.renderInline(children.trim()) : markdownLib.render(children.trim());
+    }
+
+    return `${subtitle}<div${galleryId} class='${mainClsArr.join(' ')}'>${title}<div class='content p-3 position-relative ${subClsArr.join(' ')}'>${mainContent}</div></div>`;
+  })
+
+
   // Transform
   eleventyConfig.addTransform("htmlmin", htmlmin);
 

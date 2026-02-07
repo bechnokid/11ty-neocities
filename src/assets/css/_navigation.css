@@ -105,13 +105,26 @@
     }
   }
 
-  button.toggle-mode {
+  .btns-container {
     position: fixed;
+    z-index: 100;
     top: .5rem;
     right: 1rem;
-    border: 0;
-    z-index: 100;
-    font-size: 1.5rem;
+    display: flex;
+    gap: 1rem;
+
+    button {
+      border: 0;
+
+      &.toggle-mode {
+        font-size: 1.5rem;
+      }
+
+      &.toggle-gif {
+        padding: .5rem 1rem;
+        font-weight: bold;
+      }
+    }
   }
 }
 

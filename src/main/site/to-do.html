@@ -2,13 +2,33 @@
 title: To-Do
 displayOrder: 4
 permalink: 'to-do/index.html'
+description: Future features I want to add to this site.
 ---
 
-{% img "/assets/images/silly/no-plan.jpg", { cls: "to-do sidebar p-2 ms-md-3" } %}
-
+{% set summary %}
 Just like Karamatsu Matsuno, I have **no plans** on how I want my website to look in the end.
 
 With that being said, I figure I'd make a to-do list in case I run out of ideas on what I want to do with my site. None of these ideas will be sorted or ordered in any way!
+{% endset %}
+
+<div class="row g-3">
+  <div class="col-md-7 pb-md-0 pb-3">
+    {{ summary | markdownify | safe }}
+  </div>
+  <div class="col-md-5">
+    {% img "/assets/images/silly/no-plan.jpg", { cls: "to-do sidebar" } %}
+  </div>
+</div>
+{# Update [/now](/now) for March #}
+{% renderTemplate "md" %}
+## Personal
+
+- [ ] Finish OC x Canon section in [fan](/personal/fan) page
+  - [ ] Images
+  - [ ] Basic description (who they are, how they met canon character)
+  - [ ] Commentary
+
+## Creative
 
 - [ ] OC portal
   - [ ] Original
@@ -20,23 +40,28 @@ With that being said, I figure I'd make a to-do list in case I run out of ideas 
   - [ ] Pokemon
   - [ ] Kirby
   - [ ] Keroro Gunso / Sgt. Frog
-- [ ] Make *THE* webring {# Digimon #}
 - [ ] Shrines
   - [ ] 🔥🐟 {# Chi-yu #}
   - [ ] 🧜‍♂️ {# Neptunemon #}
   - [ ] 🍖 {# MEAT #}
   - [ ] 👾🥚 {# Tamagotchi/Digimon #}
   - [ ] 🚬✖️ {# Stanley x Dr. Xeno #}
-- [ ] Make/fix assets and pages
-  - [x] Social media links
-  - [x] Loading screen
-  - [x] Redirect page
-  - [ ] Site preview
+- [ ] Draw special page for GFDKWTFAW ring
+
+## Goodies
+
+- [ ] Join pixel cliques that I have saved in my bookmarks (0/3 done)
+
+## Resources
+
+- [ ] Make at least 3 Status Cafe themes (1/3 done)
+
+## Tentative
+
 - [ ] Fanlistings
   - [ ] 🧜‍♂️ {# Neptunemon #}
   - [ ] 🔥🐟 {# Chi-yu #}
   - [ ] 🐲⚔️ {# Monster Hunter #}
-- [ ] Join pixel cliques that I have saved in my bookmarks
-- [ ] Finish OC x Canon section
-- [ ] Make at least 3 Status Cafe themes (1/3 done)
-- [x] Add Tumblr Scarves to Code Snippets
+- [ ] Make a webring {# Digimon #}
+- [ ] Dream diary
+{% endrenderTemplate %}

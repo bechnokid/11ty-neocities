@@ -15,7 +15,10 @@
         </summary>
         <nav><div class="sidebar pb-2 pb-md-0">{% include "partials/navigation.html" %}</div></nav>
       </details>
-      <button type="button" class="toggle-mode" aria-label="Switch to dark mode">{% icon 'moon' %}</button>
+      <div class="btns-container">
+        {% if freezeframe == true %}<button type="button" class="toggle-gif">Toggle GIFs</button>{% endif %}
+        <button type="button" class="toggle-mode" aria-label="Switch to dark mode">{% icon 'moon' %}</button>
+      </div>
     </div>
     <div class="page bg-body">
       <a href="/home"><header class="bg-body"><span class="hidden">Navigate to the home page</span></header></a>

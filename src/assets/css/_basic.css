@@ -46,58 +46,6 @@ img.preview-img {
   object-position: top center;
 }
 
-.quiz-results {
-  a:has(img) {
-    display: inline-flex;
-  }
-
-  .text-widget {
-    &.mh-sunbreak {
-      .desc {
-        flex-shrink: 1.2;
-      }
-    }
-
-    .img {
-      width: 100%;
-    }
-
-    .text {
-      margin-top: .5rem;
-      font-size: .8em;
-      line-height: 1.5em;
-    }
-  }
-
-  .widget {
-    &.html-color {
-      max-width: 400px;
-      background-color: #fff;
-      border: 2px solid #6495ED;
-
-      * {
-        color: #000;
-        border-bottom-color: #000 !important;
-      }
-
-      a:after {
-        filter: unset !important;
-      }
-
-      .header,
-      .footer {
-        background-color: #6495ED;
-      }
-
-      .header * {
-        margin: 0;
-      }
-    }
-  }
-}
-
-
-
 .curse-list {
   max-height: 300px;
   overflow-y: auto;
@@ -152,13 +100,6 @@ img.preview-img {
   }
 }
 
-article.to-do {
-  img.to-do {
-    float: right;
-    max-width: 375px;
-  }
-}
-
 @media screen and (max-width: 767px) {
   #bishie-quiz-nav {
     max-height: unset;
@@ -179,13 +120,6 @@ article.to-do {
     left: 50%;
     right: unset;
     transform: rotate(-90deg);
-  }
-
-  article.to-do {
-    img.to-do {
-      float: unset;
-      width: 100%;
-    }
   }
 }
 

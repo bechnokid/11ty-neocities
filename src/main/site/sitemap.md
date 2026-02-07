@@ -1,7 +1,8 @@
 ---
 title: Sitemap
 summary: Lost? Hopefully, this sitemap will help you navigate to where you want to go!
-displayOrder: 5
+description: A list of all available pages on this website for easy navigation.
+displayOrder: 6
 permalink: 'sitemap/index.html'
 ---
 {% macro collectionList(section, name = null) %}
