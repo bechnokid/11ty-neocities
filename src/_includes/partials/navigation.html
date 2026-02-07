@@ -13,7 +13,7 @@
         <li class="desktop">
           {% set sublinkItems = link.data.pagination.items | getPageLinks %}
           <details data-num-of-items="{{ sublinkItems.length }}"{{ " open" if page.url in sublinkItems }}>
-            <summary class="text-secondary">{{ link.data.title }}{% if link.data.title in meta.updated %} {% icon 'updated' %}{% endif %}</summary>
+            <summary class="text-link">{{ link.data.title }}{% if link.data.title in meta.updated %} {% icon 'updated' %}{% endif %}</summary>
             <ul class="ms-2">
               {%- for sublink in link.data.pagination.items %}
                 {% set sublinkCls = sublink.data.navTag or "" %}

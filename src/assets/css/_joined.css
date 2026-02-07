@@ -132,6 +132,12 @@ div.waiting {
 }
 
 /* Cliques */
+[data-theme="dark"] {
+  .type-master span {
+    color: #bdbdbd;
+  }
+}
+
 .cliques {
   .type-master {
     display: block !important;
@@ -828,7 +834,8 @@ div.waiting {
   background: url(/assets/images/webrings/sanrio.png);
   font-family: 'Hi Melody';
   font-size: 1rem;
-  justify-content: space-around;;
+  justify-content: space-around;
+  border-radius: 1rem;
 
   .webring-title > * {
     font-family: 'Cherry Bomb One';
