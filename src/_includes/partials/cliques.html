@@ -2,9 +2,9 @@
 
 {% galleryBox { title: "Cliques", cls: 'cliques row g-0' } %}
   <div class="row g-0 flex-md-gap-0 flex-gap-1">
-    <div class="col-lg-6 col-12 d-flex flex-column align-items-center order-md-1 order-2 mb-lg-0 mb-3">
+    <div class="col-lg-6 col-12 d-flex flex-column align-items-center order-md-1 order-2 mb-lg-0 mb-3 flex-gap-1">
       {%- for item in cliques.col1 %}
-      <div class="d-flex align-items-center flex-gap-2{% if not loop.last %} mb-1{% endif %}">
+      <div>
         {% if item.custom %}
           {{ item.custom | safe }}
         {% else %}

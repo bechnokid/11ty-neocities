@@ -223,7 +223,7 @@ class FreezeImages {
 
         .ff-container img,
         .ff-container canvas {
-          align-self: end;
+          align-self: start;
         }
 
         .ff-container.ff-hover:hover .ff-active {

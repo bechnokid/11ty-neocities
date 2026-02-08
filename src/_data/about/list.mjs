@@ -13,7 +13,7 @@ export default {
     "Rice",
     "Bún bò Huế",
     "Pizza-flavored snacks",
-    "This shape <i class='ft-arrow-right'> <img src='/assets/images/meat.png' alt='Meat on a bone'>",
+    "This shape <i class='ft-arrow-right'> <img class='img-align-top' src='/assets/images/meat.png' alt='Meat on a bone'>",
   ],
   favMedia: [
     "**Monster Hunter**",

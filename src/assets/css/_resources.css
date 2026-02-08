@@ -1,5 +1,11 @@
-.resources td {
-  padding: 1em;
+.resources {
+  td {
+    padding: 1em;
+  }
+
+  a {
+    display: unset;
+  }
 }
 
 #feed-reader {

@@ -58,13 +58,11 @@ strong {
   filter: drop-shadow(3px 3px 2px #1a5d5d66);
 
   &.bowl {
-    top: -.5rem;
-    left: -.5rem;
+    inset: -.5rem auto auto -.5rem;
   }
 
   &.nume {
-    right: -5rem;
-    bottom: -2rem;
+    inset: auto -5rem -2rem auto;
   }
 }
 

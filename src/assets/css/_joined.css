@@ -125,12 +125,6 @@ div.waiting {
   }
 }
 
-#webring-btn-container {
-  a:has(img) {
-    display: inline-flex;
-  }
-}
-
 /* Cliques */
 [data-theme="dark"] {
   .type-master span {
@@ -567,8 +561,7 @@ div.waiting {
 
   .sona {
     position: absolute;
-    left: -5.5rem;
-    top: .5rem;
+    inset: .5rem auto auto -5.5rem;
     max-width: 110px;
     z-index: 10 !important;
   }
@@ -807,6 +800,9 @@ div.waiting {
     }
   }
 
+  a {
+    display: block;
+  }
 }
 
 /* Sanrio Webring */

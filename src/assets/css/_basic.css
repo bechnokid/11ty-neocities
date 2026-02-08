@@ -53,8 +53,7 @@ img.preview-img {
 
 .curses .tail {
   position: absolute;
-  bottom: -.75rem;
-  right: -.25rem;
+  inset: auto -.25rem -.75rem auto;
   font-size: 3rem;
   color: var(--bg-footer);
   transform: rotate(60deg);
@@ -64,8 +63,7 @@ img.preview-img {
   font-size: 3rem;
   color: var(--bg-footer);
   position: absolute;
-  right: -2rem;
-  bottom: 9rem;
+  inset: auto -2rem 9rem auto;
 }
 
 .go-to-heck.new-curse:hover {

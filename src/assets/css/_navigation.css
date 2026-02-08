@@ -107,9 +107,8 @@
 
   .btns-container {
     position: fixed;
+    inset: .5rem 1rem auto auto;
     z-index: 100;
-    top: .5rem;
-    right: 1rem;
     display: flex;
     gap: 1rem;
 

@@ -69,7 +69,7 @@ class FreezeImages {
 
         .ff-container img,
         .ff-container canvas {
-          align-self: end;
+          align-self: start;
         }
 
         .ff-container.ff-hover:hover .ff-active {
@@ -237,7 +237,7 @@ class FreezeImages {
 
         .ff-container img,
         .ff-container canvas {
-          align-self: end;
+          align-self: start;
         }
 
         .ff-container.ff-hover:hover .ff-active {
@@ -464,7 +464,7 @@ Here's the original CSS from the script in case you'd like to use it as referenc
 
 .ff-container img,
 .ff-container canvas {
-  align-self: end;
+  align-self: start;
 }
 
 .ff-container.ff-hover:hover .ff-active {
