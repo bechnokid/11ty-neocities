@@ -80,11 +80,13 @@ class FreezeImages {
         .ff-container.ff-hover:hover .ff-inactive {
           position: static;
           opacity: 1;
+          z-index: 1;
         }
 
         .ff-inactive {
           position: absolute;
           opacity: 0;
+          z-index: -99;
         }
       `;
       document.head.appendChild(style);
@@ -248,11 +250,13 @@ class FreezeImages {
         .ff-container.ff-hover:hover .ff-inactive {
           position: static;
           opacity: 1;
+          z-index: 1;
         }
 
         .ff-inactive {
           position: absolute;
           opacity: 0;
+          z-index: -99;
         }
       `;
       document.head.appendChild(style);
@@ -475,11 +479,13 @@ Here's the original CSS from the script in case you'd like to use it as referenc
 .ff-container.ff-hover:hover .ff-inactive {
   position: static;
   opacity: 1;
+  z-index: 1;
 }
 
 .ff-inactive {
   position: absolute;
   opacity: 0;
+  z-index: -99;
 }
 ```
 
