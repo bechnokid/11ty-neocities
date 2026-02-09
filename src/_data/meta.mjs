@@ -27,7 +27,7 @@ export default {
     dev: "/assets/images/meat.png"
   },
   updated: [ ],
-  new: [ "Descriptions in RSS Feed" ],
+  new: [ ],
   emotes: [
     "angry",
     "calm",
