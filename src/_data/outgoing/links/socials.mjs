@@ -28,9 +28,9 @@ export default [
     label: "Steam profile",
   },
   {
-    cls: "email",
-    url: "mailto:bechnokid@yahoo.com",
-    label: "email address",
+    cls: "treefort",
+    url: "https://treefort.boards.net/",
+    label: "Treefort forum boards",
   },
   {
     cls: "neocities",

@@ -1,0 +1,40 @@
+---
+title: Contact Me
+shortTitle: Contact
+displayOrder: 4
+permalink: contact/index.html
+summary: Thanks for stopping by! If you'd like to reach out to me, you can find me at these places!
+---
+
+<div class="row g-0">
+  <div class="col-md-5">
+    <div class="row g-0">
+      <div class="col-12 p-2">
+        {% img "/assets/images/links/_email.png", { cls: 'link-email', url: "mailto:bechnokid@yahoo.com", alt: "Send me an email!"} %}
+      </div>
+      <div class="col-12">
+        {% img "https://placehold.co/300x230", { cls: 'links-guestbook', url: "/guestbook", alt: "Leave a message in my guestbook!"} %}
+      </div>
+    </div>
+  </div>
+  <div class="col-md-7 d-flex flex-center">
+    <section class="tama-links">
+    <div class="tama-screen">
+      <div class="links-desc">
+        <p>My MHWilds Hunter ID is <strong>FL3BY6XH</strong>!</p>
+      </div>
+      <div class="links-container">
+        <ul class="inline-list">
+          {% for item in outgoing.links.socials %}
+            <a href="{{ item.url }}" class="{{ item.cls }}">
+              {% set aria_label = "Link to Bechno Kid's " if item.url else "Bechno Kid's " %}
+              {% set item_label = item.label or (item.cls | title) %}
+              <li class="link-item {{ item.cls }}" role="img" aria-labeL="{{ aria_label + item_label }}"></li>
+            </a>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </section>
+  </div>
+</div>
