@@ -23,6 +23,7 @@ html,
 body {
   scrollbar-width: thin;
   line-height: 1.5;
+  image-rendering: optimizeSpeed;
 }
 
 ::-webkit-scrollbar {
@@ -43,7 +44,6 @@ video,
 canvas,
 svg {
   display: inline-block;
-  align-self: center;
   max-width: 100%;
   vertical-align: middle;
 }

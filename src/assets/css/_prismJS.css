@@ -266,9 +266,13 @@ pre[class*="language-"] {
 
 /* Inline code */
 :not(pre) > code {
-	padding: 4px 7px;
+	padding: .1rem .25rem;
 	border-radius: 0.3em;
 	white-space: normal;
+}
+
+li > code {
+  line-height: 2rem;
 }
 
 /* Code box limit */

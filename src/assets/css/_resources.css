@@ -84,8 +84,4 @@ article.code-snippets {
   pre + ul {
     margin: 1.5rem 0;
   }
-
-  li > code {
-    line-height: 2rem;
-  }
 }

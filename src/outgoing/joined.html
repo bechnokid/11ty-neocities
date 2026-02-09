@@ -10,22 +10,20 @@ permalink: 'joined/index.html'
 
 <div class="position-relative d-flex flex-column flex-gap-4">
   {% include "partials/loading-sidebar.html" %}
-  {% galleryBox { title: "More Cliques", cls: "cliques" } %}
-    <div class="row g-0 w-100">
-      {% for items in cliques.more | slice(2) %}
-        <div class="col-md-6 col-12 d-flex flex-column align-items-center flex-gap-2">
-          {% for item in items %}
-            <div class="d-flex align-items-center flex-gap-2 {{ item.id or "" }}">
-              {% if item.custom %}
-                {{ item.custom | safe }}
-              {% else %}
-                {{ clique.text(item) }}
-              {% endif %}
-            </div>
-          {% endfor %}
-        </div>
-      {% endfor %}
-    </div>
+  {% galleryBox { title: "More Cliques", cls: "cliques", subCls: "row g-0 w-100 text-center" } %}
+    {% for items in cliques.more | slice(2) %}
+      <div class="col-md-6 col-12 d-flex flex-column align-items-center flex-gap-2">
+        {% for item in items %}
+          <div class="clique {{ item.id or "" }}">
+            {% if item.custom %}
+              {{ item.custom | safe }}
+            {% else %}
+              {{ clique.text(item) }}
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endfor %}
   {% endgalleryBox %}
   {% galleryBox { title: "Webrings/Directories", subCls: "webrings justify-content-center flex-gap-2" } %}
     {% set debug = false if meta.env == "prod" else true %}

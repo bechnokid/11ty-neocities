@@ -263,10 +263,6 @@ article > h1 {
   margin-top: .5rem;
 }
 
-div:has(> img:only-child) {
-  display: flex;
-}
-
 hr {
   margin: 1em 0;
   border: none;
@@ -396,8 +392,6 @@ main {
   }
 
   a {
-    display: inline-flex;
-
     &:focus-visible {
       > * {
         padding: .25rem;

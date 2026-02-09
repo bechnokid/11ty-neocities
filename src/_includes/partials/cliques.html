@@ -2,9 +2,9 @@
 
 {% galleryBox { title: "Cliques", cls: 'cliques row g-0' } %}
   <div class="row g-0 flex-md-gap-0 flex-gap-1">
-    <div class="col-lg-6 col-12 d-flex flex-column align-items-center order-md-1 order-2 mb-lg-0 mb-3 flex-gap-1">
+    <div class="col-lg-6 col-12 d-flex flex-column align-items-center order-md-1 order-2 mb-lg-0 mb-3 flex-gap-1 text-center">
       {%- for item in cliques.col1 %}
-      <div>
+      <div class="clique {{ item.id or "" }}">
         {% if item.custom %}
           {{ item.custom | safe }}
         {% else %}

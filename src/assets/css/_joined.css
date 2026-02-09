@@ -64,10 +64,6 @@ ul.separator {
       text-decoration: none !important;
     }
 
-    &:has(img) {
-      display: inline-flex;
-    }
-
     &[href*="http"]::after {
       display: none !important;
     }
@@ -195,6 +191,10 @@ div.waiting {
     display: flex;
     width: 100%;
     height: 100%;
+
+    .cookie-icon {
+      align-self: center;
+    }
   }
 
   &:has(.cookie-icon:hover) .cookie-tooltip-content{
@@ -313,6 +313,7 @@ div.waiting {
 
     .index {
       height: 64px;
+      image-rendering: initial;
     }
   }
 }
@@ -564,6 +565,7 @@ div.waiting {
     inset: .5rem auto auto -5.5rem;
     max-width: 110px;
     z-index: 10 !important;
+    image-rendering: initial;
   }
 
   .persona-ring {
@@ -655,6 +657,7 @@ div.waiting {
     background-position: top center;
     border-radius: 5px;
     overflow: hidden;
+    image-rendering: initial;
 
     input[type="checkbox"] {
       width: 1px;
@@ -898,6 +901,7 @@ div.waiting {
 
   .self-insert-img img {
     border: 2px solid #DD28A7;
+    image-rendering: initial;
   }
 
   .self-insert-text {
@@ -913,6 +917,7 @@ div.waiting {
 #TRB img {
   max-height: 31px !important;
   width: auto !important;
+  image-rendering: initial;
 }
 
 #TRB #centerTRB img {

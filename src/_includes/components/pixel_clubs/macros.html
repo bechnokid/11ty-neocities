@@ -167,7 +167,7 @@
       {% set yysArr = goodies.pixel_clubs.yys.mine if mine else goodies.pixel_clubs.yys.cart %}
       {% for item in yysArr %}
         <tr>
-          <td class="text-center">
+          <td class="item text-center">
             {% img img_path + "yys/" + item.src, { alt: "A small pixel of " + item.alt, freezeframe: item.freezeframe} %}
           </td>
           <td>{{ item.desc }}</td>
