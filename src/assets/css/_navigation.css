@@ -27,12 +27,12 @@
   }
 
   ul.section-list li.nav-link-item::marker {
-    content: "✦";
+    content: var(--icon-list);
     color: var(--text-secondary);
   }
 
   ul.section-list li ul li.mobile::marker {
-    content: "✧";
+    content: var(--icon-sublist);
   }
 
   li.nav-link-item {

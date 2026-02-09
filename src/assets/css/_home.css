@@ -32,7 +32,7 @@ article.home {
     color: var(--text-primary);
 
     li:not(:last-child):after {
-      content: "✦";
+      content: var(--icon-list);
       color: var(--text-primary);
       margin-left: .75rem;
     }

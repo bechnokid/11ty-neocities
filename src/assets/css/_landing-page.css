@@ -33,7 +33,7 @@ article.landing-page {
 
       &::before {
         margin-right: .25rem;
-        content: "✦";
+        content: var(--icon-list);
         color: var(--text-link-visited);
       }
     }

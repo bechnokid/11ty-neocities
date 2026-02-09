@@ -10,7 +10,7 @@
     line-height: 1rem;
 
     &::marker {
-      content: "✦";
+      content: var(--icon-list);
       color: var(--text-secondary);
     }
   }

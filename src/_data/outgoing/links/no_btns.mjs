@@ -1,6 +1,5 @@
 export default {
-  neighbors: [
-  ],
+  neighbors: [],
   cool_sites: [
     { name: "Ray's Miscellany", url: "https://brisray.com/" },
     { name: "Suzy's Site", url: "https://suzymchale.com/" },

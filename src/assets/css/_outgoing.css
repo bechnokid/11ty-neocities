@@ -129,7 +129,7 @@ article.links {
     padding-left: 0;
 
     li:not(:first-child)::before {
-      content: "✦";
+      content: var(--icon-list);
       color: var(--text-secondary);
       margin: 0 .5rem;
     }

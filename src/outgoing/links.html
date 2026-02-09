@@ -41,12 +41,14 @@ flashing: true
     <section class="{{ options.cls or (options.title | slugify) }}">
       <h2>{{ options.title }}</h2>
       <div class="d-flex flex-column flex-gap-2">
-        <p>{{ options.desc }}</p>
-        <ul class="no-btn-list inline-list justify-content-center">
-          {% for item in options.noBtnsArr %}
-            <li>{% link item.url, { text: item.name } %}</li>
-          {% endfor %}
-        </ul>
+        {{ options.desc | markdownify | safe }}
+        {% if options.noBtnsArr %}
+          <ul class="no-btn-list inline-list justify-content-center">
+            {% for item in options.noBtnsArr %}
+              <li>{% link item.url, { text: item.name } %}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
         {% galleryBox { cls: 'mx-2', subCls: 'justify-content-center' } %}
           {%- for item in options.btnsArr %}
             {% set item_src = item.src if "https" in item.src else img_path + item.src %}
@@ -57,28 +59,53 @@ flashing: true
     </section>
   {% endmacro %}
 
-  {{ link_section ({ title: "Neighbors", desc: "Sites whose webmasters I'm happy to be affiliated with!", btnsArr: outgoing.links.neighbors, noBtnsArr: outgoing.links.no_btns.neighbors }) }}
+  {% set affiliate_desc %}
+Sites whose webmasters I'm happy to be affilated with!
+
+If you'd like to be affiliates, contact me via [email](mailto:bechnokid@yahoo.com)!
+
+All I'll ask is that your site has content of any kind: art, blogging, writing, etc. and isn't just an "About Me" site! It would also help if you have an 88x31 button, too!
+  {% endset %}
+  {{ link_section ({ title: "Affiliates", desc: affiliate_desc, btnsArr: outgoing.links.affiliates }) }}
+  {{ link_section ({ title: "Neighbors", desc: "I couldn't ask for better neighbors! I'd let them borrow my sugar anytime!", btnsArr: outgoing.links.neighbors }) }}
   {{ link_section ({ title: "Other Sites I Like", desc: "Sites that I've admired from afar!", btnsArr: outgoing.links.cool_sites, noBtnsArr: outgoing.links.no_btns.cool_sites })}}
-  {{ link_section ({ title: "Inactive (for now?)", cls: "inactive-links", desc: "Neighbors that haven't been updated in a while or are on hiatus, but are still worth checking out!", btnsArr: outgoing.links.inactive, noBtnsArr: outgoing.links.no_btns.inactive }) }}
+
+  <section>
+    {% details { title: "Inactive (for now?)", summaryCls: "details h2 mb-3", cls: "inactive-links" } %}
+      <div class="d-flex flex-column flex-gap-2">
+        <p>Neighbors that haven't been updated in a while or on hiatus but are still worth checking out!</p>
+        <ul class="no-btn-list inline-list justify-content-center">
+          {% for item in outgoing.links.no_btns.inactive %}
+            <li>{% link item.url, { text: item.name } %}</li>
+          {% endfor %}
+        </ul>
+        {% galleryBox { cls: 'mx-2', subCls: 'justify-content-center' } %}
+          {%- for item in outgoing.links.inactive %}
+            {% set item_src = item.src if "https" in item.src else img_path + item.src %}
+            {% img item_src, { url: item.url, alt: "Link button for " + item.name, freezeframe: item.freezeframe, width: 88, height: 31 } %}
+          {% endfor %}
+        {% endgalleryBox %}
+      </div>
+    {% enddetails %}
+  </section>
 
   <section>
     <h2>Favorite Resources</h2>
     <table class='resources'>
-      {%- for item in outgoing.links.resources %}
+      {%- for item in outgoing.links.resources.btns %}
         <tr>
-          <td>
-            <a href='{{ item.url }}'>
-              {% if item.img %}
-                {% img img_path + item.img, { alt: "Button for " + item.name } %}
-              {% else %}
-                {{ item.name }}
-              {% endif %}
-            </a>
-          </td>
+          <td>{% img img_path + item.src, { alt: "Button for " + item.name, url: item.url } %}</td>
           <td class='td-desc'>{{ item.desc }}</td>
         </tr>
       {% endfor %}
     </table>
+    <ul class="resource-list">
+      {% for item in outgoing.links.resources.urls %}
+        <li>{% link item.url, { text: item.name} %}
+          <ul><li>{{ item.desc | markdownifyInline | safe }}</li></ul>
+        </li>
+      {% endfor %}
+    </ul>
   </section>
 
   <h2>Made Possible By</h2>

@@ -8,6 +8,8 @@
   --img-link: url(/assets/images/link.svg);
   --img-cursor: url(/assets/images/cursor.png);
   --img-cursor-point: url(/assets/images/cursor_point.png);
+  --icon-list: "✦";
+  --icon-sublist: "✧";
 }
 
 [data-theme="light"] {
@@ -469,7 +471,7 @@ main {
 
     > li {
       &::marker {
-        content: "✦";
+        content: var(--icon-list);
       }
 
       > ul {
@@ -477,7 +479,7 @@ main {
         padding-bottom: .5rem;
 
         > li::marker {
-          content: "✧";
+          content: var(--icon-sublist);
         }
       }
     }
