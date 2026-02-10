@@ -49,7 +49,7 @@ flashing: true
             {% endfor %}
           </ul>
         {% endif %}
-        {% galleryBox { cls: 'mx-2', subCls: 'justify-content-center' } %}
+        {% galleryBox { cls: 'mx-2 mt-2', subCls: 'justify-content-center' } %}
           {%- for item in options.btnsArr %}
             {% set item_src = item.src if "https" in item.src else img_path + item.src %}
             {% img item_src, { url: item.url, alt: "Link button for " + item.name, freezeframe: item.freezeframe, width: 88, height: 31 } %}
@@ -60,11 +60,9 @@ flashing: true
   {% endmacro %}
 
   {% set affiliate_desc %}
-Sites whose webmasters I'm happy to be affilated with!
+Sites whose webmasters I'm happy to be affilated with! If you'd like to be affiliates, contact me via [email](mailto:bechnokid@yahoo.com)!
 
-If you'd like to be affiliates, contact me via [email](mailto:bechnokid@yahoo.com)!
-
-All I'll ask is that your site has content of any kind: art, blogging, writing, etc. and isn't just an "About Me" site! It would also help if you have an 88x31 button, too!
+All I ask is that you're at least 20 years old, your site has content of any kind: art, blogging, writing, etc. and isn't just an "About Me" site, and you have an 88x31 button!
   {% endset %}
   {{ link_section ({ title: "Affiliates", desc: affiliate_desc, btnsArr: outgoing.links.affiliates }) }}
   {{ link_section ({ title: "Neighbors", desc: "I couldn't ask for better neighbors! I'd let them borrow my sugar anytime!", btnsArr: outgoing.links.neighbors }) }}
@@ -79,7 +77,7 @@ All I'll ask is that your site has content of any kind: art, blogging, writing, 
             <li>{% link item.url, { text: item.name } %}</li>
           {% endfor %}
         </ul>
-        {% galleryBox { cls: 'mx-2', subCls: 'justify-content-center' } %}
+        {% galleryBox { cls: 'mx-2 mt-2', subCls: 'justify-content-center' } %}
           {%- for item in outgoing.links.inactive %}
             {% set item_src = item.src if "https" in item.src else img_path + item.src %}
             {% img item_src, { url: item.url, alt: "Link button for " + item.name, freezeframe: item.freezeframe, width: 88, height: 31 } %}
@@ -99,7 +97,7 @@ All I'll ask is that your site has content of any kind: art, blogging, writing, 
         </tr>
       {% endfor %}
     </table>
-    <ul class="resource-list">
+    <ul class="resource-list mt-3">
       {% for item in outgoing.links.resources.urls %}
         <li>{% link item.url, { text: item.name} %}
           <ul><li>{{ item.desc | markdownifyInline | safe }}</li></ul>
