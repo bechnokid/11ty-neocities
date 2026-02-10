@@ -20,14 +20,14 @@ export default {
   introLinks: [
     { name: 'Sitemap', url: '/sitemap' },
     { name: 'RSS', url: '/feeds' },
-    { name: 'Guestbook', url: '/guestbook' }
+    { name: 'Contact', url: '/contact' }
   ],
   favicon: {
     prod: "/assets/images/favicon.ico",
     dev: "/assets/images/meat.png"
   },
   updated: [ ],
-  new: [ ],
+  new: [ "Contact" ],
   emotes: [
     "angry",
     "calm",

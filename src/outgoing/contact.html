@@ -3,22 +3,19 @@ title: Contact Me
 shortTitle: Contact
 displayOrder: 4
 permalink: contact/index.html
-summary: Thanks for stopping by! If you'd like to reach out to me, you can find me at these places!
+noScroll: true
 ---
-
-<div class="row g-0">
-  <div class="col-md-5">
-    <div class="row g-0">
-      <div class="col-12 p-2">
-        {% img "/assets/images/links/_email.png", { cls: 'link-email', url: "mailto:bechnokid@yahoo.com", alt: "Send me an email!"} %}
-      </div>
-      <div class="col-12">
-        {% img "https://placehold.co/300x230", { cls: 'links-guestbook', url: "/guestbook", alt: "Leave a message in my guestbook!"} %}
-      </div>
-    </div>
+{% set img_path = "/assets/images/links/" %}
+<section class="bech-links">
+  <p>Thanks for stopping by! If you'd like to reach out to me, you can send me an email or leave a message in my guestbook!</p>
+  <div class="d-flex flex-wrap justify-content-evenly p-3 flex-gap-3">
+    {% img img_path + "_email.png", { cls: 'link-img', url: "mailto:bechnokid@yahoo.com", alt: "Send me an email!"} %}
+    {% img img_path + "_guestbook.png", { cls: 'link-img', url: "/guestbook", alt: "Leave a message in my guestbook!"} %}
   </div>
-  <div class="col-md-7 d-flex flex-center">
-    <section class="tama-links">
+</section>
+<section class="tama-links">
+  <p>You can also find me in the following websites! I'm not on a lot of social media sites lol...</p>
+  <div class="d-flex flex-column mt-3">
     <div class="tama-screen">
       <div class="links-desc">
         <p>My MHWilds Hunter ID is <strong>FL3BY6XH</strong>!</p>
@@ -26,15 +23,19 @@ summary: Thanks for stopping by! If you'd like to reach out to me, you can find 
       <div class="links-container">
         <ul class="inline-list">
           {% for item in outgoing.links.socials %}
-            <a href="{{ item.url }}" class="{{ item.cls }}">
-              {% set aria_label = "Link to Bechno Kid's " if item.url else "Bechno Kid's " %}
-              {% set item_label = item.label or (item.cls | title) %}
-              <li class="link-item {{ item.cls }}" role="img" aria-labeL="{{ aria_label + item_label }}"></li>
-            </a>
+            {% set aria_label = "Link to Bechno Kid's " if item.url else "Bechno Kid's " %}
+            {% set item_label = item.label or (item.cls | title) %}
+            <li class="link-item">
+              <div class="tooltip">
+                <a href="{{ item.url }}" class="{{ item.cls }}" title="{{ item_label }}">
+                  <div class="{{ item.cls }}" role="img" aria-labeL="{{ aria_label + item_label }}"></div>
+                </a>
+                <div class="tooltip-content">{{ item_label }}</div>
+              </div>
+            </li>
           {% endfor %}
         </ul>
       </div>
     </div>
-  </section>
   </div>
-</div>
+</section>

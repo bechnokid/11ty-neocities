@@ -29,22 +29,11 @@ article.links {
 }
 
 article.contact {
-  .link-email {
-    filter: drop-shadow(1px 0 0 white) drop-shadow(-1px 0 0 white) drop-shadow(0 1px 0 white) drop-shadow(0 -1px 0 white);
-  }
-
-  .col-12:has(.links-guestbook) {
-    border-top: 2px dotted var(--text-primary);
-  }
-
-  .col-md-7:has(.tama-links) {
-    border-left: 2px dotted var(--text-primary);
+  .link-img {
+    filter: drop-shadow(1px 1px 5px white);
   }
 
   .tama-links {
-    display: flex;
-    flex-direction: column;
-
     .tama-screen {
       width: 384px;
       height: 337px;
@@ -87,15 +76,13 @@ article.contact {
           height: 100%;
           flex-wrap: wrap;
           gap: 2.75rem;
-          align-content: space-between;
+          place-content: space-between center;
           align-items: center;
-          justify-content: center;
-          padding: 0;
-          padding-top: 1rem;
+          padding: 1rem 0 .5rem;
         }
       }
 
-      .link-item {
+      .link-item [role="img"] {
         opacity: .4;
 
         &:hover {
@@ -164,44 +151,42 @@ article.contact {
 }
 
 @media screen and (max-width: 576px) {
-  article.links {
-    .tama-links {
-      .tama-screen {
+  .tama-links {
+    .tama-screen {
+      position: static;
+      display: flex;
+      flex-direction: column;
+      width: auto;
+      height: auto;
+      background: none;
+
+      .links-desc {
+        order: 1;
         position: static;
-        display: flex;
-        flex-direction: column;
-        width: auto;
+        height: unset;
+        width: unset;
+        color: var(--text-body);
+
+        strong {
+          color: var(--text-primary);
+        }
+      }
+
+      .links-container {
+        position: static;
         height: auto;
-        background: none;
 
-        .links-desc {
-          order: 1;
-          position: static;
-          height: unset;
-          width: unset;
-          color: var(--text-body);
-
-          strong {
-            color: var(--text-primary);
-          }
+        ul {
+          align-content: unset;
+          row-gap: 1rem;
         }
 
-        .links-container {
-          position: static;
-          height: auto;
+        .link-item {
+          opacity: 1;
+          filter: var(--svg-color);
 
-          ul {
-            align-content: unset;
-            row-gap: 1rem;
-          }
-
-          .link-item {
-            opacity: 1;
-            filter: var(--svg-color);
-
-            &:hover {
-              opacity: .5;
-            }
+          &:hover {
+            opacity: .5;
           }
         }
       }

@@ -10,26 +10,6 @@ flashing: true
 
 <div class="position-relative">
   {% include "partials/loading-sidebar.html" %}
-  <section class="tama-links">
-    <h2>Find Me Elsewhere</h2>
-    <div class="tama-screen">
-      <div class="links-desc">
-        <p>My MHWilds Hunter ID is <strong>FL3BY6XH</strong>!</p>
-      </div>
-      <div class="links-container">
-        <ul class="inline-list">
-          {% for item in outgoing.links.socials %}
-            <a href="{{ item.url }}" class="{{ item.cls }}">
-              {% set aria_label = "Link to Bechno Kid's " if item.url else "Bechno Kid's " %}
-              {% set item_label = item.label or (item.cls | title) %}
-              <li class="link-item {{ item.cls }}" role="img" aria-labeL="{{ aria_label + item_label }}"></li>
-            </a>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-  </section>
-
   {# Creates section for links\
     * @param {string} options.title - Section title
     * @param {string} options.cls - Section CSS class
@@ -89,7 +69,7 @@ All I ask is that you're at least 20 years old, your site has content of any kin
 
   <section>
     <h2>Favorite Resources</h2>
-    <table class='resources'>
+    <table class='resources mb-3'>
       {%- for item in outgoing.links.resources.btns %}
         <tr>
           <td>{% img img_path + item.src, { alt: "Button for " + item.name, url: item.url } %}</td>
