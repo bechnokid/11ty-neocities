@@ -70,7 +70,6 @@
     "ee-first": "^1.1.1",
     "ejs": "^3.1.9",
     "eleventy-plugin-code-demo": "^2.0.6",
-    "eleventy-plugin-toc": "^1.1.5",
     "encodeurl": "^1.0.2",
     "entities": "^3.0.1",
     "errno": "^0.1.8",

@@ -27,7 +27,7 @@ export default {
     dev: "/assets/images/meat.png"
   },
   updated: [ ],
-  new: [ "Contact" ],
+  new: [ "Contact", "Uses" ],
   emotes: [
     "angry",
     "calm",
