@@ -63,7 +63,7 @@ export default {
       },
       {
         name: "Final Fantasy VII Rebirth",
-        cls: "align-items-baseline",
+        cls: "align-items-end",
         items: [
           {
             src: "gilgamesh.png",
@@ -79,7 +79,6 @@ export default {
       },
       {
         name: 'Tamagotchi',
-        cls: 'mb-2',
         items: [
           {
             src: "maskutchi.png",
@@ -122,7 +121,6 @@ export default {
       },
       {
         name: 'Monster Hunter',
-        cls: 'my-1',
         items: [
           {
             src: "meat.png",
@@ -138,7 +136,7 @@ export default {
   ],
   adopted: [
     {
-      cls: "align-items-baseline",
+      cls: "align-items-end",
       items: [
         {
           src: "gossharag.png",
@@ -332,7 +330,7 @@ export default {
       ]
     },
     {
-      cls: "adopts other align-items-baseline",
+      cls: "adopts other align-items-end",
       items: [
         {
           src: 'isopod_kelpeater.png',

@@ -132,7 +132,7 @@
         font-size: 1rem;
       }
 
-      details.ship-info {
+      details.ship-desc {
         summary {
           display: block;
           text-decoration: underline;

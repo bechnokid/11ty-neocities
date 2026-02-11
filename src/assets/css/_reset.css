@@ -23,7 +23,6 @@ html,
 body {
   scrollbar-width: thin;
   line-height: 1.5;
-  image-rendering: optimizeSpeed;
 }
 
 ::-webkit-scrollbar {

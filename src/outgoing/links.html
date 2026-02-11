@@ -86,17 +86,27 @@ All I ask is that you're at least 20 years old, your site has content of any kin
     </ul>
   </section>
 
-  <h2>Made Possible By</h2>
-  <ul class="ms-2">
-    {%- for link in outgoing.links.credits %}
-    <li>
-      {% if link.url %}
-        {% link link.url, { text: (link.name | markdownifyInline | safe) } %}
-      {% else %}
-        {{ link.name | markdownifyInline | safe }}
-      {% endif %}
-      {% if link.desc %}({{ link.desc | markdownifyInline | safe }}){% endif %}
-    </li>
-    {% endfor %}
-  </ul>
+{% renderTemplate "md" %}
+## Credits
+
+This site wouldn't exist without the people listed below, and that includes **any and all visitors like you**. Thank you!
+
+### Layout
+
+- [Rina Cat's Domain](https://web.archive.org/web/20041206135411/rinacat.com/main.html) (inspiration)
+- [Eleventy](https://11ty.dev) (static site generator)
+  - More technical info can be found in [/uses](/uses)
+- [Catppuccin](https://catppuccin.com/) (colors for RSS Feed and Rainbow clique on home page)
+- [Gustavo Costa](https://github.com/dracula/prism) (Dracula PrismJS theme)
+
+### Resources
+
+- [status.cafe](https://status.cafe/) (microblog)
+- [Salma Alam-Naylor](https://dev.to/whitep4nth3r/the-best-lightdark-mode-theme-toggle-in-javascript-368f) (Light/dark mode toggle code inspiration)
+
+### [/about](/about):
+
+- [fluffmoth](https://idbuttons.neocities.org/database/) (ID buttons)
+- [Robert A. Hayden](https://web.archive.org/web/20090220181018/http://geekcode.com/geek.html) (Geek Code)
+{% endrenderTemplate %}
 </div>

@@ -4,7 +4,7 @@
 }
 
 :root {
-  --body-height: 515px;
+  --body-height: 535px;
   --img-link: url(/assets/images/link.svg);
   --img-cursor: url(/assets/images/cursor.png);
   --img-cursor-point: url(/assets/images/cursor_point.png);
@@ -49,10 +49,10 @@
 [data-theme="dark"] {
   --img-bg: url(/assets/images/bg_dark.jpg);
   --img-header: -0 -150px;
-  --bg-body: #47284D;
+  --bg-body: #351f39;
   --bg-code: var(--bg-footer);
-  --bg-footer: #2f1933;
-  --bg-heading: #180c1a;
+  --bg-footer: #261428;
+  --bg-heading: #180c19;
   --bg-img-color: #391b3d;
   --bg-info: #7b5e39;
   --bg-overlay: #391b3dcc;
@@ -259,8 +259,12 @@ em {
   color: var(--text-secondary);
 }
 
-article > h1 {
-  margin-top: .5rem;
+article {
+  height: 100%;
+
+  &> h1 {
+    margin-top: .5rem;
+  }
 }
 
 hr {
@@ -495,7 +499,8 @@ main {
   border-right: 5px solid var(--bg-body);
 }
 
-.main.desktop {
+.main.desktop,
+.main.desktop > .row {
   min-height: var(--body-height);
 }
 
