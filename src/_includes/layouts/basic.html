@@ -8,8 +8,6 @@
 {% set outgoing_page_warning = hasLinks %}
 
 {% block content %}
-  <article class="mb-md-0 mb-2 position-relative {{ (shortTitle or title) | lower | slugify }}">
-    {% if title != "Home" %}{% include "partials/page-header.html" %}{% endif %}
-    {{ content | safe }}
-  </article>
+  {% if title != "Home" %}{% include "partials/page-header.html" %}{% endif %}
+  {{ content | safe }}
 {% endblock %}

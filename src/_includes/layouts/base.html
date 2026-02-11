@@ -34,7 +34,7 @@
             </div>
           </nav>
           <main id="main-content" class="offset-md-2 col{{ "-md-10" if title !="Home" }} px-lg-4 p-md-3 px-2 pt-3 position-relative" tabindex="-1">
-            {% block content %}{% endblock %}
+            <article class="position-relative {{ (cls or shortTitle or title) | lower | slugify }}">{% block content %}{% endblock %}</article>
             <div class="back-to-top{% if noScroll == "true" or noScroll == true %} mobile-only{% endif %}"><a class="button" href="#" aria-label="Scroll to Top">{% icon 'arrow-up' %}</a></div>
           </main>
           {% if title == "Home" %}<aside id="updates-bar" class="col-lg-2 offset-lg-0 col-md-10 offset-md-2 px-lg-0 px-md-4 px-2 mb-lg-0 mb-3">{% include "partials/updates.html" %}</aside>{% endif %}

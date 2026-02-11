@@ -1,16 +1,13 @@
 {% extends 'layouts/basic.html' %}
 
 {% block content %}
-  <article class="mb-md-0 mb-2 position-relative {{ (shortTitle or title) | lower | slugify }}">
-    {% if title != "Home" %}{% include "partials/page-header.html" %}{% endif %}
-    {{ content | safe }}
-    <section class="older-entries mt-4">
-      {% for entry in collections.now | reverse %}
-        <details>
-          <summary class="h2">{{ entry.fileSlug | monthDayYear }}</summary>
-          {{ entry.content | safe }}
-        </details>
-      {% endfor %}
-    </section>
-  </article>
+  {{ super() }}
+  <section class="older-entries mt-4">
+    {% for entry in collections.now | reverse %}
+      <details>
+        <summary class="h2">{{ entry.fileSlug | monthDayYear }}</summary>
+        {{ entry.content | safe }}
+      </details>
+    {% endfor %}
+  </section>
 {% endblock content %}
