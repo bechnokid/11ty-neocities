@@ -27,13 +27,13 @@
           <nav id="nav-main" class="col-md-2">
             <div class="sidebar pb-1 mb-md-2">{% include "partials/navigation.html" %}</div>
             <div class="buttons desktop d-flex flex-column flex-gap-2">
-              <button type="button" class="desktop button toggle-mode" aria-label="Switch to dark mode">{% icon 'moon' %}</button>
+              <button type="button" class="desktop button toggle-mode js-required" aria-label="Switch to dark mode">{% icon 'moon' %}</button>
               {% if freezeframe == true %}
-                <button type="button" class="desktop button toggle-gif">Toggle GIFs</button>
+                <button type="button" class="desktop button toggle-gif js-required d-none">Toggle GIFs</button>
               {% endif %}
             </div>
           </nav>
-          <main id="main-content" class="offset-md-2 col{{ "-md-10" if title !="Home" }} px-lg-4 p-md-3 px-2 pt-3 position-relative" tabindex="-1">
+          <main id="main-content" class="col{{ "-md-10" if title !="Home" }} px-lg-4 p-md-3 px-2 pt-3 position-relative" tabindex="-1">
             <article class="position-relative {{ (cls or shortTitle or title) | lower | slugify }}">{% block content %}{% endblock %}</article>
             <div class="back-to-top{% if noScroll == "true" or noScroll == true %} mobile-only{% endif %}"><a class="button" href="#" aria-label="Scroll to Top">{% icon 'arrow-up' %}</a></div>
           </main>

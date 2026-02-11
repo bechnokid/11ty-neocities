@@ -26,6 +26,15 @@ article.links {
       text-align: center;
     }
   }
+
+  .header-link h3 a {
+    text-decoration: underline;
+    border: 0;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 article.contact {

@@ -12,7 +12,7 @@
       {% elif link.data.subList and link.data.pagination.items.length <= 5 and link.data.title != "Artwork" %}
         <li class="desktop">
           {% set sublinkItems = link.data.pagination.items | getPageLinks %}
-          <details data-num-of-items="{{ sublinkItems.length }}"{{ " open" if page.url in sublinkItems }}>
+          <details class="{{ link.data.title | slugify }}"{{ " open" if page.url in sublinkItems }}>
             <summary class="text-link">{{ link.data.title }}{% if link.data.title in meta.updated %} {% icon 'updated' %}{% endif %}</summary>
             <ul class="ms-2">
               {%- for sublink in link.data.pagination.items %}

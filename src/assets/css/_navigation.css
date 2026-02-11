@@ -1,7 +1,3 @@
-:root {
-  --nav-height: 533px;
-}
-
 .skip-link {
   position: absolute;
   margin: .25rem;
@@ -15,9 +11,6 @@
 }
 
 #nav-main {
-  position: fixed;
-  width: 165px;
-
   a {
     border: 0;
 
@@ -63,28 +56,6 @@
 
   .sidebar {
     padding: 0;
-    max-height: var(--nav-height);
-    overflow-y: auto;
-
-    &:has(details[data-num-of-items="1"]:open) {
-      max-height: calc(var(--nav-height) + 1.1rem);
-    }
-
-    &:has(details[data-num-of-items="2"]:open) {
-      max-height: calc(var(--nav-height) + 2.3rem);
-    }
-
-    &:has(details[data-num-of-items="3"]:open) {
-      max-height: calc(var(--nav-height) + 5.75rem);
-    }
-
-    &:has(details[data-num-of-items="4"]:open) {
-      max-height: 564px;
-    }
-
-    &:has(details[data-num-of-items="5"]:open) {
-      max-height: calc(var(--body-height) + 3rem);
-    }
   }
 
   .toggle-mode {
@@ -164,28 +135,6 @@ li.mobile {
 
 .section-title > ul {
   margin-left: 1rem;
-}
-
-.main.desktop {
-  &:has(#nav-main details[data-num-of-items="1"]:open) {
-    min-height: calc(var(--body-height) + 1.1rem);
-  }
-
-  &:has(#nav-main details[data-num-of-items="2"]:open) {
-    min-height: calc(var(--body-height) + 2.3rem);
-  }
-
-  &:has(#nav-main details[data-num-of-items="3"]:open) {
-    min-height: calc(var(--body-height) + 5.75rem);
-  }
-
-  &:has(#nav-main details[data-num-of-items="4"]:open) {
-    min-height: calc(var(--body-height) + 4.9rem);
-  }
-
-  &:has(#nav-main details[data-num-of-items="5"]:open) {
-    min-height: calc(var(--body-height) + 6.1rem);
-  }
 }
 
 @media screen and (max-width: 991px) {

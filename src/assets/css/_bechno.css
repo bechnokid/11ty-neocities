@@ -796,8 +796,8 @@ position: absolute;
   justify-content: center;
 
   .loading-img {
-    width: 235px;
-    height: 249px;
+    width: 176px;
+    height: 187px;
     background-image: url('/assets/images/meat_loading.png');
     animation: steakRotate 1s steps(2) infinite;
   }
@@ -805,7 +805,7 @@ position: absolute;
 
 @keyframes steakRotate {
   to {
-    background-position-x: -470px;
+    background-position-x: -352px;
   }
 }
 

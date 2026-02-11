@@ -722,6 +722,7 @@ $(document).ready(function() {
   if ($('.loading-sidebar').length > 0) {
     setTimeout(function () {
       $('.loading-sidebar').addClass('d-none');
+      $('.toggle-gif').removeClass('d-none');
     }, 1000);
   };
 });
