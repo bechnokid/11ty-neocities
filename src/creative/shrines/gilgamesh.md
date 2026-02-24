@@ -173,7 +173,9 @@ If you're reading this, thank you so much getting this far in my shrine and lett
 
 Listed at:
 
-[![Button that links to the Emotion directory](/assets/images/shrines/gilgamesh/emotion_button.png)](https://emotion.oubliette.nu/)
+- [![Button that links to the Emotion directory](/assets/images/shrines/gilgamesh/button_emotion.png)](https://emotion.oubliette.nu/)
+{#- [![Button that links to the "Those Who Fight" collaboration site](/assets/images/shrines/gilgamesh/button_thosewhofight.gif)](https://blizzara.org/ff)#}
+{.btn-list .inline-list .ms-0 .my-2 .flex-gap-3}
 
 </div>
 

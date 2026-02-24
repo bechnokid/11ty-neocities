@@ -11,9 +11,6 @@
 }
 
 #nav-main {
-  position: fixed;
-  width: 165px;
-
   a {
     border: 0;
 
@@ -107,9 +104,8 @@
 
   .btns-container {
     position: fixed;
+    inset: .5rem 1rem auto auto;
     z-index: 100;
-    top: .5rem;
-    right: 1rem;
     display: flex;
     gap: 1rem;
 
@@ -139,28 +135,6 @@ li.mobile {
 
 .section-title > ul {
   margin-left: 1rem;
-}
-
-.main.desktop {
-  &:has(#nav-main details[data-num-of-items="1"]:open) {
-    min-height: calc(var(--body-height) + 1.1rem);
-  }
-
-  &:has(#nav-main details[data-num-of-items="2"]:open) {
-    min-height: calc(var(--body-height) + 2.25rem);
-  }
-
-  &:has(#nav-main details[data-num-of-items="3"]:open) {
-    min-height: calc(var(--body-height) + 3.47rem);
-  }
-
-  &:has(#nav-main details[data-num-of-items="4"]:open) {
-    min-height: calc(var(--body-height) + 4.9rem);
-  }
-
-  &:has(#nav-main details[data-num-of-items="5"]:open) {
-    min-height: calc(var(--body-height) * 1.27);
-  }
 }
 
 @media screen and (max-width: 991px) {

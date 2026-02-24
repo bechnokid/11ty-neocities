@@ -7,7 +7,6 @@ prism: true
 summary: "**NOTE:** The examples will not work if JavaScript is disabled."
 eleventyExcludeFromCollections: true
 ---
-<script src="{{ meta.jsUrl }}/freezeframe.js"></script>
 
 One of the greatest challenges for a web designer is creating a site that is accessible to those with disabilities. It's one thing to create responsive sites and provide alt text for screen readers, but I noticed a lot of Neocities users' sites are lacking one of the most important aspects: **avoiding seizure-inducing images**.
 
@@ -29,7 +28,7 @@ It's an amazing library and it's saved me from a lot of eyestrain while debuggin
 There are a few ways of installing freezeframe.js, but my preferred method is adding the following to your `<head>` tag on every page that would use this library, preferably any that contain a large amount of animated graphics.
 
 ```html
-<script src="https://unpkg.com/freezeframe/dist/freezeframe.min.js"></script>
+<script type="module" src="https://unpkg.com/freezeframe/dist/freezeframe.min.js"></script>
 ```
 
 If there comes a need that you need to customize the script, the code can be found on the library's GitHub page, where you can download it and save it to the same folder you would keep your other scripts.

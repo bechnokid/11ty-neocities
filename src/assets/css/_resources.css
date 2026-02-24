@@ -1,5 +1,11 @@
-.resources td {
-  padding: 1em;
+.resources {
+  td {
+    padding: 1em;
+  }
+
+  a {
+    display: unset;
+  }
 }
 
 #feed-reader {
@@ -77,9 +83,5 @@ article.status-cafe-theme {
 article.code-snippets {
   pre + ul {
     margin: 1.5rem 0;
-  }
-
-  li > code {
-    line-height: 2rem;
   }
 }

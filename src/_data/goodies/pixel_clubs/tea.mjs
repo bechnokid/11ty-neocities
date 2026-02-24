@@ -10,6 +10,11 @@ export default [
     desc: "salt water"
   },
   {
+    src: "maplebear.gif",
+    alt: "A gingham-patterned cup with a flower and a button on the saucer. Inside the tea cup is a bear with sparkles next to it",
+    desc: "maple syrup matcha latte",
+  },
+  {
     src: "cloudcover.png",
     alt: "A pastel blue cup with a rainbow painted on it. Inside the cup is a pink seal with sparkles surrounding it.",
     desc: "iced coffee with mint and brown sugar"

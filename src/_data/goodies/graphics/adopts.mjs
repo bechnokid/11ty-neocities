@@ -63,7 +63,7 @@ export default {
       },
       {
         name: "Final Fantasy VII Rebirth",
-        cls: "align-items-baseline",
+        cls: "align-items-end",
         items: [
           {
             src: "gilgamesh.png",
@@ -79,7 +79,6 @@ export default {
       },
       {
         name: 'Tamagotchi',
-        cls: 'mb-2',
         items: [
           {
             src: "maskutchi.png",
@@ -122,7 +121,6 @@ export default {
       },
       {
         name: 'Monster Hunter',
-        cls: 'my-1',
         items: [
           {
             src: "meat.png",
@@ -138,7 +136,7 @@ export default {
   ],
   adopted: [
     {
-      cls: "align-items-baseline",
+      cls: "align-items-end",
       items: [
         {
           src: "gossharag.png",
@@ -154,16 +152,6 @@ export default {
           src: "heru.gif",
           alt: "A hercules beetle",
           url: "http://www.anne-box.com/"
-        },
-        {
-          src: "egghead.gif",
-          alt: "Egghead",
-          url: "https://web.archive.org/web/20080509021455/http://harriet.dalcomie.net/"
-        },
-        {
-          src: "hotdog.gif",
-          alt: "A hot hog with streaks of ketchup and mustard on it",
-          url: "https://lastsecret.net/bitmapdreams/",
         },
         {
           src: "cupcake_peachnuts.png",
@@ -184,16 +172,6 @@ export default {
           src: "santagotchi.gif",
           alt: "A red Santaclautchi device",
           url: "https://web.archive.org/web/20071231194352/http://tarakana.net/?page=toys",
-        },
-        {
-          src: "gloomcake.png",
-          alt: "A slice of Gloom Cake from Legend of Zelda: Tears of the Kingdom",
-          url: "https://cloudcover.neocities.org/digital/adopts"
-        },
-        {
-          src: "stuffed_pumpkin.png",
-          alt: "A serving of Meat-Stuffed Pumpkin from Legend of Zelda: Breath of the Wild",
-          url: "https://cloudcover.neocities.org/digital/adopts"
         },
         {
           src: "heartsoup.png",
@@ -227,19 +205,9 @@ export default {
           url: "http://www.sailorenergy.net/AnimeGIFs/TRSEIMGKawaiiAnimesT.html"
         },
         {
-          src: "shadow.gif",
-          alt: "Shadow the Hedgehog from the Sonic the Hedgehog game series",
-          url: "http://www.sailorenergy.net/AnimeGIFs/TRSEIMGKawaiiAnimesS.html"
-        },
-        {
-          src: "auron.gif",
-          alt: "Auron from Final Fantasy X",
-          url: "http://www.sailorenergy.net/AnimeGIFs/TRSEIMGKawaiiAnimesF.html"
-        },
-        {
-          src: "kururu.gif",
-          alt: "Kururu from Keroro Gunso",
-          url: "http://www.sailorenergy.net/AnimeGIFs/TRSEIMGKawaiiAnimesS.html"
+          src: "pickledog-joroki.png",
+          alt: "A hot dog made of pickles and a pickle spear sandwiched within a bun.",
+          url: "https://joro.nu/hotdogs/"
         },
         {
           src: "magpiesprite.png",
@@ -257,12 +225,6 @@ export default {
           url: "http://digistar.db-destiny.net/rpixels/index2.html"
         },
         {
-          src: "toki_dolce.gif",
-          alt: "An animated Dolce the Unicorno",
-          url: "https://www.lejlart.com/apple.html",
-          freezeframe: true
-        },
-        {
           src: "bobateapeach.gif",
           alt: "A cup of pink peach-flavored boba tea",
           url: "https://www.jellyfishforest.com/duckyfeet/",
@@ -277,32 +239,6 @@ export default {
           src: "wee-strange.gif",
           alt: "Doctor Strange",
           url: "https://pixels.elfwink.net/objects.php"
-        },
-        {
-          src: "tamadachi3.png",
-          alt: "A pet that resembles a Tamagotchi but with a face and legs",
-          url: "https://web.archive.org/web/20220627153221mp_/https://dokodemo.neocities.org/adopt.html"
-        },
-        {
-          src: "registeel.png",
-          alt: "Registeel from Pokemon",
-          url: "https://www.spriters-resource.com/game_boy_advance/pokemonrubysapphire/sheet/8185/"
-        },
-        {
-          src: "regirock.png",
-          alt: "Regirock from Pokemon",
-          url: "https://www.spriters-resource.com/game_boy_advance/pokemonrubysapphire/sheet/8185/"
-        },
-        {
-          src: "regice.png",
-          alt: "Regice from Pokemon",
-          url: "https://www.spriters-resource.com/game_boy_advance/pokemonrubysapphire/sheet/8185/"
-        },
-        {
-          src: "negg_angelic.gif",
-          alt: "Angelic Negg from Neopets",
-          url: "https://www.lejlart.com/apple.html",
-          freezeframe: true
         },
         {
           src: "milk_strawberry.gif",
@@ -325,11 +261,6 @@ export default {
           url: "https://www.lejlart.com/apple.html"
         },
         {
-          src: "bear_donut_tainted_snow.gif",
-          alt: "A donut with pink frosting. It has bear ears on top.",
-          url: "https://web.archive.org/web/20081204235647/http://harriet.dalcomie.net/"
-        },
-        {
           src: "donut_mirukuma.gif",
           alt: "A donut with sprinkles and a cute face",
           url: "https://mirukuma.blogspot.com/p/sozai.html"
@@ -345,16 +276,6 @@ export default {
           url: "https://web.archive.org/web/20130401014701/http://thechocogoodies.blogspot.com/"
         },
         {
-          src: "isopod3.png",
-          alt: "An isopod pet",
-          url: "https://web.archive.org/web/20220627153221mp_/https://dokodemo.neocities.org/adopt.html"
-        },
-        {
-          src: "axolotl2.png",
-          alt: "A blue and green axolotl pet",
-          url: "https://web.archive.org/web/20220627153221mp_/https://dokodemo.neocities.org/adopt.html"
-        },
-        {
           src: "a-nya.png",
           alt: "Meowth from Pokemon",
           url: "http://www1.tcnet.ne.jp/t-emori/poke/aikon.htm"
@@ -363,11 +284,6 @@ export default {
           src: "a-koiru.png",
           alt: "Magnemite from Pokemon",
           url: "http://www1.tcnet.ne.jp/t-emori/poke/aikon.htm"
-        },
-        {
-          src: "sbmilkcarton.gif",
-          alt: "A pink milk carton with a smiling face",
-          url: "https://soda.bake-neko.net/PixelAdoptables.html"
         },
         {
           src: "hannaritofu_pink.gif",
@@ -400,6 +316,11 @@ export default {
           url: "https://web.archive.org/web/20110815053126/http://yummi.phoophie.com/",
         },
         {
+          src: "purplegarlic.png",
+          alt: "A purple garlic",
+          url: "https://joro.nu/garlic/",
+        },
+        {
           src: "icecream_daniberry.gif",
           alt: "A bobbing ice cream cone",
           url: "https://web.archive.org/web/20100328111125/http://dani.pandasaur.com/",
@@ -414,7 +335,7 @@ export default {
       ]
     },
     {
-      cls: "adopts other align-items-baseline",
+      cls: "adopts other align-items-end",
       items: [
         {
           src: 'isopod_kelpeater.png',

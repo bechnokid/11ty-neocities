@@ -1,15 +1,6 @@
 body#splash-page {
-  .content {
-    max-width: 850px;
-    border: 2px solid var(--bg-primary);
-  }
-
-  .last-update {
-    font-size: .85em;
-  }
-
   .container-fluid {
-    height: 100%
+    height: 100%;
   }
 
   a {
@@ -20,12 +11,23 @@ body#splash-page {
       text-decoration: none;
     }
   }
+
+  p {
+    margin: 0;
+  }
+
+  .content {
+    max-width: 850px;
+    border: 2px solid var(--bg-primary);
+  }
+
+  .splash-desc {
+    justify-content: space-evenly;
+  }
 }
 
 @media screen and (max-width: 767px) {
-  body#splash-page{
-    .container-fluid {
-      height: revert;
-    }
+  .splash-desc {
+    gap: 1rem;
   }
 }

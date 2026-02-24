@@ -16,7 +16,7 @@ permalink: 'feeds/rss.xml'
     {%- for item in feed_items | reverse %}
     <item>
       <title>{{ item.title or (item.fileSlug | monDayYear) }}</title>
-      <link>https://bechnokid.neocities.org/home</link>
+      <link>https://bechnokid.com/home</link>
       <guid isPermaLink="false">{{ item.title or "update" }}-{{ item.date }}</guid>
       <pubDate>{{ feed_items[0].date.toUTCString() }}</pubDate>
       <description><![CDATA[

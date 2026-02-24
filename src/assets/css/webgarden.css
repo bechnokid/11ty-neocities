@@ -152,8 +152,7 @@ img {
 
   & .nume {
     position: absolute;
-    right: -50px;
-    bottom: 0;
+    inset: auto -50px 0 auto;
     animation: numeWalk 40s steps(40, end) 10s infinite;
   }
 }

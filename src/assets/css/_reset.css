@@ -43,8 +43,12 @@ video,
 canvas,
 svg {
   display: inline-block;
-  align-self: center;
   max-width: 100%;
+  vertical-align: middle;
+}
+
+.d-flex > img {
+  align-self: center;
 }
 
 input,
@@ -299,4 +303,35 @@ img.img-50 {
 
 .ft-alert-triangle.show {
   display: inline !important;
+}
+
+.img-align-top {
+  vertical-align: top;
+}
+
+.img-align-middle {
+  vertical-align: middle;
+}
+
+.img-align-bottom {
+  vertical-align: bottom;
+}
+
+.img-align-sub {
+  vertical-align: sub;
+}
+
+.no-js {
+  .js-required {
+    display: none !important;
+  }
+
+  .position-relative:has(> .js-required) {
+    height: unset !important;
+    overflow: visible !important;
+  }
+
+  .ft-alert-triangle {
+    display: inline !important;
+  }
 }

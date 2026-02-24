@@ -9,20 +9,18 @@ noScroll: true
 {% set last_updated = (collections.feed | reverse)[0].fileSlug | monthDayYear %}
 
 {% block content %}
-  <article>
-    {% include "partials/page-header.html" %}
-    {%- for item in post_list_items %}
-    {% set blog_date = item.fileSlug | monthDayYear %}
-    <div class="blog row py-1">
-      <div class="col-md-8 col-7">
-        <a href="{{ item.url }}">{{ item.data.title | markdownifyInline | safe }}</a>
-        {% if blog_date == last_updated %}
-          {% icon 'new' %}
-        {% endif %}
-      </div>
-      <div class="col-md-4 col-5">{{ blog_date }}</div>
+  {% include "partials/page-header.html" %}
+  {%- for item in post_list_items %}
+  {% set blog_date = item.fileSlug | monthDayYear %}
+  <div class="blog row py-1">
+    <div class="col-md-8 col-7">
+      <a href="{{ item.url }}">{{ item.data.title | markdownifyInline | safe }}</a>
+      {% if blog_date == last_updated %}
+        {% icon 'new' %}
+      {% endif %}
     </div>
-    {% endfor %}
-    {% include "partials/pagination.html" %}
-  </article>
+    <div class="col-md-4 col-5">{{ blog_date }}</div>
+  </div>
+  {% endfor %}
+  {% include "partials/pagination.html" %}
 {% endblock %}

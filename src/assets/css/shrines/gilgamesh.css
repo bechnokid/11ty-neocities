@@ -194,8 +194,7 @@ blockquote::before {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 5em;
   position: absolute;
-  left: 1rem;
-  top: 2rem;
+  inset: 2rem auto auto 1rem;
   color: #9a0045;
   opacity: .5;
 }
@@ -250,7 +249,7 @@ main a:hover img {
   margin: .75rem auto;
   width: fit-content;
   border: 2px dotted #3B2F55;
-  border-radius: 3rem;
+  border-radius: 2.5rem;
   background: #ffeefb;
   padding: .75rem 2rem;
   text-align: center;
@@ -262,9 +261,7 @@ main a:hover img {
 
 .back-to-top {
   position: absolute;
-  top: 100vh;
-  right: 1rem;
-  bottom: 1rem;
+  inset: 100vh 1rem 1rem auto;
   width: 3em;
   pointer-events: none;
 }

@@ -1,6 +1,6 @@
 footer {
   font-size: .8em;
-  border: 5px solid var(--bg-body);
+  border: 5px solid var(--border-body);
 
   p {
     margin: 0;

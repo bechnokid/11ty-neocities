@@ -18,7 +18,7 @@ module.exports = async function(eleventyConfig){
   const { EleventyPluginCodeDemo } = await import('eleventy-plugin-code-demo');
 
   ['images', 'fonts', 'js'].forEach(path => {
-    eleventyConfig.addPassthroughCopy(`./src/assets/${path}/`)
+    eleventyConfig.addPassthroughCopy(`./src/assets/${path}/`);
   })
 
   // Data Extensions

@@ -4,7 +4,7 @@
 }
 
 :root {
-  --body-height: 515px;
+  --body-height: 535px;
   --img-link: url(/assets/images/link.svg);
   --img-cursor: url(/assets/images/cursor.png);
   --img-cursor-point: url(/assets/images/cursor_point.png);
@@ -49,10 +49,10 @@
 [data-theme="dark"] {
   --img-bg: url(/assets/images/bg_dark.jpg);
   --img-header: -0 -150px;
-  --bg-body: #47284D;
+  --bg-body: #351f39;
   --bg-code: var(--bg-footer);
-  --bg-footer: #2f1933;
-  --bg-heading: #180c1a;
+  --bg-footer: #261428;
+  --bg-heading: #180c19;
   --bg-img-color: #391b3d;
   --bg-info: #7b5e39;
   --bg-overlay: #391b3dcc;
@@ -185,6 +185,8 @@ body {
   background-image: var(--img-bg);
   background-attachment: fixed;
   color: var(--text-body);
+  accent-color: var(--text-secondary);
+  caret-color: var(--text-secondary);
 }
 
 h1, .h1,
@@ -257,12 +259,12 @@ em {
   color: var(--text-secondary);
 }
 
-article > h1 {
-  margin-top: .5rem;
-}
+article {
+  height: 100%;
 
-div:has(> img:only-child) {
-  display: flex;
+  &> h1 {
+    margin-top: .5rem;
+  }
 }
 
 hr {
@@ -333,8 +335,8 @@ blockquote {
     content: "‟";
     font-family: 'Georgia';
     font-weight: bold;
-    position: absolute;
     font-size: 2.5rem;
+    position: absolute;
     left: .25rem;
     opacity: .25;
   }
@@ -395,8 +397,9 @@ main {
 
   a {
     &:focus-visible {
-      border: 0 !important;
-      border: 2px solid var(--text-primary) !important;
+      > * {
+        padding: .25rem;
+      }
     }
   }
 
@@ -408,7 +411,7 @@ main {
     }
   }
 
-  ul, ol {
+  ul:not(.inline-list), ol {
     display: flex;
     flex-direction: column;
     gap: .25rem;
@@ -429,13 +432,13 @@ main {
       }
 
       > ul {
-        padding-top: .25rem;
+        padding-top: .5rem;
         padding-bottom: .5rem;
       }
     }
   }
 
-  ul {
+  ul:not(.inline-list) {
     padding-left: 1.5rem;
 
     &:has(+ p) {
@@ -475,7 +478,7 @@ main {
       }
 
       > ul {
-        padding-top: .25rem;
+        padding-top: .5rem;
         padding-bottom: .5rem;
 
         > li::marker {
@@ -487,17 +490,13 @@ main {
 }
 
 .page {
-  width: 1000px;
+  width: min(1000px, 100%);
 }
 
 .main {
   margin-top: 9.5rem;
-  border-left: 5px solid var(--bg-body);
-  border-right: 5px solid var(--bg-body);
-}
-
-.main.desktop {
-  min-height: var(--body-height);
+  border-left: 5px solid var(--border-body);
+  border-right: 5px solid var(--border-body);
 }
 
 .sidebar h1,
@@ -565,6 +564,7 @@ a[href*="http"]:not(:has(img, [role="img"]), .button):hover {
 a[href*="http"]:not(:has(img, [role="img"]))::after {
   content: "";
   display: inline-block;
+  align-self: center;
   width: .8rem;
   height: .8rem;
   margin-left: .25rem;
@@ -599,11 +599,11 @@ a[href*="http"]:not(:has(img, [role="img"]))::after {
   max-width: 200px;
   line-height: 1.25em;
   position: absolute;
+  top: 0px;
+  z-index: 99;
   opacity: 0;
   visibility: hidden;
-  z-index: 99;
-  top: 0px;
-  transform: translate(10%, calc(-100% - .25rem));
+  transform: translate(10%,calc(-100% - .5rem));
   font-size: .8em;
   padding: .5rem;
   text-align: center;
@@ -648,9 +648,7 @@ a[href*="http"]:not(:has(img, [role="img"]))::after {
 .back-to-top {
   z-index: 99;
   position: absolute;
-  top: 100vh;
-  right: .5rem;
-  bottom: 2rem;
+  inset: 100vh .5rem 2rem auto;
   width: 3em;
   pointer-events: none;
 }
@@ -693,7 +691,7 @@ a[href*="http"]:not(:has(img, [role="img"]))::after {
 }
 
 .main:has(.position-relative > .loading-sidebar:not(.d-none)) nav .freeze-btns,
-.main:has(.position-relative > .loading-sidebar:not(.d-none)) .back-to-top {
+html:not(.no-js) .main:has(.position-relative > .loading-sidebar:not(.d-none)) .back-to-top {
   display: none !important;
 }
 
@@ -793,8 +791,8 @@ position: absolute;
   justify-content: center;
 
   .loading-img {
-    width: 235px;
-    height: 249px;
+    width: 176px;
+    height: 187px;
     background-image: url('/assets/images/meat_loading.png');
     animation: steakRotate 1s steps(2) infinite;
   }
@@ -802,7 +800,7 @@ position: absolute;
 
 @keyframes steakRotate {
   to {
-    background-position-x: -470px;
+    background-position-x: -352px;
   }
 }
 
@@ -833,7 +831,6 @@ position: absolute;
 
   .page {
     margin-top: 3.7rem;
-    width: 100%;
   }
 
   .main {
@@ -854,5 +851,11 @@ position: absolute;
 
   .mobile-only {
     display: revert;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .outline-glow {
+    filter: drop-shadow(0 0 5px #fff);
   }
 }

@@ -7,30 +7,29 @@ permalink: 'joined/index.html'
 ---
 {% import 'components/joined/webring_macros.html' as webrings with context %}
 {% import 'components/joined/clique_macros.html' as clique with context %}
+<script>var webringLinks = {};</script>
 
 <div class="position-relative d-flex flex-column flex-gap-4">
   {% include "partials/loading-sidebar.html" %}
-  {% galleryBox { title: "More Cliques", cls: "cliques" } %}
-    <div class="row g-0 w-100">
-      {% for items in cliques.more | slice(2) %}
-        <div class="col-md-6 col-12 d-flex flex-column align-items-center flex-gap-2">
-          {% for item in items %}
-            <div class="d-flex align-items-center flex-gap-2 {{ item.id or "" }}">
-              {% if item.custom %}
-                {{ item.custom | safe }}
-              {% else %}
-                {{ clique.text(item) }}
-              {% endif %}
-            </div>
-          {% endfor %}
-        </div>
-      {% endfor %}
-    </div>
+  {% galleryBox { title: "More Cliques", cls: "cliques", subCls: "row g-0 w-100 text-center" } %}
+    {% for items in cliques.more | slice(2) %}
+      <div class="col-md-6 col-12 d-flex flex-column align-items-center flex-gap-2">
+        {% for item in items %}
+          <div class="clique {{ item.id or "" }}">
+            {% if item.custom %}
+              {{ item.custom | safe }}
+            {% else %}
+              {{ clique.text(item) }}
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endfor %}
   {% endgalleryBox %}
-  {% galleryBox { title: "Webrings/Directories", subCls: "webrings justify-content-center flex-gap-2" } %}
+  {% galleryBox { title: "Webrings/Directories", cls: "webrings", subCls: "justify-content-center flex-gap-2" } %}
     {% set debug = false if meta.env == "prod" else true %}
     <p class="mobile-only mb-4">I'm so sorry the widgets are so small on mobile! One day, I'll find a way to make them easy to navigate, but for now, please zoom in!</p>
-    <div class="small-webrings js-required d-flex flex-wrap align-items-center justify-content-center flex-gap-2">
+    <div class="d-flex flex-wrap flex-center flex-gap-2">
       {% for item in outgoing.joined.directories %}
         {% img "/assets/images/webrings/" + item.src, { url: item.url, alt: "Button to &quot;" + item.name + "&quot;"} %}
       {% endfor %}
@@ -38,67 +37,33 @@ permalink: 'joined/index.html'
       {{ webrings.acing() }}
       {{ webrings.ladies() }}
       {{ webrings.queercoded() }}
-      {{ webrings.tropical(debug) }}
+      {{ webrings.tropical() }}
+      {{ webrings.resource() }}
+      {{ webrings.neocreatives() }}
+      {{ webrings.gummy() }}
+      {{ webrings.gfdkris() }}
+      {{ webrings.amiga() }}
+      {{ webrings.wii() }}
+      {{ webrings.cookie_run() }}
+      {{ webrings.doodle() }}
+      {{ webrings.self_insert() }}
+      {{ webrings.sanrio() }}
+      {{ webrings.persona() }}
+      {{ webrings.kingdom_hearts() }}
     </div>
-    <div class="row g-0 w-100 js-required justify-content-md-center flex-md-gap-0 flex-gap-3">
-      <div class="col-md-6 col-lg-4">
-        {{ webrings.resource() }}
-        {{ webrings.neocreatives() }}
-        {{ webrings.gfdkris() }}
-        {{ webrings.amiga() }}
-        {{ webrings.doodle() }}
-      </div>
-      <div class="col-md-6 col-lg-4">
-        {{ webrings.wii() }}
-        {{ webrings.cookie_run() }}
-        {{ webrings.self_insert() }}
-      </div>
-      <div class="col-md-6 col-lg-4 mt-lg-0 mt-3">
-        {{ webrings.persona() }}
-        {{ webrings.kingdom_hearts() }}
-      </div>
-    </div>
-    <noscript>
-      <div id="webring-btn-container" class="d-flex flex-wrap align-items-center justify-content-center flex-md-gap-1 flex-gap-4">
-        {% for item in outgoing.joined.directories %}
-          {% img "/assets/images/webrings/" + item.src, { url: item.url, alt: "Button to the " + item.name } %}
-        {% endfor %}
-        {{ webrings.neocreatives(true) }}
-        {{ webrings.gfdkris(true) }}
-        {{ webrings.cookie_run(true) }}
-        {{ webrings.resource(true) }}
-        {{ webrings.amiga(true) }}
-        {{ webrings.wii(true) }}
-        {{ webrings.kingdom_hearts(true) }}
-        {{ webrings.doodle(true) }}
-        {{ webrings.persona(true) }}
-        {% img "/assets/images/webrings/tropical.png", { url: "https://astracelestine.nekoweb.org/webring/tropical-rice-bowl", alt: "Button for the &quot;Tropical Rice Bowl&quot; webring" } %}
-      </div>
-      <div class="webring-widget-container mt-4">
-        <div class="d-flex flex-wrap justify-content-center flex-gap-3">
-          {{ webrings.rayman() }}
-          {{ webrings.queercoded() }}
-          {{ webrings.ladies() }}
-          {{ webrings.acing() }}
-          {{ webrings.self_insert() }}
-        </div>
-      </div>
-    </noscript>
   {% endgalleryBox %}
 
-  {% galleryBox { title: "Pending", cls: "js-required", subCls: "webrings pending justify-content-center align-items-center flex-gap-3" } %}
-    {{ webrings.gummy() }}
+  {% galleryBox { title: "Pending", cls: "webrings", subCls: "justify-content-center align-items-center flex-gap-3" } %}
     {{ webrings.yume() }}
-    {{ webrings.sanrio() }}
   {% endgalleryBox %}
 
-  {% galleryBox { title: "Webrings?", cls: 'js-required', subCls: "webrings fake-webrings", simple: true } %}
+  {% galleryBox { title: "Webrings?", cls: 'js-required', subCls: "webrings", simple: true } %}
     <p>These webrings are either inactive or are not letting people join even though the option to become a member is still available. So, I cheated a bit to make myself an "honorary member", like a rascal. Yes, these are all functional!</p>
     <p>If you're the owner of any of these webrings and you want me to take these down, then please go back to updating your webrings or at least say applications are closed!</p>
     <div class="d-flex flex-md-row flex-column align-items-center justify-content-center flex-gap-3 mt-3">
       <div class="d-flex flex-column align-items-center flex-gap-1">
-        {{ webrings.wol() }}
-        {{ webrings.pokering() }}
+        {{ webrings.wol(true) }}
+        {{ webrings.pokering(true) }}
       </div>
       {{ webrings.jelly() }}
     </div>

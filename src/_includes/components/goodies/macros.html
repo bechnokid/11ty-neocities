@@ -14,7 +14,7 @@
     {% set goodies_arr = goodies.graphics[arr_slug]['mine'] if mine
       else (goodies.graphics[arr_slug]['collected'] if (goodies.graphics[arr_slug]['collected'] | length) > 0 else goodies.graphics[arr_slug]) %}
     {%- for item in goodies_arr %}
-      <div>{% img img_path + item.src, { alt: item.alt, freezeframe: item.freezeframe, url: item.url } %}</div>
+      {% img img_path + item.src, { alt: item.alt, freezeframe: item.freezeframe, url: item.url } %}
     {% endfor %}
   {% endgalleryBox %}
 {% endmacro %}

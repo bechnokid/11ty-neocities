@@ -68,7 +68,7 @@ This is going to sound so shallow of me to say, but I honestly don't like any HL
 
 Admittedly, I didn't start getting into BL ships until pretty recently. I started out as a "eww yaoi is gross" child, and when I grew into an adult, I had a former best friend who also hated BL ships and only liked HL and GL ships. It was bad to the point where if I expressed any interest in any BL ships, she would interrogate me.
 
-Needless to say, I am not friends with this person anymore lol, and have been working on letting myself be cringe and free, and that included enjoying BL ships.
+Needless to say, I am not friends with this person anymore lol, and have been working on giving myself more freedom in the things I like, including BL ships.
 
 The kinds of BL ships I enjoy are friends who frequently bicker but always know to let each other know how much they love each other in their own ways. Depending on how crack-shippy the pair is, sometimes there isn't any affection. Just a lot of bickering and sexual tension, hehe.
 
@@ -96,12 +96,12 @@ When writing down ship names, I don't consider if the character is a "top" or "b
 - {% emoji "❗" %} I love this ship, but with some caveats
 - {% emoji "🌱" %} Ship I loved as a child/teen
 - {% emoji "💀" %} - Only used for NOTPs that I absolutely hate.
-  - All other NOTPs are just ships I can't get into! No hate to any fans!
+  - All other NOTPs are just ships I can't get into! No hate to any fans of the ships or characters involved!
 {.legend}
 
 You can click on ships with a dotted underline for commentary!
 
-<div class="row mt-1 mb-4 g-3">{% for key, value in about.ships.canon %} <div class="col-md-4 d-flex flex-column"><div class="sidebar"><p class="h3">{{ key | title }}</p><div class="content">{% for media in value %} <details open class="p-2"><summary class="media">{{ media.name }}</summary><ul>{% for item in media.items %} <li>{% if item.info %} <details class="fan-info"><summary>{{ item.ship | safe }}{% if item.emoji %} {% emoji item.emoji %}{% endif %}</summary><p>{{ item.info | safe }}</p></details>{% else %} {{ (item.ship or item) | safe }}{% if item.emoji %} {% emoji item.emoji %}{% endif %} {% endif %} </li>{% endfor %}</ul></details>{% endfor %}</div></div></div>{% endfor %}
+<div class="row mt-1 mb-4 g-3">{% for key, value in about.ships.canon %} <div class="col-md-4 d-flex flex-column"><div class="sidebar"><p class="h3">{{ key | title }}</p><div class="content">{% for media in value %} <details open class="p-2"><summary class="media">{{ media.name }}</summary><ul>{% for item in media.items %} <li>{% if item.desc %} <details class="ship-desc"><summary>{{ item.ship | safe }}{% if item.emoji %} {% emoji item.emoji %}{% endif %}</summary><p>{{ item.desc | safe }}</p></details>{% else %} {{ (item.ship or item) | safe }}{% if item.emoji %} {% emoji item.emoji %}{% endif %} {% endif %} </li>{% endfor %}</ul></details>{% endfor %}</div></div></div>{% endfor %}
 </div>
 
 ### OC x Canon

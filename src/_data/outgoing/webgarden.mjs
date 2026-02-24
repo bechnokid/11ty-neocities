@@ -1,5 +1,6 @@
 export default [
   "https://justbecaws.neocities.org/webgarden",
+  "https://kingdra.net/webgarden.html",
   "https://jadeeverstone.com/webgarden.html",
   "https://orion-overdrive.neocities.org/webgarden.html",
   "https://enter-the-sevenfold.neocities.org/webgarden",

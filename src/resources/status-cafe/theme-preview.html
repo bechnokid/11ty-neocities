@@ -8,7 +8,6 @@ eleventyExcludeFromCollections: true
 eleventyComputed:
   permalink: "resources/status-cafe/preview/{{ statusTheme.page.fileSlug }}.html"
 ---
-&#10;
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +15,7 @@ eleventyComputed:
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>bechnokid - Status Cafe</title>
   <meta name="description" content="your friends' updates">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⭐</text></svg>">
   <link rel="stylesheet" href="https://status.cafe/assets/style.css" type="text/css" media="all">
 </head>
 <body>
@@ -30,15 +30,13 @@ eleventyComputed:
       <section>
         <h2>bechnokid</h2>
         {% if statusTheme.data.pfp %}
-          <img src="{{ statusTheme.data.pfp }}" class="profile-picture">
-        {% else %}
-          <img src="https://placehold.co/500x500" class="profile-picture">
+          <img src="{{ "https://placehold.co/500x500" if statusTheme.data.pfp == true else statusTheme.data.pfp }}" class="profile-picture">
         {% endif %}
         <p><a href="/users/bechnokid.atom">Subscribe via Atom</a></p>
         <dl>
           <dt class="homepage">Homepage</dt>
           <dd class="homepage">
-            <a href="https://bechnokid.neocities.org/" target="_blank">https://bechnokid.neocities.org/</a>
+            <a href="https://bechnokid.com" target="_blank">https://bechnokid.com/</a>
           </dd>
           <dt class="email">Email</dt>
           <dd class="email">
@@ -46,6 +44,8 @@ eleventyComputed:
           </dd>
           <dt class="about">About</dt>
           <dd class="about">
+            <p>Rathalos are fearsome male wyverns known as the "Kings of the Skies". Alongside the Rathian, they stake out a wide territory around their nests, and it is the male's role to watch from above.</p>
+            <p>Armed with powerful poisonous claws and fiery breath, Rathalos use their aerial prowess to descend on invaders.</p>
             {% include "components/resources/status-cafe-themes/" + statusTheme.page.fileSlug + ".html" %}
           </dd>
         </dl>
@@ -61,12 +61,16 @@ eleventyComputed:
           <p class="status-content">If the preview in this frame is too small, you can take the page's URL and replace "themes" with "preview" to view the theme in full resolution.</p>
         </article>
         <article class="status">
-          <div class="status-username"><a href="https://status.cafe/users/bechnokid">bechnokid</a> 💡 2 days ago</div>
+          <div class="status-username"><a href="https://status.cafe/users/bechnokid">bechnokid</a> 💡 8 days ago</div>
           <p class="status-content">Please note that most of the links in the navigation do not work since this is just a preview. Clicking on them will lead to broken pages!</p>
         </article>
         <article class="status">
-          <div class="status-username"><a href="https://status.cafe/users/bechnokid">bechnokid</a> ✏️ 3 days ago</div>
-          <p class="status-content">If anything looks off, feel free to shoot me an email to the email address listed to the left!</p>
+          <div class="status-username"><a href="https://status.cafe/users/bechnokid">bechnokid</a> 🤔 10 days ago</div>
+          <p class="status-content">Be sure to read all of a particular theme's notes and/or tips to make the most out of the theme!</p>
+        </article>
+        <article class="status">
+          <div class="status-username"><a href="https://status.cafe/users/bechnokid">bechnokid</a> ✏️ 13 days ago</div>
+          <p class="status-content">If anything looks off, feel free to shoot a message to the email address shown on the left!</p>
         </article>
         <p><a href="bechnokid?page=1">Older statuses</a></p>
       </section>

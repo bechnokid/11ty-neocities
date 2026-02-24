@@ -20,7 +20,7 @@ freezeframe: true
         <div class="col-md-4 col-12">
           {%- for row in column %}
             <p>{{ row.name }}</p>
-            <div class='d-flex{% if row.cls %} {{ row.cls }}{% endif %}'>
+            <div class='d-flex flex-gap-1 py-1 {{ row.cls or "" }}'>
               {%- for item in row.items %}
                 {% if item.tooltip %}<div class="tooltip">{% endif %}
                   {% img img_link + item.src, { alt: item.alt } %}
@@ -54,22 +54,17 @@ freezeframe: true
     {% endgalleryBox %}
   </section>
 
-  {% set img_link = array.imgSrc %}
-  <section class="adopted">
-    <h2>Adopted</h2>
-    {% galleryBox %}
-      {%- for row in array.adopted %}
-      <div class="row g-0 w-100{{ " mb-4" if not loop.last }}">
-        <div class="col d-flex flex-wrap justify-content-center{% if row.cls %} {{ row.cls }}{% endif %}">
-          {%- for item in row.items %}
-            {% set img_path = item.src if item.ogLink else img_link + item.src %}
-            {% img img_path, { url: item.url, alt: item.alt, urlCls: 'mx-1', freezeframe: item.freezeframe } %}
-          {% endfor %}
-        </div>
+{% set img_link = array.imgSrc %}
+  {% galleryBox { title: "Adopted" } %}
+    {%- for row in array.adopted %}
+      <div class="d-flex flex-wrap justify-content-center flex-gap-1 {{ row.cls or "" }}">
+        {%- for item in row.items %}
+          {% set img_path = item.src if item.ogLink else img_link + item.src %}
+          {% img img_path, { url: item.url, alt: item.alt, freezeframe: item.freezeframe } %}
+        {% endfor %}
       </div>
-      {% endfor %}
-    {% endgalleryBox %}
-  </section>
+    {% endfor %}
+  {% endgalleryBox %}
 
   <section class="orphaned">
     <h2>Orphaned</h2>
@@ -77,7 +72,7 @@ freezeframe: true
     <p>If you are the owner of any of these and would like me to take them down, please let me know via email or leaving a message in my <a href="https://bechnokid.atabook.org/">guestbook</a>!</p>
     {% galleryBox { cls: "mt-2", subCls: "flex-gap-2 orphaned-adopts" } %}
       {% for owner, value in array.orphaned %}
-        <a href="{{ value.url }}" class="d-flex flex-wrap flex-gap-2">
+        <a href="{{ value.url }}" class="d-flex flex-wrap flex-gap-2 align-items-end">
           {% for item in value.items %}
             {% if item.group %}
               {% for alt in item.alt %}

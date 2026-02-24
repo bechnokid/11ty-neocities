@@ -45,7 +45,7 @@ export default {
       {
         name: "Keroro Gunso",
         items: [
-          { ship: "Yukiki x Hanana", emoji: "💖 ❗", info: "Despite being canon characters, they had little to no personalities, so this ship pretty much only exists in an AU where they're humans. ^^;" },
+          { ship: "Yukiki x Hanana", emoji: "💖 ❗", desc: "Despite being canon characters, they had little to no personalities, so this ship pretty much only exists in an AU where they're humans. ^^;" },
           "Kururu x Giroro"
         ]
       },
@@ -101,7 +101,7 @@ export default {
         name: "Digimon",
         items: [
           { ship: "Venusmon x Neptunemon (Time Stranger)", emoji: "💖" },
-          { ship: "Gallantmon x Beelzemon", emoji: "💖", info: "Obviously, I don't ship the characters from Tamers. I just like the potential dynamic between these two 'mons. The badass biker, the gallant knight... -wistful sigh-"},
+          { ship: "Gallantmon x Beelzemon", emoji: "💖", desc: "Obviously, I don't ship the characters from Tamers. I just like the potential dynamic between these two 'mons. The badass biker, the gallant knight... -wistful sigh-"},
           { ship: "Tai x Sora", emoji: "🌱" },
           { ship: "Joe x Mimi", emoji: "🌱" },
         ]
@@ -131,7 +131,7 @@ export default {
         items: [
           "Guzma x Plumeria",
           "Colress x Faba",
-          { ship: "Ingo x Elesa x Emmet", info: "I don't ship the brothers together. Think of this ship as Elesa giving both of her boyfriends tons of love."},
+          { ship: "Ingo x Elesa x Emmet", desc: "I don't ship the brothers together. Think of this ship as Elesa giving both of her boyfriends tons of love."},
           "Giovanni x Delia",
           "Giovanni x Nanu",
         ]
@@ -142,7 +142,7 @@ export default {
           { ship: "Link x Zelda (BotW/TotK)", emoji: "💖" },
           "Sonia x Rauru",
           "Linebeck x Jolene",
-          { ship: "Linebeck x Ganondorf", info: "I've seen people ship characters within the Smash Bros universe, and I had the idea to ship these two because of their affinity for treasure. I fell for these two HARD."},
+          { ship: "Linebeck x Ganondorf", desc: "I've seen people ship characters within the Smash Bros universe, and I had the idea to ship these two because of their affinity for treasure. I fell for these two HARD."},
         ]
       },
       {
@@ -150,12 +150,13 @@ export default {
         items: [
           "White Lily x Silent Salt",
           "White Lily x Pure Vanilla",
+          "Black Raisin x Pure Vanilla",
         ]
       },
       {
         name: "Kirby",
         items: [
-          { ship: "King Dedede x Meta Knight", emoji: "❗", info: "I can pretty much only ship these two if they're gijinkas lol..." },
+          { ship: "King Dedede x Meta Knight", emoji: "❗", desc: "I can pretty much only ship these two if they're gijinkas lol..." },
         ]
       },
       {
@@ -211,7 +212,7 @@ export default {
           { ship: "Doctor Strange x Clea (Marvel Comics)", emoji: "💀"},
           "Inosuke x Aoi (Demon Slayer)",
           "Vash x Wolfwood (TRIGUN)",
-          "Shadow Milk Cookie x Pure Vanilla Cookie",
+          { ship: "Shadow Milk Cookie x Pure Vanilla Cookie", emoji: "💀" },
           "Sonic x Sally (Archie Sonic)",
           "Knuckles x Julie-Su (Archie Sonic)",
         ]

@@ -131,7 +131,13 @@ textarea.key-map {
 }
 
 article#microblog {
-  #status-cafe-widget hr {
-    margin: 0 !important;
+  #status-cafe-widget {
+    hr {
+      margin: 0 !important;
+    }
+
+    img {
+      align-self: center;
+    }
   }
 }

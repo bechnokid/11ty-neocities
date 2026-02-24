@@ -30,6 +30,11 @@ export default [
     cls: "mh-sunbreak",
   },
   {
+    src: "blackgarlic.png",
+    alt: "I am Black Garlic! Sweet, patient, warm, and nurturing. The image links to Joro's garlic shrine",
+    url: "https://joro.nu/garlic/",
+  },
+  {
     src: "ac.png",
     alt: "I am Dora, the normal mouse villager, squeaky!",
     url: "https://dog-house.neocities.org/quiz/ac/villager_quiz",

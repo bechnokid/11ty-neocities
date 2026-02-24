@@ -1,7 +1,7 @@
 export default {
   env: process.env.ELEVENTY_ENV,
   name: "Bechno Kid's Hideout",
-  url: "https://bechnokid.neocities.org",
+  url: "https://bechnokid.com",
   cssUrl: "/assets/css",
   jsUrl: "/assets/js",
   imgUrl: "/assets/images",
@@ -20,14 +20,22 @@ export default {
   introLinks: [
     { name: 'Sitemap', url: '/sitemap' },
     { name: 'RSS', url: '/feeds' },
-    { name: 'Guestbook', url: '/guestbook' }
+    { name: 'Contact', url: '/contact' }
   ],
   favicon: {
     prod: "/assets/images/favicon.ico",
     dev: "/assets/images/meat.png"
   },
-  updated: [ ],
-  new: [ "Descriptions in RSS Feed" ],
+  updated: [
+    "Anime",
+    "Digimon",
+    "Other",
+  ],
+  new: [
+    "Contact",
+    "Uses",
+    "2000s Blog"
+  ],
   emotes: [
     "angry",
     "calm",

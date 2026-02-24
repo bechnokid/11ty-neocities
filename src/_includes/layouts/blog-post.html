@@ -1,5 +1,6 @@
 ---
 permalink: 'blog/{{ page.fileSlug }}.html'
+cls: blog-post
 ---
 {% set date = page.date %}
 {% extends "layouts/base.html" %}
@@ -11,11 +12,9 @@ permalink: 'blog/{{ page.fileSlug }}.html'
 {% endset %}
 
 {% block content %}
-  <article class="blog-post">
-    {% include "partials/page-header.html" %}
-    <div class="my-4 blog">
-      {{ content | safe }}
-    </div>
-  </article>
+  {% include "partials/page-header.html" %}
+  <div class="my-4 blog">
+    {{ content | safe }}
+  </div>
   {% include "partials/go-back.html" %}
 {% endblock %}

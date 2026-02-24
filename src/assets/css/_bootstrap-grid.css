@@ -1632,6 +1632,11 @@
   align-self: stretch !important;
 }
 
+.flex-center {
+  justify-content: center !important;
+  align-items: center !important;
+}
+
 .order-first {
   order: -1 !important;
 }
@@ -2252,6 +2257,11 @@
 
   .align-self-sm-stretch {
     align-self: stretch !important;
+  }
+
+  .flex-sm-center {
+    justify-content: center !important;
+    align-items: center !important;
   }
 
   .order-sm-first {
@@ -2948,6 +2958,11 @@
     align-self: stretch !important;
   }
 
+  .flex-md-center {
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
   .order-md-first {
     order: -1 !important;
   }
@@ -3640,6 +3655,11 @@
 
   .align-self-lg-stretch {
     align-self: stretch !important;
+  }
+
+  .flex-lg-center {
+    justify-content: center !important;
+    align-items: center !important;
   }
 
   .order-lg-first {

@@ -69,7 +69,7 @@ class FreezeImages {
 
         .ff-container img,
         .ff-container canvas {
-          align-self: end;
+          align-self: start;
         }
 
         .ff-container.ff-hover:hover .ff-active {
@@ -80,11 +80,13 @@ class FreezeImages {
         .ff-container.ff-hover:hover .ff-inactive {
           position: static;
           opacity: 1;
+          z-index: 1;
         }
 
         .ff-inactive {
           position: absolute;
           opacity: 0;
+          z-index: -99;
         }
       `;
       document.head.appendChild(style);
@@ -237,7 +239,7 @@ class FreezeImages {
 
         .ff-container img,
         .ff-container canvas {
-          align-self: end;
+          align-self: start;
         }
 
         .ff-container.ff-hover:hover .ff-active {
@@ -248,11 +250,13 @@ class FreezeImages {
         .ff-container.ff-hover:hover .ff-inactive {
           position: static;
           opacity: 1;
+          z-index: 1;
         }
 
         .ff-inactive {
           position: absolute;
           opacity: 0;
+          z-index: -99;
         }
       `;
       document.head.appendChild(style);
@@ -464,7 +468,7 @@ Here's the original CSS from the script in case you'd like to use it as referenc
 
 .ff-container img,
 .ff-container canvas {
-  align-self: end;
+  align-self: start;
 }
 
 .ff-container.ff-hover:hover .ff-active {
@@ -475,11 +479,13 @@ Here's the original CSS from the script in case you'd like to use it as referenc
 .ff-container.ff-hover:hover .ff-inactive {
   position: static;
   opacity: 1;
+  z-index: 1;
 }
 
 .ff-inactive {
   position: absolute;
   opacity: 0;
+  z-index: -99;
 }
 ```
 
@@ -502,17 +508,16 @@ const f = new FreezeImages (
 
 ## Troubleshooting
 
-### Images Appear Stretched
+If you find that your images after using the script either **don't line up** with the other graphics, or end up **looking stretched**, it could be for a number of reasons.
 
-This is a common issue I've encountered when using flex, so I thought I'd put this here in case someone else needs help.
+Each reason has its own specific use case that seems to vary from person to person, but they can usually be solved by tinkering with several CSS properties.
 
-I find that putting this CSS block would prevent images from stretching. Hopefully, it works for you, too!
+I'll list a couple of tips:
 
-```css
-img {
-  align-self: end; /* "center" and "start" also work */
-}
-```
+- You can adjust the `vertical-align` property for any `<img>` tag. I usually like to use "top", "middle", or "bottom", but you can choose whatever works for your site.
+- If an `<img>` element's parent element is a flex container (with `display: flex`), you can adjust the `<img>` tag's `align-self` property. I usually use "start", "center", or "end", but again, there are several options you can choose from.
+
+That's all I can think of, but I'll be sure to put more in this section if I find any more!
 
 ## Closing Thoughts
 

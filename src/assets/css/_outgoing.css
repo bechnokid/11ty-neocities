@@ -7,10 +7,42 @@
 }
 
 article.links {
-  .tama-links {
-    display: flex;
-    flex-direction: column;
+  .sidebar .content {
+    gap: .5rem;
+  }
 
+  .no-btn-list {
+    padding-left: 0;
+
+    li:not(:first-child)::before {
+      content: "✦";
+      color: var(--text-secondary);
+      margin: 0 .5rem;
+    }
+  }
+
+  table.resources {
+    td:has(img) {
+      text-align: center;
+    }
+  }
+
+  .header-link h3 a {
+    text-decoration: underline;
+    border: 0;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+article.contact {
+  .link-img {
+    filter: drop-shadow(1px 1px 5px white);
+  }
+
+  .tama-links {
     .tama-screen {
       width: 384px;
       height: 337px;
@@ -30,8 +62,7 @@ article.links {
 
       .links-desc {
         position: absolute;
-        right: 35px;
-        top: 120px;
+        inset: 120px 35px auto auto;
         height: 80px;
         width: 160px;
         display: flex;
@@ -54,15 +85,13 @@ article.links {
           height: 100%;
           flex-wrap: wrap;
           gap: 2.75rem;
-          align-content: space-between;
+          place-content: space-between center;
           align-items: center;
-          justify-content: center;
-          padding: 0;
-          padding-top: 1rem;
+          padding: 1rem 0 .5rem;
         }
       }
 
-      .link-item {
+      .link-item [role="img"] {
         opacity: .4;
 
         &:hover {
@@ -73,7 +102,7 @@ article.links {
         &.tumblr {
           width: 40px;
           height: 52px;
-          background: url('/assets/images/links/_links.png') -384px -439px;
+          background: url('/assets/images/links/_links.png') -384px -488px;
         }
 
         &.twitter {
@@ -106,10 +135,10 @@ article.links {
           background: url('/assets/images/links/_links.png') -440px -337px;
         }
 
-        &.email {
-          width: 43px;
-          height: 33px;
-          background: url('/assets/images/links/_links.png') -666px -337px;
+        &.treefort {
+          width: 59px;
+          height: 49px;
+          background: url('/assets/images/links/_links.png') -384px -439px;
         }
 
         &.neocities {
@@ -118,26 +147,6 @@ article.links {
           background: url('/assets/images/links/_links.png') -384px -392px;
         }
       }
-    }
-  }
-
-  .sidebar .content {
-    gap: .25rem;
-  }
-
-  .no-btn-list {
-    padding-left: 0;
-
-    li:not(:first-child)::before {
-      content: var(--icon-list);
-      color: var(--text-secondary);
-      margin: 0 .5rem;
-    }
-  }
-
-  table.resources {
-    td:has(img) {
-      text-align: center;
     }
   }
 }
@@ -151,12 +160,10 @@ article.links {
 }
 
 @media screen and (max-width: 576px) {
-  article.links {
+  article.contact {
     .tama-links {
       .tama-screen {
         position: static;
-        display: flex;
-        flex-direction: column;
         width: auto;
         height: auto;
         background: none;
@@ -183,11 +190,18 @@ article.links {
           }
 
           .link-item {
-            opacity: 1;
-            filter: var(--svg-color);
+            [role='img'] {
+              opacity: 1;
+              filter: var(--svg-color);
 
-            &:hover {
-              opacity: .5;
+              &:hover {
+                opacity: .4;
+                filter: drop-shadow(0);
+              }
+            }
+
+            .tooltip-content {
+              display: none;
             }
           }
         }
