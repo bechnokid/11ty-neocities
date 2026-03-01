@@ -13,7 +13,7 @@
     --main-text-color: #19002b;
 
     /* Header */
-    --title-text: "Bechno Kid 🖥️🦐";
+    --title-text: "Title goes here";
     --title-text-color: palevioletred;
     --header-bg-color: mistyrose;
     --header-img: url("https://i.ibb.co/RpN099sr/image.png");
@@ -112,6 +112,8 @@
   }
 
   .cols {
+    grid-gap: 0;
+
     &:not(:has(.profile-picture))::before {
       content: var(--title-text);
       color: var(--title-text-color);
@@ -124,8 +126,6 @@
     &:has(.profile-picture) {
       background: var(--main-bg-color) var(--header-img) no-repeat center top;
     }
-
-    grid-gap: 0;
 
     > section:first-child {
       display: flex;
@@ -223,16 +223,16 @@
         margin: 0;
         padding: .5rem;
 
-        a {
-          display: none;
-        }
-
         .status-username {
           color: var(--heading-text-color);
           padding: .25rem .5rem;
           background-color: var(--heading-color);
           filter: drop-shadow(2px 2px var(--heading-shadow-color));
           font-weight: bold;
+
+          a {
+            display: none;
+          }
         }
 
         .status-content {
@@ -246,6 +246,10 @@
             display: flex;
             width: 100px;
             height: 100px;
+          }
+
+          a {
+            display: contents;
           }
         }
       }
