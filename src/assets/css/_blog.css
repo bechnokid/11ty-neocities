@@ -139,5 +139,23 @@ article#microblog {
     img {
       align-self: center;
     }
+
+    .status-content {
+      flex: 1;
+
+      .status-text {
+        padding: .5rem 0;
+      }
+    }
+
+    .hosted-on {
+      text-align: right;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .hosted-on {
+    text-align: initial;
   }
 }
