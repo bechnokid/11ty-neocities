@@ -27,14 +27,9 @@ export default {
     dev: "/assets/images/meat.png"
   },
   updated: [
-    "Anime",
-    "Digimon",
-    "Other",
   ],
   new: [
-    "Contact",
-    "Uses",
-    "2000s Blog"
+    "???"
   ],
   emotes: [
     "angry",

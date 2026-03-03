@@ -1,0 +1,116 @@
+---
+title: My Home Page
+shortTitle: ???
+displayOrder: 3
+permalink: shrines/homepage/index.html
+myData:
+  links:
+    - name: CNN
+      desc: For daily news
+      url: https://cnn.com/
+    - name: Sports Illustrated
+      desc: For daily sports
+      url: https://si.com
+    - name: Hotmail
+      desc: For email
+      url: https://hotmail.com
+  pics: [ 54, 282, 360 ]
+  movies: [ "Matrix", "A Beautiful Mind", "Contact" ]
+  food: [ "Hamburger", "Pizza", "BBQ Grilled Chicken", "Italian Sub", "Pepper Steak", "Peking Duck" ]
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ title }}</title>
+  <style>
+    div.description {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fff0f3;
+      border: 1px solid #e48aa7;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      padding: 1rem;
+      font-size: .8rem;
+
+      p {
+        margin: 0;
+      }
+
+      p + p {
+        margin: .5rem 0;
+      }
+
+      a {
+        font-weight: bold;
+        color: #7122aa;
+
+        &:hover {
+          text-decoration: none;
+        }
+
+        &:visited {
+          color: #933773;
+        }
+      }
+    }
+  </style>
+</head>
+<body bgcolor="yellow">
+  <h1 align="center">[TEACHER NAME]</h1>
+
+  <p align="center">[GRADE], Department of [MAJOR], [SCHOOL]</p>
+  <hr width="25%">
+
+  <h2>About myself:</h2>
+
+  <p><img src="https://placebear.com/200/200" height="200" width="200" align="right"></p>
+  <p>I like Skiing</p>
+  <p>I am working part time in the <b>department of [MAJOR]</b></p>
+  <p>In the future, I plan to work in New York City.</p>
+
+  <hr width="75%">
+
+  <h3> My favorite links: </h3>
+
+  {% for item in myData.links %}
+    <p> {{ loop.index }}) {{ item.desc }}: <a href="{{ item.url }}">{{ item.name }}</a></p>
+  {% endfor %}
+
+  <hr width="75%">
+
+  {% for item in myData.pics %}
+    <p><img src="https://picsum.photos/id/{{ item }}/200/200"></p>
+  {% endfor %}
+
+  <hr width="75%">
+
+  <p><b>My favorite movies:</b></p>
+
+  <ol>
+    {% for item in myData.movies %}
+      <li>{{ item }}</li>
+    {% endfor %}
+  </ol>
+
+  <hr width="75%">
+
+  <p><table border>
+    <caption>My favorite food:</caption>
+    {% for row in myData.food | slice(2) %}
+      <tr>
+        {% for item in row %}
+          <td>{{ item }}</td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </table></p>
+  <div class="description">
+    <p>
+      Hi! This is a page based on some code that my husband printed out for an assignment in the 2000s! I basically wanted to see how it would look and decided to copy it, changing some of the text to hide his identity, replacing pictures with placeholders, and this is the end result!
+    </p>
+    <p>It's really interesting to see how much HTML and CSS have changed over the years. Thanks for coming!</p>
+    <a href="/home">Return home?</a>
+  </div>
+</body>
+</html>

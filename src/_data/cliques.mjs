@@ -160,7 +160,7 @@ export default {
       {
         name: "Camp Theme",
         url: "https://joro.nu/cliques",
-        img: "camp-cute.png",
+        img: "camp.png",
         alt: "This site is cute",
       }
     ],
@@ -222,9 +222,6 @@ export default {
       left: { url: "https://lazer-bunny.neocities.org/Cliques", text: "My OTP" },
       center: { img: "my-otp.png" },
       right: "Siduri x Gilgamesh (FF7R)"
-    },
-    {
-      custom: `<a href='https://joroki.neocities.org/cliques'>this site is <img class='inline-img' src=${imgPath + "camp.png"} alt='cute'></a>`,
     },
     {
       left: { url: "https://joroki.neocities.org/cliques", text: "my usual" },
