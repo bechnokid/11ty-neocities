@@ -38,15 +38,21 @@
   }
 }
 
-.cliques .type-master {
-  display: block !important;
+.cliques {
+  .type-master {
+    display: block !important;
 
-  img {
-    vertical-align: middle;
+    img {
+      vertical-align: middle;
+    }
+
+    span {
+      color: #5e1742;
+    }
   }
 
-  span {
-    color: #5e1742;
+  .balls img {
+    vertical-align: baseline;
   }
 }
 

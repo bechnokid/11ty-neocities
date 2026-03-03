@@ -5,8 +5,8 @@ summary: "**Warning:** Be cautious of any flashing colors and images when naviga
 displayOrder: 2
 permalink: 'joined/index.html'
 ---
-{% import 'components/joined/webring_macros.html' as webrings with context %}
-{% import 'components/joined/clique_macros.html' as clique with context %}
+{% import 'components/joined/macros_webrings.html' as webrings with context %}
+{% import 'components/joined/macros_cliques.html' as clique with context %}
 <script>var webringLinks = {};</script>
 
 <div class="position-relative d-flex flex-column flex-gap-4">
@@ -15,7 +15,7 @@ permalink: 'joined/index.html'
     {% for items in cliques.more | slice(2) %}
       <div class="col-md-6 col-12 d-flex flex-column align-items-center flex-gap-2">
         {% for item in items %}
-          <div class="clique {{ item.id or "" }}">
+          <div class="clique {{ item.cls or "" }}">
             {% if item.custom %}
               {{ item.custom | safe }}
             {% else %}

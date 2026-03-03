@@ -1,9 +1,9 @@
-{% set img_path = "/assets/images/goodies/cliques/" %}
+{% set img_path = cliques.path %}
 
 {% macro clique_text(text, options = {}) %}
   {% set safe_text = text | safe %}
   {% if options.url %}
-    <a href="{{ options.url }}" {% if options.cls %}class="{{ options.cls | trim }}"{% endif %}>{{ safe_text }}</a>
+    <a href="{{ options.url }}" {% if options.cls %}class="{{ options.cls | trim }}" {% endif %}>{{ safe_text }}</a>
   {% elif options.cls != undefined %}
     <span class="{{ options.cls }}">{{ safe_text }}</span>
   {% else %}
@@ -37,16 +37,14 @@
 {% macro img(clique) %}
   {% set alt_text = clique.alt + " for the '" + clique.name + "' clique" %}
   {% if clique.tooltip %}
-    {% set tooltip_params =
-      {
-        tooltipId: "clique-" + (clique.id or clique.name | slugify),
-        url: clique.url,
-        src: img_path + clique.img,
-        alt: alt_text,
-        cls: clique.cls
-      }
-    %}
-    {% tooltip tooltip_params %}{{ clique.tooltip }}{% endtooltip %}
+  {% set tooltip_params = {
+  tooltipId: "clique-" + (clique.id or clique.name | slugify),
+    url: clique.url,
+    src: img_path + clique.img,
+    alt: alt_text,
+    cls: clique.cls
+  } %}
+  {% tooltip tooltip_params %}{{ clique.tooltip }}{% endtooltip %}
   {% else %}
     {% img img_path + clique.img, { url: clique.url, alt: alt_text, cls: clique.cls } %}
   {% endif %}
