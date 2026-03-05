@@ -1,11 +1,11 @@
 ---
 title: The Rainbow Bridge
 shortTitle: Rainbow Bridge
-layout: 'layouts/shrines/rainbow_bridge.html'
+layout: layouts/shrines/rainbow_bridge.html
 displayOrder: 2
 description: Dedicated to the small friends in my life who are gone but never forgotten.
-imgSrc: 'shrines/rainbow/'
-permalink: 'shrines/rainbow_bridge/index.html'
+imgSrc: shrines/rainbow/
+permalink: shrines/rainbow_bridge/index.html
 ---
 
 # The Rainbow Bridge
