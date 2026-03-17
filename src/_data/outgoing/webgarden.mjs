@@ -7,7 +7,6 @@ export default [
   "https://linwood.neocities.org/webgarden.html",
   "https://skykristal.art/Links/Webgardens/index.html",
   "https://blake.earth/webgarden",
-  "https://obby.dog/webgarden",
   "https://astralobservatory.neocities.org/webgarden",
   "https://larvapuppy.neocities.org/webgarden",
   "https://sakuradreams.neocities.org/Pages/webgarden",

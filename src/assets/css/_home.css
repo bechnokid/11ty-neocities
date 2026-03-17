@@ -4,7 +4,7 @@
 }
 
 [data-theme="light"] .rainbow.clique {
-  background: linear-gradient(to right, #d20f39, #fe640b, #df8e1d, #40a02b, #1e66f5, #7287fd, #8839ef);
+  background: linear-gradient(to right, #CB3A2A, #A34D14, #846E15, #14710A, #036A96, #644AC9, #A3144D);
   background-clip: text;
   color: transparent;
 }
@@ -14,13 +14,13 @@
 }
 
 [data-theme="dark"] .rainbow.clique {
-  background: linear-gradient(to right, #f38ba8, #fab387, #f9e2af, #a6e3a1, #89b4fa, #b4befe, #cba6f7);
+  background: linear-gradient(to right, #FF5555, #FFB86C, #F1FA8C, #50FA7B, #8BE9FD, #BD93F9, #FF79C6);
   background-clip: text;
   color: transparent;
 }
 
 [data-theme="dark"] .rainbow.fav {
-  color: #7afbe6;
+  color: #b0ffe5;
 }
 
 article.home {

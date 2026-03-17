@@ -130,6 +130,7 @@ export default {
         name: "Pokemon",
         items: [
           "Guzma x Plumeria",
+          "Grimsley x Cynthia",
           "Colress x Faba",
           { ship: "Ingo x Elesa x Emmet", desc: "I don't ship the brothers together. Think of this ship as Elesa giving both of her boyfriends tons of love."},
           "Giovanni x Delia",

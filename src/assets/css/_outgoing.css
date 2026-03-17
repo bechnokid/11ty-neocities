@@ -38,10 +38,6 @@ article.links {
 }
 
 article.contact {
-  .link-img {
-    filter: drop-shadow(1px 1px 5px white);
-  }
-
   .tama-links {
     .tama-screen {
       width: 384px;

@@ -16,7 +16,7 @@
         <nav><div class="sidebar pb-2 pb-md-0">{% include "partials/navigation.html" %}</div></nav>
       </details>
       <div class="btns-container">
-        {% if freezeframe == true %}<button type="button" class="toggle-gif">Toggle GIFs</button>{% endif %}
+        {% if freezeframe === true or freezeframe === "true" %}<button type="button" class="toggle-gif">Toggle GIFs</button>{% endif %}
         <button type="button" class="toggle-mode" aria-label="Switch to dark mode">{% icon 'moon' %}</button>
       </div>
     </div>
@@ -28,7 +28,7 @@
             <div class="sidebar pb-1 mb-md-2">{% include "partials/navigation.html" %}</div>
             <div class="buttons desktop d-flex flex-column flex-gap-2">
               <button type="button" class="desktop button toggle-mode js-required" aria-label="Switch to dark mode">{% icon 'moon' %}</button>
-              {% if freezeframe == true %}
+              {% if freezeframe === true or freezeframe === "true" %}
                 <button type="button" class="desktop button toggle-gif js-required d-none">Toggle GIFs</button>
               {% endif %}
             </div>

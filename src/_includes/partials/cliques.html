@@ -1,43 +1,43 @@
-{% import 'components/joined/clique_macros.html' as clique with context %}
+{% import 'components/joined/macros_cliques.html' as clique with context %}
 
 {% galleryBox { title: "Cliques", cls: 'cliques row g-0' } %}
-  <div class="row g-0 flex-md-gap-0 flex-gap-1">
-    <div class="col-lg-6 col-12 d-flex flex-column align-items-center order-md-1 order-2 mb-lg-0 mb-3 flex-gap-1 text-center">
-      {%- for item in cliques.col1 %}
-      <div class="clique {{ item.id or "" }}">
-        {% if item.custom %}
-          {{ item.custom | safe }}
-        {% else %}
-          {{ clique.text(item) }}
-        {% endif %}
+<div class="row g-0 flex-md-gap-0 flex-gap-1">
+  <div class="col-lg-6 col-12 d-flex flex-column align-items-center justify-content-evenly order-md-1 order-2 mb-lg-0 mb-3 flex-gap-1 text-center">
+    {%- for item in cliques.col1 %}
+    <div class="clique {{ item.cls or "" }}">
+      {% if item.custom %}
+        {{ item.custom | safe }}
+      {% else %}
+        {{ clique.text(item) }}
+      {% endif %}
+    </div>
+    {% endfor %}
+    <p class="mt-2"><a href="/joined">See more here!</a></p>
+  </div>
+  <div class="col-lg-6 col-12 justify-content-center order-md-2 order-1">
+    <div class="desktop-only d-flex flex-column flex-gap-2">
+      {%- for row in cliques.col2 %}
+      <div class="row">
+        <div class="col d-flex flex-wrap flex-center flex-gap-2">
+          {%- for item in row %}
+            {{ clique.img(item) }}
+          {% endfor %}
+        </div>
       </div>
       {% endfor %}
-      <p class="mt-2"><a href="/joined">See more here!</a></p>
     </div>
-    <div class="col-lg-6 col-12 justify-content-center order-md-2 order-1">
-      <div class="desktop-only">
-        {%- for row in cliques.col2 %}
-        <div class="row">
-          <div class="col d-flex flex-wrap justify-content-center align-items-baseline flex-gap-2">
-            {%- for item in row %}
-              {{ clique.img(item) }}
-            {% endfor %}
-          </div>
-        </div>
+    <div class="mobile-only">
+      {%- for row in cliques.col2 %}
+        {%- for item in row %}
+          {% if item.mobile %}
+            {% set mobile = item.mobile %}
+            <div>
+              {{ clique.text({ leftText: mobile.left, leftUrl: item.url, center: mobile.center, right: mobile.right }) }}
+            </div>
+          {% endif %}
         {% endfor %}
-      </div>
-      <div class="mobile-only">
-        {%- for row in cliques.col2 %}
-          {%- for item in row %}
-            {% if item.mobile %}
-              {% set mobile = item.mobile %}
-              <div>
-                {{ clique.text({ leftText: mobile.left, leftUrl: item.url, center: mobile.center, right: mobile.right }) }}
-              </div>
-            {% endif %}
-          {% endfor %}
-        {% endfor %}
-      </div>
+      {% endfor %}
     </div>
   </div>
+</div>
 {% endgalleryBox %}

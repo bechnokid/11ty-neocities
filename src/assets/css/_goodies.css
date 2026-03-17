@@ -13,6 +13,12 @@
 }
 
 .pet-click {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+
   .ff-container {
     display: inline-flex;
   }

@@ -18,16 +18,23 @@ body#splash-page {
 
   .content {
     max-width: 850px;
+    min-height: 450px;
     border: 2px solid var(--bg-primary);
-  }
 
   .splash-desc {
-    justify-content: space-evenly;
+      gap: 1rem;
+      justify-content: space-evenly;
+    }
   }
 }
 
-@media screen and (max-width: 767px) {
+html.no-js .freeze-info,
+html:not(.no-js) .freeze-warning {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
   .splash-desc {
-    gap: 1rem;
+    gap: 0;
   }
 }

@@ -84,8 +84,7 @@
   {% set webring_params = {
     id: "ckwr",
     name: "Cookie Run",
-    url: "https://evehibi.nekoweb.org/ckwr",
-    vars: "/var.js"
+    url: "https://evehibi.nekoweb.org/ckwr/"
   } %}
   <div class="{{ webring_params.id }}">
     <div class="cookie-wrapper d-flex flex-column px-1 h-100 justify-content-evenly">
@@ -95,8 +94,8 @@
           {% img "/assets/images/webrings/crwr_icon.png", { cls: "cookie-icon", ariaHidden: true } %}
         </div>
         <div class="arrows-container js-required d-flex align-items-center flex-gap-3">
-          {% imgDiv { cls: 'img-prev', alt: alt_prev + webring_params.name + " webring", url: "#", urlCls: 'prev'} %}
-          {% imgDiv { cls: 'img-next', alt: alt_next + webring_params.name + " webring", url: "#", urlCls: 'next'} %}
+          {% imgDiv { cls: 'img-prev', alt: alt_prev + webring_params.name + " webring", url: webring_params.url + "?action=previous", urlCls: 'prev'} %}
+          {% imgDiv { cls: 'img-next', alt: alt_next + webring_params.name + " webring", url: webring_params.url + "?action=next", urlCls: 'next'} %}
         </div>
       </div>
     </div>
@@ -104,7 +103,6 @@
         <p>This is Bechno Kid's favorite cookie! When asked why they liked this cookie, they said: "I love his design and story so much! He makes me sob but in a good way!"</p>
       </div>
   </div>
-  {{ set_ring_sites(webring_params) }}
 {% endmacro %}
 
 {% macro doodle() %}
@@ -408,8 +406,8 @@
       <div class="steps pe-1 font-weight-bold">
         <p class="m-0 text-right">1004</p>
       </div>
-      <div class="info-box text-align-center">
-        <p class="m-0">Splashy was caught by Bechno on 12/31/2022.</p>
+      <div class="info-box text-center">
+        <p class="m-0 text-center">Splashy was caught by Bechno on 12/31/2022.</p>
       </div>
     </div>
     <div class="nav d-flex justify-content-center">

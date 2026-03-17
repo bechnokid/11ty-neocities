@@ -72,7 +72,7 @@ The little guys next to me are **Numemon**, a shy Champion-level Digimon, and **
       {% galleryBox { title: "Favorite Monsters" } %}
         {% for item in about.monsters.monhun %}
           <div class="fav-box">
-            {% img img_path + item.src, { alt: item.alt, cls: item.cls, url: ("/gadzooks" if item.name == "Espinas" else ""), urlCls: ("uwu" if item.name == "Espinas" else "") } %}
+            {% img img_path + item.src, { alt: item.alt, cls: item.cls, url: ("/resources/gadzooks" if item.name == "Espinas" else ""), urlCls: ("uwu" if item.name == "Espinas" else "") } %}
             <p>{{ item.name | markdownifyInline | safe }}</p>
           </div>
         {% endfor %}

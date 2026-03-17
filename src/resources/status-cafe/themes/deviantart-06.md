@@ -1,10 +1,9 @@
----js
-{
-  title: "deviantART '06",
-  displayOrder: 1,
-  description: "A theme inspired by how deviantART looked in 2005-2006.",
-  summary: "Unable to loosen my nostalgia goggles, I wanted to recreate the 2005-2006 deviantART layout in ~~all~~ most of its glory!"
-}
+---
+title: "deviantART '06"
+displayOrder: 1
+description: "A theme inspired by how deviantART looked in 2005-2006."
+summary: "Unable to loosen my nostalgia goggles, I wanted to recreate the 2005-2006 deviantART layout in ~~all~~ most of its glory!"
+noPlaceholderText: true
 ---
 
 The first Status Cafe theme I've created! I got a few compliments on it, so I thought I'd share it for those who would like to relive the old days of DeviantART!

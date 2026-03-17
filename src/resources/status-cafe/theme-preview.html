@@ -17,6 +17,7 @@ eleventyComputed:
   <meta name="description" content="your friends' updates">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⭐</text></svg>">
   <link rel="stylesheet" href="https://status.cafe/assets/style.css" type="text/css" media="all">
+  {% if statusTheme.data.noPlaceholderText == true %}<style>.placeholder-text { display: none }</style>{% endif %}
 </head>
 <body>
   <header>
@@ -44,8 +45,8 @@ eleventyComputed:
           </dd>
           <dt class="about">About</dt>
           <dd class="about">
-            <p>Rathalos are fearsome male wyverns known as the "Kings of the Skies". Alongside the Rathian, they stake out a wide territory around their nests, and it is the male's role to watch from above.</p>
-            <p>Armed with powerful poisonous claws and fiery breath, Rathalos use their aerial prowess to descend on invaders.</p>
+            <p class="placeholder-text">Rathalos are fearsome male wyverns known as the "Kings of the Skies". Alongside the Rathian, they stake out a wide territory around their nests, and it is the male's role to watch from above.</p>
+            <p class="placeholder-text">Armed with powerful poisonous claws and fiery breath, Rathalos use their aerial prowess to descend on invaders.</p>
             {% include "components/resources/status-cafe-themes/" + statusTheme.page.fileSlug + ".html" %}
           </dd>
         </dl>
@@ -58,7 +59,7 @@ eleventyComputed:
         </article>
         <article class="status">
           <div class="status-username"><a href="https://status.cafe/users/bechnokid">bechnokid</a> 👀 5 days ago</div>
-          <p class="status-content">If the preview in this frame is too small, you can take the page's URL and replace "themes" with "preview" to view the theme in full resolution.</p>
+          <p class="status-content">Pixeliana has a bunch of <a href="https://pixeliana.neocities.org/statuscafe" target="_blank" rel="noopener noreferrer">helpful tips</a> for Status Cafe. Be sure to check them out!</p>
         </article>
         <article class="status">
           <div class="status-username"><a href="https://status.cafe/users/bechnokid">bechnokid</a> 💡 8 days ago</div>
@@ -72,7 +73,10 @@ eleventyComputed:
           <div class="status-username"><a href="https://status.cafe/users/bechnokid">bechnokid</a> ✏️ 13 days ago</div>
           <p class="status-content">If anything looks off, feel free to shoot a message to the email address shown on the left!</p>
         </article>
-        <p><a href="bechnokid?page=1">Older statuses</a></p>
+        <p>
+          <a href="bechnokid">Newer statuses</a>
+          <a href="bechnokid?page=2">Older statuses</a>
+        </p>
       </section>
     </div>
   </main>

@@ -2,10 +2,6 @@
   border: 2px solid var(--bg-primary);
 }
 
-.gallery img:hover {
-  border: 2px solid #fff;
-}
-
 .img-thumbnail {
   width: 100px;
   height: 100px;

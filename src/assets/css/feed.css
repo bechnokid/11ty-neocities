@@ -2,22 +2,21 @@
 
 :root {
   --img-link: url(/assets/images/link.svg);
-  --base: #24273a;
-  --mantle: #1e2030;
-  --surface: #363a4f;
-  --overlay: #6e738d;
-  --text: #cad3f5;
-  --subtext: #b8c0e0;
-  --mauve: #c6a0f6;
-  --blue: #8aadf4;
-  --pink: #f5bde6;
-  --teal: #8bd5ca;
-  --mauve-filter: brightness(0) saturate(100%) invert(66%) sepia(11%) saturate(1531%) hue-rotate(222deg) brightness(103%) contrast(93%);
+  --bg-body: #21222C;
+  --bg-container: #282A36;
+  --color-text: #F8F8F2;
+  --color-subtitle: #BD93F9;
+  --color-link: #FFB86C;
+  --color-heading: #FF79C6;
+  --color-date: #8BE9FD;
+  --color-hr: #6272A4;
+  --color-code: #50FA7B;
+  --filter-link: brightness(0) saturate(100%) invert(69%) sepia(69%) saturate(374%) hue-rotate(337deg) brightness(101%) contrast(101%);
 }
 
 body {
-  background-color: var(--base);
-  color: var(--text);
+  background-color: var(--bg-body);
+  color: var(--color-text);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.25rem;
 }
@@ -39,22 +38,24 @@ h4 {
 h1,
 h2,
 h3 {
-  color: var(--pink);
+  color: var(--color-heading);
 }
 
 h4 {
-  color: var(--teal);
+  color: var(--color-hr);
   font-size: 1.15rem;
 }
 
 h3 a {
   font-weight: normal;
+  color: var(--color-date);
+  border-bottom: 1px solid var(--color-date);
 }
 
 a {
-  color: var(--mauve);
+  color: var(--color-link);
   font-weight: bold;
-  border-bottom: 1px solid var(--mauve);
+  border-bottom: 1px solid var(--color-link);
 
   &:hover {
     border-bottom-color: transparent;
@@ -70,20 +71,21 @@ a[href*="http"]::after {
   margin-bottom: -.1rem;
   background-image: var(--img-link);
   background-size: cover;
-  filter: var(--mauve-filter);
+  filter: var(--filter-link);
 }
 
 code {
   font-size: 1rem;
   padding: .25rem .5rem;
-  background-color: var(--base);
+  background-color: var(--bg-body);
   border-radius: .25rem;
+  color: var(--color-code);
 }
 
 hr {
   margin: 1em 0;
   border: none;
-  border-top: 1px dashed var(--teal);
+  border-top: 1px dashed var(--color-hr);
 }
 
 p + p {
@@ -111,20 +113,16 @@ ul > li > ul {
 }
 
 .bg-body {
-  background-color: var(--mantle);
+  background-color: var(--bg-container);
 }
 
 .subtitle {
-  color: var(--subtext);
+  color: var(--color-subtitle);
   font-size: .9em;
 }
 
 #web-feed .container {
   max-width: 800px;
-}
-
-.about-feed {
-  background-color: var(--surface);
 }
 
 @media screen and (max-width: 767px) {
