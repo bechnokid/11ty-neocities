@@ -60,6 +60,12 @@ article.home {
 }
 
 .cliques {
+  .desktop-only {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
   .flower-clique {
     font-family: 'lmm-i';
     font-size: 1.15em;
