@@ -4,7 +4,7 @@ export default [
       name: "Stella Aiba",
       age: 27,
       img: "",
-      info: "Stella Aiba is a human currently working as an assistant in Alphamon's detective agency within the Digital World. She is an otaku with a strong interest in giant mech, often watching anime and building plastic models in her free time. Stella is a little quiet and awkward, but she can be brave when the situation calls for it...unless it involves confessing her feelings towards a certain someone.",
+      info: "Stella Aiba is a human currently working as an assistant in Alphamon's detective agency within the Digital World. She is an otaku with a strong interest in giant mech, often watching anime and building plastic models in her free time. Stella is a little quiet and awkward, but she can be brave when the situation calls for it...unless it involves confessing her feelings towards Alphamon.",
       trivia: "Stella is an old OC I've had since 2004 before I decided to put her into this story. She has had two redesigns so far: one in 2007 and the most recent one in 2025.",
     },
     canon: {
@@ -36,6 +36,8 @@ export default [
       ],
       content: [
         "Alphamon and Stella's relationship is not unlike the famous Holmes and Watson duo's, with Alphamon as the detective and Stella as the assistant. The two share an unlikely close bond as two people who, despite their quirks, possess the drive to help others with their problems, regardless of whether they're human or Digimon.",
+        "During the events of Cyber Sleuth, Stella fell *hard* for Alphamon after the latter removed her disguise and revealed herself as one of the Royal Knights. Sure, she was still able to get along with ",
+        "As a Digimon, Alphamon does not have a strong grasp on the concepts of love and romance. She can recite textbook definitions of them, but she doesn't quite understand what it's like to be \"in love\".",
       ]
     }
   },
