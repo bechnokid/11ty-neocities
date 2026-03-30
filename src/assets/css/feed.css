@@ -4,6 +4,7 @@
   --img-link: url(/assets/images/link.svg);
   --bg-body: #21222C;
   --bg-container: #282A36;
+  --bg-card: #424450;
   --color-text: #F8F8F2;
   --color-subtitle: #BD93F9;
   --color-link: #FFB86C;
@@ -23,6 +24,7 @@ body {
 
 h1 {
   font-size: 2rem;
+  line-height: 2rem;
 }
 
 h1,
@@ -119,6 +121,10 @@ ul > li > ul {
 .subtitle {
   color: var(--color-subtitle);
   font-size: .9em;
+}
+
+.about-feed {
+  background-color: var(--bg-card);
 }
 
 #web-feed .container {

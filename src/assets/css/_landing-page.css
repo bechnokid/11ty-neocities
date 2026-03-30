@@ -1,4 +1,11 @@
 article.landing-page {
+  display: flex;
+  flex-direction: column;
+
+  & > .row {
+    margin: auto 0;
+  }
+
   a {
     display: inline-flex;
 

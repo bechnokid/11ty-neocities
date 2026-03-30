@@ -213,6 +213,10 @@ h3, .h3 {
 a {
   color: var(--text-link);
 
+  &.link-glow:hover {
+    filter: drop-shadow(1px 0 2px var(--border-glow)) drop-shadow(-1px 0 2px var(--border-glow)) drop-shadow(0 1px 2px var(--border-glow)) drop-shadow(0 -1px 2px var(--border-glow))
+  }
+
   &:not(:has(img, div[role="img"], i.ft-arrow-up), .button) {
     border-bottom: 1px solid var(--text-link);
 
@@ -226,7 +230,7 @@ a {
 
     img,
     div[role="img"] {
-      filter: drop-shadow(1px 0 2px var(--border-glow)) drop-shadow(-1px 0 2px var(--border-glow)) drop-shadow(0 1px 2px var(--border-glow)) drop-shadow(0 -1px 2px var(--border-glow))
+      filter: drop-shadow(1px 0 2px var(--border-glow)) drop-shadow(-1px 0 2px var(--border-glow)) drop-shadow(0 1px 2px var(--border-glow)) drop-shadow(0 -1px 2px var(--border-glow));
     }
 
     header {

@@ -205,12 +205,10 @@
     color: #000;
   }
 
-  a {
+  a,
+  a.index,
+  a.link-glow {
     text-decoration: none !important;
-
-    &:hover {
-      text-decoration: underline !important;
-    }
   }
 
   & > .index {
@@ -253,13 +251,14 @@
     a {
       padding: .2rem;
       background-color: #000;
-      border: 1px solid #000 !important;
+      border: 2px solid #000 !important;
 
       &:hover {
-        border: 1px solid #fb7f26 !important;
+        border-color: #fb7f26 !important;
 
         div {
           opacity: 1;
+          filter: none;
         }
       }
     }
@@ -280,7 +279,7 @@
 
 [data-theme="dark"] .gfdkris .nav {
   a {
-    border: 1px solid #fb7f26 !important;
+    border: 2px solid #fb7f26 !important;
 
     &:hover {
       border-color: yellow !important;

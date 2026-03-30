@@ -112,16 +112,16 @@
     vars: "/onionring-variables.js"
   } %}
   <div class="{{ webring_params.name }} d-flex flex-column align-items-center justify-content-evenly">
-    <a href="{{ webring_params.url }}" class="index">doodlering! ✏</a>
+    <a href="{{ webring_params.url }}" class="index link-glow">doodlering! ✏</a>
     <div class="nav d-flex align-items-center justify-content-evenly w-100">
       {% imgDiv { cls: "img-prev", alt: alt_prev + webring_params.name + " webring", url: "#", urlCls: "prev js-required"} %}
       <img src="https://raw.githubusercontent.com/bechnokid/neocities/refs/heads/master/public/assets/images/webrings/doodlering.png" alt="Bechno Kid's doodle for the doodlering webring">
       {% imgDiv { cls: "img-next", alt: alt_next + webring_params.name + " webring", url: "#", urlCls: "next js-required"} %}
     </div>
     <ul class="links js-required inline-list justify-content-center flex-gap-1">
-      <li><a href="" class="rand" aria-label="{{ alt_rand + webring_params.name }} webring">🎲</a></li>
-      <li><a href="{{ webring_params.url }}/members" class="index" aria-label="{{ alt_list + webring_params.name }} webring">➕</a></li>
-      <li><a href="{{ onionring_url }}" class="onion" aria-label="Go to the onionring website">🧅</a></li>
+      <li><a href="" class="rand link-glow" aria-label="{{ alt_rand + webring_params.name }} webring">🎲</a></li>
+      <li><a href="{{ webring_params.url }}/members" class="index link-glow" aria-label="{{ alt_list + webring_params.name }} webring">➕</a></li>
+      <li><a href="{{ onionring_url }}" class="onion link-glow" aria-label="Go to the onionring website">🧅</a></li>
     </ul>
   </div>
   {{ set_ring_sites(webring_params) }}
@@ -143,6 +143,24 @@
     </div>
   </div>
   {{ set_ring_sites(webring_params) }}
+{% endmacro %}
+
+{% macro gummy() %}
+  {% set webring_params = {
+    id: "gummy",
+    name: "gummy ring",
+    url: "https://gummyring.neocities.org",
+    prev_url: "https://gummyring.neocities.org/?action=previous",
+    next_url: "https://gummyring.neocities.org/?action=next"
+  } %}
+  <div class="{{ webring_params.id }} d-flex flex-column align-items-center flex-gap-1">
+    {% imgDiv { cls: "img-title", alt: alt_index + webring_params.name + " webring", url: webring_params.url, urlCls: "title" } %}
+    <div class="nav d-flex align-items-center flex-gap-2">
+      {% imgDiv { cls: "img-prev", alt: alt_prev + webring_params.name + " webring", url: webring_params.prev_url, urlCls: "prev" } %}
+      {% imgDiv { cls: "img-index", alt: alt_index + webring_params.name + " webring", url: webring_params.url, urlCls: "index" } %}
+      {% imgDiv { cls: "img-next", alt: alt_next + webring_params.name + " webring", url: webring_params.next_url, urlCls: "next" } %}
+    </div>
+  </div>
 {% endmacro %}
 
 {% macro kingdom_hearts() %}
@@ -191,6 +209,15 @@
     </ul>
   </div>
   {{ set_ring_sites(webring_params) }}
+{% endmacro %}
+
+{% macro no_ai() %}
+  <div class="no-ai">
+    <a href="https://baccyflap.com/noai/?prv&s=bkh" target="_top"><img src="https://baccyflap.com/noai/valywidget0.gif" alt="previous no ai webring site" title="previous no ai webring site"></a>
+    <a href="https://baccyflap.com/noai" target="_blank"><img src="https://baccyflap.com/noai/valywidget1.gif" alt="no ai webring" title="no ai webring"></a>
+    <a href="https://baccyflap.com/noai/?rnd" target="_top"><img src="https://baccyflap.com/noai/valywidget2.gif" alt="random no ai webring site" title="random no ai webring site"></a>
+    <a href="https://baccyflap.com/noai/?nxt&s=bkh" target="_top"><img src="https://baccyflap.com/noai/valywidget3.gif" alt="next no ai webring site" title="next no ai webring site"></a>
+  </div>
 {% endmacro %}
 
 {% macro persona() %}
@@ -255,6 +282,25 @@
   {{ set_ring_sites(webring_params) }}
 {% endmacro %}
 
+{% macro sanrio() %}
+  {% set webring_params = {
+    id: "sanrio",
+    name: "Sanrio Webring",
+    url: "https://luckyatoll.nekoweb.org/sanringo.html",
+    prev_url: "https://luckyatoll.nekoweb.org/sanringo.html?action=previous",
+    next_url: "https://luckyatoll.nekoweb.org/sanringo.html?action=next"
+  } %}
+  <div class="{{ set_ring_id(webring_params) }} d-flex flex-column justify-content-around text-center">
+    <a href="{{ webring_params.url }}" class="title">{{ webring_params.name }}</a>
+    <div class="nav d-flex align-items-center justify-content-evenly">
+      {% imgDiv { cls: "img-prev", alt: alt_prev + webring_params.name + " webring", url: webring_params.prev_url, urlCls: "prev" } %}
+      {% imgDiv { cls: "img-char", alt: "Big Challenges" } %}
+      {% imgDiv { cls: "img-next", alt: alt_next + webring_params.name + " webring", url: webring_params.next_url, urlCls: "next" } %}
+    </div>
+    <a href="{{ webring_params.url }}" class="index">what's this?</a>
+  </div>
+{% endmacro %}
+
 {% macro self_insert() %}
   {% set webring_params = {
     name: "Self-Insert",
@@ -307,24 +353,6 @@
 
 {# PENDING WEBRINGS #}
 
-{% macro gummy() %}
-  {% set webring_params = {
-    id: "gummy",
-    name: "gummy ring",
-    url: "https://gummyring.neocities.org",
-    prev_url: "https://gummyring.neocities.org/?action=previous",
-    next_url: "https://gummyring.neocities.org/?action=next"
-  } %}
-  <div class="{{ webring_params.id }} d-flex flex-column align-items-center flex-gap-1">
-    {% imgDiv { cls: "img-title", alt: alt_index + webring_params.name + " webring", url: webring_params.url, urlCls: "title" } %}
-    <div class="nav d-flex align-items-center flex-gap-2">
-      {% imgDiv { cls: "img-prev", alt: alt_prev + webring_params.name + " webring", url: webring_params.prev_url, urlCls: "prev" } %}
-      {% imgDiv { cls: "img-index", alt: alt_index + webring_params.name + " webring", url: webring_params.url, urlCls: "index" } %}
-      {% imgDiv { cls: "img-next", alt: alt_next + webring_params.name + " webring", url: webring_params.next_url, urlCls: "next" } %}
-    </div>
-  </div>
-{% endmacro %}
-
 {% macro yume(override = false) %}
   {% set webring_params = {
     name: 'yume-ring',
@@ -341,25 +369,6 @@
     </div>
   </div>
   {{ set_ring_sites(webring_params) }}
-{% endmacro %}
-
-{% macro sanrio() %}
-  {% set webring_params = {
-    id: "sanrio",
-    name: "Sanrio Webring",
-    url: "https://luckyatoll.nekoweb.org/sanringo.html",
-    prev_url: "https://luckyatoll.nekoweb.org/sanringo.html?action=previous",
-    next_url: "https://luckyatoll.nekoweb.org/sanringo.html?action=next"
-  } %}
-  <div class="{{ set_ring_id(webring_params) }} d-flex flex-column justify-content-around text-center">
-    <a href="{{ webring_params.url }}" class="title">{{ webring_params.name }}</a>
-    <div class="nav d-flex align-items-center justify-content-evenly">
-      {% imgDiv { cls: "img-prev", alt: alt_prev + webring_params.name + " webring", url: webring_params.prev_url, urlCls: "prev" } %}
-      {% imgDiv { cls: "img-char", alt: "Big Challenges" } %}
-      {% imgDiv { cls: "img-next", alt: alt_next + webring_params.name + " webring", url: webring_params.next_url, urlCls: "next" } %}
-    </div>
-    <a href="{{ webring_params.url }}" class="index">what's this?</a>
-  </div>
 {% endmacro %}
 
 {# INACTIVE WEBRINGS #}

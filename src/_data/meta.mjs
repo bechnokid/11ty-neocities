@@ -27,13 +27,9 @@ export default {
     dev: "/assets/images/meat.png"
   },
   updated: [
-    "Artwork",
     "Digimon",
-    "Now",
-    "Contact",
   ],
   new: [
-    "???"
   ],
   emotes: [
     "angry",
