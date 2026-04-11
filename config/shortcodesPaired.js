@@ -30,7 +30,7 @@ const figure = function (children, src, options = {}) {
 
   if (options.bg) {
     if (options.imgCls) imgCls = ` ${options.imgCls}`;
-    imgStr = `<div class='figure-div${imgCls}' style='background-image: url(${imgSrc})'></div>`;
+    imgStr = `<div class='figure-div${imgCls}' role='img' style='background-image: url(${imgSrc})'></div>`;
   } else {
     if (options.imgCls) imgCls = ` class='${options.imgCls}`;
     imgStr = `<img src='${imgSrc}' alt="${imgAlt}"${imgCls}>`

@@ -156,17 +156,18 @@ export default {
       {
         name: "Adopt a Boba",
         tooltip: "Taro Milk Tea :: Adopt a Boba",
-        url: "https://web.archive.org/web/20250407201106/https://pixelrevival.xyz/boba/",
+        url: "https://pixelrevival.xyz/boba/",
         img: "boba.gif",
         alt: "A cup of taro milk tea with boba",
         cls: "ms-1"
       },
       {
-        name: "Camp Theme",
-        url: "https://joro.nu/cliques",
-        img: "camp.png",
-        alt: "This site is cute",
-      }
+        name: "Protect The Dolls",
+        url: "https://www.thetrevorproject.org/resources/",
+        img: "protect-the-dolls.png",
+        alt: "The symbol of feminism with the trangender pride flag colors overlayed over it, meaning that trans people are safe on this site",
+        tooltip: "Trans people are safe here"
+      },
     ],
     [
       {
@@ -201,7 +202,7 @@ export default {
     {
       left: { url: "https://cliqued.wings.nu/fandom.php", text: "OTF" },
       center: { img: "otf.png" },
-      right: "Digimon"
+      right: "Digimon & Monster Hunter"
     },
     {
       left: { url: "https://reef.kingdra.net/", text: "greenery" },
@@ -301,6 +302,11 @@ export default {
       left: { text: "balls", url: "https://icirr.us/balls/" },
       center: { img: "balls.png" },
       right: "master"
-    }
+    },
+    {
+      left: { text: "unexpected song", url: "https://cliqued.wings.nu/fandom.php"},
+      center: { img: "unexpected-song.png" },
+      right: "Neptunemon"
+    },
   ],
 }

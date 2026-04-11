@@ -12,7 +12,7 @@ freezeframe: true
   {% include "partials/loading-sidebar.html" %}
 
   {% set img_link = array.imgSrc + 'mine/' %}
-  <section class="for-you">
+  <section class="for-you mb-4">
     <h2>For You</h2>
     {% galleryBox { cls: 'adopts mine', subCls: 'flex-column' } %}
     <div class="row g-0">
@@ -37,34 +37,20 @@ freezeframe: true
     {% endgalleryBox %}
   </section>
 
-  <section class="interactive">
-    <h2>Interactive</h2>
-    {% galleryBox %}
-      <p class="mt-0">Click on any one of these pets to feed them!</p>
-      <div class="w-100 d-flex mt-2">
-        {%- for item in array.interactive %}
-          <div class="pet-click border-sidebar bg-body p-3 text-center rounded-4 mx-2">
-            {% img item.src, { alt: item.alt, freezeframe: item.freezeframe, urlCls: 'd-flex justify-content-center mb-2' } %}
-            <p class="m-0">
-              {% link item.url, { text: (item.name | safe) } %}
-            </p>
-          </div>
-        {% endfor %}
-      </div>
+  {% set img_link = array.imgSrc %}
+  <section class="adopted">
+    <h2>Adopted</h2>
+    {% galleryBox { cls: 'adopts collected' } %}
+      {%- for row in array.adopted %}
+        <div class="d-flex flex-wrap justify-content-center flex-gap-1 {{ row.cls or "" }}">
+          {%- for item in row.items %}
+            {% set img_path = item.src if item.ogLink else img_link + item.src %}
+            {% img img_path, { url: item.url, alt: item.alt, freezeframe: item.freezeframe } %}
+          {% endfor %}
+        </div>
+      {% endfor %}
     {% endgalleryBox %}
   </section>
-
-{% set img_link = array.imgSrc %}
-  {% galleryBox { title: "Adopted" } %}
-    {%- for row in array.adopted %}
-      <div class="d-flex flex-wrap justify-content-center flex-gap-1 {{ row.cls or "" }}">
-        {%- for item in row.items %}
-          {% set img_path = item.src if item.ogLink else img_link + item.src %}
-          {% img img_path, { url: item.url, alt: item.alt, freezeframe: item.freezeframe } %}
-        {% endfor %}
-      </div>
-    {% endfor %}
-  {% endgalleryBox %}
 
   <section class="orphaned">
     <h2>Orphaned</h2>

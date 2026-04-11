@@ -39,4 +39,4 @@ permalink: faq/index.html
 - **What do you think of _____?**
   - I probably won't know enough to give you an opinion unless it's related to a current or previous interest, sorry!
 - **Are you a proshipper or an anti?**
-  - Neither. I'm too old to get involved in tiresome discourse! You can see my thoughts on this over on my [fan](/personal/fan#thoughts-on-taboo-topics) page!
+  - Neither. I'm too old to get involved in tiresome discourse! You can see my thoughts on this over on my [fan](/fan#thoughts-on-taboo-topics) page!

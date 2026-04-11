@@ -35,17 +35,16 @@
 {% endmacro %}
 
 {% macro img(clique) %}
-  {% set alt_text = clique.alt + " for the '" + clique.name + "' clique" %}
   {% if clique.tooltip %}
   {% set tooltip_params = {
   tooltipId: "clique-" + (clique.id or clique.name | slugify),
     url: clique.url,
     src: img_path + clique.img,
-    alt: alt_text,
+    alt: clique.alt,
     cls: clique.cls
   } %}
   {% tooltip tooltip_params %}{{ clique.tooltip }}{% endtooltip %}
   {% else %}
-    {% img img_path + clique.img, { url: clique.url, alt: alt_text, cls: clique.cls } %}
+    {% img img_path + clique.img, { url: clique.url, alt: clique.alt, cls: clique.cls } %}
   {% endif %}
 {% endmacro %}

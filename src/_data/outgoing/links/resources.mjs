@@ -1,7 +1,7 @@
 export default {
   btns: [
     {
-      url: "https://accessible-webmastery",
+      url: "https://accessible-webmastery.neocities.org",
       name: "Sparrow's Guide to Accessible Webmastery",
       desc: "An adorable and easy-to-read guide on making your personal website accessible.",
       src: "accessible-webmastery.svg"
