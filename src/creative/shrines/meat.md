@@ -26,8 +26,6 @@ It has since appeared in a variety of media from all parts of the world from the
 
 Most recently, it has appeared in many video games as an item to eat or as a cooking ingredient to replenish the player's health or stamina. While those pieces of meat can be eaten raw, just like their real-life counterparts, it's recommended to cook the meat to perfect for maximum benefits.
 
-### Monster Hunter
-
 Despite the serious premise of Monster Hunter, there are several elements that gave the series that right amount of whimsical silliness. One of those elements, of course, is the process of cooking raw meat using a BBQ spit. This process is a small minigame that can reward players with a useful item depending on how long they cook the meat...all while a silly, little jingle plays.
 
 If the player manages to let go of the meat right after the jingle finishes playing, not only will they receive the Well-Done Steak, the jingle ends with a "Mmm...so tasty!" or, in Japanese, "Jyozou ni yakimashita!" roughly translating to "Cooked to perfection!" Although the cheer is absent in World/Iceborne, it can be heard in Rise/Sunbreak and in every other game released before it.
