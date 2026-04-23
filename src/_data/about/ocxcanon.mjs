@@ -1,3 +1,35 @@
+const template = {
+  oc: {
+    name: "CHANGEME",
+    age: CHANGEME,
+    img: "CHANGEME",
+    info: "CHANGEME",
+    trivia: "CHANGEME"
+  },
+  canon: {
+    name: "CHANGEME",
+    age: CHANGEME,
+    img: "",
+    info: "CHANGEME",
+  },
+  lore: {
+    media: "CHANGEME",
+    content: [
+      `CHANGEME`,
+    ],
+    readMore: [
+      `CHANGEME`
+    ]
+  },
+  relationship: {
+    tropes: [
+      "CHANGEME",
+    ],
+    content: [
+      "CHANGEME",
+    ]
+  }
+}
 export default [
   {
     oc: {
@@ -9,8 +41,8 @@ export default [
     },
     canon: {
       name: "Alphamon",
-      img: "",
       age: "???",
+      img: "",
       info: "Alphamon is a Mega-level Digimon and member of the Royal Knights, a group that protects the Digital World under Yggdrasil's orders. She stands out among her fellow knights by possessing a nearly endless amount of knowledge of the both the Digital and the human world. The lone hermit may reveal very little about herself, but she would happily talk for hours about any educational topic. After landing in the human world about 2 years before the present, Alphamon has gained a strange habit of brewing the most disgusting coffee drinks down to monkind.",
     },
     lore: {
@@ -47,5 +79,37 @@ export default [
   "Hisui Aoyama (OC) x Haganezuka *(Demon Slayer)*",
   "Kaybee (OC) x Whisper *(Yokai Watch)*",
   "Dr. Vitamin (OC) x Professor Membrane *(Invader Zim)*",
-  "Jennifer (OC) & Giovanni *(Pokemon)*"
+  "Jennifer (OC) & Giovanni *(Pokemon)*",
+  {
+    oc: {
+      name: "Dr. Vitamin",
+      age: 45,
+      img: "CHANGEME",
+      info: "Doctor Melissa Vitamin, Ph.D, is an accomplished chemist who recently moved to The City with her daughter, Amelia, shortly after getting hired at Membrane Labs. She is a quiet and intellectual individual who knows how to be amicable towards others. However, she'd rather spend most of her days doing research and spending time with her daughter.",
+      trivia: "Dr. Vitamin is a reimbursed OC who used to be the main antagonist of a long-abandoned original story. She was a lot angrier back then and had a tragic backstory, but I wanted to give her a break this time around lol."
+    },
+    canon: {
+      name: "Professor Membrane",
+      age: 42,
+      img: "CHANGEME",
+      info: "Professor Membrane is the most intelligent man in the entire world, and everyone knows it. Excitable and eccentric, the professor wants nothing more than to improve humanity through the wonders of science. He is also a happy father of two children who are as eccentric as the scientist himself.",
+    },
+    lore: {
+      media: "Invader Zim",
+      content: [
+        `*Note*: Takes place some time after the events of *Invader Zim: Enter the Florpus*`,
+      ],
+      readMore: [
+        `CHANGEME`
+      ]
+    },
+    relationship: {
+      tropes: [
+        "CHANGEME",
+      ],
+      content: [
+        "CHANGEME",
+      ]
+    }
+  }
 ]
