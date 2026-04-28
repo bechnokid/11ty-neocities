@@ -24,6 +24,7 @@
   img {
     height: 53px;
     object-fit: none;
+    filter: drop-shadow(1px 0 0 #282a3699) drop-shadow(-1px 0 0 #282a3699) drop-shadow(0 -1px 0 #282a3699) drop-shadow(0 1px 0 #282a3699) drop-shadow(1px 1px 1px #282a3699);
   }
 
   .content {
@@ -171,6 +172,7 @@
 a.uwu:hover img {
   opacity: 1 !important;
   cursor: var(--img-cursor), auto;
+  filter: drop-shadow(1px 0 0 #282a3699) drop-shadow(-1px 0 0 #282a3699) drop-shadow(0 -1px 0 #282a3699) drop-shadow(0 1px 0 #282a3699) drop-shadow(1px 1px 1px #282a3699);
 }
 
 @media screen and (max-width: 991px) {

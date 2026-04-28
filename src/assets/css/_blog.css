@@ -130,6 +130,44 @@ textarea.key-map {
   margin-right: 20px
 }
 
+li:has(> .img-question) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .5rem;
+  margin-bottom: 1rem;
+}
+
+div.img-question {
+  height: 300px;
+  width: 200px;
+  border-radius: 0.5rem;
+
+  &.pendulum {
+    background-image: url(/assets/images/art/digimon/202402pendulum2.jpg);
+    background-position: -141px -32px;
+    background-size: 260%;
+  }
+
+  &.dedede {
+    background-image: url(/assets/images/art/game/202101fridaynight.jpg);
+    background-size: 250%;
+    background-position: -55px -5px;
+  }
+
+  &.sabo {
+    background-image: url(/assets/images/art/other/sabotenshi_gijinka.jpg);
+    background-position: -198px -14px;
+  }
+
+  &.venustune {
+    height: 620px;
+    width: 500px;
+    background-image: url(/assets/images/art/digimon/kissesforfishes.jpg);
+    background-size: cover;
+  }
+}
+
 article#microblog {
   #status-cafe-widget {
     hr {

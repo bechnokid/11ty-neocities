@@ -1,5 +1,15 @@
 @import "_reset.css";
 
+@font-face {
+  font-family: 'Mochiy Pop One';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/mochiy-pop-one@latest/latin-400-normal.woff2) format('woff2'),
+       url(https://cdn.jsdelivr.net/fontsource/fonts/mochiy-pop-one@latest/latin-400-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
 :root {
   --img-link: url(/assets/images/link.svg);
   --bg-body: #21222C;
@@ -9,7 +19,6 @@
   --color-subtitle: #BD93F9;
   --color-link: #FFB86C;
   --color-heading: #FF79C6;
-  --color-date: #8BE9FD;
   --color-hr: #6272A4;
   --color-code: #50FA7B;
   --filter-link: brightness(0) saturate(100%) invert(69%) sepia(69%) saturate(374%) hue-rotate(337deg) brightness(101%) contrast(101%);
@@ -50,8 +59,8 @@ h4 {
 
 h3 a {
   font-weight: normal;
-  color: var(--color-date);
-  border-bottom: 1px solid var(--color-date);
+  color: var(--color-subtitle);
+  border-bottom: 1px solid var(--color-subtitle);
 }
 
 a {
@@ -114,10 +123,6 @@ ul > li > ul {
   margin-top: .75rem;
 }
 
-.bg-body {
-  background-color: var(--bg-container);
-}
-
 .subtitle {
   color: var(--color-subtitle);
   font-size: .9em;
@@ -129,6 +134,7 @@ ul > li > ul {
 
 #web-feed .container {
   max-width: 800px;
+  background-color: var(--bg-container);
 }
 
 @media screen and (max-width: 767px) {

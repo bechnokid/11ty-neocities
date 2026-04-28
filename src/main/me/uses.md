@@ -20,7 +20,7 @@ description: A list of things that I use to make my life a little easier(?) and 
 ### Monitors
 
 - [Samsung 24" LF24T350FHNXZA](https://www.samsung.com/us/computing/monitors/flat/24--led-monitor-with-borderless-design-lf24t350fhnxza/) (black)
-- [LG 20" W2052TQ-TF.AUS](https://www.lg.com/us/support/product/lg-W2052TQ-TF.AUS) (black. Hoping to upgrade this someday lol)
+- [msi PRO MP243L E14](hhttps://www.amazon.com/dp/B0FG5XLWNV) (black)
 
 ### Accessories
 

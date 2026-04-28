@@ -46,34 +46,38 @@ img.preview-img {
   object-position: top center;
 }
 
+.curses {
+  .tail {
+    position: absolute;
+    inset: auto -.25rem -.75rem auto;
+    font-size: 3rem;
+    color: var(--bg-footer);
+    transform: rotate(60deg);
+  }
+
+  .tail-right {
+    font-size: 3rem;
+    color: var(--bg-footer);
+    position: absolute;
+    inset: auto -2rem 9rem auto;
+  }
+}
+
 .curse-list {
   max-height: 300px;
   overflow-y: auto;
 }
 
-.curses .tail {
-  position: absolute;
-  inset: auto -.25rem -.75rem auto;
-  font-size: 3rem;
-  color: var(--bg-footer);
-  transform: rotate(60deg);
-}
+.go-to-heck.new-curse {
+  &:hover {
+    filter: drop-shadow(0 0 .5rem var(--text-secondary));
+    cursor: var(--img-cursor-point), pointer;
+  }
 
-.curses .tail-right {
-  font-size: 3rem;
-  color: var(--bg-footer);
-  position: absolute;
-  inset: auto -2rem 9rem auto;
-}
-
-.go-to-heck.new-curse:hover {
-  filter: drop-shadow(0 0 .5rem var(--text-secondary));
-  cursor: var(--img-cursor-point), pointer;
-}
-
-.go-to-heck.new-curse:active {
-  filter: none;
-  transform: translateY(.25rem);
+  &:active {
+    filter: none;
+    transform: translateY(.25rem);
+  }
 }
 
 .feed-links {
