@@ -88,7 +88,7 @@ const imgDiv = function(params) {
   let results = `<div ${divCls} role="img" ${divAlt}></div>`;
   if (params.url) {
     const urlCls = (params.urlCls) ? ` class="${params.urlCls}"` : "";
-    const urlAttrs = (params.url.match(/^https?:\/\//)) ? ` target="_blank" rel="noreferrer"` : "";
+    const urlAttrs = (params.url.match(/^https?:\/\//) && !params.refer) ? ` target="_blank" rel="noreferrer"` : "";
     results = `<a href="${params.url}"${urlCls + urlAttrs}>${results}</a>`
   }
   return results;
