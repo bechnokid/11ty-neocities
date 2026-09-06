@@ -280,9 +280,9 @@
   <div class="{{ set_ring_id(webring_params) }} d-flex flex-column justify-content-around text-center">
     <a href="{{ webring_params.url }}" class="title">{{ webring_params.name }}</a>
     <div class="nav d-flex align-items-center justify-content-evenly">
-      {% imgDiv { cls: "img-prev", alt: alt_prev + webring_params.name + " webring", url: webring_params.prev_url, urlCls: "prev" } %}
+      {% imgDiv { cls: "img-prev", alt: alt_prev + webring_params.name + " webring", url: webring_params.prev_url, urlCls: "prev", refer: true } %}
       {% imgDiv { cls: "img-char", alt: "Big Challenges" } %}
-      {% imgDiv { cls: "img-next", alt: alt_next + webring_params.name + " webring", url: webring_params.next_url, urlCls: "next" } %}
+      {% imgDiv { cls: "img-next", alt: alt_next + webring_params.name + " webring", url: webring_params.next_url, urlCls: "next", refer: true } %}
     </div>
     <a href="{{ webring_params.url }}" class="index">what's this?</a>
   </div>

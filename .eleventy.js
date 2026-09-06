@@ -142,6 +142,20 @@ module.exports = async function(eleventyConfig){
     }
   })
 
+  eleventyConfig.addNunjucksGlobal("getContext", function(macroName, name, params) {
+    let macroResults;
+    if (macroName == 'pixelClub') {
+      if (params.basic) {
+        macroResults = this.ctx[macroName]['basic'](params);
+      } else if (params.detailed) {
+        macroResults = this.ctx[macroName]['detailed'](params);
+      } else {
+        macroResults = this.ctx[macroName][name](params);
+      }
+    };
+    return macroResults;
+  });
+
   eleventyConfig.setLibrary('md', markdownLib);
 
   const output_dir = (env === "neocities") ? "neocities" : "public";

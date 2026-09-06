@@ -1,25 +1,26 @@
 ---
 title: Pixel Clubs
 displayOrder: 4
+pagination:
+  data: collections.pixelClubs
+  size: 5
+permalink: goodies/pixel-clubs{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1 }}{% endif %}/index.html
+paginationPrevText: Previous page
+paginationNextText: Next page
 description: Various pixel clubs that I have joined with my own pixel art.
 summary: Here's a collection of some pixel clubs/cliques that I joined or am in the process of joining! Any pixels that don't have a link are mine.
-permalink: goodies/pixel-clubs/index.html
+toc:
+  unlisted: true
 freezeframe: true
 hasLinks: true
 flashing: true
 loading: true
-toc:
-  unlisted: true
 ---
+
 {% import 'components/pixel_clubs/macros.html' as pixelClub with context %}
 
-{{ pixelClub.afternoonTea() }}
-{{ pixelClub.angelical() }}
-{{ pixelClub.bottlecaps() }}
-{{ pixelClub.call() }}
-{{ pixelClub.charm() }}
+{% for name, item in pagination.items %}
+  {{ getContext("pixelClub", name, item) }}
+{% endfor %}
 
-<hr class="small">
-<nav class="pagination mt-3 text-xxl" aria-label="Pagination links">
-  <a href="/goodies/pixel-clubs/2"><span class="me-2">Next page</span> {% icon 'arrow-right' %}</a>
-</nav>
+{% include "partials/pagination.html" %}

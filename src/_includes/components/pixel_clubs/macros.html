@@ -13,7 +13,7 @@
     <h2 class="d-flex align-items-center flex-gap-2">{{ params.name }}{% if params.btn %}{% img img_path + (params.id or (params.name | slugify)) + "/" + params.btn, { alt: "Button for the " + params.name, cls: params.btnCls } %}{% endif %}</h2>
     <p>Created by <a href="{{ params.url }}">{{ params.owner }}</a>!</p>
     <div class="sidebar d-flex flex-wrap p-3 {{ params.cls }} mt-3">
-      {%- for item in params.arr %}
+      {%- for item in params.items %}
         {% set alt_text = (params.alt + item.alt) if params.alt else item.alt %}
         {% set options = { url: item.url, alt: (alt_text or ""), freezeframe: item.freezeframe } %}
         {% img img_path + (params.id or (params.name | slugify)) + "/" + item.src, options %}
@@ -27,7 +27,7 @@
     <h2 class="d-flex align-items-center flex-gap-2">{{ params.name }}{% if params.btn %}{% img img_path + (params.id or (params.name | slugify)) + "/" + params.btn, { alt: "Button for the " + params.name, cls: params.btnCls } %}{% endif %}</h2>
     <p>Created by {% link params.url, { text: params.owner } %}!</p>
     <div class="sidebar d-flex flex-wrap justify-content-center flex-gap-2 py-3 mt-3">
-      {% for item in params.arr %}
+      {% for item in params.items %}
         <div class="item d-flex flex-column flex-gap-1">
           {% set options = { url: item.url, alt: item.alt, freezeframe: item.freezeframe } %}
           <div class="img">{% img img_path + (params.id or (params.name | slugify)) + "/" + item.src, options %}</div>
@@ -45,58 +45,12 @@
   </section>
 {% endmacro %}
 
-{% macro afternoonTea() %}
-  {{ detailed({
-    name: "Afternoon Tea",
-    id: "tea",
-    owner: "Lost Letters",
-    url: "https://lostletters.neocities.org/afternoontea/",
-    arr: goodies.pixel_clubs.tea,
-    summary: "Tastes like...",
-    btn: "girlwithnojob.gif",
-    btnCls: "freezeframe"
-  }) }}
-{% endmacro %}
-
-{% macro angelical() %}
-  {{ basic({
-    name: "Angelical",
-    owner: "Altair",
-    url: "https://butteroncookies.neocities.org/angelical",
-    arr: goodies.pixel_clubs.angelical,
-    cls: "justify-content-center flex-md-gap-1 flex-gap-2",
-    btn: "button.gif",
-    btnCls: "freezeframe"
-  }) }}
-{% endmacro %}
-
-{% macro bottlecaps() %}
-  {{ basic({
-    name: "Bottlecaps",
-    owner: "Karla",
-    url: "https://miserabledolly.net/bottlecaps",
-    arr: goodies.pixel_clubs.bottlecaps,
-    cls: "justify-content-center flex-md-gap-1 flex-gap-5"
-  }) }}
-{% endmacro %}
-
-{% macro call() %}
-  {{ basic({
-    name: "Call Me!",
-    id: "call",
-    owner: "ChaoticGoode",
-    url: "https://chaoticgoode.com/",
-    arr: goodies.pixel_clubs.call,
-    cls: "justify-content-center align-items-center flex-gap-3"
-  })}}
-{% endmacro %}
-
-{% macro cdw() %}
-  <section class="cdw">
-    <h2 class="bg-dots d-flex align-items-center flex-gap-3">CDwORLD {% img "/assets/images/goodies/cliques/cdw/button.jpg" %}</h2>
-    <p>Created by <a href="https://humanfinny.neocities.org/clubs/cd_world/cdworld_home" target="_blank" rel="noreferrer">Finny</a>!</p>
+{% macro cdw(params) %}
+  <section class="{{ params.id }}">
+    <h2 class="bg-dots d-flex align-items-center flex-gap-3">{{ params.name }} {% img img_path + params.id + "/" + params.btn %}</h2>
+    <p>Created by {% link params.url, { text: params.owner } %}</p>
     <div class="d-flex justify-content-md-start justify-content-center align-items-center flex-md-gap-2 flex-gap-4 flex-wrap py-md-0 py-4 mt-2">
-      {% for item in goodies.pixel_clubs.cdw %}
+      {% for item in params.items %}
         {% set options = {
           noMarkdown: true,
           cls: 'border-0 text-center m-1 p-1',
@@ -104,7 +58,7 @@
           figCaptionCls: "text-center",
           noLink: (false if item.url else true),
           imgLink: item.url } %}
-        {% figure img_path + "cdw/" + item.src, options %}
+        {% figure img_path + params.id + "/" + item.src, options %}
           <a class="playlist" href="{{ item.playlist }}">Playlist</a>
         {% endfigure %}
       {% endfor %}
@@ -112,61 +66,12 @@
   </section>
 {% endmacro %}
 
-{% macro charm() %}
-  {{ basic({
-    name: "Charm Ring",
-    id: "charms",
-    owner: "Lapin",
-    url: "https://charm-ring.valentinely.cc/",
-    arr: goodies.pixel_clubs.charms,
-    cls: "justify-content-center flex-gap-1",
-    btn: "charm-ring.gif",
-    btnCls: "freezeframe"
-  }) }}
-{% endmacro %}
-
-{% macro fizzyVendor() %}
-  {{ detailed({
-    name: "Fizzy Vendor",
-    id: "fzv",
-    owner: "Fizzsea",
-    url: "https://fizzsea.net/extra/fizzyvendor.html",
-    arr: goodies.pixel_clubs.fzv,
-    summary: "Tastes like...",
-    desc: "???"
-  }) }}
-{% endmacro %}
-
-{% macro frogs() %}
-  {{ basic ({
-    name: "Froggy Bog",
-    id: "frog",
-    owner: "ŻabnikRex",
-    url: "https://zabnikinthevoid.neocities.org/froggybog",
-    arr: goodies.pixel_clubs.frogs,
-    cls: "flex-center flex-gap-3",
-    btn: "froggy-bog.gif",
-    btnCls: "freezeframe"
-  }) }}
-{% endmacro %}
-
-{% macro kindnessRocks() %}
-  {{ basic ({
-    name: "Kindness Rocks Pixel Project",
-    id: "kindnessrocks",
-    owner: "PixelRevival",
-    url: "https://pixelrevival.xyz/kindnessrocks/",
-    arr: goodies.pixel_clubs.kindnessrocks,
-    cls: "flex-md-gap-1 flex-gap-5"
-  }) }}
-{% endmacro %}
-
-{% macro jarJams() %}
-  <section class="jarjam">
-    <h2 class="d-flex align-items center flex-gap-2">Jar Jams</h2>
-    <p>Created by <a href="https://blissnet.neocities.org/toybox/JJ" target="_blank" rel="noreferrer">Blissnet</a>!</p>
+{% macro jar_jams(params) %}
+  <section class="{{ params.id }}">
+    <h2 class="d-flex align-items center flex-gap-2">{{ params.name }}</h2>
+    <p>Created by {% link params.url, { text: params.owner } %}!</p>
     <div class="sidebar p-3 mt-3">
-      {%- for items in goodies.pixel_clubs.jarjam | slice(2) %}
+      {% for items in params.items | slice(2) %}
       <div class="d-flex flex-md-gap-1 flex-gap-5">
         {%- for item in items %}
         {% img img_path + "jarjam/" + item.src, { url: item.url, alt: "A pixel jar " + item.alt, freezeframe: item.freezeframe } %}
@@ -175,42 +80,6 @@
       {% endfor %}
     </div>
   </section>
-{% endmacro %}
-
-{% macro library() %}
-  {{ basic({
-    name: "Little Pixel Library",
-    id: "library",
-    owner: "Rosemary",
-    url: "https://hillhouse.neocities.org/cliques/library",
-    arr: goodies.pixel_clubs.library,
-    cls: "justify-content-center flex-md-gap-1 flex-gap-5",
-    btn: "button.png"
-  }) }}
-{% endmacro %}
-
-{% macro moon() %}
-  {{ basic({
-    name: "It's Only a Paper Moon",
-    id: "moon",
-    owner: "Kelly Ann",
-    url: "https://vellumskin.neocities.org/papermoon/info",
-    arr: goodies.pixel_clubs.moon,
-    cls: "flex-gap-3",
-    btn: "paper_moon.png"
-  })}}
-{% endmacro %}
-
-{% macro sip() %}
-  {{ detailed({
-      name: "Sip Clique",
-      id: "sip",
-      owner: "Nevere",
-      url: "https://peachlantern.neocities.org/sipclique",
-      arr: goodies.pixel_clubs.sip,
-      btn: "button.png"
-    })
-  }}
 {% endmacro %}
 
 {% macro stickerSheet(mine) %}
