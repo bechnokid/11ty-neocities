@@ -47,9 +47,9 @@ function updateWebringLinks(params) {
     let nextIdx = (idx > 0) ? ((idx + 1) % sites.length) : 0;
     let site;
     if (typeof sites[nextIdx] == "string") {
-      site = sites[nextIdx].includes(params.url) ? sites[1] : sites[0];
+      site = sites[nextIdx].includes(params.url) ? sites[nextIdx + 1] : sites[nextIdx];
     } else {
-      site = sites[nextIdx]['url'].includes(params.url) ? sites[1]['url'] : sites[0]['url']
+      site = sites[nextIdx]['url'].includes(params.url) ? sites[nextIdx + 1]['url'] : sites[nextIdx]['url']
     }
     return site;
   }
