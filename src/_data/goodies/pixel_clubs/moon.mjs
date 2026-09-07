@@ -4,7 +4,7 @@ export default {
   id: "moon",
   owner: "Kelly Ann",
   url: "https://vellumskin.neocities.org/papermoon/info",
-  cls: "flex-gap-3",
+  cls: "flex-center flex-gap-3",
   btn: "paper_moon.png",
   items: [
     {
@@ -66,6 +66,11 @@ export default {
       src: "kararatorejji.png",
       alt: "A light blue paper moon decorated with a diamond, star, and heart. Within the crescent are several stars and doll lying on the moon.",
       url: "https://deviantart.com/kararatorejji",
+    },
+    {
+      src: "solaria.png",
+      alt: "A woman with braided hair with beads, wearing a strapless white dress, and sitting within the yellow crescent moon surrounded by clouds and twinkling stars. In the empty space is the night sky with even more twinkling stars.",
+      url: "https://solaria.neocities.org/",
     },
   ]
 }

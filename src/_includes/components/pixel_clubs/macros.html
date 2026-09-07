@@ -68,13 +68,29 @@
 
 {% macro jar_jams(params) %}
   <section class="{{ params.id }}">
-    <h2 class="d-flex align-items center flex-gap-2">{{ params.name }}</h2>
+    <h2 class="d-flex align-items center">{{ params.name }}</h2>
     <p>Created by {% link params.url, { text: params.owner } %}!</p>
     <div class="sidebar p-3 mt-3">
       {% for items in params.items | slice(2) %}
       <div class="d-flex flex-md-gap-1 flex-gap-5">
         {%- for item in items %}
-        {% img img_path + "jarjam/" + item.src, { url: item.url, alt: "A pixel jar " + item.alt, freezeframe: item.freezeframe } %}
+          {% img img_path + "jarjam/" + item.src, { url: item.url, alt: "A pixel jar " + item.alt, freezeframe: item.freezeframe } %}
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+{% endmacro %}
+
+{% macro library(params) %}
+  <section class="{{ params.id }}">
+    <h2 class="d-flex align-items center flex-gap-2">{{ params.name }}</h2>
+    <p>Created by {% link params.url, { text: params.owner } %}!</p>
+    <div class="sidebar p-3 mt-3 d-flex flex-wrap flex-gap-3 justify-content-center">
+      {% for items in params.items | slice(2) %}
+      <div class="d-flex flex-gap-2 px-4">
+        {%- for item in items %}
+          {% img img_path + params.id + "/" + item.src, { url: item.url, alt: item.alt, freezeframe: item.freezeframe } %}
         {% endfor %}
       </div>
       {% endfor %}

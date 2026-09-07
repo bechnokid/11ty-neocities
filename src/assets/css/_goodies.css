@@ -28,6 +28,14 @@ article.pixel-clubs {
   section {
     margin-bottom: 3rem;
   }
+
+  section.duck > .sidebar {
+    background: linear-gradient(to bottom, light-dark(#fdf0ff, #462293) 0%, light-dark(#ffb5d1, #f26957) 48%,light-dark(#ff84e6, #1d1f82) 51%, light-dark(#8a41e1, #0a0528) 100%)
+  }
+
+  section.library .sidebar > * {
+    border-bottom: 8px double var(--border-sidebar);
+  }
 }
 
 .kindnessrocks .d-flex a,

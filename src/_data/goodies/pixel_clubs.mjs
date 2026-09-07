@@ -1,72 +1,10 @@
 export default {
-  angelical: {
-    basic: true,
-    name: "Angelical",
-    owner: "Altair",
-    url: "https://butteroncookies.neocities.org/angelical",
-    cls: "justify-content-center flex-md-gap-1 flex-gap-2",
-    btn: "button.gif",
-    btnCls: "freezeframe",
-    items: [
-      {
-        src: "bechno.gif",
-        alt: "A humanized version of Sabotenshi (Cactus Angel) from the Tamagotchi Angel devices. She wears a hooded cloak that has stitches and details that resemble a cactus, with three spikes on the top of her hood. The center spike pokes through her floating halo. She dons two sets of wings: one large set at the top and one smaller set at the bottom. She has an emotionless expression on her face.",
-        freezeframe: true,
-      },
-      {
-        src: "butteroncookies.gif",
-        alt: "Uriel, an angel with a white and blue color scheme and resembles a cat with white hair, ears, and a tail. They have blue eyes and a matching blue bow. Their outfit consists of a blazer with a gingham pattern and white collar and sleeves, blue puffy shorts, and white socks with blue shoes.",
-        url: "https://butteroncookies.neocities.org",
-        freezeframe: true,
-      },
-      {
-        src: "artwork.gif",
-        alt: "An angel with a forest theme to her design. She has long and wavy brown hair and brown eyes. Her makeup consists of long eyelashes with blue tips, purple eyeshadow, some blush, and red lipstick. Her outfit consists of a large turquoise mushroom cap hat, a white and blue bolero shirt, a ruffled pink dress, and pink flats. Her wings resemble those of a butterfly's and has a purple and pink pattern sprinked with turquoise and white.",
-        url: "https://artwork.neocities.org",
-        freezeframe: true,
-      },
-      {
-        src: "chaoticgoode.gif",
-        alt: "Bibbles, an angel with a black, blue, pink color scheme. She has black hair, green skin, and eyes that are all black, giving her the appearance of an alien. Her halo, bow, wings, and attire resemble neon lights, with the main color being black and details that alternate between pink and blue. Her outfit consists of a bow, a cropped tank top, a shirt, fingerless gloves, and boots. Her wings are black with pink and blue details that make them resemble a neon sign.",
-        url: "https://chaoticgoode.com",
-        freezeframe: true,
-      },
-      {
-        src: "cultpartykei.gif",
-        alt: "Gauze, an angel with a medical theme to her design. She has pink hair that straight-cut bangs, and a braid placed along her head tied with two red ribbons. Parts of her hair frame her face and end in drill-like curls falling just short of her ankles. She wears a heart-shaped eyepatch with a red cross that covers her right eye. She wears a white dress with ruffles and red details, including a small red cross on her chest. Her wings are large and flutter behind her.",
-        url: "https://cultpartykei.neocities.org",
-        freezeframe: true,
-      },
-      {
-        src: "peachlantern.gif",
-        alt: "Nevere, an angel with a tropical theme to her design. She has long flowing black hair with a yellow flower accessory and green eyes. Her outfit consists of a necklace with a purple gem, a black bikini, and purple fabric tied into a skirt. The feathers in her wings alternate between different colors of the rainbow, such as red, orange, yellow, green, blue, and purple.",
-        url: "https://peachlantern.neocities.org",
-        freezeframe: true,
-      },
-      {
-        src: "peachnuts.gif",
-        alt: "An angel with a floral theme to her design. She has brown hair that goes past her shoulders and brown eyes. Her outfit consists of a flower chain headband with yellow, pink, and purple flowers, a yellow and green dress, and green flats. Her wings are rounded, giving the appearance of fairy wings, and have a gradient of blue to green to yellow. The angel is also surrounded by pink, orange, yellow, green, and purple sparkles.",
-        url: "https://peachnuts.neocities.org",
-        freezeframe: true,
-      },
-      {
-        src: "raygammas.png",
-        alt: "Ray, an angel with lavender wings and halow. She has brown hair that is tinted with purple on one side and dark pink on the other. She has brown eyes and mulitple piercings, including one on her lips, three on her right ear, and one on her left ear. Her outfit consists of a black camisole, blue shorts, and black striped stockings. Her right stocking has purple stripes and her left stocking has pink stripes.",
-      },
-      {
-        src: "sweetcharm.gif",
-        alt: "Clover, an angel with a bright rainbow color scheme. She has long blonde hair with pink tips with straight-cut bangs, two strands that frame her hair. The rest of her hair is tied into two large drill-like curls with several yellow, purple, and blue stars attached to them. Her makeup consists of purple eyeshadow with pink drips. Her left eye is green while her right eye is pink. Her outfit consists of a cropped camisole with a heart-shaped hole where her chest is, shorts, fish net tights, white ballet shoes, and sleeves with sparkles. The colors are split down the middle with pink on her right side and blue on her left. Draped over her body is a rainbow ribbon.",
-        url: "https://sweetcharm.net",
-        freezeframe: true,
-      },
-    ]
-  },
   bottlecaps: {
     basic: true,
     name: "Bottlecaps",
     owner: "Karla",
     url: "https://miserabledolly.net/bottlecaps",
-    cls: "justify-content-center flex-md-gap-1 flex-gap-5",
+    cls: "justify-content-center flex-md-gap-4 flex-gap-5",
     items: [
      { src: "gallantmon.gif", alt: "A red bottle cap with Gallantmon's sprite by SomaKiryuu", freezeframe: true },
      { src: "beelzemon.gif", alt: "A purple bottle cap with Beelzemon's sprite by tortoisehel", freezeframe: true },
@@ -85,7 +23,7 @@ export default {
     name: "Call Me!",
     id: "call",
     owner: "ChaoticGoode",
-    url: "https://chaoticgoode.com/",
+    url: "https://chaoticgoode.com/call",
     cls: "justify-content-center align-items-center flex-gap-3",
     items: [
       {
@@ -140,23 +78,45 @@ export default {
       },
       {
         src: "cloudcover_happyhardcore.png",
-        alt: "the \"Best of Happy Hardcore\" by Cloud Cover", url: "https://cloudcover.neocities.org/digital/fan",
+        alt: "the \"Best of Happy Hardcore\" by Cloud Cover",
+        url: "https://cloudcover.neocities.org/digital/fan",
         playlist: "https://www.youtube.com/playlist?list=PLjKsR7qEFZMNaDn-hvx2D1Q0d8dcvssOe"
       },
       {
         src: "pklucky_cycleofremorse.png",
-        alt: "the \"Cycle of Remorse Mood Mix [2023]\" by PK Lucky", url: "https://pklucky.neocities.org",
+        alt: "the \"Cycle of Remorse Mood Mix [2023]\" by PK Lucky",
+        url: "https://pklucky.neocities.org",
         playlist: "https://www.youtube.com/playlist?list=PLSpUyxMrwKqMDO_hmS7IgppY4l2Z3D1A6"
       },
       {
         src: "finny_90sgirlrock.png",
-        alt: "\"Finny's 90's Girl Rock Volume 1 [2023]\" by the human finny", url: "https://humanfinny.neocities.org",
+        alt: "\"Finny's 90's Girl Rock Volume 1 [2023]\" by the human finny",
+        url: "https://humanfinny.neocities.org",
         playlist: "https://www.youtube.com/playlist?list=PLVHUFWHuSE_JdeRh4tGL6KepNbvV_YMnu"
       },
       {
         src: "tubedfruit_90spunk.jpg",
-        alt: "\"TubedFruit's AZ 90s Hardcore Punk Mix [2023]\" by TubedFruit", url: "https://toothachesplinter.neocities.org",
+        alt: "\"TubedFruit's AZ 90s Hardcore Punk Mix [2023]\" by TubedFruit",
+        url: "https://toothachesplinter.neocities.org",
         playlist: "https://www.youtube.com/playlist?list=PLIBqbVUh0UvgsR_ImP6g5S5CRx7k70nPi"
+      },
+      {
+        src: "alphacarinae_transatlanticism.jpg",
+        alt: "the album \"Transatlanticism\" by Death Cab for Cutie, which depicts a crow wrapped in a red string while against an orange background",
+        url: "https://alphacarinae.neocities.org/",
+        playlist: "https://www.youtube.com/playlist?list=PLxzSZG7g8c8zscYO2Lq_7qim5hOETo3k-"
+      },
+      {
+        src: "cedrus_letgo.png",
+        alt: "the album \"Let Go\" by Avril Lavigne, which depicts the artist crossing her arms while against a blurred background of citygoers",
+        url: "https://cedrus.nekoweb.org/",
+        playlist: "https://www.youtube.com/playlist?list=PLlq7Qg7QtlOEGwRLXDv1oIm1_sH7Sftqq",
+      },
+      {
+        src: "ttaxyy_plasticbeach.jpg",
+        alt: "the album \"Plastic Beach\" by Gorillaz, which depics a house on a tower-like island while surrounded by palm trees while against a sky with a sunset",
+        url: "https://ttaxyy.neocities.org/",
+        playlist: "https://www.youtube.com/watch?v=XpY2n_YPv_g&list=OLAK5uy_l2_IrTKMXmIJhXy698EFDYTuUM5VcitBM&index=2",
       },
     ]
   },
@@ -203,7 +163,83 @@ export default {
         src: "sweetcharm.gif",
         alt: "A pink heart-shaped keychain with two pink ribbons, a string of star and circular beads, and a charm of a blue mascot with angel wings and a bow accessory. The carabiner itself has two wings and a ell attached to it. In the bottom right corner of the charm is a floating moon.",
         url: "https://sweetcharm.net"
-      }
+      },
+      {
+        src: "gikaayumi.png",
+        alt: "A pink heart-shaped keychain with several charms attached to it, such as one half of a keycharm set that consists of a white bear with smooshed cheeks while holding half of a pink heart, a ghost, a black key with a skull at the head of the key, a kitsune mask attached to a loop of pink beads, a cat in a daruma, a black bow, and a pink tag",
+        url: "https://gikaayumi.nekoweb.org/",
+      },
+      {
+        src: "gloomygoose13.png",
+        alt: "A pink carabiner with a gold house key, a green tag that reads \"Lucky\" with a four-leaf clover attached to it, and a charm of a orange and white cat with an outfits that consists of a pair of round glasses, a green shirt, overalls, and yellow boots",
+        url: "https://gloomygoose13.neocities.org/",
+      },
+      {
+        src: "monamies.png",
+        alt: "A star-shaped carabiner with several charms attached, such as a cross, a dagger with a heart-shaped gem at its hilt, a red and yellow-swirled marble, and a string of pink, red, and purple, beads.",
+        url: "https://monamies.neocities.org/",
+      },
+    ],
+  },
+  duck: {
+    basic: true,
+    id: "duck",
+    name: "Duck Pond",
+    owner: "Ray",
+    url: "https://raygammas.neocities.org/duckpond",
+    cls: "justify-content-center flex-md-gap-2 flex-gap-5",
+    btn: "button.gif",
+    btnCls: "freezeframe",
+    items: [
+      {
+        src: "bechno.gif",
+        alt: "A yellow duck that resembles Arthur Morgan from Red Dead Redemption 2. It has brown hair and a beard and its outfit consists of a black Gambler's Hat with rope tied around it, a blue striped shirt, and a neckerchief. The duck is wielding a revolver on its right-side wing",
+        freezeframe: true,
+      },
+      {
+        src: "chaoticgoode.gif",
+        alt: "A mallard duck that is continuously diving into the water and popping out.",
+        url: "https://chaoticgoode.com/",
+        freezeframe: true,
+      },
+      {
+        src: "snowcape.gif",
+        alt: "A green duck that resembles Scoot from the Animal Crossing game franchise. Its outfit consists of a white helmet, a beige shirt with a frog on it. The text bubble next to it reads, \"ZIP ZOOM\".",
+        url: "https://snowcape.neocities.org/",
+        freezeframe: true,
+      },
+      {
+        src: "gloomygoose13.gif",
+        alt: "A very normal turquoise duck that occasionally has a fedora pop in--PERRY THE PLATYPUS??",
+        url: "https://gloomygoose13.neocities.org/",
+        freezeframe: true,
+      },
+      {
+        src: "v0idspace.png",
+        alt: "A photorealistic yellow rubber duck.",
+        url: "https://v0idspace.neocities.org",
+      },
+      {
+        src: "north-south-pole.png",
+        alt: "A yellow duck with three small feathers sticking out of the top of its head and large eyes. It resembles Psyduck from the Pokemon game franchise",
+        url: "https://north-south-pole.neocities.org/",
+      },
+      {
+        src: "sakuradreams.png",
+        alt: "A white duck with light blue eyes and a large pink bow around its neck",
+        url: "https://sakuradreams.neocities.org/",
+      },
+      {
+        src: "peachlantern.png",
+        alt: "A yellow duck wearing a white unicorn suit that has a golden horn, a pink mane, and a tail with pink, yellow, and blue stripes.",
+        url: "https://peachlantern.neocities.org",
+      },
+      {
+        src: "zabnikinthevoid.png",
+        alt: "A light blue frozen duck with several icicles hanging from its head",
+        url: "https://zabnikinthevoid.neocities.org/",
+        freezeframe: true,
+      },
     ],
   },
   jar_jams: {
@@ -338,6 +374,40 @@ export default {
         url: "https://joejoefashosho.neocities.org/",
       },
     ]
+  },
+  pokeball: {
+    basic: true,
+    name: "Pokeball Parade",
+    id: "pokeball",
+    owner: "ChaoticGoode",
+    url: "https://chaoticgoode.com/cliques/parade/",
+    alt: "A pokeball that resembles ",
+    cls: "align-items-center flex-md-gap-2 flex-gap-5",
+    btn: "button.png",
+    items: [
+      {
+        src: "bechno.png",
+        alt: "Chi-Yu from the Pokemon game franchise. The top of the ball has flames that resemble fish fins, with a pair of jade beads placed on top. The band is white with a black button, and the bottom of the ball a dark jade green",
+      },
+      {
+        src: "peachlantern.gif",
+        alt: "Jigglypuff from the Pokemon game franchise. The ball itself is pink and has two triangular ears with the inside of them a dark pink. On top of the ball is a large puffy curl that curls inward. The band is black with a pink button that has a music note. Several sparkles and music notes float around the ball.",
+        url: "https://peachlantern.neocities.org",
+        freezeframe: true,
+      },
+      {
+        src: "chaoticgoode.gif",
+        alt: "Vileplume from the Pokemon game franchise. The ball itself is dark blue with a large rafflesia flower on top emitting a strong odor. The ball's button is a deep red.",
+        url: "https://chaoticgoode.neocities.org",
+        freezeframe: true,
+      },
+      {
+        src: "v0idspace.gif",
+        alt: "Raichu from the Pokemon game franchise. The top half of the ball is orange with two tears that resemble Raichu's with brown stripes on the side. The bottom half of the ball is white, the band is brown, and the button is a bright yellow with electricity surging within it. Wrapped around the ball is Raichu's distinctive bolt-shaped tail",
+        url: "https://v0idspace.neocities.org",
+        freezeframe: true,
+      },
+    ],
   },
   sip: {
     detailed: true,

@@ -1,10 +1,9 @@
 export default {
-  basic: true,
   name: "Little Pixel Library",
   id: "library",
   owner: "Rosemary",
   url: "https://hillhouse.neocities.org/cliques/library",
-  cls: "justify-content-center flex-md-gap-1 flex-gap-5",
+  cls: "justify-content-center flex-md-gap-3 flex-gap-5",
   btn: "button.png",
   items: [
     {

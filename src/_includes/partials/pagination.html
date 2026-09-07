@@ -1,11 +1,19 @@
 <hr class="small">
 {% if pagination.href.next or pagination.href.previous %}
-  <nav class="pagination mt-3 text-xxl d-flex justify-content-between" aria-label="Pagination links">
-    {% if pagination.href.previous %}
-      <a href="{{ pagination.href.previous }}" data-direction="backwards">{% icon 'arrow-left' %}<span class="ms-2">{{ paginationPrevText if paginationPrevText else 'Previous' }}</span></a>
-    {% endif %}
-    {% if pagination.href.next %}
-      <a href="{{ pagination.href.next }}" data-direction="forwards"><span class="me-2">{{ paginationNextText if paginationNextText else 'Next' }}</span>{% icon 'arrow-right' %}</a>
-    {% endif %}
+  <nav class="pagination mt-3 text-xxl d-flex justify-content-center" aria-label="Pagination links">
+    <ul class="inline-list">
+      {% if page.url != pagination.href.first %}
+        <li><a href="{{ pagination.href.first }}">{{ paginationFirstText if paginationFirstText else 'First' }}</a></li>
+      {% endif %}
+      {% if pagination.href.previous %}
+        <li><a href="{{ pagination.href.previous }}" data-direction="backwards">{{ paginationPrevText if paginationPrevText else 'Previous' }}</a></li>
+      {% endif %}
+      {% if pagination.href.next %}
+        <li><a href="{{ pagination.href.next }}" data-direction="forwards">{{ paginationNextText if paginationNextText else 'Next' }}</a></li>
+      {% endif %}
+      {% if page.url != pagination.href.last %}
+        <li><a href="{{ pagination.href.last}}">{{ paginationLastText if paginationLastText else 'Last' }}</a></li>
+      {% endif %}
+    </ul>
   </nav>
 {% endif %}

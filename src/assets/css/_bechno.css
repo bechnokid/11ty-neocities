@@ -864,6 +864,11 @@ position: absolute;
       text-decoration: underline;
     }
   }
+
+  ul.inline-list > li:not(:last-child)::after {
+    content: var(--icon-list);
+    margin: 0 1rem;
+  }
 }
 
 @keyframes steakRotate {
