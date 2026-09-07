@@ -129,6 +129,20 @@
   </section>
 {% endmacro %}
 
+{% macro pixelTrain(params) %}
+  <section class="{{ params.id }}">
+    <h2>{{ params.name }}</h2>
+    <p>Created by {% link params.url, { text: params.owner } %}!</p>
+    <div class="d-flex sidebar py-3 mt-3 marquee-container overflow-hidden w-100">
+      <div class="marquee-content d-flex align-items-baseline">
+        {%- for item in params.items %}
+          {% img img_path + params.id + "/" + item.src, { url: item.url, alt: item.alt, freezeframe: item.freezeframe } %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endmacro %}
+
 {% macro yysTable(mine) %}
   {% if not mine %}<p class="h3">Shopping Cart</p>{% endif %}
   <table>

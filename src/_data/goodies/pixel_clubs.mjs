@@ -22,7 +22,7 @@ export default {
     basic: true,
     name: "Call Me!",
     id: "call",
-    owner: "ChaoticGoode",
+    owner: "Andrea",
     url: "https://chaoticgoode.com/call",
     cls: "justify-content-center align-items-center flex-gap-3",
     items: [
@@ -379,7 +379,7 @@ export default {
     basic: true,
     name: "Pokeball Parade",
     id: "pokeball",
-    owner: "ChaoticGoode",
+    owner: "Andrea",
     url: "https://chaoticgoode.com/cliques/parade/",
     alt: "A pokeball that resembles ",
     cls: "align-items-center flex-md-gap-2 flex-gap-5",
@@ -469,6 +469,73 @@ export default {
         alt: "Lavender Matcha Boba: a drink that is purple at the top and green at the bottom. At the bottom of the drink are some beads of boba while a yellow straw floats in the drink.",
         url: "https://chaoticgoode.neocities.org",
         desc: "Lavender Matcha Boba"
+      },
+    ]
+  },
+  pixelTrain: {
+    name: "Pixel Train",
+    id: "train",
+    owner: "Andrea",
+    url: "https://chaoticgoode.com/pixeltrain",
+    items: [
+      {
+        src: "thepixeltrain.gif",
+        alt: "A light blue train with rainbow text that reads \"The Pixel Train\" with a teddy bear on top of the text waving to the viewer",
+        url: "https://chaoticgoode.com/pixeltrain",
+      },
+      {
+        src: "bechno.gif",
+        alt: "A pink wagon with white lace. Bechno Kid is riding the wagon while cheering \"Yay\"",
+      },
+      {
+        src: "chaoticgoode.gif",
+        alt: "Bibbles, Andrea's OC, riding a black wagon with pink and blue lights",
+        url: "https://chaoticgoode.com/",
+      },
+      {
+        src: "artwork-bc.gif",
+        alt: "Buttercup of the Powerpuff Girls riding a lacy green wagon with purple wheels",
+        url: "https://artwork.neocities.org/cliques",
+      },
+      {
+        src: "artwork-bl.gif",
+        alt: "Blossom of the Powerpuff Girls riding a lacy pink wagon with purple wheels",
+        url: "https://artwork.neocities.org/cliques",
+      },
+      {
+        src: "artwork-bb.gif",
+        alt: "Bubbles of the Powerpuff Girls riding a lacy blue wagon with purple wheels",
+        url: "https://artwork.neocities.org/cliques",
+      },
+      {
+        src: "stimpop.gif",
+        alt: "A purple pink blob that resembles Ditto riding a pink wagon with black wheels",
+        url: "https://stimpop.nekoweb.org/",
+      },
+      {
+        src: "juria.gif",
+        alt: "Rem from Deadlock riding a periwinkle wagon with wheels of the same color but with a darker shade",
+        url: "https://juria.neocities.org/",
+      },
+      {
+        src: "peachlantern.gif",
+        alt: "A pink and orange colored drink in a glass that is topped with a hibiscus flower and a lime slice atop a brown wagon with several green vines on it",
+        url: "https://peachlantern.neocities.org/",
+      },
+      {
+        src: "gloomygoose13.gif",
+        alt: "Three Beanie Babies including a brown bear, pink bunny, and grey wolf riding atop a red wagon",
+        url: "https://gloomygoose13.neocities.org/",
+      },
+      {
+        src: "sakuradreams.gif",
+        alt: "A pink Hannari Tofu riding atop a lavender wagon with purple wheels",
+        url: "https://sakuradreams.neocities.org/",
+      },
+      {
+        src: "v0idspace.gif",
+        alt: "A yellow goldfish swimming in a bowl of water with several green kelp",
+        url: "https://v0idspace.nekoweb.org/",
       },
     ]
   },
