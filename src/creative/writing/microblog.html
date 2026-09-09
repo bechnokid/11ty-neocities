@@ -3,7 +3,7 @@ title: Microblog
 displayOrder: 2
 pagination:
   data: collections.microblog
-  size: 10
+  size: 7
 permalink: writing/microblog/{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1 }}{% endif %}/index.html
 paginationPrevText: Newer statuses
 paginationNextText: Older statuses
@@ -11,11 +11,11 @@ description: Smaller entries that describe how I'm feeling or what I'm doing in 
 summary: Thoughts and ramblings that are otherwise too small to make into a blog post!
 ---
 {% set emote_path = "/assets/images/blog/emoticon" %}
-<div class="microblog-container d-flex flex-column flex-gap-4 p-md-4 p-2">
+<div class="status-container d-flex flex-column flex-gap-4 p-md-4 p-2">
   {% for item in pagination.items %}
   <div class="sidebar rounded d-flex flex-gap-3 p-3">
     <div class="status-mood d-flex justify-content-center">
-      {% img emote_path + item.mood + ".svg", { cls: "emoticon", ariaHidden: true } %}
+      {% img emote_path + "/" + item.mood + ".svg", { cls: "emoticon", ariaHidden: true } %}
     </div>
     <div class="status-content d-flex flex-column flex-gap-1">
       <p class="status-date h3">{{ item.date | monDayYear }}</p>
@@ -24,4 +24,4 @@ summary: Thoughts and ramblings that are otherwise too small to make into a blog
   </div>
   {% endfor %}
 </div>
-{% include "partials/pagination.html" %}
+{% include "partials/pagination_num.html" %}

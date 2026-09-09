@@ -47,7 +47,7 @@ export default [
     mood: "excited",
     date: "2026-03-23",
     time: "11:15:33+00:00",
-    content: "Getting an &#34;A&#34; in the AT Arkveld Free Challenge requires finishing the quest in 22', and I completed it in 15'30&#34;!!! I'M A REAL HUNTER NOW!!"
+    content: "Getting an \"A\" in the AT Arkveld Free Challenge requires finishing the quest in 22', and I completed it in 15'30\"!!! I'M A REAL HUNTER NOW!!"
   },
   {
     mood: "embarrassed",
@@ -77,13 +77,13 @@ export default [
     mood: "excited",
     date: "2026-02-11",
     time: "20:47:02+00:00",
-    content: "The &#34;bechnokid.com&#34; domain is back in my hands after 21 years! &#34;bechnokid.neocities.org&#34; will still work, though!"
+    content: "The \"bechnokid.com\" domain is back in my hands after 21 years! \"bechnokid.neocities.org\" will still work, though!"
   },
   {
     mood: "hehe",
     date: "2026-02-09",
     time: "15:44:24+00:00",
-    content: "Replaced the font in my code editor with one called &#34;Comic Mono&#34;, hehehe. I might end up making a whole page with this font. >:)"
+    content: "Replaced the font in my code editor with one called \"Comic Mono\", hehehe. I might end up making a whole page with this font. >:)"
   },
   {
     mood: "sobbing",

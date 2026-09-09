@@ -1,0 +1,17 @@
+<hr class="small">
+{{ page.url }}
+{{ pagination.pageNumber + 1 }}
+<nav class="pagination mt-3 text-xxl d-flex justify-content-center" aria-label="Pagination links">
+  {% for page_link in pagination.hrefs %}
+    {{ loop.index }}
+    <button class="pagination-num{% if page.url == pagination.hrefs[loop.index0] %} active{% endif %}" aria-label="Page {{ loop.index }} button">{{ loop.index }}</button>
+  {% endfor %}
+</nav>
+
+{#
+<div id="guestbook-pagination" class="mt-4 d-flex flex-wrap justify-content-center">
+  <button type="button" class="pagination-btn" id="prev-btn" aria-label="Previous page">&lt;</button>
+  <div id="pagination-numbers" data-num-of-pages="8"><button class="pagination-num active" data-page-index="1" aria-label="Page 1">1</button><button class="pagination-num" data-page-index="2" aria-label="Page 2">2</button><button class="pagination-num" data-page-index="3" aria-label="Page 3">3</button><button class="pagination-num" data-page-index="4" aria-label="Page 4">4</button><button class="pagination-num" data-page-index="5" aria-label="Page 5">5</button><button class="pagination-num" data-page-index="6" aria-label="Page 6">6</button><button class="pagination-num" data-page-index="7" aria-label="Page 7">7</button><button class="pagination-num" data-page-index="8" aria-label="Page 8">8</button></div>
+  <button type="button" class="pagination-btn" id="next-btn" aria-label="Next page">&gt;</button>
+</div>
+#}
