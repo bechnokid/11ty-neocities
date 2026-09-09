@@ -16,7 +16,7 @@ noScroll: true
 {% set last_updated = (collections.feed | reverse)[0].fileSlug | monthDayYear %}
 
 {% for item in post_list_items %}
-  {% set blog_date = item.fileSlug | monthDayYear %}
+  {% set blog_date = (item.date or item.fileSlug) | monthDayYear %}
   <div class="blog row py-1">
     <div class="col-md-8 col-7">
       <a href="{{ item.url }}">{{ item.data.title | markdownifyInline | safe }}</a>

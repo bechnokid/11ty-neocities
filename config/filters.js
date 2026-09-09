@@ -12,7 +12,7 @@ const local = value => {
 // Formats date into YYYY-MM-DD (2025-01-01)
 const dateToIso8601 = value => {
   const dateObj = (value instanceof Date) ? value : parseDate(value);
-  return dateObj.toLocaleDateString();
+  return format(dateObj, "yyyy-MM-dd");
 }
 
 // Formats the date into Day of Month Year (01 of January 2000)

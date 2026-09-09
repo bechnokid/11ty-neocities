@@ -1,5 +1,5 @@
 ---
-permalink: 'blog/{{ page.fileSlug }}.html'
+permalink: 'blog/{{ (page.date | dateToIso8601) or page.fileSlug }}.html'
 cls: blog-post
 ---
 {% set date = page.date %}
