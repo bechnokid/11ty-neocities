@@ -1,18 +1,27 @@
 ---
-title: 'Microblog'
+title: Microblog
 displayOrder: 2
-layout: 'layouts/basic.html'
-permalink: 'writing/microblog/index.html'
+pagination:
+  data: collections.microblog
+  size: 10
+permalink: writing/microblog/{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1 }}{% endif %}/index.html
+paginationPrevText: Newer statuses
+paginationNextText: Older statuses
 description: Smaller entries that describe how I'm feeling or what I'm doing in the moment.
 summary: Thoughts and ramblings that are otherwise too small to make into a blog post!
-noScroll: true
-navTag: 'js-required'
 ---
-<article id="microblog">
-  <div class="status-container js-required d-flex flex-column flex-gap-2 pb-md-0 pb-4">
-    <div id='status-cafe-widget' class='js-required d-flex flex-column flex-gap-4 p-md-4 p-2'>
-      <p class="py-4">Loading microblog...</p>
+{% set emote_path = "/assets/images/blog/emoticon" %}
+<div class="microblog-container d-flex flex-column flex-gap-4 p-md-4 p-2">
+  {% for item in pagination.items %}
+  <div class="sidebar rounded d-flex flex-gap-3 p-3">
+    <div class="status-mood d-flex justify-content-center">
+      {% img emote_path + item.mood + ".svg", { cls: "emoticon", ariaHidden: true } %}
     </div>
-    <p class="hosted-on font-weight-bold">Hosted on <a href="https://status.cafe/users/bechnokid" target="_blank" rel="noreferrer">Status Cafe</a></p>
+    <div class="status-content d-flex flex-column flex-gap-1">
+      <p class="status-date h3">{{ item.date | monDayYear }}</p>
+      <p class="status-text">{{ item.content }}</p>
+    </div>
   </div>
-</article>
+  {% endfor %}
+</div>
+{% include "partials/pagination.html" %}
