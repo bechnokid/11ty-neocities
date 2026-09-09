@@ -33,39 +33,6 @@
   margin: 0;
 }
 
-#guestbook-pagination {
-  button.pagination-num {
-    margin: 0 .5rem;
-    height: 35px;
-    width: 35px;
-
-    &.active {
-      font-weight: bold;
-    }
-
-    &:not(.active) {
-      border: 0;
-      background: none;
-
-      &:hover {
-        background-color: var(--bg-footer);
-        cursor: var(--img-cursor-point), pointer;
-      }
-    }
-
-  }
-
-  button.pagination-btn {
-    border: 0;
-    background: none;
-
-    &:hover {
-      background-color: var(--bg-footer);
-      cursor: var(--img-cursor-point), pointer;
-    }
-  }
-}
-
 .wide-field {
   width: 500px;
 }
@@ -77,11 +44,5 @@
 
   .guestbook-msg-field {
     height: 150px;
-  }
-
-  #guestbook-pagination button {
-    margin: 0 .5rem;
-    height: 45px;
-    width: 45px;
   }
 }

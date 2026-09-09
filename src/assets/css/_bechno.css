@@ -849,28 +849,6 @@ position: absolute;
   }
 }
 
-.pagination {
-  font-family: 'TamaFont';
-  font-size: 1.25em;
-  margin-bottom: 1rem;
-  color: light-dark(var(--main-pink-10), var(--light-purple-40));
-
-  a {
-    color: var(--text-link-visited);
-    text-decoration: none;
-    border-bottom-color: transparent !important;
-
-    &:hover span {
-      text-decoration: underline;
-    }
-  }
-
-  ul.inline-list > li:not(:last-child)::after {
-    content: var(--icon-list);
-    margin: 0 1rem;
-  }
-}
-
 @keyframes steakRotate {
   to {
     background-position-x: -352px;
